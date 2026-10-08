@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="ch_installing">
+  <title>Installing</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Installing PDF Chemistry</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <taskbody>
+    <prereq id="prereq_u24_q3n_vz">
+      <p id="p_q45_dgk_54b">
+        <note type="other" othertype="Prerequisite" id="note_r45_dgk_54b"><ph keyref="product"/> is a Java application and
+          requires the following Oracle Java version, depending on your operating system:<ul
+            id="ul_tyh_5sq_skb">
+            <li id="li_s45_dgk_54b"><b>Windows</b> or <b>Linux</b> - Java JRE version <ph keyref="currentJavaVersion"
+              />.</li>
+            <li id="li_t45_dgk_54b"><b>macOS</b> - Java JDK version <ph keyref="currentJavaVersion"/>.</li>
+          </ul></note>
+      </p>
+    </prereq>
+    <context id="section_hq3_h3n_vz">
+      <p id="p_u45_dgk_54b">To install <ph keyref="product"/> on your platform, follow this procedure:</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Download the distribution for your particular platform from the <term>Oxygen</term>
+          website: <xref href="https://oxygenxml.com/pdf_chemistry/download.html" format="html"
+            scope="external"/>.</cmd>
+      </step>
+      <step>
+        <cmd>Follow the instructions provided on that web page.</cmd>
+      </step>
+      <step>
+        <cmd>Add the full path for that folder to your PATH environment variable (for information
+          about how to do this, see the related links below, depending on your operating
+          system).</cmd>
+      </step>
+			<step>
+        <cmd>If you purchased the product, place the license key in the installation directory. The
+          name of this file should be <filepath>licensekey.txt</filepath>. Note that unlicensed <ph
+            keyref="product"/> produces watermarked output.</cmd>
+      </step>
+      <step>
+        <cmd>Test the installation by typing the following command in a console:</cmd>
+        <info>
+          <p id="p_v45_dgk_54b"><b>Windows:</b><codeblock outputclass="language-ini" id="codeblock_w45_dgk_54b">chemistry -v</codeblock></p>
+          <p id="p_x45_dgk_54b"><b>macOS or
+            Linux:</b><codeblock outputclass="language-ini" id="codeblock_y45_dgk_54b">sh chemistry.sh -v</codeblock></p>
+          <p id="p_z45_dgk_54b"><b>Result:</b> It should display the version.</p>
+        </info>
+      </step>
+    </steps>
+  </taskbody>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link format="html"
+        href="https://superuser.com/questions/949560/how-do-i-set-system-environment-variables-in-windows-10"
+        scope="external">
+        <linktext>How do I set system environment variables in Windows</linktext>
+      </link>
+      <link format="html"
+        href="https://stackoverflow.com/questions/22465332/setting-path-environmental-variables-in-osx-permanently"
+        scope="external">
+        <linktext>Setting PATH environmental variables in OSX permanently</linktext>
+      </link>
+      <link format="html"
+        href="https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux"
+        scope="external">
+        <linktext>How to permanently set $PATH on Linux</linktext>
+      </link>
+    </linklist>
+  </related-links>
+</task>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="eps-ai-support">
+  <title>Rendering EPS and AI Images</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Author editing mode<indexterm>Image rendering<indexterm>EPS
+            images</indexterm></indexterm></indexterm>
+        <indexterm>XML documents<indexterm>Author Mode editing<indexterm>Image
+                rendering<indexterm>EPS images</indexterm></indexterm></indexterm></indexterm>
+        <indexterm>EPS image rendering in Author mode</indexterm>
+        <indexterm>Author editing mode<indexterm>Image rendering<indexterm>AI
+            images</indexterm></indexterm></indexterm>
+        <indexterm>XML documents<indexterm>Author Mode editing<indexterm>Image
+                rendering<indexterm>AI images</indexterm></indexterm></indexterm></indexterm>
+        <indexterm>AI image rendering in Author mode</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_ujy_bgk_54b">Most EPS and AI image files include a preview picture of the content. <ph
+        keyref="product"/> tries to render this
+      preview picture. The following scenarios are possible:<ul id="ul_vjy_bgk_54b">
+        <li id="li_wjy_bgk_54b">The EPS or AI image does not include the preview picture. <ph keyref="product"/> cannot
+          render the image.</li>
+        <li id="li_xjy_bgk_54b">The EPS image includes a TIFF preview picture.<note id="note_yjy_bgk_54b">Some newer versions of the TIFF
+            picture preview are rendered in gray-scale. </note></li>
+        <li id="li_zjy_bgk_54b">The AI image contains a JPEG preview picture. <ph keyref="product"/> renders the image
+          correctly.</li>
+      </ul></p>
+  </body>
+</topic>

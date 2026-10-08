@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ch_metadata">
+  <title>Metadata</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Metadata</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_ecv_dgk_54b">PDF files may contain metadata. Metadata provides additional information about a certain
+      document, such as its title, author, organization, creation date, format, or copyright.</p>
+    <p id="p_fcv_dgk_54b">HTML defines the <codeph>meta</codeph> element for keeping track of information that
+      describes your content. Most of this information should migrate to the PDF document
+      properties. The property values may be either <i>static</i> (specified directly from the CSS)
+      or <i>dynamic</i> (collected from the document) using the following functions:<ul
+        id="ul_cy3_b2j_wz">
+        <li id="li_gcv_dgk_54b"><b>content(text)</b></li>
+        <li id="li_hcv_dgk_54b"><b>attr()</b></li>
+        <li id="li_icv_dgk_54b"><b>oxy_xpath()</b></li>
+      </ul></p>
+    <section id="section_aqz_j2j_wz">
+      <title>Predefined Meta Fields</title>
+      <p id="p_jcv_dgk_54b">Examples of common metadata:<ul id="ul_plc_sz3_wz">
+          <li id="li_kcv_dgk_54b">Publication title</li>
+          <li id="li_lcv_dgk_54b">Author</li>
+          <li id="li_mcv_dgk_54b">Keywords</li>
+          <li id="li_ncv_dgk_54b">Short description</li>
+          <li>Copyright information</li>
+        </ul><ph keyref="product"/> automatically extracts this information from HTML documents.</p>
+      <p id="p_ocv_dgk_54b">Suppose that you have the following arbitrary XML document:</p>
+      <codeblock outputclass="language-xml" id="codeblock_pcv_dgk_54b">&lt;doc>
+     &lt;title>Publication title&lt;/title>
+     &lt;meta name='keywords' content='software, network'>
+     &lt;meta name='description' content='This is a publication about software products...'>
+     &lt;meta name='author' content='John, jo@mysite.example.com'>
+     &lt;meta name='copyright' content='Copyright My Company 2021'>
+
+...</codeblock>
+      <p id="p_qcv_dgk_54b">You could use any of the following CSS selectors to extract the metadata:</p>
+      <p id="p_rcv_dgk_54b">
+        <dl id="dl_scv_dgk_54b">
+          <dlentry id="dlentry_tcv_dgk_54b">
+            <dt>-oxy-pdf-meta-title</dt>
+            <dd>It is used to extract the publication title. You can use it by matching the
+              <xmlelement>title</xmlelement>
+              element:<codeblock outputclass="language-css" xml:space="preserve" id="codeblock_ucv_dgk_54b">title {
+    -oxy-pdf-meta-title: content(text);
+}</codeblock></dd>
+            <dd>
+              <p id="p_vcv_dgk_54b">If this CSS selector matches multiple elements, only the first element in the
+                document order will be used to extract the title.</p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_wcv_dgk_54b">
+            <dt>-oxy-pdf-meta-author</dt>
+            <dd>It is used to extract the publication author. You can use it by matching the
+              <xmlelement>meta</xmlelement> element with the attribute
+              <codeph>name='author'</codeph>:<codeblock outputclass="language-css" xml:space="preserve" id="codeblock_xcv_dgk_54b">meta[name='author'] {
+    -oxy-pdf-meta-author: attr(content);
+}</codeblock></dd>
+            <dd>
+              <p id="p_ycv_dgk_54b">If this CSS selector matches multiple elements, only the first element in the
+                document order will be used to extract the author.</p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_zcv_dgk_54b">
+            <dt>-oxy-pdf-meta-description</dt>
+            <dd>It is used to extract the publication description. You can use it by matching the
+              <xmlelement>meta</xmlelement> element with the attribute <codeph>name='description'</codeph>
+              or
+              <codeph>name='description'</codeph>:<codeblock outputclass="language-css" xml:space="preserve" id="codeblock_adv_dgk_54b">meta[name='description'], 
+meta[name='subject'] {
+    -oxy-pdf-meta-description: attr(content);
+}</codeblock></dd>
+            <dd>
+              <p id="p_bdv_dgk_54b">If this CSS selector matches multiple elements, only the first element in the
+                document order will be used to extract the description.</p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_cdv_dgk_54b">
+            <dt>-oxy-pdf-meta-keywords</dt>
+            <dd>It is used to extract the publication keywords. For example, you can use it by
+              matching the <xmlelement>meta</xmlelement> element with the attribute
+                <codeph>name='keywords'</codeph>. Its value should be a list of tokens, separated by
+              commas:<codeblock outputclass="language-css" xml:space="preserve" id="codeblock_ddv_dgk_54b">meta[name='keywords'] {
+    -oxy-pdf-meta-keywords: attr(content);
+}</codeblock></dd>
+            <dd>
+              <p id="p_edv_dgk_54b">If this CSS selector matches multiple elements, only the first element in the
+                document order will be used to extract the keywords.</p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_fdv_dgk_54b">
+            <dt>-oxy-pdf-meta-keyword</dt>
+            <dd>It is used to extract a single keyword. Individual keywords are accumulated from
+              elements that match the CSS rule that uses this property and then concatenated into a
+              single string. This single string is then set in the PDF 'keywords' section. For
+              example, if you mark keywords in your HTML document with a span with a "kw" class, you
+              can collect them all by
+              using:<codeblock outputclass="language-css" xml:space="preserve" id="codeblock_gdv_dgk_54b">span.kw {
+    -oxy-pdf-meta-keyword: content(text);
+}</codeblock></dd>
+          </dlentry>
+        </dl>
+      </p>
+      <p>
+        <dl id="dl_wkr_qlg_dqb">
+          <dlentry>
+            <dt>-oxy-pdf-meta-copyright</dt>
+            <dt>-oxy-pdf-meta-copyrighted</dt>
+            <dt>-oxy-pdf-meta-copyright-url</dt>
+            <dd>These properties define the copyright metadata. Acrobat Reader Pro, for example,
+              displays this in the <uicontrol>Details</uicontrol> tab of the
+                <uicontrol>File/Document Properties</uicontrol> dialog
+              box.<codeblock outputclass="language-css" xml:space="preserve" id="codeblock_xkr_qlg_dqb">meta[name='copyright'] {
+    -oxy-pdf-meta-copyright: attr(content);
+    -oxy-pdf-meta-copyrighted: copyrighted;
+    -oxy-pdf-meta-copyright-url: "https://my.company/copyright-notice.html";
+}</codeblock>The <codeph>-oxy-pdf-meta-copyright</codeph> property specifies the
+              copyright text for its value, the <codeph>-oxy-pdf-meta-copyrighted</codeph> property
+              specifies whether or not the publication is copyrighted (accepts only
+                <codeph>copyrighted</codeph> or <codeph>public-domain</codeph> for the value), and
+              the <codeph>-oxy-pdf-meta-copyright-url</codeph> property can be used to specify the
+              location of an external copyright notice.</dd>
+          </dlentry>
+        </dl>
+      </p>
+    </section>
+    <section id="section_lxd_42j_wz">
+      <title>Custom Meta Fields</title>
+      <p id="p_hdv_dgk_54b">Metadata is not restricted to the above cases. You may have custom
+        metadata fields. It is usually displayed in a tabular format (for example, in Acrobat Reader
+        ™, it is in the <uicontrol>Custom</uicontrol> tab in the <uicontrol>Properties</uicontrol>
+        dialog box). </p>
+      <p id="p_idv_dgk_54b">
+        <dl id="dl_jdv_dgk_54b">
+          <dlentry id="dlentry_kdv_dgk_54b">
+            <dt>-oxy-pdf-meta-custom</dt>
+            <dd>This property defines a list of pairs. Each pair contains the name and the value for
+              the meta information field. The pairs must be separated by a comma: <codeph>name1
+                value1, name2 value2</codeph></dd>
+            <dd>In the following example, all the HTML meta tags are dumped as custom meta fields in
+              the PDF:<codeblock outputclass="language-css" id="codeblock_ldv_dgk_54b">meta {
+    -oxy-pdf-meta-custom: attr(name) attr(content);
+}</codeblock>If you have a span that defines the document creation date somewhere in
+              the document content, you can use:</dd>
+            <dd>
+              <codeblock outputclass="language-css" id="codeblock_mdv_dgk_54b">span.created {
+    -oxy-pdf-meta-custom: "CreationDate" content(text);
+} </codeblock>
+            </dd>
+            <dd>
+              <p id="p_ndv_dgk_54b">In case of conflicts, when two or more elements trigger the setting of a meta field
+                with the same name, only the first definition of a meta field will be used in the
+                PDF output.</p>
+            </dd>
+          </dlentry>
+        </dl>
+      </p>
+    </section>
+  </body>
+</topic>

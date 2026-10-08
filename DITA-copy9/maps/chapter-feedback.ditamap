@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map id="chapter.feedback" title="Oxygen Feedback">  
+  <topicref href="../topics/ofb-introduction.dita" collection-type="sequence">
+    <topicmeta>
+      <shortdesc>An introduction, answers to frequently asked questions, and a Quick Start
+        Guide</shortdesc>
+    </topicmeta>
+    <topicref href="../topics/ofb-what-is-feedback.dita"/>
+    <topicref href="../topics/ofb-faq.dita"/>
+    <topicref href="../topics/ofb-quick-start-guide.dita"/>
+    <topicref
+      href="../topics/dita-to-webhelp-responsive-with-oxygen-feedback-from-authoring-to-publishing.dita"/>
+  </topicref>
+  <topicref href="../topics/ofb-installation-integration.dita" collection-type="sequence">
+    <topicmeta>
+      <shortdesc>Detailed instructions for installing and integrating <ph keyref="product"
+        /></shortdesc>
+    </topicmeta>
+    <topicref href="../topics/ofb-enterprise-server-guide.dita" collection-type="sequence"
+      product="feedback-enterprise">
+      <topicref href="../topics/ofbENT-installation-docker.dita"/>
+      <topicref href="../topics/ofbENT-how-to-configure-OTSS.dita"/>
+      <topicref href="../topics/ofbENT-database-setup-feedback.dita"/>
+      <topicref href="../topics/ofbENT-database-setup-otss.dita"/>
+      <topicref href="../topics/ofbENT-configure_http_proxy.dita"/>
+      <topicref href="../topics/ofbENT-how_to_configure_LDAP.dita"/>
+      <topicref href="../topics/ofbENT-set_up_oauth.dita"/>
+      <topicref href="../topics/ofbENT-google-recaptcha.dita"/>
+      <topicref href="../topics/ofbENT-access_instance_logs.dita"/>
+      <topicref href="../topics/ofbENT-gzip-compression.dita"/>
+      <topicref href="../topics/ofbENT-https-procedure.dita"/>
+      <topicref href="../topics/ofb-migrate-from-webHelp-feedback-system.dita"/>
+      <topicref href="../topics/ofbENT-change-link-to-privacy-terms.dita"/>
+      <topicref href="../topics/ofbENT-how-to-upgrade-on-linux.dita"/>
+      <topicref href="../topics/ofbENT-how-to-upgrade-V2_x-on-linux.dita"/>
+      <topicref href="../topics/ofbENT-how-to-set-application-properties.dita"/>
+      <topicref href="../topics/ofbENT-how-to-set-email-notifications.dita"/>
+    </topicref>
+    <topicref href="../topics/ofb-signing-up.dita"/>
+    <topicref href="../topics/ofb-installing-feeback.dita" collection-type="sequence">
+      <topicref href="../topics/ofb-installing-feeback-oxygen.dita"/>
+      <topicref href="../topics/ofb-installing-feeback-command-line.dita"/>
+      <topicref href="../topics/ofb-installing-feeback-all-platforms.dita"/>
+      <topicref href="../topics/ofb-light-dark-theme-support.dita"/>
+    </topicref>
+  </topicref>
+  <topicref href="../topics/ofb-administrator-guide.dita" collection-type="sequence">
+    <topicmeta>
+      <shortdesc>Information about managing and configuring <ph keyref="product"/></shortdesc>
+    </topicmeta>
+    <topicref href="../topics/ofb-dashboard.dita"/>
+    <topicref href="../topics/ofbENT-admin-area.dita" product="feedback-enterprise">
+      <topicref href="../topics/ofb-subscription-ENT.dita" product="feedback-enterprise"/>
+    </topicref>
+    <topicref href="../topics/ofb-sites-page.dita">
+      <topicref href="../topics/ofb-creating-site.dita" chunk="to-content">
+        <topicref href="../topics/ofb-site-settings-page.dita"/>
+        <topicref href="../topics/ofb-site-initial-version.dita"/>
+        <topicref href="../topics/ofb-site-installation.dita"/>
+      </topicref>
+      <topicref href="../topics/ofb-site-dashboard.dita"/>
+      <topicref href="../topics/ofb-moderating-comments.dita"/>
+      <topicref href="../topics/ofb-ai-threads.dita"/>
+      <topicref href="../topics/ofb-community-management.dita">
+        <topicref href="../topics/ofb-user-roles-matrix.dita"/>
+      </topicref>
+      <topicref href="../topics/ofb-statistics.dita"/>
+      <topicref href="../topics/ofb-page-ratings.dita"/>
+      <topicref href="../topics/ofb-site-settings.dita" collection-type="sequence">
+        <topicref href="../topics/ofb-editing-site.dita"/>
+        <topicref href="../topics/ofb-version-management.dita"/>
+        <topicref href="../topics/ofb-team-management.dita"/>
+      </topicref>
+    </topicref>
+    <topicref href="../topics/ofb-usage-statistics.dita"/>
+    <topicref href="../topics/ofb-members-page.dita">
+      <topicref href="../topics/ofb-user-roles-matrix.dita" copy-to="../topics/ofb-user-roles-matrix-x.dita"/>
+    </topicref>
+    <topicref href="../topics/ofb-organization-profile-page.dita"/>
+    <topicref href="../topics/ofb-technical-support-page.dita"/>
+    <topicref href="../topics/ofb-subscription.dita" product="feedback"/>
+    <topicref href="../topics/ofb-feedback-comments-manager-overview.dita"/>
+    <topicref href="../topics/ofb-localization.dita"/>
+    <topicref href="../topics/ofb-block-level-comments.dita"/>
+    <topicref href="../topics/ofb-add-custom-content-before-after-feedback-component.dita"/>
+    <topicref href="../topics/ofbENT-how-to-change-name-logo-favicon.dita"
+      product="feedback-enterprise"/>
+  </topicref>
+  <topicref href="../topics/ofb-commenters-guide.dita">
+    <topicmeta>
+      <shortdesc>Information about adding and managing comments in the output</shortdesc>
+    </topicmeta>
+  </topicref>
+  <topicref href="../topics/ofb-whr-search-engine.dita">
+    <topicmeta>
+      <shortdesc>Information about using advanced search functionality</shortdesc>
+    </topicmeta>
+    <topicref href="../topics/ofb-content-indexing.dita">
+      <topicref href="../topics/ofb-multi-language-support.dita"/>
+      <topicref href="../topics/ofb-automatic-re-indexing.dita"/>
+      <topicref href="../topics/ofb-index-status.dita"/>
+    </topicref>
+    <topicref href="../topics/ofb-searching-webhelp-responsive-output.dita">
+      <topicref href="../topics/ofb-semantic-search.dita">
+        <topicref href="../topics/ofb-configuring-openai-connection.dita"/>
+        <topicref href="../topics/ofb-impose-rate-limits.dita"/>
+      </topicref>
+      <topicref href="../topics/ofb-faceted-search.dita"/>
+      <topicref href="../topics/ofb-advanced-search.dita"/>
+      <topicref href="../topics/ofb-labeling-content.dita"/>
+    </topicref>
+    <topicref href="../topics/ofb-ai-features.dita">
+      <topicref href="../topics/ofb-ai-assistant.dita"/>
+      <topicref href="../topics/ofb-ai-search-summary.dita"/>
+    </topicref>
+  </topicref>
+  <topicref href="../topics/ofb-account-management.dita" collection-type="sequence">
+    <topicmeta>
+      <shortdesc>Information about managing your account and profile</shortdesc>
+    </topicmeta>
+    <topicref href="../topics/ofb-logging-in.dita"/>
+    <topicref href="../topics/ofb-profile-management.dita"/>
+    <topicref href="../topics/ofb-site-notifications.dita"/>
+    <topicref href="../topics/ofb-forgot-password.dita"/>
+    <topicref href="../topics/ofb-recover-organization-id.dita"/>
+  </topicref>
+  <topicref href="../topics/ofb-troubleshooting.dita" collection-type="sequence">    
+    <topicmeta>
+      <shortdesc>Information about troubleshooting issues and browser compatibility</shortdesc>
+    </topicmeta>
+    <topicref href="../topics/ofb-browser-compatibility.dita"/>
+    <topicref href="../topics/ofb-troubleshooting-cannot-login.dita" product="feedback-enterprise"/>
+    <topicref href="../topics/ofb-cannot-load-oxygen-feedback-comments-application.dita"/>
+    <topicref href="../topics/ofb-troubleshooting-comments-gone.dita"/>
+    <topicref href="../topics/ofb-troubleshooting-emails-not-received.dita"/>
+    <topicref href="../topics/ofb-error-messages.dita"/>
+    <topicref href="../topics/ofb-troubleshooting-orphaned-block-level-comments.dita"/>
+    <topicref href="../topics/ofb-restricted-access-to-cookies.dita"/>
+  </topicref>
+</map>

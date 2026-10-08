@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="caret-navigation">
+  <title>Cursor Navigation Preferences</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Preferences<indexterm>Cursor Navigation</indexterm></indexterm>
+        <indexterm>Cursor navigation preferences</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_vr4_bgk_54b"><ph keyref="product"/> allows you to configure the appearance and behavior
+      of the cursor in the <uicontrol>Author</uicontrol> mode editor. To set cursor navigation
+      preferences, <ph conkeyref="reusables-preferences-pages/open-the-preferences-page"/> and go to <menucascade>
+        <uicontrol>Author</uicontrol>
+        <uicontrol>Cursor Navigation</uicontrol>
+      </menucascade>.</p>
+    <p id="p_wr4_bgk_54b">The following options are available:<dl id="dl_xr4_bgk_54b">
+        <dlentry id="dlentry_yr4_bgk_54b">
+          <dt><uicontrol>Highlight elements near cursor</uicontrol></dt>
+          <dd>When this option is selected, the element that contains the cursor is highlighted. If
+            the cursor is between two elements, both of them are highlighted. You can use the color
+            picker to choose the color of the highlight.</dd>
+        </dlentry>
+        <dlentry id="show-cursor-postion-tooltip">
+          <dt><uicontrol>Show cursor position tooltip</uicontrol></dt>
+          <dd><ph keyref="product"/> uses <xref
+              href="../topics/author-position-information.dita#author-position-information"
+              product="author editor authorEclipse editorEclipse">tooltips</xref><ph product="json"
+              >tooltips</ph> in <uicontrol>Author</uicontrol> mode to indicate the position of the
+            cursor in the element structure of the underlying document. Depending on context, the
+            tooltips may show the current element name or the names of the elements before and after
+            the current cursor position.</dd>
+        </dlentry>
+        <dlentry id="show-location-tooltip">
+          <dt><uicontrol>Show location tooltip on mouse move</uicontrol></dt>
+          <dd>When this option is selected, <ph keyref="product"/> displays <xref
+              href="author-position-information.dita#author-position-information/location_tooltip"
+              product="author editor authorEclipse editorEclipse"><term>Location
+              Tooltips</term></xref><ph product="json">tooltips</ph> when you are editing the
+            document in certain tags display modes (<uicontrol>Inline Tags</uicontrol>,
+              <uicontrol>Partial Tags</uicontrol>, <uicontrol>No Tags</uicontrol>) or when the mouse
+            pointer is moved between <xref keyref="glossentry_block-element"><term>block
+                elements</term></xref>.</dd>
+        </dlentry>
+        <dlentry id="dlentry_zr4_bgk_54b">
+          <dt><uicontrol>Quick up/down navigation</uicontrol></dt>
+          <dd>This option is deselected by default and this means that when you navigate using the
+            up and down arrow keys in <uicontrol>Author</uicontrol> mode, the cursor is placed
+            within each of the underlying XML elements between two blocks of text (the cursor
+            changes to a horizontal line when it is between blocks of text). This allows you to
+            easily insert elements and manage the structure of your XML content. However, if this
+            option is selected, the cursor ignores the XML structure and jumps from one line of text
+            to another, similar to how the cursor behaves in a word processor.</dd>
+        </dlentry>
+        <dlentry id="enable-navigation-cells">
+          <dt><uicontrol>Quick navigation in tables</uicontrol></dt>
+          <dd>This option is selected by default and this means that when navigating between table
+            cells with the arrow keys, the cursor jumps from one cell to another. If this option is
+            not selected, the cursor navigates between XML nodes when navigating between table cells
+            with the arrow keys.</dd>
+        </dlentry>
+        <dlentry id="dlentry_as4_bgk_54b">
+          <dt><uicontrol>Avoid positioning the cursor between blocks after a
+            deletion</uicontrol></dt>
+          <dd>If selected (default), the cursor will not stay between block element sentinels after
+            a deletion is performed. </dd>
+        </dlentry>
+        <dlentry id="arrow-keys-writing-direction">
+          <dt><uicontrol>Arrow keys move the cursor in the writing direction</uicontrol></dt>
+          <dd>This setting determines how the left and right arrow keys behave in
+              <uicontrol>Author</uicontrol> mode for bidirectional (BIDI) text. When this option is
+            selected (default value), the right arrow key advances the cursor in the reading
+            direction and the left arrow moves it in the opposite direction. When this option is not
+            selected, pressing the right arrow will simply move the cursor to the right (and the
+            left arrow moves it to the left), regardless of the text direction.</dd>
+        </dlentry>
+      </dl></p>
+  </body>
+</topic>

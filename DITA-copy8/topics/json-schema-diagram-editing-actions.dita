@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="json-schema-diagram-editing-actions">
+  <title>Editing Actions in JSON Schema Design Mode</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>JSON Schema diagram editor<indexterm>Editing actions</indexterm></indexterm>
+        <indexterm>JSON Schema Design Mode<indexterm>Editing actions</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_jqb_cgk_54b">The JSON Schema <uicontrol>Design</uicontrol> mode includes various
+      editing features, including:<ul id="ul_y1c_xxh_2rb">
+        <li id="li_sv5_zb3_2rb">You can edit a JSON Schema using various <xref
+            href="json-schema-contextual-menu-actions.dita">contextual menu actions</xref>.</li>
+        <li id="li_ejl_f3b_jsb">You can copy/paste or drag/drop to move existing components to other
+          locations in an JSON Schema. You can also use the Move Up/Down actions to change the order
+          of the components in a parent.</li>
+        <li id="li_lcr_jb3_2rb">You can edit schema components directly in the diagram. For these
+          components, you can edit the name and the additional properties presented in the diagram
+          by double-clicking the value you want to edit. If you want to edit the name of a selected
+          component, you can also press <uicontrol><shortcut>Enter</shortcut></uicontrol>. The list
+          of properties that can be displayed for each component can be customized <xref
+            href="preferences-editor-json-properties.dita">in the JSON Schema Properties preferences
+            page</xref>.</li>
+      <li id="li_grm_fc3_2rb">When switching between editing modes, the cursor position is
+          synchronized. For example, if you switch from <uicontrol>Design</uicontrol> to
+            <uicontrol>Text</uicontrol> mode, the cursor will be in the same position within the
+          document in <uicontrol>Text</uicontrol> mode as it was in <uicontrol>Design</uicontrol>
+          mode, and vice versa.</li>
+        <li id="li_m4q_v4n_rsb">The content completion assistant can be used for in-place editing
+          within the JSON schema <uicontrol>Design</uicontrol> mode. For example, when editing
+          properties, you can use <uicontrol><shortcut>Ctrl+Space</shortcut></uicontrol> to invoke
+          the content completion window and the proposals are offered based on the defined JSON
+          schema, according to the version used.</li>
+        <li id="li_h3l_5fj_4xb">You can drag properties/definitions from the
+            <uicontrol>Outline</uicontrol> view and drop them into appropriate location in the
+          diagram editor.</li>
+    </ul></p>
+  </body>
+</topic>

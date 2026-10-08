@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ofb-version-management">
+  <title>Version Settings</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Site versions</indexterm>
+        <indexterm>Versions</indexterm>
+        <indexterm>Edit versions</indexterm>
+        <indexterm>Site Versions page</indexterm>
+      </keywords>
+      <keywords>
+        <keyword outputclass="label">WebHelp Output</keyword>
+        <keyword outputclass="label">Site Configuration</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_uyw_dgk_54b">The <uicontrol>Site Versions</uicontrol> page can be used to add or edit
+      versions for a site configuration and you can choose to install a particular version in your
+      website or WebHelp output. Each site configuration can have multiple versions. This is useful
+      if you have multiple versions of the output (for example, multiple versions of published
+      technical documentation or multiple article revisions). To reach this page, click the
+          <uicontrol><image href="../img/ofb-Versions15.png" id="image_txz_51g_gjb"
+        />Versions</uicontrol> link in the left menu bar in the interface for a particular site
+      configuration. Each version for a site configuration is displayed as a tile. Each tile
+      displays the version, the creation date, and the URL for the particular version.</p>
+    <p>Versions that do not have any page views detected in the output have a warning icon (<image
+        href="../img/ofb-Warn16.png"/>) and message (<uicontrol>This version has no page
+        views</uicontrol>) displayed in the tile. No page views usually means that the site/version
+      has not been installed so these warnings are meant to offer troubleshooting hints.</p>
+    <p id="p_vyw_dgk_54b">
+      <fig id="fig_yf3_ys2_gjb">
+        <title>Site Versions Page</title>
+        <image href="../img/ofb-site-versions.png" id="image_it2_1t2_gjb"/>
+      </fig>
+    </p>
+    <p id="p_wyw_dgk_54b">This page includes the following actions:</p>
+    <p id="p_xyw_dgk_54b">
+      <dl id="dl_yyw_dgk_54b">
+        <dlentry id="dlentry_zyw_dgk_54b">
+          <dt>Add Version</dt>
+          <dd>
+            <p id="p_azw_dgk_54b">To add a new version, click the <uicontrol>Add Version</uicontrol> button on the
+              right side of the page. This initiates a two-step wizard for configuring the new
+              version.</p>
+            <p id="p_bzw_dgk_54b">
+              <dl id="dl_czw_dgk_54b">
+                <dlentry id="dlentry_dzw_dgk_54b">
+                  <dt>Step 1 - Settings</dt>
+                  <dd>
+                    <p id="p_ezw_dgk_54b">This wizard page includes the following options:</p>
+                    <p id="p_k4z_h4x_5wb">
+                      <dl id="dl_vpd_34x_5wb">
+                        <dlentry id="dlentry_wpd_34x_5wb">
+                          <dt>Name</dt>
+                          <dd>Specifies the name of the version for the site configuration. Each
+                            site configuration can have multiple versions. This is useful if you
+                            plan to have multiple versions of the output (for example, multiple
+                            versions of published technical documentation or multiple article
+                            revisions).</dd>
+                        </dlentry>
+                        <dlentry id="dlentry_wdy_34x_5wb">
+                          <dt>Base URL</dt>
+                          <dd>Use this option to specify the <uicontrol>Base URL</uicontrol> for
+                            your website. Only <codeph>http</codeph> and <codeph>https</codeph>
+                            protocols are allowed and it must NOT point to a file (e.g.
+                              <filepath>http://example.com/index.html</filepath> is not
+                              allowed).<note conkeyref="reusables-feedback/site-base-url-note"
+                              id="note_s4r_j4x_5wb"/></dd>
+                        </dlentry>
+                        <dlentry id="dlentry_j1l_k4x_5wb">
+                          <dt>Creation Date</dt>
+                          <dd>Use this option to specify a creation date. This date is displayed in
+                            the tile for the particular version in the <uicontrol>Site
+                              Versions</uicontrol> page.</dd>
+                        </dlentry>
+                        <dlentry id="dlentry_xrh_l4x_5wb">
+                          <dt>Show Comments from Older Versions</dt>
+                          <dd>By default, comments are only displayed for the current version.
+                            However, you can select this option to choose to also show comments from
+                            either <uicontrol>All Versions</uicontrol> or <uicontrol>All Versions
+                              Starting with</uicontrol> a particular version number.<note type="tip"
+                              id="note_sdb_m4x_5wb">The version number is displayed on the
+                              right-hand side of the comment box in both the output and in the <xref
+                                href="ofb-moderating-comments.dita"><uicontrol>Comments</uicontrol>
+                                page</xref>.</note></dd>
+                        </dlentry>
+                        <dlentry>
+                          <dt>Display in-place error message for comments component</dt>
+                          <dd>Select this option if you want an error message to be displayed
+                            directly in the location where the comments component should appear if
+                            any issues arise during the integration process. A hyperlink is also
+                            displayed that directs you to a user guide topic to help you
+                            troubleshoot the issue.<note type="tip">It is recommended to keep this
+                              feature enabled during the initial setup or when making changes to
+                              your site configuration. This can help identify and resolve
+                              integration issues.</note></dd>
+                        </dlentry>
+                        <dlentry id="dlentry_hfg_m4x_5wb">
+                          <dt>Enable Content Indexing</dt>
+                          <dd>Select this option to enable content indexing for this version and you
+                            can specify the language that will be used while indexing and searching
+                            the output. For more details, see <xref
+                              href="#./content-indexing-search"/>.</dd>
+                        </dlentry>
+                      </dl>
+                    </p>
+                    <p id="p_lzw_dgk_54b">Click the <uicontrol>Continue</uicontrol> button to proceed to the next
+                      wizard page.</p>
+                  </dd>
+                </dlentry>
+                <dlentry id="dlentry_mzw_dgk_54b">
+                  <dt>Step 2 - Installation</dt>
+                  <dd>
+                    <p id="p_nzw_dgk_54b">The second wizard page includes options for choosing how to install the
+                      particular version of the Feedback system. There are three options:</p>
+                    <p conkeyref="reusables-feedback/installation-options" id="p_ozw_dgk_54b"/>
+                  </dd>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+        <dlentry id="dlentry_pzw_dgk_54b">
+          <dt>Settings</dt>
+          <dd>
+            <p id="p_qzw_dgk_54b">To edit an existing version, click the
+                <uicontrol>Settings</uicontrol> button at the bottom-right corner of the tile for a
+              particular version. This opens an <uicontrol>Version settings</uicontrol> page.</p>
+            <p id="p_uyq_chg_pwb">
+              <fig id="fig_j5j_dhg_pwb">
+                <title>Version Settings Page</title>
+                <image href="../img/ofb-site-versions-settings.png"/>
+              </fig>
+            </p>
+            <p id="p_j12_mhg_pwb"> This settings page includes the following options:</p>
+            <p id="p_yvb_snx_5wb">
+              <dl id="dl_yw3_snx_5wb">
+                <dlentry id="dlentry_zw3_snx_5wb">
+                  <dt>Name</dt>
+                  <dd>Specifies the name of the version for the new site configuration version.</dd>
+                </dlentry>
+                <dlentry id="dlentry_zgl_tnx_5wb">
+                  <dt>Base URL</dt>
+                  <dd>Use this option to specify the <uicontrol>Base URL</uicontrol> for your
+                    website.</dd>
+                </dlentry>
+                <dlentry id="dlentry_qng_5nx_5wb">
+                  <dt>Creation Date</dt>
+                  <dd>Use this option to specify a creation date. This date is displayed in the tile
+                    for the particular version in the <uicontrol>Site Versions</uicontrol>
+                    page.</dd>
+                </dlentry>
+                <dlentry id="dlentry_j1f_vnx_5wb">
+                  <dt>Show Comments from Older Versions</dt>
+                  <dd>By default, comments are only displayed for the current version. However, you
+                    can click the <uicontrol>Edit</uicontrol> button to the right of this option to
+                    choose to also show comments from either <uicontrol>All Versions</uicontrol> or
+                      <uicontrol>All Versions Starting with</uicontrol> a particular version number.
+                    Make sure you click the <uicontrol>Save</uicontrol> button (that replaces the
+                      <uicontrol>Edit</uicontrol> button) after making a change.</dd>
+                </dlentry>
+                <dlentry>
+                  <dt>Display in-place error message for comments component</dt>
+                  <dd>Select this option if you want an error message to be displayed directly in
+                    the location where the comments component should appear if any issues arise
+                    during the integration process. A hyperlink is also displayed that directs you
+                    to a user guide topic to help you troubleshoot the issue.</dd>
+                </dlentry>
+                <dlentry id="content-indexing-search">
+                  <dt>WebHelp Responsive Content Indexing and AI Features</dt>
+                  <dd><p id="p_zly_ynx_5wb">
+                      <note id="note_w2d_znx_5wb" type="other" othertype="Prerequisites">
+                        <ul>
+                          <li>The output must be generated using <b>Oxygen WebHelp</b> version 25 or
+                            later.</li>
+                          <li product="feedback">The website that will be indexed but be
+                            public.</li>
+                          <li product="feedback-enterprise">The website that will be indexed but be
+                            accessible to the <b>Oxygen Feedback</b> server.</li>
+                          <li>The root directory of the published output must include the
+                              <filepath>sitemap.xml</filepath> file that is generated by the
+                              <b>Oxygen XML WebHelp Responsive</b> transformation (it contains all
+                            the files that should be indexed).</li>
+                        </ul>
+                      </note>
+                    </p><p id="p_cbz_b4x_5wb">Use this option to enable/disable content indexing and
+                      to configure search functions. When content indexing is enabled for a site's
+                      version, the corresponding WebHelp Responsive output will use <b>Oxygen
+                        Feedback</b> as the search engine when users search the published content.
+                      If content indexing is disabled, the search will be performed using the JS
+                      Search Engine bundled in the WebHelp Responsive output.</p><p>The
+                        <i>Configuration Overview</i> shows which features in this section are
+                      enabled. Click the <uicontrol>Edit</uicontrol> button to the right of the
+                      section to expand it and expose the configurable options (<uicontrol>Enable
+                        content indexing</uicontrol> must be selected to access the additional
+                      options in this section).</p><p id="p_lv3_f4x_5wb">Once the content indexing
+                      is enabled, you can choose the language that the search engine will use for
+                      the indexing and which AI features are enabled.</p><p id="p_jss_5gq_ncc"
+                          ><u><b>AI Features</b></u><note id="note_pgs_jgq_ncc" type="notice">To use
+                        the AI features, you must have an AI-ready subscription. See <xref
+                          href="https://www.oxygenxml.com/oxygen_feedback/buy_feedback.html"
+                          format="html" scope="external"/> for information about the available
+                        subscription plans.</note></p>The <uicontrol>AI Features</uicontrol> section
+                    contains options for configuring AI-enhanced search functionality. These
+                    AI-related options are available if you have configured <ph keyref="product"/>
+                    to <xref href="ofb-configuring-openai-connection.dita">connect to <tm
+                        tmtype="tm">OpenAI</tm> on your behalf</xref> in the <xref
+                      href="ofb-organization-profile-page.dita"><i>Organization Profile</i>
+                      page</xref>.<ul id="ul_df2_f15_m1c">
+                      <li id="li_ef2_f15_m1c"><uicontrol>Enable semantic search</uicontrol> -
+                        Activates <xref href="ofb-semantic-search.dita">functionality to enable
+                          semantic searches</xref>, an advanced search technique that aims to
+                        improve the accuracy and relevance of search results by understanding the
+                        context and meaning behind the search query, rather than relying solely on
+                        keyword matching.</li>
+                      <li id="li_hfs_m15_m1c"><uicontrol>Enable AI Assistant</uicontrol> - If
+                        selected, WebHelp sites that have <ph keyref="product"/> installed will have
+                        an <xref href="ofb-ai-assistant.dita"><uicontrol>AI Assistant</uicontrol>
+                          button</xref> displayed in the lower-right corner of each page that will
+                        allow users to interact with the <xref href="ofb-ai-assistant.dita">AI
+                          Assistant</xref> to help find answers to questions and find information
+                        quickly and accurately.</li>
+                      <li id="li_wxn_w5t_pbc"><uicontrol>Enable Assistant debug mode</uicontrol> -
+                        Selecting this option enables the debug mode for the <xref
+                          href="ofb-ai-assistant.dita">AI Assistant</xref>. When enabled, a
+                          <uicontrol>Debug</uicontrol> button appears at the bottom of the chat
+                        window for users with a <xref href="ofb-user-roles-matrix.dita">role of
+                            <i>Admin</i> or <i>Owner</i></xref>. Clicking the button displays the
+                        complete set of interactions between <ph keyref="product"/> and the AI. </li>
+                      <li id="li_qsb_4sm_5bc"><uicontrol>Enable AI-enhanced search
+                          summary</uicontrol> - If selected, when a user enters a search query in
+                        the WebHelp search results page, an AI-generated response to the search
+                        query is displayed before the usual search results. The response is
+                        generated using the <xref href="ofb-ai-assistant.dita">AI Assistant</xref>
+                        based upon information found in the current publication. </li>
+                    </ul><note id="note_m5k_r5f_mcc" type="notice">The <uicontrol>AI
+                        Assistant</uicontrol> and <uicontrol>AI-enhanced Search Summary</uicontrol>
+                      features can generate costs. It is recommended to use support from OpenAI to
+                      configure a budget limit on the <xref
+                        href="https://platform.openai.com/account/api-keys" format="html"
+                        scope="external">API key</xref> configured for the organization.</note><p
+                      id="p_lv3_f4x_5wbss">Make sure you click the <uicontrol>Save</uicontrol>
+                      button (that replaces the <uicontrol>Edit</uicontrol> button) after making a
+                      change.</p><p id="p_mv3_f4x_5wb"><uicontrol>Status</uicontrol> shows you the
+                      current status of the indexing. To the right of that is a <uicontrol><image
+                          href="../img/ofb-check-index.png"/>Check Index Status</uicontrol> button
+                      that can be used to query the OTSS server for the status of the current
+                      content indexing.</p><p id="p_nv3_f4x_5wb">Click the
+                        <uicontrol>Index</uicontrol> button to manually trigger an indexing. It then
+                      shows how often the indexing will automatically be triggered when there is a
+                      change in the content. After clicking the <uicontrol>Index</uicontrol> button,
+                      the following buttons are available under the status:<ul id="ul_eqd_5ym_dfc">
+                        <li id="li_fqd_5ym_dfc"><uicontrol>Reindex</uicontrol> - Triggers a new
+                          indexing operation.</li>
+                        <li id="li_xhg_vym_dfc"><uicontrol>Delete</uicontrol> - Deletes the
+                          associated index.</li>
+                        <li id="li_pmc_wym_dfc"><uicontrol>Log File</uicontrol> - Download the log
+                          file for the latest indexing operation.</li>
+                      </ul></p><p id="p_jnb_swz_2xb">
+                      <note id="note_s3h_swz_2xb" type="tip">For more details about the content
+                        indexing functionality, watch our webinar: <xref
+                          href="https://www.oxygenxml.com/events/2023/webinar_how_to_enable_content_indexing_and_search_in_Oxygen_feedback_3_0.html"
+                          format="html" scope="external">How to Enable Content Indexing and Search
+                          in <b>Oxygen Feedback 3.0</b></xref>.</note>
+                    </p></dd>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+        <dlentry id="install-version">
+          <dt>Installation</dt>
+          <dd>
+            <p id="p_xzw_dgk_54b">To install an existing version, click the <uicontrol>Installation</uicontrol> button
+              at the bottom-left corner of the tile for a particular version. This opens an <xref
+                href="ofb-site-installation.dita"><uicontrol>Installation Instructions</uicontrol>
+                page</xref> where you can choose how to install the particular version of the
+              Feedback system. There are three options:</p>
+            <p conkeyref="reusables-feedback/installation-options" id="p_yzw_dgk_54b"/>
+          </dd>
+        </dlentry>
+        <dlentry id="dlentry_l4q_3m4_s2c">
+          <dt>Duplicate (available from the vertical ellipsis <image
+              href="../img/ofb-ellipse-gray.png"/> menu)</dt>
+          <dd>To duplicate a version, click the vertical ellipsis (<image
+              href="../img/ofb-ellipse-gray.png"/>) in the bottom-right corner of the version tile
+            and select <uicontrol>Duplicate</uicontrol>. This makes a copy of the duplicated version
+            and re-opens the settings page where you can configure the version settings for the new
+              version.<note id="note_pxj_d1k_shc">The <uicontrol>Duplicate</uicontrol> action will
+              automatically trigger an indexing operation if the original version has <xref
+                href="#./dlentry_hfg_m4x_5wb">content indexing enabled</xref>.</note></dd>
+        </dlentry>
+        <dlentry id="dlentry_tkb_ftm_dfc">
+          <dt>Delete (available from the vertical ellipsis <image href="../img/ofb-ellipse-gray.png"
+            /> menu)</dt>
+          <dd>To delete a version, click the vertical ellipsis (<image
+              href="../img/ofb-ellipse-gray.png"/>) in the bottom-right corner of the version tile
+            and select <uicontrol>Delete</uicontrol>. You will be asked to confirm the operation and
+            if you proceed, all comments for this particular version will be lost. The associated
+            text search index is also deleted.</dd>
+        </dlentry>
+      </dl>
+    </p>
+  </body>
+</topic>

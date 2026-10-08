@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE troubleshooting PUBLIC "-//OASIS//DTD DITA Troubleshooting//EN" "troubleshooting.dtd">
+<troubleshooting id="cannot-connect-to-svn-repository">
+  <title>Cannot Connect to SVN Repository from Repositories View</title>
+  <troublebody>
+    <condition id="problem">
+      <title>Problem</title>
+      <p id="p_mdk_dgk_54b">I cannot connect to an SVN repository from the <uicontrol>Repositories</uicontrol> view of
+        SVN Client. How can I find more details about the error?</p>
+    </condition>
+    <troubleSolution>
+      <remedy id="solution">
+        <title>Solution</title>
+        <steps-informal>
+          <p id="p_ndk_dgk_54b">First check that you entered the correct URL of the repository in
+            the <uicontrol>Repositories</uicontrol> view. Also,  check that an SVN server is running
+            on the server machine specified in the repository URL and is accepting connections from
+            SVN clients. You can check that the SVN server accepts connections with the command-line
+            SVN client from CollabNet.</p>
+          <p id="p_odk_dgk_54b">If you try to access the repository with an <codeph>svn+ssh</codeph> URL, also check
+            that an SSH server is running on port 22 on the server machine specified in the URL.</p>
+          <p id="p_pdk_dgk_54b">If the above conditions are verified and you cannot connect to the SVN repository,
+            generate logging files on your computer and send them to <ph keyref="supportEmail"/>.
+            For generating the logging files, follow these steps:<ol id="ol_wdj_44r_js">
+              <li id="li_qdk_dgk_54b">Create a text file called <filepath>logback.xml</filepath> in
+                the application installation folder with the following content:
+                <codeblock outputclass="language-ini" id="codeblock_rdk_dgk_54b">&lt;configuration>
+    &lt;appender name="R2" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        &lt;file>${user.home}/Desktop/oxygenLog/oxygen.log&lt;/file>
+        &lt;rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            &lt;fileNamePattern>${user.home}/Desktop/oxygenLog/oxygen%i.log.gz&lt;/fileNamePattern>
+            &lt;minIndex>1&lt;/minIndex>
+            &lt;maxIndex>20&lt;/maxIndex>
+        &lt;/rollingPolicy>
+        &lt;triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            &lt;maxFileSize>12MB&lt;/maxFileSize>
+        &lt;/triggeringPolicy>
+        &lt;encoder>
+            &lt;pattern>%r %marker %p [ %t ] %c - %m%n&lt;/pattern>
+        &lt;/encoder>
+    &lt;/appender> 
+    
+    &lt;root level="debug">
+        &lt;appender-ref ref="R2" />
+    &lt;/root>
+&lt;/configuration></codeblock></li>
+              <li id="li_sdk_dgk_54b">Restart the application.</li>
+              <li id="li_tdk_dgk_54b">Reproduce the error.</li>
+              <li id="li_udk_dgk_54b">Close the application.</li>
+              <li id="li_vdk_dgk_54b">Delete the <filepath>logback.xml</filepath> file because it
+                might cause performance issues if you leave it in the installation folder. <note
+                  type="important" id="note_wdk_dgk_54b">The logging mode may severely decrease the
+                  performance of the application. Therefore, do not forget to delete the
+                    <filepath>logback.xml</filepath> file when you are done with the
+                  procedure.</note></li>
+            </ol></p>
+          <p id="p_xdk_dgk_54b"><b>Result:</b> The resulting logging files are named <filepath>oxygen.log</filepath>
+            and <filepath>oxygen#.log.qz</filepath> (for example, <filepath>oxygen.log</filepath>,
+              <filepath>oxygen1.log.gz</filepath>, <filepath>oxygen2.log.gz</filepath>, etc.) and
+            are located in the <filepath>Desktop\oxygenLog</filepath> folder.</p>
+        </steps-informal>
+      </remedy>
+    </troubleSolution>
+  </troublebody>
+</troubleshooting>

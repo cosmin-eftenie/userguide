@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="validation-resolve-schema-ref-with-xml-catalog">
+  <title>Resolving References to Remote Schemas with an XML Catalog</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>XML documents<indexterm>Validation<indexterm>Resolving references to remote
+              schemas</indexterm></indexterm></indexterm>
+        <indexterm>Validating XML Documents<indexterm>Resolving references to remote
+            schemas</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_pkz_bgk_54b">When a reference to a remote schema must be used in the validated XML document for
+      interoperability purposes, but a local copy of the schema should actually be used for
+      performance reasons, the reference can be resolved to the local copy of the schema with an
+        <xref keyref="glossentry_xml-catalog"><term>XML Catalog</term></xref>.</p>
+    <p id="p_qkz_bgk_54b">For example, if the XML document contains a reference to a remote schema
+        <filepath>docbook.rng</filepath> like this:</p>
+    <codeblock outputclass="language-xml" id="codeblock_rkz_bgk_54b">&lt;?xml-model href="http://www.oasis-open.org/docbook/xml/5.0/rng/docbook.rng" 
+    type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?&gt;</codeblock>
+    <p id="p_skz_bgk_54b">it can be resolved to a local copy with a catalog entry like this:</p>
+    <codeblock outputclass="language-xml" id="codeblock_tkz_bgk_54b">&lt;uri name="http://www.oasis-open.org/docbook/xml/5.0/rng/docbook.rng" 
+    uri="rng/docbook.rng"/&gt;</codeblock>
+    <p id="p_ukz_bgk_54b">An <term>XML Catalog</term> can also be used to map an XML Schema specified with a URN in
+      the <xmlatt>xsi:schemaLocation</xmlatt> attribute of an XML document to a local copy of the
+      schema. For example, if the XML document specifies the schema with:</p>
+    <codeblock outputclass="language-xml" id="codeblock_vkz_bgk_54b">&lt;topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:oasis:names:tc:dita:xsd:topic.xsd:1.1"&gt;</codeblock>
+    <p id="p_wkz_bgk_54b">the URN can be resolved to a local schema file with a catalog entry like this:</p>
+    <codeblock outputclass="language-xml" id="codeblock_xkz_bgk_54b">&lt;uri name="urn:oasis:names:tc:dita:xsd:topic.xsd:1.1"
+    uri="topic.xsd"/&gt;</codeblock>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link href="using-XML-Catalogs.dita#using-XML-Catalogs"/>
+    </linklist>
+  </related-links>
+</topic>

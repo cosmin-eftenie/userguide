@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_tables">
+  <title>Tables</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+          ><ph keyref="pdf-html5-transformation"/><indexterm>Tables</indexterm></indexterm>
+        <indexterm product="pdf-css ope">Tables</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_dv5_cgk_54b">Tables are widely used in technical documentation. This section contains information about
+      the CSS rules that are used to style them and how to fix some problems.</p>
+  </body>
+</topic>

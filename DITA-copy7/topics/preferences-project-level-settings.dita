@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="preferences-project-level-settings">
+  <title>Project Level Settings Preferences</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Preferences<indexterm>Project Level Settings</indexterm></indexterm>
+        <indexterm>Project Level Settings preferences</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_wvn_bgk_54b">The <uicontrol>Project Level Settings</uicontrol> preference page allows you to decide
+      whether various settings should be saved in the project configuration file or in the global
+      settings. Settings that are saved at project level can easily be shared with others. To
+      configure these options, <ph conkeyref="reusables-preferences-pages/open-the-preferences-page"
+      /> and go to <uicontrol>Project Level Settings</uicontrol>.</p>
+    <p id="p_xvn_bgk_54b">The following options can be toggled on or off to determine which settings will be saved at
+      project level:<dl id="dl_yvn_bgk_54b">
+        <dlentry id="dlentry_zvn_bgk_54b">
+          <dt><uicontrol>Allow validation scenario associations to be saved at project
+              level</uicontrol></dt>
+          <dd>When this option is selected, the associations for <xref
+              href="create-validation-scenario.dita" product="author developer editor">custom
+              validation scenarios</xref><ph product="json">custom validation scenarios</ph> will be
+            stored according to their storage location.<ul id="ul_n11_ykl_ytb">
+              <li>If you associate a scenario that is stored at the project or framework level, the
+                association will be saved at project level (in the project configuration file).</li>
+              <li>If you associate a scenario at global level, it will be saved globally.</li>
+            </ul>If this option is not selected, the association is not allowed to be saved at
+            project level and will be saved globally (even if the scenario is saved in the project
+            file).</dd>
+        </dlentry>
+        <dlentry id="dlentry_awn_bgk_54b" product="author developer editor">
+          <dt><uicontrol>Allow transformation scenario associations to be saved at project
+              level</uicontrol></dt>
+          <dd>When this option is selected, the associations for <xref
+              href="defining-new-transformation-scenario.dita">custom transformation
+              scenarios</xref> will be stored according to their storage location. <ul
+              id="ul_dx1_dll_ytb">
+              <li>If you associate a scenario that is stored at the project or framework level, the
+                association will be saved at project level (in the project configuration file).</li>
+              <li>If you associate a scenario at global level, it will be saved globally.</li>
+            </ul></dd>
+          <dd>If this option is not selected, the association is not allowed to be saved at project
+            level and will be saved globally (even if the scenario is saved in the project
+            file).</dd>
+        </dlentry>
+        <dlentry product="author editor" id="dlentry_bwn_bgk_54b">
+          <dt><uicontrol>Save current DITA root map at project level</uicontrol></dt>
+          <dd>When this option is selected, when you change the <xref
+              href="dita-maps-manager.dita#dita-maps-manager/root-map">currently selected DITA
+              context root map</xref>, it will be saved in the project configuration file.</dd>
+        </dlentry>
+        <dlentry product="author editor" id="dlentry_cwn_bgk_54b">
+          <dt><uicontrol>Save DITA media working sets at project level</uicontrol></dt>
+          <dd>When this option is selected, all <xref
+              href="dita-reusable-components-view.dita#dita-reusable-components-view/media_tab"
+              >configured working sets for DITA media resources</xref> will be saved in the project
+            configuration file.</dd>
+        </dlentry>
+        <dlentry product="author editor" id="dlentry_dwn_bgk_54b">
+          <dt><uicontrol>Save DITA map validate and check for completeness settings at project
+              level</uicontrol></dt>
+          <dd>When this is selected, the options chosen in the <xref href="dita-map-validate.dita"
+              >DITA Map Validate and Check for Completeness dialog box</xref> will be saved in the
+            project configuration file.</dd>
+        </dlentry>
+      </dl></p>
+  </body>
+</topic>

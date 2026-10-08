@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task
+  PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="dg-step-by-step-example">
+  <title>Example 1 - Simple Use of a Dialog Box from an Author Mode Operation</title>
+  <taskbody>
+    <context>
+      <p id="p_u4b_dgk_54b">In this example, functionality is added for inserting images in a custom <xref
+          keyref="glossentry_framework"><term>framework</term></xref>. The images are represented by
+        the <xmlelement>image</xmlelement> element. The location of the image file is represented by the
+        value of the <xmlatt>href</xmlatt> attribute. In the Java implementation, a dialog box will
+        be displayed with a text field where the user can enter a full URL or browse for a local
+        file.</p>
+    </context>
+    <steps id="procedure-dg-step-by-step-example">
+      <step>
+        <cmd>Set up a sample project following <xref
+            href="https://www.oxygenxml.com/oxygen_sdk.html" format="html" scope="external">this set
+            of instructions</xref>. The <term>framework</term> project is
+            <b>oxygen-sample-framework</b>.</cmd>
+      </step>
+      <step>
+        <cmd>Modify the <i>simple.documentation.framework.InsertImageOperation</i> class that
+          implements the <xref
+            href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/extensions/api/AuthorOperation.html"
+            format="html" scope="external"><i>ro.sync.ecss.extensions.api.AuthorOperation</i></xref>
+          interface. This interface defines three methods: <i>doOperation</i>, <i>getArguments</i>
+          and <i>getDescription</i></cmd>
+        <info>
+          <p id="p_v4b_dgk_54b">A short description of these methods follows:</p>
+        </info>
+        <info>
+          <ul id="ul_w4b_dgk_54b">
+            <li id="li_x4b_dgk_54b">The <i>doOperation</i> method is invoked when the action is performed either by
+              pressing the toolbar button, by selecting the menu item or by pressing the shortcut
+              key. The arguments taken by this method can be one of the following combinations:<ul
+                id="ul_862c9c72-a0e6-40fb-8d87-f7249f5e999a">
+                <li id="li_y4b_dgk_54b">An object of type <xref
+                    href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/extensions/api/AuthorAccess.html"
+                    format="html" scope="external"
+                    ><i>ro.sync.ecss.extensions.api.AuthorAccess</i></xref> and a map.</li>
+                <li id="li_z4b_dgk_54b">Argument names and values.</li>
+              </ul></li>
+            <li id="li_apb_dgk_54b">The <i>getArguments</i> method is used by <ph keyref="product"/> when the action is
+              configured. It returns the list of arguments (name and type) that are accepted by the
+              operation.</li>
+            <li id="li_bpb_dgk_54b">The <i>getDescription</i> method is used by <ph keyref="product"/> when the
+              operation is configured. It returns a description of the operation.</li>
+          </ul>
+          <p id="p_cpb_dgk_54b"><b><u>Example:</u></b></p>
+          <p id="p_dpb_dgk_54b">Here is the implementation of these three methods:</p>
+          <codeblock outputclass="language-java" id="codeblock_epb_dgk_54b">/**
+ * Performs the operation.
+ */
+public void doOperation(
+           AuthorAccess authorAccess, 
+           ArgumentsMap arguments)
+    throws IllegalArgumentException, 
+              AuthorOperationException {
+
+JFrame oxygenFrame = (JFrame) authorAccess.getWorkspaceAccess().getParentFrame()
+;
+    String href = displayURLDialog(oxygenFrame);
+    if (href.length() != 0) {
+       // Creates the image XML fragment.
+       String imageFragment = 
+         "&lt;image xmlns='http://www.oxygenxml.com/sample/documentation' href='" 
+          + href + "'/&gt;";
+
+       // Inserts this fragment at the cursor position.
+       int caretPosition = authorAccess.getEditorAccess().getCaretOffset();    
+       authorAccess.getDocumentController().insertXMLFragment
+(imageFragment, caretPosition);
+    }
+}
+
+/**
+ * Has no arguments.
+ * 
+ * @return null.
+ */
+public ArgumentDescriptor[] getArguments() {
+  return null;
+}
+
+/**
+ * @return A description of the operation.
+ */
+public String getDescription() {
+  return "Inserts an image element. Asks the user for a URL reference.";
+}</codeblock>
+          <note conkeyref="reusable_notes_java-files/sdf_project" id="note_fpb_dgk_54b"/>
+          <note type="important" id="note_gpb_dgk_54b">
+            <p id="p_hpb_dgk_54b">Make sure you always specify the namespace of the inserted fragments.</p>
+          </note>
+          <codeblock outputclass="language-xml" id="codeblock_ipb_dgk_54b">&lt;image xmlns='http://www.oxygenxml.com/sample/documentation'
+  href='path/to/image.png'/&gt;</codeblock>
+        </info>
+      </step>
+      <step>
+        <cmd>Package the compiled class into a <xref keyref="glossentry_jar"><term>JAR</term></xref>
+          file. An example of an Ant script that packages the <filepath>classes</filepath> folder
+          content into a <term>JAR</term> archive named <filepath>sdf.jar</filepath> is listed
+          below:</cmd>
+        <info>
+          <codeblock outputclass="language-xml" id="codeblock_jpb_dgk_54b">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;project name="project" default="dist"&gt;    
+    &lt;target name="dist"&gt;
+      &lt;jar destfile="sdf.jar" basedir="classes"&gt;
+        &lt;fileset dir="classes"&gt;
+          &lt;include name="**/*"/&gt;
+        &lt;/fileset&gt;
+      &lt;/jar&gt;        
+    &lt;/target&gt;
+&lt;/project&gt;
+</codeblock>
+        </info>
+      </step>
+      <step>
+        <cmd>Copy the <filepath>sdf.jar</filepath> file into your custom <term>framework</term>
+          directory (<filepath><term conkeyref="reusables-user-guide/oxy-install-dir"
+            />\frameworks\[CUSTOM_FRAMEWORK_DIR]</filepath>).</cmd>
+      </step>
+      <step>
+        <cmd>Add the <filepath>sdf.jar</filepath> to the class path. To do this, <ph
+            conkeyref="reusables-preferences-pages/open-the-preferences-page"/>, go to
+            <uicontrol>Document Type Association</uicontrol>, select <b>SDF</b>, and click the
+            <uicontrol>Edit</uicontrol> button.</cmd>
+      </step>
+      <step>
+        <cmd>Select the <uicontrol>Classpath</uicontrol> tab in the lower part of the <xref
+            href="the-document-type-dialog.dita#the-document-type-dialog"><uicontrol>Document
+              Type</uicontrol> configuration dialog box</xref> and click the <uicontrol><image
+              href="../img/Add16.png" id="image_en2_lt4_5r"/>Add</uicontrol> button. In the
+          displayed dialog box, enter the location of the <term>JAR</term> file, relative to the <ph
+            keyref="product"/>
+          <filepath>frameworks</filepath> folder.</cmd>
+      </step>
+      <step>
+        <cmd>Next, create the action that will use the defined operation. Go to the
+            <uicontrol>Actions</uicontrol> subtab. Copy the icon files for the menu item and for the
+          toolbar in your custom <term>framework</term> directory (<filepath><term
+              conkeyref="reusables-user-guide/oxy-install-dir"
+            />\frameworks\[CUSTOM_FRAMEWORK_DIR]</filepath>).</cmd>
+      </step>
+      <step>
+        <cmd>Define the action's properties:</cmd>
+        <info>
+          <ul id="ul_kpb_dgk_54b">
+            <li id="li_lpb_dgk_54b">Set <b>ID</b> to <b>insert_image</b>.</li>
+            <li id="li_mpb_dgk_54b">Set <b>Name</b> to <b>Insert image</b>.</li>
+            <li id="li_npb_dgk_54b">Set <b>Menu access key</b> to letter <b>i</b>.</li>
+            <li id="li_opb_dgk_54b">Set <b>Toolbar action</b> to <b>${framework}/toolbarImage.png</b>.</li>
+            <li id="li_ppb_dgk_54b">Set <b>Menu icon</b> to <b>${framework}/menuImage.png</b>.</li>
+            <li id="li_qpb_dgk_54b">Set <b>Shortcut key</b> to <b>Ctrl (Meta on macOS)+Shift+i</b>.</li>
+          </ul>
+        </info>
+      </step>
+      <step>
+        <cmd>Next, set up the operation. You want to add images only if the current element is a
+          <xmlelement>section</xmlelement>, <xmlelement>book</xmlelement> or <xmlelement>article</xmlelement>.</cmd>
+        <info>
+          <ul id="ul_rpb_dgk_54b">
+            <li id="li_spb_dgk_54b">Set the value of <b>XPath expression</b> to
+              <codeblock outputclass="language-ini" id="codeblock_tpb_dgk_54b">local-name()='section' or local-name()='book' 
+ or local-name()='article'</codeblock></li>
+            <li id="li_upb_dgk_54b">Set the <b>Invoke operation</b> field to
+                <i>simple.documentation.framework.InsertImageOperation</i>.</li>
+          </ul>
+        </info>
+        <stepresult>
+          <p id="p_vpb_dgk_54b">
+            <fig id="fig_wpb_dgk_54b">
+              <title>Selecting the Operation</title>
+              <image href="../img/sa_dg_selecting_operation_class.png"/>
+            </fig>
+          </p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Add the action to the toolbar, using the <uicontrol>Toolbar</uicontrol> panel.</cmd>
+      </step>
+    </steps>
+    <result>
+      <p id="p_xpb_dgk_54b">To test the action, open or create an XML file and place the cursor at a valid location.
+        Then click the button associated with the action from the toolbar. In the dialog box, select
+        an image URL and click <uicontrol>OK</uicontrol>. The image is inserted into the
+        document.</p>
+    </result>
+  </taskbody>
+</task>

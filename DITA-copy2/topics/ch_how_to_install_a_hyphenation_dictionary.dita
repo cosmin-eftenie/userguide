@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ch_how_to_install_a_hyphenation_dictionary">
+  <title>How to Install a Hyphenation Dictionary</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            ><ph keyref="pdf-html5-transformation"/><indexterm>Hyphenation<indexterm>Install a
+              dictionary</indexterm></indexterm></indexterm>
+        <indexterm product="pdf-css ope">Hyphenation<indexterm>Install a
+          dictionary</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_g3t_cgk_54b"><ph keyref="product"/> uses the <term>TeX</term> hyphenation dictionaries converted to XML by
+      the <term>OFFO</term> project: <xref href="https://sourceforge.net/projects/offo/"
+        format="html" scope="external"/>. </p>
+    <p id="p_h3t_cgk_54b">The <filepath>.xml</filepath> files allow you to access the licensing terms and you can use
+      them as a starting point to create customized dictionaries (see <xref
+        href="ch_how_to_alter_a_hyphenation_dictionary.dita"/>).</p>
+    <p id="p_i3t_cgk_54b">The <filepath>.hyp</filepath> files are the compiled dictionaries that the <ph
+        keyref="product"/> actually uses.</p>
+    <p id="p_j3t_cgk_54b" product="chemistry pdf-css ope">The hyphenation dictionaries are located
+      in: <filepath product="chemistry">[CHEMISTRY_INSTALL_DIR]/config/hyph</filepath><filepath
+        product="ope"
+        >[OPE_INSTALL_DIR]/plugins/com.oxygenxml.pdf.css/lib/oxygen-pdf-chemistry/config/hyph</filepath><filepath
+        product="pdf-css"
+        >[DITA_OT_DIR]/plugins/com.oxygenxml.pdf.css/lib/oxygen-pdf-chemistry/config/hyph</filepath>.</p>
+    <p id="p_l3t_cgk_54b">One simple way to add more dictionaries:<ol id="ol_tm5_k2p_llb">
+        <li id="li_m3t_cgk_54b"><xref
+            href="https://sourceforge.net/projects/offo/files/offo-hyphenation/" format="html"
+            scope="external">Download</xref> and extract the
+            <filepath>offo-hyphenation-compiled.zip</filepath> (or the
+            <filepath>offo-hyphenation.zip</filepath>) file.</li>
+      
+        <li id="li_n3t_cgk_54b" product="chemistry pdf-css ope">Copy the
+            <codeph>fop-hyph.jar</codeph> file (containing the dictionaries bundle) to the <filepath
+            product="chemistry">[CHEMISTRY_INSTALL_DIR]/lib</filepath><filepath product="ope"
+            >[OPE_INSTALL_DIR]/plugins/com.oxygenxml.pdf.css/lib/oxygen-pdf-chemistry/lib</filepath><filepath
+            product="pdf-css"
+            >[DITA_OT_DIR]/plugins/com.oxygenxml.pdf.css/lib/oxygen-pdf-chemistry/lib</filepath>
+          directory.</li>
+        <li product="author developer editor authorEclipse developerEclipse editorEclipse">Copy and
+          extract the <codeph>fop-hyph.jar</codeph> file (containing the dictionaries bundle) into a
+          directory in your project. </li>
+        <li id="li_q3t_cgk_54b">If you just need a single dictionary, copy the <codeph>.hyp</codeph>
+          or <codeph>.xml</codeph> file extracted from the above jar.</li>
+        <li product="author developer editor authorEclipse developerEclipse editorEclipse">Reference
+          the directory using the <codeph>args.hyph.dir</codeph> parameter. </li>
+      </ol></p>
+  </body>
+</topic>

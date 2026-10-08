@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dita-map-edit-topic-specializations">
+  <title>Editing DITA Topic Specializations</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>DITA<indexterm>Specialization<indexterm>Topics</indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_ptn_dgk_54b">In addition to recognizing the default DITA topic formats, topic specializations can also be
+      edited in <uicontrol>Author</uicontrol> mode.</p>
+    <p id="p_qtn_dgk_54b">The content completion should work without additional modifications and you can choose the
+      tags that are allowed at the cursor position.</p>
+    <p id="p_rtn_dgk_54b">The CSS styles used for rendering the elements should also work on the specialized topics
+      without additional modifications.</p>
+    <p id="p_stn_dgk_54b">The toolbar/menu actions should be customized to insert the correct element names. You can go
+      to the DITA document type from the <ph
+        conkeyref="reusables-preferences-pages/preferences-document-type-association"/> and edit the
+      actions to insert the element names, as specified in your specialization. See <xref
+        href="framework-customization-extending.dita"/> for more details.</p>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link
+        href="http://dita4practitioners.github.io/dita-specialization-tutorials/standalone-tutorials/config-and-extend-tutorials-standalone.html"
+        format="html" scope="external">
+        <linktext>DITA Configuration and Specialization Tutorials</linktext>
+      </link>
+      <link href="dita-integrate-specialization.dita#dita-integrate-specialization"/>
+    </linklist>
+  </related-links>
+</topic>

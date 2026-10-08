@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="cf-security">
+  <title>Security Hardening Notes</title>
+  <body>
+    <section id="section_hm1_xpp_nrb">
+      <title>Password Storage</title>
+      <p>Content Fusion stores user passwords in a hashed format to prevent them from being stored
+        as plain text. The password hashes are <term>stretched</term> and <term>salted</term> to
+        provide more security against brute-force attacks.</p>
+    </section>
+    <section id="section_account_lockout">
+      <title>Account Lockout</title>
+      <p id="p_account_lockout_security">Content Fusion can temporarily lock user accounts after too many failed sign-in
+        attempts to reduce the risk of brute-force attacks. Lockout applies only to email and password authentication.
+        To configure the number of attempts and lockout duration, see <xref
+          href="cf-admin-page-authentication.dita#cf-admin-page-authentication/dlentry_account_lockout"
+        />.</p>
+    </section>
+    <section id="section_s53_xdh_n2c">
+      <title>Domain Name</title>
+      <p id="p_t53_xdh_n2c">The application should be configured with a valid domain name.</p>
+    </section>
+    <section id="section_wnq_mwp_nrb">
+      <title>HTTPS</title>
+      <p>Traffic toward/from Content Fusion is encrypted by default with an automatically generated
+        certificate. The administrator should upload a valid HTTPS certificate for the Content
+        Fusion hostname before exposing the service to users and HTTPS should be enabled for the
+        main application.</p>
+    </section>
+    <section id="section_ddv_l2h_n2c">
+      <title>HSTS</title>
+      <p id="p_edv_l2h_n2c">Content Fusion enables <i>Full HSTS</i> to protect from session
+        fixation.</p>
+    </section>
+    <section id="section_vvl_2zp_nrb">
+      <title>Incoming Connections</title>
+      <p>Content Fusion accepts connections on ports 80 and 443 for serving the Content Fusion Web
+        UI and on port 9080 for serving the Administration Web UI. The machine that hosts Content
+        Fusion should allow incoming connections on port 22 for SSH access.</p>
+    </section>
+    <section id="section_wyt_dxp_nrb">
+      <title>Outgoing Connections</title>
+      <p>Content Fusion can connect to external services if it is configured to do so:<ul
+          id="ul_opb_fxp_nrb">
+          <li>Email server for notifications and password resets (see <xref
+              href="cf-admin-page-mail.dita">Content Fusion Enterprise Administration Page - Mail
+              Tab</xref> for configuration details).</li>
+          <li>LDAP server for LDAP authentication (see <xref
+              href="cf-admin-page-authentication.dita">Content Fusion Enterprise Administration Page
+              - Authentication Tab</xref> for configuration details).</li>
+        </ul></p>
+    </section>
+    <section id="section_opk_3xp_nrb">
+      <title>Size Limits</title>
+      <p>Tasks have a configurable size limit (default is 1Gb) and a configurable file limit
+        (default is 32767).</p>
+    </section>
+    <section id="section_n2k_l5p_nrb">
+      <title>Information Exclusivity</title>
+      <p>Task owners can choose who has access to Content Fusion tasks. They can specify a list of
+        allowed collaborators on a task or allow anyone with access to the link to collaborate. </p>
+    </section>
+    <section id="section_s3g_4yp_nrb">
+      <title>OAuth2 Authentication</title>
+      <p>Content Fusion can be configured to allow users to authenticate using their Google or
+        GitHub accounts. When users choose this authentication method, their accounts will not have
+        a password. Authentication is delegated to either Google or GitHub, respectively.</p>
+    </section>
+    <section id="section_zrg_5yp_nrb">
+      <title>Internal Connections</title>
+      <p>Content Fusion is composed of multiple internal services that communicate with each other.
+        This communication is authenticated with passwords generated at installation time.</p>
+    </section>
+    <section id="section_uxv_xcj_bxb">
+      <title>Transport Layer Security</title>
+      <p id="p_vxv_xcj_bxb">Content Fusion supports TLS v1.2 and TLS v1.3. Note that support for
+        v1.0 and v1.1 was removed.</p>
+    </section>
+    <section id="section_hsg_g5p_vfc">
+      <title>Hard Disk Encryption</title>
+      <p id="p_isg_g5p_vfc">The server's hard disk where Content Fusion is installed must be
+        encrypted to ensure that persistent history data is secure.</p>
+    </section>
+  </body>
+</topic>

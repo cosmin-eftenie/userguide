@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="duplicating-transformations">
+  <title>Duplicating a Transformation Scenario</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Transformation Scenarios<indexterm>Duplicate</indexterm></indexterm>
+        <indexterm>Duplicate transformation scenario</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_n2m_cgk_54b">Duplicating a transformation scenario is useful for creating a scenario that is similar to an
+      existing one or to edit a built-in transformation scenario.</p>
+    <p id="p_o2m_cgk_54b">To configure an existing transformation scenario, follow these steps:<ol id="ol_p2m_cgk_54b">
+        <li id="li_q2m_cgk_54b">
+          <p id="p_r2m_cgk_54b">Select the <uicontrol><image href="../img/TransformConfig16.png" id="image_h5w_5n1_x3b"
+              />Configure Transformation Scenario(s) (<shortcut
+                conkeyref="reusable-oxygen-shortcuts-list/ctrl_shift_c_shortcut"
+                product="author developer editor"/><shortcut
+                conkeyref="reusable-oxygen-shortcuts-list/alt_shift_tc_shortcut"
+                product="authorEclipse developerEclipse editorEclipse"/>)</uicontrol> action from
+            the toolbar or the <menucascade product="author developer editor">
+              <uicontrol>Document</uicontrol>
+              <uicontrol>Transformation</uicontrol>
+            </menucascade><uicontrol product="authorEclipse developerEclipse editorEclipse"
+              >XML</uicontrol> menu.</p>
+          <p id="p_s2m_cgk_54b"><b>Step Result:</b> The <xref
+              href="configure-transformation-dialog.dita#configure-transformation-dialog"
+                ><uicontrol>Configure Transformation Scenario(s)</uicontrol> dialog box</xref> is
+            opened.</p>
+        </li>
+        <li id="li_t2m_cgk_54b">Select the particular transformation scenario and click the
+            <uicontrol>Duplicate</uicontrol> button at the bottom of the dialog box or from the
+          contextual menu.<note type="tip" id="note_u2m_cgk_54b">You could also select the scenario and the
+                <uicontrol><image href="../img/Copy16.png"/>Duplicate</uicontrol> button in the
+              <xref href="scenarios-view.dita#scenarios-view"><uicontrol>Transformation
+                Scenarios</uicontrol> view</xref> to achieve the same result.</note></li>
+      </ol></p>
+    <p id="p_v2m_cgk_54b"><b>Result:</b> This will open an <uicontrol>Edit scenario</uicontrol> configuration dialog
+      box that allows you to configure various options in several tabs, depending on the type of
+      transformation scenario that was selected. For information about all the specific options in
+      the various tabs, see the <xref
+        href="edit-scenario-dialog.dita#edit-scenario-dialog/transformation_types">Transformation
+        Types section</xref>.</p>
+  </body>
+  <related-links>
+    <linklist><title>Related Information:</title><link href="defining-new-transformation-scenario.dita#defining-new-transformation-scenario"/><link href="edit-scenario-dialog.dita#edit-scenario-dialog"/></linklist>
+    
+  </related-links>
+</topic>

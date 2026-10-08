@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="change-order-in-maps">
+  <title>Change the Order of Topics in DITA Maps</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>DITA<indexterm>Maps<indexterm>Change order of
+          topics</indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_pll_dgk_54b">You can change the order and nesting of the topics in a map in several ways:<ul
+        id="ul_dsm_c3v_1q">
+        <li id="li_qll_dgk_54b">By dragging and dropping topics within the <xref
+            href="dita-maps-manager.dita#dita-maps-manager"><uicontrol>DITA Maps
+            Manager</uicontrol></xref>.</li>
+        <li product="author editor" id="li_rll_dgk_54b">By highlighting a topic in the <xref
+            href="dita-maps-manager.dita#dita-maps-manager"><uicontrol>DITA Maps
+            Manager</uicontrol></xref>, holding down the
+            <uicontrol><shortcut>Alt</shortcut></uicontrol> key, and pressing the arrow keys.</li>
+        <li id="li_sll_dgk_54b">By showing the extended <xref href="dita-maps-manager.dita#dita-maps-manager"
+              ><uicontrol>DITA Maps Manager</uicontrol></xref> toolbar (click the <uicontrol><image
+              href="../img/Settings16.png" id="image_xyt_t3v_1q"/>Settings</uicontrol> icon on the
+            <xref href="dita-maps-manager.dita#dita-maps-manager"><uicontrol>DITA Maps
+              Manager</uicontrol></xref> toolbar and select the extended toolbar) and then using the
+          node moving buttons (<image href="../img/NodeUp16.png" id="image_phk_dmq_js"/><image
+            href="../img/NodeDown16.png" id="image_yc5_dmq_js"/><image
+            href="../img/NodePromote16.png" id="image_w2c_2mq_js"/><image
+            href="../img/NodeDemote16.png" id="image_dnj_2mq_js"/>) on the toolbar to move topics
+          around in the map.</li>
+      </ul>To understand how to organize topics in a <term keyref="glossentry_ditamap">DITA
+        map</term> using the <xref href="dita-maps-manager.dita#dita-maps-manager"><uicontrol>DITA
+          Maps Manager</uicontrol></xref>, you can examine and experiment with the sample map called
+        <filepath>flowers.ditamap</filepath>, located in the <filepath><term
+          conkeyref="reusables-user-guide/oxy-install-dir"/>/samples/dita</filepath> folder.</p>
+  </body>
+</topic>

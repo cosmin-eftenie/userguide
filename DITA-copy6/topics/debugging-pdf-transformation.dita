@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="debugging-pdf-transformation">
+  <title>Debugging DITA PDF Transformations</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Transformation Scenarios<indexterm>Debugging PDF
+          transformations</indexterm></indexterm>
+        <indexterm>Debug PDF transformation</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    
+      <p id="p_a5v_cgk_54b">To debug the <xref keyref="dita-pdf-transformation"><b><ph
+              keyref="pdf-fo-transformation"/></b> transformation scenario</xref>, follow these
+        steps:</p>
+    
+    <ol>
+      <li><ph conkeyref="reusables-preferences-pages/Open-the-preferences-page"/>, go to <menucascade>
+          <uicontrol>XML</uicontrol>
+          <uicontrol>XML Catalog</uicontrol>
+        </menucascade>, click <uicontrol>Add</uicontrol>, and select the file located at
+            <filepath><term keyref="glossentry_dita_ot_dir"
+          />\plugins\org.dita.pdf2\cfg\catalog.xml</filepath>. If there are other custom DITA-OT PDF
+        customization plugins that contain XML catalogs, references to those XML catalogs might need
+        to be added as well.</li>
+      <li>Open the map<ph product="author editor authorEclipse editorEclipse"> in the <xref
+            href="dita-maps-manager.dita#dita-maps-manager"><uicontrol>DITA Maps
+            Manager</uicontrol></xref></ph> and create a <uicontrol keyref="pdf-fo-transformation"/>
+        transformation scenario.</li>
+      <li>Edit the scenario, go to the <uicontrol>Parameters</uicontrol> tab and change the value of
+        the <uicontrol>clean.temp</uicontrol> parameter to <uicontrol>no</uicontrol>.</li>
+      <li>Run the transformation scenario.</li>
+      <li>Open the <uicontrol>stage1.xml</uicontrol> file located in the temporary directory and
+          <xref href="../topics/format-and-indent-xml.dita#format-and-indent-xml">format and
+          indent</xref> it.</li>
+      <li>Create a transformation scenario for this XML file by associating the
+          <filepath>topic2fo_shell_fop.xsl</filepath> stylesheet located at <filepath><term
+            keyref="glossentry_dita_ot_dir"
+          />\plugins\org.dita.pdf2.fop\xsl\fo\topic2fo_shell_fop.xsl</filepath>. If you are
+        specifically using the RenderX XEP or Antenna House FO processors to build the PDF output,
+        you should use the XSL stylesheets <filepath>topic2fo_shell_xep.xsl</filepath> or
+          <filepath>topic2fo_shell_axf.xsl</filepath> located in the corresponding plugin folders.<itemgroup>
+          <note id="note_b5v_cgk_54b">For validation purposes, you need to add the main debugged
+            stylesheet (usually <filepath>topic2fo_shell_fop.xsl</filepath>) to the <xref
+              href="adding-removing-a-main-file.dita">Main Files folder</xref> in the <uicontrol
+              product="author developer editor">Project</uicontrol><uicontrol
+              product="authorEclipse developerEclipse editorEclipse">Project Explorer</uicontrol>
+            view. </note>
+        </itemgroup></li>
+      <li>In the transformer drop-down menu, select the Saxon EE XSLT processor (the same processor
+        used when the DITA-OT transformation is executed).</li>
+      <li>Click the <b>Parameters</b> button:<ol>
+          <li> Set the <codeph>locale</codeph> parameter (e.g. with the value of
+              <codeph>en_GB</codeph>). </li>
+          <li> Set the <codeph>work.dir.url</codeph> parameter with the value
+              <codeph>${cfdu}</codeph>. </li>
+          <li> Set the <codeph>customizationDir.url</codeph> parameter to point to either your
+            customization directory or to the default DITA-OT customization directory. Its value
+            should have a URL syntax like
+            this:<codeblock outputclass="language-bourne">file://c:/path/to/&lt;term keyref="glossentry_dita_ot_dir"/>/plugins/org.dita.pdf2/cfg</codeblock></li>
+        </ol></li>
+      <li>You need to reference the extra commonly used JAR libraries by clicking the
+          <uicontrol>Extensions</uicontrol> button and using wildcards to add a reference to all
+        libraries in this folder:
+        <filepath>DITA-OT\plugins\com.oxygenxml.common\lib\*</filepath>.</li>
+      <li>Apply the transformation to continue the debugging process.<itemgroup>
+          <note id="note_jxd_mdh_gvb">For externally configured DITA Open Toolkit installations or
+            when using custom plugins based on the base PDF2 plugin, the paths to resources
+            described above may need to be adjusted accordingly. </note>
+        </itemgroup></li>
+    </ol>
+  </body>
+  <related-links>
+      <link href="debugging.dita#debugging"
+        product="developer editor developerEclipse editorEclipse"/>
+      <link href="enable-debugging-fop.dita#enable-debugging-fop"/>
+  </related-links>
+</topic>

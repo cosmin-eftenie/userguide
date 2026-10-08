@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_notes">
+  <title>Notes</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            ><ph keyref="pdf-html5-transformation"/><indexterm>Notes</indexterm></indexterm>
+        <indexterm product="pdf-css ope">Notes</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_tcv_cgk_54b">Notes contain an additional piece of information that calls attention to
+      particular content. They may have various types (note, tip, fastpath, restriction, important,
+      remember, attention, caution, danger, other).</p>
+    <p id="p_ucv_cgk_54b">For information on how to add and manage mixed content before the note icons and labels, see
+        <xref href="dcpp_how_to_control_the_image_size_in_complex_static_content.dita"/>.</p>
+  </body>
+</topic>

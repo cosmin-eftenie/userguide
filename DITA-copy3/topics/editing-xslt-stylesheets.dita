@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="editing-xslt-stylesheets">
+  <title>Editing XSLT Stylesheets</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>XSLT<indexterm>Editing features</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_y41_cgk_54b"><ph keyref="product"/> includes a built-in editor for XSLT stylesheets. This section presents
+      the features of the XSLT editor and how these features can be used. The features of the XSLT
+      editor include:<ul id="ul_hgt_t3p_lq">
+        <li id="li_z41_cgk_54b"><b>Create new XSLT files and templates</b> - You can use the built-in new file wizards
+          to <xref href="creating-new-documents.dita#creating-new-documents">create new XSLT
+            documents or templates</xref>.</li>
+        <li id="li_ap1_cgk_54b"><b>Open and Edit XSLT files</b> - XSLT files can be opened and edited in the source
+          editor (<xref href="xml-editor-specific-actions.dita#xml-editor-specific-actions"
+              ><uicontrol>Text</uicontrol> mode</xref>).</li>
+        <li product="editor editorEclipse" id="li_bp1_cgk_54b"><b>Visual Editing</b> - XSLT stylesheets are rendered,
+          and can be edited, in the <xref
+            href="editing-xml-documents-author.dita#editing-xml-documents-author">visual
+              <uicontrol>Author</uicontrol> editing mode</xref>.</li>
+        <li id="li_cp1_cgk_54b"><b>Validation</b> - Presents validation errors in XSLT files.</li>
+        <li id="li_dp1_cgk_54b"><b>Content completion</b> - Offers proposals for properties and the values that are
+          available for each property.</li>
+        <li id="li_ep1_cgk_54b"><b>Syntax highlighting</b> - The syntax highlighting in <ph keyref="product"/> makes
+          XSLT files more readable.</li>
+      </ul></p>
+    <section id="section_v54_rr5_ypb">
+      <title>Resources</title>
+      <p id="p_w54_rr5_ypb">For more information about working with XSLT in <ph keyref="product"/>,
+        see the following resources:<ul id="ul_abq_dt5_ypb">
+          <li id="li_ug3_4t5_ypb">Webinar: <xref
+              href="https://www.oxygenxml.com/events/2020/webinar_introduction_to_xslt_using_oxygen_xml_editor.html"
+              format="html" scope="external"><b>Introduction to XSLT Using Oxygen</b></xref>.</li>
+          <li id="li_bbq_dt5_ypb">Webinar: <xref
+              href="https://www.oxygenxml.com/events/2014/webinar_xslt_quick_fixes.html"
+              format="html" scope="external"><b>XSLT Quick Fixes</b></xref>.</li>
+        </ul></p>
+    </section>
+  </body>
+</topic>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept
+  PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="dg-url-function">
+  <title>URL: oxy_url() Function</title>
+  <shortdesc>This function extends the standard CSS <codeph>url()</codeph> function by allowing you
+    to specify additional relative path components (parameters <codeph>loc_1</codeph> to
+      <codeph>loc_n</codeph>).</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>CSS extensions<indexterm>Custom
+            functions<indexterm>oxy_url</indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p id="p_ajd_dgk_54b"><ph keyref="product"/> uses all these parameters to construct an absolute location. Note that
+      any of the parameters that are passed to the function can be either relative or absolute
+      locations. These locations can be expressed as String objects, functions, or <xref
+        href="editor-variables.dita#editor-variables">editor variables</xref> (built-in or
+      custom).</p>
+    <p id="p_bjd_dgk_54b">
+      <dl id="dl_cjd_dgk_54b">
+        <dlentry id="dlentry_djd_dgk_54b">
+          <dt>Syntax:</dt>
+          <dd>
+            <p id="p_ejd_dgk_54b">
+              <syntaxdiagram>
+                <groupseq>
+                  <kwd>oxy_url</kwd>
+                  <sep>(</sep>
+                  <kwd>base_location</kwd>
+                  <sep>,</sep>
+                  <kwd>loc_1</kwd>
+                  <sep>,</sep>
+                  <kwd>loc_2</kwd>
+                  <sep>)</sep>
+                </groupseq>
+              </syntaxdiagram>
+            </p>
+            <p id="p_fjd_dgk_54b">
+              <dl id="dl_gjd_dgk_54b">
+                <dlentry id="dlentry_hjd_dgk_54b">
+                  <dt>base_location</dt>
+                  <dd>String representing the base location. If not absolute, will be solved
+                    relative to the CSS file URL.</dd>
+                </dlentry>
+                <dlentry id="dlentry_ijd_dgk_54b">
+                  <dt>loc_1 ... loc_n (optional)</dt>
+                  <dd>Strings representing relative location path components.</dd>
+                </dlentry>
+              </dl>
+            </p>
+            <p id="p_jjd_dgk_54b"><b><u>Examples: <term>oxy_url</term> Function</u></b></p>
+            <p id="p_kjd_dgk_54b">The following function receives String objects as input
+              parameters:<codeblock outputclass="language-ini" id="codeblock_ljd_dgk_54b">oxy_url('http://www.oxygenxml.com/css/test.css', '../dir1/', 
+        'dir2/dir3/', '../../dir4/dir5/test.xml')</codeblock>and
+              returns:<codeblock outputclass="language-ini" id="codeblock_mjd_dgk_54b">'http://www.oxygenxml.com/dir1/dir4/dir5/test.xml'</codeblock></p>
+            <p id="p_njd_dgk_54b">The following function receives the result of the evaluation of two other functions
+              as parameters (for instance, this is useful if you have image references and you want
+              to see thumbnail images stored in the same
+              folder):<codeblock outputclass="language-css" id="codeblock_ojd_dgk_54b">image[href]{
+ content:oxy_url(oxy_base-uri(), oxy_replace(attr(href), 
+    '.jpeg', 'Thumbnail.jpeg'));
+}</codeblock></p>
+            <p id="p_pjd_dgk_54b">The following function uses an <xref href="editor-variables.dita#editor-variables"
+                >editor variable</xref> as the first parameter to point to the <ph keyref="product"
+              /> installation
+              location:<codeblock outputclass="language-css" id="codeblock_qjd_dgk_54b">image[href] {
+    content: oxy_url('${oxygenHome}', 'logo.png');
+}</codeblock></p>
+          </dd>
+        </dlentry>
+      </dl>
+    </p>
+  </conbody>
+  <related-links>
+      <link href="editor-variables.dita#editor-variables"/>
+  </related-links>
+</concept>

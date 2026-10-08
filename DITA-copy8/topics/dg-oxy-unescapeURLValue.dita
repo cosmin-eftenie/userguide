@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="dg-oxy-unescapeURLValue">
+  <title>Unescape URL Value: oxy_unescapeURLValue(string) Function</title>
+  <shortdesc>This function returns the unescaped value of a URL-like string given as a
+    parameter.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>CSS extensions<indexterm>Custom
+              functions<indexterm>oxy_unescapeURLValue</indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p id="p_pgd_dgk_54b">For example, if the value contains <codeph>%20</codeph> it will be converted to a simple
+      space character.</p>
+    <p id="p_qgd_dgk_54b"><b><u>Example: <term>oxy_unescapeURLValue</term> Function</u></b></p>
+    <p id="p_rgd_dgk_54b"><codeph>oxy_unescapeURLValue("http://www.example.com/a%20simple%20example.html")</codeph>
+      returns the following
+      value:<codeblock outputclass="language-ini" id="codeblock_sgd_dgk_54b">http://www.example.com/a simple example.html</codeblock></p>
+  </conbody>
+</concept>

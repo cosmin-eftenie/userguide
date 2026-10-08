@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="api_faq_disable_contextual_actions">
+  <title>Disable Context-Sensitive Menu Items for Custom Author Actions</title>
+  <body>
+    <section id="question">
+      <title>Use Case</title>
+      <p id="p_z3g_dgk_54b">You want to disable menu items for custom <uicontrol>Author</uicontrol>
+        mode actions depending on the cursor context.</p>
+    </section>
+    <section id="answer">
+      <title>Solution</title>
+      <p id="p_ajg_dgk_54b">By default, <ph keyref="product"/> does not toggle the enabled/disabled states for actions
+        based on whether or not the activation XPath expressions for that certain
+          <uicontrol>Author</uicontrol> mode action are fulfilled. This is done because the actions
+        can be many and evaluating XPath expression on each cursor move can lead to performance
+        problems. However, if you have your own
+          <i>ro.sync.ecss.extensions.api.ExtensionsBundle</i> implementation you can
+        overwrite the method:</p>
+      <p id="p_bjg_dgk_54b"><codeph>ro.sync.ecss.extensions.api.ExtensionsBundle.createAuthorExtensionStateListener()</codeph></p>
+      <p id="p_cjg_dgk_54b">and when the extension state listener gets activated, you can use the API like
+        this:<codeblock outputclass="language-java" id="codeblock_djg_dgk_54b">
+    /**
+     * @see ro.sync.ecss.extensions.api.AuthorExtensionStateListener#activated
+(ro.sync.ecss.extensions.api.AuthorAccess)
+     */
+    public void activated(final AuthorAccess authorAccess) {
+
+      //Add a caret listener to enable/disable extension actions:
+authorAccess.getEditorAccess().addAuthorCaretListener(new AuthorCaretListener() 
+{
+    @Override
+    public void caretMoved(AuthorCaretEvent caretEvent) {
+      try {
+        Map&lt;String, Object> authorExtensionActions = 
+authorAccess.getEditorAccess().getActionsProvider().getAuthorExtensionActions();
+        //Get the action used to insert a paragraph. It's ID is "paragraph"
+        AbstractAction insertParagraph = (
+AbstractAction) authorExtensionActions.get("paragraph");
+        //Evaluate an XPath expression in context of the current node
+     Object[] evaluateXPath = authorAccess.getDocumentController().evaluateXPath
+(".[ancestor-or-self::p]", false, false, false, false);
+        if(evaluateXPath != null &amp;&amp; evaluateXPath.length > 0 &amp;&amp; 
+evaluateXPath[0] != null) {
+          //We are inside a paragraph, disable the action.
+          insertParagraph.setEnabled(false);
+        } else {
+          //Enable the action
+          insertParagraph.setEnabled(true);
+        }
+      } catch (AuthorOperationException e) {
+        e.printStackTrace();
+      }
+    }
+  });
+</codeblock>When
+        the extension is deactivated, you should remove the <i>CaretListener</i> to
+        avoid adding multiple listeners that perform the same functionality. </p>
+    </section>
+  </body>
+</topic>

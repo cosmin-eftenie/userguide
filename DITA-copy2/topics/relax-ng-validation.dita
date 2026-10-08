@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="relax-ng-validation">
+  <title>Validating Relax NG Schema Documents</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Relax NG schemas<indexterm>Validation</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_ns2_cgk_54b">By default, Relax NG schema files are validated as you type. To change this, <ph
+        conkeyref="reusables-preferences-pages/open-the-preferences-page"/>, go to <menucascade>
+        <uicontrol>Editor</uicontrol>
+        <uicontrol>Document Checking</uicontrol>
+      </menucascade>, and deselect the <xref
+        href="preferences-editor-document-checking.dita#preferences-editor-document-checking/enable-auto-validation"
+          ><uicontrol>Enable automatic validation</uicontrol> option</xref>. </p>
+    <p id="p_os2_cgk_54b">To validate a Relax NG schema document manually, select the <uicontrol><image
+          href="../img/Validate16.png" id="image_w5p_bsv_sr"/>Validate</uicontrol> action from the
+          <uicontrol><image href="../img/ValidateDrop.png" id="image_sfz_bsv_sr"
+        />Validation</uicontrol> toolbar drop-down menu or the <menucascade
+        product="developer editor">
+        <uicontrol>Document</uicontrol>
+        <uicontrol>Validate</uicontrol>
+      </menucascade><uicontrol product="developerEclipse editorEclipse">XML</uicontrol> menu. When
+        <ph keyref="product"/> validates a Relax NG schema file, it expands all the included modules
+      so the entire schema hierarchy is validated. The validation problems are highlighted directly
+      in the editor, making it easy to locate and fix any issues.</p>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link
+        href="validating-XML-documents-against-schema.dita#validating-XML-documents-against-schema"/>
+      <link href="combined_RNG_and_SCH.dita"/>
+      <link href="validation-scenario.dita#validation-scenario">
+        <linktext>Validation Scenario</linktext>
+      </link>
+      <link href="associate-schema-to-document.dita#associate-schema-to-document"/>
+      <link href="marking-validation-errors.dita#marking-validation-errors"/>
+    </linklist>
+  </related-links>
+</topic>

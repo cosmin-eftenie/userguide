@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="JSON-contexutal-menu-actions">
+  <title>Contextual Menu Actions in JSON Documents</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>JSON documents<indexterm>Contextual menu actions</indexterm></indexterm>
+        <indexterm>Contextual menu actions in JSON</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_ecg_cgk_54b">When editing JSON documents, <ph keyref="product"/> provides the following actions in the
+      contextual menu:</p>
+    <p id="p_fcg_cgk_54b">
+      <dl id="dl_gcg_cgk_54b">
+        <dlentry id="dlentry_hcg_cgk_54b">
+          <dt><uicontrol><image href="../img/Cut16.png" id="image_brg_3z1_5r"/>Cut</uicontrol>,
+                <uicontrol><image href="../img/Copy16.png" id="image_sf4_lst_tr"/>Copy</uicontrol>,
+                <uicontrol><image href="../img/Paste16.png" id="image_cwr_cqt_tr"
+            />Paste</uicontrol></dt>
+          <dd>Executes the typical editing actions on the currently selected content.</dd>
+        </dlentry>
+        <dlentry id="dlentry_icg_cgk_54b">
+          <dt><uicontrol>Copy JSON Pointer</uicontrol></dt>
+          <dd>Creates a <term>JSON Pointer</term> at the current cursor location and copies the
+            expression that denotes the JSON pointer to the system clipboard.</dd>
+        </dlentry>
+        <dlentry id="dlentry_jcg_cgk_54b">
+          <dt><uicontrol>Copy XPath</uicontrol></dt>
+          <dd>Copies the XPath expression of the current property from the current editor to the
+            clipboard.</dd>
+        </dlentry>
+        <dlentry id="dlentry_ukw_bgk_54b">
+          <dt><uicontrol>Toggle Line Wrap</uicontrol> (<uicontrol
+              conkeyref="reusable-oxygen-shortcuts-list/ctrl_shift_y"/>)</dt>
+          <dd>Enables or disables line wrapping. When enabled, if text exceeds the width of the
+            displayed editor, content is wrapped so that you do not have to scroll
+            horizontally.</dd>
+        </dlentry>
+        <dlentry id="dlentry_kcg_cgk_54b">
+          <dt><uicontrol><image href="../img/GoToMatchingTag16.png"/>Go to Matching
+              Bracket</uicontrol>
+            <uicontrol product="developer editor">(<shortcut
+                conkeyref="reusable-oxygen-shortcuts-list/ctrl_shift_g_shortcut"/>)</uicontrol></dt>
+          <dd>Moves the cursor to the end bracket that matches the start bracket, or vice
+            versa.</dd>
+        </dlentry>
+        <dlentry product="developer editor json" id="dlentry_lcg_cgk_54b">
+          <dt><uicontrol>Source</uicontrol> submenu</dt>
+          <dd>
+            <p id="p_mcg_cgk_54b">This submenu includes the following actions:</p>
+            <p id="p_ncg_cgk_54b">
+              <dl id="dl_ocg_cgk_54b">
+                <dlentry id="dlentry_pcg_cgk_54b">
+                  <dt><uicontrol>To Lower Case</uicontrol></dt>
+                  <dd>Converts the content selection to lower case characters. This works with
+                    contiguous and multiple selections.</dd>
+                </dlentry>
+                <dlentry id="dlentry_qcg_cgk_54b">
+                  <dt><uicontrol>To Upper Case</uicontrol></dt>
+                  <dd>Converts the selected content to upper case characters. This works with
+                    contiguous and multiple selections.</dd>
+                </dlentry>
+                <dlentry id="dlentry_rcg_cgk_54b">
+                  <dt><uicontrol>Capitalize Lines</uicontrol></dt>
+                  <dd>It capitalizes the first letter found on every new line that is selected. Only
+                    the first letter is affected, the rest of the line remains the same. If the
+                    first character on the new line is not a letter then no changes are made.</dd>
+                </dlentry>
+                <dlentry conkeyref="reusables-editing-documents/convert_hex_to_char"
+                  id="convert-hex-sequence">
+                  <dt/>
+                  <dd/>
+                </dlentry>
+                <dlentry id="base64-encode-decode">
+                  <dt><uicontrol>Base64 Encode/Decode</uicontrol> submenu</dt>
+                  <dd>
+                    <p id="p_scg_cgk_54b">This submenu include the following actions for encoding or
+                      decoding <b>base 64</b> schemes:</p>
+                    <p id="p_tcg_cgk_54b">
+                      <dl conkeyref="reusables-editing-documents/encoding-dl" id="dl_ucg_cgk_54b">
+                        <dlentry id="dlentry_vcg_cgk_54b">
+                          <dt/>
+                          <dd/>
+                        </dlentry>
+                      </dl>
+                    </p>
+                  </dd>
+                </dlentry>
+                <dlentry id="base32-encode-decode">
+                  <dt><uicontrol>Base32 Encode/Decode</uicontrol> submenu</dt>
+                  <dd>
+                    <p id="p_wcg_cgk_54b">This submenu include the following actions for encoding or
+                      decoding <b>base32</b> schemes:</p>
+                    <p id="p_xcg_cgk_54b">
+                      <dl conkeyref="reusables-editing-documents/encoding-dl" id="dl_ycg_cgk_54b">
+                        <dlentry id="dlentry_zcg_cgk_54b">
+                          <dt/>
+                          <dd/>
+                        </dlentry>
+                      </dl>
+                    </p>
+                  </dd>
+                </dlentry>
+                <dlentry id="hex-encode-decode">
+                  <dt><uicontrol>Hex Encode/Decode</uicontrol> submenu</dt>
+                  <dd>
+                    <p id="p_adg_cgk_54b">This submenu include the following actions for encoding or
+                      decoding <b>hex</b> schemes:</p>
+                    <p id="p_bdg_cgk_54b">
+                      <dl conkeyref="reusables-editing-documents/encoding-dl" id="dl_cdg_cgk_54b">
+                        <dlentry id="dlentry_ddg_cgk_54b">
+                          <dt/>
+                          <dd/>
+                        </dlentry>
+                      </dl>
+                    </p>
+                  </dd>
+                </dlentry>
+                <dlentry id="dlentry_edg_cgk_54b">
+                  <dt><uicontrol>Join and Normalize Lines</uicontrol>
+                    <uicontrol>(<shortcut conkeyref="reusable-oxygen-shortcuts-list/ctrl_j_shortcut"
+                      />)</uicontrol></dt>
+                  <dd>For the current selection, this action joins the lines by replacing the
+                      <i>line separator</i> with a single space character. It also normalizes the
+                    whitespaces by replacing a sequence of such characters with a single space.</dd>
+                </dlentry>
+                <dlentry id="dlentry_fdg_cgk_54b">
+                  <dt><uicontrol>Insert new line after (<shortcut
+                        conkeyref="reusable-oxygen-shortcuts-list/ctrl_alt_enter_shortcut"
+                      />)</uicontrol>
+                  </dt>
+                  <dd>This action has the same result as moving the cursor to the end of the current
+                    line and pressing the <i>ENTER</i> key.</dd>
+                </dlentry>
+                <dlentry id="dlentry_rlw_bgk_54b">
+                  <dt><uicontrol><image href="../img/IndentSelection16.png" id="image_mdb_rqb_2s"
+                      />Indent selection (<shortcut
+                        conkeyref="reusable-oxygen-shortcuts-list/ctrl_i_shortcut"
+                    />)</uicontrol></dt>
+                  <dd>Corrects the indentation of the selected block of lines.</dd>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+        <dlentry conkeyref="reusables-editing-documents/modify-all-matches"
+          product="developer editor json" id="dlentry_gdg_cgk_54b">
+          <dt/>
+          <dd/>
+        </dlentry>
+        <dlentry product="developer editor json" id="dlentry_hdg_cgk_54b">
+          <dt><uicontrol>Go to Definition</uicontrol></dt>
+          <dd>Navigates to the definition of the current property.</dd>
+        </dlentry>
+        <dlentry id="dlentry_ajc_5cy_qwb">
+          <dt>Flatten Schema</dt>
+          <dd>Available only if the JSON document is a JSON schema, it flattens the entire hierarchy
+            of the JSON schema. For more details, see <xref href="json-schema-flatten.dita"/>.</dd>
+        </dlentry>
+        <dlentry product="developer editor json" id="dlentry_idg_cgk_54b">
+          <dt><uicontrol>Open</uicontrol> submenu</dt>
+          <dd>
+            <p id="p_jdg_cgk_54b">The following actions are available in this submenu:</p>
+            <p id="p_kdg_cgk_54b">
+              <dl id="dl_ldg_cgk_54b">
+                <dlentry conkeyref="reusables-editing-documents/open-file-at-caret-dlentry"
+                  id="dlentry_mdg_cgk_54b">
+                  <dt/>
+                  <dd/>
+                </dlentry>
+                <dlentry conkeyref="reusables-editing-documents/open-file-in-system-dlentry"
+                  id="dlentry_ndg_cgk_54b">
+                  <dt/>
+                  <dd/>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+        <dlentry conkeyref="reusables-editing-documents/open-file-at-caret-dlentry"
+          product="developerEclipse editorEclipse" id="dlentry_odg_cgk_54b">
+          <dt/>
+          <dd/>
+        </dlentry>
+        <dlentry conkeyref="reusables-editing-documents/compare-dlentry"
+          product="developer editor json" id="dlentry_pdg_cgk_54b">
+          <dt/>
+          <dd/>
+        </dlentry>
+      </dl>
+    </p>
+  </body>
+</topic>

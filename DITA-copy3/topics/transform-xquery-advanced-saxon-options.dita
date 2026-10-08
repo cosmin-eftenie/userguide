@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="transform-xquery-advanced-saxon-options">
+  <title>Advanced Saxon HE/PE/EE XQuery Transformation Options</title>
+  <body>
+    <p id="p_opd_cgk_54b">The XQuery transformation scenario allows you to configure advanced options that are specific
+      for the Saxon HE (Home Edition), PE (Professional Edition), and EE (Enterprise Edition)
+        engines.<ph product="editor editorEclipse developer developerEclipse"> They are the same
+        options as <xref href="preferences-xquery-saxon.dita">those in the <uicontrol>Saxon
+            HE/PE/EE</uicontrol> preferences page</xref> but they are configured as a specific set
+        of transformation options for each transformation scenario, while the values set in the
+        preferences page apply as global options. The advanced options configured in a
+        transformation scenario override the <ph product="developerEclipse editorEclipse">global
+          options</ph><ph product="developer editor"><xref keyref="glossentry_global-options">global
+            options</xref></ph> defined in the preferences page.</ph>
+    </p>
+    <section id="saxonhepeee_options">
+      <title>Saxon-HE/PE/EE Options</title>
+      <p id="p_ppd_cgk_54b">The advanced options for Saxon <ph keyref="saxon9FullVersion"/> Home Edition (HE),
+        Professional Edition (PE), and Enterprise Edition (EE) are as follows:<dl id="dl_qpd_cgk_54b">
+          <dlentry conkeyref="reusables-querying-documents/xquery-use-config-file-" id="dlentry_rpd_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-querying-documents/optimization-level"
+            id="optimization-level">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-querying-documents/linked-tree" id="dlentry_spd_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-querying-documents/xquery-strip-whitespaces-" id="dlentry_upd_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-querying-documents/xquery-enable-profiling" id="dlentry_vpd_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+        </dl></p>
+    </section>
+    <section id="saxonpeee_options">
+      <title>Saxon-PE/EE Options</title>
+      <p id="p_wpd_cgk_54b">The following advanced options are specific for Saxon <ph keyref="saxon9FullVersion"/>
+        Professional Edition (PE) and Enterprise Edition (EE) only:<dl id="dl_xpd_cgk_54b">
+          <dlentry conkeyref="reusables-querying-documents/xquery-allow-calls-" id="dlentry_ypd_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+        </dl></p>
+    </section>
+    <section id="saxonee_options">
+      <title>Saxon-EE Options</title>
+      <p id="p_zpd_cgk_54b">The advanced options that are specific for Saxon <ph keyref="saxon9FullVersion"/>
+        Enterprise Edition (EE) are as follows:<dl id="dl_aqd_cgk_54b">
+          <dlentry conkeyref="reusables-querying-documents/xquery-val-source-file-" id="dlentry_bqd_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-querying-documents/saxon-option-outval-" id="dlentry_cqd_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-querying-documents/xquery-enable-update-"
+            id="enable-xquery-update-option">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry
+            conref="../reusables/topics/reusables-querying-documents.dita#reusables-querying-documents/xquery-saxon-ee-advanced-options-end-"
+            id="dlentry_it1_34v_z5b">
+            <dt/>
+            <dd/>
+          </dlentry>
+        </dl></p>
+    </section>
+    <section id="other_options">
+      <title>Other Options</title>
+      <p id="p_dqd_cgk_54b">
+        <dl id="dl_eqd_cgk_54b">
+          <dlentry id="dlentry_fqd_cgk_54b">
+            <dt><uicontrol>Initializer class</uicontrol></dt>
+            <dd>Equivalent to the <codeph>-init</codeph> Saxon command-line argument. The value is
+              the name of a user-supplied class that implements the
+                <i>net.sf.saxon.lib.Initializer</i> interface. This initializer is called during the
+              initialization process, and may be used to set any options required on the
+              configuration programmatically. It is particularly useful for tasks such as
+              registering extension functions, collations, or external object models, especially in
+              Saxon-HE where the option cannot be set via a configuration file. Saxon only calls the
+              initializer when running from the command line, but the same code may be invoked to
+              perform initialization when running user application code.</dd>
+          </dlentry>
+        </dl>
+      </p>
+    </section>
+  </body>
+</topic>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="text-mode-views">
+  <title>Text Mode Views</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Text editing mode<indexterm>Views</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_byv_bgk_54b">There is a variety of <xref keyref="glossentry_dockable"><term>dockable</term></xref> helper
+      views that are displayed by default in <uicontrol>Text</uicontrol> mode. There are also a
+      large selection of additional views available in the <menucascade>
+        <uicontrol>Window</uicontrol>
+        <uicontrol>Show View</uicontrol>
+      </menucascade> menu. This section presents some of the most helpful views for editing in
+        <uicontrol>Text</uicontrol> mode.</p>
+  </body>
+</topic>

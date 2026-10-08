@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="cf-enterprise-backups">
+  <title>Backing Up Content Fusion Data</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Content Fusion Enterprise - Backups</indexterm>
+        <indexterm>Backing up data</indexterm>
+        <indexterm>Backups</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_i35_dgk_54b">It is recommended for the server administrator to set up periodic backups for the <ph
+        keyref="cfEnterprise"/>.</p>
+    <section id="section_dy1_p3k_ndb">
+      <title>Creating a Backup</title>
+      <p id="p_j35_dgk_54b">A Content Fusion backup contains a <xref
+          href="https://www.postgresql.org/" format="html" scope="external">PostgreSQL</xref>
+        database dump along with configuration, project, and task files.</p>
+      <p id="p_rqc_frj_54b">To create a backup, execute the following command on the <b>Content
+          Fusion</b> machine:
+        <codeblock outputclass="language-javascript" id="codeblock_k35_dgk_54b">sudo bash /fusion/admin/create-fusion-backup.sh MY_BACKUP_FILE</codeblock></p>
+      <p id="p_iqf_pyz_z1c"><i>MY_BACKUP_FILE</i> may either be a file name or file path.</p>
+      <note type="tip" id="note_qlf_frj_54b">A review task is divided into two parts (task metadata
+        that is stored in a database and task files that are stored on the file system). Therefore,
+        backups might contain tasks with small de-synchronizations. For this reason, the server
+        administrator should choose a time with the least amount of usage to create the
+        backup.</note>
+      <p id="p_sqc_frj_54b">This will create a backup archive (<filepath>MY_BACKUP_FILE</filepath>)
+        in the current directory. If the backup file already exists, you will be prompted to choose
+        whether or not to overwrite it. If you run the <filepath>create-fusion-backup.sh</filepath>
+        command without specifying the backup file, it will create a timestamped file (e.g.
+          <codeph>fusion-backup-20240325125325.tar.gz</codeph>) in the current directory).</p>
+    </section>
+    <section id="section_im4_p3k_ndb">
+      <title>Storing a Backup</title>
+      <p id="p_l35_dgk_54b">The server administrator should create backups and download them to a safe backup storage
+        location periodically. One method of doing this is to create a <cmdname>cron</cmdname> job
+        that periodically connects to the <b>Content Fusion</b> machine to create a backup and
+        download it using <cmdname>rsync</cmdname>.</p>
+    </section>
+    <section id="section_dzj_q3k_ndb">
+      <title>Restoring a Backup</title>
+      <p id="p_m35_dgk_54b">To restore <b>Content Fusion</b> from a backup, execute the following command on the
+        Content Fusion
+        machine:<codeblock outputclass="language-javascript" id="codeblock_n35_dgk_54b">sudo bash /fusion/admin/restore-fusion-backup.sh /path/to/fusion-backup.tar.gz</codeblock></p>
+      <p id="p_o35_dgk_54b">The script takes one argument, the path to the backup file to restore from.</p>
+      <p id="p_p35_dgk_54b">
+        <note id="note_sw1_nqz_r4b">restore-fusion-backup.sh will scan the given backup and if it is
+          corrupted it will ask whether to continue or not. You can use the <codeph>-n</codeph>
+          option to run it in non-interactive mode, where it will fail when encountering a corrupted
+          backup.</note>
+      </p>
+      <p id="p_q35_dgk_54b">After restoring from the backup, start <b>Content Fusion</b> by using the following
+        command:<codeblock outputclass="language-javascript" id="codeblock_r35_dgk_54b">sudo bash /fusion/admin/start-content-fusion.sh</codeblock></p>
+    </section>
+  </body>
+</topic>

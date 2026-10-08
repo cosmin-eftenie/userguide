@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="perform_common_review_actions">
+  <title>How to Perform Common Review Tasks</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Review pane</indexterm>
+        <indexterm>Review tooltip</indexterm>
+        <indexterm>Change Tracking</indexterm>
+        <indexterm>Comments</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <section id="section_nbl_b1v_flb">
+      <title>Review Pane</title>
+      <p id="IX-Review-Intro-p">This section describes how to work with the
+          <uicontrol>Review</uicontrol> side pane in <ph keyref="webappProduct"/> and how to perform
+        some of the most common review tasks. To open the <uicontrol>Review</uicontrol> side pane,
+        select the <uicontrol><image href="../img/WA-Review22.png"/>Review</uicontrol> tab in the
+        vertical stripe on the right side of the screen. <ph
+          conkeyref="reusables-webapp/side-panel-ph"/></p>
+      <p id="p_wp4_dgk_54b">If you place the cursor in a comment or tracked change in the main editor, those items are
+        highlighted in the <uicontrol>Review</uicontrol> pane. Conversely, when you select a comment
+        in the <uicontrol>Review</uicontrol> pane, a temporary line is shown that connects the
+        review item with its corresponding comment or change in the editor and it remains
+        highlighted in both the <uicontrol>Review</uicontrol> pane and the main editor pane.</p>
+      <p conkeyref="reusables-webapp/p-fig-WA-Review-Panel" id="p_iys_my5_frb"/>
+    </section>
+    <section id="see_the_list_of_all_comments_or_tracked_changes_f">
+      <title>Use the Review Pane to View Comments or Tracked Changes</title>
+      <ol id="ol_wpr_myk_cr">
+        <li id="li_xp4_dgk_54b">Tap or click the <uicontrol>Review Pane</uicontrol> tab on the right
+          side of the screen. <ph conkeyref="reusables-webapp/side-panel-ph"/></li>
+        <li id="li_yp4_dgk_54b">Tap or click one of the comments or <term>tracked changes</term> to see it highlighted
+          in the document area.</li>
+        <li id="li_zp4_dgk_54b">Hover over or select a comment/change to display actions that are available for that
+          particular item.</li>
+      </ol>
+    </section>
+    <section id="filter_comments_and_changes">
+      <title>Filter Comments and Changes</title>
+      <p id="p_aq4_dgk_54b">To filter the comments and changes (for example, to only show items for a particular author
+        or to only show a certain type of review item), enter queries in the text filter at the top
+        of the pane.</p>
+      <table id="table_unm_n1j_px" colsep="1" rowsep="1" frame="all">
+        <title>Filter Syntax</title>
+        <tgroup cols="4">
+          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+          <colspec colname="newCol2" colnum="2" colwidth="1*"/>
+          <colspec colname="c2" colnum="3" colwidth="1.0*"/>
+          <colspec colname="newCol3" colnum="4" colwidth="1*"/>
+          <thead>
+            <row>
+              <entry>Filter</entry>
+              <entry>Description</entry>
+              <entry valign="middle">Possible values</entry>
+              <entry valign="middle">Example</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><b>author</b></entry>
+              <entry>Filters by the author name</entry>
+              <entry valign="middle">Any author name</entry>
+              <entry valign="middle">author:Jane</entry>
+            </row>
+            <row>
+              <entry><b>type</b></entry>
+              <entry>Filters only the items of the given type</entry>
+              <entry valign="middle"><i>comment</i>, <i>change</i>, <i>highlight</i>, <i>insert</i>,
+                  <i>delete</i></entry>
+              <entry valign="middle">type:comment some comment content</entry>
+            </row>
+            <row>
+              <entry><b>before</b></entry>
+              <entry>Filters items before the given date</entry>
+              <entry valign="middle">yyyy/mm/dd</entry>
+              <entry valign="middle">before:2016/04/22</entry>
+            </row>
+            <row>
+              <entry><b>after</b></entry>
+              <entry>Filters items after the given date</entry>
+              <entry valign="middle">yyyy/mm/dd</entry>
+              <entry valign="middle">after:2015/03/15</entry>
+            </row>
+            <row>
+              <entry><b>@</b></entry>
+              <entry>Filters comments that mention an author</entry>
+              <entry valign="middle">Any author @name</entry>
+              <entry valign="middle">@Jane</entry>
+            </row>
+            <row>
+              <entry><b>status</b></entry>
+              <entry>Filters items based on the status</entry>
+              <entry valign="middle"><i>open</i>, <i>done</i>
+              </entry>
+              <entry valign="middle">status:open</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <p id="p_bq4_dgk_54b"><b>Example:</b>
+        <codeblock outputclass="language-ini" id="codeblock_cq4_dgk_54b">author:Jim @Jane type:comment before:2016/04/22 some comment</codeblock></p>
+    </section>
+    <section id="activate_change_tracking">
+      <title>Activate Change Tracking</title>
+      <p id="p_dq4_dgk_54b">Tap or click the <uicontrol><image href="../img/TrackChanges20.png" id="image_tqd_n1g_wr"
+          />Toggle Change Tracking</uicontrol> button from the toolbar to enable or disable this
+        feature.</p>
+    </section>
+    <section id="accept_or_reject_tracked_changes">
+      <title>Accept or Reject Tracked Changes</title>
+      <p id="p_eq4_dgk_54b">
+        <ol id="ol_kqb_f1v_flb">
+          <li id="li_fq4_dgk_54b">To accept a change (or a selection of multiple changes), tap or click the
+                <uicontrol><image href="../img/AcceptChange16.png" placement="inline"
+                id="image_lqb_f1v_flb"/>Accept Change</uicontrol> button from the toolbar (on a
+            desktop device, you can also select this action from the contextual menu), or select the
+            change in the <uicontrol>Review</uicontrol> pane and click the <uicontrol><image
+                href="../img/WAAcceptChange16.png" placement="inline" id="image_mqb_f1v_flb"
+              />Accept</uicontrol> button. To accept all tracked changes in the current document,
+            click the <uicontrol><image href="../img/AcceptAll16.png" id="image_nqb_f1v_flb"/>
+              Accept all changes</uicontrol> button at the bottom of the
+              <uicontrol>Review</uicontrol> pane.</li>
+          <li id="li_gq4_dgk_54b">To reject a change (or a selection of multiple changes), tap or click the
+                <uicontrol><image href="../img/RejectChange16.png" placement="inline"
+                id="image_oqb_f1v_flb"/>Reject Change</uicontrol> button from the toolbar (on a
+            desktop device, you can also select this action from the contextual menu), or select the
+            change in the <uicontrol>Review</uicontrol> pane and click the <uicontrol><image
+                href="../img/WARejectChange16.png" placement="inline" id="image_pqb_f1v_flb"
+              />Reject</uicontrol> button. To reject all tracked changes in the current document,
+            click the <uicontrol><image href="../img/RejectAll16.png" id="image_qqb_f1v_flb"/>
+              Reject all changes</uicontrol> button at the bottom of the
+              <uicontrol>Review</uicontrol> pane.</li>
+        </ol>
+      </p>
+    </section>
+    <note id="note_hq4_dgk_54b">When the comments and changes are filtered, the <uicontrol><image
+          href="../img/AcceptAll16.png" id="image_hbw_jgw_nkb"/> Accept all changes</uicontrol> and
+          <uicontrol><image href="../img/RejectAll16.png" id="image_mkz_kgw_nkb"/> Reject all
+        changes</uicontrol> buttons will only apply to tracked changes that also match the
+      filter.</note>
+    <section id="add_a_comment">
+      <title>Add a Comment</title>
+      <ol id="ol_vpr_myk_cr">
+        <li id="li_iq4_dgk_54b">Make a selection in the document content.</li>
+        <li id="li_jq4_dgk_54b">Tap or click the <uicontrol><image href="../img/AddComment16.png" id="image_pmh_5jg_wr"
+            />Add comment</uicontrol> button from the toolbar (on a desktop device, you can also
+          select this action from the contextual menu).</li>
+        <li id="li_kq4_dgk_54b">Input a comment in the displayed dialog box. Tap or click <uicontrol>Comment</uicontrol>
+          to commit it into the document.</li>
+        <li id="li_lq4_dgk_54b">The commented text is highlighted.</li>
+      </ol>
+    </section>
+    <section id="edit_or_remove_an_existing_comment">
+      <title>Edit or Remove an Existing Comment</title>
+      <p id="p_mq4_dgk_54b">
+        <ol id="ol_rqb_f1v_flb">
+          <li id="li_nq4_dgk_54b">You can only edit comments that you added to the document. To do so, select the
+            comment in the main editing area and tap or click the <uicontrol><image
+                href="../img/EditComment16.png" placement="inline" id="image_sqb_f1v_flb"/>Edit
+              Comment</uicontrol> button from the toolbar (on a desktop device, you can also select
+            this action from the contextual menu), or select the comment in the
+              <uicontrol>Review</uicontrol> pane and click the <uicontrol><image
+                href="../img/WAEdit16.png" placement="inline" id="image_tqb_f1v_flb"
+              />Edit</uicontrol> button.</li>
+          <li id="li_oq4_dgk_54b">You can remove any comment, regardless of who added it to the document. To do so,
+            select the comment in the main editing area and tap or click the <uicontrol><image
+                href="../img/RemoveComment16.png" placement="inline" id="image_uqb_f1v_flb"/>Remove
+              Comment</uicontrol> button from the toolbar (on a desktop device, you can also select
+            this action from the contextual menu), or select the change in the
+              <uicontrol>Review</uicontrol> pane and click the <uicontrol><image
+                href="../img/WARejectChange16.png" placement="inline" id="image_vqb_f1v_flb"
+              />Remove</uicontrol> button.</li>
+        </ol>
+      </p>
+    </section>
+    <section id="reply_to_comments">
+      <title>Reply to Comments or Changes</title>
+      <p id="p_pq4_dgk_54b">
+        <ol id="ol_wqb_f1v_flb">
+          <li id="li_qq4_dgk_54b">Select the comment or change in the <uicontrol>Review</uicontrol> pane and select
+                <uicontrol><image href="../img/WebAuthorReply16.png" id="image_xqb_f1v_flb"
+              />Reply</uicontrol> (on a desktop device, you can also select this action from the
+            contextual menu). A dialog box will be displayed that allows you to add your reply.</li>
+          <li id="li_rq4_dgk_54b">Select <uicontrol>OK</uicontrol> to add your reply to the comment thread. The replies
+            are displayed with an indentation in the <uicontrol>Review</uicontrol> pane.</li>
+        </ol>
+      </p>
+    </section>
+    <section id="mark_changes_or_comments_as_done">
+      <title>Mark Changes or Comments as Done</title>
+      <p id="p_sq4_dgk_54b">Select the change or comment in the <uicontrol>Review</uicontrol> pane and select
+            <uicontrol><image href="../img/WebAuthorMarkDone16.png" id="image_yqb_f1v_flb"/>Mark as
+          Done</uicontrol>. This toggles the button and marks the change or comment as being done by
+        graying it out in the <uicontrol>Review</uicontrol> pane. You can mark a whole comment
+        thread as being done by selecting the action on the first (parent) comment or change in the
+        thread.</p>
+    </section>
+    <section id="section_gxb_bvt_tsb">
+      <title>Tag (Mention) Other Users</title>
+      <p id="p_hxb_bvt_tsb">When adding or revising a comment, you can type the
+          <uicontrol>@</uicontrol> symbol to mention another person. Typing the
+          <uicontrol>@</uicontrol> symbol displays a drop-down list where you can select the desired
+        collaborator. By default, all authors specified in the current document are available in the
+        list of users that can be mentioned. You can also manually type the person's name after the
+          <uicontrol>@</uicontrol> symbol and auto-completion proposals are presented while typing
+        the name.</p>
+      <p id="p_okz_ljz_l3c">The tagged person's name is rendered in blue on your screen, while they
+        see the new mention rendered in orange along with orange notification symbols so get their
+        attention. You can click the <image href="../img/WA-Mention20.png"/> button on the right
+        side of the <uicontrol>Filter</uicontrol> field to filter the review pane to only show open
+        mentions. Once you mark the comment as done, the notification symbols disappear.</p>
+      <p id="p_ex5_2yt_tsb">
+        <fig id="fig_q4x_2yt_tsb">
+          <title>Mentioning Another User</title>
+          <image href="../img/Review-mentions.png"/>
+        </fig>
+      </p>
+    </section>
+    <section id="navigate_through_the_comments_or_tracked_changes">
+      <title>Navigate Through the Comments or Tracked Changes</title>
+      <p id="p_tq4_dgk_54b">Use the <uicontrol><image href="../img/NextReference16.png"
+          />Next</uicontrol>/<uicontrol><image href="../img/PreviousReference16.png"
+          />Previous</uicontrol> buttons in the top-right corner of the
+          <uicontrol>Review</uicontrol> pane (or click any item in the pane) to navigate between
+        comments or <term>tracked changes</term>.</p>
+      <p id="p_uq4_dgk_54b">The currently selected comment or tracked change is:<ul id="ul_zqb_f1v_flb">
+          <li id="li_vq4_dgk_54b">Highlighted in the document (in the main editor) with a contrasting background color.
+            Also, if the <uicontrol>Review</uicontrol> pane is not visible, the start of the current
+            comment or tracked change is designated with a small temporary triangle marker.</li>
+          <li id="li_wq4_dgk_54b">Highlighted in the right-side <uicontrol>Review</uicontrol> pane.</li>
+          <li id="li_xq4_dgk_54b">Designated with a temporary arrow that connects the entry in the
+              <uicontrol>Review</uicontrol> pane with its corresponding comment or change in the
+            document (in the main editor).</li>
+        </ul></p>
+    </section>
+    <section id="section_hw2_s1v_flb">
+      <title>Using Inline Actions in the Editing Pane</title>
+    </section>
+    <p id="p_yq4_dgk_54b">This section describes how to perform common review tasks in <ph keyref="webappProduct"/>
+      using the inline actions available in a tooltip displayed when hovering over a comment or
+      change in the main editing area.</p>
+    <p id="p_zq4_dgk_54b">
+      <fig id="fig_cnx_v1v_flb">
+        <title>Web Author Review Tooltip</title>
+        <image href="../img/oxygen_webapp_tooltip_review.png" id="image_dnx_v1v_flb"/>
+      </fig>
+    </p>
+    <section id="accept_or_reject_tracked_changes_editor">
+      <title>Accept or Reject Tracked Changes</title>
+      <p id="p_ar4_dgk_54b">
+        <ol id="ol_enx_v1v_flb">
+          <li id="li_br4_dgk_54b">To accept a change, tap or click the <uicontrol><image
+                href="../img/AcceptChange16.png" placement="inline" id="image_fnx_v1v_flb"
+              />Accept</uicontrol> button from the review tooltip.</li>
+          <li id="li_cr4_dgk_54b">To reject a change, tap or click the <uicontrol><image
+                href="../img/RejectChange16.png" placement="inline" id="image_gnx_v1v_flb"
+              />Reject</uicontrol> button from the review tooltip.</li>
+        </ol>
+      </p>
+    </section>
+    <section id="remove_an_existing_comment">
+      <title>Remove an Existing Comment</title>
+      <p id="p_dr4_dgk_54b">You can remove any comment, regardless of who added it to the document. To do so, tap or
+        click the <uicontrol><image href="../img/RejectChange16.png" placement="inline"
+            id="image_hnx_v1v_flb"/>Remove</uicontrol> button. If there are replies added to a
+        comment, use the <uicontrol><image href="../img/RejectChange16.png" placement="inline"
+            id="image_inx_v1v_flb"/>Remove all</uicontrol> button to remove the entire
+        conversation.</p>
+    </section>
+    <section id="reply_to_comments_or_changes">
+      <title>Reply to Comments or Changes</title>
+      <p id="p_er4_dgk_54b">To reply to a comment or change, tap or click the <uicontrol><image
+            href="../img/ReplyBlue16.png" placement="inline" id="image_jnx_v1v_flb"
+          />Reply</uicontrol> button from the review tooltip.</p>
+    </section>
+    <section id="overlapping_tooltip_sensitive_areas">
+      <title>Overlapping Tooltip Sensitive Areas</title>
+      <p id="p_fr4_dgk_54b">When you hover over a spot that contains multiple commented or changed text areas, the
+        tooltip displays the list of threads available in that area.</p>
+      <p id="p_gr4_dgk_54b">To expand a particular thread, click or tap the thread item.</p>
+      <p id="p_hr4_dgk_54b">
+        <fig id="fig_knx_v1v_flb">
+          <title>Multiple Threads in a Review Tooltip</title>
+          <image href="../img/oxygen_webapp_tooltip_overlap.png" placement="inline"
+            id="image_lnx_v1v_flb"/>
+        </fig>
+      </p>
+    </section>
+  </body>
+</topic>

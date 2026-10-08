@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ofb-quick-start-guide">
+  <title>Quick Start Guide</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Getting started steps</indexterm>
+      </keywords>
+      <keywords>
+        <keyword outputclass="label">WebHelp Output</keyword>
+        <keyword outputclass="label">Admin Interface</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_m3f_qbh_4rb">This short guide is meant to offer a general outline of the tasks that
+      should be completed to get the most out of <ph keyref="product"/>.</p>
+    <section id="section_v55_hvd_qrb">
+      <title>1. Create Your Account and Organization</title>
+      <p id="p_w55_hvd_qrb">The first thing you need to do is create an account. See <xref
+          href="ofb-signing-up.dita"/> for information.</p>
+    </section>
+    <section id="section_v55_nvd_qrb" product="feedback-enterprise">
+      <title>2. Install and Configure <ph keyref="product"/> on Your Server</title>
+      <p id="p_w55_nvd_qrb">This will be done by the <term keyref="glossentry_fb_platform_admin"
+          >Feedback Platform Admin</term> for your organization. See the <xref
+          href="ofb-enterprise-server-guide.dita"/> section for all the details about how to install
+        the service on Linux, setting up a database, and various topics about specific configuration
+        possibilities.</p>
+    </section>
+    <section id="section_ujk_hwd_qrb">
+      <title><ph product="feedback">2.</ph><ph product="feedback-enterprise">3.</ph> Add the
+        Feedback Commenting Component to Your Website</title>
+      <p id="p_vjk_hwd_qrb">See the <xref href="ofb-installing-feeback.dita"/> section to learn how
+        to integrate the <b>Oxygen Feedback</b> commenting component in your WebHelp output or in
+        any HTML-based web page.</p>
+    </section>
+    <section id="section_cn3_twd_qrb">
+      <title><ph product="feedback">3.</ph><ph product="feedback-enterprise">4.</ph> Manage <ph
+          keyref="product"/> in the Administration Interface</title>
+      <p id="p_dn3_twd_qrb">See the <xref href="ofb-administrator-guide.dita"/> section for
+        information about how to moderate comments, manage users, view statistics, and configure
+        various settings, notifications, and other components of the <b>Oxygen Feedback </b> comment
+        system.</p>
+    </section>
+    <section id="section_dlc_lyr_5rb">
+      <title><ph product="feedback">4.</ph><ph product="feedback-enterprise">5.</ph> Integrate <ph
+          keyref="product"/> with Oxygen XML Editor/Author</title>
+      <p id="p_elc_lyr_5rb">See the <xref href="https://www.oxygenxml.com/doc/ug-addons/topics/ofb-feedback-comments-manager.html" scope="external" format="html"/> topic for
+        information about how to integrate <b>Oxygen Feedback</b> with <term>Oxygen XML
+          Editor/Author</term> so that your documentation team can see all the comments added in
+        your WebHelp output.<note type="tip" id="note_qqw_dgk_54b">
+          <p id="p_rqw_dgk_54b">To see a demonstration of how to install <b>Oxygen Feedback</b> in
+            WebHelp output generated from <b>Oxygen XML Editor</b>, watch our installation
+            video:</p>
+          <p id="p_sqw_dgk_54b"><object width="450" height="250"
+              data="https://www.youtube.com/embed/u2AIddvaF7s" outputclass="iframe">
+              <param name="allowfullscreen" value="true"/>
+            </object></p>
+        </note></p>
+    </section>
+    <section id="section_usj_s1s_5rb">
+      <title>Other Common Tasks</title>
+      <p id="p_vsj_s1s_5rb">Here is a list of references about how to perform some of the other most
+        common tasks for new users:</p>
+      <p id="p_xzh_jbs_5rb">
+        <dl id="dl_wzl_jbs_5rb">
+          <dlentry id="dlentry_xzl_jbs_5rb">
+            <dt>How to edit your organization's profile</dt>
+            <dd>The organization <i>Owner</i> can edit and manage various facets of the organization
+              from the <xref href="ofb-organization-profile-page.dita"><uicontrol>Organization
+                  Profile</uicontrol> page</xref>. For example, you can change the name, home URL,
+              contact email, or logo, configure legal policies, or delete an organization.</dd>
+          </dlentry>
+          <dlentry id="dlentry_cfr_pgs_5rb">
+            <dt>How to invite new members</dt>
+            <dd>The organization <i>Owner</i> can choose who to invite to join the organization and
+              they can specify and manage the user roles for all members of the organization from
+              the <xref href="ofb-members-page.dita"><uicontrol>Members</uicontrol>
+              page</xref>.</dd>
+          </dlentry>
+          <dlentry id="dlentry_ozw_qgs_5rb">
+            <dt>How to moderate comments</dt>
+            <dd>Users with the role of organization <i>Owner</i>, <i>Admin</i>, or <i>Moderator</i>
+              can view, manage, and moderate comments added in the output from the <xref
+                href="ofb-moderating-comments.dita"><uicontrol>Comments</uicontrol> page</xref>. For
+              example, you can filter, accept, reject, purge, or resolve comments.</dd>
+          </dlentry>
+        </dl>
+      </p>
+    </section>
+  </body>
+</topic>

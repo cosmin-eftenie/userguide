@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept
+  PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="dg-parent-url-function">
+  <title>Parent URL: oxy_parent-url() Function</title>
+  <shortdesc>This function evaluates the parent URL of a URL received as string.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>CSS extensions<indexterm>Custom
+            functions<indexterm>oxy_parent-url</indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p id="p_c2d_dgk_54b">
+      <dl id="dl_d2d_dgk_54b">
+        <dlentry id="dlentry_e2d_dgk_54b">
+          <dt>Syntax:</dt>
+          <dd>
+            <p id="p_f2d_dgk_54b">
+              <syntaxdiagram>
+                <groupseq>
+                  <kwd>oxy_parent-url</kwd>
+                  <sep>(</sep>
+                  <kwd>URL</kwd>
+                  <sep>)</sep>
+                </groupseq>
+              </syntaxdiagram>
+            </p>
+            <p id="p_g2d_dgk_54b">
+              <dl id="dl_h2d_dgk_54b">
+                <dlentry id="dlentry_i2d_dgk_54b">
+                  <dt>URL</dt>
+                  <dd>The URL as string.</dd>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+      </dl>
+    </p>
+  </conbody>
+</concept>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="folding-in-JSON">
+  <title>Folding in JSON</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>JSON documents<indexterm>Folding</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_fvf_cgk_54b">In a large JSON document, the data enclosed in the curly bracket
+      characters <codeph>{}</codeph> can be collapsed so that only the needed data remains in focus.
+      The folding features available for XML documents are also available in JSON documents.</p>
+  </body>
+</topic>

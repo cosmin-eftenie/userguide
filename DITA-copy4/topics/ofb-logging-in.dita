@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ofb-logging-in">
+  <title>Logging In</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Log in</indexterm>
+        <indexterm>Log in with Google</indexterm>
+        <indexterm>Log in with Facebook</indexterm>
+      </keywords>
+      <keywords>
+        <keyword outputclass="label">User Authentication</keyword>
+        <keyword outputclass="label">OAuth Authentication</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p>There are several ways to log in to your Feedback account:<ul id="ul_gr3_pnd_qrb">
+        <li id="li_hr3_pnd_qrb">Administrators/moderators can log in from the administration
+          interface <i>login page</i>
+          <ph product="feedback"> (<filepath>https://feedback.oxygenxml.com/login</filepath>)</ph>.
+          You first need to specify the <uicontrol>Organization ID</uicontrol> and then click
+            <uicontrol>Continue</uicontrol>.<note id="note_g12_2px_25b" type="tip">The
+            organization's <i>login page</i> can be accessed directly using a URL with the following
+            form: <filepath>/organizations/{organizationID}/login</filepath>. This directs you to
+            the login page with the <i>Organization ID</i> automatically pre-filled so that you do
+            not need to input the ID manually.</note></li>
+        <li id="li_tdf_znd_qrb">All users can log in from a page where the <b>Oxygen Feedback</b>
+          commenting component is installed. In this scenario, the <i>Organization ID</i> is
+          automatically selected based on the organization that integrated the Feedback component.
+          Administrators/moderators can then access the administration interface by selecting
+            <uicontrol>Home</uicontrol> from the user drop-down menu.</li>
+      </ul></p>
+    <p id="p_dqb_lnd_qrb"><xref href="ofb-signing-up.dita">Registered users</xref> can log in using
+      one of the following methods:</p>
+    <p id="p_ihx_dgk_54b">
+      <dl id="dl_jhx_dgk_54b">
+        <dlentry id="dlentry_khx_dgk_54b">
+          <dt><u>Log in with a Social Media Account</u></dt>
+          <dd>
+            <p id="p_lhx_dgk_54b">At the bottom of the <b>Oxygen Feedback</b> Log In/Sign Up dialog box, you can click
+              on <uicontrol>Log in with Google</uicontrol> or <uicontrol>Log in with
+                Facebook</uicontrol> to log in using your Google or Facebook credentials. If this is
+              the first time using this particular login method, you will be asked to confirm and
+              authenticate your Google/Facebook credentials.</p>
+            <note id="note_mhx_dgk_54b">When logging in using this method, your avatar will be updated with your profile
+              picture from Google or Facebook.</note>
+          </dd>
+        </dlentry>
+        <dlentry id="dlentry_nhx_dgk_54b">
+          <dt><u>Log In with Your Email and Password</u></dt>
+          <dd>
+            <p id="p_ohx_dgk_54b">If you have already created an account using the <uicontrol>Sign Up</uicontrol> tab,
+              you can log in using your registered email address and password from the
+                <uicontrol>Log In</uicontrol> tab. You can select the <uicontrol>Remember
+                me</uicontrol> option to save your login information in a <term>cookie</term> and
+              your session will be automatically refreshed whenever it expires. The
+                <term>cookie</term> is valid for two weeks.</p>
+          </dd>
+        </dlentry>
+        <dlentry id="dlentry_x3n_44d_qrb" product="feedback-enterprise">
+          <dt><u>Log In with Other Authentication Method Configure by the Organization</u></dt>
+          <dd>If your organization has configured another authentication method for logging in (e.g.
+            LDAP authentication), you can log in using that specific method. Ask your organization's
+              <term keyref="glossentry_fb_platform_admin">Feedback Platform Admin</term> for more
+            information.</dd>
+        </dlentry>
+      </dl>
+    </p>
+  </body>
+</topic>

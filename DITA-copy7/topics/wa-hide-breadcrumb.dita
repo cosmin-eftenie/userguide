@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="wa-hide-breadcrumb">
+  <title>Hiding the Breadcrumb</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Hide the breadcrumb</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_bbt_dgk_54b">The main editing pane includes a <i>breadcrumb</i> stripe at the bottom of the pane that
+      shows the hierarchical XML structure of the current document. It is a helpful tool for users
+      that want to be able to visualize or navigate the XML element structure within a document. If
+      your users do not have a need for this <i>breadcrumb</i>, it is possible to hide it in the
+      interface.</p>
+    <p id="p_cbt_dgk_54b">To hide the <i>breadcrumb</i>, set the <codeph>hideBreadcrumb</codeph>
+      property in a plugin (using the <xref keyref="jscript_api_workspace_LoadingOptions"
+          ><term>LoadingOptions</term> type definition from the <term>Workspace</term>
+      API</xref>).</p>
+    <p id="p_dbt_dgk_54b">Possible values for the <codeph>hideBreadcrumb</codeph> property are:<ul
+        id="ul_ebt_dgk_54b">
+        <li id="li_fbt_dgk_54b"><b>false</b> - The <i>breadcrumb</i> is visible in the
+          interface.</li>
+        <li id="li_gbt_dgk_54b"><b>true</b> - The <i>breadcrumb</i> is not displayed in the
+          interface.</li>
+      </ul></p>
+    <p id="p_hbt_dgk_54b">You can set this property in your plugin's JavaScript code like
+      this:<codeblock outputclass="language-javascript" id="codeblock_ibt_dgk_54b">goog.events.listen(workspace, 
+sync.api.Workspace.EventType.BEFORE_EDITOR_LOADED, function(e) {
+    e.options.hideBreadcrumb = 'true';
+}); </codeblock></p>
+    <note type="tip" id="note_jbt_dgk_54b">You can also use this property in an <xref
+        href="webauthor-integrate-embedded-launch.dita#webauthor-integrate-embedded-launch">embedded
+        link that launches Web Author</xref> so that when a user clicks the constructed link, the
+        <term>breadcrumb</term> is not displayed.</note>
+  </body>
+</topic>

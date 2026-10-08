@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="preferences-xml-import">
+  <title>Import Preferences</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Preferences<indexterm>Import</indexterm></indexterm>
+        <indexterm>Import preferences</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_xmq_bgk_54b">To configure importing options, <ph
+        conkeyref="reusables-preferences-pages/open-the-preferences-page"/> and go to <menucascade>
+        <uicontrol>XML</uicontrol>
+        <uicontrol>Import</uicontrol>
+      </menucascade>. This page allows you to configure how empty values and <codeph>null</codeph>
+      values are handled when they are encountered in imported database tables or Excel sheets. Also
+      you can configure the format of date / time values recognized in the imported database tables
+      or Excel sheets.</p>
+    <p id="p_ymq_bgk_54b">The following options are available:<dl id="dl_zmq_bgk_54b">
+        <dlentry id="dlentry_anq_bgk_54b">
+          <dt><uicontrol>Create empty elements for empty values</uicontrol></dt>
+          <dd>If selected, an empty value from a database column or from a text file is imported as
+            an empty element.</dd>
+        </dlentry>
+        <dlentry id="dlentry_bnq_bgk_54b">
+          <dt><uicontrol>Create empty elements for null values</uicontrol></dt>
+          <dd>If selected, <codeph>null</codeph> values from a database column are imported as empty
+            elements.</dd>
+        </dlentry>
+        <dlentry id="dlentry_cnq_bgk_54b">
+          <dt><uicontrol>Escape XML content</uicontrol></dt>
+          <dd>Selected by default, this option instructs <ph keyref="product"/> to escape the
+            imported content to an XML-safe form.</dd>
+        </dlentry>
+        <dlentry id="dlentry_dnq_bgk_54b">
+          <dt><uicontrol>Add annotations for generated XML Schema</uicontrol></dt>
+          <dd>If selected, the generated XML Schema contains an annotation for each of the imported
+            table columns. The documentation inside the annotation tag contains the remarks of the
+            database columns (if available) and also information about the conversion between the
+            column type and the generated XML Schema type.</dd>
+        </dlentry>
+        <dlentry id="dlentry_enq_bgk_54b">
+          <dt><uicontrol>Date / Time Format</uicontrol> section</dt>
+          <dd>
+            <p id="p_fnq_bgk_54b">Specifies the format used for importing date and time values from Excel spreadsheets
+              or database tables, and in the generated XML schemas. You can choose from the
+              following format types:<ul id="ul_twr_tjy_y3b">
+                <li id="li_gnq_bgk_54b"><uicontrol>Unformatted</uicontrol> - The date and time formats specific to the
+                  database are used for import. When importing data from Excel a string
+                  representation of date or time values are used. The type used in the generated XML
+                  Schema is <codeph>xs:string</codeph>.</li>
+                <li id="li_hnq_bgk_54b"><uicontrol>XML Schema date format</uicontrol> - The XML Schema-specific format
+                  ISO8601 is used for imported date / time data
+                    (<codeph>yyyy-MM-dd'T'HH:mm:ss</codeph> for <codeph>datetime</codeph>,
+                    <codeph>yyyy-MM-dd</codeph> for <codeph>date</codeph> and
+                    <codeph>HH:mm:ss</codeph> for <codeph>time</codeph>). The types used in the
+                  generated XML Schema are <codeph>xs:datetime</codeph>, <codeph>xs:date</codeph>
+                  and <codeph>xs:time</codeph>.</li>
+                <li id="li_inq_bgk_54b"><uicontrol>Custom format</uicontrol> - If selected, you can define a custom
+                  format for timestamp, date, and time values or choose one of the predefined
+                  formats. A preview of the values is presented when a format is used. The type used
+                  in the generated XML Schema is <codeph>xs:string</codeph>.</li>
+              </ul></p>
+            <p id="p_jnq_bgk_54b">
+              <table frame="all" rowsep="1" colsep="1" id="table_knq_bgk_54b">
+                <title>Pattern Letters</title>
+                <tgroup cols="4">
+                  <colspec colname="c1" colnum="1" colwidth=".6*"/>
+                  <colspec colname="c2" colnum="2" colwidth="1.7*"/>
+                  <colspec colname="c3" colnum="3" colwidth="1.5*"/>
+                  <colspec colname="c4" colnum="4" colwidth="1.7*"/>
+                  <thead>
+                    <row>
+                      <entry>Letter</entry>
+                      <entry>Date or Time Component</entry>
+                      <entry>Presentation</entry>
+                      <entry>Examples</entry>
+                    </row>
+                  </thead>
+                  <tbody>
+                    <row>
+                      <entry>G</entry>
+                      <entry>Era designator</entry>
+                      <entry>Text</entry>
+                      <entry>AD</entry>
+                    </row>
+                    <row>
+                      <entry>y</entry>
+                      <entry>Year</entry>
+                      <entry>Year</entry>
+                      <entry>1996; 96</entry>
+                    </row>
+                    <row>
+                      <entry>M</entry>
+                      <entry>Month in year</entry>
+                      <entry>Month</entry>
+                      <entry>July; Jul; 07</entry>
+                    </row>
+                    <row>
+                      <entry>w</entry>
+                      <entry>Week in year</entry>
+                      <entry>Number</entry>
+                      <entry>27</entry>
+                    </row>
+                    <row>
+                      <entry>W</entry>
+                      <entry>Week in month</entry>
+                      <entry>Number</entry>
+                      <entry>2</entry>
+                    </row>
+                    <row>
+                      <entry>D</entry>
+                      <entry>Day in year</entry>
+                      <entry>Number</entry>
+                      <entry>189</entry>
+                    </row>
+                    <row>
+                      <entry>d</entry>
+                      <entry>Day in month</entry>
+                      <entry>Number</entry>
+                      <entry>10</entry>
+                    </row>
+                    <row>
+                      <entry>F</entry>
+                      <entry>Day of week in month</entry>
+                      <entry>Number</entry>
+                      <entry>2</entry>
+                    </row>
+                    <row>
+                      <entry>E</entry>
+                      <entry>Day in week</entry>
+                      <entry>Text</entry>
+                      <entry>Tuesday; Tue</entry>
+                    </row>
+                    <row>
+                      <entry>a</entry>
+                      <entry>Am / pm marker</entry>
+                      <entry>Text</entry>
+                      <entry>PM</entry>
+                    </row>
+                    <row>
+                      <entry>H</entry>
+                      <entry>Hour in day (0-23)</entry>
+                      <entry>Number</entry>
+                      <entry>0</entry>
+                    </row>
+                    <row>
+                      <entry>k</entry>
+                      <entry>Hour in day (1-24)</entry>
+                      <entry>Number</entry>
+                      <entry>24</entry>
+                    </row>
+                    <row>
+                      <entry>K</entry>
+                      <entry>Hour in am / pm (0-11)</entry>
+                      <entry>Number</entry>
+                      <entry>0</entry>
+                    </row>
+                    <row>
+                      <entry>h</entry>
+                      <entry>Hour in am / pm (1-12)</entry>
+                      <entry>Number</entry>
+                      <entry>12</entry>
+                    </row>
+                    <row>
+                      <entry>m</entry>
+                      <entry>Minute in hour</entry>
+                      <entry>Number</entry>
+                      <entry>30</entry>
+                    </row>
+                    <row>
+                      <entry>s</entry>
+                      <entry>Second in minute</entry>
+                      <entry>Number</entry>
+                      <entry>55</entry>
+                    </row>
+                    <row>
+                      <entry>S</entry>
+                      <entry>Millisecond</entry>
+                      <entry>Number</entry>
+                      <entry>978</entry>
+                    </row>
+                    <row>
+                      <entry>z</entry>
+                      <entry>Time zone</entry>
+                      <entry>General time zone</entry>
+                      <entry>PST; GMT-08:00</entry>
+                    </row>
+                    <row>
+                      <entry>Z</entry>
+                      <entry>Time zone</entry>
+                      <entry>RFC 822 time zone</entry>
+                      <entry>-0800</entry>
+                    </row>
+                  </tbody>
+                </tgroup>
+              </table>
+            </p>
+            <p id="p_lnq_bgk_54b">Pattern letters are usually repeated, as their number determines the exact
+                presentation:<ul id="ul_rqq_5jy_y3b">
+                <li id="li_mnq_bgk_54b"><b>Text</b> - If the number of pattern letters is 4 or more, the full form is
+                  used. Otherwise, a short or abbreviated form is used if available.</li>
+                <li id="li_nnq_bgk_54b"><b>Number</b> - The number of pattern letters is the minimum number of digits,
+                  and shorter numbers are zero-padded to this amount.</li>
+                <li id="li_onq_bgk_54b"><b>Year</b> - If the number of pattern letters is 2, the year is truncated to 2
+                  digits. Otherwise, it is interpreted as a number.</li>
+                <li id="li_pnq_bgk_54b"><b>Month</b> - If the number of pattern letters is 3 or more, the month is
+                  interpreted as text. Otherwise, it is interpreted as a number.</li>
+                <li id="li_qnq_bgk_54b">
+                  <p id="p_rnq_bgk_54b"><b>General time zone</b> - Time zones are interpreted as text if they have
+                    names. For time zones representing a GMT offset value, the following syntax is
+                    used: <ul id="ul_mpk_tc1_x3b">
+                      <li id="li_snq_bgk_54b"><b>GMTOffsetTimeZone</b> - GMT Sign Hours: Minutes</li>
+                      <li id="li_tnq_bgk_54b"><b>Sign</b> - one of + or -</li>
+                      <li id="li_unq_bgk_54b"><b>Hours</b> - one or two digits</li>
+                      <li id="li_vnq_bgk_54b"><b>Minutes</b> - two digits</li>
+                      <li id="li_wnq_bgk_54b"><b>Digit</b> - one of 0 1 2 3 4 5 6 7 8 9</li>
+                    </ul></p>
+                  <p id="p_xnq_bgk_54b">Hours must be between 0 and 23, and Minutes must be between 00 and 59. The
+                    format is locale independent and digits must be taken from the Basic Latin block
+                    of the Unicode standard.</p>
+                </li>
+                <li id="li_ynq_bgk_54b"><b>RFC 822 time zone</b>: The RFC 822 4-digit time zone format is used: <ul
+                    id="ul_sqq_5jy_y3b">
+                    <li id="li_znq_bgk_54b"><b>RFC822TimeZone</b></li>
+                    <li id="li_a4q_bgk_54b"><b>TwoDigitHours</b> (must be between 00 and 23) </li>
+                  </ul></li>
+              </ul></p>
+          </dd>
+        </dlentry>
+      </dl></p>
+  </body>
+</topic>

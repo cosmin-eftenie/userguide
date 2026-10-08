@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ant-transformation-output-tab">
+  <title>Output Tab (Ant Transformations)</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Ant transformation scenario<indexterm>Output tab</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_pxl_cgk_54b"><ph conkeyref="reusables-transforming-documents/intro-for-transformation-tabs"/></p>
+    <p id="p_qxl_cgk_54b">The <uicontrol>Output</uicontrol> tab contains the following options:</p>
+    <p id="p_rxl_cgk_54b">
+      <dl id="dl_sxl_cgk_54b">
+        <dlentry id="dlentry_txl_cgk_54b">
+          <dt><uicontrol>Open</uicontrol></dt>
+          <dd>Allows you to specify the file to open automatically when the transformation is
+            finished. This is usually the output file of the Ant process. <ph
+              conkeyref="reusables-user-guide/specify-path-without-drop-down"/><ul id="ul_uxl_cgk_54b">
+              <li id="li_vxl_cgk_54b"><uicontrol>In System Application</uicontrol> - The file specified in the
+                  <uicontrol>Open</uicontrol> text box is opened in the system application that is
+                set in the operating system as the default application for that type of file (for
+                example, in Windows <i>PDF</i> files are often opened in <i>Acrobat
+                Reader</i>).</li>
+              <li id="li_wxl_cgk_54b"><uicontrol>In Editor</uicontrol> - The file specified in the
+                  <uicontrol>Open</uicontrol> text box is opened in a new editor panel with the
+                appropriate built-in editor type (for example, if the result is an XML file it is
+                opened in the built-in XML editor).</li>
+            </ul></dd>
+        </dlentry>
+        <dlentry conkeyref="reusables-configuring-oxygen/show-console-output-dlentry" id="dlentry_xxl_cgk_54b">
+          <dt/>
+          <dd/>
+        </dlentry>
+      </dl>
+    </p>
+  </body>
+</topic>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="preferences-advanced-xslt-saxon8">
+  <title>Saxon-HE/PE/EE Advanced Preferences</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Preferences<indexterm>Saxon-HE/PE/EE XSLT Advanced</indexterm></indexterm>
+        <indexterm>Saxon HE/PE/EE advanced XSLT preferences</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_jcq_bgk_54b">To configure the <uicontrol>Saxon HE/PE/EE Advanced</uicontrol> preferences, <ph
+        conkeyref="reusables-preferences-pages/open-the-preferences-page"/> and go to <menucascade>
+        <uicontrol>XML</uicontrol>
+        <uicontrol>XSLT-XQuery</uicontrol>
+        <uicontrol>XSLT</uicontrol>
+        <uicontrol>Saxon</uicontrol>
+        <uicontrol>Saxon-HE/PE/EE</uicontrol>
+        <uicontrol>Advanced</uicontrol>
+      </menucascade>.</p>
+    <p id="p_kcq_bgk_54b">You can configure the following advanced XSLT options for the Saxon <ph
+        keyref="saxon9FullVersion"/> transformer (all three editions: Home Edition, Professional
+      Edition, Enterprise Edition):</p>
+    <ul id="ul_lcq_bgk_54b">
+      <li id="li_mcq_bgk_54b"><uicontrol>URI Resolver class name ("-r")</uicontrol> - Specifies a custom implementation
+        for the URI resolver used by the XSLT Saxon <ph keyref="saxon9FullVersion"/> transformer
+        (the <option>-r</option> option when run from the command line). The class name must be
+        fully specified and the corresponding <filepath>jar</filepath> or <filepath>class</filepath>
+        extension must be configured from <xref href="xslt-xquery-extensions.dita">the dialog box
+          for configuring the XSLT extension</xref> for the particular transformation scenario.</li>
+      <li id="li_ncq_bgk_54b"><uicontrol>Collection URI Resolver class name ("-cr")</uicontrol> - Specifies a custom
+        implementation for the Collection URI resolver used by the XSLT Saxon <ph
+          keyref="saxon9FullVersion"/> transformer (the <option>-cr</option> option when run from
+        the command line). The class name must be fully specified and the corresponding
+          <filepath>jar</filepath> or <filepath>class</filepath> extension must be configured from
+          <xref href="xslt-xquery-extensions.dita">the dialog box for configuring the XSLT
+          extension</xref> for the particular transformation scenario.</li>
+    </ul>
+  </body>
+</topic>

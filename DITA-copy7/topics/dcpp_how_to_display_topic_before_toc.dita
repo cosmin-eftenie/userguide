@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_how_to_display_topic_before_toc">
+  <title>How to Display a Topic Before the TOC</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            ><ph keyref="pdf-html5-transformation"/>
+          <indexterm>Table of contents<indexterm>Display topic before
+          TOC</indexterm></indexterm></indexterm>
+        <indexterm product="pdf-css ope">Table of contents<indexterm>Display topic before
+            TOC</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_y2s_cgk_54b">To display a topic before the <i>table-of-contents</i> page, follow these steps:<ol id="ol_z2s_cgk_54b">
+        <li id="li_afs_cgk_54b">Make sure the topic is referenced on the first level in the DITA map.</li>
+        <li id="li_bfs_cgk_54b">Set the <xmlatt>outputclass</xmlatt> to <codeph>before-toc</codeph> on the
+            <xmlelement>topicref</xmlelement>.</li>
+      </ol></p>
+    <codeblock outputclass="language-xml" id="codeblock_cfs_cgk_54b">&lt;topicref href="pathToMyTopic" outputclass="before-toc"></codeblock>
+    <p id="p_dfs_cgk_54b"><b>Result:</b> When the PDF is processed, the topic will automatically appear before the
+      table of contents.</p>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link href="dcpp_controlling_the_publication_content.dita"/>
+    </linklist>
+  </related-links>
+</topic>

@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="webauthor-faq-customizations">
+  <title>FAQ for Customizations</title>
+  <body>
+    <p>This topic contains some frequently asked questions about Web Author customizations.</p>
+    <section id="section_hhp_ckk_gyb">
+      <title>How can I prevent consecutive spaces from being inserted in documents?</title>
+      <ol id="ol_t2t_mkk_gyb">
+        <li>Create a plugin that implements the <xref
+            href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/extensions/api/AuthorDocumentFilter.html"
+            format="html" scope="external"><codeph>AuthorDocumentFilter</codeph></xref> class. It
+          filters consecutive spaces from being inserted in the document. The filter should override
+          all methods from <codeph>AuthorDocumentFilter</codeph> that intercept content
+          changes.</li>
+        <li>Install the custom filter on all documents by implementing a <xref
+            href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/extensions/api/webapp/access/WebappEditingSessionLifecycleListener.html"
+            format="html" scope="external"
+            ><codeph>WebappEditingSessionLifecycleListener</codeph></xref> that can be installed via
+          a <xref
+            href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/exml/plugin/workspace/WorkspaceAccessPluginExtension.html"
+            format="html" scope="external"><codeph>WorkspaceAccessPluginExtension</codeph></xref>
+            (<codeph>WorkspaceAccess</codeph> extension in the <filepath>plugin.xml</filepath>
+          file):<codeblock id="codeblock_egb_xkk_gyb" outputclass="language-java">public class CustomFilterInstaller implements WorkspaceAccessPluginExtension {
+  @Override
+  public void applicationStarted(StandalonePluginWorkspace pluginWorkspaceAccess) {
+    WebappPluginWorkspace pluginWorkspace = (WebappPluginWorkspace)PluginWorkspaceProvider.getPluginWorkspace();
+      pluginWorkspace.addEditingSessionLifecycleListener(new WebappEditingSessionLifecycleListener() {
+        @Override
+        public void editingSessionStarted(String sessionId, AuthorDocumentModel documentModel) {
+          documentModel.getAuthorDocumentController().setDocumentFilter(new CustomAuthorDocumentFilter(documentModel));
+        }
+      });</codeblock></li>
+      </ol>
+      <note id="note_xd2_kmk_gyb">When instantiating the <codeph>AuthorDocumentFilter</codeph>, the
+          <codeph>AuthorDocumentModel</codeph> object is passed because the filter needs it to check
+        for duplicate spaces.</note>
+    </section>
+    <section id="section_rtn_jcs_jyb">
+      <title>How can I customize the inserted table fragment for a DITA framework extension?</title>
+      <p>See the <xref
+          href="https://github.com/oxygenxml-incubator/oxygen-sample-frameworks/tree/main/dita-extension-replace-insert-table-action"
+          format="html" scope="external">dita-extension-replace-insert-table-action</xref> sample
+        project that uses a Framework Extension Script (EXF) to extend the built-in DITA framework
+        to replace the default <uicontrol>Insert Table</uicontrol> action with another action that
+        uses an <codeph>InsertFragmentOperation</codeph> to insert a CALS table element that has
+          <xmlatt>frame</xmlatt>, <xmlatt>colsep</xmlatt>, and <xmlatt>rowsep</xmlatt> attributes
+        already set.</p>
+    </section>
+    <section id="section_w1k_2fz_2zb">
+      <title>How can I target a specific font size in CSS, using a custom framework?</title>
+      <p>Suppose you want to modify a custom framework so that when a user selects a specific font
+        size (small, medium, large) in <uicontrol>Preferences</uicontrol>, the font size selected is
+        applied to the document.</p>
+      <p>To achieve this, it is recommended to use <codeph>em</codeph> units (instead of
+          <codeph>px</codeph>, for example). This causes the font size to be adjusted according to
+        the option chosen by the user in <uicontrol>Preferences</uicontrol>.</p>
+    </section>
+    <section id="section_dg5_gnc_2cc">
+      <title>How can I obtain a URL parameter from a file open in Web Author?</title>
+      <p id="p_eg5_gnc_2cc">The URL parameters are forwarded to the
+          <codeph>sync.api.Workspace.LoadingOptions</codeph> object. As a side-note, plugins can
+        contribute or intercept a <codeph>sync.api.Workspace.LoadingOptions</codeph> object by
+        listening on the <codeph>sync.api.Workspace.EventType.BEFORE_EDITOR_LOADED</codeph> event.
+        The <i>LoadingOptions</i> objects (client-side) are forwarded to the server where they end
+        up in <codeph>ro.sync.ecss.extensions.api.access.EditingSessionContext</codeph>. Thus, you
+        can access the URL parameters from the <codeph>EditingSessionContext</codeph> object
+        (server-side), which can be obtained like
+        this:<codeblock outputclass="language-java">EditingSessionContext editingSessionContext = 
+  authorDocumentModel.getAuthorAccess().getEditorAccess().getEditingContext();</codeblock></p>
+    </section>
+    <section id="section_y5p_myv_fdc">
+      <title>How can I view whitespaces in Author mode?</title>
+      <note id="note_hfy_kwk_jhc">Starting from Version 28.0.0, users can view whitespace markers in
+        the editor by enabling the <uicontrol>Show whitespace marks</uicontrol> option in the
+          <uicontrol>Preferences</uicontrol> dialog box that is accessed from the user drop-down
+        menu in the far-right side of the top header.</note>
+      <p>You can create a custom font and combine it with the default font for any
+        element:<codeblock id="codeblock_y44_5yv_fdc" outputclass="language-css">@font-face {
+    font-family: Arial_spacedot;
+    src: url(Arial_spacedot.ttf);
+    unicode-range: U+1780-17FF, U+200B-200C, U+25CC;
+  }
+  * { font-family: Arial_spacedot,Arial; }</codeblock></p>
+    </section>
+    <section id="section_tq2_tpc_hdc">
+      <title>How can I localize custom actions implemented in JavaScript?</title>
+      <p id="p_uq2_tpc_hdc">To localize action messages, you must use the Translation JavaScript
+        API:</p>
+      <ol id="ol_vq2_tpc_hdc">
+        <li id="li_wq2_tpc_hdc">Register your messages via
+            <codeph>sync.Translation.addTranslations</codeph>, like
+          this:<codeblock outputclass="language-javascript">let myMsgs={
+	YES_KEY_ : {
+		"en_US" : "Yes",
+		"de_DE" : "Ja",
+		"fr_FR" : "Oui",
+		"ja_JP" : "はい",
+		"nl_NL" : "Ja",
+		"zh_CN" : "是的"
+	}
+};
+sync.Translation.addTranslations(myMsgs);</codeblock></li>
+        <li id="li_xq2_tpc_hdc">Use the message key instead of the hard-coded "Yes"
+          string:<codeblock outputclass="language-javascript">tr(msgs["YES_KEY_"])</codeblock></li>
+      </ol>
+      <note id="note_cyy_bqc_hdc" type="notice">This only allows adding new messages for the default
+        languages. You cannot add a new language.</note>
+    </section>
+    <section id="section_bbv_sz3_k2c">
+      <title>How can I define a document template with a dynamic relative path?</title>
+      <p>Suppose you want to generate files from a document template that contains a link to a
+        specific document. In the generated files, the link should be relative to the location where
+        the template is created and the location of the link target. When the files are created in
+        different directories, the relative path should be automatically and accurately
+        calculated.</p>
+      <p>To make this happen, in your <xref
+          href="https://www.oxygenxml.com/doc/ug-waCustom/topics/wa-file-templates.html"
+          format="html" scope="external">newly created template</xref>, you must use the
+          <codeph>${makeRelative(base, location)}</codeph> and <codeph>${currentFileURL}</codeph>
+        <xref href="https://www.oxygenxml.com/doc/ug-waCustom/topics/webapp_editor_variables.html"
+          format="html" scope="external">Editor Variables</xref>.</p>
+      <p>For example, in a WebDav server, your template may look like
+          this:<codeblock id="codeblock_zb4_m4j_k2c" outputclass="language-xml">&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+&lt;topic id="newfile">
+  &lt;title>New File&lt;/title>
+  &lt;body>
+    &lt;p>This is a new file.&lt;/p>
+    &lt;p>Link to a specific document:
+      &lt;xref
+        href="${makeRelative(${currentFileURL}, 
+webdav-https://your-web-dav-server/path/to/your/target-document.dita)}"
+        format="dita"
+        scope="external"
+      />
+    &lt;/p>
+  &lt;/body>
+&lt;/topic></codeblock><note id="note_sf1_gvj_k2c">Make sure that you use the absolute
+            <xref href="https://www.oxygenxml.com/doc/ug-waCustom/topics/oxy-url.html" format="html"
+            scope="external">OXY-URL</xref> in the <codeph>location</codeph> parameter of the
+            <codeph>${makeRelative(base, location)}</codeph> editor variable.</note></p>
+
+    <p>Depending on where you create the new file from the template, the relative path to the target
+      document will be properly computed. It may look like
+      this:<codeblock id="codeblock_tnm_gpj_k2c" outputclass="language-xml">&lt;xref href="../../target-document.dita" format="dita" scope="external" /></codeblock></p>
+    <p>or like this (and so
+      on):<codeblock id="codeblock_usy_3pj_k2c" outputclass="language-xml">&lt;xref href="../target-document.dita" format="dita" scope="external"/></codeblock></p>
+        </section>
+    
+    
+    <section id="section_q44_nq4_jdc">
+      <title>How can I add a custom action on the DITA Map side-view?</title>
+      <p>You can extend the standard <uicontrol>DITA Map</uicontrol> side-view and add a custom
+        action in the side-view's toolbar (next to the <uicontrol>Configure DITA Context</uicontrol>
+        action) by overriding its <codeph>sync.view.ViewRenderer.getToolbarDescriptor</codeph> and
+          <codeph>sync.view.ViewRenderer.getToolbarActionsMap</codeph> methods.</p>
+      <p>For example, if you want to add an action to reload the view, you can do this from a plugin
+        with the following
+        script:<codeblock id="codeblock_fvf_zq4_jdc" outputclass="language-javascript">class RefreshMapAction extends sync.actions.Action {
+  constructor() {
+    super({displayName: "Refresh"});
+  }
+
+  /**
+   * @override
+   */
+  actionPerformed(callback) {
+    let ditaContext = workspace.getEditingContextManager().getDitaContext();
+    workspace.getEditingContextManager().updateDitaContext(new sync.api.DitaContext());
+    workspace.getEditingContextManager().updateDitaContext(ditaContext);
+    callback();
+  }
+}
+
+class CustomDitaMapView extends sync.api.dita.DitaMapView {
+  /**
+   * @override
+   */
+  getToolbarActionsMap() {
+    let toolbarActionsMap = super.getToolbarActionsMap();
+    toolbarActionsMap["DMM/Refresh"] = new RefreshMapAction();
+    return toolbarActionsMap;
+  }
+
+  /**
+   * @override
+   */
+  getToolbarDescriptor() {
+    let toolbarDescriptor = super.getToolbarDescriptor();
+    toolbarDescriptor.children.push({
+      id: "DMM/Refresh",
+      type: "action"
+    });
+    return toolbarDescriptor;
+  }
+}
+
+workspace.listenOnce(sync.api.Workspace.EventType.EDITOR_LOADED, e => {
+  let customView = new CustomDitaMapView();
+  workspace.viewManager.addView('dita-map-view');
+  workspace.viewManager.installView('dita-map-view', customView, {
+    side: 'left',
+    initiallyClosed: false
+  });
+});</codeblock></p>
+      <note id="note_upv_br4_jdc" type="notice">When installing the view, you have to use
+        "dita-map-view" to override the view that is installed by the framework.</note>
+      <note id="note_mvj_dr4_jdc"> To enable the refresh action, you can do this by implementing the
+          <codeph>isEnabled</codeph> method in <codeph>RefreshMapAction</codeph> and return
+          <i>true</i> or <i>false</i>. When enabling status changes, you have to call
+          <codeph>workspace.getViewManager().getActionsManager('dita-map-view').refreshActionsStatus()</codeph>
+        to update the UI.</note>
+    </section>
+    <section id="section_axp_p41_52c">
+      <title>How can I list files in a directory on the server?</title>
+      <p id="p_bxp_p41_52c">To list the server-side files in a directory, you must open a connection
+        with <codeph>java.net.URL.openConnection()</codeph> then cast the
+          <codeph>java.net.URLConnection</codeph> object to <xref
+          href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/net/protocol/FileBrowsingConnection.html"
+          format="html" scope="external">ro.sync.net.protocol.FileBrowsingConnection</xref>. Then,
+        use the <codeph>ro.sync.net.protocol.FileBrowsingConnection.listFolder()</codeph>
+        method.</p>
+    </section>
+    <section id="section_h1z_tm1_cfc">
+      <title>How can I retrieve document content in Java and JavaScript?</title>
+      <p>In <ph keyref="product"/>, you can retrieve the full content of the current XML document
+        using both Java and JavaScript. Below are examples demonstrating how to achieve this in each
+        language.</p>
+      <p><u><b>Java Example</b></u></p>
+      <p>In Java, you can obtain the document content either from <codeph><xref
+            href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/extensions/api/webapp/AuthorDocumentModel.html"
+            format="html" scope="external">AuthorDocumentModel</xref></codeph> or from <codeph><xref
+            href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/extensions/api/AuthorDocumentController.html"
+            format="html" scope="external">AuthorDocumentController</xref></codeph>.<ul
+          id="ul_rxv_yby_2fc">
+          <li id="li_sxv_yby_2fc">From
+              <codeph>AuthorDocumentModel</codeph>:<codeblock id="codeblock_tpp_h15_x2c" outputclass="language-java">AuthorDocumentModel authorDocumentModel = ...
+Reader reader = authorDocumentModel.createReader();
+String documentXmlContent = new BufferedReader(reader)
+  .lines()
+  .collect(Collectors.joining("\n"));
+System.out.println(documentXmlContent);</codeblock><p id="p_d42_dcy_2fc">The
+                <codeph>AuthorDocumentModel</codeph> object can be obtained from <codeph><xref
+                  href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/extensions/api/webapp/AuthorOperationWithResult.html"
+                  format="html" scope="external">AuthorOperationWithResult</xref></codeph> or from
+                  <codeph><xref
+                  href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/extensions/api/webapp/access/WebappEditingSessionLifecycleListener.html"
+                  format="html" scope="external"
+                >WebappEditingSessionLifecycleListener</xref></codeph>.</p></li>
+          <li id="li_ik4_dcy_2fc">
+            <p id="p_sr3_2cy_2fc">From
+              <codeph>AuthorDocumentController</codeph>:<codeblock id="codeblock_gqh_hvt_x2c" outputclass="language-java">AuthorDocumentController authorDocumentController = ...
+
+AuthorDocumentFragment documentAsAFragment = authorDocumentController.createDocumentFragment(0, authorDocumentController.getAuthorDocumentNode().getLength() - 1);
+String documentXmlContent = authorDocumentController.serializeFragmentToXML(documentAsAFragment);
+System.out.println(documentXmlContent);</codeblock></p>
+            <p id="p_flf_gcy_2fc">The <codeph>AuthorDocumentController</codeph> object can be
+              obtained from <codeph><xref
+                  href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/extensions/api/AuthorOperation.html"
+                  format="html" scope="external">AuthorOperation</xref></codeph> via <codeph><xref
+                  href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/extensions/api/AuthorAccess.html#getDocumentController()"
+                  format="html" scope="external"
+                >AuthorAccess.getDocumentController()</xref></codeph> or from
+                <codeph>AuthorDocumentModel</codeph>:
+                <codeph>authorDocumentModel.getAuthorAccess().getDocumentController</codeph>.</p>
+          </li>
+        </ul></p>
+      <p><u><b>JavaScript Example</b></u></p>
+      <p>In JavaScript, you can invoke the <codeph>sync.api.Editor.getContent</codeph> or
+          <codeph>sync.api.EditingSupport.getContent</codeph>.<codeblock id="codeblock_drs_rvt_x2c" outputclass="language-javascript">workspace.currentEditor.getContent((error, documentXmlContent) => {
+  if (!error) {
+    console.log(documentXmlContent);
+  }
+})</codeblock></p>
+    </section>
+    <section id="section_e5j_dd1_3gc">
+      <title>How can I use a custom JavaScript action with a form control in a custom
+        framework?</title>
+      <p id="p_f5j_dd1_3gc">In a custom framework, when you <xref
+          href="https://www.oxygenxml.com/maven/com/oxygenxml/oxygen-webapp/jsdoc/tutorial-customaction.html"
+          format="html" scope="external">implement and register a JavaScript action</xref> and
+        attempt to trigger it from a form control (such as an <xref
+          href="https://www.oxygenxml.com/doc/ug-editor/topics/button-editor.html" format="html"
+          scope="external"><u>oxy_button</u></xref>), the action’s icon may not be available when
+        the document is first loaded in the editor, which may cause the button to be rendered
+        incorrectly the first time. This happens because actions added only through JavaScript (and
+        not also declared in the framework) are loaded after the form controls are rendered. To
+        ensure that the action and its icon are available immediately when the editor loads, you
+        need to <xref
+          href="https://www.oxygenxml.com/doc/ug-editor/topics/dg-create-custom-actions.html"
+          format="html" scope="external">define the action directly in the framework</xref> in
+        addition to the JavaScript registration.</p>
+      <p id="p_g5j_dd1_3gc">This framework-defined action does not need to implement any logic (the
+        operation ID that is specified does not matter), as its sole purpose is to ensure that the
+        editor loads the action configuration at startup.</p>
+      <note id="note_ajh_pd1_3gc" type="important">The <b>id</b>, <b>name</b>, and
+          <b>description</b> of the action defined in the framework must exactly match those used in
+        the JavaScript implementation.</note>
+    </section>
+    <section id="section_ngd_mv5_2hc">
+      <title>How can I override a framework-defined action from the Document Type Association dialog
+        box using JavaScript?</title>
+      <p id="p_ogd_mv5_2hc">To extend an action defined in the <xref
+          href="https://www.oxygenxml.com/doc/ug-editor/topics/the-document-type-dialog.html"
+          format="html" scope="external">Document Type Association</xref> dialog box using
+        JavaScript in <b>Oxygen XML Web Author</b>, you should use the <b>Web Author</b>
+        <xref href="https://www.oxygenxml.com/maven/com/oxygenxml/oxygen-webapp/jsdoc/"
+          format="html" scope="external">JavaScript API</xref>.</p>
+      <p id="p_pgd_mv5_2hc">While the Document Type Association dialog box allows you to configure
+        actions via the GUI using the built-in operations to modify the document, the JavaScript API
+        gives you more flexibility. By <xref
+          href="https://www.oxygenxml.com/doc/ug-waCustom/topics/customizing_frameworks.html#customizing_frameworks__adding_javascript_code_to_a_framework"
+          format="html" scope="external">adding JavaScript code to a framework</xref>, you can
+        extend the functionality of an action without being limited by the configuration options
+        available in the <xref
+          href="https://www.oxygenxml.com/doc/ug-editor/topics/the-document-type-dialog.html"
+          format="html" scope="external">Document Type Association</xref> dialog box. With
+        JavaScript, you can show custom dialog boxes, control the side-views, control the selection,
+        and many other things related to the UI.</p>
+      <p id="p_qgd_mv5_2hc">A simple example that illustrates the need to extend an action in
+        JavaScript is to suppose you <xref
+          href="https://www.oxygenxml.com/doc/ug-editor/topics/the-actions-sub-tab.html"
+          format="html" scope="external">register a new action</xref> using the graphical interface
+        in the Document Type Association configuration and you want this action to display a dialog
+        box when activated. You can define the action through the Document Type Association
+        configuration, while the implementation of the dialog box in <b>Web Author</b> can be done
+        using the <xref
+          href="https://www.oxygenxml.com/maven/com/oxygenxml/oxygen-webapp/jsdoc/sync.api.Workspace.html#createDialog__anchor"
+          format="html" scope="external"><codeph>createDialog()</codeph></xref> JavaScript API in
+        the <filepath>.js</filepath> file located in the framework’s <filepath>web/</filepath>
+        subfolder.</p>
+      <p id="p_oll_pv5_2hc">
+        <note id="note_dys_pv5_2hc" type="important">To successfully override the action created in
+          the <xref href="https://www.oxygenxml.com/doc/ug-editor/topics/the-action-dialog.html"
+            format="html" scope="external">Action</xref> subtab of the Document Type Association
+          dialog box, the action ID defined in your JavaScript code must exactly match the one
+          specified there.</note>
+      </p>
+    </section>
+    <section id="section_mbj_gw5_2hc">
+      <title>How do I trigger UI changes after an element is inserted?</title>
+      <p id="p_nbj_gw5_2hc">In some workflows, you may want Web Author to perform a UI action
+        immediately after an element is inserted (for example, displaying a prompt dialog box,
+        updating a pane, or switching to a different view). This allows users to continue their task
+        in the right context without additional manual steps.</p>
+      <p id="p_obj_gw5_2hc">Web Author provides a JavaScript API that allows switching to a UI panel
+        programmatically. To focus a specific view, call:
+          <codeph>workspace.getViewManager().focusView('&lt;view-id>');</codeph></p>
+      <p id="p_pbj_gw5_2hc">Replace <codeph>&lt;view-id></codeph> with the desired view identifier.
+        For example, to focus on the Attributes pane, use:
+          <codeph>workspace.getViewManager().focusView('attributes-panel-table');</codeph></p>
+      <p id="p_qbj_gw5_2hc"><b>Example: Focusing the Attributes panel from a custom JavaScript
+          action</b> - The following custom action demonstrates how to focus on the Attributes pane
+        then insert an element (<xmlelement>note</xmlelement> in this example):</p>
+      <codeblock outputclass="language-javascript">class FocusAttributesView extends sync.actions.AbstractAction {
+  /**
+   * @type {sync.api.Editor}
+   */
+  constructor(editor) {
+    super(editor);
+    this.editor = editor;
+  }
+
+  /** @override */
+  getDisplayName() {
+    return 'Focus Attributes View';
+  }
+
+  /** @override */
+  isEnabled() {
+    return true;
+  }
+
+  /** @override */
+  actionPerformed(callback) {
+    // Focus the Attributes panel
+    workspace.getViewManager().focusView('attributes-panel-table');
+
+    // Example operation (you can replace this with your own logic)
+    workspace.currentEditor.getActionsManager().invokeOperation(
+      "ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation",
+      { fragment: "&lt;note>test&lt;/note>" },
+      callback
+    );
+  }
+}
+
+// Register the custom action
+var editor = workspace.currentEditor;
+editor.getActionsManager().registerAction(
+  'insert.note.test',
+  new FocusAttributesView(editor)
+);</codeblock>
+      <p id="p_ubj_gw5_2hc">After this customization, whenever the element is inserted using this
+        action, <b>Web Author</b> automatically switches to the specified pane (the
+          <b>Attributes</b> view in this example).</p>
+    </section>
+  </body>
+</topic>

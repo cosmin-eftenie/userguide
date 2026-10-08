@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="eppo-creating-reusable-content">
+  <title>Creating a Reusable Content Component</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>DITA<indexterm>Reusing content<indexterm>Reusable components<indexterm>Create
+                Reusable Component</indexterm></indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <taskbody>
+    <context>
+      <p id="p_srm_dgk_54b"><ph keyref="product"/> makes it easy to create a reusable component from
+        existing topic content.<note id="note_trm_dgk_54b">To ensure that the topic file that
+          contains the reusable component is a valid container for the reusable content component,
+            <ph keyref="product"/> attempts to use the same schema information in the current topic
+          for the file that contains the reused component. If it cannot create a valid instance of
+          the reused content file with this approach, the application creates a specialized topic
+          type automatically. This specialization is designed to make sure that the content is
+          compatible with the topic type that it is created from. You can make changes to the
+          configuration file (<filepath id="filepath_lkz_fnc_j4b"
+            >OXYGEN_INSTALL_DIR\frameworks\dita\reuse\reuse_configuration.properties</filepath>) or
+          override it from a framework extension to control if the created reusable component file
+          should be based on the currently edited topic or it should be an automatically created
+          DITA specialization topic.</note></p>
+      <p id="p_urm_dgk_54b">Follow these steps to create a reusable component:</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>In <uicontrol>Author</uicontrol> mode, select the content you want to make into a
+          reusable component (or place the cursor inside an element you want to reuse).</cmd>
+      </step>
+      <step>
+        <cmd>Select the <uicontrol>Create Reusable Component</uicontrol> action that is available in
+          the <uicontrol>DITA</uicontrol> menu or the <uicontrol>Reuse</uicontrol> submenu of the
+          contextual menu.</cmd>
+        <stepresult>The <uicontrol>Create Reusable Component</uicontrol> dialog box is
+          displayed.</stepresult>
+      </step>
+      <step>
+        <cmd>Use the <uicontrol>Reuse Content</uicontrol> drop-down list to select the scope of the
+          content to be made reusable. It allows you to select how much of the current content you
+          want to make reusable. The choices presented include the element at the current cursor
+          position and its ancestor elements.</cmd>
+      </step>
+      <step>
+        <cmd>Add a description. This is used as a description for the reusable component, but is not
+          part of the reused content. It is just to help you identify the reusable content and will
+          not become part of your output.</cmd>
+      </step>
+      <step>
+        <cmd>If the <uicontrol>Replace selection with content reference</uicontrol> option is
+          selected, the selection in the current topic will be replaced with a content reference
+            (<xmlatt>conref</xmlatt>) that points to the new reusable component. If multiple
+          elements are selected (for example, multiple steps or list items), the selection is
+          replaced with a content reference range (<xmlatt>conref</xmlatt> and
+            <xmlatt>conrefend</xmlatt>).</cmd>
+      </step>
+      <step>
+        <cmd>Select a file name and location to save the topic containing the reusable component and
+          click <uicontrol>Save</uicontrol>. It is considered best practice to save or store
+          reusable components in an area set aside for that purpose.</cmd>
+      </step>
+    </steps>
+    <result>
+      <p id="p_vrm_dgk_54b">A file is created that contains <b>one</b> reusable component. You can
+        reference the reused content in other topics by using a <xref
+          href="eppo-create-conref.dita#eppo-create-conref">content reference</xref> or <xref
+          href="eppo-create-conkeyref.dita#eppo-create-conkeyref">content key reference</xref>.
+        Also, if the <uicontrol>Replace selection with content reference</uicontrol> option was
+        selected, <ph keyref="product"/> replaces the selected content with a content reference that
+        will be displayed in your current topic with a gray background and it can only be edited in
+        the source file (the new reusable component). To edit the source file, click the
+            <uicontrol><image href="../img/editContent.png" id="image_p2t_wwm_wr"/>Edit
+          Content</uicontrol> icon at the beginning of the content reference.</p>
+    </result>
+  </taskbody>
+</task>

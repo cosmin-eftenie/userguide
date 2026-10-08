@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task
+  PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="dg-transformation-scenarios">
+  <title>Configuring Transformation Scenarios for a Framework</title>
+  <titlealts>
+    <navtitle>Transformation Scenarios</navtitle>
+  </titlealts>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Framework customization<indexterm>Configuring transformation
+            scenarios</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <taskbody>
+    <context>
+      <p id="p_xbb_dgk_54b">When distributing a <xref keyref="glossentry_framework"><term>framework</term></xref> to
+        users, it is a good idea to have the transformation scenarios already configured. This helps
+        the content authors publish their work in various formats. By being contained in the
+          <term>framework</term> configuration, the scenarios can be distributed along with the
+        actions, menus, toolbars, and catalogs.</p>
+      <p id="p_ybb_dgk_54b">To create a transformation scenario for your <term>framework</term>,
+        follow these steps: </p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Create an <filepath>xsl</filepath> folder inside your custom <term>framework</term>
+          directory (<filepath><term conkeyref="reusables-user-guide/oxy-install-dir"
+            />\frameworks\[CUSTOM_FRAMEWORK_DIR]</filepath>).</cmd>
+        <stepresult>
+          <p id="p_zbb_dgk_54b">The folder structure for the documentation <term>framework</term> should be:</p>
+          <codeblock outputclass="language-ini" id="codeblock_acb_dgk_54b">oxygen
+  frameworks
+     [CUSTOM_FRAMEWORK_DIR]
+       schema
+       css
+       templates
+       xsl</codeblock>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Create an <filepath>xsl</filepath> file and save it in the <filepath>xsl</filepath>
+          folder. To help you get started, you can use the sample <filepath>sdf.xsl</filepath> file
+          found in the <xref href="https://www.oxygenxml.com/maven/com/oxygenxml/samples/oxygen-sample-framework/24.0.0.0/oxygen-sample-framework-24.0.0.0-package.zip"
+            format="html" scope="external">sample framework customization package</xref>.</cmd>
+      </step>
+      <step>
+        <cmd><ph conkeyref="reusables-preferences-pages/Open-the-preferences-page"/> and go to
+            <uicontrol>Document Type Associations</uicontrol>. Select the particular
+            <term>framework</term>, click the <uicontrol>Edit</uicontrol> button to open <xref
+            href="the-document-type-dialog.dita#the-document-type-dialog"><uicontrol>Document
+              Type</uicontrol> Configuration dialog box</xref>, and choose the
+            <uicontrol>Transformation</uicontrol> tab. Click the <uicontrol><image
+              href="../img/NewScenarioDrop.png" id="image_aq2_1dh_5r" product="author editor"
+              /><image href="../img/Add16.png" id="image_ish_fms_1r"
+              product="authorEclipse editorEclipse"/>New</uicontrol> button and choose the
+          appropriate type of transformation (for example, <uicontrol>XML transformation with
+            XSLT</uicontrol>). </cmd>
+        <info>In the <uicontrol>New scenario</uicontrol> dialog box, fill in the following fields:<ul id="ul_bcb_dgk_54b">
+            <li id="li_ccb_dgk_54b">Fill in the <b>Name</b> field with the name of your transformation scenario.</li>
+            <li id="li_dcb_dgk_54b">Set the <b>XSL URL</b> field to path of your custom stylesheet (for example,
+                <codeph>${framework}/xsl/mycustom.xsl</codeph>).</li>
+          </ul></info>
+        <stepresult>
+          <p id="p_ecb_dgk_54b">
+            <fig product="editor author " id="fig_fcb_dgk_54b">
+              <title>Configuring a New XSLT Transformation Scenario</title>
+              <image href="../img/sa_dg_configuring_document_type_assoc_tr_scenario.png"/>
+            </fig>
+          </p>
+          <p id="p_gcb_dgk_54b">
+            <fig product="editorEclipse authorEclipse" id="fig_hcb_dgk_54b">
+              <title>Configuring a New XSLT Transformation Scenario</title>
+              <image href="../img/ec_dg_configuring_document_type_assoc_tr_scenario.png"/>
+            </fig>
+          </p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Change to the <uicontrol>Output</uicontrol> tab. Configure the fields as follows:</cmd>
+        <info>
+          <ul id="ul_icb_dgk_54b">
+            <li id="li_jcb_dgk_54b">Set the <b>Save as</b> field to <filepath>${cfd}/${cfn}.html</filepath>. This means
+              the transformation output file will have the name of the XML file and the <i>html</i>
+              extension and will be stored in the same folder.</li>
+            <li id="li_kcb_dgk_54b">Select the <b>Open in Browser/System Application</b> option.<note id="note_lcb_dgk_54b">To set the browser
+                or system application that will be used, <ph product="author editor"><ph
+                    conkeyref="reusables-preferences-pages/open-the-preferences-page"/>, go to
+                    <uicontrol>Global</uicontrol>, and set it in the <uicontrol>Default Internet
+                    browser</uicontrol> field</ph><ph product="authorEclipse editorEclipse">go to <menucascade>
+                    <uicontrol>Window</uicontrol>
+                    <uicontrol>Preferences</uicontrol>
+                    <uicontrol>General</uicontrol>
+                    <uicontrol>Web Browser</uicontrol>
+                  </menucascade> and specify it there</ph>. This will take precedence over the
+                default system application settings.</note></li>
+            <li id="li_mcb_dgk_54b">Select the <b>Saved file</b> option.</li>
+          </ul>
+        </info>
+      </step>
+      <step>
+        <cmd>Click the <uicontrol>OK</uicontrol> button to save the new scenario.</cmd>
+      </step>
+    </steps>
+    <result>
+      <p id="p_ncb_dgk_54b">Now the scenario is listed in the <uicontrol>Transformation</uicontrol> tab:</p>
+      <p id="p_ocb_dgk_54b">
+        <fig product="editor author " id="fig_pcb_dgk_54b">
+          <title>Transformation Tab</title>
+          <image href="../img/sa_dg_transformation_tab.png"/>
+        </fig>
+      </p>
+      <p id="p_qcb_dgk_54b">
+        <fig product="editorEclipse authorEclipse" id="fig_rcb_dgk_54b">
+          <title>Transformation Tab</title>
+          <image href="../img/ec_dg_transformation_tab.png"/>
+        </fig>
+      </p>
+    </result>
+    <postreq>
+      <p id="p_scb_dgk_54b">To test the transformation scenario that you just created, you can use
+        the sample <filepath>sdf.xml</filepath> file found in the <xref
+          href="https://www.oxygenxml.com/maven/com/oxygenxml/samples/oxygen-sample-framework/24.0.0.0/oxygen-sample-framework-24.0.0.0-package.zip"
+          format="html" scope="external">sample framework customization package</xref>. Click the
+            <uicontrol><image href="../img/ApplyStyleSheet16.png" id="image_fgq_mzv_sr"/>Apply
+          Transformation Scenario(s)</uicontrol> button to display the <b>Transform with</b> dialog
+        box. The scenario list contains the scenario you defined earlier. Select the <i>SDF to
+          HTML</i> scenario that you just defined and click the <uicontrol>Apply
+          associated</uicontrol> button. The HTML file is saved in the same folder as the XML file
+        and displayed in the browser.</p>
+    </postreq>
+  </taskbody>
+</task>

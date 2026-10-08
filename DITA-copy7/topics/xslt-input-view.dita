@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="xslt-input-view">
+  <title>XSLT Input View</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>XSLT<indexterm>Input view</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_sx1_cgk_54b">The structure of the XML document associated to the edited XSLT stylesheet is displayed in a
+      tree form in a view called the <uicontrol>XSLT Input</uicontrol> view. <ph
+        conkeyref="reusables-user-guide/reopen-view"/> The tree nodes represent the elements of the
+      documents.</p>
+    <p id="p_tx1_cgk_54b">If you click a node in the <uicontrol>XSLT Input</uicontrol> view, the corresponding template
+      from the stylesheet is highlighted. A node can be dragged from this view and dropped in the
+      editor area for quickly inserting <xmlelement>xsl:template</xmlelement>,
+      <xmlelement>xsl:for-each</xmlelement>, or other XSLT elements that have the
+        <xmlatt>match</xmlatt>,<xmlatt>select</xmlatt>, or <xmlatt>test</xmlatt> attribute already
+      completed. The value of the attribute is the correct XPath expression that refers to the
+      dragged tree node. This value is based on the current editing context of the drop spot.</p>
+    <p id="p_ux1_cgk_54b">
+      <fig id="figure-xslt-input-view-oxygen">
+        <title>XSLT Input View</title>
+        <image href="../img/sa_xslt_input_view.png"/>
+      </fig>
+    </p>
+    <p id="p_vx1_cgk_54b"><b><u>Example</u>:</b></p>
+    <p id="p_wx1_cgk_54b">For the following XML
+      document:<codeblock outputclass="language-xml" id="codeblock_xx1_cgk_54b">&lt;personnel&gt;
+    &lt;person id="Big.Boss"&gt;
+        &lt;name&gt;
+            &lt;family&gt;Boss&lt;/family&gt;
+            &lt;given&gt;Big&lt;/given&gt;
+        &lt;/name&gt;
+        &lt;email&gt;chief@oxygenxml.com&lt;/email&gt;
+        &lt;link subordinates="one.worker"/&gt;
+    &lt;/person&gt;
+    &lt;person id="one.worker"&gt;
+        &lt;name&gt;
+            &lt;family&gt;Worker&lt;/family&gt;
+            &lt;given&gt;One&lt;/given&gt;
+        &lt;/name&gt;
+        &lt;email&gt;one@oxygenxml.com&lt;/email&gt;
+        &lt;link manager="Big.Boss"/&gt;
+    &lt;/person&gt;
+&lt;/personnel&gt;</codeblock></p>
+    <p id="p_yx1_cgk_54b">and the following XSLT
+      stylesheet:<codeblock outputclass="language-xml" id="codeblock_zx1_cgk_54b">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+        version="2.0"&gt;
+    &lt;xsl:template match="personnel"&gt;
+        &lt;xsl:for-each select="*"&gt;
+            
+        &lt;/xsl:for-each&gt;
+    &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</codeblock></p>
+    <p id="p_ay1_cgk_54b">if you drag the <xmlelement>given</xmlelement> element and drop it inside the
+      <xmlelement>xsl:for-each</xmlelement> element, the following pop-up menu is displayed:</p>
+    <p id="p_by1_cgk_54b"><image href="../img/sa_xslt_input_drag_popup_menu.png"/></p>
+    <p id="p_cy1_cgk_54b">if you select <uicontrol>Insert xsl:copy-of</uicontrol> (for example), the resulting document
+      will look like this:</p>
+    <p id="p_dy1_cgk_54b"><image href="../img/ec_xslt_input_drop_result_doc.png"/></p>
+  </body>
+</topic>

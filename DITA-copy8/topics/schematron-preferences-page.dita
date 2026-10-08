@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="schematron-preferences-page">
+  <title>Schematron Preferences</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Preferences<indexterm>Schematron parser</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_yxp_bgk_54b">To configure options regarding Schematron, <ph
+        conkeyref="reusables-preferences-pages/open-the-preferences-page"/> and go to <menucascade>
+        <uicontrol>XML</uicontrol>
+        <uicontrol>XML Parser</uicontrol>
+        <uicontrol>Schematron</uicontrol>
+      </menucascade>.</p>
+    <p id="p_zxp_bgk_54b">The following options are available in this preferences page:<dl id="dl_ayp_bgk_54b">
+        <dlentry id="dlentry_byp_bgk_54b">
+          <dt><uicontrol>ISO Schematron</uicontrol> Section</dt>
+          <dd>
+            <p id="p_cyp_bgk_54b">
+              <dl id="dl_dyp_bgk_54b">
+                <dlentry id="dlentry_eyp_bgk_54b">
+                  <dt><uicontrol>Optimize (visit-no-attributes)</uicontrol></dt>
+                  <dd>If your ISO Schematron assertion tests do not contain the attributes axis, you
+                    should select this option for faster ISO Schematron validation.</dd>
+                </dlentry>
+                <dlentry id="dlentry_fyp_bgk_54b">
+                  <dt><uicontrol>Allow foreign elements (allow-foreign)</uicontrol></dt>
+                  <dd>Enables support for <codeph>allow-foreign</codeph> on ISO Schematron. This
+                    option is used to pass non-Schematron elements to the generated stylesheet.</dd>
+                </dlentry>
+                <dlentry id="dlentry_gyp_bgk_54b">
+                  <dt><uicontrol>Use associated XML Schema to expand default attribute
+                      values</uicontrol></dt>
+                  <dd>When selected (default value), if the validated XML document has an XML Schema
+                    associated that contains default values for attributes defined in the XML
+                    content, the Schematron will be able to match on those default attributes.</dd>
+                </dlentry>
+                <dlentry id="dlentry_hyp_bgk_54b">
+                  <dt><uicontrol>Use Saxon EE (schema aware) for xslt2/xslt3 query language
+                      binding</uicontrol></dt>
+                  <dd>When selected, Saxon EE is used for
+                      <codeph>xslt2</codeph>/<codeph>xslt3</codeph> query binding. If this option is
+                    not selected, Saxon PE is used.</dd>
+                </dlentry>
+                <dlentry id="dlentry_iyp_bgk_54b">
+                  <dt><uicontrol>Enable Schematron Quick Fixes (SQF) support</uicontrol></dt>
+                  <dd>Allows you to enable or disable the support for <xref
+                      keyref="glossentry_quick-fix"><term>Quick Fixes</term></xref> in Schematron
+                    files. This option is selected by default.</dd>
+                </dlentry>
+                <dlentry id="dlentry_at5_pnh_bhc">
+                  <dt><uicontrol>Restrict "Apply All" to quick fixes marked as
+                      "sqf:default-fix"</uicontrol></dt>
+                  <dd>Allows you to restrict the <xref keyref="glossentry_quick-fix"
+                        ><term>Schematron Quick Fixes</term></xref> to be applied in bulk only for
+                    those that have the <codeph>sqf:default-fix</codeph> attribute explicitly
+                      set.<note id="note_cr4_b4h_bhc">If you want to bulk apply quick fixes for
+                      documents that are not validated against Schematron, this option should not be
+                      selected.</note></dd>
+                </dlentry>
+                <dlentry id="embedded-rules-query-language">
+                  <dt><uicontrol>Embedded rules query language binding</uicontrol></dt>
+                  <dd>You can control the query language binding used by the ISO Schematron embedded
+                    rules. You can choose between: <uicontrol>xslt1</uicontrol>,
+                      <uicontrol>xslt2</uicontrol>, or <uicontrol>xslt3</uicontrol>.<note id="note_jyp_bgk_54b">To control
+                      the query language binding for standalone ISO Schematron, you need to set the
+                      query language to be used with a <xmlatt>queryBinding</xmlatt> attribute on
+                      the schema root element.</note></dd>
+                </dlentry>
+                <dlentry id="message-language">
+                  <dt><uicontrol>Message language</uicontrol></dt>
+                  <dd>This option allows you to specify the language to be used in Schematron
+                    validation messages. You can choose between the following:<ul id="ul_kyp_bgk_54b">
+                      <li id="li_lyp_bgk_54b"><uicontrol>Use the language defined in the application</uicontrol> - The
+                        language that is specified in <xref keyref="options_global/language"
+                          product="author developer editor">the <uicontrol>Global
+                            Preferences</uicontrol> page</xref><xref
+                          href="localizeGUI-eclipse-plugin.dita#localizeGUI-eclipse-plugin"
+                          product="authorEclipse developerEclipse editorEclipse">the
+                          application</xref> will be used and only the validation messages that
+                        match that language will be presented. You can use the <uicontrol>Change
+                          application language</uicontrol> link to navigate to the preferences page
+                        where you can specify the language to be used in the application.</li>
+                      <li id="li_myp_bgk_54b"><uicontrol>Use the "xml:lang" attribute set on the Schematron
+                          root</uicontrol> - The language specified in the <xmlatt>xml:lang</xmlatt>
+                        attribute from the Schematron root will be used and only the validation
+                        message that match that language will be presented.</li>
+                      <li id="li_nyp_bgk_54b"><uicontrol>Ignore the language and show all message</uicontrol> - All
+                        messages are displayed in whatever language is defined within the Schematron
+                        schema.</li>
+                      <li id="li_oyp_bgk_54b"><uicontrol>Custom</uicontrol> - Use this option to specify a custom
+                        language to be used and only the messages that match the specified language
+                        will be presented.</li>
+                    </ul><note id="note_pyp_bgk_54b">In all cases, if the selected language is not available for a
+                      validation error or warning, all messages will be displayed in whatever
+                      language is defined within the Schematron schema.</note></dd>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+        <dlentry id="dlentry_qyp_bgk_54b">
+          <dt><uicontrol>Schematron 1.5</uicontrol> Section</dt>
+          <dd>
+            <p id="p_ryp_bgk_54b">
+              <dl id="dl_syp_bgk_54b">
+                <dlentry id="xpath-version">
+                  <dt><uicontrol>XPath Version</uicontrol></dt>
+                  <dd>Allows you to select the version of XPath for the expressions that are allowed
+                    in Schematron assertion tests. You can choose between:
+                      <uicontrol>1.0</uicontrol>, <uicontrol>2.0</uicontrol>, or
+                      <uicontrol>3.0</uicontrol>. This option is applied in both standalone
+                    Schematron 1.5 schemas and embedded Schematron 1.5 rules.</dd>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+        <dlentry id="dlentry_typ_bgk_54b">
+          <dt>Security</dt>
+          <dd>
+            <p id="p_uyp_bgk_54b">
+              <dl id="dl_ypt_qhx_q4b">
+                <dlentry id="dlentry_vyp_bgk_54b">
+                  <dt><uicontrol>Disable Schematron security checks</uicontrol></dt>
+                  <dd>
+                    <p id="p_wyp_bgk_54b">For security reasons, several security checks are performed on Schematron
+                      files that are not located inside a <xref keyref="glossentry_framework"
+                          ><term>framework</term></xref> or <xref keyref="glossentry_plugin"
+                          ><term>plugin</term></xref>. Select this option if your Schematron files
+                      are failing because of these security checks and you are unable to move them
+                      to a location recognized as safe (a framework or a plugin).</p>
+                  </dd>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+      </dl></p>
+  </body>
+</topic>

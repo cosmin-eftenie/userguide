@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="author-component">
+  <title>Oxygen XML Author Component</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Oxygen XML Author Component</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_ccf_dgk_54b">The <ph keyref="authorComponent"/> was designed as a subset of <ph keyref="product"/> that
+      can be integrated into another application under the terms of the <ph keyref="product"/> SDK
+      agreement to provide functionality for editing and authoring XML documents. The component can
+      be embedded in a third-party standalone Java application to provide WYSIWYG-like XML editing
+      directly in your application. </p>
+    <p id="p_dcf_dgk_54b">More information about the setup for the <ph keyref="authorComponent"/> can be found on the
+        <xref href="https://www.oxygenxml.com/oxygen_sdk.html#oXygen_component" format="html"
+        scope="external">Oxygen SDK page</xref>.</p>
+  </body>
+</topic>

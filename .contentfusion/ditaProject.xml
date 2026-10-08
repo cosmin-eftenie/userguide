@@ -108,6 +108,438 @@
             <ditaval href="../DITA/ditaval/editor-sa.ditaval"/>
         </profile>
     </context>
+    <context id="PujROfTdXfiXxSr-c1" name="Oxygen Addons (copy 1)">
+        <input href="../DITA-copy1/add-ons.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy1/ditaval/add-ons.ditaval"/>
+        </profile>
+    </context>
+    <context id="wJlLClOEcZERQIh-c1" name="Oxygen XML Web Author - Customization Guide (copy 1)">
+        <input href="../DITA-copy1/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy1/ditaval/webauthor-customization.ditaval"/>
+        </profile>
+    </context>
+    <context id="YBuMcYMWeyeXVIh-c1" name="Oxygen License Server (copy 1)">
+        <input href="../DITA-copy1/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy1/ditaval/license-server.ditaval"/>
+        </profile>
+    </context>
+    <context id="hLeuJpSVXNqgrSe-c1" name="JSON Editor (copy 1)">
+        <input href="../DITA-copy1/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy1/ditaval/json.ditaval"/>
+        </profile>
+    </context>
+    <context id="RPRaQYdCiweyASk-c1" name="Oxygen XML Developer Eclipse (copy 1)">
+        <input href="../DITA-copy1/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy1/ditaval/developer-eclipse.ditaval"/>
+        </profile>
+    </context>
+    <context id="sFXfzyJemnBdSbJ-c1" name="Oxygen XML Developer (copy 1)">
+        <input href="../DITA-copy1/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy1/ditaval/developer-sa.ditaval"/>
+        </profile>
+    </context>
+    <context id="DJZrgoozPexiCXi-c1" name="Oxygen XML Author Eclipse Plugin (copy 1)">
+        <input href="../DITA-copy1/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy1/ditaval/author-eclipse.ditaval"/>
+        </profile>
+    </context>
+    <context id="lFUSpWRpjNOeCPR-c1" name="Oxygen Feedback Cloud (copy 1)">
+        <input href="../DITA-copy1/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy1/ditaval/feedback.ditaval"/>
+        </profile>
+    </context>
+    <context id="MUHjStmlHNRVhiY-c1" name="Oxygen PDF Chemistry (copy 1)">
+        <input href="../DITA-copy1/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy1/ditaval/chemistry.ditaval"/>
+        </profile>
+    </context>
+    <context id="dGlaGhhQAwouTAu-c1" name="Oxygen Feedback Enterprise (copy 1)">
+        <input href="../DITA-copy1/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy1/ditaval/feedback-enterprise.ditaval"/>
+        </profile>
+    </context>
+    <context id="ybxCAYcGnTQDfbT-c1" name="Oxygen DITA-OT CSS Publishing to PDF Plugin (copy 1)">
+        <input href="../DITA-copy1/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy1/ditaval/pdf-css.ditaval"/>
+        </profile>
+    </context>
+    <context id="nxNrocAgVEVPufq-c1" name="Oxygen WebHelp Responsive (copy 1)">
+        <input href="../DITA-copy1/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy1/ditaval/webhelp-responsive.ditaval"/>
+        </profile>
+    </context>
+    <context id="XCVrViZRUbBXlXj-c1" name="Oxygen Publishing Engine (copy 1)">
+        <input href="../DITA-copy1/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy1/ditaval/ope.ditaval"/>
+        </profile>
+    </context>
+    <context id="EOiallJqGqBfrjc-c1" name="Oxygen XML Web Author (copy 1)">
+        <input href="../DITA-copy1/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy1/ditaval/webauthor.ditaval"/>
+        </profile>
+    </context>
+    <context id="TGwXCzmyimAZlze-c1" name="Oxygen Content Fusion (copy 1)">
+        <input href="../DITA-copy1/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy1/ditaval/content-fusion.ditaval"/>
+        </profile>
+    </context>
+    <context id="fusionCloudContext-c1" name="Oxygen Content Fusion Cloud (copy 1)">
+        <input href="../DITA-copy1/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy1/ditaval/content-fusion-cloud.ditaval"/>
+        </profile>
+    </context>
+    <context id="ysgUCzFQnmzwQKO-c1" name="Oxygen XML Author (copy 1)">
+        <input href="../DITA-copy1/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy1/ditaval/author-sa.ditaval"/>
+        </profile>
+    </context>
+    <context id="KtgNcgzjLsJplJM-c1" name="Oxygen XML Editor (copy 1)">
+        <input href="../DITA-copy1/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy1/ditaval/editor-sa.ditaval"/>
+        </profile>
+    </context>
+    <context id="PujROfTdXfiXxSr-c2" name="Oxygen Addons (copy 2)">
+        <input href="../DITA-copy2/add-ons.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy2/ditaval/add-ons.ditaval"/>
+        </profile>
+    </context>
+    <context id="wJlLClOEcZERQIh-c2" name="Oxygen XML Web Author - Customization Guide (copy 2)">
+        <input href="../DITA-copy2/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy2/ditaval/webauthor-customization.ditaval"/>
+        </profile>
+    </context>
+    <context id="YBuMcYMWeyeXVIh-c2" name="Oxygen License Server (copy 2)">
+        <input href="../DITA-copy2/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy2/ditaval/license-server.ditaval"/>
+        </profile>
+    </context>
+    <context id="hLeuJpSVXNqgrSe-c2" name="JSON Editor (copy 2)">
+        <input href="../DITA-copy2/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy2/ditaval/json.ditaval"/>
+        </profile>
+    </context>
+    <context id="RPRaQYdCiweyASk-c2" name="Oxygen XML Developer Eclipse (copy 2)">
+        <input href="../DITA-copy2/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy2/ditaval/developer-eclipse.ditaval"/>
+        </profile>
+    </context>
+    <context id="sFXfzyJemnBdSbJ-c2" name="Oxygen XML Developer (copy 2)">
+        <input href="../DITA-copy2/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy2/ditaval/developer-sa.ditaval"/>
+        </profile>
+    </context>
+    <context id="DJZrgoozPexiCXi-c2" name="Oxygen XML Author Eclipse Plugin (copy 2)">
+        <input href="../DITA-copy2/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy2/ditaval/author-eclipse.ditaval"/>
+        </profile>
+    </context>
+    <context id="lFUSpWRpjNOeCPR-c2" name="Oxygen Feedback Cloud (copy 2)">
+        <input href="../DITA-copy2/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy2/ditaval/feedback.ditaval"/>
+        </profile>
+    </context>
+    <context id="MUHjStmlHNRVhiY-c2" name="Oxygen PDF Chemistry (copy 2)">
+        <input href="../DITA-copy2/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy2/ditaval/chemistry.ditaval"/>
+        </profile>
+    </context>
+    <context id="dGlaGhhQAwouTAu-c2" name="Oxygen Feedback Enterprise (copy 2)">
+        <input href="../DITA-copy2/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy2/ditaval/feedback-enterprise.ditaval"/>
+        </profile>
+    </context>
+    <context id="ybxCAYcGnTQDfbT-c2" name="Oxygen DITA-OT CSS Publishing to PDF Plugin (copy 2)">
+        <input href="../DITA-copy2/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy2/ditaval/pdf-css.ditaval"/>
+        </profile>
+    </context>
+    <context id="nxNrocAgVEVPufq-c2" name="Oxygen WebHelp Responsive (copy 2)">
+        <input href="../DITA-copy2/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy2/ditaval/webhelp-responsive.ditaval"/>
+        </profile>
+    </context>
+    <context id="XCVrViZRUbBXlXj-c2" name="Oxygen Publishing Engine (copy 2)">
+        <input href="../DITA-copy2/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy2/ditaval/ope.ditaval"/>
+        </profile>
+    </context>
+    <context id="EOiallJqGqBfrjc-c2" name="Oxygen XML Web Author (copy 2)">
+        <input href="../DITA-copy2/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy2/ditaval/webauthor.ditaval"/>
+        </profile>
+    </context>
+    <context id="TGwXCzmyimAZlze-c2" name="Oxygen Content Fusion (copy 2)">
+        <input href="../DITA-copy2/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy2/ditaval/content-fusion.ditaval"/>
+        </profile>
+    </context>
+    <context id="fusionCloudContext-c2" name="Oxygen Content Fusion Cloud (copy 2)">
+        <input href="../DITA-copy2/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy2/ditaval/content-fusion-cloud.ditaval"/>
+        </profile>
+    </context>
+    <context id="ysgUCzFQnmzwQKO-c2" name="Oxygen XML Author (copy 2)">
+        <input href="../DITA-copy2/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy2/ditaval/author-sa.ditaval"/>
+        </profile>
+    </context>
+    <context id="KtgNcgzjLsJplJM-c2" name="Oxygen XML Editor (copy 2)">
+        <input href="../DITA-copy2/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy2/ditaval/editor-sa.ditaval"/>
+        </profile>
+    </context>
+    <context id="PujROfTdXfiXxSr-c3" name="Oxygen Addons (copy 3)">
+        <input href="../DITA-copy3/add-ons.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy3/ditaval/add-ons.ditaval"/>
+        </profile>
+    </context>
+    <context id="wJlLClOEcZERQIh-c3" name="Oxygen XML Web Author - Customization Guide (copy 3)">
+        <input href="../DITA-copy3/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy3/ditaval/webauthor-customization.ditaval"/>
+        </profile>
+    </context>
+    <context id="YBuMcYMWeyeXVIh-c3" name="Oxygen License Server (copy 3)">
+        <input href="../DITA-copy3/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy3/ditaval/license-server.ditaval"/>
+        </profile>
+    </context>
+    <context id="hLeuJpSVXNqgrSe-c3" name="JSON Editor (copy 3)">
+        <input href="../DITA-copy3/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy3/ditaval/json.ditaval"/>
+        </profile>
+    </context>
+    <context id="RPRaQYdCiweyASk-c3" name="Oxygen XML Developer Eclipse (copy 3)">
+        <input href="../DITA-copy3/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy3/ditaval/developer-eclipse.ditaval"/>
+        </profile>
+    </context>
+    <context id="sFXfzyJemnBdSbJ-c3" name="Oxygen XML Developer (copy 3)">
+        <input href="../DITA-copy3/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy3/ditaval/developer-sa.ditaval"/>
+        </profile>
+    </context>
+    <context id="DJZrgoozPexiCXi-c3" name="Oxygen XML Author Eclipse Plugin (copy 3)">
+        <input href="../DITA-copy3/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy3/ditaval/author-eclipse.ditaval"/>
+        </profile>
+    </context>
+    <context id="lFUSpWRpjNOeCPR-c3" name="Oxygen Feedback Cloud (copy 3)">
+        <input href="../DITA-copy3/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy3/ditaval/feedback.ditaval"/>
+        </profile>
+    </context>
+    <context id="MUHjStmlHNRVhiY-c3" name="Oxygen PDF Chemistry (copy 3)">
+        <input href="../DITA-copy3/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy3/ditaval/chemistry.ditaval"/>
+        </profile>
+    </context>
+    <context id="dGlaGhhQAwouTAu-c3" name="Oxygen Feedback Enterprise (copy 3)">
+        <input href="../DITA-copy3/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy3/ditaval/feedback-enterprise.ditaval"/>
+        </profile>
+    </context>
+    <context id="ybxCAYcGnTQDfbT-c3" name="Oxygen DITA-OT CSS Publishing to PDF Plugin (copy 3)">
+        <input href="../DITA-copy3/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy3/ditaval/pdf-css.ditaval"/>
+        </profile>
+    </context>
+    <context id="nxNrocAgVEVPufq-c3" name="Oxygen WebHelp Responsive (copy 3)">
+        <input href="../DITA-copy3/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy3/ditaval/webhelp-responsive.ditaval"/>
+        </profile>
+    </context>
+    <context id="XCVrViZRUbBXlXj-c3" name="Oxygen Publishing Engine (copy 3)">
+        <input href="../DITA-copy3/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy3/ditaval/ope.ditaval"/>
+        </profile>
+    </context>
+    <context id="EOiallJqGqBfrjc-c3" name="Oxygen XML Web Author (copy 3)">
+        <input href="../DITA-copy3/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy3/ditaval/webauthor.ditaval"/>
+        </profile>
+    </context>
+    <context id="TGwXCzmyimAZlze-c3" name="Oxygen Content Fusion (copy 3)">
+        <input href="../DITA-copy3/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy3/ditaval/content-fusion.ditaval"/>
+        </profile>
+    </context>
+    <context id="fusionCloudContext-c3" name="Oxygen Content Fusion Cloud (copy 3)">
+        <input href="../DITA-copy3/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy3/ditaval/content-fusion-cloud.ditaval"/>
+        </profile>
+    </context>
+    <context id="ysgUCzFQnmzwQKO-c3" name="Oxygen XML Author (copy 3)">
+        <input href="../DITA-copy3/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy3/ditaval/author-sa.ditaval"/>
+        </profile>
+    </context>
+    <context id="KtgNcgzjLsJplJM-c3" name="Oxygen XML Editor (copy 3)">
+        <input href="../DITA-copy3/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy3/ditaval/editor-sa.ditaval"/>
+        </profile>
+    </context>
+    <context id="PujROfTdXfiXxSr-c4" name="Oxygen Addons (copy 4)">
+        <input href="../DITA-copy4/add-ons.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy4/ditaval/add-ons.ditaval"/>
+        </profile>
+    </context>
+    <context id="wJlLClOEcZERQIh-c4" name="Oxygen XML Web Author - Customization Guide (copy 4)">
+        <input href="../DITA-copy4/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy4/ditaval/webauthor-customization.ditaval"/>
+        </profile>
+    </context>
+    <context id="YBuMcYMWeyeXVIh-c4" name="Oxygen License Server (copy 4)">
+        <input href="../DITA-copy4/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy4/ditaval/license-server.ditaval"/>
+        </profile>
+    </context>
+    <context id="hLeuJpSVXNqgrSe-c4" name="JSON Editor (copy 4)">
+        <input href="../DITA-copy4/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy4/ditaval/json.ditaval"/>
+        </profile>
+    </context>
+    <context id="RPRaQYdCiweyASk-c4" name="Oxygen XML Developer Eclipse (copy 4)">
+        <input href="../DITA-copy4/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy4/ditaval/developer-eclipse.ditaval"/>
+        </profile>
+    </context>
+    <context id="sFXfzyJemnBdSbJ-c4" name="Oxygen XML Developer (copy 4)">
+        <input href="../DITA-copy4/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy4/ditaval/developer-sa.ditaval"/>
+        </profile>
+    </context>
+    <context id="DJZrgoozPexiCXi-c4" name="Oxygen XML Author Eclipse Plugin (copy 4)">
+        <input href="../DITA-copy4/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy4/ditaval/author-eclipse.ditaval"/>
+        </profile>
+    </context>
+    <context id="lFUSpWRpjNOeCPR-c4" name="Oxygen Feedback Cloud (copy 4)">
+        <input href="../DITA-copy4/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy4/ditaval/feedback.ditaval"/>
+        </profile>
+    </context>
+    <context id="MUHjStmlHNRVhiY-c4" name="Oxygen PDF Chemistry (copy 4)">
+        <input href="../DITA-copy4/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy4/ditaval/chemistry.ditaval"/>
+        </profile>
+    </context>
+    <context id="dGlaGhhQAwouTAu-c4" name="Oxygen Feedback Enterprise (copy 4)">
+        <input href="../DITA-copy4/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy4/ditaval/feedback-enterprise.ditaval"/>
+        </profile>
+    </context>
+    <context id="ybxCAYcGnTQDfbT-c4" name="Oxygen DITA-OT CSS Publishing to PDF Plugin (copy 4)">
+        <input href="../DITA-copy4/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy4/ditaval/pdf-css.ditaval"/>
+        </profile>
+    </context>
+    <context id="nxNrocAgVEVPufq-c4" name="Oxygen WebHelp Responsive (copy 4)">
+        <input href="../DITA-copy4/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy4/ditaval/webhelp-responsive.ditaval"/>
+        </profile>
+    </context>
+    <context id="XCVrViZRUbBXlXj-c4" name="Oxygen Publishing Engine (copy 4)">
+        <input href="../DITA-copy4/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy4/ditaval/ope.ditaval"/>
+        </profile>
+    </context>
+    <context id="EOiallJqGqBfrjc-c4" name="Oxygen XML Web Author (copy 4)">
+        <input href="../DITA-copy4/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy4/ditaval/webauthor.ditaval"/>
+        </profile>
+    </context>
+    <context id="TGwXCzmyimAZlze-c4" name="Oxygen Content Fusion (copy 4)">
+        <input href="../DITA-copy4/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy4/ditaval/content-fusion.ditaval"/>
+        </profile>
+    </context>
+    <context id="fusionCloudContext-c4" name="Oxygen Content Fusion Cloud (copy 4)">
+        <input href="../DITA-copy4/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy4/ditaval/content-fusion-cloud.ditaval"/>
+        </profile>
+    </context>
+    <context id="ysgUCzFQnmzwQKO-c4" name="Oxygen XML Author (copy 4)">
+        <input href="../DITA-copy4/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy4/ditaval/author-sa.ditaval"/>
+        </profile>
+    </context>
+    <context id="KtgNcgzjLsJplJM-c4" name="Oxygen XML Editor (copy 4)">
+        <input href="../DITA-copy4/UserManual.ditamap"/>
+        <profile>
+            <ditaval href="../DITA-copy4/ditaval/editor-sa.ditaval"/>
+        </profile>
+    </context>
     <publication id="webhelp" transtype="webhelp-responsive"/>
     <publication id="pdf" transtype="pdf-css-html5"/>
     <deliverable id="d-Content_Fusion_User_Guide-1713364468353" name="Content Fusion WebHelp Manual">

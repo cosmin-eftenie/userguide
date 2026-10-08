@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="pluginTypes">
+  <title>Types of Plugin Extensions Available with the SDK</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Oxygen SDK<indexterm>Types of Extensions</indexterm></indexterm>
+        <indexterm>Plugins<indexterm>Types of Extensions</indexterm></indexterm>
+        <indexterm>Plugin extensions</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_o22_dgk_54b">A <xref keyref="glossentry_plugin"><term>plugin</term></xref> can have one or more defined
+        <term>plugin extensions</term> that provide functionality to the application. This section
+      presents the <term>plugin extensions</term> that are available. </p>
+  </body>
+</topic>

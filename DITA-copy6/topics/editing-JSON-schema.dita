@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="editing-JSON-schema">
+  <title>Editing JSON Schema Documents</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>JSON Schema</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_alw_dgc_2rb"><ph keyref="product"/> offers powerful tools that allow you to design,
+      develop, and edit JSON Schemas. These tools include:<ul id="ul_b4q_zhc_2rb">
+        <li id="li_c4q_zhc_2rb"><xref
+            href="json-schema-editor.dita#json-schema-editor/section_uw2_cxr_1nb"
+              ><uicontrol>Text</uicontrol> editing mode</xref> (packed full of editing helpers)</li>
+        <li id="li_t2v_bxn_2rb"><xref href="json-schema-design-mode.dita">Schema
+              <uicontrol>Design</uicontrol> mode</xref> (a visual, intuitive schema diagram
+          editor)</li>
+        <li id="li_u4k_c3c_2rb" product="editor editorEclipse"><xref
+            href="json-schema-editor.dita#json-schema-editor/section_vbc_lfw_thb"
+              ><uicontrol>Author</uicontrol> editing mode</xref> (a visual authoring mode with form
+          controls)</li>
+        <li id="li_wxw_bxn_2rb"><xref
+            href="json-schema-editor.dita#json-schema-editor/section_e5s_r2w_thb"
+              ><uicontrol>Grid</uicontrol> mode</xref> (a compact layout of nested tables)</li>
+        <li id="li_srf_g3c_2rb" product="developer editor json"><xref
+            href="json-schema-documentation-generator.dita">JSON Schema documentation tool</xref>
+          for producing high quality output</li>
+        <li id="li_pyy_g3c_2rb"><xref href="json-schema-instance-generator.dita">JSON Schema
+            instance generator</xref> for producing JSON Schema documents from a JSON file</li>
+        <li id="li_pgq_33c_2rb" product="developer editor json"><xref
+            href="xsd-to-json-schema-converter.dita">XSD to JSON Schema converter tool</xref> for
+          producing a JSON Schema from an XML schema </li>
+      </ul></p>
+    <p id="p_sfg_cgk_54b">This section describes the features included in <ph keyref="product"/> for
+      editing JSON Schema documents and how to use them.</p>
+    <section id="section_v54_rr5_ypb">
+      <title>Resources</title>
+      <p id="p_w54_rr5_ypb">For more information about the JSON support in <ph keyref="product"/>,
+        see the following resources:<ul id="ul_bzc_455_ypb">
+          <li id="li_ljr_r55_ypb">Video: <xref href="https://www.youtube.com/watch?v=IEzaPRPHmGc"
+              format="html" scope="external"><b>Introducing JSON Schema Design Mode</b></xref></li>
+          <li id="li_ljr_r55_ypb2">Video: <xref href="https://www.youtube.com/watch?v=wgIkagwSDrU"
+              format="html" scope="external"><b>JSON Editing</b></xref></li>
+          <li id="li_if5_gv5_ypb">Video: <xref href="https://www.youtube.com/watch?v=k3LHBU01GFI"
+              format="html" scope="external"><b>JSON Tools in Oxygen</b></xref></li>
+          <li id="li_c4t_lnp_dvb">Video: <xref href="https://www.youtube.com/watch?v=LBB9Dc_2RNE"
+              format="html" scope="external"><b>JSON Schema Search and Refactoring Actions in
+                Oxygen</b></xref></li>
+          <li id="li_cxv_34p_dvb">Video: <xref href="https://www.youtube.com/watch?v=GgjLBAO9gEE"
+              format="html" scope="external"><b>JSON Schema Version 2020-12 Support in
+              Oxygen</b></xref></li>
+          <li id="li_czc_455_ypb">Webinar: <xref
+              href="https://www.oxygenxml.com/events/2020/webinar_json_and_json_schema_support_in_oxygen_xml_editor.html"
+              format="html" scope="external"><b>JSON and JSON Schema Support in
+            Oxygen</b></xref></li>
+          <li id="li_clb_ccv_tvb">Webinar: <xref
+              href="https://www.oxygenxml.com/events/2022/webinar_creating_and_designing_json_schemas.html"
+              format="html" scope="external"><b>Creating and Designing JSON Schemas</b></xref></li>
+        </ul></p>
+    </section>
+  </body>
+</topic>

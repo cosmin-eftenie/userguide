@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="preferences-diff-dir-appearance">
+  <title>Appearance Preferences</title>
+  <prolog>
+    <metadata>
+      <keywords><indexterm>Preferences<indexterm>Directories Comparison Appearance</indexterm></indexterm>
+        <indexterm>Directory comparison appearance preferences</indexterm></keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_ebr_bgk_54b">To configure the appearance options for the Directories Comparison tool, <ph
+        conkeyref="reusables-preferences-pages/open-the-preferences-page"/> and go to <menucascade>
+        <uicontrol>Diff</uicontrol>
+        <uicontrol>Directories Comparison</uicontrol>
+        <uicontrol>Appearance</uicontrol>
+      </menucascade>.</p>
+    <p id="p_fbr_bgk_54b">
+      <fig id="figure-diff-colors-options">
+        <title>Diff Appearance Preferences Panel</title>
+        <image href="../img/sa_diff_dirs_colors_options.png"/>
+      </fig>
+    </p>
+    <ul id="ul_gbr_bgk_54b">
+      <li id="li_hbr_bgk_54b"><uicontrol>Added/Deleted</uicontrol> - Color used for marking added or deleted files and
+        folders.</li>
+      <li id="li_ibr_bgk_54b"><uicontrol>Modified</uicontrol> - Color used for marking modified files.</li>
+    </ul>
+  </body>
+</topic>

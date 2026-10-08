@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="site-deployment">
+  <title>Site-Wide Deployment</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Installing Oxygen<indexterm>Group deployment</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_bbn_bgk_54b">If you are deploying <ph keyref="product"/> for a group, there are various things you can do
+      to customize <ph keyref="product"/> for your users and to make the deployment more
+      efficient.</p>
+    <p id="p_cbn_bgk_54b">
+      <dl id="dl_dbn_bgk_54b">
+        <dlentry id="dlentry_ebn_bgk_54b"
+          product="author developer editor authorEclipse developerEclipse editorEclipse">
+          <dt>Creating custom default options</dt>
+          <dd>You can <xref keyref="options_customizing-default">create a custom set of default
+              options</xref> for <ph keyref="product"/>. These will become the default options for
+            each of your users, replacing the normal default settings. Users can still set options
+            to suit themselves in their own copies of <ph keyref="product"/>, but if they choose to
+            reset their options to defaults, the custom defaults that you set will be used.</dd>
+        </dlentry>
+        <dlentry id="dlentry_fbn_bgk_54b">
+          <dt>Creating default project files</dt>
+          <dd><xref href="grouping-documents-xml-projects.dita#grouping-documents-xml-projects"><ph
+                keyref="product"/> project files</xref> are used to configure a project. You can
+              <xref href="create-new-project.dita#create-new-project">create and deploy default
+              project files</xref> for your projects so that your users will have a preconfigured
+            project file to begin work with.</dd>
+        </dlentry>
+        <dlentry product="author developer editor json" id="dlentry_gbn_bgk_54b">
+          <dt>Shared project files</dt>
+          <dd>Rather than each user having their own project file, you can <xref
+              href="sharing-projects.dita#sharing-projects">create and deploy shared project
+              files</xref> so that all users share the same project configuration and settings and
+            automatically inherit all project changes. </dd>
+        </dlentry>
+        <dlentry product="author developer editor json" id="dlentry_hbn_bgk_54b">
+          <dt>Using the unattended installer</dt>
+          <dd>You can speed up the installation process by using the <xref
+              keyref="eppo_installation_windows/unattended_installation">unattended installer for
+              Windows</xref> or <xref keyref="eppo_installation_linux/unattended_installation"
+              >Linux</xref> installs.</dd>
+        </dlentry>
+        <dlentry id="dlentry_ibn_bgk_54b"
+          product="author developer editor authorEclipse developerEclipse editorEclipse">
+          <dt>Using floating licenses</dt>
+          <dd>If you have a number of people using <ph keyref="product"/> on a part-time basis or in
+            different time zones, you can use a <xref
+              href="how-floating-licenses-work.dita#how-floating-licenses-work">floating
+              license</xref> so that multiple people can share a license.</dd>
+        </dlentry>
+      </dl>
+    </p>
+  </body>
+</topic>

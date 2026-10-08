@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="working-with-epub">
+  <title>Working with Archive Files</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Archives<indexterm>EPUB</indexterm></indexterm>
+        <indexterm>Archives<indexterm>OOXML</indexterm></indexterm>
+        <indexterm>Archives<indexterm>ODF</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_dfw_cgk_54b"><ph keyref="product"/> includes support for working with various types of archives, including
+      the following:<ul id="ul_efw_cgk_54b">
+        <li id="li_ffw_cgk_54b"><b>EPUB</b> - An e-book file format that can be used on many types of devices, such as
+          smart phones, tablets, e-readers, or computers.</li>
+        <li id="li_gfw_cgk_54b"><b>OOXML</b> - An XML-based file format for representing spreadsheets, charts,
+          presentations, and word processing documents.</li>
+        <li id="li_hfw_cgk_54b"><b>ODF</b> - An free and open-source XML-based file format for electronic office
+          documents, such as spreadsheets, charts, presentations, and word processing
+          documents.</li>
+      </ul></p>
+    <p id="p_ifw_cgk_54b">When these types of files are opened in the <ph
+        product="author developer editor json"><xref
+          href="archive-browser-view.dita#archive-browser-view"><uicontrol>Archive
+            Browser</uicontrol> view</xref></ph><ph
+        product="authorEclipse developerEclipse editorEclipse"><uicontrol>Project
+          Explorer</uicontrol> view or the main editing pane</ph>, their internal components are
+      expanded: <ul id="ul_jfw_cgk_54b">
+        <li id="li_kfw_cgk_54b">Document content (XHTML and image files).</li>
+        <li id="li_lfw_cgk_54b">Packaging files.</li>
+        <li id="li_mfw_cgk_54b">Container files.</li>
+      </ul></p>
+    <p id="p_nfw_cgk_54b">
+      <fig product="author developer editor json" id="fig_ofw_cgk_54b">
+        <title>EPUB File Displayed in the Archive Browser View</title>
+        <image href="../img/sa_archive_browser_EPUB.png"/>
+      </fig>
+    </p>
+    <p id="p_pfw_cgk_54b">
+      <fig product="authorEclipse developerEclipse editorEclipse" id="fig_qfw_cgk_54b">
+        <title>EPUB File Displayed in Eclipse</title>
+        <image href="../img/epub_eclipse.png"/>
+      </fig>
+    </p>
+    <p id="p_rfw_cgk_54b">When an archive is expanded<ph product="author developer editor json"> in
+        the <xref href="archive-browser-view.dita#archive-browser-view"><uicontrol>Archive
+            Browser</uicontrol> view</xref></ph>, you can add or delete files that compose the
+      archive structure. All changes made to the structure of an archive are saved immediately. You
+      can open files from within the archive to edit them in the main editing pane and save changes
+      back to the archive. You can also use the <uicontrol><image href="../img/OpenInBrowser16.png"
+          id="image_dky_bqq_sr"/>Open in System Application</uicontrol> action to open the archive
+      in the default system application that is associated with that type of file.</p>
+    <section id="epubspecific_validation">
+      <title>EPUB-Specific Validation</title>
+      <p id="p_sfw_cgk_54b">When working with EPUB archives, <ph
+          product="author developer editor json">the <xref
+            href="archive-browser-view.dita#archive-browser-view"><uicontrol>Archive
+              Browser</uicontrol></xref></ph><ph
+          product="authorEclipse developerEclipse editorEclipse">Eclipse</ph> includes a
+            <uicontrol><image href="../img/ValidateAndCheck16.png" id="image_bsg_gvv_sr"
+          />Validate</uicontrol> action on the toolbar that checks the EPUB archive to make sure the
+        structure and content are valid. <ph keyref="product"/> uses the open-source
+          <i>EpubCheck</i> validator to perform the validation. This validator detects many types of
+        errors, including OCF container structure, OPF and OPS mark-up, as well as internal
+        reference consistency.</p>
+    </section>
+    <section id="section_d5j_sw2_w5b">
+      <title>Resources</title>
+      <p id="p_tfw_cgk_54b">For more information about working with an EPUB archive in <ph
+          keyref="product"/>, watch our video demonstration:</p>
+      <p id="p_ufw_cgk_54b"><object width="450" height="250"
+          data="https://www.youtube.com/embed/OIGTNQwOCl8" outputclass="iframe">
+          <param name="allowfullscreen" value="true"/>
+        </object></p>
+    </section>
+  </body>
+  <related-links product="author developer editor authorEclipse developerEclipse editorEclipse">
+    <link href="archive-browser-view.dita#archive-browser-view">
+      <linktext>The Archive Browser View</linktext>
+    </link>
+    <link href="epub-document-type.dita#epub-document-type"/>
+  </related-links>
+</topic>

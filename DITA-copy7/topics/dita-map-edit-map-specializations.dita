@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dita-map-edit-map-specializations">
+  <title>Editing DITA Map Specializations</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>DITA<indexterm>Specialization<indexterm>Maps</indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_ltn_dgk_54b">In addition to recognizing the default <xref keyref="glossentry_ditamap"><term>DITA
+      map</term></xref> formats (<xmlelement>map</xmlelement> and <xmlelement>bookmap</xmlelement>), the <xref
+        href="dita-maps-manager.dita#dita-maps-manager"><uicontrol>DITA Maps Manager</uicontrol>
+        view</xref> can also be used to open and edit specializations of <term>DITA maps</term>.</p>
+    <p id="p_mtn_dgk_54b">All advanced editing actions available for the map (such as insertion actions or editing
+      properties) allow you to specify the element in an editable combo box. The elements that
+      initially appear in the combo box are all the elements that are allowed to appear at the
+      insert position for the given specialization.</p>
+    <p id="p_ntn_dgk_54b">The topic titles rendered in the <xref href="dita-maps-manager.dita#dita-maps-manager"
+          ><uicontrol>DITA Maps Manager</uicontrol> view</xref> are collected from the target files
+      by matching the <xmlatt>class</xmlatt> attribute and not a specific element name.</p>
+    <p id="p_otn_dgk_54b">When editing DITA specializations of maps in the main editor, the insertions of topic
+      reference, topic heading, topic group and conref actions should work without modification. For
+      the table actions, you have to modify each action manually to insert the correct element name
+      at the cursor position. You can go to the <uicontrol>DITA Map</uicontrol> document type from
+      the <ph conkeyref="reusables-preferences-pages/preferences-document-type-association"/> and
+      edit the table actions to insert the element names as specified in your specialization. See
+        <xref href="framework-customization-extending.dita"/> for more details.</p>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link
+        href="http://dita4practitioners.github.io/dita-specialization-tutorials/standalone-tutorials/config-and-extend-tutorials-standalone.html"
+        format="html" scope="external">
+        <linktext>DITA Configuration and Specialization Tutorials</linktext>
+      </link>
+      <link href="dita-integrate-specialization.dita#dita-integrate-specialization"/>
+    </linklist>
+  </related-links>
+</topic>

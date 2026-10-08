@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dita-ot-support">
+  <title>DITA Open Toolkit Support</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>DITA<indexterm>Open Toolkit</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_hnn_dgk_54b">The <term>DITA Open Toolkit</term> is an open-source publishing engine that can generate
+      various output formats (for example, HTML, PDF, CHM) from DITA content. <ph keyref="product"/>
+      includes support for the DITA Open Toolkit. This section includes information about how to
+      install and create a DITA-OT <xref keyref="glossentry_plugin"><term>plugin</term></xref>, and
+      how to use an external instance of the DITA Open Toolkit.</p>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link format="html" href="http://www.dita-ot.org/" scope="external">
+        <linktext>DITA Open Toolkit Documentation</linktext>
+      </link>
+    </linklist>
+  </related-links>
+</topic>

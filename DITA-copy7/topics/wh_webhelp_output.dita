@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="wh_webhelp_output">
+  <title>WebHelp Output Customization</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>WebHelp feature matrix</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_ijm_cgk_54b"><b>Oxygen XML WebHelp</b> provides the ability to generate <b>WebHelp
+        Responsive</b> from DITA XML content.<table frame="all" rowsep="1" colsep="1"
+        id="table_jjm_cgk_54b">
+        <title>WebHelp System Feature Matrix</title>
+        <tgroup cols="2">
+          <colspec colname="c1" colnum="1" colwidth="1.86*"/>
+          <colspec colname="c2" colnum="2" colwidth="1.15*"/>
+          <thead>
+            <row>
+              <entry align="center" valign="middle">Features</entry>
+              <entry align="center">Responsive</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Desktop Systems</entry>
+              <entry align="center" valign="middle"><image href="../img/CheckMark.png"/></entry>
+            </row>
+            <row>
+              <entry>Mobile Devices</entry>
+              <entry align="center" valign="middle"><image href="../img/CheckMark.png"/></entry>
+            </row>
+            <row>
+              <entry>Built-in Skins</entry>
+              <entry align="center" valign="middle"><image href="../img/CheckMark.png"/></entry>
+            </row>
+            <row>
+              <entry>Built-in Templates</entry>
+              <entry align="center" valign="middle"><image href="../img/CheckMark.png"/></entry>
+            </row>
+            <row>
+              <entry>Search Capabilities</entry>
+              <entry align="center" valign="middle"><image href="../img/CheckMark.png"/></entry>
+            </row>
+            <row>
+              <entry>Modern Layout</entry>
+              <entry align="center" valign="middle"><image href="../img/CheckMark.png"/></entry>
+            </row>
+            <row>
+              <entry>Adaptable to Any Screen Size</entry>
+              <entry align="center" valign="middle"><image href="../img/CheckMark.png"/></entry>
+            </row>
+            <row>
+              <entry><b>Oxygen Feedback</b> Commenting Platform</entry>
+              <entry align="center" valign="middle"><image href="../img/CheckMark.png"/></entry>
+            </row>
+            <row>
+              <entry>DITA Documents</entry>
+              <entry align="center" valign="middle"><image href="../img/CheckMark.png"/></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table></p>
+  </body>
+</topic>

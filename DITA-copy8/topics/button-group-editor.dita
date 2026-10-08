@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="button-group-editor">
+  <title>Button Group Form Control</title>
+  <shortdesc>The <codeph>oxy_buttonGroup</codeph> built-in form control is used for a graphical user
+    interface group of buttons that invokes one of several custom <uicontrol>Author</uicontrol> mode
+    actions (defined in the associated Document Type) referencing it by its ID, or directly in the
+    CSS.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>CSS extensions<indexterm>Form Controls<indexterm>Button
+            group</indexterm></indexterm></indexterm>
+        <indexterm>Form Controls<indexterm>Button group</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_y4d_dgk_54b">The <codeph>oxy_buttonGroup</codeph> form control supports the following properties: <ul id="ul_z4d_dgk_54b">
+        <li id="li_apd_dgk_54b"><uicontrol>label</uicontrol> - Specifies the label to be displayed
+          on the button. This label can be translated using the <xref
+            href="editor-variables.dita#editor-variables/localization"><term>${i18n()}</term> editor
+            variable</xref>.</li>
+        <li id="li_bpd_dgk_54b"><uicontrol>icon</uicontrol> - The path to the icon to be displayed
+          on the button.</li>
+        <li id="li_cpd_dgk_54b"><ph conkeyref="reusables-author-mode-customization/visible-property"/></li>
+        <li id="li_dpd_dgk_54b"><ph conkeyref="reusables-author-mode-customization/tooltip-property"/></li>
+        <li id="li_epd_dgk_54b"><uicontrol>transparent</uicontrol> - Makes the button transparent
+          without any borders or background colors. The values of this property can be
+            <codeph>true</codeph> or <codeph>false</codeph>.</li>
+        <li id="li_fpd_dgk_54b"><ph conkeyref="reusables-author-mode-customization/fontInherit-property"/></li>
+        <li id="li_gpd_dgk_54b"><ph conkeyref="reusables-author-mode-customization/enable-read-only-context-property"
+          /></li>
+        <li id="li_hpd_dgk_54b"><ph conkeyref="reusables-author-mode-customization/hover-property-li"
+          /><codeblock outputclass="language-css" id="codeblock_ipd_dgk_54b">p:before {
+  content: oxy_buttonGroup(hoverPseudoclassName, 'showBorder')
+}
+p:showBorder {
+  border: 1px solid red;
+}</codeblock></li>
+        <li id="li_jpd_dgk_54b"><uicontrol>actionIDs</uicontrol> - The IDs of the actions that will
+          be presented in the group of buttons.</li>
+        <li conkeyref="reusables-author-mode-customization/actionID-property" id="li_kpd_dgk_54b"/>
+        <li id="li_lpd_dgk_54b">
+          <p id="p_mpd_dgk_54b"><ph conkeyref="reusables-author-mode-customization/action-list-property"
+            /><codeblock outputclass="language-css" id="codeblock_npd_dgk_54b">oxy_buttonGroup(
+    label, 'A group of actions', 
+    icon, url('http://www.oxygenxml.com/img/icn_oxy20.png'),
+    actions, 
+      oxy_action_list(
+          oxy_action(
+                name, 'Insert', 
+                description, 'Insert an element after the current one', 
+                operation, 'InsertFragmentOperation', 
+                arg-fragment, '&lt;element&gt;&lt;/element&gt;',
+                arg-insertLocation, '.',
+                arg-insertPosition, 'After'
+          ),
+          oxy_action(
+                name, 'Delete', 
+                description, 'Deletes the current element', 
+                operation, 'DeleteElementOperation' 
+          )
+      )
+  )</codeblock></p>
+          <p id="p_opd_dgk_54b">
+            <note type="tip" id="note_ppd_dgk_54b">To execute multiple actions sequentially, you can
+              use the <xref href="dg-compound-action-function.dita#dg-compound-action-function"
+                  ><term>oxy_compound_action</term> function</xref> in the <xref
+                href="dg-action-list-function.dita#dg-action-list-function"
+                  ><codeph>oxy_action_list</codeph>
+              function</xref>.<codeblock outputclass="language-css" id="codeblock_qpd_dgk_54b">p:before {
+content: 
+  oxy_buttonGroup(
+   label, 'A group of actions', 
+    icon, url('http://www.oxygenxml.com/img/icn_oxy20.png'),
+    actions, 
+      oxy_action_list(
+            oxy_compound_action(
+                 name, oxy_getActionName('framework.id', 'Fallback'),
+                 description, 'Inserts a paragraph and uses form controls to edit its @audience attribute',
+                 icon, url('http://www.oxygenxml.com/img/icn_oxy20.png'),
+                 oxy_action(
+                   name, 'Insert', 
+                   description, 'Insert an element after the current one', 
+                   operation, 'ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation', 
+                   icon, url('insert.png'), 
+                   arg-fragment, "&lt;p audience=''>&lt;/p>",
+                   arg-insertLocation, '.',
+                   arg-insertPosition, 'After'
+                 ),
+                 oxy_action(
+                   name, 'Activate edit mode', 
+                   description, 'Sets a pseudo class that will activate a CSS rule that will present a text field form control for the @audience attribute', 
+                   operation, 'SetPseudoClassOperation',
+                   arg-name, 'edit-mode-on',
+                   arg-elementLocation , '.'
+                 )
+        ),
+          oxy_action(
+                name, 'Delete', 
+                description, 'Deletes the current element', 
+                operation, 'DeleteElementOperation' 
+          )
+      )
+  )
+}</codeblock></note>
+          </p>
+        </li>
+        <li id="li_rpd_dgk_54b"><ph conkeyref="reusables-author-mode-customization/actionContext-property"/></li>
+        <li id="li_spd_dgk_54b"><ph conkeyref="reusables-author-mode-customization/actionDisplayStyle-property"/></li>
+      </ul></p>
+    <p id="p_tpd_dgk_54b"><b><u>Example: <term>oxy_buttonGroup</term> Form
+      Control</u></b><codeblock outputclass="language-css" id="codeblock_upd_dgk_54b">buttongroup:before {     
+  content:        
+    oxy_label(text, "Button Group:", width, 150px, text-align, left)        
+    oxy_buttonGroup(
+       label, 'A group of actions',
+       /* The action IDs are declared in the document type 
+          associated with the XML document. */
+       actionIDs, 
+          "insert.popupWithMultipleSelection,insert.popupWithSingleSelection",
+       actionStyle, "both"); 
+} </codeblock></p>
+    <note type="tip" id="note_vpd_dgk_54b">To insert a sample of the <codeph>oxy_buttonGroup</codeph> form control in a
+      CSS file <ph product="author developer editor">(or LESS file)</ph>, invoke the <xref
+        keyref="glossentry_content-completion-assistant"><term>Content Completion
+        Assistant</term></xref> by pressing <uicontrol
+        conkeyref="reusable-oxygen-shortcuts-list/ctrl_space"/> and select the <image
+        href="../img/CodeTemplates12.gif" id="image_f3c_d2h_5r"/>
+      <codeph>oxy_buttonGroup</codeph> code template. Also, an <image
+        href="../img/CodeTemplates12.gif" id="image_nsh_d2h_5r"/>
+      <codeph>oxy_buttonGroup_in_place_action</codeph> code template is available that inserts an
+        <codeph>oxy_buttonGroup</codeph> function that includes an <codeph>oxy_action_list</codeph>
+          function.<p id="p_wpd_dgk_54b"><ph conkeyref="reusables-author-mode-customization/samples-ph"/></p></note>
+    <section id="section_jhq_vr2_w5b">
+      <title>Resources</title>
+      <p id="p_xpd_dgk_54b">For more information about form controls, watch our video
+        demonstration:</p>
+      <p id="p_ypd_dgk_54b"><object width="450" height="250"
+          data="https://www.youtube.com/embed/-WY3wzkMSLM" outputclass="iframe">
+          <param name="allowfullscreen" value="true"/>
+        </object></p>
+    </section>
+  </body>
+  <related-links>
+      <link href="dg-oxygen-css-functions.dita"/>
+      <link href="dg-action-function.dita"/>
+      <link href="dg-action-list-function.dita"/>
+      <link href="dg-compound-action-function.dita"/>
+      <link href="dg-oxy-label-function.dita"/>
+  </related-links>
+</topic>

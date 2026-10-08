@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ch_fonts">
+  <title>Fonts</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Fonts</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_snv_dgk_54b">This section contains information about using fonts to style the output, including the
+      supported fonts, how to use Web fonts and other special fonts, and font embedding.</p>
+  </body>
+</topic>

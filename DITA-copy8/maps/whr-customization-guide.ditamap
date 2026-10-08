@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+  <title>WebHelp Responsive Customization</title>
+  <topicref href="../topics/whr_publishing_templates.dita" collection-type="sequence">
+    <topicref href="../topics/ope-create-publishing-template.dita"
+      keys="whr-create-publishing-template"
+      copy-to="../topics/whr-create-publishing-template-x.dita"/>
+    <topicref href="../topics/webhelp-create-dark-mode-ready-publishing-template.dita">
+      <topicref href="../topics/webhelp_migrate_a_publishing_template_to_dark_mode_ready.dita"/>
+    </topicref>
+    <topicref href="../topics/whr_edit-publishing-template.dita" keys="whr_edit-publishing-template"
+      copy-to="../topics/whr_edit-publishing-template-x.dita"/>
+    <topicref href="../topics/whr-publishing-template-apply-transformation.dita"
+      keys="whr-publishing-template-apply-transformation"/>
+    <topicref href="../topics/whr-create-edit-pt-script.dita"/>
+    <topicref href="../topics/whr-share-tempates.dita" copy-to="../topics/whr-share-tempates-s.dita"/>
+    <topicref href="../topics/whr-custom-templates-errors.dita"/>
+    <topicref href="../topics/whr-converting-templates.dita" collection-type="sequence">
+      <topicref href="../topics/convert-pt-to-ver28.dita"/>
+      <topicref href="../topics/convert-pt-to-ver27-1.dita"/>
+      <topicref href="../topics/convert-pt-to-ver25.dita"/>
+      <topicref href="../topics/convert-pt-to-ver24-1.dita"/>
+      <topicref href="../topics/convert-pt-to-ver24.dita"/>
+      <topicref href="../topics/convert-pt-to-ver22.dita"/>
+      <topicref href="../topics/convert-pt-to-ver21.dita"/>
+    </topicref>
+  </topicref>
+  <topicref href="../topics/whr_layout.dita" collection-type="sequence">
+    <topicref href="../topics/webhelp-customizing-with-css.dita"/>
+    <topicref href="../topics/wh-add-custom-html.dita"/>
+    <topicref href="../topics/webhelp-customization-ol.dita"/>
+    <topicref href="../topics/add-syntax-highlights-codeblocks.dita"/>
+    <topicref href="../topics/whr-show-hide-navigation-links.dita"/>
+    <topicref href="../topics/whr_how_to_change_an_html_layout_page.dita" collection-type="sequence">
+      <topicref href="../topics/whr-customize-menu.dita" keys="whr-customize-menu"/>
+      <topicref href="../topics/whr-set-welcome-message.dita"/>
+      <topicref href="../topics/whr-custom-footer.dita"/>
+      <topicref href="../topics/whr-configure-tiles.dita"/>
+    </topicref>
+  </topicref>
+  <topicref href="../topics/whr-media-resources.dita" collection-type="sequence">
+    <topicref href="../topics/webhelp-customization-add-image-to-title.dita"/>
+    <topicref href="../topics/add-favicon-webhelp.dita"/>
+    <topicref href="../topics/whr-add-videos.dita"/>
+    <topicref href="../topics/mathjax-webhelp2.dita" copy-to="../topics/mathjax-webhelp2-x.dita"/>
+  </topicref>
+  <topicref href="../topics/whr_searching.dita" collection-type="sequence">
+    <topichead navtitle="Built-in JS Based Search Engine Customizations">
+      <topicref href="../topics/scoring-properties-search-results.dita"/>
+      <topicref href="../topics/index-japanese-content-webhelp.dita"/>
+      <topicref href="../topics/whr-custom-search-filter.dita"/>
+      <topicref href="../topics/exclude-topics-webhelp.dita"/>
+    </topichead>
+    <topichead navtitle="Oxygen Feedback Search Engine">
+      <topicref href="../topics/wh-faceted-search.dita"/>
+      <topicref href="../topics/wh-labels.dita"/>
+    </topichead>
+    <topichead navtitle="Custom Search Engine">
+      <topicref keys="integrate-google-search-whresponsive"
+        href="../topics/integrate-google-search-whresponsive.dita"/>
+      <topicref href="../topics/whr_how_to_replace_webhelp_search_engine.dita"/>
+      <topicref href="../topics/wh-configure-custom-search-engine.dita"/>
+    </topichead>
+    <topicref href="../topics/specify-title-in-search-tools.dita"/>
+    <topicref href="../topics/webhelp-search-query-url.dita"/>
+    <topicref href="../topics/webhelp-seo.dita"/>
+  </topicref>
+  <topicref href="../topics/whr-localization.dita" collection-type="sequence">
+    <topicref href="../topics/localize-webhelp-responsive.dita" chunk="to-content">
+      <topicref href="../topics/localize-webhelp-responsive-modify-text.dita"/>
+      <topicref href="../topics/localize-webhelp-responsive-new-lang.dita"/>
+    </topicref>
+    <topicref href="../topics/rtl-webhelp.dita"/>
+  </topicref>
+  <topicref href="../topics/webhelp-social-media-integration.dita" collection-type="sequence">
+    <topicref href="../topics/whr-add-facebook-button.dita"/>
+    <topicref href="../topics/whr-add-tweet-button.dita"/>
+    <topicref href="../topics/whr-google-analytics.dita"/>
+  </topicref>
+  <topicref href="../topics/whr_ant_extensions_for_webhelp_responsive.dita"/>
+  <topicref href="../topics/whr-responsive-override-xslt-processing.dita" collection-type="sequence">
+    <topicref href="../topics/whr-pt-xslt-import.dita">
+      <topicref href="../topics/whr-pt-xslt-import-usecase-1.dita"/>
+      <topicref href="../topics/whr-pt-xslt-import-usecase-2.dita"/>
+    </topicref>
+    <topicref href="../topics/whr-responsive-override-xslt-dita-xslt-import-sample.dita"/>
+  </topicref>
+  <topicref href="../topics/whr-misc-how-to.dita" collection-type="sequence">
+    <topicref href="../topics/whr-copy-additional-resources.dita"
+      keys="whr-copy-additional-resources"/>
+    <topicref href="../topics/wh-edit-link.dita"/>
+    <topicref href="../topics/flagging-dita-content.dita"/>
+    <topicref href="../topics/mathjax-webhelp.dita"/>
+    <topicref href="../topics/wh_disable-caching-in-webhelp-responsive.dita"/>
+    <topicref href="../topics/whr-add-link-to-PDF.dita"/>
+    <topicref href="../topics/whr-how-to-create-custom-component.dita"/>
+    <topicref href="../topics/whr-how-to-generate-google-structured-data.dita"/>
+    <topicref href="../topics/wh_how_to_hide_related_links_descriptions.dita"/>
+    <topicref href="../topics/wh_how_to_group_related_links_by_type.dita"/>
+    <topicref href="../topics/wh-use-local-font.dita"/>
+    <topicref href="../topics/how_to_use_jquery_in_webhelp_responsive_output.dita"/>
+    <topicref href="../topics/whr_how_to_display_certain_elements_as_tabs.dita"/>
+  </topicref>
+</map>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dita-map-edit-parameters">
+  <title>Parameters Tab (DITA-OT Transformations)</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>DITA-OT transformation scenario<indexterm>Parameters tab</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_vtl_cgk_54b"><ph conkeyref="reusables-transforming-documents/intro-for-transformation-tabs"/></p>
+    <p id="p_wtl_cgk_54b">The <uicontrol>Parameters</uicontrol> tab allows you to configure the parameters sent to the
+      DITA-OT build file.</p>
+    <p id="p_xtl_cgk_54b">The table in this tab displays all the parameters that the DITA-OT documentation specifies as
+      available for each chosen type of transformation (for example, XHTML or PDF), along with their
+      description and current values. You can find more information about each parameter in the
+        <xref href="http://www.dita-ot.org/" format="html" scope="external">DITA-OT
+        Documentation</xref>. You can also add, edit, and remove parameters, and you can use the
+      text box to filter or search for a specific term in the entire parameters collection. Note
+      that edited parameters are displayed with their name in bold.</p>
+    <p id="p_ytl_cgk_54b">Depending on the type of a parameter, its value can be one of the following:<ul id="ul_ztl_cgk_54b">
+        <li id="li_a5l_cgk_54b">A simple text field for simple parameter values.</li>
+        <li id="li_b5l_cgk_54b">A combo box with some predefined values.</li>
+        <li id="li_c5l_cgk_54b">A file chooser and an <xref href="editor-variables.dita#editor-variables" format="dita"
+            >editor variable</xref> selector to simplify setting a file path as the value of a
+          parameter.</li>
+      </ul></p>
+    <note id="note_d5l_cgk_54b">To input parameter values at runtime, use the <xref
+        href="editor-variables.dita#editor-variables/edVar-ask"><i>ask</i> editor variable</xref> in
+      the <uicontrol>Value</uicontrol> column.</note>
+    <p id="p_e5l_cgk_54b">Below the table, the following actions are available for managing parameters:</p>
+    <p id="p_f5l_cgk_54b">
+      <dl id="dl_g5l_cgk_54b">
+        <dlentry conkeyref="reusables-transforming-documents/new-dlentry" id="dlentry_h5l_cgk_54b">
+          <dt/>
+          <dd/>
+        </dlentry>
+        <dlentry id="unset-dlentry">
+          <dt><uicontrol>Unset</uicontrol></dt>
+          <dd>Resets the selected parameter to its default value. Available only for edited
+            parameters with set values.</dd>
+        </dlentry>
+        <dlentry conkeyref="reusables-transforming-documents/edit-dlentry" id="dlentry_i5l_cgk_54b">
+          <dt/>
+          <dd/>
+        </dlentry>
+        <dlentry conkeyref="reusables-transforming-documents/delete-dlentry" id="dlentry_j5l_cgk_54b">
+          <dt/>
+          <dd/>
+        </dlentry>
+      </dl>
+    </p>
+    <section id="webhelp_responsive_parameters_contributed_by_an_o">
+      <title>Parameters Contributed by an Oxygen Publishing Template</title>
+      <p id="p_k5l_cgk_54b">Transformation parameters that are defined in an <xref href="whr-publishing-template.dita"
+            ><term>Oxygen Publishing Template</term></xref> descriptor file are displayed in
+        italics. After <xref
+          href="ope-create-publishing-template.dita#ope-create-publishing-template">creating a
+          publishing template</xref> and <xref
+          href="whr-publishing-template-apply-transformation.dita#whr-publishing-template-apply-transformation"
+          >adding it to the templates gallery</xref>, when you select the template in the <xref
+          href="templates-tab-whr.dita#templates-tab-whr"><uicontrol>Templates</uicontrol>
+          tab</xref>, the <uicontrol>Parameters</uicontrol> tab will automatically be updated to
+        include the parameters defined in the template descriptor file.</p>
+    </section>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link format="html" href="http://www.dita-ot.org/" scope="external">
+        <linktext><b>DITA Open Toolkit Documentation</b></linktext>
+      </link>
+    </linklist>
+  </related-links>
+</topic>

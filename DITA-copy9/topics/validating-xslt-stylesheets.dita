@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="validating-xslt-stylesheets">
+  <title>Validating XSLT Stylesheets</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>XSLT<indexterm>Validation</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_pp1_cgk_54b">Numerous XSLT code quality assurance checks are done during automatic validation to help you
+      keep your stylesheets valid and well-formed. <ph keyref="product"/> performs the validation of
+      XSLT documents with the help of an XSLT processor <xref href="preferences-xslt.dita">that you
+        can configure in the preferences pages</xref> according to the XSLT version.</p>
+    <p id="p_qp1_cgk_54b">For XSLT 1.0, the options are: Xalan (Deprecated), Saxon <ph
+        keyref="saxon6FullVersion"/> and Saxon <ph keyref="saxon9FullVersion"/>. For XSLT 2.0, the
+      option is: Saxon <ph keyref="saxon9FullVersion"/>. For XSLT 3.0, the option is Saxon <ph
+        keyref="saxon9FullVersion"/>.</p>
+    <p product="editor developer" id="p_rp1_cgk_54b">To access the <xref href="preferences-xslt.dita">XSLT
+        preferences</xref> quickly, use the <uicontrol><image href="../img/Options16.png"
+        />Validation options</uicontrol> action from the <menucascade>
+        <uicontrol>Document</uicontrol>
+        <uicontrol>Validate</uicontrol>
+      </menucascade> menu.</p>
+  </body>
+</topic>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_how_to_hide_the_toc">
+  <title>How to Hide the TOC</title>
+  <body>
+    <p id="p_zgs_cgk_54b">To hide the TOC, you have multiple options:<ul id="ol_dhr_j5q_rgb">
+        <li id="li_ahs_cgk_54b">[Recommended] Use a DITA <xmlelement>bookmap</xmlelement> instead of
+          a <xmlelement>map</xmlelement>, and omit the <xmlelement>toc</xmlelement> element from the
+            <xmlelement>booklists</xmlelement>. An example bookmap can be found in the <xref
+            href="https://docs.oasis-open.org/dita/dita/v1.3/os/part2-tech-content/langRef/technicalContent/bookmap.html"
+            format="html" scope="external">DITA 1.3 Spec</xref>.</li>
+        <li id="li_bhs_cgk_54b">Use the transformation parameter: <xref
+            href="dcpp_parameters.dita#dcpp_parameters/hide-toc"
+              ><b>hide.frontpage.toc.index.glossary</b></xref>.</li>
+        <li id="li_chs_cgk_54b">Use a <codeph>display:none</codeph> property to hide the element that contains the TOC
+          structure, and also remove it from the PDF bookmarks
+          tree:<codeblock outputclass="language-css" id="codeblock_dhs_cgk_54b">*[class ~= "map/map"] > *[class ~= "toc/toc"] {
+  display:none;
+}
+
+*[class ~= "map/map"] > *[class ~= "toc/toc"] > *[class ~= "toc/title"]{
+  bookmark-label: none;	
+  -ah-bookmark-label: none;
+}</codeblock></li>
+      </ul></p>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link href="dcpp_parameters.dita"/>
+    </linklist>
+  </related-links>
+</topic>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="nvdl-schema-diagram-outline-view">
+  <title>NVDL Outline View</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>NVDL schemas<indexterm>Outline view</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_ygf_cgk_54b">The <uicontrol>Outline</uicontrol> view for NVDL schemas presents a list with the named or
+      anonymous rules that appear in the diagram and it allows for quick access to a rule by name.
+      By default, it is displayed on the left side of the editor. <ph
+        conkeyref="reusables-user-guide/reopen-view"/></p>
+  </body>
+</topic>

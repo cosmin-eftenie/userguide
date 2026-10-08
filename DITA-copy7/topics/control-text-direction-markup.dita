@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="control-text-direction-markup">
+  <title>Controlling the Text Direction Using XML Markup</title>
+  <body>
+    <p id="p_x5y_bgk_54b"><ph keyref="product"/> Supports the following CSS properties that control the direction of
+      text:</p>
+    <table frame="all" colsep="1" rowsep="1" id="table_y5y_bgk_54b">
+      <title>CSS Properties Controlling Text Direction</title>
+      <tgroup cols="2">
+        <colspec colname="c1" colnum="1" colwidth="1*" colsep="1" rowsep="1"/>
+        <colspec colname="newCol2" colnum="2" colwidth="6.39*" colsep="1" rowsep="1"/>
+        <tbody>
+          <row>
+            <entry><b>direction</b></entry>
+            <entry>Specifies the writing direction of the text. The possible values are <b>ltr</b>
+              (the text direction is left to right), <b>rtl</b> (the text direction is right to
+              left, and <b>inherit</b> (the direction property is inherited from the parent
+              element). </entry>
+          </row>
+          <row>
+            <entry><b>unicodeBidi</b></entry>
+            <entry>Used along with the <b>direction</b> property to create levels of embedded text
+              with different text directions in the same document. The possible values of this
+              property are <b>bidi-override</b> (creates an additional level of embedding and forces
+              all strong characters to the direction specified in the <b>direction</b>),
+                <b>embed</b> (creates an additional level of embedding), <b>normal</b> (does not use
+              an additional level of embedding), and <b>inherit</b> (the value of the
+                <b>unicodeBidi</b> property is inherited from parent element).</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <p id="p_z5y_bgk_54b">For instance, to declare an element as being Right to Left, you could use a stylesheet like
+      this:</p>
+    <p id="p_avy_bgk_54b">XML
+      File:<codeblock outputclass="language-xml" id="codeblock_bvy_bgk_54b">&lt;article>
+  &lt;myRTLpara>RIGHT TO LEFT TEXT&lt;/myRTLPara>
+&lt;/article></codeblock></p>
+    <p id="p_cvy_bgk_54b">Associated CSS
+      File:<codeblock outputclass="language-css" id="codeblock_dvy_bgk_54b">myRTLpara{
+    direction:rtl;
+    unicode-bidi:embed;
+}</codeblock></p>
+    <p id="p_evy_bgk_54b"><ph keyref="product"/> recognizes the <b>dir</b> attribute on any XML document. The supported
+      values are:<table frame="all" rowsep="1" colsep="1" id="table_fvy_bgk_54b">
+        <tgroup cols="2">
+          <colspec colname="c1" colnum="1" colwidth="70pt" align="center"/>
+          <colspec colname="c2" colnum="2" colwidth="330pt"/>
+          <thead>
+            <row>
+              <entry>Values</entry>
+              <entry>Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><b>ltr</b></entry>
+              <entry>The text from the current element is Left to Right, embedded.</entry>
+            </row>
+            <row>
+              <entry><b>rtl</b></entry>
+              <entry>The text from the current element is Right to Left, embedded.</entry>
+            </row>
+            <row>
+              <entry><b>lro</b></entry>
+              <entry>The text from the current element is Left to Right, embedded.</entry>
+            </row>
+            <row>
+              <entry><b>rlo</b></entry>
+              <entry>The text from the current element is Right to Left, embedded.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table></p>
+    <p id="p_gvy_bgk_54b">The following XML document types make use of the <b>dir</b> attribute with the above
+      values:</p>
+    <ul id="ul_hvy_bgk_54b">
+      <li id="li_ivy_bgk_54b">DITA</li>
+      <li id="li_jvy_bgk_54b">DocBook</li>
+      <li id="li_kvy_bgk_54b">TEI</li>
+      <li id="li_lvy_bgk_54b">XHTML</li>
+    </ul>
+    <note id="note_mvy_bgk_54b">When the <xref keyref="glossentry_inline-element"><term>inline element</term></xref> tags
+      are visible, the text in the line is arranged according to the BIDI algorithm after replacing
+      the tags symbols with Object Replacement Characters. This makes it possible to get a different
+      text arrangement when viewing a document in the <uicontrol>No Tags</uicontrol> mode versus
+      viewing it in the <uicontrol>Full Tags</uicontrol> mode. </note>
+  </body>
+</topic>

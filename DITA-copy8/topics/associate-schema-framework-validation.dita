@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="associate-schema-framework-validation">
+  <title>Associating a Schema in Validation Scenarios Defined in the Document Type</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>XML documents<indexterm>Associate schema in a validation scenario defined in
+            framework</indexterm></indexterm>
+        <indexterm>Associate schema in a validation scenario defined in framework</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_lpz_bgk_54b">To report errors and warnings during automatic and manual validations that help maintain the
+      structural integrity of particular XML document types, <ph keyref="product"/> uses rules
+      defined in the schema that is detected in the validation scenarios that are associated to each
+      particular document type.</p>
+    <p id="p_mpz_bgk_54b">To associate a schema in validation scenarios defined in the <xref
+        keyref="glossentry_framework"><term>framework</term></xref> (document type) configuration,
+      follow these steps:<ol id="ol_npz_bgk_54b">
+        <li id="li_opz_bgk_54b"><ph conkeyref="reusables-preferences-pages/Open-the-preferences-page"/> and go to
+            <uicontrol>Document Type Association</uicontrol>.</li>
+        <li id="li_ppz_bgk_54b">
+          <p id="p_qpz_bgk_54b">Select your particular document type and click the <uicontrol>Edit</uicontrol> or
+              <uicontrol>Duplicate</uicontrol> button to modify an existing <term>framework</term>
+            (or use the <uicontrol>New</uicontrol> button to create a new one).</p>
+          <p id="p_rpz_bgk_54b"><b>Step Result:</b> This opens a <xref
+              href="the-document-type-dialog.dita#the-document-type-dialog"><uicontrol>Document
+                type</uicontrol> configuration dialog box</xref>.</p>
+        </li>
+        <li id="li_spz_bgk_54b">Go to the <xref href="document-type-validation-tab.dita#document-type-validation-tab"
+              ><uicontrol>Validation</uicontrol> tab</xref>.</li>
+        <li id="li_tpz_bgk_54b">Create or edit a validation scenario:<ol id="ol_upz_bgk_54b">
+            <li id="li_vpz_bgk_54b">To <xref href="create-validation-scenario.dita#create-validation-scenario">create a
+                new validation scenario</xref>, click the <uicontrol><image href="../img/Add16.png"
+                  placement="inline"/>New</uicontrol> button.</li>
+            <li id="li_wpz_bgk_54b">To <xref href="edit-validation-scenario.dita#edit-validation-scenario">edit the
+                properties of an existing validation scenario</xref>, select it and click the
+                  <uicontrol><image href="../img/Wrench16.png" id="image_pkh_qns_tr"
+                />Edit</uicontrol> button (you can also use the <uicontrol><image
+                  href="../img/Copy16.png"/>Duplicate</uicontrol> button to copy an existing
+              scenario and edit its properties).</li>
+          </ol></li>
+        <li id="li_xpz_bgk_54b">
+          <p id="p_ypz_bgk_54b"><xref
+              href="edit-validation-scenario.dita#edit-validation-scenario/validation-unit-stepresult"
+              >Add or configure validation units</xref> according to your needs and click the
+                <uicontrol><image href="../img/Options16.png" id="image_fk2_fl3_t3b"/>Specify
+              Schema</uicontrol> button.</p>
+          <p id="p_zpz_bgk_54b"><b>Step Result:</b> The <uicontrol>Specify Schema</uicontrol> dialog box is
+            displayed:</p>
+          <p id="p_aqz_bgk_54b">
+            <fig id="fig_bqz_bgk_54b">
+              <title>Specify Schema Dialog Box</title>
+              <image href="../img/specify_schema_dialog.png"/>
+            </fig>
+          </p>
+          <p id="p_cqz_bgk_54b">The <uicontrol>Specify Schema</uicontrol> dialog box contains the following
+            options:</p>
+          <p id="p_dqz_bgk_54b">
+            <dl id="dl_eqz_bgk_54b">
+              <dlentry id="dlentry_fqz_bgk_54b">
+                <dt><uicontrol>Use detected schema</uicontrol></dt>
+                <dd>Uses the <xref
+                    href="associate-schema-to-document.dita#associate-schema-to-document/detecting_a_default_schema"
+                    >schema detected for the particular document</xref>.</dd>
+              </dlentry>
+              <dlentry id="dlentry_gqz_bgk_54b">
+                <dt><uicontrol>Use custom schema</uicontrol></dt>
+                <dd>Allows you to specify the schema using the following options:<ul
+                    conkeyref="reusables-editing-documents/specify-schema-ul" id="ul_hqz_bgk_54b">
+                    <li id="li_iqz_bgk_54b"/>
+                  </ul></dd>
+              </dlentry>
+            </dl>
+          </p>
+        </li>
+        <li id="li_jqz_bgk_54b">Select the schema to be associated with the validation unit and configure the rest of
+          the options according to your preferences.</li>
+        <li id="li_kqz_bgk_54b">Click <uicontrol>OK</uicontrol> on both dialog boxes.</li>
+      </ol></p>
+    <p id="p_lqz_bgk_54b"><b>Result:</b> The schema is now associated with the validation scenario you just configured
+      for that particular document type.</p>
+  </body>
+</topic>

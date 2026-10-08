@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="preferences-editor-pages">
+  <title>Edit Modes Preferences</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Preferences<indexterm>Edit Modes</indexterm></indexterm>
+        <indexterm>Edit mode preferences</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_hn4_bgk_54b"><ph keyref="product"/> lets you configure which edit mode a file is opened
+      in the first time it is opened. This setting only applies the first time a file is opened. The
+      current editing mode of each file is saved when the file is closed and restored the next time
+      it is opened. To configure the options for editing modes, <ph
+        conkeyref="reusables-preferences-pages/open-the-preferences-page"/> and go to <menucascade>
+        <uicontrol>Editor</uicontrol>
+        <uicontrol>Edit Modes</uicontrol>
+      </menucascade> .</p>
+    <p id="p_in4_bgk_54b">
+      <dl id="dl_jn4_bgk_54b">
+        <dlentry id="allow-document-type-option">
+          <dt><uicontrol>Allow Document Type specific edit mode setting to override the general mode
+              setting</uicontrol></dt>
+          <dd>If  selected, the initial edit mode setting set in the <xref
+              href="the-document-type-dialog.dita#the-document-type-dialog"><uicontrol>Document
+                Type</uicontrol> configuration dialog box</xref> overrides the general edit mode
+            setting from the table below.</dd>
+        </dlentry>
+        <dlentry id="select-initial-mode">
+          <dt><uicontrol>Select the initial edit mode (page) for each editor</uicontrol></dt>
+          <dd>This table specifies the default editing mode that will be opened for each type of
+            document when the <uicontrol>Allow Document Type specific edit mode setting to override
+              the general mode setting</uicontrol> option is not selected. Use the <uicontrol
+              product="authorEclipse developerEclipse editorEclipse"><image
+                href="../img/Wrench16.png"/> Edit</uicontrol><uicontrol
+              product="author developer editor json">Edit</uicontrol> button to change the initial
+            edit mode for each type of document (editor). The initial edit mode can be one of the
+              following:<ul id="ul_kn4_bgk_54b">
+              <li id="li_ln4_bgk_54b"><uicontrol>Text</uicontrol></li>
+              <li product="author editor authorEclipse editorEclipse json" id="li_mn4_bgk_54b"
+                  ><uicontrol>Author</uicontrol></li>
+              <li id="li_nn4_bgk_54b"><uicontrol>Grid</uicontrol></li>
+              <li id="li_on4_bgk_54b"><uicontrol>Design</uicontrol> (available only for the XSD
+                editor).</li>
+            </ul></dd>
+        </dlentry>
+      </dl>
+    </p>
+    <p id="p_pn4_bgk_54b">
+      <fig product="author developer editor" id="fig_qn4_bgk_54b">
+        <title>Edit Modes Preferences Page</title>
+        <image href="../img/sa_editor_pages_dialog.png"/>
+      </fig>
+    </p>
+    <p id="p_rn4_bgk_54b">
+      <fig product="editorEclipse authorEclipse developerEclipse" id="fig_sn4_bgk_54b">
+        <title>Edit Modes Preferences Page</title>
+        <image href="../img/ec_editor_pages_dialog.png"/>
+      </fig>
+    </p>
+  </body>
+</topic>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_how_to_place_a_text_and_image_side_by_side">
+  <title>How to Place a Text and Image Side by Side</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            ><ph keyref="pdf-html5-transformation"/>
+          <indexterm>Images<indexterm>Side by side with text</indexterm></indexterm></indexterm>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            ><ph keyref="pdf-html5-transformation"/>
+          <indexterm>Images<indexterm>Side by side with text</indexterm></indexterm></indexterm>
+        <indexterm product="pdf-css ope">Images<indexterm>Side by side with
+          text</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_cq5_cgk_54b">If you need to align text and an image side-by-side, you can use the
+      following technique:</p>
+    <ol id="ol_uc2_xfx_ddb">
+      <li id="li_dq5_cgk_54b">Organize your text and image inside a <xmlelement>div</xmlelement>
+        element like this:<codeblock outputclass="language-xml" id="codeblock_eq5_cgk_54b">...
+ &lt;div outputclass="side-by-side">
+      &lt;p> This will be in the left side, the next figure in the right. &lt;/p>
+      &lt;fig>
+        &lt;image href="cactus.jpeg"/>
+      &lt;/fig>
+ &lt;/div>
+...</codeblock><note id="note_fq5_cgk_54b">You can use the <xmlatt>outputclass</xmlatt>
+          attribute to mark the <xmlelement>div</xmlelement> elements that have this special
+          layout.</note></li>
+      <li id="li_gq5_cgk_54b">In your <xref href="dcpp_the_customization_css.dita">customization
+          CSS</xref>,
+        add:<codeblock outputclass="language-css" id="codeblock_hq5_cgk_54b">*[outputclass ~= "side-by-side"] > *[class ~= "topic/p"] {
+  display:inline-block;
+  width: 45%;
+}  
+
+*[outputclass ~= "side-by-side"] > *[class ~= "topic/fig"] {
+  display:inline-block;
+  width: 45%;
+}  
+</codeblock>The image should fill the entire width of the parent
+          <xmlelement>fig</xmlelement>
+        element:<codeblock outputclass="language-css" id="codeblock_iq5_cgk_54b">*[outputclass ~= "side-by-side"] > *[class ~= "topic/fig"]  > *[class ~= "topic/image"] {
+  width:100%;
+}</codeblock>By default, the bottom of the image is on the same line as the text baseline.
+        If you want the text and the image to be aligned at the top, add these lines:
+          <codeblock outputclass="language-css" id="codeblock_jq5_cgk_54b">*[outputclass ~= "side-by-side"] > *[class ~= "topic/p"] {
+  vertical-align:top;
+}  
+
+*[outputclass ~= "side-by-side"] > *[class ~= "topic/fig"] {  
+  vertical-align:top;
+}  </codeblock><note id="note_kq5_cgk_54b">If your figure does not have a title, you can
+          also set <codeph>font-size:0pt</codeph> to remove the font ascent and descent around the
+          image
+          rectangle.<codeblock id="codeblock_t4h_bmf_twb" outputclass="language-css">*[outputclass ~= "side-by-side"] > *[class ~= "topic/fig"] {  
+  vertical-align:top;
+  font-size:0pt;  
+}</codeblock></note></li>
+    </ol>
+  </body>
+</topic>

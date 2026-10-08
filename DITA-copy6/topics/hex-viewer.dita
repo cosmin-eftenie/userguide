@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="hex-viewer">
+  <title>Hex Viewer</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Hex Viewer tool</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_r3h_dgk_54b">When the Unicode characters that are visible in a text viewer or editor are not enough and
+      you need to see the byte values of each character of a document, you can start the
+        <uicontrol>Hex Viewer</uicontrol> that is available on the <uicontrol>Tools</uicontrol>
+      menu. It has two panels: the characters are rendered in the right panel and the bytes of each
+      character are displayed in the left panel. There is a 1:1 correspondence between the
+      characters and their byte representation: the byte representation of a character is displayed
+      in the same matrix position of the left panel as the character in the matrix of the right
+      panel.</p>
+    <p id="p_s3h_dgk_54b">
+      <fig id="figure-hex-viewer">
+        <title>Hex Viewer</title>
+        <image href="../img/sa_hexa_viewer.png"/>
+      </fig>
+    </p>
+    <p id="p_t3h_dgk_54b">To open a file in <uicontrol>Hex Viewer</uicontrol> use the <menucascade>
+        <uicontrol>File</uicontrol>
+        <uicontrol>Open</uicontrol>
+      </menucascade> action. Alternatively, you can drag a file and drop it in the <uicontrol>Hex
+        Viewer</uicontrol> panel.</p>
+  </body>
+</topic>

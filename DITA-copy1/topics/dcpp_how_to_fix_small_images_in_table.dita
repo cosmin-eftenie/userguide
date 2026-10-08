@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_how_to_fix_small_images_in_table">
+    <title>How to Fix Small Images in Table</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            ><ph keyref="pdf-html5-transformation"/>
+          <indexterm>Tables<indexterm>Small images</indexterm></indexterm></indexterm>
+        <indexterm product="pdf-css ope">Tables<indexterm>Small images</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+    <body>
+        <p>Tables contained in the output of <ph keyref="pdf-html5-transformation"/> (and <ph
+        keyref="single-topic-pdf-html5-transformation"/>) transformations have an automatic layout
+      by default. This means that DITA-OT defines a preferred size on them, optimizing their
+      width/height inside the content to make them as small as possible.</p>
+    <p>If, for example, you have a two-column table <b>without defined column widths</b> and one
+      column contains images while the other column contains text, the table in the generated PDF
+      will have its first column shrunk with smaller images and an enlarged second column (to occupy
+      the least amount of space in the output).</p>
+    <p>To avoid this, you must <i>unset</i> the default image <codeph>max-width</codeph> so that the
+      original size of the image will be used
+      instead:<codeblock id="codeblock_djg_lwp_qpb" outputclass="language-css">*[class ~= "topic/image"] {
+  max-width: unset;
+}</codeblock></p>
+    </body>
+</topic>

@@ -1,0 +1,7 @@
+extends: occurrence
+message: "You must rephrase and compress the sentence to keep it short (< 30 words)."
+scope: sentence
+level: suggestion
+max: 30
+token: \b(\w+)\b
+

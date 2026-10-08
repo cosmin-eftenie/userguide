@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dg-css-additional-properties">
+  <title>Additional CSS Properties</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>CSS extensions<indexterm>Additional CSS properties</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_skc_dgk_54b"><ph keyref="product"/> provides various additional CSS properties to extend the standard CSS
+      properties.</p>
+  </body>
+</topic>

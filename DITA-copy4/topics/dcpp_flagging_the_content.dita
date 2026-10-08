@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_flagging_the_content">
+    <title>Flagging Content</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            ><ph keyref="pdf-html5-transformation"/>
+          <indexterm>Flagging content</indexterm></indexterm>
+        <indexterm product="pdf-css ope">Flagging content</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+    <body>
+        <p id="p_db5_cgk_54b">In DITA, you can mark certain content to flag it or draw attention to it. This is done by
+      defining a flag in a DITAVAL file. </p>
+    <p id="p_eb5_cgk_54b">You can attach the DITAVAL file to the DITA map using the <xmlelement>ditavalref</xmlelement>
+      element in the map, or by specifying it in the <codeph>args.filter</codeph> transformation
+      parameter.</p>
+    <p id="p_fb5_cgk_54b">In the following example, all the elements that have the attribute <xmlatt>product</xmlatt>
+      set to <codeph>YourProd</codeph> is flagged to have a purple background:</p>
+    <codeblock outputclass="language-xml" id="codeblock_gb5_cgk_54b">&lt;val>
+...
+   &lt;prop action="flag" att="product" val="YourProd" backcolor="purple"/>
+...
+&lt;/val></codeblock>
+    </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link href="https://www.oxygenxml.com/doc/ug-chemistry/topics/ch_change_bars.html"
+        format="html" scope="external">
+        <linktext>Change Bars</linktext>
+      </link>
+      <link href="https://docs.oasis-open.org/dita/v1.2/os/spec/common/about-ditaval.html"
+        format="html" scope="external">
+        <linktext>DITAVAL Elements</linktext>
+      </link>
+    </linklist>
+  </related-links>
+</topic>

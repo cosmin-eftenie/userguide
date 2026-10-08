@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="json-validation-actions">
+  <title>Manual Validation Actions</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>JSON documents<indexterm>Validation<indexterm>Manual
+            validation</indexterm></indexterm></indexterm>
+        <indexterm>Validating JSON Documents<indexterm>Manual validation</indexterm></indexterm>
+        <indexterm>Manual validation in JSON</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_snf_cgk_54b">You can choose to validate JSON documents at any time by using the manual validation actions
+      that are available in <ph keyref="product"/>.</p>
+    <section id="manually_validate_current_document">
+      <title>Manual Validation Actions</title>
+      <p id="p_tnf_cgk_54b">To manually validate the currently edited document, use one of the following actions:</p>
+      <p id="p_unf_cgk_54b">
+        <dl id="dl_vnf_cgk_54b">
+          <dlentry id="dlentry_wnf_cgk_54b">
+            <dt><uicontrol><image href="../img/Validate16.png"/>Validate</uicontrol></dt>
+            <dd>Available from the <uicontrol><image href="../img/ValidateDrop.png"
+                />Validation</uicontrol> drop-down menu on the toolbar, the <menucascade
+                product="developer editor json">
+                <uicontrol>Document</uicontrol>
+                <uicontrol>Validate</uicontrol>
+              </menucascade><uicontrol product="developerEclipse editorEclipse">JSON</uicontrol>
+              menu, or from the <uicontrol>Validate</uicontrol> submenu when invoking the contextual
+              menu on one or more JSON documents in the <xref
+                href="using-the-project-view.dita#using-the-project-view"><ph
+                  product="developer editor json"><uicontrol>Project</uicontrol></ph><ph
+                  product="developerEclipse editorEclipse"><uicontrol>Project
+                  Explorer</uicontrol></ph> view</xref>.</dd>
+          </dlentry>
+          <dlentry id="validate-with-action">
+            <dt><uicontrol>Validate with</uicontrol></dt>
+            <dd>
+              <p id="p_xnf_cgk_54b">Available from the <uicontrol><image
+                    href="../img/ValidateDrop.png" id="image_n4z_g3b_1jb"/>Validation</uicontrol>
+                drop-down menu on the toolbar or the <menucascade product="developer editor json">
+                  <uicontrol>Document</uicontrol>
+                  <uicontrol>Validate</uicontrol>
+                </menucascade><uicontrol product="developerEclipse editorEclipse">JSON</uicontrol>
+                menu. This action opens a dialog box that allows you to <xref
+                  href="json-associate-schema-validation-scenario.dita#json-associate-schema-validation-scenario/use_the_validate_with_action_to_specify_a_schema"
+                  >specify a schema for validating the current document</xref>.</p>
+              <p id="p_znf_cgk_54b">
+                <note product="developer editor" id="note_a4f_cgk_54b"><ph> The <uicontrol>Validate
+                      with</uicontrol> action does not work for files loaded through a <xref
+                      href="custom-protocol-plugin.dita#custom-protocol-plugin">custom protocol
+                      plugin</xref> developed independently and added to <ph keyref="product"/>
+                    after installation.</ph></note>
+              </p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_b4f_cgk_54b">
+            <dt><uicontrol>Validate with Schema</uicontrol></dt>
+            <dd>
+              <p id="p_c4f_cgk_54b">Available from the <uicontrol>Validate</uicontrol> submenu when
+                invoking the contextual menu on one or more JSON documents in the <xref
+                  href="using-the-project-view.dita#using-the-project-view"><ph
+                    product="developer editor json"><uicontrol>Project</uicontrol></ph><ph
+                    product="developerEclipse editorEclipse"><uicontrol>Project
+                    Explorer</uicontrol></ph> view</xref>. This action opens a dialog box that
+                allows you to specify a JSON or Schematron schema to be used for the validation.</p>
+            </dd>
+          </dlentry>
+        </dl>
+      </p>
+    </section>
+    <section id="other_validation_options">
+      <title>Other Validation Options</title>
+      <p product="developerEclipse editorEclipse" id="p_e4f_cgk_54b">To clear the error markers added to the
+          <uicontrol>Problems</uicontrol> view in the last validation, select <uicontrol><image
+            href="../img/Remove20.gif" id="image_pgn_vgz_tr"/>Clear Validation Markers</uicontrol>
+        from the <uicontrol>Validate</uicontrol> submenu when invoking the contextual menu in the
+          <uicontrol>Project Explorer</uicontrol> view.</p>
+      <p id="p_f4f_cgk_54b">
+        <note type="tip" id="note_g4f_cgk_54b">If a large number of validation errors are detected and the validation
+          process takes too long, you can <xref href="preferences-editor-document-checking.dita"
+            >limit the maximum number of reported errors in the <uicontrol>Document
+              Checking</uicontrol> preferences page</xref>.</note>
+      </p>
+    </section>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link href="json-automatic-validation.dita#json-automatic-validation"/>
+      <link href="json-marking-validation-errors.dita#json-marking-validation-errors"/>
+    </linklist>
+  </related-links>
+</topic>

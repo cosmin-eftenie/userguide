@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_how_to_style_the_index_title_and_the_letters_0">
+    <title>How to Style the Index Page Title and the Grouping Letters</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+          ><ph keyref="pdf-html5-transformation"/><indexterm>Index<indexterm>Change style and
+              letters</indexterm></indexterm></indexterm>
+        <indexterm product="pdf-css ope">Index<indexterm>Change style and
+          letters</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+    <body>
+        <p id="p_nws_cgk_54b">In your <xref href="dcpp_the_customization_css.dita">customization CSS</xref>, add the
+      following CSS rules:</p>
+        <codeblock outputclass="language-css" id="codeblock_ows_cgk_54b">*[class ~= "index/groups"] *[class ~= "index/group"] *[class ~= "index/label"] {
+    font-size:1.5em;
+    color:navy;
+}
+
+*[class ~= "index/groups"]:before {
+    content: "- Index - ";
+    color:navy;
+    font-size: 4em;
+}</codeblock>
+        <p id="p_pws_cgk_54b">The result is: <image href="../img/dcpp_how_to_style_the_index_title_and_the_letters.png" placement="break"
+                id="image_z1b_mxs_5cb"/></p>
+    </body>
+</topic>

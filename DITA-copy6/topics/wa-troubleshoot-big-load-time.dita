@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE troubleshooting PUBLIC "-//OASIS//DTD DITA 1.3 Troubleshooting//EN" "troubleshooting.dtd">
+<troubleshooting id="wa-troubleshoot-big-load-time">
+  <title>Documents Load Slowly</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>big load time</indexterm>
+        <indexterm>slow load</indexterm>
+        <indexterm>slow open</indexterm>
+        <indexterm>takes too long to open</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <troublebody>
+    <condition id="problem">
+      <title>Problem</title>
+      <p>The browser takes a very long time to open a document.</p>
+    </condition>
+    <troubleSolution>
+      <cause id="cause">
+        <title>Cause</title>
+        <p>There are a lot of reasons that can lead to a slow loading time (e.g. slow internet
+          connection, bad customization that interferes with the document load process, large sized
+          documents, etc).</p>
+      </cause>
+      <remedy id="solution1">
+        <title>Solution</title>
+        <steps-informal>
+          <p>In the most cases, the slow loading time is caused by a customization (a plugin or
+            framework, or a custom option). In this case, it is recommended to try to reproduce the
+            problem without any customizations.</p>
+        </steps-informal>
+      </remedy>
+      <remedy id="solution2">
+        <title>Alternative Solution 1</title>
+        <steps-informal>
+          <p>In some cases, the problem can be solved by updating to the latest version to see if
+            the problem is reproduced in the latest version.</p>
+        </steps-informal>
+      </remedy>
+      <remedy id="solution3">
+        <title>Alternative Solution 2</title>
+        <steps-informal>
+          <p>Troubleshoot the requests made by the browser:</p>
+          <ol id="ol_z2z_mwh_pvb">
+            <li>Open a document that takes long to load in Web Author in Google Chrome.</li>
+            <li>Open the Developer Tools (e.g. by pressing F12).</li>
+            <li>Deselect the <uicontrol>Disable cache</uicontrol>" checkbox in the
+                <uicontrol>Network</uicontrol> tab.</li>
+            <li>Clear the requests.</li>
+            <li>Reload the page.</li>
+            <li>Right-click on a request and select <uicontrol>Save all as HAR with
+                content</uicontrol>.</li>
+            <li>Sort the requests by time (e.g. right-click, Sort, Time).</li>
+            <li>Look for the longest requests, inspect the URL, and try to find if they are made
+              because of a customization (custom plugin or framework).</li>
+            <li>If nothing relevant is found, report the downloaded HAR to the <xref
+                href="https://www.oxygenxml.com/technical_support.html" format="html"
+                scope="external">Oxygen support team</xref>.</li>
+          </ol>
+        </steps-informal>
+      </remedy>
+      <remedy id="solution4">
+        <title>Alternative Solution 3</title>
+        <steps-informal>
+          <p>Troubleshoot the requests made by the server by enabling verbose HTTP(S) logs:</p>
+          <ol>
+            <li>Enable verbose HTTP logs by following the procedure from <xref
+                href="web-author-logs.dita#web-author-logs/section_tgc_1wq_2v">Enabling HTTP Request
+                Logging for Debugging</xref>.</li>
+            <li>Reproduce the problem.</li>
+            <li>Open the server logs by following the procedure from <xref
+                href="web-author-logs.dita#web-author-logs/p_zpr_dgk_54b">How to Locate the Log File
+                and the Log Configuration File</xref>​.</li>
+            <li>See the logs and try to find the ones that take a long time on the server.</li>
+            <li>If nothing relevant is found, report the found logs to the <xref
+                href="https://www.oxygenxml.com/technical_support.html" format="html"
+                scope="external">Oxygen support team</xref>.</li>
+          </ol>
+        </steps-informal>
+      </remedy>
+      <remedy id="solution5">
+        <title>Alternative Solution 4</title>
+        <steps-informal>
+          <p>Look for alarming server logs:</p>
+          <ol>
+            <li>Open the server logs by following the procedure from <xref
+                href="web-author-logs.dita#web-author-logs/p_zpr_dgk_54b">How to Locate the Log File
+                and the Log Configuration File</xref>.</li>
+            <li>Look for <i>"Long request"</i> and <i>"Took long time to compute"</i> and see the
+              URL of the requests that take a long time on the server.</li>
+            <li>If nothing relevant is found, report the found logs to the <xref
+                href="https://www.oxygenxml.com/technical_support.html" format="html"
+                scope="external">Oxygen support team</xref>.</li>
+          </ol>
+        </steps-informal>
+      </remedy>
+      <remedy id="remedy_t2q_bcs_1dc2455">
+        <title>Alternative Solution 5</title>
+        <steps-informal id="steps-informal_izj_dcs_1dc">
+          <p id="p_x21_fcs_1dc">Sometimes documents load slowly because of the time it takes to
+            compute styles. This increases linearly with the size of the document and the size of
+            the CSS rules. The CSS rules are mainly contributed by the framework. The styles are
+            computed when loading both server-side and client-side.</p>
+          <p id="p_y21_fcs_1dc">To see how much time it takes the browser to render the page, follow
+            these steps:</p>
+          <ol id="ol_z21_fcs_1dc">
+            <li id="li_af1_fcs_1dc">Open the <uicontrol>Developer Tools</uicontrol> in Google Chrome
+              (e.g. by pressing F12).</li>
+            <li id="li_bf1_fcs_1dc">Go to the <uicontrol>Performance</uicontrol> tab.</li>
+            <li id="li_cf1_fcs_1dc">Click on <uicontrol>Record</uicontrol> in the top-left
+              corner.</li>
+            <li id="li_df1_fcs_1dc">Reload the page.</li>
+            <li id="li_ef1_fcs_1dc">When the page fully loads, click
+              <uicontrol>Stop</uicontrol>.</li>
+            <li id="li_ff1_fcs_1dc">Click the <uicontrol>Main</uicontrol> section within the
+                <uicontrol>Performance</uicontrol> tab.</li>
+            <li id="li_gf1_fcs_1dc">In the bottom part, in the <uicontrol>Summary</uicontrol> tab,
+              you should see a circle with the load time split between "Scripting", "Rendering",
+              "Paint", "Idle", and "Other".</li>
+            <li id="li_ikw_qcs_1dc">Check that "Rendering" time is reasonable.</li>
+            <li id="li_yrl_rcs_1dc">If you want to reduce the client-side "Rendering" time:<ol
+                id="ol_yhf_gcs_1dc">
+                <li id="li_zhf_gcs_1dc">Make as many elements as possible collapsed by default by
+                  specifying the <codeph>-oxy-foldable</codeph> and <codeph>-oxy-folded</codeph> CSS
+                  rules:<codeblock outputclass="language-css">section {
+  -oxy-foldable: true;
+}
+* {
+  -oxy-folded: true;
+}</codeblock></li>
+                <li id="li_a3f_gcs_1dc">Hide irrelevant elements with the <codeph>display:
+                    none</codeph> CSS rule.</li>
+              </ol></li>
+          </ol>
+        </steps-informal>
+      </remedy>
+      <remedy id="remedy_gf2_ycs_1dc334">
+        <title>Alternative Solution 6</title>
+        <steps-informal>
+          <p id="p_aqd_1ds_1dc">Sometimes documents load slowly even if the main opened document is
+            small, because it references many other documents that get expanded by either
+              <codeph>xi:include</codeph> XML elements or DITA <xmlatt>conref</xmlatt> or
+              <xmlatt>conkeyref</xmlatt> attributes.</p>
+          <p id="p_bqd_1ds_1dc">For each referenced document that gets expanded, the application
+            makes a request to an external server to retrieve the document content, thus the network
+            speed and latency between the Web Author server and the server from where documents are
+            retrieved is critical.</p>
+          <p id="p_im2_fds_1dc">To troubleshoot this, enable network logs by following steps in
+              <xref href="#./solution4">Alternative Solution 3</xref> and count how many requests
+            are made when opening a document and how much time those requests took. After enabling
+            network logs, you should see entries like this in the
+            logs:<codeblock outputclass="language-bourne">2024-10-01 16:12:31,209 DEBUG [ https-jsse-nio-8443-exec-1 ] org.apache.http.headers - http-outgoing-2 >> GET http://example-domain.oxygenxml.com/webdav/dita-topic.dita HTTP/1.1
+2024-10-01 16:12:31,210 DEBUG [ https-jsse-nio-8443-exec-1 ] org.apache.http.headers - http-outgoing-2 >> Accept: application/xml,*/*
+2024-10-01 16:12:31,210 DEBUG [ https-jsse-nio-8443-exec-1 ] org.apache.http.headers - http-outgoing-2 >> Accept-Encoding: gzip
+2024-10-01 16:12:31,211 DEBUG [ https-jsse-nio-8443-exec-1 ] org.apache.http.headers - http-outgoing-2 >> Host: example-domain.oxygenxml.com
+2024-10-01 16:12:31,211 DEBUG [ https-jsse-nio-8443-exec-1 ] org.apache.http.headers - http-outgoing-2 >> Proxy-Connection: Keep-Alive
+2024-10-01 16:12:31,211 DEBUG [ https-jsse-nio-8443-exec-1 ] org.apache.http.headers - http-outgoing-2 >> User-Agent: Oxygen XML Editor/26.1
+2024-10-01 16:12:31,211 DEBUG [ https-jsse-nio-8443-exec-1 ] org.apache.http.headers - http-outgoing-2 >> Authorization: ****
+2024-10-01 16:12:31,223 DEBUG [ https-jsse-nio-8443-exec-1 ] org.apache.http.headers - http-outgoing-2 &lt;&lt; HTTP/1.1 200 OK
+2024-10-01 16:12:31,224 DEBUG [ https-jsse-nio-8443-exec-1 ] org.apache.http.headers - http-outgoing-2 &lt;&lt; Date: Tue, 01 Oct 2024 13:12:31 GMT
+2024-10-01 16:12:31,225 DEBUG [ https-jsse-nio-8443-exec-1 ] org.apache.http.headers - http-outgoing-2 &lt;&lt; Accept-Ranges: bytes
+2024-10-01 16:12:31,225 DEBUG [ https-jsse-nio-8443-exec-1 ] org.apache.http.headers - http-outgoing-2 &lt;&lt; Content-Length: 4259
+2024-10-01 16:12:31,226 DEBUG [ https-jsse-nio-8443-exec-1 ] org.apache.http.headers - http-outgoing-2 &lt;&lt; Connection: keep-alive</codeblock></p>
+        </steps-informal>
+      </remedy>
+    </troubleSolution>
+  </troublebody>
+  <related-links>
+    <link href="wa-browser-out-of-memory.dita"/>
+  </related-links>
+</troubleshooting>

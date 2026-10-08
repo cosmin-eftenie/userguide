@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ch_css_selectors">
+  <title>CSS Selectors</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>CSS selectors</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p>CSS selectors are used to target elements in an XML document in order to style them. There
+      are a wide variety of CSS selectors available, allowing for fine-grained precision when
+      selecting elements to style.</p>
+  </body>
+</topic>

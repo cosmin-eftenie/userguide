@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="customizing_webapp">
+  <title>Oxygen XML Web Author Component</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Oxygen XML Web Author Component</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_xkf_dgk_54b">The <xref href="https://www.oxygenxml.com/oxygen_sdk.html#oxygen_webapp_integration"
+        format="html" scope="external"><term>Oxygen SDK</term></xref> provides the ability to
+      integrate the <ph keyref="webappProduct"/> into your existing content ecosystem and it allows
+      anyone in your organization to access your content from anywhere they have an internet
+      connection. <ph keyref="webappProduct"/> is highly versatile and can be customized to work
+      with any XML vocabulary, most file repository systems, and virtually any type of workflow.</p>
+    <section id="web_author_component_integration">
+      <title>Web Author Component Integration</title>
+      <p id="p_ykf_dgk_54b">For information about integrating <ph keyref="webappProduct"/> into your environment, see
+          <xref href="https://www.oxygenxml.com/oxygen_sdk/oxygen_webapp_component.html"
+          format="html" scope="external">Web Author Integration</xref>.</p>
+    </section>
+    <section id="web_author_integration_and_customization">
+      <title>Web Author Customization</title>
+      <p id="p_zkf_dgk_54b">For detailed information about customizing Web Author, see the <xref
+          href="https://www.oxygenxml.com/doc/ug-waCustom/" format="html" scope="external">Oxygen
+          XML Web Author Customization Guide</xref>.</p>
+    </section>
+    <section id="using_web_author">
+      <title>Using Web Author </title>
+      <p id="p_alf_dgk_54b">For information about using the Web Author product, see the <xref
+          href="https://www.oxygenxml.com/doc/ug-webauthor/" format="html" scope="external">Oxygen
+          XML Web Author User Manual</xref>.</p>
+    </section>
+  </body>
+</topic>

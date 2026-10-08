@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="upgrading-webhelp-plugin-dita">
+  <title>Upgrading WebHelp Responsive</title>
+  <titlealts>
+    <navtitle>Upgrading</navtitle>
+  </titlealts>
+  <prolog>
+    <metadata>
+      <keywords>
+        <keyword outputclass="label" product="webhelp-responsive">DITA-OT</keyword>
+        <keyword outputclass="label" product="webhelp-responsive">Integration Server</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p id="p_oxv_dgk_54b">
+        <note conkeyref="reusables-webhelp-chapter/upgrade-note" id="note_pxv_dgk_54b"/>
+        <note id="note_tkx_2nd_3fc" type="important">
+          <ul id="ul_dfs_hnd_3fc">
+            <li>Upgrades might introduce changes into the HTML structure or library updates, which
+              could impact the output if you import additional CSS stylesheets or use a publishing
+              template including customizations in CSS, XSLT, Page Layout, JavaScript, etc.</li>
+            <li>Before upgrading, use a test environment to run the <b>WebHelp Responsive</b>
+              scenario with your publishing template(s) to verify compatibility with the new
+              version.</li>
+          </ul>
+        </note>
+      </p>
+    </prereq>
+    <context>
+      <p id="p_qxv_dgk_54b">To upgrade your version of the <ph keyref="product"/> for the <abbreviated-form
+          keyref="glossentry-dita-ot"/>, follow these steps:</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Navigate to the <filepath>plugins</filepath> directory of your <abbreviated-form
+            keyref="glossentry-dita-ot"/> distribution and delete the following old <ph
+            keyref="product"/> directories (<filepath>com.oxygenxml.highlight</filepath>,
+            <filepath>com.oxygenxml.html.custom</filepath>,
+          <filepath>com.oxygenxml.media</filepath>,
+            <filepath>com.oxygenxml.webhelp.classic</filepath>,
+            <filepath>com.oxygenxml.webhelp.common</filepath>,
+            <filepath>com.oxygenxml.webhelp.responsive</filepath>).</cmd>
+      </step>
+      <step>
+        <cmd><ph conkeyref="reusables-webhelp-chapter/step_donwload"/></cmd>
+      </step>
+      <step>
+        <cmd><ph conkeyref="reusables-webhelp-chapter/step_copy_content"/></cmd>
+      </step>
+      <step>
+        <cmd>Open the <filepath><abbreviated-form keyref="glossentry_dita_ot_dir"
+            />/plugins/com.oxygenxml.webhelp.responsive</filepath> directory, create a file called
+            <filepath>licensekey.txt</filepath>, and copy your license key that you purchased for
+          your <ph keyref="product"/>.</cmd>
+        <stepresult>When you execute a <xref href="whr_generate_output.dita">WebHelp Responsive
+            transformation</xref>, the process reads the <ph keyref="product"/> license key from
+          this file. If the file does not exist, or it contains an invalid license, an error message
+          will be displayed.</stepresult>
+      </step>
+      <step>
+        <cmd><ph conkeyref="reusables-webhelp-chapter/step_run_integrator"/></cmd>
+        <info>
+          <ul conkeyref="reusables-webhelp-chapter/script-ul" id="ul_rxv_dgk_54b">
+            <li id="li_sxv_dgk_54b"/>
+          </ul>
+        </info>
+      </step>
+    </steps>
+    <postreq id="postreq_vfv_xmd_3fc">
+      <p>If you are using <xref href="html_page_templates.dita">custom page layouts</xref>, you need
+        to <xref href="whr-converting-templates.dita">update them</xref> from your previous version
+        to the new version you are upgrading to.</p>
+    </postreq>
+  </taskbody>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link
+        href="integrating-webhelp-plugin-with-dita-ot.dita#integrating-webhelp-plugin-with-dita-ot"/>
+      <link href="register-webhelp-plugin.dita#register-webhelp-plugin"/>
+      <link href="whr-converting-templates.dita"/>
+    </linklist>
+  </related-links>
+</task>

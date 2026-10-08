@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="edit-properties-handler">
+  <title>Presenting an Edit Properties Dialog Box for Actions in Author Mode</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Framework customization<indexterm>Extensions<indexterm>Author Edit Properties
+              Handler</indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_psb_dgk_54b">The <i>EditPropertiesHandler</i> extension point allows you to present a specialized dialog
+      box when the action of double-clicking an element tag is intercepted in
+        <uicontrol>Author</uicontrol> mode. For example, you could use it to present a dialog box
+      that allows the user to editing the properties of an image.</p>
+    <section id="implement_an_editpropertieshandler">
+      <title>How to Implement an <i>EditPropertiesHandler</i></title>
+      <p id="p_qsb_dgk_54b">To implement your own <i>EditPropertiesHandler</i>, follow this procedure:<ol id="ol_rsb_dgk_54b">
+          <li id="li_ssb_dgk_54b">Implement the <xref
+              href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/extensions/api/EditPropertiesHandler.html"
+              format="html" scope="external"
+                ><i>ro.sync.ecss.extensions.api.EditPropertiesHandler</i></xref> interface.</li>
+          <li id="li_tsb_dgk_54b">To instruct <ph keyref="product"/> to use this newly created implementation, use
+            either of the following methods:<ol id="ol_usb_dgk_54b">
+              <li id="li_vsb_dgk_54b">If you have <xref href="dg-extensions-bundle.dita#dg-extensions-bundle">configured
+                  an extensions bundle</xref>, you can return the <i>EditPropertiesHandler</i>
+                implementation using the
+                  <i>ro.sync.ecss.extensions.api.ExtensionsBundle.createEditPropertiesHandler()</i>
+                method.</li>
+              <li id="li_wsb_dgk_54b">Specify the <i>EditPropertiesHandler</i> in the <uicontrol>Author edit properties
+                  handler</uicontrol> individual extension in the <xref
+                  href="document-type-extensions-tab.dita#document-type-extensions-tab"
+                    ><uicontrol>Extensions</uicontrol> tab</xref> of the <xref
+                  href="the-document-type-dialog.dita#the-document-type-dialog"><uicontrol>Document
+                    Type</uicontrol> configuration dialog box</xref> for your particular document
+                type.</li>
+            </ol></li>
+        </ol></p>
+    </section>
+    <section id="example">
+      <title>Example</title>
+      <p id="p_xsb_dgk_54b">The following example illustrates an implementation for presenting a simple properties
+        editing dialog box when a user double-clicks an <xmlelement>image</xmlelement> tag in
+          <uicontrol>Author</uicontrol> mode (with tags displayed from the <uicontrol><image
+            href="../img/TagsDrop.png" id="image_pmr_mhm_1s"/>Tags display mode</uicontrol>
+        drop-down menu):</p>
+      <codeblock outputclass="language-java" id="codeblock_ysb_dgk_54b">public class CustomEditPropertiesHandler implements EditPropertiesHandler {
+
+  /**
+   * @see ro.sync.ecss.extensions.api.Extension#getDescription()
+   */
+  @Override
+  public String getDescription() {
+    return "Sample implementation that handles properties for a table element.";
+  }
+
+  /**
+   * @see ro.sync.ecss.extensions.api.EditPropertiesHandler#canEditProperties
+(ro.sync.ecss.extensions.api.node.AuthorNode)
+   */
+  @Override
+  public boolean canEditProperties(AuthorNode authorNode) {
+    // If this node is an image element we can edit its properties.
+    return "image".equals(authorNode.getDisplayName());
+  }
+  
+  /**
+   * @see ro.sync.ecss.extensions.api.EditPropertiesHandler#editProperties
+(ro.sync.ecss.extensions.api.node.AuthorNode,
+ ro.sync.ecss.extensions.api.AuthorAccess)
+   */
+  @Override
+  public void editProperties(AuthorNode authorNode, AuthorAccess authorAccess) {
+    // If we receive this call then it surely an image.
+    AuthorElement imageElement = (AuthorElement) authorNode;
+    String currentValue = "";
+    AttrValue altValue = imageElement.getAttribute("alt");
+    if (altValue != null) {
+      currentValue = altValue.getValue();
+    }
+    String newValue = JOptionPane.showInputDialog(
+        (Component) authorAccess.getWorkspaceAccess().getParentFrame(), 
+        "Alternate text", 
+        currentValue);
+    
+    if (newValue != null) {
+      authorAccess.getDocumentController().setAttribute
+("alt", new AttrValue(newValue), imageElement);
+    }
+  }
+}</codeblock>
+      <p id="p_zsb_dgk_54b"><b>Example result:</b> If a user were to double-click an <xmlelement>image</xmlelement> tag icon
+          (<image href="../img/image_tag.png"/>) in <uicontrol>Author</uicontrol> mode, the
+        following dialog box would be displayed that allows the user to edit the <i>alternate
+          text</i> property for the image:</p>
+      <p id="p_atb_dgk_54b">
+        <image href="../img/edit_handler_example.png" placement="break"/>
+      </p>
+    </section>
+  </body>
+</topic>

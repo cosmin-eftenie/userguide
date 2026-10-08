@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ch_getting_started">
+  <title>Getting Started</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>What is Chemistry</indexterm>
+        <indexterm>Introduction</indexterm>
+        <indexterm>Getting started</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <section id="section_hng_n3d_5z">
+      <title>What is <ph keyref="product"/>?</title>
+      <p id="p_b45_dgk_54b"><ph keyref="product"/> allows you to obtain PDF output from HTML or XML documents simply by
+        styling them with CSS. It is a <i>CSS Paged Media</i> processor based on the open-source
+        Apache FOP XSL-FO engine. Its main purpose is to provide you with a simple tool that allows
+        you to leverage your CSS knowledge to create printable deliverables. While the support for
+        fancy formatting is limited, it is a great processor for generating technical documentation. </p>
+    </section>
+    <section id="section_odp_hv5_kqb">
+      <title>Why Use CSS Instead of XSL-FO?</title>
+      <p>There is not one simple answer. It really depends on the needed output, but both methods
+        will generate PDF documents without any problem. So why use CSS?<ul id="ul_y2l_jv5_kqb">
+          <li>CSS is a much easier language to learn and master than XSLT.</li>
+          <li>More people know CSS rather than XSLT (and there are more CSS tutorials available than
+            XSLT tutorials).</li>
+          <li>The CSS debugging can be done directly from any browser or from
+              <uicontrol>Author</uicontrol> mode/</li>
+          <li>In most cases, the CSS customization will cover all of the user's needs.</li>
+          <li>The CSS customization can be reused in any HTML output.</li>
+          <li>The cascading priority scheme makes CSS easier to extend (no need to know previous
+            rules to create new ones).</li>
+          <li>PDF processors usually proposes both solutions (<ph keyref="product"/>, Antenna House,
+            Prince XML).</li>
+        </ul></p>
+    </section>
+    <section id="section_mqd_l3d_5z">
+      <title>Using CSS for Print</title>
+      <p id="p_c45_dgk_54b">While CSS was designed as a language to style web pages, it turned out to be a good
+        candidate to also format printed materials. The so-called <i>CSS paged media module</i> was
+        thus added to the existing standard by W3C. </p>
+      <p id="p_d45_dgk_54b">New concepts added by this module include:<ul id="ul_tjn_p3d_5z">
+          <li id="li_e45_dgk_54b">Page size</li>
+          <li id="li_f45_dgk_54b">Page breaks</li>
+          <li id="li_g45_dgk_54b">Headers and footers</li>
+          <li id="li_h45_dgk_54b">Footnotes</li>
+          <li id="li_i45_dgk_54b">Links containing the target page number</li>
+          <li id="li_j45_dgk_54b">Leaders that are used to fill spaces</li>
+        </ul></p>
+      <p id="p_k45_dgk_54b">For more information, see the following paged media specifications:<ul id="ul_l45_dgk_54b">
+          <li id="li_m45_dgk_54b"><xref href="http://www.w3.org/TR/css3-page/" format="html" scope="external">CSS Paged
+              Media Module</xref></li>
+          <li id="li_n45_dgk_54b"><xref href="http://www.w3.org/TR/css-gcpm-3/" format="html" scope="external">CSS
+              Generated Content for Paged Media Module</xref></li>
+        </ul></p>
+    </section>
+    <p id="p_o45_dgk_54b">
+      <note id="note_p45_dgk_54b">There are many other processors that implement paged media standard: Prince XML, Antenna
+        House, PDF Reactor.</note>
+    </p>
+  </body>
+  <related-links>
+      <link format="html" href="https://xmlgraphics.apache.org/fop/" scope="external">
+        <linktext>Apache FOP Project</linktext>
+      </link>
+      <link format="html"
+        href="https://www.smashingmagazine.com/2015/01/designing-for-print-with-css/"
+        scope="external">
+        <linktext>Smashing Magazine: Designing For Print With CSS</linktext>
+      </link>
+  </related-links>
+</topic>

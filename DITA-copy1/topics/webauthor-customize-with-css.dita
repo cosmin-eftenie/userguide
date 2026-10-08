@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="webauthor-customize-with-css">
+  <title>Customizing the Document Editing Environment Using CSS</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Customizing Web Author using CSS</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_rks_dgk_54b"><ph keyref="webappProduct"/> allows you to edit XML documents with a visual presentation
+      mode. The document rendering is controlled by CSS stylesheets. You can control how the XML
+      elements are visually presented, from basic aspects such as fonts, colors, and layout (tables,
+      lists, etc.) to more advanced aspects such as the in-place XML attribute editor, placeholders
+      for empty elements, or controlling which elements can be folded. </p>
+    <p id="p_sks_dgk_54b"><term>Oxygen XML Editor/Author</term> has a useful <xref
+        href="https://www.oxygenxml.com/doc/ug-editor/topics/author-css-inspector-view.html"
+        format="html" scope="external">CSS inspector</xref> similar to those found in most modern
+      browsers. It can be used to quickly modify the CSS used to render your XML documents.</p>
+    <p id="p_tks_dgk_54b">After making changes to the CSS, you can test the results by using the <xref
+        href="customizing_frameworks.dita#customizing_frameworks/developing_and_testing_a_framework_using_the_weba"
+        >Web Author Test Server add-on</xref>. Once you are happy with the changes, you need to
+        <xref href="https://www.oxygenxml.com/doc/ug-editor/topics/the-css-sub-tab.html"
+        format="html" scope="external">use the CSS tab in the Document Type Association dialog box
+        to associate the CSS with your framework</xref>.</p>
+    <section id="section_xqr_vzg_3cc">
+      <title>Example: Configuring Foldable Elements</title>
+      <p id="p_imc_dgk_54b">The <ph keyref="webappProduct"/> visual editor supports some CSS
+        properties that allows you to configure whether or not the content of an element can be
+        expanded or collapsed. This is especially useful when working with large documents. In the
+        editor, foldable elements can be expanded or collapsed by clicking the small arrow that is
+        displayed before such elements. The following folding-related properties are supported:</p>
+      <p id="p_ujv_z1h_3cc">
+        <dl id="dl_zlx_lbh_3cc">
+          <dlentry id="dlentry_amx_lbh_3cc">
+            <dt>-oxy-foldable</dt>
+            <dd>This property defines whether or not the content for an element can be
+                <term>folded</term> (expanded/collapsed) by the user. To define that an element's
+              content can be <term>folded</term>, use <codeph>-oxy-foldable:true</codeph>.</dd>
+          </dlentry>
+          <dlentry id="dlentry_bls_2ch_3cc">
+            <dt>-oxy-folded</dt>
+            <dd>This property is used in conjunction with the <codeph>-oxy-foldable</codeph>
+              property and it defines the elements that are <term>folded</term> by default. To
+              define an element to be <term>folded</term> by default, use
+                <codeph>-oxy-folded:true</codeph>.<note id="note_mmc_dgk_54b">Since the
+                  <codeph>-oxy-folded</codeph> property works in conjunction with the
+                  <codeph>-oxy-foldable</codeph> property, the <codeph>-oxy-folded</codeph> property
+                is ignored if the <codeph>-oxy-foldable</codeph> property is not set on the same
+                element.</note></dd>
+          </dlentry>
+          <dlentry id="dlentry_sn1_hch_3cc">
+            <dt>-oxy-not-foldable-child</dt>
+            <dd>When collapsing an element, sometimes it is useful to keep some of its content
+              visible (for example, a short description of the collapsed region). This property is
+              used to identify the child element that is kept visible in this situation. For its
+              value, it accepts an element name or a list of comma-separated element names. The
+              first occurrence of each child element specified in the list of element names will be
+              identified as the <term>not-foldable</term> child and displayed. If the element is
+              marked as <term>foldable</term> (<codeph>-oxy-foldable:true</codeph>) but it does not
+              have the <codeph>-oxy-not-foldable-child</codeph> property (or none of the specified
+                <term>non-foldable</term> children exist), then the element is still
+                <term>foldable</term>. In this case, the element kept visible when
+                <term>folded</term> will be the <codeph>before</codeph> pseudo-element.</dd>
+          </dlentry>
+        </dl>
+      </p>
+      <p id="p_d1b_dbh_3cc">For more details, see <xref
+          href="https://www.oxygenxml.com/doc/ug-editor/topics/dg-folding-elements.html"
+          format="html" scope="external">Oxygen XML Editor: Folding Elements: -oxy-foldable /
+          -oxy-folded / -oxy-not-foldable-child</xref>.</p>
+    </section>
+    <section id="section_hcj_q5y_pqb">
+      <title>Example: Customizing the Editing Environment for DITA Documents</title>
+      <p id="p_icj_q5y_pqb">There are various ways to customize the editing environment to make
+        certain actions or tasks easier to access. For example, a particular built-in CSS can be
+        used to display a widget (<image href="../img/InlineInsertion16.png"/>) near empty
+        paragraphs to make it easy for DITA authors to insert common elements (for example, to
+        insert lists, notes, or tables).</p>
+      <p id="p_n23_qwy_pqb">There are two ways to enable this widget (<image
+          href="../img/InlineInsertion16.png"/>):<ul id="ul_isw_swy_pqb">
+          <li id="li_jsw_swy_pqb">Each user can enable the widget manually. The <uicontrol><image
+                href="../img/WebappMore18.png"/>More drop-down menu</uicontrol> in the top toolbar
+            includes a <uicontrol>Choose styles</uicontrol> action that opens a dialog box where you
+            can select one <term>main CSS style</term> and multiple <term>additional styles</term>
+            to change the look of the document. Each user can select the <uicontrol>Inline insertion
+              actions</uicontrol> style to enable the action insertion widget (<image
+              href="../img/InlineInsertion16.png"/>). For more details, see <xref
+              href="https://www.oxygenxml.com/doc/ug-webauthor/topics/WA-styles-menu.html"
+              format="html" scope="external">Changing the Look of Documents Using the Styles
+              Menu</xref>.</li>
+          <li id="li_enm_4xy_pqb">The widget can be enabled globally for all users in a <xref
+              href="customizing_frameworks.dita">custom framework configuration</xref>.  In the
+              <xref href="https://www.oxygenxml.com/doc/ug-editor/topics/the-css-sub-tab.html"
+              format="html" scope="external">CSS tab in the Document Type configuration dialog
+              box</xref> (in a standalone version of <term>Oxygen XML Editor/Author</term>), find
+            the <filepath>${framework}/css/webauthor/inline-insertion-actions.css</filepath> entry
+            in the table and change the <uicontrol>Alternate</uicontrol> column for that CSS file to
+              <b>no</b> and remove the value from the <uicontrol>Title</uicontrol> column.</li>
+        </ul></p>
+      <note id="note_p3c_kzy_pqb" type="tip">You can also <xref
+          href="wa-disable-content-completion.dita">control the behavior of the
+              <uicontrol><shortcut>Enter</shortcut></uicontrol> key</xref> to make it easier for
+        users to insert a new paragraph.</note>
+    </section>
+    <section id="section_y4h_vqx_hz">
+      <title>Example: Customizing the Background for the Note Element in DITA</title>
+      <p id="p_uks_dgk_54b">Suppose you want to configure Web Author to render the default DITA
+          <xmlelement>note</xmlelement> elements with a yellow background while rendering those with
+        the <xmlatt>type</xmlatt> attribute set to <codeph>danger</codeph> with s light red
+        background. You could do this by following these steps:<ol id="ol_tzy_2rx_hz">
+          <li id="li_vks_dgk_54b">In <term>Oxygen XML Editor/Author</term>, create a new DITA topic and insert two
+              <xmlelement>note</xmlelement> elements (one without setting the <xmlatt>type</xmlatt>
+            attribute and the other setting the <codeph>type</codeph> attribute to
+            <b>danger</b>.</li>
+          <li id="li_wks_dgk_54b">Right-click on the first <xmlelement>note</xmlelement> element and choose
+              <uicontrol>Inspect Styles</uicontrol>.</li>
+          <li id="li_xks_dgk_54b">In the <uicontrol>CSS Inspector</uicontrol> view, you can see all the <xref
+              href="https://www.oxygenxml.com/doc/ug-editor/topics/author-css-inspector-view.html#author-css-inspector-view__displaying_rules"
+              format="html" scope="external">rules currently applied</xref> for notes. Click the
+            link associated with one of them to take you to the source CSS file.</li>
+          <li id="li_yks_dgk_54b">Add the following code in the CSS
+            file:<codeblock outputclass="language-css" id="codeblock_zks_dgk_54b">[class*="topic/note"] {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+[class*="topic/note"][type="danger"] {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}</codeblock></li>
+          <li id="li_als_dgk_54b">Switch to the XML document and see that the colors have changed.</li>
+          <li id="li_bls_dgk_54b">Once you are happy with the changes, you need to <xref
+              href="https://www.oxygenxml.com/doc/ug-editor/topics/the-css-sub-tab.html"
+              format="html" scope="external">use the CSS tab in the Document Type configuration
+              dialog box to associate the CSS with your framework</xref>.</li>
+          <li id="li_cls_dgk_54b">You can check to see how <i>notes</i> look in Web Author by using the <xref
+              href="customizing_frameworks.dita#customizing_frameworks/developing_and_testing_a_framework_using_the_weba"
+              >Web Author Test Server add-on</xref>.</li>
+        </ol></p>
+    </section>
+  </body>
+</topic>

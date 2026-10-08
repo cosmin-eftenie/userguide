@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_index___input_xml_fragment">
+  <title>Index - XML Fragment</title>
+  <body>
+    <p id="p_fvs_cgk_54b">In the <xref href="dcpp_debugging_the_css.dita#dcpp_debugging_the_css/merged_map_file">merged
+        map file</xref>, the structure that holds the index tree is the
+        <xmlelement>opentopic-index:index.groups</xmlelement> element.</p>
+    <codeblock outputclass="language-xml" id="codeblock_gvs_cgk_54b">&lt;map class="- map/map " >
+    &lt;oxy:front-page>
+        ... 
+    &lt;/oxy:front-page>
+    &lt;opentopic:map xmlns:opentopic="http://www.idiominc.com/opentopic">
+        ...
+    &lt;/opentopic:map>
+    &lt;topic class="- topic/topic ">
+        &lt;title class="- topic/title ">Request Support&lt;/title>
+       ...
+    &lt;/topic>
+    &lt;opentopic-index:index.groups id="d16e5548">
+      ...
+    &lt;/opentopic-index:index.groups>
+&lt;/map></codeblock>
+    <p id="p_hvs_cgk_54b">Each of the groups contain:<ul id="ul_ywx_xrs_5cb">
+        <li id="li_ivs_cgk_54b">A label, the starting letter ("T" in the following example). </li>
+        <li id="li_jvs_cgk_54b">A tree of <xmlelement>opentopic-index:index.entry</xmlelement> elements.</li>
+      </ul></p>
+    <codeblock outputclass="language-xml" id="codeblock_kvs_cgk_54b">&lt;opentopic-index:index.group>
+
+ &lt;opentopic-index:label>T&lt;/opentopic-index:label>
+
+  &lt;opentopic-index:index.entry value="table of contents">
+    &lt;opentopic-index:formatted-value>table of contents&lt;/opentopic-index:formatted-value>
+    &lt;opentopic-index:refID value="table of contents:">
+        &lt;oxy:index-link xmlns:oxy="http://www.oxygenxml.com/extensions/author" 
+               href="#d16e3988"> [d16e3988]
+        &lt;/oxy:index-link>
+    &lt;/opentopic-index:refID>
+    &lt;opentopic-index:index.entry value="change header">
+        &lt;opentopic-index:formatted-value>change header&lt;/opentopic-index:formatted-value>
+        &lt;opentopic-index:refID value="table of contents:change header:">
+           &lt;oxy:index-link xmlns:oxy="http://www.oxygenxml.com/extensions/author" 
+                href="#d16e4176">
+                [d16e4176] &lt;/oxy:index-link>
+        &lt;/opentopic-index:refID>
+    &lt;/opentopic-index:index.entry>
+    &lt;opentopic-index:index.entry value="style">
+        &lt;opentopic-index:formatted-value>style&lt;/opentopic-index:formatted-value>
+        &lt;opentopic-index:refID value="table of contents:style:">
+            &lt;oxy:index-link xmlns:oxy="http://www.oxygenxml.com/extensions/author" 
+                href="#d16e4120">
+                [d16e4120] &lt;/oxy:index-link>
+        &lt;/opentopic-index:refID>
+  &lt;/opentopic-index:index.entry>
+ &lt;/opentopic-index:index.entry>
+&lt;/opentopic-index:index.group></codeblock>
+    <p id="p_lvs_cgk_54b">Each of the entries contain:<ul id="ul_ojf_vqc_b2b">
+        <li id="li_mvs_cgk_54b">The formatted value (<xmlelement>opentopic-index:formatted-value</xmlelement>).</li>
+        <li id="li_nvs_cgk_54b">A link to the publication content
+            (<xmlelement>opentopic-index:refID</xmlelement>/<xmlelement>oxy:index-link</xmlelement>).</li>
+        <li id="li_ovs_cgk_54b">Possibly other child entries.</li>
+      </ul></p>
+    <div><p conkeyref="reusables-dcpp/mmap_pqy_hdn_vca" id="p_pvs_cgk_54b"
+      /><codeblock outputclass="language-xml" id="codeblock_qvs_cgk_54b"> &lt;div class="- map/map map" >
+    &lt;div class="front-page/front-page">
+        ... 
+    &lt;/div>
+    &lt;div class="toc/toc toc">
+        ...
+    &lt;/div>
+    &lt;div class="- topic/topic topic">
+        &lt;div class="- topic/title title">Request Support&lt;/title>
+       ...
+    &lt;/div>
+    &lt;div class=" index/groups groups">
+      ...
+    &lt;/div>
+&lt;/map></codeblock>The
+      index group content
+      becomes:<codeblock outputclass="language-xml" id="codeblock_rvs_cgk_54b">&lt;div class=" index/group group">
+  &lt;div class=" index/label label">T&lt;/div>
+
+  &lt;div class=" index/entry entry">
+    &lt;div class=" index/formatted-value formatted-value">table of contents&lt;/div>
+    &lt;div class=" index/refid refid">
+        &lt;div class=" index/link link"
+               href="#d16e3988"> [d16e3988]
+        &lt;/div>
+    &lt;/div>
+    &lt;div class=" index/entry entry">
+        &lt;div class=" index/formatted-value formatted-value">change header&lt;/div>
+         &lt;div class=" index/refid refid">
+             &lt;div class=" index/link link"
+                href="#d16e4176"> [d16e4176] &lt;/div>
+        &lt;/div>
+    &lt;/div>
+    &lt;div class=" index/entry entry">
+        &lt;div class=" index/formatted-value formatted-value">style&lt;/div>
+        &lt;div class=" index/refid refid">
+            &lt;div class=" index/link link"
+                href="#d16e4120"> [d16e4120] &lt;/div>
+        &lt;/div>
+    &lt;/div>
+  &lt;/div>
+&lt;/div></codeblock></div>
+  </body>
+</topic>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_reusable_components">
+  <title>Reusable Components in DITA PDF-CSS Publishing</title>
+  <body>
+    <p id="p_tjl_bgk_54b">
+      <table frame="all" rowsep="1" colsep="1" id="table_qzx_k32_scb">
+        <title>Reusable components for the DITA PDF-CSS Publishing Plugin</title>
+        <tgroup cols="2">
+          <colspec colname="c1" colnum="1" colwidth="1*"/>
+          <colspec colname="c2" colnum="2" colwidth="1*"/>
+          <thead>
+            <row>
+              <entry>Description</entry>
+              <entry>Content</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Disclaimer</entry>
+              <entry>
+                <p id="p_ujl_bgk_54b">
+                  <note id="rc-css-fragment-disclaimer-note">This is listed solely for illustration
+                    purposes, as the plugin might use something different.</note>
+                </p>
+              </entry>
+            </row>
+            <row>
+              <entry>Chapter definition</entry>
+              <entry>
+                <note id="note_x1s_2f2_5cb">For a plain DITA map, the chapters are the
+                    <xmlelement>topicref</xmlelement> elements that are placed on the first level.
+                  For bookmaps, the chapters are the topics referenced by a
+                    <xmlelement>chapter</xmlelement> element. </note>
+              </entry>
+            </row>
+            <row>
+              <entry>Do not edit styles from the installation directory</entry>
+              <entry>
+                <note type="caution" id="note_gxm_jyq_5cb">Do not modify the built-in rules directly
+                  in the CSS files from the <b>Oxygen XML Editor/Author</b> installation. Instead,
+                  copy the rules to your own customization CSS.</note>
+              </entry>
+            </row>
+            <row>
+              <entry>SVG recommendation</entry>
+              <entry>
+                <note id="note_pqy_hdn_vcb">You can use raster image formats (such as PNG or JPEG),
+                  but it is best to use vector images (such as SVG or PDF). They scale very well and
+                  produce better results when printed. In addition, the text from these images is
+                  searchable and can be selected (if the glyphs have not been converted to shapes)
+                  in the PDF viewer.</note>
+              </entry>
+            </row>
+            <row>
+              <entry>Merged map processed to HTML5</entry>
+              <entry>
+                <p id="mmap_pqy_hdn_vca">For the <uicontrol keyref="pdf-html5-transformation"/>
+                  transformation type, the merged map is further processed resulting in a collection
+                  of HTML5 <xmlelement>div</xmlelement> elements. These elements preserve the
+                  original DITA <xmlatt>class</xmlatt> attribute values and add a new value derived
+                  from the DITA element name.</p>
+              </entry>
+            </row>
+            <row>
+              <entry>Fallback fonts recommendation</entry>
+              <entry>
+                <p><ph id="ph_amc_sjv_s2c">It is possible to use a generic family name as fallback
+                    (like <codeph>serif</codeph>, <codeph>sans-serif</codeph> or
+                      <codeph>monospace</codeph>) to call upon the processor's default <xref
+                      href="https://www.oxygenxml.com/doc/ug-chemistry/topics/ch_fallback_fonts.html"
+                      format="html" scope="external">fallback fonts system</xref>.</ph></p>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </p>
+    <ol id="ol_gjr_kq5_njb">
+      <li id="pt-li1">If you have not already created a Publishing Template, you need to create one. For
+          details, see <xref href="../../topics/ope-create-publishing-template.dita"
+            product="author developer editor authorEclipse developerEclipse editorEclipse"/><xref
+            href="https://www.oxygenxml.com/doc/ug-pdf-css/topics/ope-create-publishing-template.html"
+            format="html" scope="external" product="pdf-css ope">How to Create a Publishing
+            Template</xref>.
+      </li>
+      <li id="pt-li2">Link the folder associated with the publishing template to your current
+        project in the <uicontrol product="author developer editor pdf-css ope"
+          >Project</uicontrol><uicontrol product="authorEclipse developerEclipse editorEclipse"
+          >Project Explorer</uicontrol> view.</li>
+      <li id="pt-li3">Using the <uicontrol product="author developer editor pdf-css"
+          >Project</uicontrol><uicontrol product="authorEclipse developerEclipse editorEclipse"
+          >Project Explorer</uicontrol> view, create an <filepath>xslt</filepath> folder inside the project
+        root folder.</li>
+      <li id="pt-li6">Edit the <b><ph keyref="pdf-html5-transformation"/></b> transformation
+        scenario. </li>
+      <li id="pt-li7">In the <uicontrol>Templates</uicontrol> tab, click the <uicontrol>Choose
+          Custom Publishing Template</uicontrol> link and select your template. </li>
+      <li id="pt-li8">Click <uicontrol>OK</uicontrol> to save the changes and run the transformation
+        scenario. </li>
+    </ol>
+  </body>
+</topic>

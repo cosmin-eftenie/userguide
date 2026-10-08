@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_images">
+    <title>Images and Figures</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+          ><ph keyref="pdf-html5-transformation"/><indexterm>Images</indexterm></indexterm>
+        <indexterm product="pdf-css ope">Images</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+    <body>
+        <p id="p_an5_cgk_54b">Images are an important part of a publication.<note
+        conkeyref="reusables-dcpp/note_pqy_hdn_vcb" id="note_bn5_cgk_54b"/></p>
+    </body>
+  <related-links>
+    <link
+      href="https://www.oxygenxml.com/dita/styleguide/Graphics_and_Figures/c_Image_File_Types.html"
+      format="html" scope="external">
+      <linktext>The DITA Style Guide Best Practices for Authors: Image file formats</linktext>
+    </link>
+  </related-links>
+</topic>

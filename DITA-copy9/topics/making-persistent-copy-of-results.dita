@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="making-persistent-copy-of-results">
+  <title>Making a Persistent Copy of Results</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Results view<indexterm>Make persistent copy of results</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_xdw_bgk_54b">The <xref href="results-view.dita#results-view"><uicontrol>Results</uicontrol> view</xref>
+      displays the results from the following operations: <ul id="ul_ydw_bgk_54b">
+        <li id="li_zdw_bgk_54b"><xref href="validating-XML-documents-against-schema.dita">Document
+            validation</xref></li>
+        <li id="li_a2w_bgk_54b"><xref href="checking-xml-well-formedness.dita">Checking the form of
+          documents</xref></li>
+        <li id="li_b2w_bgk_54b"><xref href="transforming-documents.dita">XSLT or FO transformations</xref></li>
+        <li id="li_c2w_bgk_54b"><xref href="find-replace-dialog.dita">Finding all occurrences of a string in a
+            file</xref></li>
+        <li product="editor author developer" id="li_d2w_bgk_54b"><xref href="find-and-replace-text-in-files.dita"
+            >Finding all occurrences of a string in multiple files</xref></li>
+        <li id="li_e2w_bgk_54b"><xref href="xpath-builder-view.dita">Applying an XPath expression to the current
+            document</xref></li>
+      </ul>To make a persistent copy of the <xref href="results-view.dita#results-view"
+          ><uicontrol>Results</uicontrol> view</xref>, use one of these actions:<dl id="dl_f2w_bgk_54b">
+        <dlentry id="dlentry_g2w_bgk_54b">
+          <dt><menucascade>
+              <uicontrol>File</uicontrol>
+              <uicontrol>Save Results</uicontrol>
+            </menucascade></dt>
+          <dd>Displays the <uicontrol>Save Results</uicontrol> dialog box, used to save the result
+            list of the current message tab. The action is also available on the right-click menu of
+            the <uicontrol>Results</uicontrol> panel.</dd>
+        </dlentry>
+        <dlentry id="dlentry_h2w_bgk_54b">
+          <dt><menucascade>
+              <uicontrol>File</uicontrol>
+              <uicontrol>Print Results</uicontrol>
+            </menucascade></dt>
+          <dd>Displays the <uicontrol>Page Setup</uicontrol> dialog box used to define the page size
+            and orientation properties for printing the result list of the current
+              <uicontrol>Results</uicontrol> panel. The action is also available on the right-click
+            menu of the <uicontrol>Results</uicontrol> panel.</dd>
+        </dlentry>
+        <dlentry id="dlentry_i2w_bgk_54b">
+          <dt><uicontrol>Save Results as XML</uicontrol> from the contextual menu</dt>
+          <dd>Saves the content of the <uicontrol>Results</uicontrol> panel in an XML file with the
+            format:
+            <codeblock outputclass="language-xml" id="codeblock_j2w_bgk_54b">&lt;Report&gt;
+    &lt;Incident&gt;
+        &lt;engine&gt;The engine reporting the error.&lt;engine&gt;
+        &lt;severity&gt;The severity level&lt;severity&gt; 
+        &lt;Description&gt;Description of output message.&lt;/Description&gt;
+        &lt;SystemID&gt;The location of the file linked to the message.&lt;/SystemID&gt;
+        &lt;Location&gt;
+           &lt;start&gt;
+                &lt;line&gt;Start line number in file.&lt;line&gt;
+                &lt;column&gt;Start column number in file&lt;column&gt;
+           &lt;/start&gt;
+           &lt;end&gt;
+                &lt;line&gt;End line number in file.&lt;line&gt;
+                &lt;column&gt;End column number in file&lt;column&gt;
+           &lt;/start&gt;
+        &lt;/Location&gt;
+    &lt;/Incident&gt;
+&lt;/Report&gt;</codeblock></dd>
+        </dlentry>
+      </dl></p>
+  </body>
+  <related-links>
+    <linklist><title>Related Information:</title><link href="results-view.dita#results-view"/></linklist>
+  </related-links>
+</topic>

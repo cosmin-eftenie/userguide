@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="import-from-ms-excel-files">
+    <title>Import from MS Excel Files</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Importing data from Excel</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+    <body>
+    <p id="p_hxy_cgk_54b"><ph keyref="product"/> provides several methods for importing MS Excel files into an XML
+        file.<ph product="author editor authorEclipse editorEclipse"> The first method is to use the
+          <ph keyref="product"/>
+        <xref href="../topics/smart-paste-support.dita#smart-paste-support"><b>Smart Paste</b>
+          mechanism</xref> by simply copying data from Excel and pasting it into a document in
+          <uicontrol>Author</uicontrol> mode (note that this is only supported in DITA, DocBook,
+        TEI, JATS, and XHTML documents).</ph> You can <ph
+        product="author editor authorEclipse editorEclipse">also </ph>copy data from Excel and paste
+      it into inserted cells in <uicontrol>Grid</uicontrol> mode<ph
+        product="author editor authorEclipse editorEclipse">, but this is a more manual
+      process</ph>. If you want to import an entire Excel file, <ph keyref="product"/> also offers a
+      configurable import wizard that works with any type of XML document.</p>
+    <section id="smart_paste_method" product="author editor authorEclipse editorEclipse">
+      <title>Smart Paste Method in Author Mode</title>
+      <p id="p_ixy_cgk_54b">If you are importing data into DITA, DocBook, TEI, JATS, or XHTML documents, you can open
+        the Excel spreadsheet in your office application, copy its content, and simply paste it into
+        your document in <uicontrol>Author</uicontrol> mode. </p>
+      <p conkeyref="reusables-importing-data/smart-paste-para" id="p_jxy_cgk_54b"/>
+    </section>
+    <section id="paste_method_in_grid_mode">
+      <title>Grid Mode Method</title>
+      <p id="p_kxy_cgk_54b">The <uicontrol>Grid</uicontrol> mode in <ph keyref="product"/> displays all content in an
+        XML document as a structured grid of nested tables and you can work with the cells in those
+        tables much like you would with any spreadsheet application. When importing Excel data into
+          <uicontrol>Grid</uicontrol> mode, you first need to insert new cells in the particular
+        nested table and then you can paste data from Excel the same as you would in any table or spreadsheet.<ol id="ol_lxy_cgk_54b">
+          <li id="li_mxy_cgk_54b">Copy the particular cells from your Excel spreadsheet that you want to import into an
+            XML file.</li>
+          <li id="li_nxy_cgk_54b">Switch to <uicontrol>Grid</uicontrol> mode in <ph keyref="product"/>.</li>
+          <li id="li_oxy_cgk_54b">Expand the particular nodes and locate the nested table where you want to insert the
+            copied cells.</li>
+          <li id="li_pxy_cgk_54b">Right-click a particular row or column where you want to insert the data and select
+                <uicontrol><image href="../img/TableRow16.gif" id="image_xsq_2xz_tr"/>Insert
+              row</uicontrol> or <uicontrol><image href="../img/TableColumn16.gif"
+                id="image_ypw_cxz_tr"/>Insert column</uicontrol>, depending on the structure of the
+            copied cells.</li>
+          <li id="li_qxy_cgk_54b">Paste the copied cells from the clipboard into the newly inserted cells in
+              <uicontrol>Grid</uicontrol> mode.</li>
+          <li id="li_rxy_cgk_54b">You may need to make some manual adjustments. For example, if the selection of copied
+            cells contained an empty cell, <ph keyref="product"/> might ignore that cell.</li>
+        </ol></p>
+    </section>
+    <section id="import_dialog_box_method">
+      <title>Import Wizard Method</title>
+      <p id="p_txy_cgk_54b">To use the <uicontrol>Import</uicontrol> wizard to import an Excel file into an XML file,
+        follow these steps:</p>
+      <ol id="ol_uxy_cgk_54b">
+        <li id="li_vxy_cgk_54b"> Go to <menucascade product="author developer editor">
+            <uicontrol>File</uicontrol>
+            <uicontrol>Import/Convert</uicontrol>
+            <uicontrol>MS Excel file to XML</uicontrol>
+          </menucascade><menucascade product="authorEclipse developerEclipse editorEclipse">
+            <uicontrol>File</uicontrol>
+            <uicontrol>Import/Convert</uicontrol>
+            <uicontrol keyref="product"/>
+            <uicontrol>MS Excel file to XML</uicontrol>
+          </menucascade>. </li>
+        <li id="li_wxy_cgk_54b"> Select the URL of the Excel file. <itemgroup>The sheets of the document you are
+            importing are presented in the <uicontrol>Available Sheets</uicontrol> section of this
+            dialog box. </itemgroup></li>
+        <li id="li_xxy_cgk_54b"> Click the <uicontrol>Next</uicontrol> button to proceed to the next stage of the
+          wizard. <itemgroup>
+            <p id="p_yxy_cgk_54b">
+              <fig id="fig_nv3_l3x_ls" product="author developer editor">
+                <title>Import Wizard</title>
+                <image href="../img/sa_import_excel_file.png" id="image_zjb_43x_ls"/>
+              </fig>
+            </p>
+            <p id="p_zxy_cgk_54b">
+              <fig id="fig_k24_53x_ls" product="authorEclipse developerEclipse editorEclipse">
+                <title>Import Wizard</title>
+                <image href="../img/ec_import_excel_file.png" id="image_rzs_v3x_ls"/>
+              </fig>
+            </p>
+          </itemgroup>
+        </li>
+        <li id="li_ayy_cgk_54b">
+          <p id="p_byy_cgk_54b">Configure the settings for the conversion. This stage of the wizard offers the
+            following options:</p>
+          <p id="p_cyy_cgk_54b">
+            <dl id="dl_dyy_cgk_54b">
+              <dlentry id="dlentry_eyy_cgk_54b">
+                <dt><uicontrol>Import settings</uicontrol> section</dt>
+                <dd>Presents the input data in a tabular form. By default, all data items are
+                  converted to element content (<uicontrol><image href="../img/ConvertToElement.png"
+                      id="image_zk2_kqw_ls"/></uicontrol> symbol), but this can be overridden by
+                  clicking the individual column headers. Clicking a column header once causes the
+                  data from this column to be converted to attribute values (<uicontrol><image
+                      href="../img/ConvertToAttribute.png" id="image_al2_kqw_ls"/></uicontrol>
+                  symbol). Clicking a second time causes the column data to be ignored
+                      (<uicontrol><image href="../img/IgnoreData.png" id="image_bl2_kqw_ls"
+                    /></uicontrol> symbol) when generating the XML file. You can cycle through these
+                  three options by continuing to click the column header.</dd>
+              </dlentry>
+              <dlentry id="dlentry_fyy_cgk_54b">
+                <dt><uicontrol>First row contains field names</uicontrol></dt>
+                <dd>If this option is selected, the default column headers are replaced (where such
+                  information is available) by the content of the first row. In other words, the
+                  first row is interpreted as containing the field names. The changes are also
+                  visible in the preview panel.</dd>
+              </dlentry>
+              <dlentry id="dlentry_gyy_cgk_54b">
+                <dt><uicontrol>Customize</uicontrol></dt>
+                <dd>This button opens a <uicontrol>Presentation Names</uicontrol> dialog box that
+                  allows you to edit the name, XML name, and conversion criterion for the root and
+                  row elements. The XML names can be edited by double-clicking the desired item and
+                  entering the label. The conversion criteria can also be modified by selecting one
+                  of the following option in the drop-down menu: <userinput>ELEMENT</userinput>,
+                    <userinput>ATTRIBUTE</userinput>, or <userinput>SKIPPED</userinput>.</dd>
+              </dlentry>
+              <dlentry id="dlentry_hyy_cgk_54b">
+                <dt><uicontrol><image href="../img/Options16.png" id="image_zfm_4qw_ls"/>Import
+                    Settings</uicontrol></dt>
+                <dd>Clicking this button opens the <xref
+                    href="preferences-xml-import.dita#preferences-xml-import"
+                      ><uicontrol>Import</uicontrol> preferences page</xref> that allows you to
+                  configure more import options.</dd>
+              </dlentry>
+              <dlentry id="dlentry_iyy_cgk_54b">
+                <dt><uicontrol>Import formatted data (as displayed in Excel)</uicontrol></dt>
+                <dd>If this option is selected, the imported data retains the Excel data formatting
+                  (such as the representation of numeric values or dates). If deselected, the data
+                  formatting is not imported.</dd>
+              </dlentry>
+              <dlentry id="dlentry_jyy_cgk_54b">
+                <dt><uicontrol>XML Import Preview</uicontrol> panel</dt>
+                <dd>Contains an example of what the generated XML document will look like.</dd>
+              </dlentry>
+              <dlentry product="author developer editor" id="dlentry_kyy_cgk_54b">
+                <dt><uicontrol>Open in editor</uicontrol></dt>
+                <dd>If selected, the new XML document created from the imported file is opened in
+                  the editor.</dd>
+              </dlentry>
+              <dlentry id="dlentry_lyy_cgk_54b">
+                <dt><uicontrol>Save in file</uicontrol></dt>
+                <dd>If selected, the new XML document is saved in the specified path.</dd>
+              </dlentry>
+            </dl>
+          </p>
+        </li>
+        <li id="li_myy_cgk_54b">
+          <ph>Click <uicontrol product="author developer editor">Import</uicontrol><uicontrol
+              product="authorEclipse developerEclipse editorEclipse">Finish</uicontrol> to generate
+            the XML document.</ph></li>
+      </ol>
+    </section>
+    <section id="section_gdp_g1f_w5b">
+      <title>Resources</title>
+      <p id="p_nyy_cgk_54b">For more information about exchanging data between <ph keyref="product"
+        /> and spreadsheet applications, watch our video demonstration:</p>
+      <p id="p_oyy_cgk_54b"><object width="450" height="250"
+          data="https://www.youtube.com/embed/8VwsF58zLkU" outputclass="iframe">
+          <param name="allowfullscreen" value="true"/>
+        </object></p>
+    </section>
+    </body>
+  <related-links>
+      <link href="export-to-excel.dita#export-to-excel"/>
+  </related-links>
+</topic>

@@ -1,0 +1,858 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="using-the-project-view">
+  <title><ph product="author developer editor json">Project</ph><ph
+      product="authorEclipse developerEclipse editorEclipse">Project Explorer</ph> View</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor json">Projects<indexterm>Project
+            view</indexterm></indexterm>
+        <indexterm product="authorEclipse developerEclipse editorEclipse"
+            >Projects<indexterm>Project Explorer view</indexterm></indexterm>
+        <indexterm product="author developer editor json">Project view</indexterm>
+        <indexterm product="authorEclipse developerEclipse editorEclipse">Project Explorer view</indexterm>
+        <indexterm>Projects<indexterm>Managing resources</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_s4t_bgk_54b">The <uicontrol product="author developer editor json"
+        >Project</uicontrol><uicontrol product="authorEclipse developerEclipse editorEclipse"
+        >Project Explorer</uicontrol> view is designed to assist you with organizing and managing
+      related files grouped in the same XML project. The actions available in the contextual menu
+      and on the toolbar associated to this panel allows you to create XML projects and provide
+      shortcuts to various operations for the project documents.<note type="tip"
+        product="authorEclipse developerEclipse editorEclipse" id="note_t4t_bgk_54b">You can also
+        use the <uicontrol>Project Explorer</uicontrol> view for many of the same purposes as the
+          <uicontrol>Project Explorer</uicontrol> view.</note></p>
+    <p id="p_u4t_bgk_54b">
+      <fig product="author developer editor json" id="fig_v4t_bgk_54b">
+        <title>Project View</title>
+        <image href="../img/sa_editor_project_panel.png"/>
+      </fig>
+    </p>
+    <p id="p_w4t_bgk_54b">
+      <fig product="authorEclipse developerEclipse editorEclipse" id="fig_x4t_bgk_54b">
+        <title>Project Explorer View</title>
+        <image href="../img/ec_navigator_view.png"/>
+      </fig>
+    </p>
+    <p id="p_y4t_bgk_54b">By default, the view is positioned on the left side of <ph
+        keyref="product"/>, above the <uicontrol>Outline</uicontrol> view. If the view has been
+      closed, it can be reopened at any time from the <menucascade>
+        <uicontrol>Window</uicontrol>
+        <uicontrol>Show View</uicontrol>
+      </menucascade> menu <ph product="author developer editor json">(or using the <uicontrol>Show
+          Project View</uicontrol> action from the <uicontrol>Project</uicontrol> menu)</ph><ph
+        product="authorEclipse developerEclipse editorEclipse">(the <uicontrol>Project
+          Explorer</uicontrol> view is in the <uicontrol>Other</uicontrol> submenu)</ph>.</p>
+    <section id="project_view_toolbar">
+      <title>Project View Toolbar</title>
+      <p product="author developer editor json" id="p_z4t_bgk_54b">The tree structure occupies most
+        of the view area. In the upper left side of the view, there is a drop-down menu that
+        contains all recently used projects and some actions to open a project or create a new one.
+        You can use this history drop-down menu to quickly switch to a recently opened project. If
+        you enable the <xref
+          href="preferences-application-layout.dita#preferences-application-layout/remember-layout"
+            ><uicontrol>Remember layout changes for each project</uicontrol> option in the
+            <uicontrol>Application Layout</uicontrol> preferences page</xref>, the application will
+        remember the layout, open files, and editing location for your session when you switch
+        projects.</p>
+      <p id="p_apt_bgk_54b">The following actions are grouped in the upper right corner:<dl id="dl_bpt_bgk_54b">
+          <dlentry id="dlentry_cpt_bgk_54b">
+            <dt><uicontrol><image href="../img/CollapseAll16.png" id="image_vqr_1jt_tr"/>Collapse
+                All</uicontrol></dt>
+            <dd>Collapses all project tree folders. You can also collapse/expand a project tree
+              folder if you select it and press the
+                <uicontrol><shortcut>Enter</shortcut></uicontrol> key or <uicontrol><shortcut>Left
+                  Arrow</shortcut></uicontrol> to collapse and <uicontrol><shortcut>Right
+                  Arrow</shortcut></uicontrol> to expand.</dd>
+          </dlentry>
+          <dlentry id="dlentry_dpt_bgk_54b">
+            <dt><uicontrol><image href="../img/CaretUpdateOff16.png" id="image_b3j_pft_tr"
+                  product="author developer editor json"/><image href="../img/LinkEditorEC16.png"
+                  product="authorEclipse developerEclipse editorEclipse"/>Link with
+                Editor</uicontrol></dt>
+            <dd>When selected, the currently edited file (from the main editor or from the DITA Maps
+              Manager view) is highlighted in the project tree, if the file is found in the project.
+                <note product="developer editor developerEclipse editorEclipse"
+                id="note_ept_bgk_54b">This button is disabled automatically when you move to the
+                  <uicontrol>Debugger</uicontrol>
+                <xref keyref="glossentry_perspective"><term>perspective</term></xref>. </note></dd>
+          </dlentry>
+          <dlentry product="authorEclipse developerEclipse editorEclipse" id="dlentry_fpt_bgk_54b">
+            <dt><uicontrol>View Menu</uicontrol></dt>
+            <dd>Drop-down menu that contains various settings contributed by the Eclipse
+              plugin.</dd>
+          </dlentry>
+          <dlentry product="author developer editor" id="dlentry_gpt_bgk_54b">
+            <dt><uicontrol><image href="../img/Settings16.png" id="image_fmh_kyl_tq"
+                />Settings</uicontrol></dt>
+            <dd>
+              <p id="p_hpt_bgk_54b">A submenu that contains the following actions: </p>
+              <p id="p_ipt_bgk_54b">
+                <dl id="dl_jpt_bgk_54b">
+                  <dlentry id="dlentry_kpt_bgk_54b">
+                    <dt><uicontrol><image href="../img/Filters16.png" id="image_vyj_mjt_tr"
+                        />Filters</uicontrol></dt>
+                    <dd>
+                      <p id="p_z4g_qwd_jgc">Opens a <uicontrol>Project filters</uicontrol> dialog
+                        box where you can choose to show hidden files/folders in the
+                          <uicontrol>Project</uicontrol> view and specify filter patterns. It
+                        contains the following options:</p>
+                      <p id="p_szp_pwd_jgc">
+                        <dl id="dl_pfw_pwd_jgc">
+                          <dlentry id="dlentry_qfw_pwd_jgc">
+                            <dt>Show hidden files and directories</dt>
+                            <dd>If selected, the hidden files and directories are shown in the
+                                <uicontrol>Project</uicontrol> view.</dd>
+                          </dlentry>
+                          <dlentry id="dlentry_nhl_rwd_jgc">
+                            <dt>File filter patterns</dt>
+                            <dd>
+                              <ul id="ul_ifv_1wd_jgc">
+                                <li id="li_jfv_1wd_jgc"><uicontrol>Matching files will be
+                                    shown</uicontrol> - You can specify a comma-separated list of
+                                  file patterns to be shown in the <uicontrol>Project</uicontrol>
+                                  view.</li>
+                                <li id="li_lbn_mwd_jgc"><uicontrol>Matching files will be
+                                    hidden</uicontrol> - You can specify a comma-separated list of
+                                  file patterns to be hidden in the <uicontrol>Project</uicontrol>
+                                  view.</li>
+                              </ul>
+                            </dd>
+                          </dlentry>
+                          <dlentry id="dlentry_jq1_1xd_jgc">
+                            <dt>Directory filter patterns</dt>
+                            <dd>You can specify a comma-separated list of specific directories to be
+                              hidden in the <uicontrol>Project</uicontrol> view.</dd>
+                          </dlentry>
+                        </dl>
+                      </p>
+                    </dd>
+                  </dlentry>
+                  <dlentry id="dlentry_lpt_bgk_54b">
+                    <dt><uicontrol>Show Full Path</uicontrol></dt>
+                    <dd>When selected, linked files and folders are presented with a full file path.
+                    </dd>
+                  </dlentry>
+                  <dlentry id="dlentry_mpt_bgk_54b">
+                    <dt><uicontrol>Enable Main Files Support </uicontrol></dt>
+                    <dd>Select this option to enable the <xref
+                        href="defining_main_files.dita#defining_main_files"><uicontrol>Main
+                          Files</uicontrol> support</xref>. </dd>
+                  </dlentry>
+                  <dlentry id="dlentry_npt_bgk_54b">
+                    <dt><uicontrol>Change Search and Refactor operations scope</uicontrol></dt>
+                    <dd>Allows you to change the collection of documents that define the context of
+                      the search and refactor operations. <ul id="ul_opt_bgk_54b">
+                        <li id="li_ppt_bgk_54b"><uicontrol>Use only Main Files, if
+                            enabled</uicontrol> - Restricts <ph keyref="product"/> to perform the
+                          search and refactor operations starting from the <xref
+                            keyref="glossentry_main-file"><term>main files</term></xref> that are
+                          defined for the current resource. This option is available when you select
+                            <uicontrol>Project</uicontrol> in the <uicontrol>Select the scope for
+                            Search and Refactor operations</uicontrol> dialog box and the
+                            <uicontrol>Main Files</uicontrol> support is enabled.</li>
+                        <li id="li_qpt_bgk_54b"><uicontrol>Working sets</uicontrol> - Allows you to
+                          specify the set of files that will be used for the scope of the search and
+                          refactor operations.</li>
+                      </ul></dd>
+                  </dlentry>
+                </dl>
+              </p>
+            </dd>
+          </dlentry>
+        </dl></p>
+    </section>
+    <section id="file_explorer_area">
+      <title>File Explorer Area</title>
+      <p id="p_rpt_bgk_54b">The rest of the view is basically a file explorer similar to most other commonly used file
+        explorers. The XML project (<filepath>.xpr</filepath> file) is a logical container with a
+        collection of resources (folders and files). The types of resources displayed include:</p>
+      <ul id="ul_spt_bgk_54b">
+        <li id="li_tpt_bgk_54b"><b>Logical folders with Linked folders/files</b> - <ph
+            product="author developer editor json">Marked with a blue icon on Windows and Unix/Linux
+              (<image href="../img/LogicalFolderWindows16.png"/>) and a magenta icon on macOS
+              (<image href="../img/LogicalFolderOpenMac16.png"/>), they help you group files within
+            the project. </ph>This folder type is used as containers for linked resources
+          (shortcuts). The icons for file shortcuts include a shortcut symbol (<image
+            href="../img/LinkedFile16.png" product="author developer editor json"/><image
+            href="../img/LinkedFile16EC.png" product="authorEclipse developerEclipse editorEclipse"
+            />)<ph product="author developer editor json"> and names of folder shortcuts are
+            displayed in bold text</ph>. The <ph product="author developer editor json">logical
+            folders are created on the project root or inside other logical folders by using the
+            contextual menu action <menucascade>
+              <uicontrol>New</uicontrol>
+              <uicontrol>Logical Folder</uicontrol>
+            </menucascade>, and the </ph>linked folders/files are added using <ph
+            product="author developer editor json"><uicontrol>Add Files</uicontrol>, <uicontrol>Add
+              Folder</uicontrol></ph><ph product="authorEclipse developerEclipse editorEclipse"><menucascade>
+              <uicontrol>New</uicontrol>
+              <uicontrol>Folder</uicontrol>
+              <uicontrol>Advanced</uicontrol>
+            </menucascade> or <menucascade>
+              <uicontrol>New</uicontrol>
+              <uicontrol>File</uicontrol>
+              <uicontrol>Advanced</uicontrol>
+            </menucascade></ph>, or by dragging and dropping files/folders from the view or the
+          system file explorer. <uicontrol product="author developer editor json"><image
+              href="../img/RemoveSelected16.gif" id="image_zv4_cv2_tq"/>Remove from
+            Project</uicontrol><uicontrol product="authorEclipse developerEclipse editorEclipse"
+              ><image href="../img/RedRemove16.png"/>Delete</uicontrol> can be used to remove them
+          from the project<ph product="author developer editor json"> and the <uicontrol><image
+                href="../img/TrashIcon16.gif"/>Remove from Disk
+              (<shortcut>Shift+Delete</shortcut>)</uicontrol> action can be used to remove them from
+            both the project and the local file system</ph>.</li>
+        <li id="li_upt_bgk_54b"><b>Physical folders and files</b> - Marked with the operating
+          system-specific icon for folders (usually a yellow icon on Windows and a blue icon on
+          macOS). These folders and files are mirrors of real folders or files that exist in the
+          local file system. They are created or added to the project by using contextual menu
+          actions (such as <menucascade>
+            <uicontrol>New</uicontrol>
+            <uicontrol>File</uicontrol>
+          </menucascade>, <menucascade>
+            <uicontrol>New</uicontrol>
+            <uicontrol>Folder</uicontrol>
+          </menucascade>, <uicontrol><image href="../img/Copy16.png"/>Copy</uicontrol>, and
+              <uicontrol><image href="../img/Paste16.png"/>Paste</uicontrol>) or by dragging and
+          dropping files/folders from the view or the system file explorer. Also, the contextual
+          menu action <uicontrol product="author developer editor json"><image
+              href="../img/TrashIcon16.gif" id="image_jrq_mph_5r"/>Remove from Disk
+              (<shortcut>Shift+Delete</shortcut>)</uicontrol><uicontrol
+            product="authorEclipse developerEclipse editorEclipse"><image
+              href="../img/RedRemove16.png" id="image_ayv_bch_5r"/>Delete</uicontrol> can be used to
+          remove them from the project and local file system.</li>
+      </ul>
+      <p id="p_vpt_bgk_54b">
+        <fig id="fig_bz2_5s2_tq" product="author developer editor json">
+          <title>Project View with Both Types of Resources</title>
+          <image href="../img/project_view.png" id="image_ay3_gc2_tq"/>
+        </fig>
+      </p>
+      <p id="p_wpt_bgk_54b">
+        <fig id="fig_bz2_5s2_tq2" product="authorEclipse developerEclipse editorEclipse">
+          <title>Project Explorer View with Both Types of Resources</title>
+          <image href="../img/ec_navigator_view_with_linked.png" id="image_ay3_gc2_tq2"/>
+        </fig>
+      </p>
+    </section>
+    <section id="creating_new_projects">
+      <title>Creating New Projects</title>
+      <p id="p_xpt_bgk_54b">The following <ph product="author developer editor json">action is
+          </ph><ph product="authorEclipse developerEclipse editorEclipse">actions are </ph>available
+        from the <uicontrol>New</uicontrol> menu when right-clicking any item, <ph
+          product="author developer editor json">the <uicontrol>Project</uicontrol> menu, or from
+          the drop-down menu in the top-left of the <uicontrol>Project</uicontrol> view</ph><ph
+          product="authorEclipse developerEclipse editorEclipse">or the <menucascade>
+            <uicontrol>File</uicontrol>
+            <uicontrol>New</uicontrol>
+          </menucascade> menu</ph>:<dl id="dl_ypt_bgk_54b">
+          <dlentry conkeyref="reusables-editing-documents/new_project"
+            product="author developer editor json" id="dlentry_zpt_bgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry product="authorEclipse developerEclipse editorEclipse" id="dlentry_aqt_bgk_54b">
+            <dt><uicontrol>XML Project</uicontrol></dt>
+            <dd>Opens the <uicontrol>New XML Project</uicontrol> dialog box that allows you to
+              create a new project and adds it to the project structure in the <uicontrol>Project
+                Explorer</uicontrol> view.</dd>
+          </dlentry>
+          <dlentry product="authorEclipse developerEclipse editorEclipse" id="dlentry_bqt_bgk_54b">
+            <dt><uicontrol>Sample XML Project</uicontrol></dt>
+            <dd>Opens the <uicontrol>New sample XML project</uicontrol> dialog box that allows you
+              to customize sample resources in a new project and adds it to the project structure in
+              the <uicontrol>Project Explorer</uicontrol> view.</dd>
+          </dlentry>
+        </dl></p>
+    </section>
+    <section id="managing_physical_folders_and_files">
+      <title>Managing Project Contents</title>
+      <p id="p_cqt_bgk_54b">There are various contextual menu actions, shortcuts, and ways to organize the folders and
+        files inside the project:</p>
+      <p id="p_dqt_bgk_54b">
+        <dl id="dl_eqt_bgk_54b">
+          <dlentry id="dlentry_fqt_bgk_54b">
+            <dt>Creating New Folders and Files</dt>
+            <dd>
+              <p id="p_gqt_bgk_54b">
+                <dl id="dl_hqt_bgk_54b">
+                  <dlentry product="author developer editor json" id="dlentry_iqt_bgk_54b">
+                    <dt><menucascade>
+                        <uicontrol>Right-click any item</uicontrol>
+                        <uicontrol>New</uicontrol>
+                        <uicontrol><image href="../img/New16.png"/>File</uicontrol>
+                      </menucascade></dt>
+                    <dd>Opens a <xref href="new-dialog-sa.dita#new-dialog-sa"
+                          ><uicontrol>New</uicontrol> file wizard</xref> that helps you create a new
+                      file and adds it to the project structure.</dd>
+                  </dlentry>
+                  <dlentry product="authorEclipse developerEclipse editorEclipse" id="dlentry_jqt_bgk_54b">
+                    <dt><menucascade>
+                        <uicontrol>Right-click any item</uicontrol>
+                        <uicontrol>New</uicontrol>
+                        <uicontrol><image href="../img/NewFileEC16.png"/>File</uicontrol>
+                      </menucascade></dt>
+                    <dd>Opens a <xref href="new-dialog-eclipse.dita#new-dialog-eclipse"/> that helps
+                      you create a new file and adds it to the project structure.</dd>
+                  </dlentry>
+                  <dlentry product="authorEclipse developerEclipse editorEclipse" id="dlentry_kqt_bgk_54b">
+                    <dt><menucascade>
+                        <uicontrol>Right-click any item</uicontrol>
+                        <uicontrol>New</uicontrol>
+                        <uicontrol><image href="../img/NewTemplateEC16.png"/>New from
+                          Templates</uicontrol>
+                      </menucascade></dt>
+                    <dd>Opens a wizard where you can <xref
+                        href="creating-from-templates.dita#creating-from-templates">create a new
+                        document based on a template</xref> and adds it to the project
+                      structure.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_lqt_bgk_54b">
+                    <dt><menucascade product="authorEclipse developerEclipse editorEclipse">
+                        <uicontrol>Right-click any item</uicontrol>
+                        <uicontrol>New</uicontrol>
+                        <uicontrol><image href="../img/NewFolderEC16.png"/>Folder</uicontrol>
+                      </menucascade><menucascade product="author developer editor json">
+                        <uicontrol>Right-click any item in a physical folder</uicontrol>
+                        <uicontrol>New</uicontrol>
+                        <uicontrol><image href="../img/NewFolder16.png"/>Folder</uicontrol>
+                      </menucascade></dt>
+                    <dd>Opens a <uicontrol>New Folder</uicontrol> dialog box that allows you to
+                      specify a name for a new folder and adds it to the structure of the
+                      project.</dd>
+                  </dlentry>
+                  <dlentry product="author developer editor json" id="dlentry_mqt_bgk_54b">
+                    <dt><menucascade>
+                        <uicontrol>Right-click any item in a logical folder</uicontrol>
+                        <uicontrol>New</uicontrol>
+                        <uicontrol><image href="../img/LogicalFolderWindows16.png"
+                            placement="inline"/>Logical Folder</uicontrol>
+                      </menucascade></dt>
+                    <dd>Creates a logical folder in the tree structure (the icon is a magenta folder
+                      on macOS <image href="../img/LogicalFolderOpenMac16.png" placement="inline"
+                      />).</dd>
+                  </dlentry>
+                  <dlentry product="author developer editor json" id="dlentry_nqt_bgk_54b">
+                    <dt><menucascade>
+                        <uicontrol>Right-click on a logical folder</uicontrol>
+                        <uicontrol>New</uicontrol>
+                        <uicontrol>Logical Folders from Web</uicontrol>
+                      </menucascade></dt>
+                    <dd>Replicates the structure of a remote folder accessible over SFTP/WebDAV, as
+                      a structure of logical folders. The newly created logical folders contain the
+                      file structure of the folder it points to.</dd>
+                  </dlentry>
+                </dl>
+              </p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_oqt_bgk_54b">
+            <dt>Adding Resources</dt>
+            <dd>
+              <p id="p_pqt_bgk_54b">You can add resources by using drag and drop (or
+                    <uicontrol><image href="../img/Copy16.png"/>Copy</uicontrol> and
+                    <uicontrol><image href="../img/Paste16.png"/>Paste</uicontrol>) actions from
+                within the <uicontrol product="author developer editor json"
+                  >Project</uicontrol><uicontrol
+                  product="authorEclipse developerEclipse editorEclipse">Project
+                  Explorer</uicontrol> view or dragging them from the system file explorer. Files
+                may have multiple instances within the folder system, but cannot appear twice within
+                the same folder.</p>
+            </dd>
+          </dlentry>
+          <dlentry product="author developer editor json" id="dlentry_qqt_bgk_54b">
+            <dt>Adding Resources to Logical Folders</dt>
+            <dd>
+              <p id="p_rqt_bgk_54b">You can add resources to logical folders by using the following
+                actions available in the contextual menu when invoked on a logical folder (or the
+                project's root container):</p>
+              <p id="p_sqt_bgk_54b">
+                <dl id="dl_tqt_bgk_54b">
+                  <dlentry id="dlentry_uqt_bgk_54b">
+                    <dt><uicontrol><image href="../img/AddLinksToFoldersWindows16.png"
+                          placement="inline"/>Add Folder</uicontrol></dt>
+                    <dd>Adds a link to a physical folder, whose name and content mirror a real
+                      folder that exists in the local file system (the icon for this action is
+                      different on macOS <image href="../img/AddLinksToFoldersMac16.png"
+                        placement="inline"/>).</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_vqt_bgk_54b">
+                    <dt><uicontrol><image href="../img/AddFiles16.png" placement="inline"/>Add
+                        Files</uicontrol></dt>
+                    <dd>Adds links to files on the local file system.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_wqt_bgk_54b">
+                    <dt><uicontrol><image href="../img/AddSelectedFile16.png"/>Add Edited
+                        File</uicontrol></dt>
+                    <dd>Adds a link to the currently edited file in the project.</dd>
+                  </dlentry>
+                </dl>
+              </p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_xqt_bgk_54b">
+            <dt>Removing Folders and Files</dt>
+            <dd>
+              <p id="p_yqt_bgk_54b">To remove logical folders or the linked resources inside them
+                from the project, use <uicontrol product="author developer editor json"><image
+                    href="../img/RemoveSelected16.gif" id="image_pks_btq_y3b"/>Remove from
+                  Project</uicontrol><uicontrol
+                  product="authorEclipse developerEclipse editorEclipse"><image
+                    href="../img/RedRemove16.png" id="image_qks_btq_y3b"/>Delete</uicontrol> from
+                the contextual menu (or press <uicontrol><shortcut>Delete</shortcut></uicontrol> on
+                your keyboard)<ph product="authorEclipse developerEclipse editorEclipse"> and
+                  confirm by clicking <uicontrol>OK</uicontrol> in the resulting dialog
+                box</ph>.</p>
+              <p id="p_zqt_bgk_54b">To remove folders or files from both the project and the local
+                file system, use <ph product="author developer editor json"><uicontrol><image
+                      href="../img/TrashIcon16.gif"/>Remove from Disk</uicontrol> from the
+                  contextual menu (or press <uicontrol><shortcut>Shift+Delete</shortcut></uicontrol>
+                  on your keyboard)</ph><ph product="authorEclipse developerEclipse editorEclipse"
+                    ><image href="../img/RedRemove16.png"/>Delete from the contextual menu (or press
+                      <uicontrol><shortcut>Delete</shortcut></uicontrol> on your keyboard) and
+                  confirm by clicking <uicontrol>OK</uicontrol> in the resulting dialog box</ph>.<ph
+                  product="author developer editor"> If the <uicontrol>Main Files</uicontrol>
+                  support is enabled and the resources about to be deleted are referenced elsewhere,
+                    <ph keyref="product"/> shows a warning dialog box where you can see all
+                  references to the selected resources.</ph></p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_art_bgk_54b">
+            <dt>Moving Folders and Files</dt>
+            <dd>
+              <p id="p_brt_bgk_54b">You can move the resources by using drag and drop actions from
+                within the <uicontrol product="author developer editor json"
+                  >Project</uicontrol><uicontrol
+                  product="authorEclipse developerEclipse editorEclipse">Project
+                  Explorer</uicontrol> view<ph product="author developer editor json"> (the
+                    <uicontrol>Enable drag-and-drop in Project view</uicontrol> option must be
+                  selected in the <xref href="preferences-view.dita#preferences-view"
+                      ><uicontrol>View</uicontrol> preferences page</xref>)</ph>.</p>
+              <p id="p_crt_bgk_54b"><ph product="author developer editor json">You can also use the
+                  usual <uicontrol><image href="../img/Cut16.png"/>Cut</uicontrol>,
+                      <uicontrol><image href="../img/Copy16.png"/>Copy</uicontrol>, and
+                      <uicontrol><image href="../img/Paste16.png"/>Paste</uicontrol> actions to move
+                  resources in the project.</ph><ph
+                  product="authorEclipse developerEclipse editorEclipse">You can also use the usual
+                      <uicontrol><image href="../img/Copy16.png"/>Copy</uicontrol> and
+                      <uicontrol><image href="../img/Paste16.png"/>Paste</uicontrol> actions (or the
+                    <uicontrol>Move</uicontrol> action) from the contextual menu to move resources
+                  in the project.</ph></p>
+              <p id="p_drt_bgk_54b">You can also move certain types of files (such as XML<ph
+                  product="developer editor developerEclipse editorEclipse">, XML Schema, Relax NG,
+                  WSDL, and XSLT</ph>) or folders by using the <menucascade>
+                  <uicontrol>Refactoring</uicontrol>
+                  <uicontrol>Move resource</uicontrol>
+                </menucascade> action from the contextual menu. This action opens the
+                  <uicontrol>Move resource</uicontrol> dialog box that includes the following
+                  options:<ul id="ul_vn2_rrq_ls">
+                  <li id="li_ert_bgk_54b"><uicontrol>Destination</uicontrol> - Presents the path to the current location
+                    of the resource you want to move and gives you the option to introduce a new
+                    location.</li>
+                  <li id="li_frt_bgk_54b"><uicontrol>New name</uicontrol> - Presents the current name of the moved
+                    resource and gives you the option to change it.</li>
+                  <li id="li_grt_bgk_54b"><uicontrol>Update references of the moved
+                      resource(s)</uicontrol> - Select this option to update the references to the
+                    resource you are moving, based upon the selected scope. You can select or
+                    configure the scope by using the <uicontrol><image
+                        href="../img/ConfigureSearchScope16.png" id="image_d1j_v5h_5r"/></uicontrol>
+                    button.</li>
+                </ul></p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_hrt_bgk_54b">
+            <dt>Renaming Folders and Files</dt>
+            <dd>
+              <p id="p_irt_bgk_54b">There are several ways to rename a folder or file in the project (this works for
+                both physical and linked resources):<ul id="ul_nkv_dtq_y3b">
+                  <li id="li_jrt_bgk_54b">Select <uicontrol>Rename</uicontrol> from the contextual menu.</li>
+                  <li id="li_krt_bgk_54b">Press <uicontrol><shortcut>F2</shortcut></uicontrol> on your keyboard.</li>
+                  <li product="author developer editor json" id="li_lrt_bgk_54b">Select the item,
+                    then click the name, and type the new name.</li>
+                </ul></p>
+              <p id="p_mrt_bgk_54b">You also can rename certain types of files (such as XML<ph
+                  product="developer editor developerEclipse editorEclipse">, XML Schema, Relax NG,
+                  WSDL, and XSLT</ph>) or folders by using the <menucascade>
+                  <uicontrol>Refactoring</uicontrol>
+                  <uicontrol>Rename resource </uicontrol>
+                </menucascade> action from the contextual menu. This action opens the
+                  <uicontrol>Rename resource</uicontrol> dialog box that includes the following
+                  options:<ul id="ul_odt_vtq_ls">
+                  <li id="li_nrt_bgk_54b"><uicontrol>New name</uicontrol> - Presents the current name of the edited
+                    resource and allows you to modify it.</li>
+                  <li id="li_ort_bgk_54b"><uicontrol>Update references of the renamed
+                      resource</uicontrol> - Select this option to update the references to the
+                    resource you are renaming. You can select or configure the scope by using the
+                        <uicontrol><image href="../img/ConfigureSearchScope16.png"
+                        id="image_dlf_3qq_ls"/></uicontrol> button.</li>
+                </ul></p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_prt_bgk_54b">
+            <dt>Opening Files</dt>
+            <dd>There are several ways to open a file:<ul id="ul_qrt_bgk_54b">
+                <li id="li_rrt_bgk_54b">Double-click the file.</li>
+                <li id="li_srt_bgk_54b">Select it and press <uicontrol><shortcut>Enter</shortcut></uicontrol> on your
+                  keyboard.</li>
+                <li id="li_trt_bgk_54b">Right-click the file and select <uicontrol>Open</uicontrol>.</li>
+                <li id="li_urt_bgk_54b"><ph product="author developer editor json">If there are no
+                    other files open in the editor area, you can drag</ph><ph
+                    product="authorEclipse developerEclipse editorEclipse">Drag</ph> the file from
+                  the project tree and drop it in the editor area.</li>
+                <li id="li_vrt_bgk_54b">If you want to choose the application or location where to open it, you can
+                  right-click the file and select <uicontrol>Open with</uicontrol>.</li>
+              </ul></dd>
+          </dlentry>
+          <dlentry id="dlentry_wrt_bgk_54b">
+            <dt>Saving the Project</dt>
+            <dd>The project file is automatically saved every time the content of the <uicontrol
+                product="author developer editor json">Project</uicontrol><uicontrol
+                product="authorEclipse developerEclipse editorEclipse">Project Explorer</uicontrol>
+              view is saved or modified by actions such as adding or removing files and drag and
+              drop.</dd>
+          </dlentry>
+        </dl>
+      </p>
+    </section>
+    <section id="other_contextual_menu_actions">
+      <title>Other Contextual Menu Actions</title>
+      <p id="p_xrt_bgk_54b">Numerous other actions are available in the contextual menu, depending on the type of file
+        or folder where it is invoked from (some actions are available for multiple selected files):<dl id="dl_yrt_bgk_54b">
+          <dlentry product="author developer editor json" id="dlentry_zrt_bgk_54b">
+            <dt><uicontrol>Show in</uicontrol> submenu</dt>
+            <dd>
+              <p id="p_ast_bgk_54b">
+                <dl id="dl_bst_bgk_54b">
+                  <dlentry id="dlentry_cst_bgk_54b">
+                    <dt><uicontrol>Explorer</uicontrol> (<uicontrol>Finder</uicontrol> on
+                      macOS)</dt>
+                    <dd>On Windows and macOS, the parent directory of the selected file or folder is
+                      presented in a specific Explorer/Finder window and the selected resource is
+                      highlighted. On Linux, the selected file or folder is not highlighted after
+                      opening its parent in the file explorer.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_dst_bgk_54b">
+                    <dt><uicontrol>Terminal</uicontrol></dt>
+                    <dd>Opens a console (terminal) at the location of the selected physical
+                      resource. If the resource is a file, it will start at the parent
+                      directory.</dd>
+                  </dlentry>
+                </dl>
+              </p>
+            </dd>
+          </dlentry>
+          <dlentry product="author developer editor json" id="dlentry_est_bgk_54b">
+            <dt><uicontrol>Copy Location</uicontrol></dt>
+            <dd>Copies an application-specific URL for the selected resource to the clipboard.</dd>
+          </dlentry>
+          <dlentry id="dlentry_fst_bgk_54b">
+            <dt><uicontrol>Refactoring</uicontrol> submenu</dt>
+            <dd>
+              <p id="p_gst_bgk_54b"><ph keyref="product"/> includes some refactoring operations that help you manage
+                the structure of your documents. The following actions are available from the
+                contextual menu in the <uicontrol>Refactoring</uicontrol> submenu:</p>
+              <p id="p_hst_bgk_54b">
+                <dl id="dl_ist_bgk_54b">
+                  <dlentry id="dlentry_jst_bgk_54b">
+                    <dt><uicontrol>Rename resource</uicontrol> (Available for certain types of XML
+                      documents or folders) </dt>
+                    <dd>Opens the <xref href="move-rename-resources-project-view.dita"
+                          ><uicontrol>Rename resource</uicontrol> dialog box</xref> where you can
+                      change the name of a resource. It also includes an option to update the
+                      references to the renamed resource and you can choose between various scopes
+                      for the operation. </dd>
+                  </dlentry>
+                  <dlentry id="dlentry_kst_bgk_54b">
+                    <dt><uicontrol>Move resource</uicontrol> (Available for certain types of XML
+                      documents or folders)</dt>
+                    <dd>Opens the <xref href="move-rename-resources-project-view.dita"
+                          ><uicontrol>Move resource</uicontrol> dialog box</xref> where you can
+                      choose a destination and change the name of a resource. It also includes an
+                      option to update the references to the moved resource and you can choose
+                      between various scopes for the operation.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_lst_bgk_54b"
+                    product="author developer editor authorEclipse developerEclipse editorEclipse">
+                    <dt><uicontrol><image href="../img/XMLRefactoring16.png"/>XML
+                        Refactoring</uicontrol></dt>
+                    <dd>Opens the <xref href="refactoring-xml-documents.dita"><uicontrol>XML
+                          Refactoring</uicontrol> tool wizard</xref> that presents refactoring
+                      operations to assist you with managing the structure of your XML
+                      documents.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_wnl_2qn_lbc">
+                    <dt>Apply all default quick fix proposals</dt>
+                    <dd>Opens the <xref href="apply-all-default-quick-fixes-in-scope.dita"
+                          ><uicontrol>Apply all default quick fix proposals</uicontrol> tool</xref>
+                      that can be used to apply quick fix proposals for all reported validation
+                      errors in the selected documents when one or more quick fix proposals have
+                      been detected for reported validation errors.</dd>
+                  </dlentry>
+                  <dlentry product="author developer editor" id="dlentry_mst_bgk_54b">
+                    <dt>Other XML Refactoring Actions</dt>
+                    <dd>For your convenience, the last 5 <xref
+                        href="../topics/refactoring-xml-documents.dita">XML Refactoring tool
+                        operations</xref> that were finished or previewed will also appear in this
+                      submenu.</dd>
+                  </dlentry>
+                </dl>
+              </p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_nst_bgk_54b"
+            product="author developer editor authorEclipse developerEclipse editorEclipse">
+            <dt>Show referenced resources</dt>
+            <dd>Opens the <xref href="xml-resource-hierarchy-view.dita#xml-resource-hierarchy-view"
+                  ><uicontrol>Referenced/Dependent Resources</uicontrol> view</xref> that allows you
+              to see the referenced resource hierarchy for an XML document.</dd>
+          </dlentry>
+          <dlentry id="dlentry_ost_bgk_54b"
+            product="author developer editor authorEclipse developerEclipse editorEclipse">
+            <dt>Show dependent resources</dt>
+            <dd>Opens the <xref href="xml-resource-hierarchy-view.dita#xml-resource-hierarchy-view"
+                  ><uicontrol>Referenced/Dependent Resources</uicontrol> view</xref> that allows you
+              to see the resource dependencies for an XML document. When working with DITA XML
+              projects, this action is available when right-clicking images to find direct
+              references to them.</dd>
+          </dlentry>
+          <dlentry id="dlentry_pst_bgk_54b">
+            <dt><uicontrol><image href="../img/Refresh16.png" id="image_pvw_jhw_sr"
+                  product="author developer editor json"/>Refresh</uicontrol></dt>
+            <dd>Refreshes the content<ph
+                product="author developer editor authorEclipse developerEclipse editorEclipse"> and
+                the dependencies between the resources in <xref
+                  href="defining_main_files.dita#defining_main_files">the <uicontrol>Main
+                    Files</uicontrol> directory</xref></ph>.</dd>
+          </dlentry>
+          <dlentry product="author developer editor json" id="dlentry_qst_bgk_54b">
+            <dt><uicontrol><image href="../img/SearchInPath16.png" id="image_kgr_dqh_5r"
+                />Find/Replace in Files</uicontrol></dt>
+            <dd>Opens the <xref
+                href="find-and-replace-text-in-files.dita#find-and-replace-text-in-files"
+                  ><uicontrol>Find/Replace in Files</uicontrol> dialog box</xref> that allows you to
+              find and replace text in multiple files. </dd>
+          </dlentry>
+          <dlentry id="xpath-in-files">
+            <dt><uicontrol><image href="../img/XPath16.gif" id="image_zbj_5dh_5r"/>XPath in
+                Files</uicontrol></dt>
+            <dd>Opens the <xref href="xpath-builder-view.dita"><uicontrol>XPath/XQuery
+                  Builder</uicontrol> view</xref> that allows you to compose XPath and XQuery
+              expressions and execute them over the currently edited XML document.</dd>
+          </dlentry>
+          <dlentry product="author developer editor json" id="dlentry_rst_bgk_54b">
+            <dt><uicontrol><image href="../img/OpenResource16.png" id="image_c2z_knp_sr"/>Open/Find
+                Resource</uicontrol></dt>
+            <dd>Opens the <xref href="open-find-resource-dialog.dita#open-find-resource-dialog"
+                format="dita"><uicontrol>Open/Find Resource</uicontrol> dialog box</xref>.</dd>
+          </dlentry>
+          <dlentry id="dlentry_sst_bgk_54b">
+            <dt><uicontrol><image href="../img/CheckSpelling16.png" id="image_mff_gvh_5r"/>Check
+                Spelling in Files</uicontrol></dt>
+            <dd>Allows you to <xref href="spell-check-in-files.dita#spell-check-in-files"
+                format="dita">check the spelling of multiple files</xref>. </dd>
+          </dlentry>
+          <dlentry id="dlentry_tst_bgk_54b">
+            <dt><uicontrol><image href="../img/PrettyPrint16.png" id="image_mff_wj1_5r"/>Format and
+                Indent Files</uicontrol></dt>
+            <dd>Opens the <xref
+                href="format-indent-multiple-files.dita#format-indent-multiple-files"
+                  ><uicontrol>Format and Indent Files</uicontrol> dialog box</xref> that allows you
+              to configure the format and indent (<xref keyref="glossentry_pretty-print"
+                  ><term>pretty-print</term></xref>) action that will be applied on the selected
+              documents.</dd>
+          </dlentry>
+          <dlentry product="author developer editor" id="dlentry_ust_bgk_54b">
+            <dt><uicontrol><image href="../img/SyncroSVNClient16.png" placement="inline"/>Open in
+                SVN Client</uicontrol></dt>
+            <dd><xref href="svn-quick-start.dita#svn-quick-start" format="dita">Syncro SVN
+                Client</xref> tool is opened and it highlights the selected resource in its
+              corresponding working copy.</dd>
+          </dlentry>
+          <dlentry product="author developer editor json" id="dlentry_vst_bgk_54b">
+            <dt><uicontrol>Compare</uicontrol></dt>
+            <dd>
+              <p id="p_wst_bgk_54b">Allows you to compare multiple files or directories and the
+                order of your selection determines where they are opened in the <xref
+                  href="file-comparison.dita#file-comparison"><uicontrol>Compare
+                  Files</uicontrol></xref> or <xref
+                  href="directories-comparison.dita#directories-comparison"><uicontrol>Compare
+                    Directories</uicontrol></xref> tool. If you select two files or folders, your
+                first selection will be opened in the left panel and the other one in the right
+                panel.</p>
+              <p id="p_xst_bgk_54b">You can also select 3 files and the tool will automatically be
+                opened in the <xref href="file-comparison.dita#file-comparison/threeway_comparisons"
+                  >three-way comparison mode</xref>. If you select three files, your first selection
+                will be opened in the left panel, the second in the right panel, and the third
+                selection will be the base (ancestor) file.</p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_yst_bgk_54b">
+            <dt>HTML to XML Well-formed (Available when selecting multiple resources)</dt>
+            <dd>Batch converts the selected HTML documents to be XML well-formed. This means that
+              missing end tags will be added to applicable elements, unclosed tags will be properly
+              closed, and quotes will be added to attribute values that were missing the
+                quotes.<note conkeyref="reusables-editing-documents/html-xml-well-formed-note"
+                id="note_zst_bgk_54b"/></dd>
+          </dlentry>
+          <dlentry conkeyref="reusables-editing-documents/transform-submenu" id="dlentry_att_bgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-editing-documents/validate-submenu" id="dlentry_btt_bgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry product="developer editor" id="dlentry_ctt_bgk_54b">
+            <dt><uicontrol>Generate Documentation</uicontrol> submenu</dt>
+            <dd>
+              <p id="p_dtt_bgk_54b">
+                <dl id="dl_ett_bgk_54b">
+                  <dlentry id="dlentry_ftt_bgk_54b">
+                    <dt><menucascade>
+                        <uicontrol>Generate Documentation</uicontrol>
+                        <uicontrol>XML Schema Documentation</uicontrol>
+                      </menucascade></dt>
+                    <dd>Opens <xref keyref="editing_XML-schema_generating-documentation">the XML
+                        Schema Documentation dialog box</xref>.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_gtt_bgk_54b">
+                    <dt><menucascade>
+                        <uicontrol>Generate Documentation</uicontrol>
+                        <uicontrol>XSLT Stylesheet Documentation</uicontrol>
+                      </menucascade></dt>
+                    <dd>Opens <xref
+                        href="documentation-XSLT-Stylesheet.dita#documentation-XSLT-Stylesheet">the
+                        XSLT Stylesheet Documentation dialog box</xref>.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_htt_bgk_54b">
+                    <dt><menucascade>
+                        <uicontrol>Generate Documentation</uicontrol>
+                        <uicontrol>XQuery Documentation</uicontrol>
+                      </menucascade></dt>
+                    <dd>Opens <xref
+                        href="html-documentation-xquery-documents.dita#html-documentation-xquery-documents"
+                        >the XQuery Documentation dialog box</xref>.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_itt_bgk_54b">
+                    <dt><menucascade>
+                        <uicontrol>Generate Documentation</uicontrol>
+                        <uicontrol>WSDL Documentation</uicontrol>
+                      </menucascade></dt>
+                    <dd>Opens <xref
+                        href="wsdl-generating-documentation.dita#wsdl-generating-documentation">the
+                        WSDL Documentation dialog box</xref>.</dd>
+                  </dlentry>
+                </dl>
+              </p>
+            </dd>
+          </dlentry>
+          <dlentry product="developerEclipse editorEclipse" id="dlentry_jtt_bgk_54b">
+            <dt><uicontrol>Generate XML Schema Documentation</uicontrol></dt>
+            <dd>Opens <xref keyref="editing_XML-schema_generating-documentation">the XML Schema
+                Documentation Dialog Box</xref>.</dd>
+          </dlentry>
+          <dlentry product="developerEclipse editorEclipse" id="dlentry_ktt_bgk_54b">
+            <dt><uicontrol>Generate Stylesheet Documentation</uicontrol></dt>
+            <dd>Opens <xref href="documentation-XSLT-Stylesheet.dita#documentation-XSLT-Stylesheet"
+                >the XSLT Stylesheet Documentation Dialog Box</xref>.</dd>
+          </dlentry>
+          <dlentry product="developerEclipse editorEclipse" id="dlentry_ltt_bgk_54b">
+            <dt><uicontrol>Generate XQuery Documentation</uicontrol></dt>
+            <dd>Opens <xref
+                href="html-documentation-xquery-documents.dita#html-documentation-xquery-documents"
+                >the XQuery Documentation Dialog Box</xref>.</dd>
+          </dlentry>
+          <dlentry product="developerEclipse editorEclipse" id="dlentry_mtt_bgk_54b">
+            <dt><uicontrol>Generate WSDL Documentation</uicontrol></dt>
+            <dd>Opens <xref href="wsdl-generating-documentation.dita#wsdl-generating-documentation"
+                >the WSDL Documentation Dialog Box</xref>.</dd>
+          </dlentry>
+          <dlentry id="properties_files">
+            <dt><uicontrol><image href="../img/DockableFrameProperties16.png" id="image_mtw_d5h_5r"
+                />Properties</uicontrol></dt>
+            <dd>Displays the properties of the current file in a <uicontrol>Properties</uicontrol>
+              dialog box.</dd>
+          </dlentry>
+          <dlentry id="dlentry_ntt_bgk_54b"
+            product="author developer editor authorEclipse developerEclipse editorEclipse">
+            <dt><uicontrol>Enable Main Files Support</uicontrol> (Available from the project
+              container)</dt>
+            <dd>Allows you to enable the <xref href="enabling-the-main-files-support.dita"
+                  ><uicontrol>Main Files Support</uicontrol></xref> for each project.</dd>
+          </dlentry>
+          <dlentry id="dlentry_ott_bgk_54b"
+            product="author developer editor authorEclipse developerEclipse editorEclipse">
+            <dt><uicontrol><image href="../img/DetectMasterFiles16.png" placement="inline"/>Detect
+                Main Files</uicontrol> (Available from the project container when Main Files Support
+              is enabled)</dt>
+            <dd>Opens the <xref href="detecting-main-files.dita"><uicontrol>Detect Main
+                  Files</uicontrol> wizard</xref> that enables the automatic detection of <term>main
+                files</term>.</dd>
+          </dlentry>
+          <dlentry id="dlentry_ptt_bgk_54b"
+            product="author developer editor authorEclipse developerEclipse editorEclipse">
+            <dt><uicontrol><image href="../img/AddToMasterFiles16.png"/>Add to Main
+                Files</uicontrol> (Available when Main Files Support is enabled)</dt>
+            <dd><xref href="adding-removing-a-main-file.dita">Adds the selected files to the Main
+                Files folder</xref>.</dd>
+          </dlentry>
+        </dl></p>
+    </section>
+    <section product="author developer editor json" id="menu_level_actions">
+      <title>Project Menu Actions</title>
+      <p id="p_qtt_bgk_54b">The following actions are available in the
+          <uicontrol>Project</uicontrol> menu:<dl id="dl_rtt_bgk_54b">
+          <dlentry conkeyref="reusables-editing-documents/new_project" id="dlentry_stt_bgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-editing-documents/open_project" id="dlentry_ttt_bgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry id="dlentry_utt_bgk_54b">
+            <dt><uicontrol>Save Project As</uicontrol></dt>
+            <dd>Allows you to save the current project under a different name.</dd>
+          </dlentry>
+          <dlentry id="dlentry_vtt_bgk_54b">
+            <dt><uicontrol><image href="../img/ValidateAll16.png" id="image_oxb_r5h_5r"/>Validate
+                all project files</uicontrol></dt>
+            <dd>Checks if the project files are well-formed and their mark-up conforms with the
+              specified DTD, XML Schema, or Relax NG schema rules. It returns an error list in the
+              message panel.</dd>
+          </dlentry>
+          <dlentry id="dlentry_wtt_bgk_54b">
+            <dt><uicontrol><image href="../img/Filters16.png" id="image_o2g_rjt_tr"
+                />Filters</uicontrol></dt>
+            <dd>Opens the <uicontrol>Project filters</uicontrol> dialog box that allows you to
+              decide which files and directories will be shown or hidden.</dd>
+          </dlentry>
+          <dlentry id="dlentry_xtt_bgk_54b" product="author developer editor">
+            <dt><uicontrol>Enable Main Files Support</uicontrol></dt>
+            <dd>Allows you to enable the <xref href="enabling-the-main-files-support.dita"
+                  ><uicontrol>Main Files Support</uicontrol></xref> for each project you are working
+              on.</dd>
+          </dlentry>
+          <dlentry id="dlentry_ytt_bgk_54b">
+            <dt><uicontrol><image href="../img/ConfigureSearchScope16.png" id="image_rft_55h_5r"
+                />Change Search and Refactor operations scope</uicontrol></dt>
+            <dd>Opens a dialog box that allows you to define the context of search and refactor
+              operations.</dd>
+          </dlentry>
+          <dlentry id="dlentry_ztt_bgk_54b">
+            <dt><uicontrol>Show Project View</uicontrol></dt>
+            <dd>Displays the <uicontrol>Project</uicontrol> view.</dd>
+          </dlentry>
+          <dlentry id="dlentry_a5t_bgk_54b">
+            <dt><uicontrol>Reopen Project</uicontrol></dt>
+            <dd>Contains a list of links of previously used projects. This list can be emptied by
+              invoking the <uicontrol>Clear history</uicontrol> action.</dd>
+          </dlentry>
+        </dl></p>
+    </section>
+  </body>
+</topic>

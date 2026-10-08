@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_localization___transformation_based_on_html5___css">
+  <title>Localization</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            ><ph keyref="pdf-html5-transformation"/><indexterm>Localization</indexterm></indexterm>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            ><ph keyref="pdf-html5-transformation"/><indexterm>i18n</indexterm></indexterm>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            ><ph keyref="pdf-html5-transformation"/><indexterm>Translation</indexterm></indexterm>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            ><ph keyref="single-topic-pdf-html5-transformation"
+          /><indexterm>Localization</indexterm></indexterm>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            ><ph keyref="single-topic-pdf-html5-transformation"
+          /><indexterm>i18n</indexterm></indexterm>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            ><ph keyref="single-topic-pdf-html5-transformation"
+          /><indexterm>Translation</indexterm></indexterm>
+        <indexterm product="pdf-css ope">Localization</indexterm>
+        <indexterm product="pdf-css ope">i18n</indexterm>
+        <indexterm product="pdf-css ope">Translation</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_qrt_cgk_54b">DITA-OT supports more than 40 languages. The full list of supported
+      languages (and their codes) is available here: <xref
+        href="https://www.dita-ot.org/dev/topics/globalization-languages" format="html"
+        scope="external"/>.</p>
+    <p>There are two ways to switch the labels to a specific language:<ul id="ul_sdf_x4y_khb">
+        <li id="li_kst_cgk_54b">Set the <xmlatt>xml:lang</xmlatt> attribute on the DITA maps and/or
+          topics root element with one of the supported values (e.g. <codeph>de</codeph>,
+            <codeph>fr-FR</codeph>, <codeph>ru</codeph>, <codeph>zh-CN</codeph>).</li>
+        <li id="li_lst_cgk_54b">Set the <codeph>default.language</codeph> parameter in the
+          transformation dialog box to the desired language code.</li>
+      </ul></p>
+    <p id="p_htt_cgk_54b">You can create language-dependent CSS rules in your <xref
+        href="dcpp_the_customization_css.dita">customization CSS</xref> by adding rules using the
+        <codeph>:lang</codeph> pseudo-class (see <xref
+        href="https://developer.mozilla.org/en-US/docs/Web/CSS/:lang" format="html" scope="external"
+      />).</p>
+    <note id="note_tnn_lkf_mrb" type="tip">It is recommended that you do this customization on a
+      DITA-OT distribution deployed outside of the <b>Oxygen</b> installation. Otherwise, you will
+      lose the customization when upgrading <b>Oxygen</b>. You can <xref
+        href="https://www.oxygenxml.com/contact.html" format="html" scope="external">contact the
+          <i>Oxygen support team</i></xref> to ask for the <b>Oxygen Publishing Engine</b>
+      package.</note>
+    <p id="p_ett_cgk_54b">If the label you want to modify is not available from the CSS, you need to
+      modify the XML strings. The default XML strings are available at the following three
+        locations:<ul id="ul_csf_hmf_mrb">
+        <li><filepath><term keyref="glossentry_dita_ot_dir"
+            />/plugins/org.dita.base/xsl/common</filepath></li>
+        <li><filepath><term keyref="glossentry_dita_ot_dir"
+            />/plugins/org.dita.pdf2/cfg/common/vars</filepath></li>
+        <li><filepath><term keyref="glossentry_dita_ot_dir"
+            />/plugins/com.oxygenxml.pdf.css/resources/localization</filepath></li>
+      </ul></p>
+  </body>
+  <related-links>
+    <link
+      href="https://www.oxygenxml.com/events/2023/webinar_transforming_dita_documents_to_pdf_using_css_part_4.html"
+      scope="external" format="html">
+      <linktext><b>Webinar: Transforming DITA documents to PDF using CSS, Part 4 –
+        Advanced CSS Rules</b></linktext>
+    </link>
+  </related-links>
+</topic>

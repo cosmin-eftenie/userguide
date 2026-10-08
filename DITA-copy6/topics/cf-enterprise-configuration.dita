@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="cf-enterprise-configuration">
+  <title>Content Fusion Enterprise Administration Page</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Content Fusion Enterprise - Administration Page</indexterm>
+        <indexterm>Configuring an Enterprise server</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_qf5_dgk_54b">The <ph keyref="cfEnterprise"/> solution includes an <uicontrol>Administration
+        Page</uicontrol> where you can configure various options.</p>
+    <section id="section_hqq_dwg_t1b">
+      <title> Signing in to the Administration Page</title>
+      <p id="p_rf5_dgk_54b">
+        <ol id="ol_g5c_dwg_t1b">
+          <li id="li_sf5_dgk_54b">Use the IP address shown in the VM console to access the web
+            interface of <ph keyref="product"/>. The address should be
+              <codeph>https://&lt;server-address>:9080</codeph>.<note id="note_tf5_dgk_54b">By
+              default, <ph keyref="product"/> uses a self-signed certificate. If you did not change
+              it, the browser will display a security warning. Continue (for example, if you are
+              using Edge, click <b>Details</b> and then <b>Go on to the webpage</b>).</note></li>
+          <li id="li_uf5_dgk_54b">Log in with the credentials you <xref
+              href="cf-linux.dita#cf-linux/d1225e101">configured in the initial setup</xref>.</li>
+        </ol>
+        <note id="note_j4b_xqg_m4b" type="tip">For information about changing the password, see
+            <xref href="cf-change-admin-password.dita"/>.</note>
+      </p>
+    </section>
+    <p id="p_kbc_bbb_p2c">The <uicontrol>Administration Page</uicontrol> contains a variety of tabs
+      with options in each.</p>
+  </body>
+</topic>

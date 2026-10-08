@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_how_to_change_the_font_of_a_mathml_equation">
+  <title>How to Change the Font of MathML Equations</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            ><ph keyref="pdf-html5-transformation"/><indexterm>MathML equation
+          customization</indexterm></indexterm>
+        <indexterm product="pdf-css ope">MathML equation customization</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_jh5_cgk_54b">Suppose that you need to change the font of MathML equations from the documentation, and also
+      add some padding. The MathML fragments are wrapped in elements that have the class
+        <codeph>equation-d/equation-block</codeph> or <codeph>equation-d/equation-inline</codeph>,
+      so you can match them with: </p>
+    <codeblock outputclass="language-css" id="codeblock_kh5_cgk_54b">*[class ~="equation-d/equation-block"],
+*[class ~="equation-d/equation-inline"]{
+	font-family:"courier new";
+	font-size:1.5em;
+	padding:1em;
+}</codeblock>
+    <note id="note_lh5_cgk_54b">An equation can be rendered using multiple classes of fonts (e.g. the <i>serif</i>,
+        <i>sans serif</i>, <i>monospace</i>, <i>fraktur</i>, and <i>doublestruck</i> classes.
+      Depending on each of the equation symbols, a class is selected for it. The font specified in
+      the CSS rule (as in the preceding example), applies only to the <i>serif</i> class. However,
+      if a symbol codepoint is not covered by the currently selected class fonts, it falls back to
+      the font specified in the CSS.</note>
+    <note type="attention" id="note_mh5_cgk_54b">Some of the fonts may not be supported. In that case, a default
+        <i>serif</i> font is used.</note>
+  </body>
+</topic>

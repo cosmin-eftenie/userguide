@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept
+  PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="dg-replace-function">
+  <title>Replace: oxy_replace() Function</title>
+  <shortdesc>This function is used to replace a string of text.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>CSS extensions<indexterm>Custom
+            functions<indexterm>oxy_replace</indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p id="p_t2d_dgk_54b">The <codeph>oxy_replace()</codeph> function has two signatures:</p>
+    <p id="p_u2d_dgk_54b">
+      <dl id="dl_v2d_dgk_54b">
+        <dlentry id="dlentry_w2d_dgk_54b">
+          <dt>Syntax 1:</dt>
+          <dd>
+            <p id="p_x2d_dgk_54b">
+              <syntaxdiagram>
+                <groupseq>
+                  <kwd>oxy_replace</kwd>
+                  <sep>(</sep>
+                  <kwd>text</kwd>
+                  <sep>,</sep>
+                  <kwd>target</kwd>
+                  <sep>,</sep>
+                  <kwd>replacement</kwd>
+                  <sep>)</sep>
+                </groupseq>
+              </syntaxdiagram>
+            </p>
+            <p id="p_y2d_dgk_54b">This function replaces each substring of the text that matches the literal target
+              string with the specified literal replacement string.</p>
+            <p id="p_z2d_dgk_54b">
+              <dl id="dl_afd_dgk_54b">
+                <dlentry id="dlentry_bfd_dgk_54b">
+                  <dt><uicontrol>text</uicontrol></dt>
+                  <dd>The text in which the replace will occur.</dd>
+                </dlentry>
+                <dlentry id="dlentry_cfd_dgk_54b">
+                  <dt><uicontrol>target</uicontrol></dt>
+                  <dd>The target string to be replaced.</dd>
+                </dlentry>
+                <dlentry id="dlentry_dfd_dgk_54b">
+                  <dt><uicontrol>replacement</uicontrol></dt>
+                  <dd>The string replacement.</dd>
+                </dlentry>
+              </dl>
+            </p>
+            <p id="p_efd_dgk_54b"><u><uicontrol>Example:</uicontrol></u> Suppose that you have image
+              references but you want to see other thumbnail images that reside in the same folder
+              in the visual <uicontrol>Author</uicontrol> editing
+              mode:<codeblock outputclass="language-css" id="codeblock_ffd_dgk_54b">image[href]{
+ content:oxy_url(oxy_base-uri(), oxy_replace(attr(href), 
+    '.jpeg', 'Thumbnail.jpeg'));
+}</codeblock></p>
+          </dd>
+        </dlentry>
+        <dlentry id="dlentry_gfd_dgk_54b">
+          <dt>Syntax 2:</dt>
+          <dd>
+            <p id="p_hfd_dgk_54b">
+              <syntaxdiagram>
+                <groupseq>
+                  <kwd>oxy_replace</kwd>
+                  <sep>(</sep>
+                  <kwd>text</kwd>
+                  <sep>,</sep>
+                  <kwd>target</kwd>
+                  <sep>,</sep>
+                  <kwd>replacement</kwd>
+                  <sep>,</sep>
+                  <kwd>isRegExp</kwd>
+                  <sep>)</sep>
+                </groupseq>
+              </syntaxdiagram>
+            </p>
+            <p id="p_ifd_dgk_54b">This function replaces each substring of the text that matches the target string with
+              the specified replacement string.</p>
+            <p id="p_jfd_dgk_54b">
+              <dl id="dl_kfd_dgk_54b">
+                <dlentry id="dlentry_lfd_dgk_54b">
+                  <dt>
+                    <uicontrol>text</uicontrol></dt>
+                  <dd>The text in which the replace will occur.</dd>
+                </dlentry>
+                <dlentry id="dlentry_mfd_dgk_54b">
+                  <dt>
+                    <uicontrol>target</uicontrol></dt>
+                  <dd>The target string to be replaced.</dd>
+                </dlentry>
+                <dlentry id="dlentry_nfd_dgk_54b">
+                  <dt>
+                    <uicontrol>replacement</uicontrol></dt>
+                  <dd>The string replacement.</dd>
+                </dlentry>
+                <dlentry id="dlentry_ofd_dgk_54b">
+                  <dt>
+                    <uicontrol>isRegExp</uicontrol></dt>
+                  <dd>If <i>true</i> the target and replacement arguments are considered regular
+                    expressions, if <i>false</i> they are considered literal strings.</dd>
+                </dlentry>
+              </dl>
+            </p>
+            <p id="p_pfd_dgk_54b"><u><b>Example:</b></u> Suppose that you want to use a regular
+              expression to replace all space sequences with an
+              underscore:<codeblock outputclass="language-css" id="codeblock_qfd_dgk_54b">image[title]{
+ content:oxy_replace(attr(title), "\\s+", "_", true)
+}</codeblock></p>
+          </dd>
+        </dlentry>
+      </dl>
+    </p>
+  </conbody>
+</concept>

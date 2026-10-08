@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="rename-resources-working-copy">
+  <title>Rename Resources</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>SVN Client<indexterm>Working copy resource management<indexterm>Rename
+              resources</indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_byh_dgk_54b">The <uicontrol>Rename</uicontrol> action is available in the contextual menu of the <xref
+        href="working-copy-view.dita"><uicontrol>Working Copy</uicontrol> view</xref> and can be
+      performed on a single resource. This action acts as a move command with the destination
+      directory being the same as the original location of the resource. A copy of the original item
+      is created with the new name, also keeping its history. The original item is marked as
+        <i>deleted</i>.<note id="note_cyh_dgk_54b"><i>External</i> items cannot be renamed using the
+          <uicontrol>Rename</uicontrol> action because they cannot be deleted. Instead, you should
+        edit the <i>svn:externals</i> property defining the <i>external</i> item, then
+        use the <uicontrol>Update</uicontrol> operation on the item's parent folder for the change
+        to take effect.</note><note type="attention" id="svn1_8_commit_moved_renamed_items">For SVN
+        1.8 working copies: when committing items that were moved and/or renamed, make sure you
+        select both the source and the destination. Otherwise, the commit operation will
+        fail.</note></p>
+  </body>
+</topic>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="dg-action-list-function">
+  <title>Action Lists: oxy_action_list() Function</title>
+  <shortdesc>This function allows you to define a sequential list of actions directly in the CSS,
+    rather than referencing them from the associated framework.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>CSS extensions<indexterm>Custom
+            functions<indexterm>oxy_action_list</indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p id="p_mtc_dgk_54b">The <codeph>oxy_action_list()</codeph> function is used from the <xref
+        href="button-group-editor.dita"><i>oxy_buttonGroup()</i> function</xref> that provides a
+      graphical group of buttons with multiple custom actions. These actions are normally defined in
+      the associated Document Type (<term>framework</term> configuration) but the
+        <codeph>oxy_action_list()</codeph> function allows you to define the actions directly in the
+      CSS instead of the <term>framework</term> configuration.</p>
+    <p id="p_ntc_dgk_54b">The arguments received by the <codeph>oxy_action_list()</codeph> function are a list of
+      actions (executed sequentially) that are defined with the <xref href="dg-action-function.dita"
+          ><i>oxy_action()</i> function</xref>. The following properties are supported in the
+        <codeph>oxy_action()</codeph> function:</p>
+    <p id="oxy-action-properties1">
+      <ul id="ul_otc_dgk_54b">
+        <li id="li_ptc_dgk_54b"><uicontrol>name</uicontrol> - The name of the action. The name of
+          the first defined action will be displayed as the label for the button or menu item.</li>
+        <li id="li_qtc_dgk_54b"><uicontrol>description</uicontrol> (optional) - A short description
+          with details about the result of the action. The description of the first defined action
+          will be displayed in a tooltip. </li>
+        <li conkeyref="reusables-author-mode-customization/icon-li" id="li_rtc_dgk_54b"/>
+        <li conkeyref="reusables-author-mode-customization/operation-li" id="li_stc_dgk_54b"/>
+        <li conkeyref="reusables-author-mode-customization/arg-li" id="li_ttc_dgk_54b"/>
+        <li conkeyref="reusables-author-mode-customization/id-li" id="li_utc_dgk_54b"/>
+      </ul>
+    </p>
+    <p id="p_vtc_dgk_54b"><u><b>Example: <term>oxy_action_list</term>
+      Function</b></u><codeblock outputclass="language-css" id="codeblock_wtc_dgk_54b">p:after {
+    content: oxy_buttonGroup(
+    label, 'A group of actions', 
+    icon, url('http://www.oxygenxml.com/img/icn_oxy20.png'),
+    actions, 
+      oxy_action_list(
+          oxy_action(
+                name, 'Insert a new paragraph', 
+                description, 'Insert an element after the current one', 
+                operation, 'InsertFragmentOperation', 
+                arg-fragment, '&lt;p>&lt;/p>',
+                arg-insertLocation, '.',
+                arg-insertPosition, 'After'
+          ),
+          oxy_action(
+                name, 'Delete', 
+                description, 'Deletes the current element', 
+                operation, 'DeleteElementOperation' 
+          )
+      )
+  )
+}</codeblock></p>
+    <note type="tip" id="note_xtc_dgk_54b">A code template is available to make it easy to add the
+        <codeph>oxy_action_list</codeph> function with the <xref
+        keyref="glossentry_content-completion-assistant"><term>Content Completion
+        Assistant</term></xref> by pressing <uicontrol
+        conkeyref="reusable-oxygen-shortcuts-list/ctrl_space"/> and select the <image
+        href="../img/CodeTemplates12.gif" id="image_x12_g2h_5r"/>
+      <codeph>oxy_action_list</codeph> code template.</note>
+  </conbody>
+  <related-links>
+      <link href="dg-action-function.dita#dg-action-function"/>
+      <link href="button-group-editor.dita#button-group-editor"/>
+  </related-links>
+</concept>

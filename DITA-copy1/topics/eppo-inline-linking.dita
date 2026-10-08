@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="eppo-inline-linking">
+  <title>Linking in DITA Topics</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>DITA<indexterm>Linking<indexterm>Cross
+          reference</indexterm></indexterm></indexterm>
+        <indexterm>DITA<indexterm>Linking<indexterm>File
+          reference</indexterm></indexterm></indexterm>
+        <indexterm>DITA<indexterm>Linking<indexterm>Web link</indexterm></indexterm></indexterm>
+        <indexterm>DITA<indexterm>Linking<indexterm>Related
+          links</indexterm></indexterm></indexterm>
+        <indexterm>DITA<indexterm>Cross references</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <section id="direct_links">
+      <title>Direct Links</title>
+      <p id="p_q1n_dgk_54b">Inline links can be created DITA topics using the <xmlelement>xref</xmlelement> element. The
+        destination of the link can be expressed directly by using the <xmlatt>href</xmlatt>
+        attribute and the target can be another topic or a specific element within the other topic,
+        another location within the same topic, a file, or a web link. You can also create direct
+          <i>related links</i> to topics, files, or websites in a DITA topic using the
+        <xmlelement>related-links</xmlelement> element.</p>
+    </section>
+    <section id="indirect_links_using_keys">
+      <title>Indirect Links Using Keys</title>
+      <p id="p_r1n_dgk_54b">The destination of the link can also be expressed indirectly by using <xref
+          keyref="dita_background_keys">keys</xref> to create either inline links or <i>related
+          links</i> (with the <xmlatt>keyref</xmlatt> attribute). By using keys, you avoid creating
+        a direct dependency between topics. This makes links easier to manage and can make it easier
+        to reuse topics in various publications. It can also be helpful in verifying the
+        completeness of a publication, by ensuring that a publication map provides a key definition
+        for every key reference used in the content. </p>
+      <p id="p_s1n_dgk_54b">Links based on keys require two pieces:<ul id="ul_t1n_dgk_54b">
+          <li id="li_u1n_dgk_54b">Key Definition - Assigns a key to a topic so that other topics can link to it. For
+            more information, see <xref href="insert-define-keys.dita#insert-define-keys"/>.</li>
+        <li id="li_v1n_dgk_54b">Key Reference - Created in an <xmlelement>xref</xmlelement> element and specifies the key to
+            link to.</li>
+        </ul>The key reference points to a key definition, and the key definition points to a topic.
+        Key definitions are created in maps, as an element on the <xmlelement>topicref</xmlelement> element
+        that points to a topic. This allows you to assign a particular key to one topic in one map
+        and to another topic in another map. When a topic that links to that key is used in each of
+        these maps, the links work correctly in both maps.</p>
+    </section>
+    <section id="inserting_a_link_in">
+      <title>Inserting a Link in <ph keyref="product"/></title>
+      <p id="p_w1n_dgk_54b">To insert a link in <xref href="author-editor.dita#author-editor"
+            ><uicontrol>Author</uicontrol> mode</xref>, use the actions available in the
+            <uicontrol><image href="../img/LinkDrop.png" id="image_nbp_mkx_sr"/>Link</uicontrol>
+        drop-down menu from the toolbar (or the <uicontrol><image href="../img/Link16.png"
+          />Link</uicontrol> submenu in the contextual menu or <uicontrol>DITA</uicontrol> menu).
+        You can choose between the following types of inline links:</p>
+      <p id="p_x1n_dgk_54b">
+        <dl id="dl_y1n_dgk_54b">
+          <dlentry id="cross-reference-dlentry">
+            <dt><uicontrol>Cross Reference</uicontrol></dt>
+            <dd>Opens the <xref href="#eppo-inline-linking/cross_reference_xref_dialog_box"
+                format="dita"><uicontrol>Cross Reference (xref)</uicontrol> dialog box</xref> that
+              allows you to insert a cross reference link to a target DITA resource at the current
+              location within a document. The target resource can be the location of a file or a key
+              that is already defined in your DITA map structure. Once the target resource has been
+              selected, you can also target specific elements within that resource. Depending on the
+              context where it is invoked, the action inserts one of the following two elements: <ul
+                id="ul_tx4_ggb_2r">
+                <li id="li_z1n_dgk_54b"><xmlelement>xref</xmlelement> - Used to link to other topics or another location within
+                  the same topic and points to the target using the <xmlatt>href</xmlatt> or
+                    <xmlatt>keyref</xmlatt> attribute.</li>
+                <li id="li_abn_dgk_54b"><xmlelement>fragref</xmlelement> - A logical reference to a fragment element within a
+                  syntax diagram and points to the target using the <xmlatt>href</xmlatt> or
+                    <xmlatt>keyref</xmlatt> attribute.</li>
+              </ul></dd>
+          </dlentry>
+          <dlentry id="file-reference-dlentry">
+            <dt><uicontrol>File Reference</uicontrol></dt>
+            <dd>Opens a dialog box that allows you to insert a link to a target non-DITA file
+              resource at the current location within a document. The target resource can be the
+              location of a file or a key that is already defined in your <term>DITA map</term>
+              structure. It inserts an <xmlelement>xref</xmlelement> element with either an
+                <xmlatt>href</xmlatt> attribute or a <xmlatt>keyref</xmlatt> attribute. If you
+              select <uicontrol>Location</uicontrol> for the target, the link is expressed in an
+                <xmlatt>href</xmlatt> attribute. If you select <uicontrol>Key</uicontrol> for the
+              target, keys will be used to express the link in a <xmlatt>keyref</xmlatt> attribute.
+              You can select a key from the drop-down list or click the <uicontrol><image
+                  href="../img/Conkeyref20.png" placement="inline"/>Choose Key Reference</uicontrol>
+              button to use the <xref keyref="dita_linking_inline/key-dialog-box"><uicontrol>Choose
+                  Key</uicontrol> dialog box</xref>.</dd>
+          </dlentry>
+          <dlentry id="web-link-dlentry">
+            <dt><uicontrol>Web Link</uicontrol></dt>
+            <dd>Opens a dialog box that allows you to insert a link to a target web-related resource
+              at the current location within a document. The target resource can be a URL or a key
+              that is already defined in your <term>DITA map</term> structure. It inserts an
+              <xmlelement>xref</xmlelement> element with either an <xmlatt>href</xmlatt> attribute or a
+                <xmlatt>keyref</xmlatt> attribute. If you select <uicontrol>URL</uicontrol> for the
+              target resource, the link is expressed in an <xmlatt>href</xmlatt> attribute. If you
+              select <uicontrol>Key</uicontrol> for the target, keys will be used to express the
+              link in a <xmlatt>keyref</xmlatt> attribute. You can select a key from the drop-down
+              list or click the <uicontrol><image href="../img/Conkeyref20.png" placement="inline"
+                />Choose Key Reference</uicontrol> button to use the <xref
+                keyref="dita_linking_inline/key-dialog-box"><uicontrol>Choose Key</uicontrol> dialog
+                box</xref>.</dd>
+          </dlentry>
+          <dlentry id="related-topic-dlentry">
+            <dt><uicontrol>Related Link to Topic</uicontrol></dt>
+            <dd>Opens the <xref href="#eppo-inline-linking/cross_reference_xref_dialog_box"
+                format="dita"><uicontrol>Cross Reference (xref)</uicontrol> dialog box</xref> that
+              allows you to insert a link to a target DITA resource in a related links section that
+              is typically at the bottom of your topic (although this depends on the behavior of the
+              output transformation). The target resource can be the location of a file or a key
+              that is already defined in your <term>DITA map</term> structure. Once the target
+              resource has been selected, you can also target specific elements within that
+              resource. If a related links section does not already exist, this action creates one.
+              Specifically, it inserts a <xmlelement>link</xmlelement> element inside a <xref
+                href="https://www.oxygenxml.com/dita/1.3/specs/langRef/containers/related-links-elements.html"
+                format="html" scope="external"><i>related-links</i> element</xref>. <note
+                conkeyref="reusables-author-for-dita/find-similar-topics-note" id="note_bbn_dgk_54b"/></dd>
+          </dlentry>
+          <dlentry id="related-file-dlentry">
+            <dt><uicontrol>Related Link to File</uicontrol></dt>
+            <dd>Opens a dialog box that allows you to insert a link to a target non-DITA file
+              resource in a related links section that is typically at the bottom of your topic
+              (although this depends on the behavior of the output transformation). The target
+              resource can be the location of a file or a key that is already defined in your
+                <term>DITA map</term> structure. If a related links section does not already exist,
+              this action creates one. Specifically, it inserts a <xmlelement>link</xmlelement> element
+              inside a <xref
+                href="https://www.oxygenxml.com/dita/1.3/specs/langRef/containers/related-links-elements.html"
+                format="html" scope="external"><i>related-links</i> element</xref>. If you select
+                <uicontrol>Location</uicontrol> for the target, the link is expressed in an
+                <xmlatt>href</xmlatt> attribute. If you select <uicontrol>Key</uicontrol> for the
+              target, keys will be used to express the link in a <xmlatt>keyref</xmlatt> attribute.
+              You can select a key from the drop-down list or click the <uicontrol><image
+                  href="../img/Conkeyref20.png" placement="inline"/>Choose Key Reference</uicontrol>
+              button to use the <xref keyref="dita_linking_inline/key-dialog-box"><uicontrol>Choose
+                  Key</uicontrol> dialog box</xref>.</dd>
+          </dlentry>
+          <dlentry id="related-web-dlentry">
+            <dt><uicontrol>Related Link to Web Page</uicontrol></dt>
+            <dd>Opens the <uicontrol>Web Link</uicontrol> dialog box that allows you to insert a
+              link to a target web-related resource in a related links section that is typically at
+              the bottom of your topic (although this depends on the behavior of the output
+              transformation). The target resource can be a URL or a key that is already defined in
+              your <term>DITA map</term> structure. If a related links section does not already
+              exist, this action creates one. Specifically, it inserts a <xmlelement>link</xmlelement>
+              element inside a <xref
+                href="https://www.oxygenxml.com/dita/1.3/specs/langRef/containers/related-links-elements.html"
+                format="html" scope="external"><i>related-links</i> element</xref>. If you select
+                <uicontrol>URL</uicontrol> for the target resource, the link is expressed in an
+                <xmlatt>href</xmlatt> attribute. If you select <uicontrol>Key</uicontrol> for the
+              target, keys will be used to express the link in a <xmlatt>keyref</xmlatt> attribute.
+              You can select a key from the drop-down list or click the <uicontrol><image
+                  href="../img/Conkeyref20.png" placement="inline"/>Choose Key Reference</uicontrol>
+              button to use the <xref keyref="dita_linking_inline/key-dialog-box"><uicontrol>Choose
+                  Key</uicontrol> dialog box</xref>.</dd>
+          </dlentry>
+        </dl>
+      </p>
+    </section>
+    <section id="cross_reference_xref_dialog_box">
+      <title>Cross Reference (xref) Dialog Box</title>
+      <p id="p_cbn_dgk_54b">The <uicontrol>Cross Reference (xref)</uicontrol> dialog box is displayed when you insert a
+          <uicontrol>Cross Reference</uicontrol> or <uicontrol>Related Link to Topic</uicontrol>
+        (from the <uicontrol><image href="../img/LinkDrop.png"/> Link</uicontrol> drop-down menu).
+        It allows you to insert a link to a target resource at the current location within a
+        document (for a <uicontrol>Cross Reference</uicontrol> link) or in a related links section
+        (for a <uicontrol>Related Link to Topic</uicontrol>). The target resource can be the
+        location of a file or a key that is already defined in your <term>DITA map</term> structure.
+        Once the target resource has been selected, you can also target specific elements within
+        that resource. </p>
+      <p id="p_dbn_dgk_54b">
+        <fig product="editor author" id="cross-ref-dialog-fig-sa">
+          <title>Cross Reference (xref) Dialog Box</title>
+          <image href="../img/sa_dita_insert_xref.png" placement="inline" id="image_ibp_ggb_2r"/>
+        </fig>
+      </p>
+      <p id="p_ebn_dgk_54b">
+        <fig product="editorEclipse authorEclipse" id="cross-ref-dialog-fig-ec">
+          <title>Cross Reference (xref) Dialog Box</title>
+          <image href="../img/ec_dita_insert_xref.png" placement="inline" id="image_nfp_ggb_2r"/>
+        </fig>
+      </p>
+      <p id="xref-dialog-sections-p">This dialog box includes the following sections and fields:<dl
+          id="insert-ref-dialog-dl">
+          <dlentry id="choose-target-dlentry">
+            <dt><uicontrol>Choose the Target Resource</uicontrol> Section</dt>
+            <dd>
+              <p id="p_fbn_dgk_54b">
+                <dl id="dl_gbn_dgk_54b">
+                  <dlentry conkeyref="reusables-author-for-dita/location" id="dlentry_hbn_dgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-author-for-dita/key" id="key-dialog-box">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                </dl>
+              </p>
+            </dd>
+          </dlentry>
+          <dlentry conkeyref="reusables-author-for-dita/select-target-element-dlentry" id="dlentry_ibn_dgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+        </dl>Once you click <uicontrol>Insert</uicontrol> or <uicontrol>Insert and
+        close</uicontrol>, the configured cross reference is inserted into your document. <note
+          type="tip" id="note_jbn_dgk_54b">You can easily insert multiple cross references by keeping the dialog box
+          opened, using the <uicontrol>Insert</uicontrol> button.</note></p>
+    </section>
+    <section id="using_copypaste_actions_to_create_a_content_refer">
+      <title>Using Copy/Paste or Drag/Drop Actions to Insert a Cross Reference</title>
+      <p id="p_kbn_dgk_54b"><ph keyref="product"/> also includes support for inserting cross reference links with
+        simple copy/paste or drag/drop actions (additionally, you can insert them using the
+          <uicontrol>Paste as Link</uicontrol> or <uicontrol>Paste as Link (keyref)</uicontrol>
+        actions found in the <uicontrol><image href="../img/PasteSpecialDITA16.png"
+            id="image_p2m_jrp_lkb"/>Paste Special</uicontrol> submenu from the contextual menu). The
+        copied/dragged content must be an entire DITA XML element with an <xmlatt>id</xmlatt>
+        attribute or a <xmlelement>topicref</xmlelement>. Also, the location in the document where
+        you paste or drop the link must be valid, although as long as the <xref
+          href="preferences-schema-aware.dita#preferences-schema-aware/smart-paste-drag-drop"
+            ><uicontrol>Smart paste and drag and drop</uicontrol> option</xref> is selected in the
+          <uicontrol>Schema-Aware</uicontrol> preferences page, if you try to paste it in an invalid
+        location, <ph keyref="product"/> will attempt to place it in a valid location, and may
+        prompt you with one or more choices for where to place it.</p>
+      <p id="p_lbn_dgk_54b">When the link is inserted, <ph keyref="product"/> automatically tries to populate certain
+        attributes based on detected values. The <xmlatt>format</xmlatt>, <xmlatt>scope</xmlatt>,
+        and <xmlatt>type</xmlatt> attributes are populated if their corresponding options are
+        selected in the <xref
+          href="preferences-dita-new-topics.dita#preferences-dita-new-topics/insert-link-section"
+            ><uicontrol>Inserting Links</uicontrol> section of the DITA Topics preferences
+          page</xref>. Even if their corresponding options are not selected, the
+          <xmlatt>format</xmlatt> and <xmlatt>scope</xmlatt> attributes are populated if their
+        detected values are different than the default values.</p>
+      <note id="note_mbn_dgk_54b">For the sake of performance, the <xmlatt>type</xmlatt> attribute is never automatically
+        computed in the following cases:<ul id="ul_igj_tm5_lkb">
+          <li id="li_nbn_dgk_54b">When using drag/drop or copy/paste actions from the <xref
+              href="dita-maps-manager.dita#dita-maps-manager"><uicontrol>DITA Maps
+                Manager</uicontrol> view</xref> or from the <uicontrol>Keys</uicontrol> tab of the
+              <xref href="dita-reusable-components-view.dita#dita-reusable-components-view"
+                ><uicontrol>DITA Reusable Components</uicontrol> view</xref>.</li>
+          <li id="li_obn_dgk_54b">When using the <uicontrol>Paste as Link</uicontrol> or <uicontrol>Paste as Link
+              (keyref)</uicontrol> actions to paste a topic reference that was copied from the <xref
+              href="dita-maps-manager.dita#dita-maps-manager"><uicontrol>DITA Maps
+                Manager</uicontrol> view</xref> and its <xmlelement>topicref</xmlelement> elements
+            do not have the <xmlatt>type</xmlatt> attribute defined.</li>
+        </ul></note>
+      <p id="p_pbn_dgk_54b">Typically, cross reference links are inserted with an <xmlatt>href</xmlatt> attribute, but
+        it is also possible to insert them with a <xmlatt>keyref</xmlatt> attribute using the
+          <uicontrol>Paste as Link (keyref)</uicontrol> contextual menu action or copy/paste or
+        drag/drop actions. For the latter method, follow these steps :<ol id="ol_cxy_npp_lkb">
+          <li id="li_qbn_dgk_54b">In the <xref href="dita-maps-manager.dita#dita-maps-manager"><uicontrol>DITA Maps
+                Manager</uicontrol> view</xref>, make sure that the <xref
+              href="dita-maps-manager.dita#dita-maps-manager/root-map"
+                ><uicontrol>Context</uicontrol> combo box</xref> points to the correct map that
+            stores the keys.</li>
+          <li id="li_rbn_dgk_54b">Make sure the topic that contains the content you want to reference has a key assigned
+            to it. To assign a key, right-click the topic with its parent map opened in the <xref
+              href="dita-maps-manager.dita#dita-maps-manager"><uicontrol>DITA Maps
+                Manager</uicontrol></xref>, select <uicontrol>Edit Properties</uicontrol>, and enter
+            a value in the <uicontrol>Keys</uicontrol> field.</li>
+          <li id="li_sbn_dgk_54b">Copy an entire DITA element that has an ID attribute assigned to it from a topic with
+            an assigned key, or a <xmlelement>topicref</xmlelement> from a <term>DITA map</term>. </li>
+          <li id="li_tbn_dgk_54b">Place the cursor at a location, where you want to insert the link.</li>
+          <li id="li_ubn_dgk_54b">Select the <uicontrol>Paste as Link (keyref)</uicontrol> action from the
+                <uicontrol><image href="../img/PasteSpecialDITA16.png" id="image_dxy_npp_lkb"/>Paste
+              Special</uicontrol> submenu from the contextual menu.</li>
+        </ol></p>
+    </section>
+  </body>
+  <related-links>
+      <link href="insert-define-keys.dita#insert-define-keys"/>
+      <link href="dita-reusable-components-view.dita#dita-reusable-components-view"/>
+    <link href="https://blog.oxygenxml.com/topics/shorts_insert_links.html" format="html"
+      scope="external">
+      <linktext>Short Video Clip: Learn DITA Editing with Oxygen - Various Ways to Insert
+        Links</linktext>
+    </link>
+  </related-links>
+</topic>

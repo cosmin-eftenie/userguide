@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="XSLT-Stylesheet-documentation-support">
+  <title>XSLT Stylesheet Component Documentation Support</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>XSLT<indexterm>Component documentation</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_rz1_cgk_54b"><ph keyref="product"/> offers built-in support for documenting XSLT stylesheets. If the
+      expanded <xref keyref="glossentry_qname"><term>QName</term></xref> of the element has a
+      non-null namespace URI, the <xmlelement>xsl:stylesheet</xmlelement> element may contain any element
+      not from the XSLT namespace. Such elements are referenced as user-defined data elements. Such
+      elements can contain the documentation for the stylesheet and its elements (top-level elements
+      whose names are in the XSLT namespace). <ph keyref="product"/> offers its own XML schema that
+      defines such documentation elements. The schema is named
+        <filepath>stylesheet_documentation.xsd</filepath> and can be found in <filepath><term
+          conkeyref="reusables-user-guide/oxy-install-dir"
+        />/frameworks/stylesheet_documentation</filepath>. The user can also specify a custom schema
+      in <xref href="preferences-content-completion-xsl.dita">XSL Content Completion
+      options</xref>.</p>
+    <section id="content_completion">
+      <title>Content Completion</title>
+      <p id="p_sz1_cgk_54b">When content completion is invoked inside an XSLT editor by pressing <uicontrol
+          conkeyref="reusable-oxygen-shortcuts-list/ctrl_space"/>, it offers elements from the XSLT
+        documentation schema (either the built-in one or one specified by user). </p>
+    </section>
+    <section id="adding_documentation_blocks">
+      <title>Adding Documentation Blocks</title>
+      <p id="p_tz1_cgk_54b">In <uicontrol>Text</uicontrol> mode, to add documentation blocks, press <uicontrol
+          conkeyref="reusable-oxygen-shortcuts-list/ctrl_alt_d"/> or select <uicontrol>Add component
+          documentation</uicontrol> from the contextual menu.</p>
+      <p product="editor editorEclipse" id="p_uz1_cgk_54b">In <uicontrol>Author</uicontrol> mode, the following
+        stylesheet documentation actions are available in the contextual menu, <uicontrol>Component
+          Documentation</uicontrol> submenu:<ul id="ul_vz1_cgk_54b">
+          <li id="li_wz1_cgk_54b"><uicontrol>Add component documentation</uicontrol> - Adds documentation blocks for the
+            component at the cursor position.</li>
+          <li id="li_xz1_cgk_54b"><uicontrol>Paragraph</uicontrol> - Inserts a new documentation paragraph.</li>
+          <li id="li_yz1_cgk_54b"><uicontrol>Bold</uicontrol> - Makes the selected documentation text bold.</li>
+          <li id="li_zz1_cgk_54b"><uicontrol>Italic</uicontrol> - Makes the selected documentation text italic.</li>
+          <li id="li_a1b_cgk_54b"><uicontrol>List</uicontrol> - Inserts a new list.</li>
+          <li id="li_b1b_cgk_54b"><uicontrol>List Item</uicontrol> - Inserts a list item.</li>
+          <li id="li_c1b_cgk_54b"><uicontrol>Reference</uicontrol> - Inserts a documentation reference.</li>
+        </ul></p>
+      <p id="p_d1b_cgk_54b">If the cursor is positioned inside the <xmlelement>xsl:stylesheet</xmlelement> element context,
+        documentation blocks are generated for all XSLT elements. If the cursor is positioned inside
+        a specific XSLT element (such as a template or function), a documentation block is generated
+        for that element only.</p>
+      <p id="p_e1b_cgk_54b"><b><u>Example: Documentation Block Using <ph keyref="product"/> Built-in
+        Schema</u></b><codeblock outputclass="language-xml" id="codeblock_f1b_cgk_54b">&lt;xd:doc&gt;
+  &lt;xd:desc&gt;
+    &lt;xd:p&gt;Search inside parameter &lt;xd:i&gt;string&lt;/xd:i&gt; 
+        for the last occurrence of parameter
+    &lt;xd:i&gt;searched&lt;/xd:i&gt;. The substring starting from the 0 position
+        to the identified last occurrence will be returned. 
+    &lt;xd:ref name="f:substring-after-last" type="function" 
+        xmlns:f="http://www.oxygenxml.com/doc/xsl/functions"&gt;See also
+    &lt;/xd:ref&gt;
+    &lt;/xd:p&gt;
+  &lt;/xd:desc&gt;
+  &lt;xd:param name="string"&gt;
+    &lt;xd:p&gt;String to be analyzed&lt;/xd:p&gt;
+    &lt;/xd:param&gt;
+  &lt;xd:param name="searched"&gt;
+    &lt;xd:p&gt;Marker string. Its last occurrence will be identified&lt;/xd:p&gt;
+    &lt;/xd:param&gt;
+  &lt;xd:return&gt;
+    &lt;xd:p&gt;A substring starting from the beginning of &lt;xd:i&gt;string&lt;/xd:i&gt;
+        to the last occurrence of &lt;xd:i&gt;searched&lt;/xd:i&gt;. 
+        If no occurrence is found an empty string will be returned.
+    &lt;/xd:p&gt;
+  &lt;/xd:return&gt;
+&lt;/xd:doc&gt;</codeblock></p>
+    </section>
+    <section id="xslt_documentation_links">
+      <title>XSLT Documentation Links</title>
+      <p id="p_g1b_cgk_54b"><ph keyref="product"/> includes support for links inside XSLT documentation blocks. Using a
+        construct like  <xmlelement>xd:a docid="user-defined-id">TEXT&lt;/xd:a</xmlelement> will cause
+        the browser to scroll to the particular anchor (the defined ID) in the current document.
+        Using a construct like  <xmlelement>xd:a
+          href="http://www.my-web-site">TEXT&lt;/xd:a</xmlelement> or <xmlelement>xd:a
+          href="local-file-path/filename">TEXT&lt;/xd:a</xmlelement> will open the referenced link in a
+        new tab.</p>
+      <p id="p_h1b_cgk_54b"><b><u>Example: Documentation Links</u></b></p>
+      <p id="p_i1b_cgk_54b">
+        <codeblock outputclass="language-xml" id="codeblock_j1b_cgk_54b">&lt;xd:doc xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" id="thisDoc">
+   &lt;xd:desc>
+      &lt;xd:p>
+         &lt;xd:ref name="test" type="variable">My test variable&lt;/xd:ref>
+            &lt;xd:a docid="thisDoc">Link to this documentation, see 
+the the id="thisDoc" above&lt;/xd:a>
+            &lt;xd:a docid="otherDocID" href="included.xsl">Link to 
+otherDocID defined in included.xsl&lt;/xd:a>
+      &lt;/xd:p>
+   &lt;/xd:desc>
+&lt;/xd:doc></codeblock>
+      </p>
+    </section>
+  </body>
+  <related-links>
+    <linklist><title>Related Information:</title><link href="documentation-XSLT-Stylesheet.dita"/></linklist>
+  </related-links>
+</topic>

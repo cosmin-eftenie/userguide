@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="pdf-output-intro">
+  <title>DITA to PDF Output Customization</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>PDF output</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_rsp_cgk_54b"><ph keyref="product"/> provides support for generating PDF output using transformation
+      scenarios for certain types of documents (for example, DITA, DocBook, TEI, and JATS) and <ph
+        keyref="product"/> supports several different types of processors. There are numerous ways
+      to customize the published output to fit your specific needs. </p>
+  </body>
+</topic>

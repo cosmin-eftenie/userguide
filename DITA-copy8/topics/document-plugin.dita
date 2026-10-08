@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept
+  PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="document-plugin">
+  <title>Document Plugin Extension</title>
+  <shortdesc>This type of <xref keyref="glossentry_plugin"><term>plugin</term></xref> allows you to
+    manage the current document.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Plugin extensions<indexterm>Document</indexterm></indexterm>
+        <indexterm>Document plugin extension</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p id="p_b52_dgk_54b">The <b>document</b>
+      <term>plugin</term> type can only be applied to an XML document. It can modify the current
+      document that is received as a callback parameter.</p>
+    <p id="p_c52_dgk_54b">The <term>plugin</term> is started by selecting the corresponding menu item from the
+        <uicontrol>Plugins</uicontrol> submenu in the contextual menu of <uicontrol>Text</uicontrol>
+      mode. It provides the following API:</p>
+    <p id="p_d52_dgk_54b">
+      <dl id="dl_e52_dgk_54b">
+        <dlentry id="dlentry_f52_dgk_54b">
+          <dt><b><term>DocumentPluginExtension</term> interface</b></dt>
+          <dd>Receives the context object containing the current document. The
+              <term>process(GeneralPluginContext)</term> method can return a
+              <term>DocumentPluginResult</term> object containing a new document.</dd>
+        </dlentry>
+        <dlentry id="dlentry_g52_dgk_54b">
+          <dt><b><term>DocumentPluginContext</term> object</b></dt>
+          <dd>Represents the context and provides three methods: <ul id="ul_h52_dgk_54b">
+              <li id="li_i52_dgk_54b"><b>getDocument()</b> - Returns a <codeph>javax.swing.text.Document</codeph> object
+                that represents the current document.</li>
+              <li id="li_j52_dgk_54b"><b>getFrame()</b> - Returns a <codeph>java.awt.Frame</codeph> object that
+                represents the editing frame.</li>
+              <li id="li_k52_dgk_54b"><b>getPluginWorkspace()</b> - Returns access to the workspace of <ph
+                  keyref="product"/>.</li>
+            </ul></dd>
+        </dlentry>
+      </dl>
+    </p>
+  </conbody>
+</concept>

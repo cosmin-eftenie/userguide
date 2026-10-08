@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dg-XPointerElementLocator-implem">
+  <title>XPointer Element Locator</title>
+  <body>
+    <p id="p_ymb_dgk_54b"><i>XPointerElementLocator</i> is an implementation of the abstract class <xref
+        href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/extensions/api/link/ElementLocator.html"
+        format="html" scope="external"><i>ro.sync.ecss.extensions.api.link.ElementLocator</i></xref>
+      for links that have one of the following XPointer element() scheme patterns:</p>
+    <p id="p_zmb_dgk_54b">
+      <dl id="dl_anb_dgk_54b">
+        <dlentry id="dlentry_bnb_dgk_54b">
+          <dt>element (<i>elementID</i>)</dt>
+          <dd>
+            <p id="p_cnb_dgk_54b">Locate the element with the specified ID.</p>
+          </dd>
+        </dlentry>
+        <dlentry id="dlentry_dnb_dgk_54b">
+          <dt>element (<i>/1/2/3</i>)</dt>
+          <dd>
+            <p id="p_enb_dgk_54b">A child sequence appearing alone identifies an element by means of stepwise
+              navigation, which is directed by a sequence of integers separated by slashes (/). Each
+              integer n locates the nth child element of the previously located element.</p>
+          </dd>
+        </dlentry>
+        <dlentry id="dlentry_fnb_dgk_54b">
+          <dt>element (<i>elementID/3/4</i>)</dt>
+          <dd>
+            <p id="p_gnb_dgk_54b">A child sequence appearing after a <i>NCName</i> identifies an element by means of
+              stepwise navigation, starting from the element located by the given name.</p>
+          </dd>
+        </dlentry>
+      </dl>
+    </p>
+    <p id="p_hnb_dgk_54b">The constructor separates the ID/integers, which are delimited by slashes(/) into a sequence
+      of identifiers (an XPointer path). It will also check that the link has one of the supported
+      patterns of the XPointer element() scheme.</p>
+    <codeblock outputclass="language-java" id="codeblock_inb_dgk_54b">public XPointerElementLocator(IDTypeVerifier idVerifier, String link)
+                      throws ElementLocatorException {
+  super(link);
+  this.idVerifier = idVerifier;
+
+  link = link.substring("element(".length(), link.length() - 1);
+
+  StringTokenizer stringTokenizer = new StringTokenizer(link, "/", false);
+  xpointerPath = new String[stringTokenizer.countTokens()];
+  int i = 0;
+  while (stringTokenizer.hasMoreTokens()) {
+    xpointerPath[i] = stringTokenizer.nextToken();
+    boolean invalidFormat = false;
+    
+    // Empty xpointer component is not supported
+    if(xpointerPath[i].length() == 0){
+      invalidFormat = true;
+    }
+    
+    if(i &gt; 0){
+      try {
+        Integer.parseInt(xpointerPath[i]);
+      } catch (NumberFormatException e) {
+        invalidFormat = true;
+      }
+    }
+
+    if(invalidFormat){
+      throw new ElementLocatorException(
+        "Only the element() scheme is supported when locating XPointer links."
+        + "Supported formats: element(elementID), element(/1/2/3), 
+              element(elemID/2/3/4).");
+    }
+    i++;
+  }
+
+  if(Character.isDigit(xpointerPath[0].charAt(0))){
+    // This is the case when xpointer have the following pattern /1/5/7
+    xpointerPathDepth = xpointerPath.length;
+  } else {
+    // This is the case when xpointer starts with an element ID
+    xpointerPathDepth = -1;
+    startWithElementID  = true;
+  }
+}</codeblock>
+    <p id="p_jnb_dgk_54b">The method <i>startElement</i> will be invoked at the beginning of every element in the XML
+      document(even when the element is empty). The arguments it takes are</p>
+    <p id="p_knb_dgk_54b">
+      <dl id="dl_lnb_dgk_54b">
+        <dlentry id="dlentry_mnb_dgk_54b">
+          <dt>
+            <i>uri</i>
+          </dt>
+          <dd>
+            <p id="p_nnb_dgk_54b">The namespace URI, or the empty string if the element has no namespace URI or if
+              namespace processing is disabled.</p>
+          </dd>
+        </dlentry>
+        <dlentry id="dlentry_onb_dgk_54b">
+          <dt>
+            <i>localName</i>
+          </dt>
+          <dd>
+            <p id="p_pnb_dgk_54b">Local name of the element.</p>
+          </dd>
+        </dlentry>
+        <dlentry id="dlentry_qnb_dgk_54b">
+          <dt>
+            <i>qName</i>
+          </dt>
+          <dd>
+            <p id="p_rnb_dgk_54b">Qualified name of the element.</p>
+          </dd>
+        </dlentry>
+        <dlentry id="dlentry_snb_dgk_54b">
+          <dt>
+            <i>atts</i>
+          </dt>
+          <dd>
+            <p id="p_tnb_dgk_54b">Attributes attached to the element. If there are no attributes, this argument will be
+              empty.</p>
+          </dd>
+        </dlentry>
+      </dl>
+    </p>
+    <p id="p_unb_dgk_54b">The method returns <codeph>true</codeph> if the processed element is found to be the one
+      indicated by the link.</p>
+    <p id="p_vnb_dgk_54b">The <i>XPointerElementLocator</i> implementation of the <i>startElement</i> will update the
+      depth of the current element and keep the index of the element in its parent. If the
+        <codeph>xpointerPath</codeph> starts with an element ID then the current element ID is
+      verified to match the specified ID. If this is the case the depth of the XPointer is updated
+      taking into account the depth of the current element.</p>
+    <p id="p_wnb_dgk_54b">If the XPointer path depth is the same as the current element depth then the kept indices of
+      the current element path are compared to the indices in the XPointer path. If all of them
+      match then the element has been found.</p>
+    <codeblock outputclass="language-java" id="codeblock_xnb_dgk_54b">public boolean startElement(String uri, String localName, 
+        String name, Attr[] atts) {
+  boolean linkLocated = false;
+  // Increase current element document depth
+  startElementDepth ++;
+  
+  if (endElementDepth != startElementDepth) {
+    // The current element is the first child of the parent
+    currentElementIndexStack.push(new Integer(1));
+  } else {
+    // Another element in the parent element
+    currentElementIndexStack.push(new Integer(lastIndexInParent + 1));
+  }
+  
+  if (startWithElementID) {
+    // This the case when xpointer path starts with an element ID.
+    String xpointerElement = xpointerPath[0];
+    for (int i = 0; i &lt; atts.length; i++) {
+      if(xpointerElement.equals(atts[i].getValue())){
+        if(idVerifier.hasIDType(
+            localName, uri, atts[i].getQName(), atts[i].getNamespace())){
+          xpointerPathDepth = startElementDepth + xpointerPath.length - 1;
+          break;
+        }
+      }
+    }
+  }
+      
+  if (xpointerPathDepth == startElementDepth){
+    // check if xpointer path matches with the current element path
+    linkLocated = true;
+    try {        
+      int xpointerIdx = xpointerPath.length - 1;
+      int stackIdx = currentElementIndexStack.size() - 1;
+      int stopIdx = startWithElementID ? 1 : 0;
+      while (xpointerIdx &gt;= stopIdx &amp;&amp; stackIdx &gt;= 0) {
+        int xpointerIndex = Integer.parseInt(xpointerPath[xpointerIdx]);
+        int currentElementIndex = 
+          ((Integer)currentElementIndexStack.get(stackIdx)).intValue();
+        if(xpointerIndex != currentElementIndex) {
+          linkLocated = false;
+          break;
+        }
+        
+        xpointerIdx--;
+        stackIdx--;
+      }
+
+    } catch (NumberFormatException e) {
+      logger.warn(e,e);
+    }
+  }
+  return linkLocated;
+}</codeblock>
+    <p id="p_ynb_dgk_54b">The method <i>endElement</i> will be invoked at the end of every element in the XML document
+      (even when the element is empty).</p>
+    <p id="p_znb_dgk_54b">The <i>XPointerElementLocator</i> implementation of the <i>endElement</i> updates the depth
+      of the current element path and the index of the element in its parent.</p>
+    <codeblock outputclass="language-java" id="codeblock_a4b_dgk_54b">public void endElement(String uri, String localName, String name) {
+  endElementDepth = startElementDepth;
+  startElementDepth --;
+  lastIndexInParent = ((Integer)currentElementIndexStack.pop()).intValue();
+}</codeblock>
+  </body>
+</topic>

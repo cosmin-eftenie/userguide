@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="embed-sqf-in-rng-xsd">
+  <title>Embedding Schematron Quick Fixes in Relax NG or XML Schema</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Schematron Quick Fixes<indexterm>Embedded</indexterm></indexterm>
+        <indexterm>SQF<indexterm>Embedded</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_wrh_cgk_54b">Schematron <xref keyref="glossentry_quick-fix"><term>Quick Fixes</term></xref> can be
+      embedded into an XML Schema through annotations (using the <xmlelement>appinfo</xmlelement>
+      element), or in a Schematron rule embedded in the RELAX NG Schema. For more information about
+      embedding Schematron in XML Schema or Relax NG, see <xref
+        href="combined_RNG_and_SCH.dita#combined_RNG_and_SCH"/>.</p>
+    <p id="p_xrh_cgk_54b"><ph keyref="product"/> is able to extract and use the embedded Schematron <term>Quick
+        Fixes</term>. To make the embedded Schematron <term>Quick Fixes</term> available, follow
+      these steps:<ol id="ol_yrh_cgk_54b">
+        <li id="li_zrh_cgk_54b">Define a <xref
+            href="validating-XML-documents-against-schema.dita#validating-XML-documents-against-schema"
+            >validation against a schema</xref>.</li>
+        <li id="li_ash_cgk_54b">For the <uicontrol>Schema type</uicontrol>, choose <userinput>XML Schema</userinput> or
+            <userinput>Relax NG</userinput>.</li>
+        <li id="li_bsh_cgk_54b">Select the <uicontrol>Embedded Schematron rules</uicontrol> option.</li>
+      </ol></p>
+    <p id="p_csh_cgk_54b"><b>Example: Embedded Schematron Quick Fix in XML
+      Schema</b><codeblock outputclass="language-xml" id="codeblock_dsh_cgk_54b">&lt;xsd:appinfo>
+  &lt;sch:pattern>
+    &lt;sch:rule context="...">
+      &lt;sch:assert test="..." sqf:fix="fixId">Message.&lt;/sch:assert>
+        &lt;sqf:fix id="fixId">
+          ......
+        &lt;/sqf:fix>
+    &lt;/sch:rule>
+  &lt;/sch:pattern>
+&lt;/xsd:appinfo></codeblock></p>
+    <p id="p_esh_cgk_54b"><b>Example: Embedded Schematron Quick Fix in Relax
+      NG</b><codeblock outputclass="language-xml" id="codeblock_fsh_cgk_54b">&lt;grammar 
+    xmlns="http://relaxng.org/ns/structure/1.0"
+    xmlns:sch="http://purl.oclc.org/dsdl/schematron" >
+    &lt;sch:pattern>
+      &lt;sch:rule context="...">
+        &lt;sch:assert test="..." sqf:fix="fixId">Message.&lt;/sch:assert>
+          &lt;sqf:fix id="fixId">
+            .....
+        &lt;/sqf:fix>
+      &lt;/sch:rule>
+     &lt;/sch:pattern>
+     &lt;start>
+      ..............
+     &lt;/start>
+&lt;/grammar></codeblock></p>
+    <note type="tip" id="note_gsh_cgk_54b">For more extensive examples, see the samples in the
+          <filepath><term conkeyref="reusables-user-guide/oxy-install-dir"
+        />/samples/schematron</filepath> folder.</note>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link href="combined_RNG_and_SCH.dita#combined_RNG_and_SCH"/>
+      <link href="customizing-sqf.dita#customizing-sqf"/>
+    </linklist>
+  </related-links>
+</topic>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ch_fonts_using_installed_fonts">
+  <title>Using Installed Fonts</title>
+  <body>
+    <p id="p_n4v_dgk_54b">Suppose you want to style certain elements using a font that is available
+      on your system. On Windows, it means it was installed in the
+        <filepath>Windows/Fonts</filepath> directory. In this case, you can reference it directly
+      like this:<codeblock outputclass="language-css" id="codeblock_o4v_dgk_54b">section h2 {
+  font-family: Calibri;
+}</codeblock><note id="note_o54_q14_myb">When installing a font on Windows, make sure you
+        select the <uicontrol>Install for all users</uicontrol> option.</note></p>
+  </body>
+</topic>

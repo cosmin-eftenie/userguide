@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="ch_configure_to_obtain_pdf_from_dita">
+  <title>Generating PDF Output from DITA Content Using a Command Line</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>DITA to PDF from a command line</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <taskbody>
+    <context id="context_mxh_v25_vz">
+      <p id="p_kr5_dgk_54b">To process and publish DITA to PDF using CSS and <ph keyref="product"/>, follow this
+        procedure:</p>
+    </context>
+    <steps id="steps_nxh_v25_vz">
+      <step>
+        <cmd>Download and install the <b><xref
+              href="http://www.oxygenxml.com/publishing_engine.html" format="html" scope="external"
+              >Oxygen Publishing Engine</xref></b>. This bundles a DITA Open Toolkit (<xref
+            href="http://www.dita-ot.org/download" format="html" scope="external"/>) with all the
+          required plugins to generate PDF output, including the <ph keyref="product"/>
+          processor.</cmd></step>
+      <step><cmd>Place the license key for the <b>Oxygen Publishing Engine</b> in a
+            <codeph>licensekey.txt</codeph> file in the installation folder.</cmd></step>
+      <step>
+        <cmd>Run the publishing engine from a command line and make sure you specify the format to
+          be <b>pdf-css-html5</b> and the path to your main DITA map. Specify additional parameters
+          (such as <codeph>args.css</codeph>) if you want to customize the output. See the <xref
+            href="https://www.oxygenxml.com/doc/ug-pdf-css/" format="html" scope="external"
+            >documentation</xref> for more information about customizing DITA output and accepted
+          parameters.</cmd>
+        <info>For example:</info>
+        <info><codeph>oxygen-publishing-engine-dir/bin/dita --input=path/to/my.ditamap
+            --format=pdf-css-html5 --output=path/to/output/folder
+            -Dargs.css=/path/to/my.css</codeph>
+        </info>
+      </step>
+    </steps>
+  </taskbody>
+</task>

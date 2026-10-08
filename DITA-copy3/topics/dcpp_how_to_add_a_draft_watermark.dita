@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_how_to_add_a_draft_watermark">
+  <title>How to Add a Draft Watermark Depending on Metadata</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            ><ph keyref="pdf-html5-transformation"/><indexterm>Draft
+              watermarks<indexterm>Conditional draft watermark</indexterm></indexterm></indexterm>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            ><ph keyref="pdf-html5-transformation"/>
+          <indexterm>Draft watermarks<indexterm>Conditional draft
+          watermark</indexterm></indexterm></indexterm>
+        <indexterm product="pdf-css ope">Draft watermarks<indexterm>Conditional draft
+            watermark</indexterm></indexterm>
+        <indexterm product="pdf-css ope">Draft watermarks<indexterm>Conditional draft
+            watermark</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_k15_cgk_54b">Suppose you want to apply a <term>Draft watermark</term> until your DITA bookmap is approved
+      and the map is approved when an <xmlelement>approved</xmlelement> element has been added to
+      the metadata section (for example, in the <b>bookmeta/bookchangehistory</b> element). </p>
+    <codeblock outputclass="language-xml" id="codeblock_l15_cgk_54b">&lt;bookmeta>
+   &lt;author>John&lt;/author>
+   &lt;critdates>
+      &lt;created date="1/1/2015"/>
+      &lt;revised modified="3/4/2016"/>
+      &lt;revised modified="3/5/2016"/>
+   &lt;/critdates>          
+   &lt;bookchangehistory>
+       &lt;approved/>       
+   &lt;/bookchangehistory>
+...</codeblock>
+    <p id="p_m15_cgk_54b">Use <codeph>oxy_xpath</codeph> every time you need to probe the value from an element other
+      than the one matched by the CSS selector, and test the expression on the merged HTML file
+      using the <xref href="https://www.oxygenxml.com/doc/ug-editor/topics/xpath-builder-view.html"
+        format="html" scope="external"><b>Oxygen XPath Builder</b> view</xref>.</p>
+    <p id="p_n15_cgk_54b">You can either use a page selector that imposes the draft watermark on the entire page
+      surface (recommended):</p>
+    <p id="p_o15_cgk_54b">
+      <codeblock outputclass="language-css" id="codeblock_p15_cgk_54b">@page {
+  background-image: url(oxy_xpath("if(//*[contains(@class, 'bookmap/approved')]) then '' else 'draft-watermark.png'"));
+  background-position: center;
+  background-repeat: no-repeat;
+}</codeblock>
+    </p>
+    <p id="p_q15_cgk_54b">or use an element selector that restricts the watermark image only to the page area covered
+      by that element:</p>
+    <codeblock outputclass="language-css" id="codeblock_r15_cgk_54b">:root, body{
+  ... /* same as properties above */ 
+}</codeblock>
+    <note id="note_kyt_nvc_stb">You can use another element selector to target a specific part of
+      your publication (for example, marking only the tables as drafts).</note>
+  </body>
+  <related-links>
+      <link href="dcpp_metadata.dita"/>
+      <link
+        href="dcpp_how_to_use_xpath_expressions_in_css.dita#dcpp_how_to_use_xpath_expressions_in_css/section_pxn_3kk_2yb"/>
+  </related-links>
+</topic>

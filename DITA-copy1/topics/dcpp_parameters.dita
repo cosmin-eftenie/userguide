@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_parameters">
+  <title>Transformation Parameters</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Transformation parameters</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_lwp_cgk_54b">This list includes the most common customization parameters that are
+      available in the <b>DITA Map PDF - based on HTML5 &amp; CSS</b> transformation scenario. Other
+      standard DITA-OT parameters were omitted for clarity, but they are supported.<note
+        id="note_rnv_mn1_5tb">These parameters must be prefixed by "-D" when used from a command
+        line.</note></p>
+    <table id="table_mns_3zw_rcb" frame="all" colsep="1" rowsep="1">
+      <tgroup cols="2">
+        <colspec colnum="1" colname="c1" colwidth="1*" rowsep="1"/>
+        <colspec colnum="2" colname="c2" colwidth="2.11*" rowsep="1"/>
+        <tbody>
+          <row>
+            <entry>antenna-house.option.setting.file</entry>
+            <entry>Path to the Antenna House Option Setting File (eg:
+                <filepath>C:\path\to\formatter\options\settings.xml</filepath> on Windows).</entry>
+          </row>
+          <row>
+            <entry>args.allow.external.coderefs</entry>
+            <entry>Enables the inclusion of code files that are located outside the DITA map folder
+              hierarchy, referenced using the DITA <xmlelement>coderef</xmlelement> element. Allowed
+              values are <b>yes</b> or <b>no</b> (default).</entry>
+          </row>
+          <row>
+            <entry>args.chapter.layout</entry>
+            <entry>
+              <p id="p_mwp_cgk_54b">Specifies whether chapter-level TOCs are generated for bookmaps. When set to
+                  <b>MINITOC</b>, a small section with links is added at the beginning of each
+                chapter. The default is <b>BASIC</b>. For details, see: <xref
+                  href="dcpp_table_of_contents_for_chapters.dita"/>.</p>
+              <p id="p_nwp_cgk_54b">Allowed values:</p>
+              <ul id="ul_gjm_zk2_3hb">
+                <li id="li_owp_cgk_54b"><b>BASIC</b> - No chapter TOC is created.</li>
+                <li id="li_pwp_cgk_54b"><b>MINITOC</b> - A chapter-level TOC is generated.</li>
+                <li id="li_qwp_cgk_54b"><b>MINITOC-BOTTOM-LINKS</b> - A chapter-level TOC is
+                  generated, with the links under the chapter description.</li>
+              </ul>
+            </entry>
+          </row>
+          <row>
+            <entry>args.css</entry>
+            <entry>You can use this to specify a list of CSS URLs to be used in addition to those
+              specified in the publishing template. The files must have URL syntax and be separated
+              using semicolons.</entry>
+          </row>
+          <row>
+            <entry>args.css.param.*</entry>
+            <entry>You can use this parameter pattern to set attributes on the root of the merged
+              map. This means you can activate specific CSS rules from your custom CSS using custom
+              attributes. For examples, see: <xref href="dcpp_parametrized_styling.dita"/>.</entry>
+          </row>
+          <row>
+            <entry>args.css.param.clone-referenced-footnotes</entry>
+            <entry>You can use this parameter to control the footnotes behavior:<ul
+                id="ul_ytt_zrk_nwb">
+                <li>When set to yes, footnotes that are referenced multiple times throughout a
+                  publication are cloned and placed at the bottom of the page for each
+                  occurrence.</li>
+                <li>When set to no (default value), only the first footnote reference is placed at
+                  the bottom of the page and subsequent references point back to the original
+                  footnote.</li>
+              </ul></entry>
+          </row>
+          <row id="row_nbv_gym_bhc">
+            <entry>args.css.param.pdf-split-mode</entry>
+            <entry>You can use this parameter to generate additional PDFs alongside the main PDF
+              publication. Allowed values:<ul id="ul_pq4_bym_bhc">
+                <li><b>none</b> - Only the main PDF is generated.</li>
+                <li><b>chapters</b> - All the chapters are generated beside the main PDF. The PDF
+                  chapter file name is equal to the original chapter <xmlatt>id</xmlatt>.</li>
+                <li><b>parts</b> - All the parts are generated beside the main PDF. The PDF part
+                  file name is equal to the original part <xmlatt>id</xmlatt>.</li>
+              </ul></entry>
+          </row>
+          <row>
+            <entry>args.css.param.numbering</entry>
+            <entry>You can use this parameter to change the numbering of the first-level topics
+              (chapters) and nested topics. Allowed values:<ul id="ul_h3f_y5r_rgb">
+                <li id="li_rwp_cgk_54b"><b>shallow</b> - Only the topics from the first level are
+                  numbered (chapters). This is the default.</li>
+                <li id="li_swp_cgk_54b"><b>deep</b> - All the topics from the map are numbered
+                  (nested topics up to level 3).</li>
+                <li id="li_twp_cgk_54b"><b>deep-chapter-scope</b> - Similar to deep, but in addition, the page numbers,
+                  figures, and table numbers are reset at the start of each first-level topic
+                  (chapter). The table and figure titles (and the links to them) are prefixed with
+                  the chapter numbers. The generic cross reference links contain both the
+                  first-level topic (chapter) numbers and the page numbers to avoid ambiguity. This
+                  parameter value is only available for the <b>DITA Map PDF - based on HTML5 &amp;
+                    CSS</b> transformation scenario.</li>
+                <li id="li_uwp_cgk_54b"><b>deep-chapter-scope-no-page-reset</b> - Similar to
+                    <codeph>deep-chapter-scope</codeph>, but the page numbers do not reset at the
+                  start of each first-level topic (chapter). The generic cross reference links
+                  contain only the page number. This parameter value is only available for the
+                      <b><ph keyref="pdf-html5-transformation"/></b> transformation scenario.</li>
+              </ul><p id="p_vwp_cgk_54b">For more details, see <xref href="dcpp_numbering_types.dita"/>.</p></entry>
+          </row>
+          <row>
+            <entry>args.css.param.numbering-sections</entry>
+            <entry>Controls whether or not the sections are included in the table of contents. When
+              set to <b>yes</b> (sections are included), they are numbered according the numbering
+              scheme set by the <codeph>args.css.param.numbering</codeph> parameter.</entry>
+          </row>
+					<row>
+						<entry>args.css.param.show-onpage-lbl</entry>
+						<entry>Controls whether or not the links will have an <codeph>on page NN</codeph> label after
+              them. This parameter has different defaults, depending on the transformation type. For
+              map transformations (<codeph>pdf-css-html5</codeph> trans type), the default is
+                <b>yes</b>. For topic transformations (<codeph>pdf-css-html5-single-topic</codeph>
+              trans type), the default is <b>no</b>.</entry>
+					</row>
+          <row>
+            <entry>args.css.param.show-profiling-attributes</entry>
+            <entry>
+              <p>Controls whether or not the profiling attributes are displayed in the output.</p>
+              <p>Allowed values:<ul id="ul_vlp_4pq_5sb">
+                  <li><b>yes</b></li>
+                  <li><b>no</b> (default)</li>
+                </ul></p>
+            </entry>
+          </row>
+          <row>
+            <entry>args.css.param.title.layout</entry>
+            <entry>Changes the structure of the title element. In the output, the title area
+              consists of two parts: one is the number of the chapter (and optionally, the sections
+              number), and one is the title text. This parameter allows a switch between normal text
+              flow (in-line flow) and a table layout where the number is placed in one cell and the
+              text in the other (to avoid wrapping text under the chapter number).<ul
+                id="ul_bvp_spl_dkb">
+                <li id="li_wwp_cgk_54b"><b>normal</b>
+                </li>
+                <li id="li_xwp_cgk_54b"><b>table</b> (avoid wrapping text under counter)</li>
+              </ul></entry>
+          </row>
+          <row>
+            <entry>args.draft</entry>
+            <entry>
+              <p id="p_ywp_cgk_54b">Specifies whether or not the content of <xmlelement>draft-comment</xmlelement> and
+                  <xmlelement>required-cleanup</xmlelement> elements is included in the output.</p>
+              <p id="p_zwp_cgk_54b">Allowed values:<ul id="ul_mdt_zsy_3hb">
+                  <li id="li_axp_cgk_54b"><b>no</b> (default) - No draft information is shown in the output.</li>
+                  <li id="li_bxp_cgk_54b"><b>yes</b> - The draft information is shown in the output.</li>
+                </ul></p>
+            </entry>
+          </row>
+          <row>
+            <entry>args.figurelink.style</entry>
+            <entry>
+              <p id="p_cxp_cgk_54b">Specifies how cross references to figures are styled in output. Allowed values:<ul
+                  id="ul_yll_wsy_3hb">
+                  <li id="li_dxp_cgk_54b"><b>NUMBER</b> - Only the number of the figures are shown
+                    in links.</li>
+                  <li id="li_exp_cgk_54b"><b>TITLE</b> - Only the title of the figures are shown in
+                    links.</li>
+                  <li id="li_fxp_cgk_54b"><b>NUMTITLE</b> (default) - Both the title and number of
+                    the figures are shown in links.</li>
+                </ul></p>
+            </entry>
+          </row>
+          <row>
+            <entry>args.gen.task.lbl</entry>
+            <entry>
+              <p id="p_gxp_cgk_54b">Specifies whether or not to generate headings for sections within task topics.
+                Allowed values: <b>YES</b> or <b>NO</b> (default). When set to <b>YES</b>, headings
+                such as "About this task", "Before you begin", "Procedure", or "What to do next",
+                are shown in the task contents.</p>
+            </entry>
+          </row>
+          <row>
+            <entry>args.hyph.dir</entry>
+            <entry>Specifies the directory that contains custom hyphenation dictionaries. Fore more
+              details see: <xref href="dcpp_hyphenation.dita"/>.</entry>
+          </row>
+          <row>
+            <entry>args.input</entry>
+            <entry>Specifies the main DITA map file for your documentation project.</entry>
+          </row>
+          <row>
+            <entry>args.keep.output.debug.files</entry>
+            <entry>Specifies whether or not the debug files generated during the transformation
+              should be kept in the output folder. Allowed values: <b>YES</b> (default) or
+              <b>NO</b>.</entry>
+          </row>
+          <row>
+            <entry>args.output.base</entry>
+            <entry>Specifies the name of the output file without a file extension. By default, the
+              name of the PDF file is derived from the name of the DITA map file. This parameter
+              allows you to override it.<p>A common use-cases is to use the ditamap title instead of
+                the ditamap filename, the parameter value then become
+                  <codeph>${xpath_eval(normalize-space(string-join(/*[contains(@class,
+                  'map/map')]/*[contains(@class, 'topic/title')]//text())))}</codeph>.<note
+                  id="note_akd_ynd_l1c">To replace spaces by a custom separator the query should
+                  call the <codeph>replace()</codeph> function:
+                    <codeph>${xpath_eval(replace(normalize-space(string-join(/*[contains(@class,
+                    'map/map')]/*[contains(@class, 'topic/title')]//text())), '\s',
+                  '_'))}</codeph>.</note></p></entry>
+          </row>
+          <row>
+            <entry>args.rellinks.group.mode</entry>
+            <entry>Specifies the related links grouping mode. All links can be grouped into a single
+              "Related Information" group or links grouped by their target type (topic, task, or
+              concept). Allowed values: <b>single-group</b> (default) or <b>group-by-type</b>. Fore
+              more details see: <xref href="dcpp_how_to_group_related_links_by_type.dita"/>.</entry>
+          </row>
+          <row>
+            <entry>args.tablelink.style</entry>
+            <entry>
+              <p id="p_hxp_cgk_54b">Specifies how cross references to tables are styled in output. Allowed values:<ul id="ul_ixp_cgk_54b">
+                  <li id="li_jxp_cgk_54b"><b>NUMBER</b> - Only the number of the tables are shown in
+                    links.</li>
+                  <li id="li_kxp_cgk_54b"><b>TITLE</b> - Only the title of the tables are shown in
+                    links.</li>
+                  <li id="li_lxp_cgk_54b"><b>NUMTITLE</b> (default) - Both the title and number of
+                    the tables are shown in links.</li>
+                </ul></p>
+            </entry>
+          </row>
+          <row>
+            <entry>clean.temp</entry>
+            <entry>Specifies whether or not the DITA-OT deletes the files in the temporary directory
+              after it finishes a build. Allowed values: <b>yes</b> (default) or <b>no</b>.</entry>
+          </row>
+          <row>
+            <entry>chemistry.log.file</entry>
+            <entry>Specifies the path to the <filepath>logback.xml</filepath> configuration file
+              used by Chemistry. For more details, see: <xref href="dcpp_console_logging.dita"
+              />.</entry>
+          </row>
+          <row>
+            <entry>chemistry.merge.after</entry>
+            <entry>Specifies a list of PDF URLs to be added at the end of the generated PDF. The
+              files must have URL syntax and be separated using semicolons.</entry>
+          </row>
+          <row>
+            <entry>chemistry.merge.before</entry>
+            <entry>Specifies a list of PDF URLs to be added in front of the generated PDF. The files
+              must have URL syntax and be separated using semicolons.</entry>
+          </row>
+					<row>
+						<entry>chemistry.security.policy</entry>
+						<entry>Specifies a Java policy file that applies to the Chemistry process. A template can be
+              found here:
+                <filepath>plugins/com.oxygenxml.pdf.css/lib/oxygen-pdf-chemistry/config/chemistry.policy</filepath>.</entry>
+					</row>
+					<row>
+						<entry>chemistry.security.resources.dir</entry>
+						<entry>Path to an additional folder that Chemistry will use to read its resources (CSS,
+              images). The process already has read access to the input map folder, the publishing
+              templates folder, and the OPE install folder. This optional parameter should only be
+              used when the <codeph>chemistry.security.policy</codeph> parameter is set.</entry>
+					</row>
+					<row>
+						<entry>chemistry.security.resources.host</entry>
+						<entry>The host, specified as <codeph>name:port</codeph>, that Chemistry will use to get
+              resources (e.g. CSS files, images, fonts). This optional parameter should only be used
+              when the <codeph>chemistry.security.policy</codeph> parameter is set.</entry>
+					</row>
+          <row>
+            <entry>chemistry.security.workspace</entry>
+            <entry>Specifies a directory where the temporary files and font cache created by the
+              Chemistry process need to be stored. This becomes required when the
+                <codeph>chemistry.security.policy</codeph> is specified.</entry>
+          </row>
+          <row id="row_tfy_ydx_hdc">
+            <entry>chemistry.sign.keystore</entry>
+            <entry>Specifies the path to the keystore file used by Chemistry to sign the PDF. This
+              parameter must be set if you want to sign your PDF.</entry>
+          </row>
+          <row>
+            <entry>chemistry.sign.location</entry>
+            <entry>Specifies the location of the person/company who certified the PDF.</entry>
+          </row>
+          <row>
+            <entry>chemistry.sign.name</entry>
+            <entry>Specifies the name of the person/company who certified the PDF.</entry>
+          </row>
+          <row>
+            <entry>chemistry.sign.password</entry>
+            <entry>Specifies the export password of the keystore used to sign the PDF. Mandatory if
+              the keystore has been exported with a password.</entry>
+          </row>
+          <row>
+            <entry>chemistry.sign.reason</entry>
+            <entry>Specifies the reason for certifying the PDF.</entry>
+          </row>
+          <row>
+            <entry>css.processor.path.antenna-house</entry>
+            <entry>Path to the Antenna House executable file that needs to be run to generate the
+              PDF (for example, <filepath>C:\path\to\AHFCmd.exe</filepath> on Windows).</entry>
+          </row>
+          <row>
+            <entry>css.processor.path.chemistry</entry>
+            <entry>Path to the <b>Oxygen PDF Chemistry</b> executable file that needs to be run to
+              generate the PDF (for example, <filepath>C:\path\to\chemistry.bat</filepath> on
+              Windows). If this parameter is not set, the plugin will use the system's PATH
+              environment variable to locate and start <b>Oxygen PDF Chemistry</b>.</entry>
+          </row>
+          <row>
+            <entry>css.processor.path.prince</entry>
+            <entry>Path to the Prince executable file that needs to be run to generate the PDF (for
+              example, <filepath>C:\path\to\prince.exe</filepath> on Windows).</entry>
+          </row>
+          <row>
+            <entry>css.processor.type</entry>
+            <entry>Specifies the processor to use for the transformation. Allowed values:
+                <b>chemistry</b> (default), <b>antenna-house</b>, or <b>prince</b>. </entry>
+          </row>
+          <row>
+            <entry>default.language</entry>
+            <entry>Specifies the default language for source documents. Examples: <b>fr</b>,
+                <b>de</b>, <b>zh</b>, etc. Depending on the transformation type, the actual number
+              of supported languages can vary, see: <xref
+                href="dcpp_localization___transformation_based_on_html5___css.dita"/>.</entry>
+          </row>
+					<row>
+						<entry>drop.block.margins.at.page.boundary</entry>
+						<entry>Specifies that the top and bottom margins associated with a block element should be
+              discarded when the block is at the top or bottom of the page. Allowed values:
+                <b>YES</b> (default) or <b>NO</b>.</entry>
+					</row>
+          <row>
+            <entry>editlink.ditamap.edit.url</entry>
+            <entry>Use this parameter to add an <i>Edit</i> link next to the topic title in the
+              WebHelp output. When a user clicks the link, the topic is opened in <b>Oxygen XML Web
+                Author</b> or <b>Content Fusion</b> where they can make changes that can be saved to
+              a file server. The value should be set as the edit URL of the <term>main DITA
+                map</term> used for publishing your output. The easiest way to obtain the URL is to
+              open the map in Web Author or Content Fusion and copy the URL from the browser's
+              address bar.</entry>
+          </row>
+          <row>
+            <entry>editlink.additional.query.parameters</entry>
+            <entry>You can use this optional parameter to add additional parameters to be appended
+              to each generated edit link. Each parameter must start with <i>&amp;</i> (for example:
+                <i>&amp;tags-mode=no-tags</i>).</entry>
+          </row>
+          <row>
+            <entry>editlink.remote.ditamap.url (deprecated)</entry>
+            <entry>Use this parameter in conjunction with <codeph>editlink.web.author.url</codeph>
+              to add an <i>Edit</i> link next to the topic title in the PDF output. When a user
+              clicks the link, the topic is opened in <b>Oxygen XML Web Author</b> where they can
+              make changes that can be saved to a file server. The value should be set as the custom
+              URL of the <term>main DITA map</term>. For example, a GitHub custom URL might look
+              like this:
+                <filepath>https://getFileContent/oxygenxml/userguide/master/UserGuide.ditamap</filepath>.</entry>
+          </row>
+          <row>
+            <entry>editlink.web.author.url (deprecated)</entry>
+            <entry>This parameter needs to be used in conjunction with
+                <codeph>editlink.remote.ditamap.url</codeph> to add an <i>Edit</i> link next to the
+              topic title in the PDF output. When a user clicks the link, the topic is opened in
+                <b>Oxygen XML Web Author</b> where they can make changes that can be saved to a file
+              server. The value should be set as the URL of the Web Author installation. For
+              example:
+              <filepath>https://www.oxygenxml.com/oxygen-xml-web-author/</filepath>.</entry>
+          </row>
+          <row>
+            <entry>enable.character.level.font.fallback</entry>
+            <entry>When set to <b>yes</b> (default), character-level font fallback is enabled for
+              better Unicode support. Otherwise, a single font per word is used.</entry>
+          </row>
+          <row>
+            <entry>enable.chunk.processing</entry>
+            <entry>Enables the processing of the <xmlatt>chunk</xmlatt> attribute. By default, this
+              stage is skipped but it needs to be enabled, for example, if both the
+                <xmlatt>chunk</xmlatt> and <xmlatt>copy-to</xmlatt> attributes are present on a
+                <xmlelement>topicref</xmlelement>. Accepted values: <b>true</b> or
+              <b>false</b>.</entry>
+          </row>
+          <row>
+            <entry>enable.latin.glyph.substitutions</entry>
+            <entry>When set to <b>yes</b> (default), glyph substitution is enabled (if the
+              particular font supports it). This applies to Latin-based scripts only (the
+              substitutions are always enabled in other types of scripts). If you encounter problems
+              rendering or copying accented glyphs (e.g. <term>umlauts</term> or other
+                <term>diacritics</term>), it might be helpful to set this parameter to <b>no</b> to
+              disable the font glyph substitutions. Another example of a case when you might need to
+              disable the substitutions is a situation where an accented character cannot be mapped
+              to a compound glyph, resulting in the glyph not being rendered in the PDF output.<note
+                type="other" othertype="Warnings" id="note_mxp_cgk_54b">
+                <ul id="ul_y22_1d5_znb">
+                  <li id="li_nxp_cgk_54b">Disabling substitutions also disables Latin
+                    ligatures.</li>
+                  <li id="li_oxp_cgk_54b">Disabling substitutions is not recommended unless
+                    absolutely necessary. It is better practice to use another font if you can find
+                    one that does not have the rendering issues.</li>
+                </ul>
+              </note></entry>
+          </row>
+          <row>
+            <entry>expand.xpath.in.svg.templates</entry>
+            <entry>Expands XPath expressions (whose format is <codeph>${expression}</codeph>)
+              contained in SVG templates. Allowed values: <b>yes</b> (default) or <b>no</b>.</entry>
+          </row>
+          <row>
+            <entry>figure.title.placement</entry>
+            <entry>Controls the title placement of the figures, relative to the image. Possible
+              values include <b>top</b> (default) and <b>bottom</b>. </entry>
+          </row>
+          <row>
+            <entry>filter.unused.glossentries</entry>
+            <entry>When set to <b>no</b> (default), all glossary entries are displayed in the
+              glossary. If set to <b>yes</b>, only referenced entries are displayed.</entry>
+          </row>
+          <row product="author developer editor authorEclipse developerEclipse editorEclipse">
+            <entry>fix.external.refs.com.oxygenxml</entry>
+            <entry>
+              <p id="p_pxp_cgk_54b">The DITA Open Toolkit usually has problems processing references
+                that point to locations outside of the processed DITA map directory. This parameter
+                is used to specify whether or not the application should try to fix such references
+                in a temporary files folder before the DITA Open Toolkit is invoked on the fixed
+                references. The fix has no impact on your edited DITA content. Allowed values:
+                  <b>true</b> or <b>false</b> (default).</p>
+            </entry>
+          </row>
+          <row>
+            <entry id="hide-toc">hide.frontpage.toc.index.glossary</entry>
+            <entry>When set to <b>yes</b>, the generated structures (table of contents, index list,
+              front page, etc.) are removed from the output. The default is <b>no</b>.</entry>
+          </row>
+          <row>
+            <entry>image.resolution</entry>
+            <entry>You can use this parameter to set the default resolution used by images. It works
+              mainly on <i>vector</i> images since <i>raster</i> images have their resolution
+              defined in their metadata. The default is <b>96</b> (dpi). For more information, see
+                <xref href="dcpp_how_to_change_image_resolution.dita">how to change images
+                resolution</xref>.</entry>
+          </row>
+          <row>
+            <entry>pdf.accessibility</entry>
+            <entry>When set to <b>yes</b>, the PDF output is generated in compliance with the
+              PDF/Universal Accessibility standard (also known as ISO 14289). The default is
+                <b>no</b>.</entry>
+          </row>
+          <row>
+            <entry>pdf.archiving.mode</entry>
+            <entry>
+              <p>Specifies the archiving mode. The PDF output will be generated in compliance with
+                the PDF/A standard.</p>
+              <p>Allowed values (not set by default):<ul id="ul_ofv_h1r_z5b">
+                  <li><b>PDF/A-1a</b></li>
+                  <li><b>PDF/A-1b</b></li>
+                  <li><b>PDF/A-2a</b></li>
+                  <li><b>PDF/A-2b</b></li>
+                  <li><b>PDF/A-2u</b></li>
+                  <li><b>PDF/A-3a</b></li>
+                  <li><b>PDF/A-3b</b></li>
+                  <li><b>PDF/A-3u</b></li>
+                </ul></p>
+            </entry>
+          </row>
+          <row>
+            <entry>pdf.compress</entry>
+            <entry>When set to <b>yes</b>, the PDF output is compressed. This may increase
+              processing time. The default is <b>no</b>.</entry>
+          </row>
+          <row>
+            <entry id="pdf-version">pdf.version</entry>
+            <entry>Use this parameter to specify the version of the produced PDF. It has no impact
+              on the set of PDF features used by the engine, but may be used to signal a
+              compatibility level to the PDF readers. The default is <b>1.5</b>.</entry>
+          </row>
+          <row id="row_ybq_dmw_5qb">
+            <entry>pdf.security.restrict.printhq</entry>
+            <entry>Restricts high quality printing. Used for protecting the PDF Document. The
+              restriction is off by default. Accepted values: <b>yes</b> or <b>no</b>.</entry>
+          </row>
+          <row>
+            <entry>pdf.security.restrict.assembledoc</entry>
+            <entry>Restricts assembling document (e.g. adding pages). Used for protecting the PDF
+              Document. The restriction is off by default. Accepted values: <b>yes</b> or
+              <b>no</b>.</entry>
+          </row>
+          <row>
+            <entry>pdf.security.restrict.accesscontent</entry>
+            <entry>Restricts extracting text and graphics. Used for protecting the PDF Document. The
+              restriction is off by default. Accepted values: <b>yes</b> or <b>no</b>.</entry>
+          </row>
+          <row>
+            <entry>pdf.security.restrict.fillinforms</entry>
+            <entry>Restricts filling in existing interactive forms. Used for protecting the PDF
+              Document. The restriction is off by default. Accepted values: <b>yes</b> or
+              <b>no</b>.</entry>
+          </row>
+          <row>
+            <entry>pdf.security.restrict.annotations</entry>
+            <entry>Restricts filling in existing interactive forms. Used for protecting the PDF
+              Document. The restriction is off by default. Accepted values: <b>yes</b> or
+              <b>no</b>.</entry>
+          </row>
+          <row>
+            <entry>pdf.security.restrict.print</entry>
+            <entry>Restricts printing. Used for protecting the PDF Document. The restriction is off
+              by default. Accepted values: <b>yes</b> or <b>no</b>.</entry>
+          </row>
+          <row>
+            <entry>pdf.security.restrict.copy</entry>
+            <entry>Restricts copying content. Used for protecting the PDF Document. The restriction
+              is off by default. Accepted values: <b>yes</b> or <b>no</b>.</entry>
+          </row>
+          <row>
+            <entry>pdf.security.restrict.edit</entry>
+            <entry>Restricts copying content. Used for protecting the PDF Document. The restriction
+              is off by default. Accepted values: <b>yes</b> or <b>no</b>.</entry>
+          </row>
+          <row>
+            <entry>pdf.security.user.password</entry>
+            <entry>User password. The document can be opened using this password. When the owner
+              password parameter is not specified, the user password gives full rights to the people
+              using it. When the owner password parameter is specified, the people can open the
+              document using the user password but restrictions will apply. Missing by
+              default.</entry>
+          </row>
+          <row>
+            <entry>pdf.security.owner.password</entry>
+            <entry>Owner password. There are no restrictions for people using this password.</entry>
+          </row>
+          <row>
+            <entry>pdf.security.encrypt.metadata</entry>
+            <entry>Encrypts the metadata. By default active when other security parameters are set.
+              Accepted values: <b>yes</b> or <b>no</b>.</entry>
+          </row>
+          
+          <row>
+            <entry>show.changes.and.comments</entry>
+            <entry>
+              <p id="p_qxp_cgk_54b">When set to <b>yes</b>, the user comments, colored highlights and tracked changes
+                are shown in the output.</p>
+            </entry>
+          </row>
+          <row>
+            <entry>show.changes.and.comments.as.changebars</entry>
+            <entry>
+              <p id="p_rxp_cgk_54b">When set to <b>yes</b> (default) and the <codeph>show.changes.and.comments</codeph>
+                parameter is also set to <b>yes</b>, the user comments and tracked changes are shown
+                as change bars in the PDF output. This parameter can be used in conjunction with the
+                  <codeph>show.changes.and.comments.as.pdf.sticky.notes</codeph> parameter to choose
+                whether the change bars are displayed in footnotes or sticky notes. You can override
+                this from your <xref href="dcpp_the_customization_css.dita">customization
+                CSS</xref>.</p>
+            </entry>
+          </row>
+          <row>
+            <entry>show.changes.and.comments.as.pdf.sticky.notes</entry>
+            <entry>When set to <b>yes</b> (default) and the
+                <codeph>show.changes.and.comments</codeph> parameter is also set to <b>yes</b>, the
+              user comments and tracked changes are shown in the PDF output as sticky note
+              annotations. When set to <b>no</b>, the comments and tracked changes are left in the
+              document model and are styled by the default CSS rules as footnotes. You can override
+              this from your <xref href="dcpp_the_customization_css.dita">customization
+              CSS</xref>.</entry>
+          </row>
+          <row>
+            <entry id="show-changed-text-content"
+              >show.changed.text.in.pdf.sticky.notes.content</entry>
+            <entry>When set to <b>yes</b> (default) and both the
+                <codeph>show.changes.and.comments</codeph> and
+                <codeph>show.changes.and.comments.as.pdf.sticky.notes</codeph> parameters are also
+              set to <b>yes</b>, the inserted and deleted text is shown in the sticky note
+              annotations. When set to <b>no</b>, only the <i>inserted</i> and <i>deleted</i> labels
+              are shown in the annotations (this is useful for search scope).</entry>
+          </row>
+          <row>
+            <entry>show.image.map.area.numbers</entry>
+            <entry>When set to <b>yes</b>, a counter for each area from the image map is displayed
+              over the image, near the defined shape. The default is <b>no</b>.</entry>
+          </row>
+          <row>
+            <entry>show.image.map.area.shapes</entry>
+            <entry>When set to <b>yes</b>, each of the image map area shapes is displayed with a
+              translucent fill over the image. You can use this to debug your image maps. The
+              default is <b>no</b>. </entry>
+          </row>
+          <row>
+            <entry>show.media.as.link</entry>
+            <entry>When set to <b>yes</b>, media objects will not appear and an external link is
+              generated for each one instead.</entry>
+          </row>
+          <row>
+            <entry>sort.and.group.glossentries</entry>
+            <entry>When set to <b>no</b> (default), glossary entries are sorted based upon the
+              document order. If set to <b>yes</b>, they are sorted alphabetically and grouped by
+              their first letter.<note id="note_lxq_2wy_dfc" type="warning">This only works for
+                glossary entries inside the <xmlelement>glossgroup</xmlelement> element or children
+                of the <xmlelement>glossarylist</xmlelement> element.</note></entry>
+          </row>
+          <row>
+            <entry>store-type</entry>
+            <entry>Setting this parameter to <b>memory</b> will increase the processing speed and
+              thus, could help decrease the publishing time.</entry>
+          </row>
+          <row>
+            <entry>table.title.placement</entry>
+            <entry>Controls the placement of the title for tables. Possible values include
+                <b>top</b> (default) and <b>bottom</b>. </entry>
+          </row>
+          <row>
+            <entry>table.title.repeat</entry>
+            <entry>Specifies whether or not a table caption should repeat on other pages when the
+              table spans onto multiple pages. The caption is not repeated for tables nested in
+              lists or other tables. Allowed values are <b>yes</b> (default) or <b>no</b>.</entry>
+          </row>
+          <row>
+            <entry>use.css.for.embedded.svg</entry>
+            <entry>When set to <b>yes</b> (default), the CSS files specified in the publishing
+              template or by the <codeph>args.css</codeph> parameter are also applied on embedded
+              SVG elements. Allowed values are <b>yes</b> and <b>no</b>.</entry>
+          </row>
+          <row>
+            <entry>use.navtitles.in.all.links</entry>
+            <entry>Specifies whether a <xmlelement>navtitle</xmlelement> defined in a topic or a
+              topic reference should be used as the display name for all links or only in the table
+              of contents. Allowed values are <b>yes</b> and <b>no</b> (default).</entry>
+          </row>
+          <row>
+            <entry>parallel</entry>
+            <entry>Specifies whether or not certain pre-processing tasks should be run in parallel.
+              Setting this parameter to <b>true</b> may add a small increase to the publishing
+              speed. Allowed values are: <b>true</b> and <b>false</b> (default).</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+		<div>The following parameters can be used to specify a publishing template: <table frame="all"
+				rowsep="1" colsep="1" id="table_pbp_lxv_sjb">
+				<tgroup cols="2">
+					<colspec colname="c1" colnum="1" colwidth="1*"/>
+					<colspec colname="c2" colnum="2" colwidth="2.13*"/>
+					<tbody>
+						<row>
+							<entry>pdf.publishing.template</entry>
+							<entry>Specifies the path to the folder containing the custom PDF template.</entry>
+						</row>
+						<row>
+							<entry>pdf.publishing.template.descriptor</entry>
+							<entry>Specifies the name of the descriptor file to be loaded from the PDF template folder or
+                package. If not specified, the first encountered descriptor file is loaded.</entry>
+						</row>
+					</tbody>
+				</tgroup>
+			</table></div>
+    <div>The following parameter is available on all DITA transformations when using the <b>Oxygen
+        Publishing Engine</b>: <table frame="all" rowsep="1" colsep="1" id="table_gcc_ggx_tkb">
+        <tgroup cols="2">
+          <colspec colname="c1" colnum="1" colwidth="1*"/>
+          <colspec colname="c2" colnum="2" colwidth="2.13*"/>
+          <tbody>
+            <row>
+              <entry>args.disable.security.checks</entry>
+              <entry>Specifies whether or not to load external entities that are not solved through
+                catalogs. For security reasons, the default is <b>no</b>.<p id="p_sxp_cgk_54b">Allowed values:</p><p id="p_txp_cgk_54b">
+                  <ul id="ul_kyj_qgx_tkb">
+                    <li id="li_uxp_cgk_54b"><b>yes</b></li>
+                    <li id="li_vxp_cgk_54b"><b>no</b> (default)</li>
+                  </ul>
+                </p></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table></div>
+    <div>The following parameters are only available for the <b>DITA PDF - based on HTML5 &amp;
+        CSS</b> single DITA topic transformation scenario
+        (<codeph>pdf-css-html5-single-topic</codeph> trans type):<table frame="all" rowsep="1"
+        colsep="1" id="table_fc2_qbd_b2b">
+        <tgroup cols="2">
+          <colspec colname="c1" colnum="1" colwidth="1*"/>
+          <colspec colname="c2" colnum="2" colwidth="2.13*"/>
+          <tbody>
+            <row>
+              <entry>args.root.map</entry>
+              <entry>Specifies the path of the root map file used to expand the key references in
+                the published topic.</entry>
+            </row>
+            <row>
+              <entry>args.enable.root.map.key.processing</entry>
+              <entry>
+                <p id="p_wxp_cgk_54b">Indicates whether or not the keys should be processed using the root map
+                  parameter.</p>
+                <p id="p_xxp_cgk_54b">Allowed values:</p>
+                <ul id="ul_fhm_gxv_sjb">
+                  <li id="li_yxp_cgk_54b"><b>auto</b> (default)</li>
+                  <li id="li_zxp_cgk_54b"><b>yes</b></li>
+                  <li id="li_ayp_cgk_54b"><b>no</b></li>
+                </ul>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table></div>
+  </body>
+</topic>

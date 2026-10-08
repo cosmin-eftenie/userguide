@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE troubleshooting PUBLIC "-//OASIS//DTD DITA 1.3 Troubleshooting//EN" "troubleshooting.dtd">
+<troubleshooting id="wa-change-tracking-problem">
+  <title>Delete Table Row Operation Fails When Change Tracking is Enabled</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Common problems<indexterm>Operation cannot be executed</indexterm></indexterm>
+        <indexterm>Known issues<indexterm>Operation cannot be executed</indexterm></indexterm>
+        <indexterm>Operation cannot be executed</indexterm>
+        <indexterm>Deactivate change tracking</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <troublebody>
+    <condition id="problem">
+      <title>Problem</title>
+      <p id="p_lsr_dgk_54b">I tried to delete a row in a table and I received the following
+        error:<codeblock outputclass="language-ini" id="codeblock_msr_dgk_54b">This operation cannot be executed on a table while change tracking is enabled.
+Deactivate change tracking and try again. </codeblock></p>
+    </condition>
+    <troubleSolution>
+      <cause id="cause">
+        <title>Cause</title>
+        <p id="p_nsr_dgk_54b">Some complex operations are blocked when change tracking in enabled to
+          prevent breaking the table structure.</p>
+      </cause>
+      <remedy id="solution">
+        <title>Solution</title>
+        <steps-informal>
+          <p id="p_osr_dgk_54b">In most cases, deleting a table row should not cause an issue (for
+            example, when deleting a table row that you added yourself with change tracking
+            enabled). However, if the table row that you want to delete has cells that span multiple
+            rows, the table layout may be affected by change tracking.</p>
+          <p>An administrator can set the <codeph>changeTrackingBehavior</codeph> parameter for the
+            <codeph>DeleteTableRowOperation</codeph> with one of the following values:<ul
+              id="ul_l5p_3ys_s4b">
+              <li id="li_m5p_3ys_s4b"><b>Block</b> - The operation is not executed when change
+                tracking is activated.</li>
+              <li id="li_frf_kys_s4b"><b>Allow</b> - The operation is executed when change tracking
+                is activated. In the future, if complex table operations are performed, the
+                resulting table layout may be broken.</li>
+              <li id="li_ewh_mys_s4b"><b>Allow without change tracking</b> - The operation is
+                executed with change tracking disabled.</li>
+              <li id="li_uwj_4ys_s4b"><b>Allow</b> - The editor decides which strategy to use,
+                possibly asking the end user.</li>
+            </ul></p>
+          <p>To achieve this, open <b>Oxygen XML Editor/Author</b> and follow these steps:</p>
+          <ol id="ol_lvf_vdw_t2c">
+            <li>Go to <menucascade>
+                <uicontrol>Options</uicontrol>
+                <uicontrol>Preferences</uicontrol>
+            </menucascade>.</li>
+            <li>Click on <uicontrol>Document Type Association</uicontrol>.</li>
+            <li>Click on your custom framework (if you use one) and click
+              <uicontrol>Edit</uicontrol>, or click on the built-in <uicontrol>Document
+                Type</uicontrol> and click <uicontrol>Extend</uicontrol>.</li>
+            <li>Go to <uicontrol>Author</uicontrol> tab.</li>
+            <li>Click the <uicontrol>Actions</uicontrol> subtab.</li>
+            <li>Find the <uicontrol>Delete Row(s)</uicontrol> action and click <uicontrol><image
+                  href="../img/Wrench16.png"/>Edit</uicontrol> (or double-click).<p
+                    id="p_pz4_fk1_52c"><image href="../img/wa-delete-table-row.png"
+                      id="image_zwj_zdw_t2c"/></p></li>
+            <li>Below <uicontrol>Arguments</uicontrol>, click on
+              <uicontrol>changeTrackingBehavior</uicontrol> and <uicontrol>Edit</uicontrol> (or
+              double-click).<p id="p_bkz_cm1_52c"><image
+                  href="../img/wa-change-tracking-behavior.png" id="image_k3l_b2w_t2c"/></p></li>
+            <li>Set the desired value (<i>Block</i>, <i>Allow</i>, <i>Allow with change tracking
+                disabled</i>, or <i>Auto</i>).<p id="p_egz_wm1_52c"><image
+                    href="../img/wa-edit-argument-value.png" id="image_hph_22w_t2c"/></p></li>
+            <li>Click <uicontrol>Ok</uicontrol>.</li>
+          </ol>
+        </steps-informal>
+      </remedy>
+    </troubleSolution>
+  </troublebody>
+</troubleshooting>

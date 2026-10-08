@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE troubleshooting PUBLIC "-//OASIS//DTD DITA Troubleshooting//EN" "troubleshooting.dtd">
+<troubleshooting id="mac-touch-bar">
+  <title>Mac Touch Bar Function Keys Do Not Work</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Mac Touch Bar</indexterm>
+        <indexterm>Touch Bar on Mac</indexterm>
+        <indexterm>Mac Function Keys</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <troublebody>
+    <condition id="problem">
+      <title>Problem</title>
+      <p id="p_tsk_dgk_54b">I am using a Mac that has a Touch Bar but its function keys do not work in <ph
+          keyref="product"/>.</p>
+    </condition>
+    <troubleSolution>
+      <cause id="cause">
+        <title>Causes</title>
+        <p id="p_usk_dgk_54b">By default, the Touch Bar function keys are not enabled for <ph keyref="product"/>.</p>
+      </cause>
+      <remedy id="solution">
+        <title>Solution</title>
+        <steps-informal>
+          <p id="p_vsk_dgk_54b">To enable the Touch Bar function keys for <ph keyref="product"/>, follow these steps:<ol id="ol_wsk_dgk_54b">
+              <li id="li_xsk_dgk_54b">Go to <uicontrol>System Preferences</uicontrol> and select
+                  <uicontrol>Keyboard</uicontrol>.</li>
+              <li id="li_ysk_dgk_54b">Click <uicontrol>Shortcuts</uicontrol>.</li>
+              <li id="li_zsk_dgk_54b">From the left sidebar, select <uicontrol>Function Keys</uicontrol>.</li>
+              <li id="li_atk_dgk_54b">Click the <uicontrol>+</uicontrol> symbol, select <b>Oxygen</b> from the list of
+                apps, and click <uicontrol>Add</uicontrol>.</li>
+            </ol></p>
+        </steps-informal>
+      </remedy>
+    </troubleSolution>
+  </troublebody>
+</troubleshooting>

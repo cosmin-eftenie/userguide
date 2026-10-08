@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_numbering_intro">
+  <title>Numbering</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            ><ph keyref="pdf-html5-transformation"/>
+          <indexterm>Numbering</indexterm></indexterm>
+        <indexterm product="pdf-css ope">Numbering</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+		<p id="p_k5r_cgk_54b">The topics in this section contain some technical details in case you need to fine-tune the
+			way the numbering works.</p>
+  </body>
+</topic>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="relax-ng-schema-diagram">
+  <title>Relax NG Schema Diagram Editor</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Relax NG schemas<indexterm>Diagram Editor</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_s42_cgk_54b">This section explains how to use the graphical diagram editor for Relax NG schemas.</p>
+  </body>
+</topic>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ch_graphics_svg_templates">
+    <title>SVG Templates</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Graphics<indexterm>SVG Templates</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+    <body>
+    <p id="p_smv_dgk_54b"><ph keyref="product"/> supports SVG template images (with a
+        <codeph>.template.svg</codeph> file extension). These files can contain XPath expressions
+      that will be expanded by the processor.</p>
+    <section id="section_ulv_4tz_lyb">
+      <title>Using SVG Template as a Cover Page</title>
+      <p>A good use-case for SVG templates is when you want to create a custom cover page. For
+          example:<ol id="ol_dds_1wr_lyb">
+          <li>Suppose the following HTML file should be printed with a cover
+            page:<codeblock id="codeblock_o54_y5r_lyb" outputclass="language-xml">&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;!DOCTYPE html>
+&lt;html xmlns="http://www.w3.org/1999/xhtml">
+    &lt;head>
+        &lt;title>How to Dynamically add Content to SVG&lt;/title>
+        &lt;link rel="stylesheet" href="styles.css"/>
+        &lt;meta name="author" content="John Doe"/>
+        &lt;meta name="version" content="1.1"/>
+        &lt;meta name="copyright" content="© Oxygen PDF Chemistry. For demonstration purpose."/>
+    &lt;/head>
+    &lt;body>
+        ...
+    &lt;/body>
+&lt;/html></codeblock></li>
+          <li>The cover image (for example, named <filepath>cover.template.svg</filepath>) should
+            display <xmlelement>meta</xmlelement> nodes information and the main title. Both the
+              <i>author</i> and <i>version</i> will be displayed in rectangular shapes prefixed with
+            the displayed information ("Author:" and "Version:"), while the title is positioned in
+            the middle of the page, at some absolute
+              coordinates.<codeblock id="codeblock_o4b_nvr_lyb" outputclass="language-xml">&lt;svg width="8.5in" height="11in" xmlns="http://www.w3.org/2000/svg">
+  &lt;g>
+    &lt;rect height="39" width="180" y="40" x="579" stroke="#000" fill="#fff"/>
+    &lt;rect height="39" width="180" y="79" x="579" stroke="#000" fill="#fff"/>
+
+    &lt;text font-size="8" stroke-width="0" y="52" x="582" stroke="#000" fill="#000000"
+      >Author:&lt;/text>
+    &lt;text font-size="16" stroke-width="0" y="66" x="643" stroke="#000" fill="#000000"
+      >${//meta[@name='author']/@content}&lt;/text>
+
+    &lt;text font-size="8" stroke-width="0" y="91" x="582" stroke="#000" fill="#000000"
+      >Version:&lt;/text>
+    &lt;text font-size="16" stroke-width="0" y="104" x="659" stroke="#000" fill="#000000"
+      >${//meta[@name='version']/@content}&lt;/text>
+
+    &lt;text font-size="30" stroke-width="0" y="252" x="123" stroke="#000" fill="#000000"
+      >${//head/title}&lt;/text>
+    &lt;text font-size="12" stroke-width="0" y="993.40002" x="266" stroke="#000" fill="#000000"
+      >${//meta[@name='copyright']/@content}&lt;/text>
+  &lt;/g>
+&lt;/svg></codeblock><note id="note_nkn_dxr_lyb" type="other" othertype="Notes">
+              <ul id="ul_ixf_3xr_lyb">
+                <li>XPath expressions are not expanded if the SVG template is open in
+                    <uicontrol>Author</uicontrol> mode.</li>
+                <li>XPath expressions can be tested (without <codeph>${}</codeph>) using the
+                  XPath/XQuery Builder view.</li>
+              </ul>
+            </note><note id="note_c5b_dg2_4yb" type="important">
+              <ul id="ul_i13_psl_4yb">
+                <li>If you received the SVG image from someone else (e.g. a graphics designer), make
+                  sure that the text from the image was not converted to glyph shapes and that it is
+                  rendered using the <xmlelement>text</xmlelement> element.</li>
+                <li>The SVG <xmlelement>text</xmlelement> element does not wrap the text if it
+                  overflows the image. If you have longer text that needs to be rendered, you might
+                  consider using multiple <xmlelement>text</xmlelement> elements and more evolved
+                  XPath expressions (for example, using the <codeph>substring()</codeph> function)
+                  to place the text on multiple lines.</li>
+              </ul>
+            </note><note type="tip" id="note_drj_1h2_4yb">You can ask a designer to fill the image with some
+              placeholders that you can later find and replace with your XPath expressions. In the
+              above SVG, the designer could place the text <codeph>Here comes the version</codeph>,
+              that you replace with <codeph>${//meta[@name='version']/@content}</codeph>:
+              <codeblock id="codeblock_qcl_vg2_4yb" outputclass="language-xml">&lt;text font-size="8" stroke-width="0" y="91" x="582" stroke="#000" fill="#000000"
+>Version:&lt;/text>
+&lt;text font-size="16" stroke-width="0" y="104" x="659" stroke="#000" fill="#000000"
+>Here comes the version&lt;/text></codeblock></note></li>
+          <li>The CSS stylesheet should declare a synthetic page to be printed before the HTML
+            document and display the SVG cover image on this new
+              page:<codeblock id="codeblock_tj4_zwr_lyb" outputclass="language-css">@page cover-page {
+  background-image: url('cover.template.svg');
+  background-repeat: no-repeat;
+}
+
+html::before {
+  content: " ";
+  page: cover-page;
+}</codeblock><p>You can even create a sequence of synthetic pages using
+                <codeph>before(1)</codeph>, <codeph>before(2)</codeph>, …,
+                <codeph>before(n)</codeph>
+              <xref href="ch_advanced_styling_multiple_before_and_after_pseudo_elements.dita"
+                >pseudo-elements</xref> and multiple <codeph>@page</codeph> definitions for each of
+              the <codeph>before</codeph> elements.</p></li>
+          <li>After the transformation, the final document cover will look like this:<p
+              id="p_yyc_f43_syb"><image href="../img/ch_svg_xpath.png" id="image_hvk_jyr_lyb"
+            /></p></li>
+        </ol></p>
+    </section>
+  </body>
+</topic>

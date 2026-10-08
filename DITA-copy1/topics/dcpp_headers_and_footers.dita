@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_headers_and_footers">
+  <title>Page Headers and Footers</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            ><ph keyref="pdf-html5-transformation"/><indexterm>Header</indexterm></indexterm>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            ><ph keyref="pdf-html5-transformation"/><indexterm>Footer</indexterm></indexterm>
+        <indexterm product="pdf-css ope">Header</indexterm>
+        <indexterm product="pdf-css ope">Footer</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_uqq_cgk_54b">The page headers and footers use string sets defined for publication,
+      part, chapter, and section titles. These string-sets are defined in the <xref
+        href="dcpp_numbering_intro.dita">numbering CSS</xref>: <dl id="dl_vqq_cgk_54b">
+        <dlentry id="dlentry_wqq_cgk_54b">
+          <dt>maptitle</dt>
+          <dd>Set to the current map title (on both DITA maps and bookmaps).</dd>
+        </dlentry>
+        <dlentry id="dlentry_tl1_fn3_y2c">
+          <dt>parttitle</dt>
+          <dd>Set to the current part number and title, prefixed with " | " (only for DITA bookmaps
+            that use parts).</dd>
+        </dlentry>
+        <dlentry id="dlentry_fd3_fn3_y2c">
+          <dt>parttitle-no-prefix</dt>
+          <dd>Set to the current part number and title (only for DITA bookmaps that use parts).</dd>
+        </dlentry>
+        <dlentry id="dlentry_xqq_cgk_54b">
+          <dt>chaptertitle</dt>
+          <dd>Set to the current chapter number and title, prefixed with " | " (on both Shallow and
+            Deep numbering).</dd>
+        </dlentry>
+        <dlentry id="dlentry_jnw_fn3_y2c">
+          <dt>chaptertitle-no-prefix</dt>
+          <dd>Set to the current chapter number and title (on both Shallow and Deep numbering).</dd>
+        </dlentry>
+        <dlentry id="dlentry_qdq_gn3_y2c">
+          <dt>chaptertitle-only</dt>
+          <dd>Set to the current chapter title (on both Shallow and Deep numbering).</dd>
+        </dlentry>
+        <dlentry id="dlentry_yqq_cgk_54b">
+          <dt>sectiontitle</dt>
+          <dd>Set to the current section number and title, prefixed with " | " (Deep numbering
+            only).</dd>
+        </dlentry>
+      </dl></p>
+    <p id="p_zqq_cgk_54b">To see where the default page rules are defined, see: <xref
+        href="dcpp_default_page_definitions_css.dita"/>.</p>
+    <note type="important" id="note_my4_hvs_s2c">The <codeph>string-set</codeph> CSS property is not
+      additive. Matching the same elements will end up breaking the current definitions. A very
+      common use-case is to change one of the "<codeph>chaptertitle</codeph>" string-sets defined in
+      the default CSS (see <xref href="dcpp_how_to_change_the_header_separators.dita"/>). In this
+      case, the best approach is to copy the default rules into your <xref
+        href="dcpp_the_customization_css.dita">customization CSS</xref>, then alter the property
+      definition by adding your definition to the existing ones or changing the value of the
+      existing ones (without removing them).</note>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link href="dcpp_numbering_intro.dita"/>
+    </linklist>
+  </related-links>
+</topic>

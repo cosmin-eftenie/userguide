@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="preferences-editor-format-js">
+  <title>JavaScript Preferences</title>
+  <prolog>
+    <metadata>
+      <keywords><indexterm>Preferences<indexterm>JavaScript formatting</indexterm></indexterm></keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_mgp_bgk_54b">To configure the <uicontrol>JavaScript</uicontrol> format options, <ph
+        conkeyref="reusables-preferences-pages/open-the-preferences-page"/> and go to <menucascade>
+        <uicontrol>Editor</uicontrol>
+        <uicontrol>Format</uicontrol>
+        <uicontrol>JavaScript</uicontrol>
+      </menucascade>.</p>
+    <p id="p_ngp_bgk_54b">The following options control the behavior of the <uicontrol>Format and Indent</uicontrol>
+      action:</p>
+    <ul id="ul_ogp_bgk_54b">
+      <li id="li_pgp_bgk_54b"><uicontrol>Start curly brace on new line</uicontrol> - Opening curly braces start on a new
+        line.</li>
+      <li id="li_qgp_bgk_54b"><uicontrol>Preserve empty lines</uicontrol> - Empty lines in the JavaScript code are
+        preserved. This option is selected by default.</li>
+      <li id="li_rgp_bgk_54b"><uicontrol>Allow formatting embedded JavaScript</uicontrol> - Applied
+        only to XHTML documents, this option allows <ph keyref="product"/> to format embedded
+        JavaScript code<ph
+          product="author developer editor authorEclipse developerEclipse editorEclipse">, taking
+          precedence over the <xref
+            href="preferences-editor-format-xml.dita#preferences-editor-format-xml/pref_sa_format"
+            format="dita">Schema-aware format and indent</xref> option</ph>. This option is selected
+        by default.</li>
+    </ul>
+  </body>
+</topic>

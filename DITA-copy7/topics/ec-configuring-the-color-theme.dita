@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ec-configuring-the-color-theme">
+  <title>Configuring a Dark Color Theme</title>
+  <body>
+    <p id="p_esg_pqs_szb">The Eclipse platform supports setting a dark color theme in the <menucascade>
+        <uicontrol>Preferences</uicontrol>
+        <uicontrol>General</uicontrol>
+        <uicontrol>Appearance</uicontrol>
+      </menucascade> preferences page. This dark color theme mostly influences the general Eclipse
+      toolbar.</p>
+    <p id="p_fsg_pqs_szb">To also use a dark theme for XML documents opened by the <ph
+        keyref="product"/>, the following special experimental <xref
+        href="custom-system-properties.dita#custom-system-properties/dlentry_is4_zdy_rzb">system
+        property</xref> must be added in the <filepath>eclipse.ini</filepath> configuration
+      file:<codeblock outputclass="language-cmd">-Dcom.oxygenxml.eclipse.dark.color.theme=true</codeblock></p>
+  </body>
+</topic>

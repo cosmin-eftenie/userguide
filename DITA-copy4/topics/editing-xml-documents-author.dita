@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="editing-xml-documents-author">
+  <title>Editing XML Documents in Author Mode</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Author editing mode</indexterm>
+        <indexterm>XML documents<indexterm>Author Mode editing</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_lsw_bgk_54b">This section includes topics that describe how to work with XML documents in
+        <uicontrol>Author</uicontrol> mode, including its various features, actions that are
+      available, and much more.</p>
+    <p id="p_msw_bgk_54b">The <uicontrol>Author</uicontrol> editing mode in <ph keyref="product"/> allows you to
+      visually edit XML documents in a user-friendly interface that is similar to a WYSIWYG word
+      processor. This makes structured authoring easier for people who are not familiar with XML and
+      it also provides easier access to the XML structure for XML experts. <ph keyref="product"/>
+      provides support for visually editing the most commonly used XML vocabularies in
+        <uicontrol>Author</uicontrol> mode, including DITA, Doc Book, TEI, and XHTML.</p>
+    <p id="p_nsw_bgk_54b">Adding text content in <uicontrol>Author</uicontrol> mode is as simple as
+      doing so in a standard text editor but the content is rendered similar to how you see it in
+      the output. Tables, images, and media objects (such as videos) are also rendered comparable to
+      the output. You can even play audio and video objects directly in
+        <uicontrol>Author</uicontrol> mode and it includes an intuitive <xref
+        href="image-map-editor.dita#image-map-editor">Image Map Editor</xref>. You can easily change
+      the rendering by selecting one of the preset <xref keyref="glossentry_main-css-style"
+          ><term>main styles</term></xref> from the <xref href="rendering-xml-author-mode.dita"
+          ><uicontrol>Styles</uicontrol> drop-down menu</xref> (available on the toolbar) and
+      combine multiple <xref keyref="glossentry_alternate-css-style"><term>alternate
+        styles</term></xref> that behave like layers. You can also use the options in the <xref
+        href="author-display-markup.dita#author-display-markup"><uicontrol><image
+            href="../img/TagsDrop.png" id="image_pmr_mhm_1s"/>Tags Display Mode</uicontrol>
+        drop-down menu</xref> to control how much XML markup is displayed in
+        <uicontrol>Author</uicontrol> mode and there are various features and views that provide
+      information about the XML structure based on your current location within the document.</p>
+    <p id="p_osw_bgk_54b"><uicontrol>Author</uicontrol> mode provides numerous helpful editing actions, many of which
+      are specific to the type of document you are editing and it includes a variety of other
+      powerful editing features, such as keyboard shortcuts, <xref
+        href="author-drag-drop.dita#author-drag-drop">drag and drop support</xref>, a <xref
+        href="smart-paste-support.dita#smart-paste-support"><term>Smart Paste</term>
+        mechanism</xref>, and an <xref
+        href="content-completion-author-mode.dita#content-completion-author-mode">intelligent
+          <term>Content Completion Assistant</term></xref>. <uicontrol>Author</uicontrol> mode also
+      allows you to visualize and <xref
+        href="profiling-conditional-text.dita#profiling-conditional-text">manage profiled
+        content</xref>, you can collaborate with others with various <xref
+        href="author-change-tracking.dita#author-change-tracking">review features</xref> (such as
+      the ability to add comments, track changes, or highlight content), and includes many other
+      unique features.</p>
+    <p id="p_psw_bgk_54b">To switch to this mode, click the <uicontrol>Author</uicontrol> button at the bottom of the
+      editing area. <image href="../img/author_mode_button.png"/></p>
+    <section id="section_uw4_gcf_w5b">
+      <title>Resources</title>
+      <p id="p_qsw_bgk_54b">For more information about some of the features available in the visual
+          <uicontrol>Author</uicontrol> editing mode, watch our video demonstration:</p>
+      <p id="p_rsw_bgk_54b"><object width="450" height="250"
+          data="https://www.youtube.com/embed/bnQwJZD58wY" outputclass="iframe">
+          <param name="allowfullscreen" value="true"/>
+        </object></p>
+    </section>
+  </body>
+</topic>

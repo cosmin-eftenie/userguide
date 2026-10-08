@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="editing-yaml">
+  <title>Editing YAML Documents</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>YAML documents</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p>This section discusses the various features that are included in the <ph keyref="product"/>
+      YAML Editor and how to use them.</p>
+    <section id="section_v54_rr5_ypb">
+      <title>Resources</title>
+      <p id="p_w54_rr5_ypb">For more information about the YAML (and JSON) support in <ph
+          keyref="product"/>, see the following resources:<ul id="ul_bzc_455_ypb">
+          <li id="li_if5_gv5_ypb"><xref
+              href="https://www.oxygenxml.com/demo/yaml_editing_support_in_oxygen.html"
+              format="html" scope="external"><b>Video: YAML Support in Oxygen</b></xref></li>
+          <li id="li_wdb_g5x_qzb"><xref
+              href="https://www.oxygenxml.com/events/2023/webinar_exploring_oxygen_yaml_support.html"
+              format="html" scope="external"><b>Webinar: Exploring Oxygen's YAML
+            Support</b></xref></li>
+          <li id="li_czc_455_ypb"><xref
+              href="https://www.oxygenxml.com/events/2020/webinar_json_and_json_schema_support_in_oxygen_xml_editor.html"
+              format="html" scope="external"><b>Webinar: JSON and JSON Schema Support in
+              Oxygen</b></xref></li>
+        </ul></p>
+    </section>
+  </body>
+</topic>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="xml-schema-diagram-outline-view">
+  <title>XML Schema Outline View</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Design editing mode<indexterm>Outline view</indexterm></indexterm>
+        <indexterm>XML Schema Diagram Editor<indexterm>Outline view</indexterm></indexterm>
+        <indexterm>Outline view in Design mode</indexterm>
+        <indexterm>XML Schemas<indexterm>Outline view</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_lqc_cgk_54b">The <uicontrol>Outline</uicontrol> view for XML Schemas presents all the global components
+      grouped by their location, namespace, or type. By default, it is displayed on the left side of
+      the editor. <ph conkeyref="reusables-user-guide/reopen-view"/></p>
+    <p id="p_mqc_cgk_54b">
+      <fig product="editor developer" id="fig_nqc_cgk_54b">
+        <title>Outline View for XML Schema</title>
+        <image href="../img/sa_schema_diagram_outline_view.png"/>
+      </fig>
+    </p>
+    <p id="p_oqc_cgk_54b">
+      <fig product="editorEclipse developerEclipse" id="fig_pqc_cgk_54b">
+        <title>Outline View for XML Schema</title>
+        <image href="../img/ec_schema_diagram_outline_view.png"/>
+      </fig>
+    </p>
+    <p id="p_qqc_cgk_54b">The <uicontrol>Outline</uicontrol> view provides the following options in the <ph
+        product="editor developer"><uicontrol><image href="../img/Settings16.png"
+            id="image_bvj_ngd_cs"/>Settings</uicontrol> menu on the <uicontrol>Outline</uicontrol>
+        view toolbar</ph><ph product="editorEclipse developerEclipse"><uicontrol>View
+          Menu</uicontrol> on the <uicontrol>Outline</uicontrol> view action bar</ph>:</p>
+    <p id="p_rqc_cgk_54b">
+      <dl id="dl_sqc_cgk_54b">
+        <dlentry id="dlentry_tqc_cgk_54b">
+          <dt><uicontrol>Filter returns exact matches</uicontrol></dt>
+          <dd>The text filter of the <uicontrol>Outline</uicontrol> view returns only exact
+            matches;</dd>
+        </dlentry>
+        <dlentry id="dlentry_uqc_cgk_54b">
+          <dt><uicontrol><image href="../img/CaretUpdateOff16.png" id="image_ftm_tft_tr"/>Selection
+              update on cursor move</uicontrol></dt>
+          <dd>Allows a synchronization between <uicontrol>Outline</uicontrol> view and schema
+            diagram. The selected view from the diagram is also selected in the
+              <uicontrol>Outline</uicontrol> view.</dd>
+        </dlentry>
+        <dlentry id="dlentry_vqc_cgk_54b">
+          <dt><uicontrol><image href="../img/Sort16.png" id="image_tpr_ry1_5r"
+            />Sort</uicontrol></dt>
+          <dd>Allows you to sort alphabetically the schema components.</dd>
+        </dlentry>
+        <dlentry id="dlentry_wqc_cgk_54b">
+          <dt><uicontrol>Show all components</uicontrol></dt>
+          <dd>Displays all components that were collected starting from the <xref
+              keyref="glossentry_main-file"><term>main files</term></xref>. Components that are
+            not referable from the current file are marked with an orange underline. To reference
+            them, add an import directive with the <codeph>componentNS</codeph> namespace.</dd>
+        </dlentry>
+        <dlentry id="dlentry_xqc_cgk_54b">
+          <dt><uicontrol>Show referable components</uicontrol></dt>
+          <dd>Displays all components (collected starting from the <xref
+              keyref="glossentry_main-file"><term>main files</term></xref>) that can be
+            referenced from the current file. This option is set by default.</dd>
+        </dlentry>
+        <dlentry conkeyref="reusables-editing-documents/outline_schema_outline_view" id="dlentry_yqc_cgk_54b">
+          <dt/>
+          <dd/>
+        </dlentry>
+        <dlentry id="dlentry_zqc_cgk_54b">
+          <dt><uicontrol>Group by location/namespace/type</uicontrol></dt>
+          <dd>These three operations allow you to group the components by location, namespace, or
+            type. When grouping by namespace, the main schema target namespace is the first
+            presented in the <uicontrol>Outline</uicontrol> view.</dd>
+        </dlentry>
+      </dl>
+    </p>
+    <p id="p_arc_cgk_54b">The following contextual menu actions are available in the <uicontrol>Outline</uicontrol>
+      view:</p>
+    <p id="p_brc_cgk_54b">
+      <dl id="dl_crc_cgk_54b">
+        <dlentry id="dlentry_drc_cgk_54b">
+          <dt><uicontrol>Remove <shortcut>(Delete)</shortcut></uicontrol></dt>
+          <dd>Removes the selected item from the diagram.</dd>
+        </dlentry>
+        <dlentry id="dlentry_erc_cgk_54b">
+          <dt><uicontrol><image href="../img/SearchReferences16.png" placement="inline"/>Search
+              References <shortcut product="editor developer">(Ctrl + Shift + R (Meta + Shift + R on
+                macOS))</shortcut></uicontrol></dt>
+          <dd>Searches all references of the item found at current cursor position in the defined
+            scope, if any.</dd>
+        </dlentry>
+        <dlentry id="dlentry_frc_cgk_54b">
+          <dt><uicontrol>Search References in</uicontrol></dt>
+          <dd>Searches all references of the item found at current cursor position in the specified
+            scope.</dd>
+        </dlentry>
+        <dlentry id="dlentry_grc_cgk_54b">
+          <dt><uicontrol><image href="../img/ComponentDependencies16.png" id="image_wq3_f3t_tr"
+              />Component Dependencies <shortcut product="editor developer">(Ctrl + Shift + F4 (Meta
+                + Shift + F4 on macOS))</shortcut></uicontrol></dt>
+          <dd>Opens the <xref
+              href="xml-schema-component-dependencies.dita#xml-schema-component-dependencies"
+                ><uicontrol>Component Dependencies</uicontrol> view</xref> that allows you to see
+            the dependencies for the currently selected component.</dd>
+        </dlentry>
+        <dlentry id="dlentry_hrc_cgk_54b">
+          <dt><uicontrol>Show referenced resources (F4)</uicontrol></dt>
+          <dd>Opens the <xref href="xml-resource-hierarchy-view.dita#xml-resource-hierarchy-view"
+                ><uicontrol>Referenced/Dependent Resources</uicontrol> view</xref> that allows you
+            to see the references for the currently selected resource.</dd>
+        </dlentry>
+        <dlentry id="dlentry_irc_cgk_54b">
+          <dt><uicontrol>Show dependent resources (Shift + F4)</uicontrol></dt>
+          <dd>Opens the <xref href="xml-resource-hierarchy-view.dita#xml-resource-hierarchy-view"
+                ><uicontrol>Referenced/Dependent Resources</uicontrol> view</xref> that allows you
+            to see the dependencies for the currently selected resource.</dd>
+        </dlentry>
+        <dlentry id="dlentry_jrc_cgk_54b">
+          <dt><uicontrol><image href="../img/RenameXSLResource16.png" id="image_tcn_nv1_5r"/>Rename
+              Component in</uicontrol></dt>
+          <dd>Renames the selected component.</dd>
+        </dlentry>
+        <dlentry id="dlentry_krc_cgk_54b">
+          <dt><uicontrol><image id="image_0d11f558-6f1b-49bd-a5e2-4c240927804f"
+                href="../img/XMLGenerator16.png" placement="inline"/>Generate Sample XML
+              Files</uicontrol></dt>
+          <dd>Generate XML files using the currently open schema. The selected component is the XML
+            document root.</dd>
+        </dlentry>
+      </dl>
+    </p>
+    <p conkeyref="reusables-editing-documents/outliner-filter-box" id="p_lrc_cgk_54b"/>
+    <note type="tip" id="note_mrc_cgk_54b">The search filter is case insensitive. The following wildcards are accepted:<ul id="ul_nrc_cgk_54b">
+        <li id="li_orc_cgk_54b"><b>*</b> - any string</li>
+        <li id="li_prc_cgk_54b"><b>?</b> - any character</li>
+        <li id="li_qrc_cgk_54b"><b>,</b> - patterns separator</li>
+      </ul>If no wildcards are specified, the string to search will be searched as a partial
+      match.</note>
+    <p conkeyref="reusables-editing-documents/synchronized_views" id="p_rrc_cgk_54b"/>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link href="xml-schema-search-references.dita"/>
+      <link href="xml-schema-component-dependencies.dita"/>
+      <link href="xml-schema-hierarchy.dita"/>
+      <link href="xml-schema-instance-generator.dita"/>
+      <link href="contextual-editing.dita#contextual-editing"/>
+    </linklist>
+  </related-links>
+</topic>

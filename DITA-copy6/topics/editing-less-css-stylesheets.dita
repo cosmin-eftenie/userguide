@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="editing-less-css-stylesheets">
+  <title>Editing LESS Stylesheets</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>LESS stylesheets<indexterm>Editing features</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_ik2_cgk_54b"><ph keyref="product"/> provides support for stylesheets coded with the LESS dynamic
+      stylesheet language. LESS extends the CSS language by adding features that allow mechanisms
+      such as <i>variables</i>, <i>nesting</i>, <i>mixins</i>, <i>operators</i>, and
+        <i>functions</i>. <ph keyref="product"/> offers additional LESS-editing features that
+        include:<ul id="ul_hgt_t3p_lq">
+        <li id="li_jk2_cgk_54b"><b>Create new LESS files and templates</b> - You can use the built-in new file wizards
+          to <xref href="creating-new-documents.dita#creating-new-documents">create new LESS
+            documents or templates</xref>.</li>
+        <li id="li_kk2_cgk_54b"><b>Open and Edit LESS files</b> - LESS files can be opened and edited in a source
+          editing mode.</li>
+        <li id="li_lk2_cgk_54b"><b>Validation</b> - Presents validation errors in LESS files.</li>
+        <li id="li_mk2_cgk_54b"><b>Content completion</b> - Offers proposals for properties and the values that are
+          available for each property.</li>
+        <li id="li_nk2_cgk_54b"><b>Compile to CSS</b> - Options are available to compile LESS files to CSS.</li>
+        <li id="li_ok2_cgk_54b"><b>Syntax highlighting</b> - <ph keyref="product"/> supports syntax highlighting in LESS
+          files, although there may be some limitations in supporting all the LESS constructs.</li>
+        <li product="author developer editor" id="li_pk2_cgk_54b"><b>Shortcut to open resources</b> - While editing LESS
+          files, you can use <uicontrol conkeyref="reusable-oxygen-shortcuts-list/ctrl_click"/> to
+          open imported stylesheets or other resources (such as images) in the default system
+          application for the particular type of resource.</li>
+      </ul></p>
+    <p id="p_qk2_cgk_54b">For more information about LESS go to: <xref href="http://lesscss.org/" format="html"
+        scope="external"/>.</p>
+  </body>
+  <related-links product="author editor">
+    <linklist>
+      <title>Related Information:</title>
+      <link href="dg-css-support-in-author.dita"/>
+      <link href="dg-supported-selectors.dita"/>
+      <link href="dg-properties-support.dita"/>
+      <link href="dg-oXygen-css-extensions.dita"/>
+    </linklist>
+  </related-links>
+</topic>

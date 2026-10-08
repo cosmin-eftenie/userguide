@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="opening-current-document-in-browser">
+  <title>Opening the Current Document in a System Application</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Open file in system application</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_tdt_bgk_54b">To open the currently edited document in the associated system application, use the
+          <uicontrol><image href="../img/OpenInBrowser16.png" id="image_at3_hby_sr"/>View in
+        Browser/System Application</uicontrol> action that is available in the <uicontrol
+        product="editor author developer">File</uicontrol><uicontrol
+        product="authorEclipse developerEclipse editorEclipse">XML</uicontrol> menu<ph
+        product="author developer editor"> and on the <ph><uicontrol>File</uicontrol>
+        </ph>toolbar</ph>. If you want to open XML files in a specific internet browser, instead of
+      the associated system application, you can specify the internet browser to be used. To do so,
+        <ph product="author developer editor"><ph
+          conkeyref="reusables-preferences-pages/open-the-preferences-page"/>, go to
+          <uicontrol>Global</uicontrol>, and set it in the <uicontrol>Default Internet
+          browser</uicontrol> field</ph><ph product="authorEclipse developerEclipse editorEclipse"
+        >go to <menucascade>
+          <uicontrol>Window</uicontrol>
+          <uicontrol>Preferences</uicontrol>
+          <uicontrol>General</uicontrol>
+          <uicontrol>Web Browser</uicontrol>
+        </menucascade> and specify it there</ph>. This will take precedence over the default system
+      application settings.</p>
+  </body>
+</topic>

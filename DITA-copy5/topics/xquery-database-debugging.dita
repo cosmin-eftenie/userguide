@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="xquery-database-debugging">
+  <title>XQuery Database Debugging</title>
+  <prolog>
+    <metadata>
+      <keywords><indexterm>Databases<indexterm>XQuery<indexterm>Debugging</indexterm></indexterm></indexterm></keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_kpy_cgk_54b"><ph keyref="product"/> includes a debugging interface that helps you to
+      detect and solve problems with XQuery transformations that are executed against MarkLogic
+      databases.</p>
+    <p id="p_lpy_cgk_54b">For more information about the debugging support in <ph keyref="product"/>, see <xref
+        href="debugging.dita#debugging"/>.</p>
+  </body>
+</topic>

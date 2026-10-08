@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dg-supported-selectors">
+  <title>Supported CSS Selectors</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>CSS selectors</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <note type="tip" id="note_tbc_dgk_54b">CSS rules that match attributes are always more specific than element
+      selectors. For more information, see <xref
+        href="https://drafts.csswg.org/selectors-3/#specificity" format="html" scope="external"
+      />.</note>
+    <p id="p_ubc_dgk_54b">The following table lists the CSS selectors that are supported in <ph keyref="product"/>:</p>
+    <p id="p_vbc_dgk_54b">
+      <table frame="all" id="dg-table-supported-selectors" colsep="1" rowsep="1">
+        <tgroup cols="4">
+          <colspec colname="c1" colwidth="1.35*"/>
+          <colspec colname="c2" colwidth="1.98*"/>
+          <colspec colname="c3" colwidth="1.0*"/>
+          <colspec colname="c4" colwidth="2.38*"/>
+          <thead>
+            <row>
+              <entry>Expression</entry>
+              <entry>Name</entry>
+              <entry>CSS Level</entry>
+              <entry>Description / Example</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><codeph>*</codeph></entry>
+              <entry>Universal selector</entry>
+              <entry>CSS Level 2</entry>
+              <entry>Matches any element </entry>
+            </row>
+            <row>
+              <entry><codeph>E</codeph></entry>
+              <entry>Type selector</entry>
+              <entry>CSS Level 2</entry>
+              <entry>Matches any <codeph>E</codeph> element (i. e. an element with the local name
+                  <codeph>E</codeph>)</entry>
+            </row>
+            <row>
+              <entry><codeph>E F</codeph></entry>
+              <entry>Descendant selector</entry>
+              <entry>CSS Level 2</entry>
+              <entry>Matches any <codeph>F</codeph> element that is a descendant of an
+                  <codeph>E</codeph> element. </entry>
+            </row>
+            <row>
+              <entry><codeph>E &gt; F</codeph></entry>
+              <entry>Child selectors</entry>
+              <entry>CSS Level 2</entry>
+              <entry>Matches any <codeph>F</codeph> element that is a child of an element
+                  <codeph>E</codeph>. </entry>
+            </row>
+            <row>
+              <entry><codeph>E:lang(c)</codeph></entry>
+              <entry>Language pseudo-class </entry>
+              <entry>CSS Level 2</entry>
+              <entry>Matches element of type <codeph>E</codeph> if it is in (human) language
+                  <codeph>c</codeph> (the document language specifies how language is determined).
+              </entry>
+            </row>
+            <row>
+              <entry><codeph>E + F</codeph></entry>
+              <entry>Adjacent selector</entry>
+              <entry>CSS Level 2</entry>
+              <entry>Matches any <codeph>F</codeph> element immediately preceded by a sibling
+                element <codeph>E</codeph>. </entry>
+            </row>
+            <row>
+              <entry><codeph>E ~ F</codeph></entry>
+              <entry>General sibling selector</entry>
+              <entry>CSS Level 3</entry>
+              <entry>Matches any <codeph>F</codeph> element preceded by a sibling element
+                  <codeph>E</codeph>. </entry>
+            </row>
+            <row>
+              <entry><codeph>E[foo]</codeph></entry>
+              <entry>Attribute selector</entry>
+              <entry>CSS Level 2</entry>
+              <entry>Matches any <codeph>E</codeph> element with the <codeph>"foo"</codeph>
+                attribute set (whatever the value). </entry>
+            </row>
+            <row>
+              <entry><codeph>E[foo="warning"]</codeph></entry>
+              <entry>Attribute selector with value</entry>
+              <entry>CSS Level 2</entry>
+              <entry>Matches any <codeph>E</codeph> element whose <codeph>"foo"</codeph> attribute
+                value is exactly equal to <codeph>"warning"</codeph>. </entry>
+            </row>
+            <row>
+              <entry><codeph>E[foo~="warning"]</codeph></entry>
+              <entry>Attribute selector containing value</entry>
+              <entry>CSS Level 2</entry>
+              <entry>Matches any <codeph>E</codeph> element whose <codeph>"foo"</codeph> attribute
+                value is a list of space-separated values, one of which is exactly equal to
+                  <codeph>"warning"</codeph>. </entry>
+            </row>
+            <row>
+              <entry><codeph>E[lang|="en"]</codeph></entry>
+              <entry>Attribute selector containing hyphen separated values</entry>
+              <entry>CSS Level 2</entry>
+              <entry>Matches any <codeph>E</codeph> element whose <codeph>"lang"</codeph> attribute
+                has a hyphen-separated list of values beginning (from the left) with
+                  <codeph>"en"</codeph>. </entry>
+            </row>
+            <row>
+              <entry><codeph>E:before and E:after</codeph></entry>
+              <entry>Pseudo-elements</entry>
+              <entry>CSS Level 2</entry>
+              <entry>The <codeph>':before'</codeph> and <codeph>':after'</codeph> pseudo-elements
+                can be used to insert generated content before or after an element's content.
+              </entry>
+            </row>
+            <row>
+              <entry><codeph>E:first-child</codeph></entry>
+              <entry>The first-child pseudo-class</entry>
+              <entry>CSS Level 2</entry>
+              <entry>Matches element <codeph>E</codeph> when <codeph>E</codeph> is the first child
+                of its parent. </entry>
+            </row>
+            <row>
+              <entry><codeph>E:not(s)</codeph></entry>
+              <entry>Negation pseudo-class</entry>
+              <entry>CSS Level 2</entry>
+              <entry>
+                <p id="p_wbc_dgk_54b">An E element that does not match simple selector s.</p>
+              </entry>
+            </row>
+            <row>
+              <entry><codeph>E:has</codeph></entry>
+              <entry>Relational pseudo-class</entry>
+              <entry>CSS Level 4</entry>
+              <entry>
+                <p id="p_xbc_dgk_54b">The <codeph>:has()</codeph> relational pseudo-class is a functional pseudo-class
+                  that takes a relative selector as an argument.</p>
+                <p id="p_ybc_dgk_54b">For more information, see <xref href="../topics/has-selector.dita#has-selector"
+                  />.</p>
+              </entry>
+            </row>
+            <row>
+              <entry><codeph>E:hover</codeph></entry>
+              <entry>The hover pseudo-class</entry>
+              <entry>CSS Level 2</entry>
+              <entry>
+                <p id="p_zbc_dgk_54b">The <codeph>:hover</codeph> pseudo-class applies while the user designates an
+                  element with a pointing device, but does not necessarily activate it. When moving
+                  the pointing device over an element, all the parent elements up to the root are
+                  taken into account.</p>
+              </entry>
+            </row>
+            <row>
+              <entry><codeph>E:focus</codeph></entry>
+              <entry>The focus pseudo-class</entry>
+              <entry>CSS Level 2</entry>
+              <entry>
+                <p id="p_acc_dgk_54b">The <codeph>:focus</codeph> pseudo-class applies while an element has the focus
+                  (accepts keyboard input).</p>
+              </entry>
+            </row>
+            <row>
+              <entry><codeph>E:focus-within</codeph></entry>
+              <entry>The generalized input focus pseudo-class</entry>
+              <entry>CSS Level 4</entry>
+              <entry>
+                <p id="p_bcc_dgk_54b">The <codeph>:focus-within</codeph> pseudo-class applies to elements that will have the
+                    <codeph>:focus</codeph> pseudo-class applied. Additionally, the ancestors of an
+                  element that matches <codeph>:focus-within</codeph> also match.</p>
+              </entry>
+            </row>
+            <row>
+              <entry><codeph>E:marker</codeph></entry>
+              <entry>The marker pseudo-class</entry>
+              <entry>CSS Level 4</entry>
+              <entry>The <codeph>::marker</codeph> pseudo-element represents the automatically
+                generated marker box of a list item.</entry>
+            </row>
+            <row>
+              <entry><codeph>E#myid</codeph></entry>
+              <entry>The ID selector</entry>
+              <entry>CSS Level 2</entry>
+              <entry>
+                <p id="p_ccc_dgk_54b">Matches any E element with ID equal to "myid". <note type="important" id="note_dcc_dgk_54b">Limitation:
+                    In <ph keyref="product"/> the match is performed only taking into account the
+                    attributes with the exact name: <i>"id"</i>.</note></p>
+              </entry>
+            </row>
+            <row>
+              <entry><codeph>E[att^="val"]</codeph></entry>
+              <entry>Substring matching attribute selector</entry>
+              <entry>CSS Level 3</entry>
+              <entry>An E element whose <codeph>att</codeph> attribute value begins exactly with the
+                string <codeph>val</codeph>.</entry>
+            </row>
+            <row>
+              <entry><codeph>E[att$="val"]</codeph></entry>
+              <entry>Substring matching attribute selector</entry>
+              <entry>CSS Level 3</entry>
+              <entry>An E element whose <codeph>att</codeph> attribute value ends exactly with the
+                string <codeph>val</codeph>.</entry>
+            </row>
+            <row>
+              <entry><codeph>E[att*="val"]</codeph></entry>
+              <entry>Substring matching attribute selector</entry>
+              <entry>CSS Level 3</entry>
+              <entry>An E element whose <codeph>att</codeph> attribute value contains the substring
+                  <codeph>val</codeph>.</entry>
+            </row>
+            <row>
+              <entry><codeph>E:root</codeph></entry>
+              <entry>Root pseudo-class</entry>
+              <entry>CSS Level 3</entry>
+              <entry>Matches the root element of the document. In HTML, the root element is always
+                the HTML element. </entry>
+            </row>
+            <row>
+              <entry><codeph>E:empty</codeph></entry>
+              <entry>Empty pseudo-class</entry>
+              <entry>CSS Level 3</entry>
+              <entry>An E element that has no text or child elements.</entry>
+            </row>
+            <row>
+              <entry><codeph>E:nth-child(n)</codeph></entry>
+              <entry>The nth-child pseudo-class</entry>
+              <entry>CSS Level 3</entry>
+              <entry>An E element, the nth child of its parent.</entry>
+            </row>
+            <row>
+              <entry><codeph>E:nth-last-child(n)</codeph></entry>
+              <entry>The nth-last-child pseudo-class</entry>
+              <entry>CSS Level 3</entry>
+              <entry>
+                <p id="p_ecc_dgk_54b">An E element, the nth child of its parent, counting from the last one.</p>
+              </entry>
+            </row>
+            <row>
+              <entry><codeph>E:nth-of-type(n)</codeph></entry>
+              <entry>The nth-of-type pseudo-class</entry>
+              <entry>CSS Level 3</entry>
+              <entry>
+                <p id="p_fcc_dgk_54b">An E element, the nth sibling of its type.</p>
+              </entry>
+            </row>
+            <row>
+              <entry><codeph>E:nth-last-of-type(n)</codeph></entry>
+              <entry>The nth-last-of-type pseudo-class</entry>
+              <entry>CSS Level 3</entry>
+              <entry>
+                <p id="p_gcc_dgk_54b">An E element, the nth sibling of its type, counting from the last one.</p>
+              </entry>
+            </row>
+            <row>
+              <entry><codeph>E:last-child</codeph></entry>
+              <entry>The last-child pseudo-class</entry>
+              <entry>CSS Level 3</entry>
+              <entry>
+                <p id="p_hcc_dgk_54b">An E element, last child of its parent.</p>
+              </entry>
+            </row>
+            <row>
+              <entry><codeph>E:first-of-type</codeph></entry>
+              <entry>The first-of-type pseudo-class</entry>
+              <entry>CSS Level 3</entry>
+              <entry>
+                <p id="p_icc_dgk_54b">An E element, first sibling of its type.</p>
+              </entry>
+            </row>
+            <row>
+              <entry><codeph>E:last-of-type</codeph></entry>
+              <entry>The last-of-type pseudo-class</entry>
+              <entry>CSS Level 3</entry>
+              <entry>
+                <p id="p_jcc_dgk_54b">An E element, last sibling of its type.</p>
+              </entry>
+            </row>
+            <row>
+              <entry><codeph>E:only-child</codeph></entry>
+              <entry>The only-child pseudo-class</entry>
+              <entry>CSS Level 3</entry>
+              <entry>
+                <p id="p_kcc_dgk_54b">An E element, only child of its parent.</p>
+              </entry>
+            </row>
+            <row>
+              <entry><codeph>E:only-of-type</codeph></entry>
+              <entry>The only-of-type pseudo-class</entry>
+              <entry>CSS Level 3</entry>
+              <entry>
+                <p id="p_lcc_dgk_54b">An E element, only sibling of its type.</p>
+              </entry>
+            </row>
+            <row>
+              <entry><codeph>ns|E</codeph></entry>
+              <entry>Element namespace selector</entry>
+              <entry>CSS Level 3</entry>
+              <entry>
+                <p id="p_mcc_dgk_54b">An element that has the local name E and the namespace given by the prefix
+                    <codeph>ns</codeph>. The namespace prefix can be bound to a URI by the
+                  at-rule:<codeblock outputclass="language-css" xml:space="preserve" id="codeblock_ncc_dgk_54b">@namespace ns "http://some_namespace_uri";</codeblock>See
+                    <xref href="../topics/dg-namespace-selectors.dita"/>.</p>
+              </entry>
+            </row>
+            <row>
+              <entry><codeph>E!&gt;F</codeph></entry>
+              <entry>The subject selector</entry>
+              <entry>CSS Level 4 (experimental)</entry>
+              <entry>
+                <p id="p_occ_dgk_54b">An element that has the local name E and has a child F. See <xref
+                    href="../topics/dg-subject-selector.dita"/>.</p>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </p>
+  </body>
+</topic>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+  <title>Oxygen XML WebHelp Responsive Plugin User Guide</title>
+  <!-- Getting started -->
+  <topicref href="../topics/wh_getting_started.dita" collection-type="sequence">
+    <topicmeta>
+      <navtitle>Getting Started</navtitle>
+      <shortdesc>Information about installing, activating, upgrading, and running <ph
+          keyref="product"/>
+      </shortdesc>
+    </topicmeta>
+    <topicref href="../topics/integrating-webhelp-plugin-with-dita-ot.dita">
+      <topicmeta>
+        <shortdesc>Describes how to install <ph keyref="product"/></shortdesc>
+      </topicmeta>
+    </topicref>
+    <topicref href="../topics/register-webhelp-plugin.dita">
+      <topicmeta>
+        <shortdesc>Describes how to activate your license key</shortdesc>
+      </topicmeta>
+    </topicref>
+    <topicref href="../topics/upgrading-webhelp-plugin-dita.dita">
+      <topicmeta>
+        <shortdesc>Describes how to upgrade to a newer version</shortdesc>
+      </topicmeta>
+    </topicref>
+    <topicref href="../topics/whr_generate_output.dita"
+      navtitle="Generating Output" locktitle="yes">
+      <topicmeta>
+        <navtitle>Generating Output</navtitle>
+        <shortdesc>Describes the various ways to generate WebHelp Responsive Output</shortdesc>
+      </topicmeta>
+      <topicref href="../topics/whr-run-from-oxygen.dita"/>
+      <topicref href="../topics/whr-build-output.dita"/>
+      <topicref href="../topics/whr-pt-feature-auto-transform.dita">
+        <topicref href="../topics/webhelp-responsive-integration-jenkins.dita"/>
+        <topicref href="../topics/webhelp-responsive-integration-travis.dita"/>
+      </topicref>
+      <topicref href="../topics/whr_generating_output_docker.dita"/>
+    </topicref>
+    <topicref href="../topics/increase-java-memory.dita">
+      <topicmeta>
+        <shortdesc>Describes how to increase memory for Java</shortdesc>
+      </topicmeta>
+    </topicref>
+  </topicref>
+  <!-- Layout and features -->
+  <topicref href="../topics/webhelp-responsive-description.dita" collection-type="sequence"
+    navtitle="Layout and Features" locktitle="yes">
+    <topicmeta>
+      <navtitle><ph keyref="wh-ch-title-layout-features"/></navtitle>
+      <shortdesc>Overview of the main features and layout of the WebHelp Responsive
+        output</shortdesc>
+    </topicmeta>
+    <!-- oXygen templates -->
+    <topicref href="../topics/whr-html5-pages.dita">
+      <topicmeta>
+        <shortdesc>Describes the components that can be configured in each type of page</shortdesc>
+      </topicmeta>
+    </topicref>
+    <topicref href="../topics/whr-search-outout.dita">
+      <topicref keys="whr-default-search-engine" href="../topics/whr-default-search-engine.dita">
+        <topicmeta>
+          <shortdesc>Describes the WebHelp Responsive built-in search engine</shortdesc>
+        </topicmeta>
+      </topicref>
+      <topicref keys="whr-oxygen-feedback-search-engine" href="../topics/whr-oxygen-feedback-search-engine.dita">
+        <topicmeta>
+          <shortdesc>Describes the Oxygen Feedback search engine</shortdesc>
+        </topicmeta>        
+      </topicref>
+    </topicref>
+    <topicref href="../topics/whr-context-sensitive.dita">
+      <topicmeta>
+        <shortdesc>Describes how to provide informational topics for certain UI
+          components</shortdesc>
+      </topicmeta>
+    </topicref>
+    <topicref href="../topics/whr-accessibility.dita" collection-type="sequence">
+      <topicmeta>
+        <shortdesc>Describes the WebHelp Responsive accessibility support for people with
+          disabilities</shortdesc>
+      </topicmeta>
+      <topicref href="../topics/whr-write-dita-content-accessible-whr-output.dita"
+        chunk="to-content">
+        <topicref href="../topics/whr-accessible-images.dita"/>
+        <topicref href="../topics/whr_accessible_image_maps.dita"/>
+        <topicref href="../topics/whr_acceessible_tables.dita">
+          <topicref href="../topics/whr_accessible_tables_header_top_row.dita"/>
+          <topicref href="../topics/whr_accessible_tables_header_first_column.dita"/>
+          <topicref href="../topics/whr_accessible_tables_header_top_row_first_column.dita.dita"/>
+        </topicref>
+      </topicref>
+      <topicref href="../topics/whr-vpat.dita"/>
+    </topicref>
+    <topicref href="../topics/whr-dark-mode.dita"/>
+    <topicref href="../topics/whr-ai-friendly-output.dita"/>
+  </topicref>
+  <topicref href="../topics/whr-feedback-system.dita" collection-type="sequence">
+    <topicmeta>
+      <shortdesc>Describes how to add an Oxygen Feedback comments component in WebHelp Responsive
+        output</shortdesc>
+    </topicmeta>
+  </topicref>
+  <topicref href="../topics/whr-technical-architecture.dita" collection-type="sequence">
+    <topicmeta>
+      <navtitle><ph keyref="wh-ch-title-developer-reference"/></navtitle>
+      <shortdesc>Technical details for developers who want to customize or extend the WebHelp
+        Responsive output</shortdesc>
+    </topicmeta>
+    <topicref href="../topics/whr-process-overview.dita">
+      <topicmeta>
+        <shortdesc>Describes all the stages of the DITA-OT processing</shortdesc>
+      </topicmeta>
+    </topicref>
+    <topicref href="../topics/whr-publishing-template.dita" keys="wh-publishing-template"
+      collection-type="sequence">
+      <topicmeta>
+        <shortdesc>Describes all the details of the built-in and customizable publishing
+          templates</shortdesc>
+      </topicmeta>
+      <topicref href="../topics/whr-pt-feature-gallery.dita"/>
+      <topicref href="../topics/whr_publishing_template_contents.dita" locktitle="yes"
+        navtitle="Publishing Template Package Contents">
+        <topicmeta>
+          <navtitle>Publishing Template Package Contents</navtitle>
+        </topicmeta>
+        <topicref href="../topics/html_page_templates.dita"/>
+      </topicref>
+    </topicref>
+    <topicref href="../topics/webhelp-responsive-plugin-additional-parameters.dita">
+      <topicmeta>
+        <shortdesc>Describes the supported parameters that can be used in WebHelp Responsive
+          transformations</shortdesc>
+      </topicmeta>
+    </topicref>
+    <topicref href="../topics/whr-responsive-override-xslt-dita-xslt-import.dita"
+      keys="whr-xslt-extension-points" navtitle="XSLT-Import and XSLT-Parameter Extension Points"
+      locktitle="yes">
+      <topicmeta>
+        <shortdesc>Describes the supported XSLT extension points that can be used for WebHelp
+          Responsive</shortdesc>
+      </topicmeta>
+    </topicref>
+    <!-- Layout pages -->
+  </topicref>
+  <topicref href="../topics/wh-responsive-customization-tips.dita" collection-type="sequence"
+    navtitle="Customization How to Guide" locktitle="yes">
+    <topicmeta>
+      <navtitle><ph keyref="wh-ch-title-customizing-whr-output"/></navtitle>
+      <shortdesc>Topics about how to customize various aspects of the WebHelp Responsive
+        output</shortdesc>
+    </topicmeta>
+    <topicref href="whr-customization-guide.ditamap" format="ditamap"/>
+  </topicref>
+
+  <keydef keys="wh-ch-title-getting-started">
+    <topicmeta>
+      <keywords>
+        <keyword>Getting Started</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  
+  <keydef keys="wh-ch-title-layout-features ">
+    <topicmeta>
+      <keywords>
+        <keyword>Layout and Features</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  
+  <keydef keys="wh-ch-title-developer-reference">
+    <topicmeta>
+      <keywords>
+        <keyword>Developer Reference</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  
+  <keydef keys="wh-ch-title-customizing-whr-output">
+    <topicmeta>
+      <keywords>
+        <keyword>Customizing WebHelp Responsive Output</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+
+</map>

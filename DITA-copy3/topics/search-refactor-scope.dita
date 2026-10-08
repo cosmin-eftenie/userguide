@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="search-refactor-scope">
+  <title>Search and Refactor Operations Scope</title>
+  <body>
+    <p conkeyref="reusables-editing-documents/scope_definition" id="p_t5z_bgk_54b"/>
+    <p conkeyref="reusables-editing-documents/fig1" id="p_u5z_bgk_54b"/>
+    <p conkeyref="reusables-editing-documents/scope_definition_2" id="p_v5z_bgk_54b"/>
+  </body>
+</topic>

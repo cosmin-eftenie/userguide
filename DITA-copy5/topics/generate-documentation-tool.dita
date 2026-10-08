@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="generate-documentation-tool">
+  <title>Generate Documentation</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Generate Documentation tools</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_hhh_dgk_54b"><ph keyref="product"/> includes a tool for generating documentation for
+        <ph product="developer editor developerEclipse editorEclipse">XSLT, XML Schema, XQuery,
+        WSDL, </ph>JSON schema, and OpenAPI documents. </p>
+  </body>
+</topic>

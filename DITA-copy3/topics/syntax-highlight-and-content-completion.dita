@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="syntax-highlight-and-content-completion">
+  <title>Syntax Highlighting in XQuery</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>XQuery<indexterm>Syntax highlighting</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p conkeyref="reusables-editing-documents/syntax-highlight-p" id="p_ajd_cgk_54b"/>
+    <p id="p_bjd_cgk_54b">To customize the colors or styles used for the syntax highlighting colors for XQuery files,
+      follow these steps:<ol id="ol_cjd_cgk_54b">
+        <li id="li_djd_cgk_54b"><ph conkeyref="reusables-preferences-pages/Open-the-preferences-page"/>.</li>
+        <li id="li_ejd_cgk_54b">Go to <xref href="preferences-colors-sh.dita#preferences-colors-sh"><menucascade>
+              <uicontrol>Editor</uicontrol>
+              <uicontrol>Syntax Highlight</uicontrol>
+            </menucascade></xref>.</li>
+        <li id="li_fjd_cgk_54b">Select and expand the <uicontrol>XQuery/XPath</uicontrol> section in the top pane.</li>
+        <li id="li_gjd_cgk_54b">Select the component you want to change and customize the colors or styles using the
+          selectors to the right of the pane.</li>
+      </ol></p>
+    <p id="p_hjd_cgk_54b">You can see the effects of your changes in the <uicontrol>Preview</uicontrol> pane.</p>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link href="preferences-colors-sh.dita#preferences-colors-sh">
+        <linktext>Customize Syntax Highlight colors</linktext>
+      </link>
+    </linklist>
+  </related-links>
+</topic>

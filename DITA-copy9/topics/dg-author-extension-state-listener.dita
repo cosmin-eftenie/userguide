@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dg-author-extension-state-listener">
+  <title>Configuring a State Listener for Author Mode</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Framework customization<indexterm>Extensions<indexterm>Author Extension State
+              Listener</indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_t3b_dgk_54b">The <xref
+        href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/extensions/api/AuthorExtensionStateListener.html"
+        format="html" scope="external"
+          ><term>ro.sync.ecss.extensions.api.AuthorExtensionStateListener</term></xref>
+      implementation is notified when the <uicontrol>Author</uicontrol> mode extension (where the
+      listener is defined) is activated or deactivated in the document type detection process.</p>
+    <codeblock outputclass="language-java" id="codeblock_u3b_dgk_54b">import ro.sync.ecss.extensions.api.AuthorAccess;
+import ro.sync.ecss.extensions.api.AuthorExtensionStateListener;
+
+public class SDFAuthorExtensionStateListener implements
+  AuthorExtensionStateListener {
+  private AuthorListener sdfAuthorDocumentListener;
+  private AuthorMouseListener sdfMouseListener;
+  private AuthorCaretListener sdfCaretListener;
+  private OptionListener sdfOptionListener;</codeblock>
+    <p id="p_v3b_dgk_54b">When the association rules of the <xref keyref="glossentry_framework"
+          ><term>framework</term></xref> (document type) configuration match that of a document open
+      in the <uicontrol>Author</uicontrol> editing mode, the <term>activation</term> event received
+      by this listener should be used to perform custom initializations and to register listeners
+      such as <xref
+        href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/extensions/api/AuthorListener.html"
+        format="html" scope="external"
+        ><term>ro.sync.ecss.extensions.api.AuthorListener</term></xref>, <xref
+        href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/extensions/api/AuthorMouseListener.html"
+        format="html" scope="external"
+        ><term>ro.sync.ecss.extensions.api.AuthorMouseListener</term></xref>, or <xref
+        href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/extensions/api/AuthorCaretListener.html"
+        format="html" scope="external"
+        ><term>ro.sync.ecss.extensions.api.AuthorCaretListener</term></xref>. </p>
+    <codeblock outputclass="language-java" id="codeblock_w3b_dgk_54b">public void activated(AuthorAccess authorAccess) {
+  // Get the value of the option.
+  String option = authorAccess.getOptionsStorage().getOption(
+               "sdf.custom.option.key", "");
+  // Use the option for some initializations...
+  
+  // Add an OptionListener.
+  authorAccess.getOptionsStorage().addOptionListener(sdfOptionListener);
+  
+  // Add author DocumentListeners.
+  sdfAuthorDocumentListener = new SDFAuthorListener();
+  authorAccess.getDocumentController().addAuthorListener(
+               sdfAuthorDocumentListener);
+
+  // Add MouseListener.
+  sdfMouseListener = new SDFAuthorMouseListener();
+  authorAccess.getEditorAccess().addAuthorMouseListener(sdfMouseListener);
+
+  // Add CaretListener.
+  sdfCaretListener = new SDFAuthorCaretListener();
+  authorAccess.getEditorAccess().addAuthorCaretListener(sdfCaretListener);
+
+  // Other custom initializations...
+
+}</codeblock>
+    <p id="p_x3b_dgk_54b">The <codeph>authorAccess</codeph> parameter received by the
+        <term>activated</term> method can be used to gain access to specific
+        <uicontrol>Author</uicontrol> mode actions and informations related to components such as
+      the editor, document, workspace, tables, or the <term>change tracking</term> manager.</p>
+    <p id="p_y3b_dgk_54b">If options specific to the custom developed <term>Author Extension</term>
+      need to be stored or retrieved, a reference to the <xref
+        href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/extensions/api/OptionsStorage.html"
+        format="html" scope="external"
+        ><term>ro.sync.ecss.extensions.api.OptionsStorage</term></xref> can be obtained by calling
+      the <term>getOptionsStorage</term> method from the <uicontrol>authorAccess</uicontrol>. The
+      same object can be used to register <xref
+        href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/extensions/api/OptionListener.html"
+        format="html" scope="external"
+        ><term>ro.sync.ecss.extensions.api.OptionListener</term></xref> listeners. An option
+      listener is registered in relation with an option <b>key</b> and will be notified about the
+      value changes of that option.</p>
+    <p id="p_z3b_dgk_54b">An <term>AuthorListener</term> can be used if events related to the
+        <uicontrol>Author</uicontrol> mode document modifications are of interest. The listener can
+      be added to the <xref
+        href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/extensions/api/AuthorDocumentController.html"
+        format="html" scope="external"
+          ><term>ro.sync.ecss.extensions.api.AuthorDocumentController</term></xref>. A reference to
+      the document controller is returned by the <term>getDocumentController</term> method from the
+        <uicontrol>authorAccess</uicontrol>. The document controller can also be used to perform
+      operations involving document modifications.</p>
+    <p id="p_ajb_dgk_54b">To provide access to the <uicontrol>Author</uicontrol> mode
+      component-related functionality and information, the <uicontrol>authorAccess</uicontrol> has a
+      reference to the <xref
+        href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/extensions/api/access/AuthorEditorAccess.html"
+        format="html" scope="external"
+          ><term>ro.sync.ecss.extensions.api.access.AuthorEditorAccess</term></xref> that can be
+      obtained when calling the <term>getEditorAccess</term> method. At this level,
+        <term>AuthorMouseListener</term> and <term>AuthorCaretListener</term> can be added to
+      provide notification of mouse and cursor events that occur in the
+        <uicontrol>Author</uicontrol> editor mode.</p>
+    <p id="p_bjb_dgk_54b">The <term>deactivation</term> event is received when another
+        <term>framework</term> is activated for the same document, the user switches to another
+      editor mode or the editor is closed. The <term>deactivate</term> method is typically used to
+      unregister the listeners previously added on the <term>activate</term> method and to perform
+      other actions. For example, options related to the deactivated <term>Author Extension</term>
+      can be saved at this point.</p>
+    <codeblock outputclass="language-java" id="codeblock_cjb_dgk_54b">public void deactivated(AuthorAccess authorAccess) {
+  // Store the option.
+  authorAccess.getOptionsStorage().setOption(
+               "sdf.custom.option.key", optionValue);
+  
+  // Remove the OptionListener.
+  authorAccess.getOptionsStorage().removeOptionListener(sdfOptionListener);
+    
+  // Remove DocumentListeners.
+  authorAccess.getDocumentController().removeAuthorListener(
+               sdfAuthorDocumentListener);
+    
+  // Remove MouseListener.
+  authorAccess.getEditorAccess().removeAuthorMouseListener(sdfMouseListener);
+
+  // Remove CaretListener.
+  authorAccess.getEditorAccess().removeAuthorCaretListener(sdfCaretListener);
+    
+  // Other actions...
+    
+}</codeblock>
+    <note conkeyref="reusable_notes_java-files/sdf_project" id="note_djb_dgk_54b"/>
+  </body>
+</topic>

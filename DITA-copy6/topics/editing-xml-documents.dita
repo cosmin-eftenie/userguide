@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="editing-xml-documents">
+  <title>Editing XML Documents</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>XML documents</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_z4v_bgk_54b">The structure of an XML document and the required restrictions on its elements and their
+      attributes are defined with an XML schema.<ph
+        product="author editor authorEclipse editorEclipse"> This makes it easier to edit XML
+        documents in the visual <uicontrol>Author</uicontrol> editing mode. </ph> For more
+      information about schema association, see <xref
+        href="associate-schema-to-document.dita#associate-schema-to-document"/>.</p>
+    <p id="p_apv_bgk_54b"><ph keyref="product"/> includes fully supported built-in <xref keyref="glossentry_framework"
+          ><term>frameworks</term></xref> for the most popular <xref href="doc-type.dita">XML
+        document types (DITA, DocBook, TEI, XHTML, JATS)</xref> with a full set of features. These
+      built-in <term>frameworks</term> are defined according to a set of rules and a variety of
+      settings that improve editing capabilities for its particular file type.<ph
+        product="author editor authorEclipse editorEclipse"> For extensive details about the DITA
+        editing features included in <ph keyref="product"/>, see the <xref href="author-dita.dita"
+          >DITA Authoring chapter</xref>.</ph></p>
+    <p id="p_bpv_bgk_54b">This section includes information about the user interface components and actions that are
+      available in the various editing modes and numerous features to help you edit XML documents in
+      any mode.</p>
+  </body>
+  <related-links>
+      <link href="text-mode-editor.dita#text-mode-editor"/>
+      <link href="author-editor.dita#author-editor"
+        product="author editor authorEclipse editorEclipse"/>
+      <link href="grid-mode-editor.dita#grid-mode-editor"/>
+      <link href="doc-type.dita"/>
+  </related-links>
+</topic>

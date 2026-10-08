@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="oracle-xml-db-connection">
+  <title>Oracle Database Connections (Deprecated)</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Databases<indexterm>Connections<indexterm>Oracle</indexterm></indexterm></indexterm>
+        <indexterm>Oracle database connection</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_n5w_cgk_54b">The Oracle database is a common relational type of database system. <ph keyref="product"/>
+      comes with built-in support for the 11g version of the database system. The Oracle database
+      also includes a Oracle XML DB component that adds native XML support. <ph keyref="product"/>
+      allows you to browse Oracle repositories in the <xref
+        href="relational-database-explorer.dita#relational-database-explorer"><uicontrol>Data Source
+          Explorer</uicontrol> view</xref>, open tables in the <xref
+        href="relational-table-explorer.dita#relational-table-explorer"><uicontrol>Table
+          Explorer</uicontrol> view</xref>, and perform various operations on the resources in the
+      repository. </p>
+    <p id="p_o5w_cgk_54b">
+      <fig product="editor developer author" id="fig_p5w_cgk_54b">
+        <title>Oracle Database Connection</title>
+        <image href="../img/sa_oracle_xml_db_browsing.png" placement="inline"/>
+      </fig>
+    </p>
+    <p id="p_q5w_cgk_54b">
+      <fig product="editorEclipse authorEclipse developerEclipse" id="fig_r5w_cgk_54b">
+        <title>Oracle Database Connection</title>
+        <image href="../img/ec_oracle_xml_db_browsing.png" placement="inline"/>
+      </fig>
+    </p>
+  </body>
+  <related-links>
+    <linklist><title>Related Information:</title><link format="html" href="http://docs.oracle.com/cd/B28359_01/appdev.111/b28369/xdb_xquery.htm#top" scope="external">
+      <linktext><b>Using XQuery with Oracle XML DB</b></linktext>
+    </link></linklist>
+  </related-links>
+</topic>

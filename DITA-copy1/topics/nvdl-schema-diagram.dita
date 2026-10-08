@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="nvdl-schema-diagram">
+  <title>NVDL Schema Diagram</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>NVDL schemas<indexterm>Diagram Editor</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_obf_cgk_54b">This section explains how to use the graphical diagram of a NVDL schema.</p>
+  </body>
+</topic>

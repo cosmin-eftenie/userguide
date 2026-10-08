@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="control-text-direction-dfc">
+  <title>Controlling the Text Direction Using the Unicode Direction Formatting Codes</title>
+  <body>
+    <p id="p_nvy_bgk_54b">These Unicode Direction Formatting Codes codes can be embedded in the edited text, specifying
+      a text direction and embedding. However, it is not recommended to use them in XML as they are
+      zero width characters, making it hard to debug the text arrangement.</p>
+    <table frame="all" colsep="1" rowsep="1" id="table_ovy_bgk_54b">
+      <title>Directional Formatting Codes</title>
+      <tgroup cols="3">
+        <colspec colname="c2" colnum="1" colwidth="1*" colsep="1" rowsep="1"/>
+        <colspec colname="newCol2" colnum="2" colwidth="2*" colsep="1" rowsep="1"/>
+        <colspec colname="newCol4" colnum="3" colwidth="4*" colsep="1" rowsep="1"/>
+        <tbody>
+          <row>
+            <entry>U+202A (LRE)</entry>
+            <entry>LEFT-TO-RIGHT EMBEDDING</entry>
+            <entry>Treats the following text as embedded left-to-right.</entry>
+          </row>
+          <row>
+            <entry>U+202B (RLE)</entry>
+            <entry>RIGHT-TO-LEFT EMBEDDING</entry>
+            <entry>Treats the following text as embedded right to left.</entry>
+          </row>
+          <row>
+            <entry>U+202D (LRO)</entry>
+            <entry>LEFT-TO-RIGHT OVERRIDE</entry>
+            <entry>Forces the following characters to be treated as strong left-to-right
+              characters.</entry>
+          </row>
+          <row>
+            <entry>U+202E (RLO)</entry>
+            <entry>RIGHT-TO-LEFT OVERRIDE</entry>
+            <entry>Forces the following characters to be treated as strong right-to-left
+              characters.</entry>
+          </row>
+          <row>
+            <entry>U+202C (PDF)</entry>
+            <entry>POP DIRECTIONAL FORMATTING CODE</entry>
+            <entry>Restores the bidirectional state to what it was before the last LRE, RLE, RLO, or
+              LRO.</entry>
+          </row>
+          <row>
+            <entry>U+200E (LRM)</entry>
+            <entry>LEFT-TO-RIGHT MARK</entry>
+            <entry>Left-to-right strong zero-width character.</entry>
+          </row>
+          <row>
+            <entry>U+200F (RLM)</entry>
+            <entry>RIGHT-TO-LEFT MARK</entry>
+            <entry>Right-to-left strong zero-width character.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <p id="p_pvy_bgk_54b">To insert Unicode Direction Formatting Codes, use the <ph
+        product="authorEclipse editorEclipse developerEclipse"><uicontrol>Symbols</uicontrol>
+        toolbar action</ph><ph product="editor author developer"><xref
+          href="unicode-toolbar.dita#unicode-toolbar"><uicontrol>Character Map</uicontrol></xref>
+        dialog box</ph>. To easily find such a code, you can either enter directly the hexadecimal
+      value, or use the <uicontrol>Details</uicontrol> tab to enter the codes name.</p>
+    <p id="p_qvy_bgk_54b"><ph keyref="product"/> offers the support for bi-directional text in all the side views
+        (<xref href="outliner-view.dita#outliner-view"><uicontrol>Outline</uicontrol>
+        view</xref>, <xref href="author-attributes-view.dita#author-attributes-view"
+          ><uicontrol>Attributes</uicontrol> view</xref> and so on) and text fields.</p>
+  </body>
+</topic>

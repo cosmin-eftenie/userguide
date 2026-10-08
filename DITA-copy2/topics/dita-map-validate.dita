@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dita-map-validate">
+  <title>DITA Map Validation and Completeness Check</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>DITA<indexterm>Maps<indexterm>Validate and Check for
+            Completeness</indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_zvl_dgk_54b">You should validate your <xref keyref="glossentry_ditamap"><term>DITA maps</term></xref>
+      regularly to make sure that your maps and topics are valid, and all of the relationships
+      between them are working. Changing one topic, image, or piece of metadata may create errors in
+      references that rely on them. You may not discover these problems all at once. Validate your
+      map to catch all of these kinds of problems. The longer you wait between validating your maps,
+      the more difficult it may be to detect and correct any errors you find.</p>
+    <section id="validating_a_dita_map">
+      <title>Validating a DITA Map</title>
+      <p id="p_awl_dgk_54b">To validate a DITA, follow these steps:<ol id="ol_bwl_dgk_54b">
+          <li id="li_cwl_dgk_54b">In the <xref href="../topics/dita-maps-manager.dita#dita-maps-manager"><uicontrol>DITA
+                Maps Manager</uicontrol> view</xref>, make sure that the tab that holds your <xref
+              keyref="glossentry_root-map"><term>root map</term></xref> is selected and that the
+              <uicontrol>Context</uicontrol> selection is set either to the name of your <term>root
+              map</term> or to <codeph>&lt;current map></codeph>.</li>
+          <li id="li_dwl_dgk_54b">It is a good practice to refresh your <term>DITA map</term> before running the
+            validation process. To do so, select the <term>DITA map</term> in the <uicontrol>DITA
+              Maps Manager</uicontrol> view and click <uicontrol product="author editor"><image
+                href="../img/Reload16.png" id="image_xgc_wcq_js"/>Reload
+              (<shortcut>F5</shortcut>)</uicontrol><menucascade
+              product="authorEclipse editorEclipse">
+              <uicontrol>File</uicontrol>
+              <uicontrol>Refresh (<shortcut>F5</shortcut>)</uicontrol>
+            </menucascade>.</li>
+          <li id="li_ewl_dgk_54b">Click the <uicontrol><image href="../img/ValidateAndCheck16.png"
+                id="image_q3v_2vv_sr"/>Validate and Check for Completeness</uicontrol> button<ph
+              product="author editor"> from the <uicontrol><image href="../img/ValidateDrop.png"
+                  id="image_g4m_2xq_y3b"/>Validation</uicontrol> drop-down menu </ph>on the
+              <uicontrol>DITA Maps Manager</uicontrol> toolbar to open the <xref
+              keyref="dita_validate-and-check-for-completeness/dita-map-completeness-dialog"
+              format="dita"><uicontrol>DITA Map Completeness Check</uicontrol> dialog
+            box</xref>.</li>
+          <li id="li_fwl_dgk_54b">If you are using profiling, check the <uicontrol>Use DITAVAL filters</uicontrol> box
+            and select the appropriate option.</li>
+          <li id="li_gwl_dgk_54b">Select any other options you want to check.</li>
+          <li id="li_hwl_dgk_54b">Click <uicontrol>Check</uicontrol> to run the validation process.</li>
+        </ol></p>
+      <p product="author editor" id="p_iwl_dgk_54b"><b>Result:</b> The progress of the validation is
+        displayed in the status bar and can be stopped from there.</p>
+      <p product="authorEclipse editorEclipse" id="p_jwl_dgk_54b"><b>Result:</b> The progress of the operation is shown
+        as a task in the <uicontrol>Progress</uicontrol> view and the operation can be stopped from
+        there.</p>
+    </section>
+    <section id="validation_process">
+      <title>Validation Process</title>
+      <p id="p_kwl_dgk_54b">The validation process of a <term>DITA map</term> includes the following:<ul
+          id="ul_qbl_3dx_js">
+          <li id="li_lwl_dgk_54b">Verifies that the file paths of the topic references are valid. For example, if an
+              <xmlatt>href</xmlatt> attribute points to an invalid file path, it is reported as an
+            error in the message panel at the bottom of the editor.</li>
+          <li id="li_mwl_dgk_54b">Validates each referenced topic and map. Each topic file is opened and validated
+            against the appropriate DITA DTD. If another <term>DITA map</term> is referenced in the
+            main one, the referenced <term>DITA map</term> is verified recursively, applying the
+            same algorithm as for the main map.</li>
+          <li id="li_nwl_dgk_54b">If errors or warnings are found, they are displayed in a separate message pane at the
+            bottom of the editor and clicking them takes you to the location of the error or warning
+            in the file where it was found.</li>
+        </ul></p>
+    </section>
+    <section id="dita-map-completeness-dialog">
+      <title>DITA Map Completeness Check Dialog Box</title>
+      <p id="p_owl_dgk_54b">The <uicontrol>DITA Map Completeness Check</uicontrol> dialog box allows you to configure
+        the <term>DITA map</term> validation.</p>
+      <p id="p_pwl_dgk_54b">
+        <fig id="fig_tsy_zkx_js" product="author editor">
+          <title>DITA Map Completeness Check Dialog Box</title>
+          <image href="../img/sa_completeness_check.png" id="image_elf_clx_js" placement="inline"/>
+        </fig>
+      </p>
+      <p id="p_qwl_dgk_54b">
+        <fig id="fig_tsy_zkx_js2" product="authorEclipse editorEclipse">
+          <title>DITA Map Completeness Check Dialog Box</title>
+          <image href="../img/ec_completeness_check.png" id="image_zns_dlx_js" placement="inline"/>
+        </fig>
+      </p>
+      <p id="p_rwl_dgk_54b">You can configure the validation process with the following options that are available in
+        the <uicontrol>DITA Map Completeness Check</uicontrol> dialog box:<dl id="dl_swl_dgk_54b">
+          <dlentry conkeyref="reusables-validation-scenarios/batch-validate-referenced"
+            id="dlentry_ajp_1cs_4pb">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-validation-scenarios/dlentry_wwl_dgk_54b"
+            id="dlentry_els_bcs_4pb">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry id="use-ditaval-filters">
+            <dt><uicontrol>Use DITAVAL filters</uicontrol></dt>
+            <dd>
+              <p id="p_oq3_p52_dwb">The content of the map is filtered by applying a <xref
+                  format="dita" keyref="dita_profiling">profiling condition set</xref> before
+                  validation.<note id="note_u1q_w52_dwb">The validation process also takes branch
+                  filtering <xmlelement>ditavalref</xmlelement> elements into account as long as
+                  they appear before the referenced topics.</note></p>
+              <p id="p_b5z_p52_dwb">You can choose between the following options:<ul
+                  id="ul_lpv_q52_dwb">
+                  <li id="li_mpv_q52_dwb"><uicontrol>From the current condition set</uicontrol> -
+                    The map is filtered using the condition set currently applied in the <xref
+                      href="dita-maps-manager.dita#dita-maps-manager"><uicontrol>DITA Maps
+                        Manager</uicontrol> view</xref>. Clicking the <uicontrol><image
+                        href="../img/HelpToc16.png" placement="inline"/>Details</uicontrol> icon
+                    opens a topic in the <ph keyref="product"/> User Guide that explains how to
+                    create a profiling condition set.</li>
+                  <li id="li_npv_q52_dwb"><uicontrol>From all available condition sets</uicontrol> -
+                    For each available condition set, the map content is filtered using that set
+                    before validation.</li>
+                  <li id="li_opv_q52_dwb"><uicontrol>From the associated transformation
+                      scenario</uicontrol> - The filtering condition set is specified explicitly as
+                    a DITAVAL file in the current transformation scenario associated with the
+                      <term>DITA map</term>.</li>
+                  <li id="li_ppv_q52_dwb"><uicontrol>Other DITAVAL files</uicontrol> - For each
+                    DITAVAL file from this list, the map content is filtered using the DITAVAL file
+                    before validation. Use the <uicontrol>Add</uicontrol> or
+                      <uicontrol>Remove</uicontrol> buttons to configure the list. The
+                      <uicontrol>Add</uicontrol> button opens a dialog box that allows you to select
+                    a local or remote path to a DITAVAL file. <ph
+                      conkeyref="reusables-user-guide/specify-path-ph"/></li>
+                </ul></p>
+            </dd>
+          </dlentry>
+          <dlentry conkeyref="reusables-validation-scenarios/dlentry_bxl_dgk_54b"
+            id="dlentry_ny1_dcs_4pb">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-validation-scenarios/dlentry_cxl_dgk_54b"
+            id="dlentry_v14_dcs_4pb">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-validation-scenarios/dlentry_dxl_dgk_54b"
+            id="dlentry_k3j_2cs_4pb">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-validation-scenarios/dlentry_jxl_dgk_54b"
+            id="dlentry_hhf_fcs_4pb">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-validation-scenarios/dlentry_kxl_dgk_54b"
+            id="dlentry_npt_fcs_4pb">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-validation-scenarios/dlentry_pxl_dgk_54b"
+            id="dlentry_cdj_gcs_4pb">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-validation-scenarios/dlentry_qxl_dgk_54b"
+            id="dlentry_x4x_gcs_4pb">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-validation-scenarios/report-table-problems"
+            id="dlentry_znn_hcs_4pb">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-validation-scenarios/dlentry_ayl_dgk_54b"
+            id="dlentry_bzd_3cs_4pb">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-validation-scenarios/repport-attr-values-conflict"
+            id="dlentry_bbr_3cs_4pb">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-validation-scenarios/additional-schematron-checks"
+            id="dlentry_nl3_jcs_4pb">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry id="dlentry_byl_dgk_54b">
+            <dt><uicontrol>Export settings</uicontrol></dt>
+            <dd>Allows you to export the settings assigned in this dialog box to an XML file that
+              you can share with other users or use on other systems.</dd>
+          </dlentry>
+          <dlentry id="dlentry_cyl_dgk_54b">
+            <dt><uicontrol>Import settings</uicontrol></dt>
+            <dd>Allows you to import settings for this dialog box from an XML file that was created
+              by the <uicontrol>Export settings</uicontrol> action.</dd>
+          </dlentry>
+          <dlentry id="dlentry_dyl_dgk_54b">
+            <dt><uicontrol>Check</uicontrol></dt>
+            <dd>Use the <uicontrol>Check</uicontrol> button to begin the validation process. The
+              options that you choose in this dialog box are preserved between sessions.</dd>
+          </dlentry>
+        </dl></p>
+    </section>
+    <note conkeyref="reusables-editing-documents/scripting-license-note" id="note_eyl_dgk_54b"/>
+  </body>
+  <related-links>
+      <link keyref="dita_edit-maps"/>
+  </related-links>
+</topic>

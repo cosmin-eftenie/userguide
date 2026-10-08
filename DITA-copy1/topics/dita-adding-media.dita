@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dita-adding-media">
+  <title>Adding Video, Audio, and Embedded HTML Resources in DITA Topics</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>DITA<indexterm>Topics<indexterm>Add media
+          resources</indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_nfm_dgk_54b">You can insert references to media resources (such as videos, audio clips, or embedded HTML
+      frames) in your DITA topics. The media resources can be played directly in
+        <uicontrol>Author</uicontrol> mode and in all HTML5-based outputs. There is a toolbar button
+        (<image href="../img/InsertMedia16.png"/>) that allows you to insert and configure a
+      reference to the media resource. You can also drag media files from your system explorer or
+      the <xref href="using-the-project-view.dita#using-the-project-view" format="dita"><uicontrol
+          product="author editor">Project</uicontrol><uicontrol
+          product="authorEclipse editorEclipse">Project Explorer</uicontrol> view</xref> and drop them into
+      your documents (or copy and paste them).</p>
+    <table frame="all" colsep="1" rowsep="1" id="table_ofm_dgk_54b">
+      <title>Supported Media Types</title>
+      <tgroup cols="4">
+        <colspec colname="c1" colnum="1" colwidth="1*" colsep="1" rowsep="1"/>
+        <colspec colname="newCol2" colnum="2" colwidth="1*" colsep="1" rowsep="1"/>
+        <colspec colname="c2" colnum="3" colwidth="1*" colsep="1" rowsep="1" align="center"/>
+        <colspec colname="c3" colnum="4" colwidth="2*" colsep="1" rowsep="1"/>
+        <thead>
+          <row>
+            <entry>Media</entry>
+            <entry>Description</entry>
+            <entry>Type</entry>
+            <entry>Supported Size Properties</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry><term>mp3</term></entry>
+            <entry>Moving Picture Experts Group Layer-3 Audio </entry>
+            <entry>audio</entry>
+            <entry>Width</entry>
+          </row>
+          <row>
+            <entry><term>wav</term></entry>
+            <entry>Windows Wave</entry>
+            <entry>audio</entry>
+            <entry>Width</entry>
+          </row>
+          <row>
+            <entry><term>pcm</term></entry>
+            <entry>Pulse Code Modulation</entry>
+            <entry>audio</entry>
+            <entry>Width</entry>
+          </row>
+          <row>
+            <entry><term>m4a</term></entry>
+            <entry>Moving Picture Experts Group Layer-4 Audio</entry>
+            <entry>audio</entry>
+            <entry>Width</entry>
+          </row>
+          <row>
+            <entry><term>aif</term></entry>
+            <entry>Audio Interchange Format</entry>
+            <entry>audio</entry>
+            <entry>Width</entry>
+          </row>
+          <row>
+            <entry><term>mp4</term></entry>
+            <entry>Moving Picture Experts Group Layer-4 Video</entry>
+            <entry>video</entry>
+            <entry>Width &amp; Height</entry>
+          </row>
+          <row>
+            <entry><term>m4v</term></entry>
+            <entry>Itunes Video File</entry>
+            <entry>video</entry>
+            <entry>Width &amp; Height</entry>
+          </row>
+          <row>
+            <entry><term>avi</term></entry>
+            <entry>Audio Video Interleaved</entry>
+            <entry>video</entry>
+            <entry>Width &amp; Height</entry>
+          </row>
+          <row>
+            <entry>embedded video (such as <term>YouTube</term>, <term>Vimeo</term>, or
+                <i>Vidyard</i>)</entry>
+            <entry>Embedded Iframe Code</entry>
+            <entry>iframe</entry>
+            <entry>Width &amp; Height</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <section id="adding-image-inline">
+      <title>Adding a Media Resource</title>
+      <p id="p_pfm_dgk_54b">To insert a media resource in a DITA document, use the following procedure:</p>
+      <ol id="ol_eb4_q5d_xp">
+        <li id="li_qfm_dgk_54b">Place the cursor at the location where you want the media resource. </li>
+        <li id="li_rfm_dgk_54b">
+          <p id="p_sfm_dgk_54b">Select the <uicontrol><image href="../img/InsertMedia16.png" id="image_exy_113_t3b"
+              />Insert Media Resource</uicontrol> action from the toolbar. The <uicontrol>Insert
+              Media</uicontrol> dialog box appears.<note id="note_tfm_dgk_54b">You can also drag media files from your
+              system explorer or the <xref href="using-the-project-view.dita#using-the-project-view"
+                format="dita"><uicontrol product="author editor">Project</uicontrol><uicontrol
+                  product="authorEclipse editorEclipse">Project Explorer</uicontrol> view</xref> and drop
+              them into your documents (or copy and paste them). Note that this method will bypass
+              the <uicontrol>Insert Media</uicontrol> dialog box, so if you need to adjust the size
+              you will need to adjust the <xmlatt>width</xmlatt> or <xmlatt>height</xmlatt>
+              attributes manually.</note></p>
+          <p id="p_ufm_dgk_54b">
+            <fig id="fig_gbc_c2z_jr">
+              <title>Insert Media Dialog Box</title>
+              <image href="../img/insert_media_dialog.png" id="image_ssk_prz_jr"/>
+            </fig>
+          </p>
+        </li>
+        <li id="li_vfm_dgk_54b">
+          <p id="p_wfm_dgk_54b">Configure the options in this dialog box and click <uicontrol>Insert</uicontrol>.</p>
+          <p id="p_xfm_dgk_54b">The <uicontrol>Insert Media</uicontrol> dialog box includes the following options:<dl id="dl_yfm_dgk_54b">
+              <dlentry id="url">
+                <dt><uicontrol>Location</uicontrol></dt>
+                <dd>Use this option to specify a URL for the media resource as the value of a
+                    <xmlatt>data</xmlatt> attribute inside the <xmlelement>object</xmlelement>
+                  element. You can type the URL of the resource you want to insert or use browsing
+                  actions in the <uicontrol><image href="../img/BrowseDrop.png"/>Browse</uicontrol>
+                  drop-down menu (there is also a history drop-down).</dd>
+              </dlentry>
+              <dlentry id="key">
+                <dt><uicontrol id="keyref-field">Key</uicontrol></dt>
+                <dd>Use this option to insert the selected key as the value of a
+                    <xmlatt>datakeyref</xmlatt> attribute inside the <xmlelement>object</xmlelement>
+                  element. All keys that are presented in the dialog box are gathered from the <xref
+                    keyref="glossentry_root-map"><term>root map</term></xref> of the current
+                    <term>DITA map</term>. You can use the <uicontrol><image
+                      href="../img/Conkeyref20.png"/>Choose Key Reference</uicontrol> button to open
+                  the <uicontrol>Choose Key</uicontrol> dialog box that presents the list of keys
+                  available in the selected <term>root map</term>.<note id="note_zfm_dgk_54b">If your defined keys are not
+                    listed in this dialog box, it is most likely trying to gather keys from the
+                    wrong <term>root map</term>. You can change the <term>root map</term> by using
+                    the <uicontrol>Change Root Map</uicontrol> link in the <uicontrol>Choose
+                      Key</uicontrol> dialog box or change it in the <uicontrol>Context</uicontrol>
+                    option in the toolbar of the <uicontrol>DITA Maps
+                  Manager</uicontrol>.</note></dd>
+              </dlentry>
+              <dlentry id="type">
+                <dt><uicontrol>Type</uicontrol></dt>
+                <dd><ph keyref="product"/> detects and automatically selects the media type based
+                  upon the specified resource in the <xref href="#dita-adding-media/url"
+                    format="dita">URL field</xref>. You can manually change the type, but keep in
+                  mind that in the publishing stage the <xref
+                    href="#dita-adding-media/publishing-stage" format="dita"><i>object</i> element
+                    is converted to an HTML5 element</xref> based upon the type selected here. You
+                  can choose between: <b>audio</b>, <b>video</b>, or <b>iframe</b>.</dd>
+              </dlentry>
+              <dlentry id="size">
+                <dt><uicontrol>Size</uicontrol></dt>
+                <dd>Use this section to configure the <uicontrol>Width</uicontrol> and
+                    <uicontrol>Height</uicontrol> of the frame for the media resource. Specifying a
+                  value in these options inserts a <xmlatt>width</xmlatt> and
+                    <xmlatt>height</xmlatt> attribute, respectively. For audio clips, only the
+                    <uicontrol>Width</uicontrol> can be adjusted.</dd>
+              </dlentry>
+            </dl></p>
+        </li>
+      </ol>
+      <p id="p_agm_dgk_54b"><b>Result in Author Mode:</b> A reference to the specified video, audio, or embedded HTML
+        frame is inserted in an <xmlelement>object</xmlelement> element and it is rendered in
+          <uicontrol>Author</uicontrol> mode so that it can be played directly from there.</p>
+      <note type="attention" id="note_bgm_dgk_54b">
+        <ul id="ul_cgm_dgk_54b">
+          <li id="li_dgm_dgk_54b">On Ubuntu 17.10, if you receive an error when trying to play videos in
+              <uicontrol>Author</uicontrol> mode, you need to install the
+              <codeph>libavformat57</codeph> library.</li>
+        </ul>
+      </note>
+      <p id="publishing-stage"><b>Result in Output:</b> In the publishing stage, the
+        <xmlelement>object</xmlelement> element is converted to an HTML5 element so that it can be
+        rendered properly and played in all HTML5-based outputs.<ul id="ul_egm_dgk_54b">
+          <li id="li_fgm_dgk_54b"><b>Videos</b> - The <xmlelement>object</xmlelement> element is converted to an HTML5
+            <xmlelement>video</xmlelement> element.</li>
+          <li id="li_ggm_dgk_54b"><b>Audio Clips</b> - The <xmlelement>object</xmlelement> element is converted to an HTML5
+            <xmlelement>audio</xmlelement> element.</li>
+          <li id="li_hgm_dgk_54b"><b>Embedded HTML Frames</b> - The <xmlelement>object</xmlelement> element is converted to an
+            HTML5 <xmlelement>iframe</xmlelement> element.</li>
+        </ul></p>
+      <note type="tip" id="copy-embed-code-tip">There is an even faster way of inserting an embedded
+        video (such as a YouTube, Vimeo, or Vidyard). If you copy the embed code from the source
+        (for example, you can right-click on a YouTube video and select <uicontrol>Copy embed
+          code</uicontrol>), you can then paste the contents of the clipboard in the <xref
+          href="#dita-adding-media/url" format="dita"><uicontrol>URL</uicontrol> field</xref> and
+        the <xref href="#dita-adding-media/type" format="dita"><uicontrol>Type</uicontrol></xref>
+        will automatically be set on <uicontrol>iframe</uicontrol>, while the <xref
+          href="#dita-adding-media/size" format="dita"><uicontrol>Width</uicontrol> and
+            <uicontrol>Height</uicontrol></xref> will be populated according to the detected size,
+        and an <codeph>allowfullscreen</codeph> parameter will automatically be added (set the value
+        of this parameter to <b>true</b> to allow videos to play in full screen mode once the
+        document is converted to XHTML output).</note>
+    </section>
+    <section id="inserting_media_in_html_outputs_that_do_not_suppo">
+      <title>Inserting Media in HTML Outputs That Do Not Support Embedded Media</title>
+      <p id="p_igm_dgk_54b">For certain types of HTML output (for example, CHM) that do not support embedded media
+        (such as videos or audio files), <ph keyref="product"/> provides a parameter that can be set
+        in the transformation scenario to present the media object as a plain link in the
+        output.</p>
+      <p id="p_jgm_dgk_54b">This can be achieved by following these steps:<ol id="ol_kgm_dgk_54b">
+          <li id="li_lgm_dgk_54b"><xref
+              href="create-dita-ot-transformation.dita#create-dita-ot-transformation/editing_a_dita_ot_transformation_scenario"
+              >Edit the DITA transformation scenario</xref> for the output type that does not
+            support embedded objects (for example, <uicontrol>DITA Map CHM</uicontrol>).</li>
+          <li id="li_mgm_dgk_54b">Go to the <xref href="dita-map-edit-parameters.dita#dita-map-edit-parameters"
+                ><uicontrol>Parameters</uicontrol> tab</xref> and click the
+              <uicontrol>New</uicontrol> button to add a new parameter.</li>
+          <li id="li_ngm_dgk_54b">For the <uicontrol>Name</uicontrol>, enter:
+              <uicontrol>com.oxygenxml.xhtml.linkToMediaResources</uicontrol>.</li>
+          <li id="li_ogm_dgk_54b">For the <uicontrol>Value</uicontrol>, enter: <b>true</b>.</li>
+          <li id="li_pgm_dgk_54b">Click <uicontrol>OK</uicontrol> and run the transformation.</li>
+        </ol></p>
+      <p id="p_qgm_dgk_54b"><b>Result:</b> The media object will appear in the output as a plain link instead of an
+        embedded object.</p>
+    </section>
+    <section id="section_mbq_bff_w5b">
+      <title>Resources</title>
+      <p id="p_rgm_dgk_54b">For more information, see the following video demonstration:</p>
+      <p id="p_sgm_dgk_54b"><object width="450" height="250"
+          data="https://www.youtube.com/embed/llX11gS4WaU" outputclass="iframe">
+          <param name="allowfullscreen" value="true"/>
+        </object></p>
+    </section>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link href="eppo-adding-images.dita#eppo-adding-images"/>
+      <link href="whr-add-videos.dita#whr-add-videos"/>
+    </linklist>
+  </related-links>
+</topic>

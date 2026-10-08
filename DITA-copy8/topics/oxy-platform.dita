@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="oxy-platform">
+  <title>oxy:platform() Function</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>oxy:platform function</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_kf4_bgk_54b">This function returns the current platform. You can use this if you want
+      to enable or disable an action depending on the platform. The possible values are:
+        <uicontrol>standalone</uicontrol>, <uicontrol>eclipse</uicontrol>, or
+        <uicontrol>webapp</uicontrol>.</p>
+    <p id="p_lf4_bgk_54b"><b><u>Example: <term>oxy:platform</term>
+      Function</u></b><codeblock outputclass="language-css" id="codeblock_mf4_bgk_54b">oxy:platform()="standalone"</codeblock></p>
+    <p id="p_nf4_bgk_54b">This example would keep the action activated for the
+        <term>standalone</term> distribution of <ph keyref="product"/>, but disable it for the
+        <term>Eclipse</term> and <term>Web Author</term> distributions.</p>
+  </body>
+</topic>

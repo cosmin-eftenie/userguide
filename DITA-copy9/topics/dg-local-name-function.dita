@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept
+  PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="dg-local-name-function">
+  <title>Local Name: oxy_local-name() Function</title>
+  <shortdesc>This function evaluates the local name of the current node.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>CSS extensions<indexterm>Custom
+            functions<indexterm>oxy_local-name</indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p id="p_zbd_dgk_54b">It does not have any arguments.</p>
+    <p id="p_acd_dgk_54b"><b><u>Example: <term>oxy_local-name</term> Function</u></b></p>
+    <p id="p_bcd_dgk_54b">To insert the local name as static text content before the element, use this CSS
+      selector:<codeblock outputclass="language-css" id="codeblock_ccd_dgk_54b">*:before{
+  content: oxy_local-name() ": ";
+}</codeblock></p>
+  </conbody>
+</concept>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="api_faq_enable_change_tracking_at_startup">
+  <title>Impose Custom Options for Authors</title>
+  <body>
+    <section id="question">
+      <title>Use Case</title>
+      <p id="p_klg_dgk_54b">You want to force <xref keyref="glossentry_track-changes"><term>Track
+            Changes</term></xref> to be enabled at startup.</p>
+    </section>
+    <section id="answer">
+      <title>Solution</title>
+      <p id="p_llg_dgk_54b">There are two ways to enable <term>Track Changes</term> for every document that you
+        open:</p>
+      <p id="p_mlg_dgk_54b">
+        <ol id="ol_up4_d22_5h">
+          <li id="li_nlg_dgk_54b">You could <xref keyref="options_customizing-default">customize the default
+              options</xref> that are used by your authors and set the <xref
+              keyref="options_track-changes"><uicontrol>Track Changes - Initial State</uicontrol>
+              option</xref> to <uicontrol>Always On</uicontrol>.</li>
+          <li id="li_olg_dgk_54b">Use an API to toggle the <term>Track Changes</term> state after a document is opened
+            in <uicontrol>Author</uicontrol>
+            mode:<codeblock outputclass="language-java" id="codeblock_plg_dgk_54b">// Check the current state of Track Changes 
+boolean trackChangesOn = authorAccess.getReviewController().isTrackingChanges();
+if (!trackChangesOn) {
+  // Set Track Changes state to On
+  authorAccess.getReviewController().toggleTrackChanges();
+}</codeblock></li>
+        </ol>
+      </p>
+    </section>
+  </body>
+</topic>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="preferences-schema-aware">
+  <title>Schema-Aware Preferences</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Preferences<indexterm>Schema-Aware</indexterm></indexterm>
+        <indexterm>Smart paste preferences</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_bs4_bgk_54b"><ph keyref="product"/> can use the schema of your XML language to improve
+      the way the <uicontrol>Author</uicontrol> mode editor handles your content. To configure the
+        <uicontrol>Schema-Aware</uicontrol> options, <ph
+        conkeyref="reusables-preferences-pages/open-the-preferences-page"/> and go to <menucascade>
+        <uicontrol>Editor</uicontrol>
+        <uicontrol>Edit modes</uicontrol>
+        <uicontrol>Author</uicontrol>
+        <uicontrol>Schema-Aware</uicontrol>
+      </menucascade>.</p>
+    <p id="p_cs4_bgk_54b">The following options are available:<dl id="dl_ds4_bgk_54b">
+        <dlentry id="schema-aware-normalization">
+          <dt><uicontrol>Schema-aware normalization, format, and indent</uicontrol></dt>
+          <dd>When you open or save a document in <uicontrol>Author</uicontrol> mode, white space is
+            normalized using the <codeph>display</codeph> property of the current CSS stylesheet and
+            the values of the <xref keyref="options_editor_format_xml"
+              product="author editor authorEclipse editorEclipse">settings</xref><ph product="json"
+              >settings</ph> for <b>Preserve space elements</b>, <b>Default space elements</b>, and
+              <b>Mixed content elements</b>. When this option is selected, the schema will also be
+            used to normalize white space, based on the content model (<i>element-only</i>,
+              <i>simple-content</i>, or <i>mixed</i>). Note that the schema information takes
+            precedence.</dd>
+          <dd>
+            <p id="p_es4_bgk_54b">
+              <dl id="dl_fs4_bgk_54b">
+                <dlentry id="dlentry_gs4_bgk_54b">
+                  <dt><uicontrol>Indent blocks-only content</uicontrol></dt>
+                  <dd>To avoid accidentally introducing inappropriate white space around <xref
+                      keyref="glossentry_inline-element"><term>inline elements</term></xref>, <ph
+                      keyref="product"/> does not normally apply indenting to the source of an
+                    element with mixed content. If this option is selected, <ph keyref="product"/>
+                    will apply indenting to the source of mixed content elements that only contain
+                      <xref keyref="glossentry_block-element"><term>block
+                    elements</term></xref>.</dd>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+        <dlentry id="schema-aware-editing-section">
+          <dt><uicontrol>Schema-Aware Editing</uicontrol></dt>
+          <dd>The options in this section determine how <ph keyref="product"/> will use the schema
+            of a document to control the behavior of the <uicontrol>Author</uicontrol> mode. <ul id="ul_hs4_bgk_54b">
+              <li id="li_is4_bgk_54b"><uicontrol>On</uicontrol> - Enables all schema-aware editing options.</li>
+              <li id="li_js4_bgk_54b"><uicontrol>Off</uicontrol> - Disables all schema-aware editing options. </li>
+              <li id="li_ks4_bgk_54b"><uicontrol>Custom</uicontrol> - Allows you to select custom schema-aware editing
+                options from the following:</li>
+            </ul></dd>
+        </dlentry>
+        <dlentry id="dlentry_ls4_bgk_54b">
+          <dt><uicontrol>Schema-Aware Actions</uicontrol> section</dt>
+          <dd>
+            <p id="p_ms4_bgk_54b">
+              <dl id="dl_ns4_bgk_54b">
+                <dlentry id="dlentry_os4_bgk_54b">
+                  <dt><uicontrol>Delete element tags with backspace and delete</uicontrol></dt>
+                  <dd>Controls what happens when you attempt to delete an element tag. The two
+                    options are:<ul id="ul_ps4_bgk_54b">
+                      <li id="li_qs4_bgk_54b"><uicontrol>Smart delete</uicontrol> - If deleting the tag would make the
+                        document invalid, <ph keyref="product"/> will attempt to make the document
+                        valid by unwrapping the current element or by appending it to an adjacent
+                        element where the result would be valid. For instance, if you delete a bold
+                        tag, the content can be unwrapped and become part of the surrounding
+                        paragraph, but if you delete a list item tag, the list item content cannot
+                        become part of the list container. However, the content could be appended to
+                        a preceding list item. </li>
+                      <li id="li_rs4_bgk_54b"><uicontrol>Reject action when its result is invalid</uicontrol> - A
+                        deletion that would leave the document in an invalid state is rejected.</li>
+                    </ul></dd>
+                </dlentry>
+                <dlentry id="paste-drag-drop">
+                  <dt><uicontrol>Paste and Drag and Drop</uicontrol></dt>
+                  <dd>Controls the behavior for paste and drag and drop actions. Available options are:<ul id="ul_ss4_bgk_54b">
+                      <li id="smart-paste-drag-drop"><uicontrol>Smart paste and drag and
+                          drop</uicontrol> - If the content inserted by a paste or drop action is
+                        not valid at the cursor position, according to the schema, <ph
+                          keyref="product"/> tries to find an appropriate insert position. The
+                        possibilities include:<ul id="ul_jfs_5pz_zd">
+                          <li id="li_ts4_bgk_54b">Creating a sibling element that can accept the content (for example,
+                            if you tried to paste a paragraph into an existing paragraph).</li>
+                          <li id="li_us4_bgk_54b">Inserting the content into a parent or child element (for example, if
+                            you tried to paste a list item into an existing list item, or into the
+                            space above or below and existing list).</li>
+                          <li id="li_vs4_bgk_54b">Inserting the content into an ancestor element where it would be
+                            valid.</li>
+                        </ul></li>
+                      <li id="reject-action"><uicontrol>Reject action when its result is
+                          invalid</uicontrol> - If selected, <ph keyref="product"/> will not let you
+                        paste content into a position where it would be invalid. </li>
+                    </ul></dd>
+                </dlentry>
+                <dlentry id="dlentry_ws4_bgk_54b">
+                  <dt><uicontrol>Typing</uicontrol></dt>
+                  <dd>Controls the behavior that takes place when typing. Available options are: <ul id="ul_xs4_bgk_54b">
+                      <li id="li_ys4_bgk_54b"><uicontrol>Smart typing</uicontrol> - If typed characters are not allowed
+                        in the element at the cursor position, but the previous element does allow
+                        text, then a similar element will be inserted, along with your content.</li>
+                      <li id="reject-action-typing"><uicontrol>Reject action when its result is
+                          invalid</uicontrol> - If selected, and the result of the typing action is
+                        invalid, the action will not be performed.</li>
+                    </ul></dd>
+                </dlentry>
+                <dlentry id="dlentry_zs4_bgk_54b">
+                  <dt><uicontrol>Content Completion</uicontrol></dt>
+                  <dd>Controls the behavior that takes place when inserting elements using the
+                      <term>Content Completion Assistant</term> in <uicontrol>Author</uicontrol>
+                    mode. Available options are: <ul id="ul_at4_bgk_54b">
+                      <li id="li_bt4_bgk_54b"><uicontrol>Press ENTER to show available content
+                          completion proposals</uicontrol> - If selected, pressing
+                            <uicontrol><shortcut>Enter</shortcut></uicontrol> will open the
+                          <term>Content Completion Assistant</term>. If deselected, there are three
+                          possibilities:<ul id="ul_ct4_bgk_54b">
+                          <li id="li_dt4_bgk_54b">The current element will be split (if
+                            possible).</li>
+                          <li id="li_et4_bgk_54b">A new element with the same name will be inserted
+                            (if possible).</li>
+                          <li id="li_ft4_bgk_54b">Otherwise, a new paragraph will be inserted.</li>
+                        </ul></li>
+                      <li id="show-all-possible-elements"><uicontrol>Show all possible elements in
+                          the content completion list</uicontrol> - If selected, the content
+                        completion list will show all the elements in the schema, even those that
+                        cannot be entered validly at the current position. If you select an element
+                        that is not valid at the current position, <ph keyref="product"/> will
+                        attempt to find a valid location to insert it and may present you with
+                        several options. </li>
+                      <li id="allow-only-insertion"><uicontrol>Allow only insertion of valid
+                          elements and attributes</uicontrol> - If selected, you can only select
+                        elements in the content completion list that are valid (according to the
+                        schema) at the current position.</li>
+                      <li id="li_gt4_bgk_54b"><uicontrol>Allow only insertion of valid attribute
+                          values</uicontrol> - If selected, you cannot enter an attribute value that
+                        is not valid (according to the schema)<ph
+                          product="author editor authorEclipse editorEclipse"> in the <xref
+                            href="author-attributes-view.dita#author-attributes-view"
+                              ><uicontrol>Attributes</uicontrol> view</xref> or <xref
+                            href="editing-attributes-author-mode.dita#editing-attributes-author-mode"
+                              ><b>In-place Attributes Editor</b></xref></ph>. If the attribute has a
+                        choice of values, you can select a possible value from a drop-down list in
+                        the combo box, but you cannot enter a value manually. </li>
+                    </ul></dd>
+                </dlentry>
+                <dlentry id="dlentry_ht4_bgk_54b">
+                  <dt><uicontrol>Warn on invalid content when performing action</uicontrol></dt>
+                  <dd>A warning message will be displayed when performing an action that will result
+                    in invalid content. Available options are:<ul id="ul_gt3_gqz_zd">
+                      <li id="li_it4_bgk_54b"><uicontrol>Delete Element Tags</uicontrol> - If
+                        selected, a warning message will be displayed if the <xref
+                          href="author-contextual-menu.dita"
+                          product="author editor authorEclipse editorEclipse">Delete Element
+                          Tags</xref><ph product="json">Delete Element Tags</ph> action will result
+                        in an invalid document. You will be asked to confirm the deletion.</li>
+                      <li id="li_jt4_bgk_54b"><uicontrol>Join Elements</uicontrol> - If selected, a
+                        warning message will be displayed if the <xref
+                          href="author-contextual-menu.dita"
+                          product="author editor authorEclipse editorEclipse">Join
+                          Elements</xref><ph product="json">Join Elements</ph> action will result in
+                        an invalid document. You will be asked to confirm the join.</li>
+                    </ul></dd>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+        <dlentry id="dlentry_kt4_bgk_54b">
+          <dt><uicontrol>Automatically apply the best schema-aware insertion
+            operation</uicontrol></dt>
+          <dd>If selected, <ph keyref="product"/> automatically uses what it considers to be the
+            best insertion solution, when there is an attempt to insert content that is not valid in
+            a specific context. If not selected, <ph keyref="product"/> will ask the user to choose
+            from a list of proposed solutions.</dd>
+        </dlentry>
+        <dlentry id="convert_external_content_on_paste">
+          <dt><uicontrol>Convert external content on paste</uicontrol></dt>
+          <dd>
+            <p id="p_lt4_bgk_54b">If selected, the <xref
+                href="smart-paste-support.dita#smart-paste-support"
+                product="author editor authorEclipse editorEclipse"><term>Smart Paste</term>
+                feature</xref><ph product="json"><term>Smart Paste</term> feature</ph> is enabled
+              when external content is pasted in <uicontrol>Author</uicontrol> mode.</p>
+            <p id="p_mt4_bgk_54b">
+              <dl id="dl_nt4_bgk_54b">
+                <dlentry id="convert-even-space-preserve">
+                  <dt><uicontrol>Convert even when pasting inside space-preserve
+                      elements</uicontrol></dt>
+                  <dd>If selected, the <term>Smart Paste</term> feature will be used even when
+                    external content is pasted inside a <term>space-preserve</term> element (such as
+                    a <xmlelement>codeblock</xmlelement>).</dd>
+                </dlentry>
+                <dlentry id="dlentry_ot4_bgk_54b">
+                  <dt><uicontrol>Convert pasted URLs to links</uicontrol></dt>
+                  <dd>If selected, when a URL is pasted into <uicontrol>Author</uicontrol> mode, a
+                    link will be inserted (the type of link depends on the type of document). For
+                    example, in DITA documents, an <xmlelement>xref</xmlelement> is inserted.</dd>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+      </dl></p>
+  </body>
+  <related-links product="author editor authorEclipse editorEclipse">
+    <link href="smart-paste-support.dita#smart-paste-support"/>
+    <link href="author-customize-smart-paste.dita#author-customize-smart-paste"/>
+  </related-links>
+</topic>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="highlight-component-occurencies-ant">
+  <title>Highlight Component Occurrences</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Ant build files<indexterm>Highlight occurrences</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_pmb_cgk_54b">When a component (for example <i>property</i> or <i>target</i>) is found at the
+      current cursor position, they are highlighted in both the document and in the stripe bar at
+      the right side of the document. <ph keyref="product"/> also supports occurrences highlight for
+      type and task references.</p>
+    <p id="p_qmb_cgk_54b">Customizable colors are used (one for the component definition and another one for component
+      references). Occurrences are displayed until another component is selected and a new search is
+      performed. All highlights are removed when you start to edit the document. </p>
+    <p id="p_rmb_cgk_54b">This feature is enabled by default. To configured it, <ph
+        conkeyref="reusables-preferences-pages/open-the-preferences-page"/> and go to <menucascade>
+        <uicontrol>Editor</uicontrol>
+        <uicontrol>Mark Occurrences</uicontrol>
+      </menucascade>. If your particular type of file is not selected, you can perform this search
+      by going to <menucascade>
+        <uicontrol>Search</uicontrol>
+        <uicontrol>Search Occurrences in File <shortcut
+            conkeyref="reusable-oxygen-shortcuts-list/ctrl_shift_u_shortcut"/></uicontrol>
+      </menucascade> in the contextual menu. Matches are displayed in separate tabs of the <xref
+        href="results-view.dita#results-view"><uicontrol>Results</uicontrol> view</xref>.</p>
+  </body>
+  <related-links>
+    <linklist><title>Related Information:</title><link href="preferences-mark-occurrences.dita#preferences-mark-occurrences"/></linklist>
+  </related-links>
+</topic>

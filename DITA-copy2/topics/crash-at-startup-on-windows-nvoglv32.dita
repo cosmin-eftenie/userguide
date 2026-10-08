@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE troubleshooting PUBLIC "-//OASIS//DTD DITA Troubleshooting//EN" "troubleshooting.dtd">
+<troubleshooting id="crash-at-startup-on-windows-nvoglv32">
+  <title>Crash at Startup on Windows with an Error About the nvoglv32.dll File</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Error: Startup crash - Fault Module Name nvoglv32.dll</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <troublebody>
+    <condition id="problem">
+      <title>Problem</title>
+      <p id="p_bfk_dgk_54b">I try to start <ph keyref="product"/> on Windows but it crashed with an error message about
+          <q>Fault Module Name: nvoglv32.dll</q>. What is the problem?</p>
+    </condition>
+    <troubleSolution>
+      <cause id="cause">
+        <title>Cause</title>
+        <p id="p_cfk_dgk_54b">It is most likely an OpenGL driver issue.</p>
+      </cause>
+      <remedy id="solution">
+        <title>Solution</title>
+        <steps-informal>
+          <p id="p_dfk_dgk_54b">This can be avoided by creating an empty file called <filepath>opengl32.dll</filepath>
+            in the <ph keyref="product"/> install folder (if you start <ph keyref="product"/> with
+            the shortcut created by the installer on the Start menu or on Desktop) or in the
+            subfolder <filepath>bin</filepath> of the home folder of the Java virtual machine that
+            runs <ph keyref="product"/> (if you start <ph keyref="product"/> with the
+              <filepath>oxygen.bat</filepath> script). The home folder of the Java virtual machine
+            that runs <ph keyref="product"/> is the value of the <codeph>java.home</codeph> property
+            that is available in the <uicontrol>System properties</uicontrol> tab of the
+              <uicontrol>About</uicontrol> dialog box (<menucascade>
+              <uicontrol>Help</uicontrol>
+              <uicontrol>About</uicontrol>
+            </menucascade>).</p>
+        </steps-informal>
+      </remedy>
+    </troubleSolution>
+  </troublebody>
+</troubleshooting>

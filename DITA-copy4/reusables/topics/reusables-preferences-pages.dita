@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="reusables-preferences-pages">
+  <title>Reusable Components for Preferences Pages</title>
+  <body>
+    <!--Opening the Option>Preferences page -->
+    <p id="p_knk_bgk_54b"><ph id="preferences"><menucascade
+          product="author developer editor svnClient json">
+          <uicontrol>Options</uicontrol>
+          <uicontrol>Preferences</uicontrol>
+        </menucascade><ph product="authorEclipse developerEclipse editorEclipse">in Eclipse
+          preferences choose </ph><uicontrol product="editorEclipse">Oxygen XML
+          Editor</uicontrol><uicontrol product="authorEclipse">Oxygen XML
+          Author</uicontrol><uicontrol product="developerEclipse">Oxygen XML
+        Developer</uicontrol></ph></p>
+    <p id="p_lnk_bgk_54b"><ph id="preferences-standalone"
+        product="author developer editor svnClient json"><menucascade>
+          <uicontrol>Options</uicontrol>
+          <uicontrol>Preferences</uicontrol>
+        </menucascade></ph>
+      <ph id="preferences-eclipse" product="editorEclipse developerEclipse authorEclipse">go to
+          <uicontrol>Window</uicontrol> (<uicontrol>Eclipse</uicontrol> on macOSX) and choose <menucascade>
+          <uicontrol>Preferences</uicontrol>
+          <uicontrol keyref="product"/>
+        </menucascade></ph>
+      <ph id="preferences-eclipse-not-oxygen" product="editorEclipse developerEclipse authorEclipse"
+        >go to <uicontrol>Window</uicontrol> (<uicontrol>Eclipse</uicontrol> on macOSX) and choose
+          <uicontrol>Preferences</uicontrol></ph>
+    </p>
+    <p id="p_mnk_bgk_54b">
+      <ph id="open-the-preferences-page"><xref keyref="options_preferences">open the
+            <uicontrol>Preferences</uicontrol> dialog box <menucascade
+            product="author developer editor svnClient json">
+            <uicontrol>(Options</uicontrol>
+            <uicontrol>Preferences)</uicontrol>
+          </menucascade></xref></ph>
+    </p>
+    <p id="p_nnk_bgk_54b">
+      <ph id="Open-the-preferences-page"><xref keyref="options_preferences">Open the
+            <uicontrol>Preferences</uicontrol> dialog box <menucascade
+            product="author developer editor svnClient json">
+            <uicontrol>(Options</uicontrol>
+            <uicontrol>Preferences)</uicontrol>
+          </menucascade></xref></ph>
+    </p>
+    <!--Document Type Association preferences page-->
+    <p product="author developer editor authorEclipse developerEclipse editorEclipse json"
+      id="p_onk_bgk_54b">
+      <ph id="preferences-document-type-association"><xref
+          keyref="options_document-type-associations"><uicontrol>Document Type
+            Association</uicontrol> preferences page</xref></ph>
+    </p>
+    <!--Misc-->
+    <note id="formatting-note" product="author editor authorEclipse editorEclipse">New lines that
+      are added by the user in elements where the <xmlatt>xml:space</xmlatt> attribute is set to
+        <codeph>preserve</codeph> (such as <xmlelement>pre</xmlelement> elements in HTML, or
+        <xmlelement>codeblock</xmlelement> elements in DITA) are still inserted. Also, selecting
+      this option automatically disables the <xref
+        href="../../topics/preferences-author-serialization.dita#preferences-author-serialization/also-apply-format-indent"
+          ><uicontrol>Also apply the format and indent options that are set for Text
+          mode</uicontrol> option</xref>, since the formatting from <uicontrol>Text</uicontrol> mode
+      does not take the CSS styles into account.</note>
+    <p id="libre-mathml">For example, the following commands could be
+      used to edit MathML equations with a LibreOffice application (depending on the O.S.):<ul
+        id="ul_jtx_nwl_qlb">
+        <li id="li_tx4_bgk_54b"><b>Windows</b> - <codeph>"C:\Program
+          Files\LibreOffice\program\smath.exe" --nologo "${cf}"</codeph></li>
+        <li id="li_ux4_bgk_54b"><b>macOS</b> -
+          <codeph>/Applications/LibreOffice.app/Contents/MacOS/soffice --math --nologo
+            "${cf}"</codeph></li>
+        <li id="li_vx4_bgk_54b"><b>Linux</b> - <codeph>/usr/lib/libreoffice/program/smath --nologo
+          "${cf}"</codeph></li>
+      </ul></p>
+  </body>
+</topic>

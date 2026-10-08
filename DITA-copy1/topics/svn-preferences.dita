@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="svn-preferences">
+    <title><ph keyref="product"/> SVN Preferences</title>
+    <prolog>
+    <metadata>
+      <keywords><indexterm>SVN
+        Client<indexterm>Preferences</indexterm></indexterm></keywords>
+    </metadata>
+  </prolog>
+    <body>
+        <p id="p_m5j_dgk_54b">The options used in the SVN client are saved and loaded independently from the <ph
+        keyref="product"/> options. However, if <ph keyref="product"/> cannot determine a set of SVN
+      options to be loaded at startup, some of the preferences are imported from the XML Editor
+      options (such as the License key and HTTP Proxy settings).</p>
+        <p id="p_n5j_dgk_54b">There is also an additional set of preferences applied to the SVN client that are set in
+      global SVN files. There are two editing actions available in the <uicontrol>Global Runtime
+        Configuration</uicontrol> submenu of the <uicontrol>Options</uicontrol> menu. These actions,
+        <uicontrol>Edit 'config' file</uicontrol> and <uicontrol>Edit 'servers' file</uicontrol>,
+      contain parameters that act as defaults applied to all the SVN client tools that are used by
+      the same user on their login account.</p>
+    </body>
+</topic>

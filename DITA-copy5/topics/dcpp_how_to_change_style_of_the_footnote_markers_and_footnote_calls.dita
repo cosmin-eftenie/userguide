@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_how_to_change_style_of_the_footnote_markers_and_footnote_calls">
+  <title>How to Change Style of the Footnote Markers and Footnote Calls</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            ><ph keyref="pdf-html5-transformation"/><indexterm>Footnotes<indexterm>Style
+              Markers and Calls</indexterm></indexterm></indexterm>
+        <indexterm product="pdf-css ope">Footnotes<indexterm>Style Markers and
+          Calls</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_q1t_cgk_54b">To bold the footnotes numbers, use some colors, and change the footnote
+      marker, add the following rules to your <xref href="dcpp_the_customization_css.dita"
+        >customization CSS</xref>:</p>
+    <codeblock outputclass="language-css" id="codeblock_r1t_cgk_54b">*[class ~= "topic/fn"]:footnote-call {
+  font-weight: bold;
+  color:red;
+}
+
+*[class ~= "topic/fn"]:footnote-marker {
+  content: counter(footnote) " / ";
+  font-weight: bold;
+  color:red;
+}</codeblock>
+    <p>To indent the footnote content displayed at the end of the page, add the following rules to
+      your <xref href="dcpp_the_customization_css.dita">customization CSS</xref>:</p>
+    <codeblock id="codeblock_ckh_j1q_2tb" outputclass="language-css">*[class ~= "topic/entry"] > *[class ~= "topic/fn"] {
+  padding-left: 1in;
+}
+
+*[class ~= "topic/entry"] > *[class ~= "topic/fn"]:footnote-marker {
+  margin-left: 1in;
+}</codeblock>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link format="html" href="https://www.oxygenxml.com/doc/ug-chemistry/topics/ch_footnotes.html"
+        scope="external">
+        <linktext>Oxygen PDF Chemistry: Footnotes</linktext>
+      </link>
+    </linklist>
+  </related-links>
+</topic>

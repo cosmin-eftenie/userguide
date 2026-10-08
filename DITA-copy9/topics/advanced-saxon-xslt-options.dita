@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="advanced-saxon-xslt-options">
+  <title>Advanced Saxon HE/PE/EE XSLT Transformation Options</title>
+  <body>
+    <p id="p_a3l_cgk_54b">The XSLT transformation scenario allows you to configure advanced options that are specific
+      for the Saxon HE (Home Edition), PE (Professional Edition), and EE (Enterprise Edition)
+        engines.<ph> They are the same options as <xref
+          href="preferences-xslt-saxon8.dita#preferences-xslt-saxon8">those in the <uicontrol>Saxon
+            HE/PE/EE</uicontrol> preferences page</xref> but they are configured as a specific set
+        of transformation options for each transformation scenario, while the values set in the
+        preferences page apply as global options. The advanced options configured in a
+        transformation scenario override the <ph
+          product="authorEclipse developerEclipse editorEclipse">global options</ph><ph
+          product="author developer editor"><xref keyref="glossentry_global-options">global
+            options</xref></ph> defined in the preferences page.</ph>
+    </p>
+    <section id="saxonhepeee_options">
+      <title>Saxon-HE/PE/EE Options</title>
+      <p id="p_b3l_cgk_54b">The advanced options for Saxon <ph keyref="saxon9FullVersion"/> Home Edition (HE),
+        Professional Edition (PE), and Enterprise Edition (EE) are as follows:<dl id="dl_c3l_cgk_54b">
+          <dlentry id="dlentry_d3l_cgk_54b">
+            <dt><uicontrol>Mode ("-im")</uicontrol></dt>
+            <dd>A Saxon-specific option that sets the initial mode for the transformation. If this
+              value is also specified in a <xref href="#advanced-saxon-xslt-options/use-config-file"
+                format="dita">configuration file</xref>, the value in this option takes
+              precedence.</dd>
+          </dlentry>
+          <dlentry id="dlentry_e3l_cgk_54b">
+            <dt><uicontrol>Template ("-it")</uicontrol></dt>
+            <dd>A Saxon-specific option that sets the name of the initial XSLT template to be
+              executed. If this value is also specified in a <xref
+                href="#advanced-saxon-xslt-options/use-config-file" format="dita">configuration
+                file</xref>, the value in this option takes precedence.<note type="tip" id="note_f3l_cgk_54b">If your
+                stylesheet includes <codeph>&lt;xsl:template name="xsl:initial-template"></codeph>,
+                  <ph keyref="product"/> will automatically detect and use it as the initial
+                template, so this option is not needed in this case.</note></dd>
+          </dlentry>
+          <dlentry conkeyref="reusables-transforming-documents/xslt-use-config-file"
+            id="use-config-file">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-transforming-documents/xslt-debugger-trace"
+            product="developer editor developerEclipse editorEclipse" id="dlentry_g3l_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-transforming-documents/xslt-optimization-level"
+            id="optimization-level">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-transforming-documents/xslt-line-numbering" id="dlentry_h3l_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-transforming-documents/xslt-expand-attributes" id="dlentry_i3l_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-transforming-documents/xslt-dtd-validation" id="dlentry_j3l_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-transforming-documents/xslt-strip-whitespaces" id="dlentry_l3l_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-transforming-documents/xslt-enable-profiling" id="dlentry_m3l_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+        </dl></p>
+    </section>
+    <section id="saxonpeee_options">
+      <title>Saxon-PE/EE Options</title>
+      <p id="p_n3l_cgk_54b">The following advanced options are specific for Saxon <ph keyref="saxon9FullVersion"/>
+        Professional Edition (PE) and Enterprise Edition (EE) only:<dl id="dl_o3l_cgk_54b">
+          <dlentry conkeyref="reusables-transforming-documents/xslt-register-ce-extension-functions" id="dlentry_p3l_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-transforming-documents/xslt-allow-calls" id="dlentry_q3l_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-transforming-documents/enable-assertions" id="dlentry_r3l_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+        </dl></p>
+    </section>
+    <section id="saxonee_options">
+      <title>Saxon-EE Options</title>
+      <p id="p_s3l_cgk_54b">The advanced options that are specific for Saxon <ph keyref="saxon9FullVersion"/>
+        Enterprise Edition (EE) are as follows:<dl id="dl_t3l_cgk_54b">
+          <dlentry id="dlentry_u3l_cgk_54b">
+            <dt><uicontrol>XML Schema version</uicontrol></dt>
+            <dd>Use this option to change the default XML Schema version for this transformation. To
+              change the default XML Schema version globally, <ph
+                conkeyref="reusables-preferences-pages/open-the-preferences-page"/> and go to <menucascade>
+                <uicontrol>XML</uicontrol>
+                <uicontrol>XML Parser</uicontrol>
+                <uicontrol>XML Schema</uicontrol>
+              </menucascade> and use the <xref
+                href="xml-schema-preferences-page.dita#xml-schema-preferences-page/default-schema-version"
+                  ><uicontrol>Default XML Schema version</uicontrol> option</xref>.</dd>
+          </dlentry>
+          <dlentry conkeyref="reusables-transforming-documents/xslt-val-source-file" id="dlentry_v3l_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-transforming-documents/xslt-saxon-option-outval" id="dlentry_w3l_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry id="dlentry_x3l_cgk_54b">
+            <dt><uicontrol>Enable streaming mode</uicontrol></dt>
+            <dd>Selecting this option will allow an XSLT to run in streaming mode. It is not
+              selected by default. However, in certain instances, the Saxon XSLT processor may auto
+              detect and use streaming even if this option is not selected.</dd>
+          </dlentry>
+        </dl></p>
+    </section>
+    <section id="other_options">
+      <title>Other Options</title>
+      <p id="p_y3l_cgk_54b">
+        <dl id="dl_z3l_cgk_54b">
+          <dlentry id="dlentry_ajl_cgk_54b">
+            <dt><uicontrol>Initializer class</uicontrol></dt>
+            <dd>Equivalent to the <codeph>-init</codeph> Saxon command-line argument. The value is
+              the name of a user-supplied class that implements the
+                <i>net.sf.saxon.lib.Initializer</i> interface. This initializer is called during the
+              initialization process, and may be used to set any options required on the
+              configuration programmatically. It is particularly useful for tasks such as
+              registering extension functions, collations, or external object models, especially in
+              Saxon-HE where the option cannot be set via a configuration file. Saxon only calls the
+              initializer when running from the command line, but the same code may be invoked to
+              perform initialization when running user application code.</dd>
+          </dlentry>
+        </dl>
+      </p>
+    </section>
+  </body>
+</topic>

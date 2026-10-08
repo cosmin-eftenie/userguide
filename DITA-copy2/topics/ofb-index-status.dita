@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ofb-index-status">
+    <title>Index status</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <keyword outputclass="label">Database Setup</keyword>
+        <keyword outputclass="label">Statistics</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+    <body>
+        <p>The current status of the indexing process is displayed in the <xref
+        href="ofb-version-management.dita#ofb-version-management/content-indexing-search"><i>Content
+          Indexing an Search</i></xref> section from the <i>Version Settings</i> page. </p>
+    <p>You can click the dedicated <uicontrol><image href="../img/ofb-check-index.png"/>Check Index
+        Status</uicontrol> button to the right of the status to query the OTSS server for the
+      current status on demand.</p>
+    <p>The status of an indexing operation can be: <ul id="ul_yy2_nxn_zyb">
+        <li>
+          <p><i>Not indexed</i> - No index is currently available.</p>
+        </li>
+        <li>
+          <p><i>Scheduled</i> - The indexing operation is waiting for an available executor.</p>
+        </li>
+        <li>
+          <p><i>In progress</i> - The content is being indexed.</p>
+        </li>
+        <li>
+          <p><i>Ready</i> - The indexing operation was successfully performed.</p>
+        </li>
+        <li>
+          <p><i>Failed</i> - The indexing process has failed.</p>
+        </li>
+      </ul></p>
+    </body>
+</topic>

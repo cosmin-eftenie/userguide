@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="json-schema-contextual-menu-actions">
+  <title>Contextual Menu Actions in the JSON Schema Design Mode</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>JSON Schema diagram editor<indexterm>Contextual menu
+          actions</indexterm></indexterm>
+        <indexterm>JSON Schema Design mode<indexterm>Contextual menu actions</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_arb_cgk_54b">The contextual menu of the <uicontrol>Design</uicontrol> mode includes the following
+      actions:</p>
+    <p id="p_brb_cgk_54b">
+      <dl id="dl_crb_cgk_54b">
+        <dlentry id="dlentry_avc_cgk_54b">
+          <dt><uicontrol><image href="../img/ShowDefinition16.png" id="image_rgn_4wp_zr"/>Go to
+              Definition</uicontrol> [<uicontrol
+              conkeyref="reusable-oxygen-shortcuts-list/ctrl_shift_enter"/>]</dt>
+          <dd>Navigates to the referenced schema component. This action is also available by
+            clicking the arrow displayed in its bottom right corner.</dd>
+        </dlentry>
+        <dlentry id="dlentry_frb_cgk_54b">
+          <dt><uicontrol>Edit Properties</uicontrol></dt>
+          <dd>
+            <p id="p_asd_f4t_tsb">Allows you to edit the properties of the selected component in a
+              in-place editor.</p>
+          </dd>
+          <dd>
+            <p id="p_tbm_34t_tsb">Properties that have set values are rendered in bold while unset
+              properties are rendered with a gray foreground. You can edit any property (set or
+              unset) by double-clicking or by pressing <uicontrol
+                conkeyref="reusable-oxygen-shortcuts-list/ctrl_enter"/>.</p>
+            <p id="p_hpj_k4t_tsb">You can delete any property already set by pressing <uicontrol
+                conkeyref="reusable-oxygen-shortcuts-list/delete"/>. This operation does not mean
+              the selected property is deleted from the table. It means the property is <i>unset</i>
+              (rendered with gray foreground). The <uicontrol>Edit</uicontrol> and
+                <uicontrol>Remove</uicontrol> actions are also available on the contextual menu in
+              the table.</p>
+            <p>If the <codeph>type</codeph> property changes as a result of an editing/removal
+              action, then the list of properties presented in the table is updated according to the
+              new schema type. </p>
+          </dd>
+          <dd>
+            <p id="p_ttb_d4t_tsb">
+              <note id="note_xxf_d4t_tsb">When filling in string values they should not be enclosed
+                in quotation marks, these are added automatically. </note>
+              <note id="note_rg4_b1x_5sb">For array values simply fill in the items that will
+                constitute the array, separated by commas. </note>
+            </p>
+          </dd>
+        </dlentry>
+        <dlentry>
+          <dt><uicontrol>Edit Annotations</uicontrol></dt>
+          <dd>
+            <p id="p_mrb_cgk_54b">Allows you to edit the annotations for the selected schema
+              component in the <uicontrol>Edit Annotations</uicontrol> dialog box. Annotations are
+              not required, but they are encouraged as a good practice and can make the schema
+              “self-documenting”. </p>
+            <p>The <uicontrol>title</uicontrol> and <uicontrol>description</uicontrol> must be
+              strings. A <uicontrol>title</uicontrol> is preferably short, whereas a
+                <uicontrol>description</uicontrol> provides a more lengthy explanation about the
+              data described by the schema. The <uicontrol>default</uicontrol> keyword specifies a
+              default schema value that can be anything. The <uicontrol>examples</uicontrol> keyword
+              is meant to provide an array of examples that validate against the schema. Its items
+              must be separated by a comma.</p>
+            <p>Annotations that have set values are rendered in bold while unset annotations are
+              rendered with a gray foreground. You can unset an annotation by using the
+                  <uicontrol><shortcut>Delete</shortcut></uicontrol> key or the
+                <uicontrol>Remove</uicontrol> action that is available in the contextual menu of the
+              table.</p>
+            <p>By default, annotations are rendered under the graphical representation of the
+              component. To edit the annotations, use the <uicontrol>Edit Annotations</uicontrol>
+              action from the contextual menu or simply double-click the annotations area (if
+              any).</p>
+          </dd>
+        </dlentry>
+        <dlentry id="dlentry_kjl_1jt_p5b">
+          <dt><uicontrol>Edit Dependencies</uicontrol></dt>
+          <dd>Available for <codeph>dependencies</codeph> and <codeph>dependentRequired</codeph>
+            components, this action allows you to add, rename, delete, and edit the values for
+            dependencies.</dd>
+        </dlentry>
+        <dlentry id="dlentry_mks_djb_jsb">
+          <dt><uicontrol>Make Required</uicontrol></dt>
+          <dd>Marks the selected property as being required in the parent object. By default, the
+            defined properties are not required in the JSON schema. You can set a list of required
+            properties in the <codeph>required</codeph> keyword. By invoking the action, the name of
+            the property is added in the parent object's <codeph>required</codeph> keyword.</dd>
+        </dlentry>
+        <dlentry id="dlentry_u4c_hjb_jsb">
+          <dt><uicontrol>Make Optional</uicontrol></dt>
+          <dd>Marks the selected property as being optional in the parent object. By default, the
+            defined properties are optional in the JSON schema. You can set a list of required
+            properties in the <codeph>required</codeph> keyword. By invoking the action, the name of
+            the property is deleted from the parent object's <codeph>required</codeph> keyword.</dd>
+        </dlentry>
+        <dlentry id="dlentry_hx3_vhq_4sb">
+          <dt><menucascade>
+              <uicontrol>Refactoring</uicontrol>
+              <uicontrol>Extract definition in another file</uicontrol>
+            </menucascade></dt>
+          <dd>Extracts a definition to a new file. If the file does not already exist, the action
+            will create a new file and a document preset will be used to match the current schema
+            specification. If the file does exist, the action will find a corresponding group (or
+            create one) to append the extracted definition. This action can also be used on a
+            selection of multiple definitions.</dd>
+        </dlentry>
+        <dlentry id="dlentry_e1q_vmd_y5b">
+          <dt><menucascade>
+              <uicontrol>Refactoring</uicontrol>
+              <uicontrol>Extract definition in current file</uicontrol>
+            </menucascade></dt>
+          <dd>Extracts a definition as a global definition and references it. It can be used on a
+            property to extract its definition (in case you want to reuse it) or on a local
+            definition to extract it as global one. This action can also be used on a selection of
+            multiple definitions. Note that this action is not available for global
+            definitions.</dd>
+        </dlentry>
+        <dlentry id="dlentry_bdh_c3k_jsb">
+          <dt><menucascade>
+              <uicontrol>Refactoring</uicontrol>
+              <uicontrol>Convert type to 'any' type</uicontrol>
+            </menucascade></dt>
+          <dd>Converts the <codeph>type</codeph> for the selected property, definition, or
+            conditional into an <codeph>any type</codeph> with the value <codeph>true</codeph> or
+              <codeph>false</codeph>. You can set <codeph>true</codeph> value to represent a schema
+            that matches anything, or <codeph>false</codeph> for a schema that matches nothing.</dd>
+        </dlentry>
+        <dlentry id="dlentry_dym_h3k_jsb">
+          <dt><menucascade>
+              <uicontrol>Refactoring</uicontrol>
+              <uicontrol>Convert 'any' type to standard type</uicontrol>
+            </menucascade></dt>
+          <dd>Converts the <codeph>any type</codeph> for the selected property, definition, or
+            conditional into a standard <codeph>type</codeph>.</dd>
+        </dlentry>
+        <dlentry id="dlentry_grb_cgk_54b">
+          <dt><uicontrol>Append child</uicontrol></dt>
+          <dd>Offers a list of valid components, depending on the context, and appends your
+            selection as a child of the currently selected component. You can set a name for a named
+            component after it has been added in the diagram.</dd>
+        </dlentry>
+        <dlentry id="dlentry_hrb_cgk_54b">
+          <dt><uicontrol>Insert before</uicontrol></dt>
+          <dd>Offers a list of valid components, depending on the context, and inserts your
+            selection before the selected component, as a sibling. You can set a name for a named
+            component after it has been added in the diagram.</dd>
+        </dlentry>
+        <dlentry id="dlentry_irb_cgk_54b">
+          <dt><uicontrol>Insert after</uicontrol></dt>
+          <dd>Offers a list of valid components, depending on the context, and inserts your
+            selection after the selected component, as a sibling. You can set a name for a named
+            component after it has been added in the diagram.</dd>
+        </dlentry>
+        <dlentry id="dlentry_h5j_bgk_54b">
+          <dt><image href="../img/Undo16.png" id="image_qky_jbv_5r"/>Undo [<uicontrol
+              conkeyref="reusable-oxygen-shortcuts-list/ctrl_z"/>]</dt>
+          <dd>Reverses the last editing action. </dd>
+        </dlentry>
+        <dlentry id="dlentry_j5j_bgk_54b">
+          <dt><uicontrol><image href="../img/Redo16.png" id="image_w12_lbv_5r"/>Redo</uicontrol>
+              [<uicontrol conkeyref="reusable-oxygen-shortcuts-list/ctrl_y"/>]</dt>
+          <dd>Recreates the last editing action that was reversed by the <uicontrol>Undo</uicontrol>
+            function.</dd>
+        </dlentry>
+        <dlentry id="dlentry_kcc_5nx_h5b">
+          <dt><uicontrol>Rename Component in</uicontrol></dt>
+          <dd>Opens a dialog box that allows you to rename the selected component by specifying the
+            new component name and the files to be affected by the modification. If you click the
+              <b>Preview</b> button, you can view the files to be affected by the action. These
+            files are identified by searching the references of the selected component in the scope
+            provided.</dd>
+        </dlentry>
+        <dlentry id="dlentry_dtb_cgk_54b">
+          <dt><uicontrol><image href="../img/Cut16.png" id="image_bkf_rz1_5r"/>Cut</uicontrol>
+              [<uicontrol conkeyref="reusable-oxygen-shortcuts-list/ctrl_x"/>]</dt>
+          <dd>Cuts the selected component(s).</dd>
+        </dlentry>
+        <dlentry id="dlentry_etb_cgk_54b">
+          <dt><uicontrol><image href="../img/Copy16.png" id="image_ppk_pst_tr"/>Copy</uicontrol>
+              [<uicontrol conkeyref="reusable-oxygen-shortcuts-list/ctrl_c"/>]</dt>
+          <dd>Copies the selected component(s) to the clipboard.</dd>
+        </dlentry>
+        <dlentry id="dlentry_htb_cgk_54b">
+          <dt><uicontrol><image href="../img/Paste16.png" id="image_i3z_bqt_tr"/>Paste</uicontrol>
+              [<uicontrol conkeyref="reusable-oxygen-shortcuts-list/ctrl_v"/>]</dt>
+          <dd>Pastes the component(s) from the clipboard as children of the selected component.</dd>
+        </dlentry>
+        <dlentry id="dlentry_jtb_cgk_54b">
+          <dt><uicontrol>Remove [<shortcut>Delete</shortcut></uicontrol> key]</dt>
+          <dd>Removes the selected component(s).</dd>
+        </dlentry>
+        <dlentry>
+        <dt><uicontrol>Move Up</uicontrol> [<uicontrol
+              conkeyref="reusable-oxygen-shortcuts-list/alt_up"/>]</dt>
+          <dd>Moves a component up in its parent.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><uicontrol>Move Down</uicontrol> [<uicontrol
+              conkeyref="reusable-oxygen-shortcuts-list/alt_down"/>]</dt>
+          <dd>Moves a component down in its parent.</dd>
+        </dlentry>
+        <dlentry id="dlentry_j1k_tcc_15b">
+          <dt><menucascade>
+              <uicontrol>Search</uicontrol>
+              <uicontrol>Search References</uicontrol>
+            </menucascade></dt>
+          <dd>Available on components that have a <i>Definition</i> type in the diagram, it searches
+            all references of the selected definition in a scope determined by the schemas
+            referenced in the file and the schemas declared in the validation scenarios associated
+            with them. You can also use it on the <i>Schema</i> type component (the root of the
+            schema diagram) to search for all references to the schema name.</dd>
+        </dlentry>
+        <dlentry id="dlentry_znd_sbc_15b">
+          <dt><menucascade>
+              <uicontrol>Search</uicontrol>
+              <uicontrol>Search References in</uicontrol>
+            </menucascade></dt>
+          <dd>Available on components that have a <i>Definition</i> type in the diagram, it is an
+            extension of the <uicontrol>Search References</uicontrol> action, where the search for
+            references is additionally done in the file(s) specified when defining a scope in the
+            resulting dialog box. You can also use it on the <i>Schema</i> type component (the root
+            of the schema diagram) to search for references to the schema name.</dd>
+        </dlentry>
+        <dlentry id="dlentry_erd_3vz_vtb">
+          <dt><menucascade>
+              <uicontrol>Search</uicontrol>
+              <uicontrol>Search Occurrences in File</uicontrol>
+            </menucascade> [<uicontrol conkeyref="reusable-oxygen-shortcuts-list/ctrl_shift_u"
+            />]</dt>
+          <dd>Available on all components that have a <i>Definition</i> type in the diagram, it
+            searches all occurrences of the currently selected definition in the current file. You
+            can also use it on the <i>Schema</i> type component (the root of the schema diagram) to
+            search for all occurrences of the schema name in the current file.</dd>
+        </dlentry>
+        <dlentry id="dlentry_ajc_5cy_qwb">
+          <dt>Flatten Schema</dt>
+          <dd>Flattens the entire hierarchy of JSON schemas. For more details, see <xref
+              href="json-schema-flatten.dita"/>.</dd>
+        </dlentry>
+        <dlentry id="dlentry_vtb_cgk_54b">
+          <dt><uicontrol><image href="../img/ExpandAll16.png" placement="inline"/>Expand
+              All</uicontrol></dt>
+          <dd>Recursively expands all sub-components of the selected component.</dd>
+        </dlentry>
+        <dlentry id="dlentry_wtb_cgk_54b">
+          <dt><uicontrol><image href="../img/CollapseAll16.png" id="image_yl1_r3t_tr"/>Collapse
+              All</uicontrol></dt>
+          <dd>Recursively collapses all sub-components of the selected component.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><uicontrol>Print Selection</uicontrol></dt>
+          <dd>Prints the selected component diagram.</dd>
+        </dlentry>
+        <dlentry id="dlentry_xtb_cgk_54b">
+          <dt><uicontrol>Save as Image</uicontrol></dt>
+          <dd>Saves the selected component diagram as image, in JPEG, BMP, SVG or PNG format.</dd>
+        </dlentry>
+        <dlentry id="dlentry_a5b_cgk_54b">
+          <dt><uicontrol><image href="../img/Options16.png" id="image_gbx_rpt_tr"/>Options</uicontrol></dt>
+          <dd>Opens the <xref href="preferences-editor-json-properties.dita">JSON Schema preferences
+              page</xref> where you can control which properties to display for JSON Schema
+            components in the JSON Schema <uicontrol>Design</uicontrol> mode.</dd>
+        </dlentry>
+      </dl>
+    </p>
+  </body>
+</topic>

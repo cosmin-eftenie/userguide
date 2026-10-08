@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="xml-schema-diagram-keyRef-properties">
+  <title>xs:keyRef</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Design editing
+            mode<indexterm>Components<indexterm>xs:keyRef</indexterm></indexterm></indexterm>
+        <indexterm>XML Schemas<indexterm>Design mode
+                editing<indexterm>Components<indexterm>xs:keyRef</indexterm></indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_cfc_cgk_54b">
+      <fig id="fig_dfc_cgk_54b">
+        <title>The <i>xs:keyRef</i> Component</title>
+        <image href="../img/schema_diagram_keyRef.png"/>
+      </fig>
+    </p>
+    <p id="p_efc_cgk_54b">Specifies that an attribute or element value corresponds to that of the specified key or
+      unique element. See more info at <xref
+        href="http://www.w3.org/TR/xmlschema11-1/#element-keyref" scope="external" format="html"
+      />.</p>
+    <p id="p_ffc_cgk_54b">A keyref by default displays the <i>Referenced Key</i> property when rendered.</p>
+    <table colsep="1" rowsep="1" frame="all" id="table_gfc_cgk_54b">
+      <title><i>xs:keyRef</i> Properties</title>
+      <tgroup cols="3">
+        <thead>
+          <row>
+            <entry>Property Name</entry>
+            <entry>Description</entry>
+            <entry>Possible Values</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <b>Name</b>
+            </entry>
+            <entry>The keyref name (always required)</entry>
+            <entry>Any NCName</entry>
+          </row>
+          <row>
+            <entry>
+              <b>Referenced Key</b>
+            </entry>
+            <entry>The name of referenced key</entry>
+            <entry>Any declared element constraints</entry>
+          </row>
+          <row>
+            <entry>
+              <b>ID</b>
+            </entry>
+            <entry>The component ID</entry>
+            <entry>Any ID</entry>
+          </row>
+          <row>
+            <entry>
+              <b>Component</b>
+            </entry>
+            <entry>The edited component name</entry>
+            <entry>Not editable property</entry>
+          </row>
+          <row>
+            <entry>
+              <b>Namespace</b>
+            </entry>
+            <entry>The component namespace</entry>
+            <entry>Not editable property</entry>
+          </row>
+          <row>
+            <entry>
+              <b>System ID</b>
+            </entry>
+            <entry>The component system ID</entry>
+            <entry>Not editable property</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </body>
+</topic>

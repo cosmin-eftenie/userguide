@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_overview">
+  <title>Overview</title>
+  <body>
+    <p id="p_htp_cgk_54b">This section contains topics that provide a basic overview of the <b>DITA-OT CSS-based PDF
+        Publishing Plugin</b>, technical details, and some additional resources to help you with
+      your customizations.</p>
+    <note id="note_sdn_sqx_j4b" type="tip">For more information and some tips in regard to
+      publishing DITA documents to PDF using CSS, watch our Webinars:<ul id="ul_usr_jrl_fpb">
+        <li id="li_vsr_jrl_fpb"><xref
+            href="https://www.oxygenxml.com/events/2021/webinar_transforming_dita_documents_to_pdf_part_1.html"
+            format="html" scope="external"><b>Transforming DITA documents to PDF using CSS, Part 1 –
+              Page Definitions, Cover Page and PDF Metadata</b></xref>.</li>
+        <li id="li_bdf_gzt_tsb"><xref
+            href="https://www.oxygenxml.com/events/2022/webinar_transforming_dita_documents_to_pdf_using_css_part_2.html"
+            format="html" scope="external"><b>Transforming DITA documents to PDF using CSS, Part 2 –
+              Book Design, Pagination, Page Layout, and Bookmarks</b></xref>.</li>
+        <li id="li_i3z_5jf_ftb"><xref
+            href="https://www.oxygenxml.com/events/2022/webinar_transforming_dita_documents_to_pdf_using_css_part_3.html"
+            format="html" scope="external"><b>Transforming DITA documents to PDF using CSS, Part 3 –
+              Advanced Fonts Usage</b></xref>.</li>
+        <li id="li_abd_mf4_fwb"><xref
+            href="https://www.oxygenxml.com/events/2023/webinar_transforming_dita_documents_to_pdf_using_css_part_4.html"
+            format="html" scope="external"><b>Transforming DITA documents to PDF using CSS, Part 4 –
+              Advanced CSS Rules</b></xref>.</li>
+        <li id="li_clf_3kf_ftb"><xref
+            href="https://www.oxygenxml.com/events/2020/webinar_transforming_html_documents_to_pdf_1.html"
+            format="html" scope="external"><b>Transforming XML and HTML documents to PDF using CSS,
+              Part 1 – Basic CSS Layout</b></xref>.</li>
+        <li id="li_uvh_krl_fpb"><xref
+            href="https://www.oxygenxml.com/events/2021/webinar_transforming_dita_documents_to_pdf_part_2.html"
+            format="html" scope="external"><b>Transforming XML and HTML documents to PDF using CSS,
+              Part 2 – Lists, Tables and Images</b></xref>.</li>
+        <li id="li_qgv_lrl_fpb"><xref
+            href="https://www.oxygenxml.com/events/2021/webinar_transforming_dita_documents_to_pdf_part_3.html"
+            format="html" scope="external"><b>Transforming XML and HTML documents to PDF using CSS,
+              Part 3 – Global Page Layout</b></xref>.</li>
+        <li id="li_v4w_vsm_yqb"><xref
+            href="https://www.oxygenxml.com/events/2021/webinar_transforming_xml_and_html_documents_part_4.html"
+            format="html" scope="external"><b>Transforming XML and HTML documents to PDF using CSS,
+              Part 4 – Advanced Functionalities</b></xref>.</li>
+      </ul></note>
+  </body>
+</topic>

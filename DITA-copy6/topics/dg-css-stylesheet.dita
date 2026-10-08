@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept
+  PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="dg-css-stylesheet">
+  <title>Associating a CSS with an XML Document</title>
+  <conbody>
+    <section id="d2e258">
+      <title>Associating a Stylesheet with an XML Document</title>
+      <p id="p_kzb_dgk_54b">The rendering of an XML document in the <uicontrol>Author</uicontrol> mode is driven by a
+        CSS stylesheet that conforms to the <xref href="http://www.w3.org/TR/CSS21/"
+          scope="external" format="html">version 2.1 of the CSS specification</xref> from the W3C
+        consortium. Some CSS 3 features, such as namespaces and custom extensions, of the CSS
+        specification are also supported.<ph product="author editor">
+          <ph keyref="product"/> also supports stylesheets coded with the LESS dynamic stylesheet
+          language.</ph></p>
+      <p id="p_lzb_dgk_54b">There are several methods for associating a stylesheet (CSS<ph product="author editor"> or
+          LESS</ph>) with an XML document:<ul id="ol_b5t_bjj_lq">
+          <li id="li_mzb_dgk_54b">
+            <p id="p_nzb_dgk_54b">Insert the <codeph>xml-stylesheet</codeph> processing instruction with the
+                <xmlatt>type</xmlatt> attribute at the beginning of the XML document. The easiest
+              way to do this is by using the <uicontrol><image
+                  href="../img/AssociateXsltStylesheet16.png" id="image_nq4_s3d_nkb"/>Associate
+                XSLT/CSS Stylesheet</uicontrol> action that is available on the toolbar or in the
+                <menucascade product="author editor">
+                <uicontrol>Document</uicontrol>
+                <uicontrol>XML Document</uicontrol>
+              </menucascade><uicontrol product="authorEclipse editorEclipse">XML</uicontrol>
+              menu.</p>
+            <p id="p_ozb_dgk_54b">CSS
+              example:<codeblock outputclass="language-css" id="codeblock_pzb_dgk_54b">&lt;?xml-stylesheet type="text/css" href="test.css"?></codeblock></p>
+            <p product="author editor" id="p_qzb_dgk_54b">LESS
+              example:<codeblock outputclass="language-css" id="codeblock_rzb_dgk_54b">&lt;?xml-stylesheet type="text/css" href="test.less"?> </codeblock></p>
+          </li>
+          <li id="li_szb_dgk_54b">Add a new CSS <ph product="author editor">or LESS</ph> file to a <xref
+              keyref="glossentry_framework"><term>framework</term></xref> (document type). To do so,
+              <ph conkeyref="reusables-preferences-pages/open-the-preferences-page"/> and go to
+              <uicontrol>Document Type Association</uicontrol>. Edit the appropriate
+              <term>framework</term>, open the <uicontrol>Author</uicontrol> tab, then the
+              <uicontrol>CSS</uicontrol> subtab. Click the <uicontrol><image href="../img/Add16.png"
+              />New</uicontrol> button to add a new CSS <ph product="author editor">or LESS
+              </ph>file.<note id="note_tzb_dgk_54b">The built-in <term>frameworks</term> are read-only, so you need to
+                <xref
+                href="preferences-document-type-association.dita#preferences-document-type-association/extend"
+                  ><uicontrol>Extend</uicontrol></xref> or <xref
+                href="preferences-document-type-association.dita#preferences-document-type-association/duplicate"
+                  ><uicontrol>Duplicate</uicontrol></xref> them to configure them as custom
+                <term>frameworks</term>.</note></li>
+        </ul></p>
+      <p id="p_uzb_dgk_54b">If a document has no CSS association or the referenced stylesheet files cannot be loaded, a
+        default one is used. A warning message is also displayed at the beginning of the document,
+        presenting the reason why the CSS cannot be loaded.</p>
+      <p id="p_vzb_dgk_54b">
+        <fig id="fig_tz3_m43_2s">
+          <title>Document with no CSS association default rendering</title>
+          <image href="../img/author_no_css.png"/>
+        </fig>
+      </p>
+      <p id="p_wzb_dgk_54b">For information about associating a CSS to a <term>framework</term> (document type), see
+          <xref href="selecting-combining-multiple-css-styles.dita"/>.</p>
+    </section>
+  </conbody>
+</concept>

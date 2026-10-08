@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="editingActions">
+  <title>Toolbar, Contextual Menu, and Shortcut Actions</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Editing actions</indexterm>
+        <indexterm>Toolbar actions</indexterm>
+        <indexterm>Contextual menu actions</indexterm>
+        <indexterm>Shortcuts</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_ir4_dgk_54b"><ph keyref="webappProduct"/> includes a variety of editing actions that are available on the
+      toolbar and from the contextual menu (on desktop devices).</p>
+    <section id="review_actions_toolbar">
+      <title>Review Actions Toolbar</title>
+      <p id="p_jr4_dgk_54b">The <uicontrol>Review</uicontrol> toolbar contains actions to assist you with review tasks.
+        On a desktop device, some of these actions are also available in the contextual menu.</p>
+      <p id="p_kr4_dgk_54b">
+        <fig id="fig_lr4_dgk_54b">
+          <title>Review Actions</title>
+          <image href="../img/WA_review_toolbar.png"/>
+        </fig>
+      </p>
+      <p id="p_mr4_dgk_54b">The actions include:<dl id="dl_nr4_dgk_54b">
+          <dlentry id="dlentry_or4_dgk_54b">
+            <dt><uicontrol><image href="../img/TrackChanges20.png" id="image_tqd_n1g_wr"/>Toggle
+                Change Tracking</uicontrol></dt>
+            <dd>Toggles <term>Change Tracking</term> mode on or off.</dd>
+          </dlentry>
+          <dlentry conkeyref="reusables-webapp/accept-changes" id="dlentry_pr4_dgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-webapp/reject-changes" id="dlentry_qr4_dgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-webapp/dlentry_kqv_5cc_xcc">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-webapp/add-comment" id="dlentry_rr4_dgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-webapp/edit-comment" id="dlentry_sr4_dgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-webapp/remove-comment" id="dlentry_tr4_dgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry id="dlentry_wr4_dgk_54b">
+            <dt><uicontrol><image href="../img/TrackChangesViewDrop.png"/>Track Changes
+                Visualization Modes</uicontrol> Drop-down Menu</dt>
+            <dd>This drop-down menu includes specialized actions that allow you to switch between
+              the following visualization modes for the <term>Track Changes</term> feature:<ul id="ul_xr4_dgk_54b">
+                <li id="li_yr4_dgk_54b"><uicontrol><image href="../img/TrackChangesFinalWithChanges16.gif"
+                      id="image_why_x4v_5r"/>View All Changes/Comments</uicontrol> - This mode is
+                  active by default. When you use this mode, all tracked changes are
+                  represented.</li>
+                <li id="li_zr4_dgk_54b"><uicontrol><image href="../img/TrackChangesFinal16.gif" id="image_zvl_y4v_5r"
+                    />View Final</uicontrol> - This mode offers a preview of the document as if all
+                  tracked changes (both inserted and deleted) were accepted.</li>
+                <li id="li_as4_dgk_54b"><uicontrol><image href="../img/TrackChangesOriginal16.gif" id="image_kqc_z4v_5r"
+                    />View Original</uicontrol> - This mode offers a preview of the document as if
+                  all tracked changes (both inserted and deleted) were rejected. If you attempt to
+                  edit the document in this mode, the view mode will switch to <uicontrol>View All
+                    Changes/Comments</uicontrol>.</li>
+              </ul></dd>
+          </dlentry>
+        </dl></p>
+    </section>
+    <section id="frameworkspecific_actions_desktop_version">
+      <title>Framework-Specific Actions Toolbar</title>
+      <p id="p_bs4_dgk_54b">Depending on the type of document you are editing, the toolbar and contextual menu contains
+        a series of actions defined at <term>framework</term> level. <ph keyref="webappProduct"/>
+        includes built-in actions for DITA, DITA Map, DocBook, TEI, and XHTML document types. On a
+        desktop device, many of these actions are also available in the contextual menu. <i><i>On
+            mobile devices, the framework-specific toolbar is only available in Edit mode
+          </i></i>(<image href="../img/WA_Edit_Mode20.png"/>).</p>
+      <p id="p_cs4_dgk_54b">
+        <fig id="fig_ds4_dgk_54b">
+          <title>Example: DITA Toolbar</title>
+          <image href="../img/WA_DITA_toolbar.png"/>
+        </fig>
+      </p>
+      <p id="p_es4_dgk_54b">The actions include:<dl id="dl_fs4_dgk_54b">
+          <dlentry id="IX-Styling_actions">
+            <dt>Styling actions</dt>
+            <dd>Most common styling actions, such as <uicontrol>Bold</uicontrol>,
+                <uicontrol>Italic</uicontrol>, <uicontrol>Underline</uicontrol>.</dd>
+          </dlentry>
+          <dlentry id="dlentry_gs4_dgk_54b">
+            <dt>Insert actions</dt>
+            <dd>Actions for inserting a variety of <term>framework</term>-specific objects, such as
+              images, equations, tables, paragraphs, links (for example, cross references, file
+              references, or web links in DITA), topic references (<term>DITA map</term>), reusable
+              content references (DITA), relationship tables (<term>DITA map</term>), and
+              others.</dd>
+          </dlentry>
+          <dlentry id="IX-List_actions">
+            <dt>List actions</dt>
+            <dd>Actions that allow you to create ordered and unordered lists, and add new items in
+              them. These list buttons can also be used to convert an existing list to another type
+              (for example, an unordered list to an ordered list) or to convert the current
+              paragraph to a list.</dd>
+          </dlentry>
+          <dlentry id="IX-Table_actions">
+            <dt>Table actions</dt>
+            <dd>Actions that allow you to create a table and manage its structure (insert and delete
+              rows and columns).</dd>
+          </dlentry>
+          <dlentry conkeyref="reusables-webapp/IX-Insert_special_char" id="IX-Insert_special_char">
+            <dt/>
+            <dd/>
+          </dlentry>
+        </dl></p>
+      <p id="p_hs4_dgk_54b">For a complete list of toolbar actions for DITA Topic document types, see <xref
+          href="WA-dita-topic-doc-type.dita#WA-dita-topic-doc-type/dita-toolbar-actions-section"
+        />.</p>
+    </section>
+    <section id="contextual_menu_actions_desktop_version">
+      <title>Contextual Menu Actions (Desktop Devices)</title>
+      <p id="p_is4_dgk_54b">In a desktop web browser, the contextual menu also offers numerous
+        editing actions, along with <term>framework</term>-specific actions. For a complete list of
+        actions available for DITA documents, see <xref
+          href="WA-dita-topic-doc-type.dita#WA-dita-topic-doc-type/dita_contextual_menu_actions"/>
+        or <xref href="WA-dita-map-doc-type.dita#WA-dita-map-doc-type/dita_contextual_menu_actions"
+        />.</p>
+      <p id="p_bdm_ylk_qqb">The contextual menu includes the following actions:<dl
+          id="dl_js4_dgk_54b">
+          <dlentry>
+            <dt><uicontrol>Remove Highlight</uicontrol></dt>
+            <dd>Removes the colored highlight at the cursor location.</dd>
+          </dlentry>
+          <dlentry conkeyref="reusables-webapp/accept-changes" id="dlentry_os4_dgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-webapp/reject-changes" id="dlentry_ps4_dgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-webapp/add-comment" id="dlentry_ks4_dgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry id="reply-to-comments">
+            <dt><uicontrol><image href="../img/ReplyBlue16.png"/>Reply</uicontrol> (Available when
+              invoked on a comment or change)</dt>
+            <dd>Opens a dialog box that allows you to add a reply to a comment or tracked change.
+              After a reply is added, it is displayed with an indentation in the tooltip when
+              hovering over the comment or change, and in the <uicontrol>Review</uicontrol>
+              view.</dd>
+          </dlentry>
+          <dlentry conkeyref="reusables-webapp/edit-comment" id="dlentry_ls4_dgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-webapp/remove-comment" id="dlentry_ms4_dgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-webapp/edit-attributes" id="dlentry_ns4_dgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+        <dlentry conkeyref="reusables-webapp/edit-profiling-attributes">
+          <dt/>
+          <dd/>
+        </dlentry>
+          <dlentry conkeyref="reusables-webapp/show-excluded-content">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-webapp/surround-with" id="dlentry_qs4_dgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry id="dlentry_rs4_dgk_54b">
+            <dt><uicontrol>Insert</uicontrol> Submenu</dt>
+            <dd>Provides various <term>framework</term>-specific actions for inserting a variety of
+              objects, such as <uicontrol><image href="../img/Table16.png"/>Insert
+              Table</uicontrol>, <uicontrol><image href="../img/Image16.gif" id="image_lqj_f1z_tr"
+                />Insert Image</uicontrol>, <uicontrol><image href="../img/Equation16.gif"/>Insert
+                Equation</uicontrol> (for <xref
+                href="performing-common-actions.dita#performing-common-actions/editing_mathml_equations"
+                >inserting MathML equations</xref>), <uicontrol><image
+                  href="../img/InsertElement16.png"/>Insert Element</uicontrol>, and more.</dd>
+          </dlentry>
+          <dlentry id="dlentry_znw_3ps_4qb">
+            <dt><uicontrol>Style</uicontrol> Submenu</dt>
+            <dd>Provides various <term>framework</term>-specific styling actions, such as
+                  <uicontrol><image href="../img/Bold16.gif"/>Bold</uicontrol>, <uicontrol><image
+                  href="../img/Italic16.png"/>Italic</uicontrol>, <uicontrol><image
+                  href="../img/Underline16.gif"/>Underline</uicontrol>, <uicontrol><image
+                  href="../img/Subscript16.png"/>Subscript</uicontrol>, <uicontrol><image
+                  href="../img/Superscript16.png"/>Superscript</uicontrol>, and more.</dd>
+          </dlentry>
+          <dlentry id="dlentry_rg4_dgk_54b">
+            <dt><uicontrol>Section</uicontrol> Submenu (DocBook)</dt>
+            <dd>Includes actions for promoting or demoting sections.</dd>
+          </dlentry>
+          <dlentry id="dlentry_t3c_jss_4qb">
+            <dt><uicontrol>Link</uicontrol> Submenu</dt>
+            <dd>Provides various <term>framework</term>-specific actions for inserting types of
+              links (e.g. <uicontrol>Cross Reference</uicontrol>, <uicontrol>File
+                Reference</uicontrol>, <uicontrol>Web Link</uicontrol>).</dd>
+          </dlentry>
+          <dlentry id="dlentry_h15_vss_4qb">
+            <dt><uicontrol>Generate IDs</uicontrol> (DITA, DocBook, TEI)</dt>
+            <dd>
+              <p id="p_i15_vss_4qb"><term>Oxygen</term> generates unique IDs for the current element
+                (or elements), depending on how the action is invoked:<ul id="ul_j15_vss_4qb">
+                  <li id="li_k15_vss_4qb">When invoked on a single selection, an ID is generated for
+                    the selected element at the cursor position.</li>
+                  <li id="li_l15_vss_4qb">When invoked on a block of selected content, IDs are
+                    generated for all top-level elements and elements from the list in the
+                      <uicontrol>ID Options</uicontrol> dialog box found in the current
+                    selection.</li>
+                </ul><note id="note_m15_vss_4qb">The <uicontrol>Generate IDs</uicontrol> action does
+                  not overwrite existing ID values. It only affects elements that do not already
+                  have an <xmlatt>id</xmlatt> attribute.</note></p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_ihq_xss_4qb">
+            <dt><uicontrol>Reuse</uicontrol> Submenu (DITA)</dt>
+            <dd>Provides various DITA-specific actions for reusing content.</dd>
+          </dlentry>
+          <dlentry id="dlentry_clw_wvn_s5b">
+            <dt><uicontrol>Select</uicontrol> Submenu</dt>
+            <dd>Includes actions for selecting an <uicontrol>Element</uicontrol>, its
+                <uicontrol>Content</uicontrol>, or its <uicontrol>Parent</uicontrol> element.</dd>
+          </dlentry>
+          <dlentry id="dlentry_ss4_dgk_54b">
+            <dt><uicontrol><image href="../img/Cut16.png"/>Cut</uicontrol> (<uicontrol
+                conkeyref="reusable-oxygen-shortcuts-list/ctrl_x"/>)</dt>
+            <dd>Removes the selected content and copies it to the clipboard. You can then use the
+                <uicontrol conkeyref="reusable-oxygen-shortcuts-list/ctrl_v"/> keyboard shortcut to
+              paste the content (or use the <uicontrol><image href="../img/Paste16.png"/>Paste
+                Special</uicontrol> action from the contextual menu).</dd>
+          </dlentry>
+          <dlentry id="dlentry_ts4_dgk_54b">
+            <dt><uicontrol><image href="../img/Copy16.png"/>Copy</uicontrol> (<uicontrol
+                conkeyref="reusable-oxygen-shortcuts-list/ctrl_c">(</uicontrol>)</dt>
+            <dd>Copies the selected content to the clipboard. You can then use the <uicontrol
+                conkeyref="reusable-oxygen-shortcuts-list/ctrl_v"/> keyboard shortcut to paste the
+              content (or use the <uicontrol><image href="../img/Paste16.png"/>Paste
+                Special</uicontrol> action from the contextual menu).</dd>
+          </dlentry>
+          <dlentry id="dlentry_agq_vyx_qgc">
+            <dt>Copy as Markdown</dt>
+            <dd>Copies the selected content to the clipboard and pasting the content (into a text
+              editor, for example) will insert its Markdown equivalent, including headings, styling,
+              codeblocks, tables, lists, etc.</dd>
+          </dlentry>
+          <dlentry conkeyref="reusables-webapp/IX-Paste_special" id="IX-Paste_special">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-webapp/folding-submenu" id="dlentry_us4_dgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-webapp/IX-Rename_element" id="IX-Rename_element">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-webapp/delete-element" id="dlentry_vs4_dgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry id="dlentry_et4_dgk_54b">
+            <dt><uicontrol>About Element</uicontrol> Submenu</dt>
+            <dd>
+              <p id="p_erz_mbg_b1c">
+                <dl id="dl_jpg_nbg_b1c">
+                  <dlentry id="dlentry_kpg_nbg_b1c">
+                    <dt>Browse DITA Style Guide (DITA only)</dt>
+                    <dd>Opens the <b>DITA Style Guide Best Practices for Authors</b> in a preview
+                      window and displays a topic that is relevant to the element at the cursor
+                      position. You can use the <uicontrol>Open in new tab</uicontrol> button at the
+                      bottom of the preview window to open the guide in a separate browser tab.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_hxn_qbg_b1c">
+                    <dt>Browse Reference Manual (DITA only)</dt>
+                    <dd>Opens the documentation for the current element in the Oasis reference
+                      manual.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_ijx_5bg_b1c">
+                    <dt>Inspect Styles</dt>
+                    <dd>Opens the <uicontrol>CSS Inspector</uicontrol> pane that displays
+                      information about the CSS styles that are applied to the currently selected
+                      element.</dd>
+                  </dlentry>
+                </dl>
+              </p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_ws4_dgk_54b">
+            <dt>Spelling Errors</dt>
+            <dd>For spelling errors, the contextual menu includes a list of suggestions that you can
+              select from to replace the word and an <uicontrol>Ignore</uicontrol> option that
+              instructs <ph keyref="webappProduct"/> to ignore all occurrences of that particular
+              spelling error in the current document.</dd>
+          </dlentry>
+          <dlentry id="dlentry_at4_dgk_54b">
+            <dt>Table-Related Actions (Available when invoked on a table item)</dt>
+            <dd>A variety of table editing actions are available in the contextual menu when it is
+              invoked on a table (depending on the context, the table-related actions are promoted
+              to the top level of the contextual menu and the <uicontrol>Other Actions</uicontrol>
+              submenu provides access to the other actions).</dd>
+          </dlentry>
+        </dl></p>
+    </section>
+    <section id="section_xsb_msb_qnb">
+      <title>Common Shortcut Actions</title>
+      <p id="p_gt4_dgk_54b"><ph keyref="webappProduct"/> includes numerous shortcut keys that are assigned to actions
+        to help you edit content.</p>
+      <table frame="all" rowsep="1" colsep="1" id="table_ap1_n5b_qnb">
+        <title>Frequently Used Shortcut Keys in <ph keyref="product"/></title>
+        <tgroup cols="3" align="center">
+          <colspec colname="newCol1" colnum="1" colwidth="1.2*"/>
+          <colspec colname="c1" colnum="2" colwidth="2.75*"/>
+          <colspec colname="c3" colnum="3" colwidth="3.3*" align="left"/>
+          <thead>
+            <row>
+              <entry>Action</entry>
+              <entry>Shortcut Keys</entry>
+              <entry align="center">Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Beginning</entry>
+              <entry><uicontrol><shortcut>Ctrl + Home</shortcut></uicontrol></entry>
+              <entry>Navigates to the beginning of the document </entry>
+            </row>
+            <row>
+              <entry>Check Spelling</entry>
+              <entry><uicontrol><shortcut>F7</shortcut></uicontrol></entry>
+              <entry>Opens the spell checking dialog box </entry>
+            </row>
+            <row>
+              <entry>End</entry>
+              <entry><uicontrol><shortcut>Ctrl + End</shortcut></uicontrol></entry>
+              <entry>Navigates to the end of the document </entry>
+            </row>
+            <row>
+              <entry>Copy</entry>
+              <entry><uicontrol><shortcut>Ctrl + C</shortcut></uicontrol></entry>
+              <entry>Copies selected content to the clipboard</entry>
+            </row>
+            <row>
+              <entry>Cut</entry>
+              <entry><uicontrol><shortcut>Ctrl + X</shortcut></uicontrol></entry>
+              <entry>Cuts selected content to the clipboard</entry>
+            </row>
+            <row>
+              <entry>Find</entry>
+              <entry><uicontrol><shortcut>Ctrl + F</shortcut></uicontrol></entry>
+              <entry>Opens Find/Replace dialog box </entry>
+            </row>
+            <row>
+              <entry>Print</entry>
+              <entry><uicontrol><shortcut>Ctrl + P</shortcut></uicontrol></entry>
+              <entry>Opens a Print Preview dialog box </entry>
+            </row>
+            <row>
+              <entry>Help</entry>
+              <entry><uicontrol><shortcut>F1</shortcut></uicontrol></entry>
+              <entry>Opens help documentation </entry>
+            </row>
+            <row>
+              <entry>Open Link</entry>
+              <entry><uicontrol><shortcut>Ctrl + Click</shortcut></uicontrol> (on links)</entry>
+              <entry>Opens the current link in a new browser tab</entry>
+            </row>
+            <row>
+              <entry>Paste</entry>
+              <entry><uicontrol><shortcut>Ctrl + V</shortcut></uicontrol></entry>
+              <entry>Pastes content from the clipboard</entry>
+            </row>
+            <row>
+              <entry>Redo</entry>
+              <entry>
+                <uicontrol><shortcut>Ctrl + Y</shortcut></uicontrol></entry>
+              <entry>Re-applies the last editing action </entry>
+            </row>
+            <row>
+              <entry>Reload</entry>
+              <entry><uicontrol><shortcut>F5</shortcut></uicontrol></entry>
+              <entry>Reloads the current document </entry>
+            </row>
+            <row>
+              <entry>Save</entry>
+              <entry><uicontrol><shortcut>Ctrl + S</shortcut></uicontrol></entry>
+              <entry>Saves the current document </entry>
+            </row>
+            <row>
+              <entry>Underline</entry>
+              <entry><uicontrol><shortcut>Ctrl + U</shortcut></uicontrol></entry>
+              <entry>Underlines selected content</entry>
+            </row>
+            <row>
+              <entry>Undo</entry>
+              <entry><uicontrol><shortcut>Ctrl + Z</shortcut></uicontrol></entry>
+              <entry>Reverses last editing action </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+  </body>
+  <related-links>
+      <link href="performing-common-actions.dita#performing-common-actions"/>
+      <link href="perform_common_review_actions.dita#perform_common_review_actions"/>
+      <link href="WA-dita-topic-doc-type.dita"/>
+    <link href="WA-dita-map-doc-type.dita"/>
+  </related-links>
+</topic>

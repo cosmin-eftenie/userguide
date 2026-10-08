@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_how_to_fix_text_bleeding_from_table_cells">
+    <title>How to Fix Text Bleeding From Table Cells</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+          ><ph keyref="pdf-html5-transformation"/><indexterm>Tables<indexterm>Text
+              bleeding</indexterm></indexterm></indexterm>
+        <indexterm product="pdf-css ope">Tables<indexterm>Text bleeding</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+    <body>
+        <p id="p_qw5_cgk_54b">Slim tables or tables that have many columns make the text from the cells be confined to
+      a small horizontal space. Sometimes this causes long words to bleed outside the cell
+      boundaries. </p>
+		<p id="p_rw5_cgk_54b">By default, the built-in CSS automatically activates the hyphenation for the text inside tables
+      as long as your topics have the language specified.</p>
+    <p id="p_sw5_cgk_54b">In case the text is still bleeding outside the boundaries, you can also use the
+        <codeph>overflow-wrap</codeph> property to force the word to
+      break:<codeblock outputclass="language-css" id="codeblock_tw5_cgk_54b">*[class ~= "topic/table"] {
+  overflow-wrap: break-word;
+}</codeblock></p>
+    </body>
+    <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link href="dcpp_hyphenation.dita"/>
+      <link href="dcpp_how_to_control_hyphenation_for_an_element.dita"/>
+    </linklist>
+    </related-links>
+</topic>

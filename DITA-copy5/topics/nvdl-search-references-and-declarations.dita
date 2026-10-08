@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="nvdl-search-references-and-declarations">
+  <title>Searching and Refactoring Actions in NVDL Schemas</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>NVDL schemas<indexterm>Search actions</indexterm></indexterm>
+        <indexterm>NVDL schemas<indexterm>Refactoring actions</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <section id="search_actions">
+      <title>Search Actions</title>
+      <p id="p_g3f_cgk_54b">The following search actions can be applied on <xmlatt>name</xmlatt>,
+          <xmlatt>useMode</xmlatt>, and <xmlatt>startMode</xmlatt> attributes and are available from
+        the <uicontrol>Search</uicontrol> submenu in the contextual menu of the current editor<ph
+          product="developer editor"> or from the <menucascade>
+            <uicontrol>Document</uicontrol>
+            <uicontrol>References</uicontrol>
+          </menucascade> menu</ph>: </p>
+      <p id="p_h3f_cgk_54b">
+        <dl conkeyref="reusables-search-refactoring-actions/searchRefAndDeclarations"
+          id="ul_dzk_z4m_mr">
+          <dlentry id="dlentry_i3f_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+        </dl>
+      </p>
+      <p id="p_j3f_cgk_54b">The following action is available from the <ph product="developer editor">contextual menu
+          and the <menucascade>
+            <uicontrol>Document</uicontrol>
+            <uicontrol>Schema</uicontrol>
+          </menucascade></ph><uicontrol product="developerEclipse editorEclipse">XSL</uicontrol>
+        menu:</p>
+      <p id="p_k3f_cgk_54b">
+        <dl id="dl_l3f_cgk_54b">
+          <dlentry id="dlentry_m3f_cgk_54b">
+            <dt><uicontrol><image href="../img/ShowDefinition16.png" id="image_rgn_4wp_zr"/>Go to
+                Definition</uicontrol></dt>
+            <dd>Moves the cursor to its definition in the schema used by the NVDL to validate
+                it.<note id="note_n3f_cgk_54b">You can also use the <uicontrol
+                  conkeyref="reusable-oxygen-shortcuts-list/ctrl_click"/> shortcut on a reference to
+                display its definition.</note></dd>
+          </dlentry>
+        </dl>
+      </p>
+    </section>
+    <section id="refactoring_actions">
+      <title>Refactoring Actions</title>
+      <p id="p_o3f_cgk_54b">The following refactoring actions can be applied on <xmlatt>name</xmlatt>,
+          <xmlatt>useMode</xmlatt>, and <xmlatt>startMode</xmlatt> attributes and are available from
+        the <uicontrol>Refactoring</uicontrol> submenu in the contextual menu of the current
+          editor<ph product="developer editor"> or from the <menucascade>
+            <uicontrol>Document</uicontrol>
+            <uicontrol>Refactoring</uicontrol>
+          </menucascade> menu</ph>:</p>
+      <p id="p_p3f_cgk_54b">
+        <dl conkeyref="reusables-search-refactoring-actions/renameComponent" id="dl_q3f_cgk_54b">
+          <dlentry id="dlentry_r3f_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+        </dl>
+      </p>
+    </section>
+  </body>
+</topic>

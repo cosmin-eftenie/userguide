@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="highlight-component-occurrences-xsd">
+  <title>Highlight Component Occurrences</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>XML Schemas<indexterm>Highlight occurrences</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_c5c_cgk_54b">When a component (for example types, elements, attributes) is found at current cursor
+      position, <ph keyref="product"/> performs a search
+      over the entire document to find the component declaration and all its references. When found,
+      they are highlighted both in the document and in the stripe bar, at the right side of the
+      document. Customizable colors are used: one for the component definition and another one for
+      component references. Occurrences are displayed until another component is selected and a new
+      search is performed. All occurrences are removed when you start to edit the document. </p>
+    <p id="p_d5c_cgk_54b">This feature is on by default. To configured it, <ph
+        conkeyref="reusables-preferences-pages/open-the-preferences-page"/> and go to <menucascade>
+        <uicontrol>Editor</uicontrol>
+        <uicontrol>Mark Occurrences</uicontrol>
+      </menucascade>. A search can also be triggered with the <menucascade>
+        <uicontrol>Search</uicontrol>
+        <uicontrol>Search Occurrences in File ()</uicontrol>
+      </menucascade> contextual menu action. All matches are displayed in a separate tab of the
+        <xref href="results-view.dita#results-view"><uicontrol>Results</uicontrol> view</xref>.</p>
+  </body>
+</topic>

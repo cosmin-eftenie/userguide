@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="scripting_oxygen_batch_converter">
+  <title>Batch Converter</title>
+  <body>
+    <note conkeyref="reusables-scripting/note-scripting-license" id="note_zmx_dgk_54b"/>
+    <p id="p_anx_dgk_54b">The <uicontrol>Batch Converter</uicontrol> script
+        (<codeph>batchConverter.sh</codeph>, found in the <filepath>scripts</filepath> subfolder
+      inside <b>Oxygen's</b> installation directory) helps you to convert between the following
+      formats: <ul id="ul_r4d_4kx_2nb">
+        <li id="li_bnx_dgk_54b">HTML to XHTML </li>
+        <li id="li_cnx_dgk_54b">HTML to DITA </li>
+        <li id="li_dnx_dgk_54b">HTML to DocBook4 / DocBook5</li>
+        <li id="li_enx_dgk_54b">Markdown to XHTML </li>
+        <li id="li_fnx_dgk_54b">Markdown to DITA</li>
+        <li id="li_gnx_dgk_54b">Markdown to DocBook4 / DocBook5</li>
+        <li id="li_hnx_dgk_54b">Word to XHTML</li>
+        <li id="li_inx_dgk_54b">Word to DITA</li>
+        <li id="li_jnx_dgk_54b">Word to DocBook4 / DocBook5</li>
+        <li id="li_knx_dgk_54b">Excel to DITA</li>
+        <li>Confluence to DITA</li>
+        <li>DocBook to DITA</li>
+        <li>OpenAPI to DITA</li>
+        <li id="li_lnx_dgk_54b">JSON to XML </li>
+        <li id="li_mnx_dgk_54b">JSON to YAML </li>
+        <li id="li_nnx_dgk_54b">XML to JSON</li>
+        <li id="li_onx_dgk_54b">YAML to JSON</li>
+      </ul></p>
+    <p id="p_pnx_dgk_54b">This script requires the <uicontrol>Oxygen Batch Documents
+        Converter</uicontrol> add-on to be installed in the <xref
+        href="https://www.oxygenxml.com/xml_editor/download_oxygenxml_editor.html?os=Other"
+        format="html" scope="external">all platforms distribution</xref> of <ph keyref="product"
+      />.</p>
+    <p id="p_rfn_hkd_qqb">To install the add-on, follow these instructions:<ol id="ol_nn2_2vb_vmb">
+        <li id="li_qnx_dgk_54b">Go on the <uicontrol>Oxygen Batch Documents Converter</uicontrol>
+          plugin <uicontrol>Releases</uicontrol> page and download the latest <xref
+            href="https://github.com/oxygenxml/oxygen-resources-converter/releases/latest"
+            format="html" scope="external">oxygen-batch-converter-{version}-plugin.jar</xref>
+          package.</li>
+        <li id="li_rnx_dgk_54b">Unzip it inside
+            <filepath>{oxygenInstallDir}/plugins</filepath>.<note id="note_snx_dgk_54b">Do not
+            create any intermediate folders. Afterwards, the file system should look like this:
+              <filepath>{oxygenInstallDir}/plugins/oxygen-batch-converter-{version}/plugin.xml</filepath></note></li>
+      </ol></p>
+    <section id="section_gbd_tzb_vmb">
+      <title>Arguments for the Batch Converter Script</title>
+      <p id="p_tnx_dgk_54b">
+        <codeblock outputclass="language-bourne" id="codeblock_unx_dgk_54b">sh scripts/batchConverter.sh -i inputFiles -if inputFormat -o outputDirectory 
+-of outputFormat [-ss (true|false)] [-csd (true|false)] [-cs converterSettingsFile]</codeblock>
+      </p>
+      <p id="p_vnx_dgk_54b">
+        <dl id="dl_wnx_dgk_54b">
+          <dlentry id="dlentry_xnx_dgk_54b">
+            <dt>-i inputFiles</dt>
+            <dd>A list of space-separated input files or directories in file syntax form.</dd>
+          </dlentry>
+          <dlentry id="dlentry_ynx_dgk_54b">
+            <dt>-if inputFormat</dt>
+            <dd>The format of the input files. The possible values are: <b>html</b>,
+              <b>markdown</b>, <b>word</b>, <b>confluence</b>, <b>docbook</b>, <b>excel</b>,
+                <b>openapi</b>, <b>json</b>, <b>yaml</b>, or <b>xml</b>.</dd>
+          </dlentry>
+          <dlentry id="dlentry_znx_dgk_54b">
+            <dt>-o outputDirectory</dt>
+            <dd>The output directory in file syntax form.</dd>
+          </dlentry>
+          <dlentry id="dlentry_a4x_dgk_54b">
+            <dt>-of outputFormat</dt>
+            <dd>The format of the output files. The possible values are: <b>xhtml</b>, <b>dita</b>,
+                <b>docbook4</b>, <b>docbook5</b>, <b>json</b>, <b>yaml</b>, or <b>xml</b>.</dd>
+          </dlentry>
+          <dlentry id="dlentry_b4x_dgk_54b">
+            <dt>-ss (true|false) [only for <b>Word to DITA</b>, <b>HTML to DITA</b>, <b>Markdown to
+                DITA</b>, <b>DocBook to DITA</b>, and <b>OpenAPI to DITA</b> conversions]</dt>
+            <dd>Splits sections marked by titles or headings to separate files and create a DITA
+              map. The possible values are <b>true</b> or <b>false</b> (default).</dd>
+          </dlentry>
+          <dlentry id="dlentry_c4x_dgk_54b">
+            <dt>-csd (true|false)  [only for <b>Markdown to DITA</b> conversions]</dt>
+            <dd>Creates short description elements from the first paragraph before the headings.
+              Possible values are <b>true</b> or <b>false</b> (default).</dd>
+          </dlentry>
+          <dlentry>
+            <dt>-cs converterSettingsFile</dt>
+            <dd>A file that contains the Batch Documents Converter add-on preferences settings. It
+              can be an xpr file that contains project options or an xml file that contains global
+              options. If not specified, the operation uses the application's default settings.</dd>
+          </dlentry>
+        </dl>
+      </p>
+    </section>
+    <section id="section_u3z_x4r_lsb">
+      <title>Confluence to DITA</title>
+      <p>The <uicontrol>Confluence to DITA</uicontrol> conversion processes the HTML content
+        generated by the Confluence export process. For exporting, login to your Confluence account
+        and navigate to the specific space that you want to export. Go to <menucascade>
+          <uicontrol>Space Settings</uicontrol>
+          <uicontrol>Export space</uicontrol>
+        </menucascade> and choose to export it as HTML. The <filepath>index.html</filepath> file
+        resulting from this process has to be provided in the <uicontrol>inputFiles</uicontrol>
+        argument.</p>
+    </section>
+  </body>
+</topic>

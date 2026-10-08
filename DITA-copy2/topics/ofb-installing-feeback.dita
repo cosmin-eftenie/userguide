@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ofb-installing-feeback">
+  <title>Adding Oxygen Feedback to Your  Website</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Installing</indexterm>
+        <indexterm>Installation</indexterm>
+        <indexterm>Adding Oxygen Feedback to your website</indexterm>
+        <indexterm>Adding comment system to your website</indexterm>
+        <indexterm>Adding Oxygen Feedback to WebHelp output</indexterm>
+        <indexterm>Adding comment system to WebHelp output</indexterm>
+      </keywords>
+      <keywords>
+        <keyword outputclass="label">WebHelp Output</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_fpw_dgk_54b">The <b>Oxygen Feedback</b> comment system can be added at the bottom of each topic in your
+      WebHelp Responsive documentation or added to any website. There are three general options for
+      adding <b>Oxygen Feedback</b> to your output:<ul id="ul_xcp_j4l_slb">
+        <li id="li_gpw_dgk_54b">Add the <b>Oxygen Feedback</b> component in WebHelp output generated from <b>Oxygen XML
+            Editor/Author</b>.</li>
+        <li id="li_hpw_dgk_54b">Add the <b>Oxygen Feedback</b> component in WebHelp output generated from a command
+          line.</li>
+        <li id="li_ipw_dgk_54b">Add the <b>Oxygen Feedback</b> component on any HTML-based website.</li>
+      </ul></p>
+  </body>
+</topic>

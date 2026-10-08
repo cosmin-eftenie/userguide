@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ant-transformation">
+  <title>Ant Transformation</title>
+  <shortdesc>This type of transformation allows you to configure the options and parameters of an
+    Ant build script.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Transformation Scenarios<indexterm>Ant</indexterm></indexterm>
+        <indexterm>Ant transformation scenario</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_hwl_cgk_54b">An Ant transformation scenario is usually associated with an Ant build script. <ph
+        keyref="product"/> runs an Ant transformation scenario as an external process that executes
+      the Ant build script with the built-in Ant distribution (<xref keyref="glossentry_ant"
+          ><term>Apache Ant</term></xref> version <ph keyref="antVersion"/>) that is included with
+      the application, or optionally with a custom Ant distribution configured in the scenario.<note
+        conkeyref="reusables-transforming-documents/ant-libraries-note" id="note_iwl_cgk_54b"/></p>
+    <p id="p_jwl_cgk_54b">To create an Ant transformation scenario, use one of the following methods:<ul
+        id="ul_vmm_l51_br">
+        <li id="li_kwl_cgk_54b">Use the <uicontrol><image href="../img/TransformConfig16.png" id="image_xmx_5vv_sr"
+            />Configure Transformation Scenario(s) (<shortcut
+              conkeyref="reusable-oxygen-shortcuts-list/ctrl_shift_c_shortcut"
+              product="author developer editor"/><shortcut
+              conkeyref="reusable-oxygen-shortcuts-list/alt_shift_tc_shortcut"
+              product="authorEclipse developerEclipse editorEclipse"/>)</uicontrol> action from the
+          toolbar or the <menucascade product="author developer editor">
+            <uicontrol>Document</uicontrol>
+            <uicontrol>Transformation</uicontrol>
+          </menucascade><uicontrol product="authorEclipse developerEclipse editorEclipse"
+            >XML</uicontrol> menu. Then click the <uicontrol>New</uicontrol> button and select
+            <uicontrol>ANT transformation</uicontrol>.</li>
+        <li id="li_lwl_cgk_54b">Go to <menucascade>
+            <uicontrol>Window</uicontrol>
+            <uicontrol>Show View</uicontrol>
+          </menucascade> and select <uicontrol><image href="../img/TransformConfig16.png"
+              id="image_wls_5vv_sr"/>Transformation Scenarios</uicontrol> to display <xref
+            href="scenarios-view.dita#scenarios-view">this view</xref>. Click the <uicontrol><image
+              href="../img/NewScenarioDrop.png"/>New Scenario</uicontrol> drop-down menu button and
+          select <uicontrol>ANT transformation</uicontrol>.</li>
+      </ul></p>
+    <p id="p_mwl_cgk_54b">Both methods open the transformation configuration dialog box.</p>
+    <p conkeyref="reusables-transforming-documents/name-storage-options"
+      product="author developer editor" id="p_nwl_cgk_54b"/>
+    <p product="authorEclipse developerEclipse editorEclipse" id="p_owl_cgk_54b">The upper part of the dialog box
+      allows you to specify the <uicontrol>Name</uicontrol> of the transformation scenario.</p>
+    <p id="p_pwl_cgk_54b">The lower part of the dialog box contains several tabs that allow you to configure the
+      options that control the transformation.</p>
+    <p>Since <b>Ant</b> transformation scenarios are run as separate processes, to instruct <ph
+        keyref="product"/> to open certain resources created by the separate process, you can use
+        <xmlelement>echo</xmlelement> elements in your build files with the following
+      syntax:<codeblock id="codeblock_ej2_x4q_5bc" outputclass="language-xml">&lt;echo>Finished publishing: "absolute/path/to/file.ext"&lt;/echo></codeblock></p>
+  </body>
+  <related-links product="developer editor">
+    <linklist>
+      <title>Related Information:</title>
+      <link href="ant-transformation-scenarios.dita#ant-transformation-scenarios"/>
+    </linklist>
+  </related-links>
+</topic>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="adding-oxygen-custom-view">
+  <title>Example: Adding a Custom View in <ph keyref="product"/></title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Plugin extensions<indexterm>Workspace Access<indexterm>Adding custom
+              views</indexterm></indexterm></indexterm>
+        <indexterm>Adding custom views</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_ug2_dgk_54b">To add a custom view in <ph keyref="product"/>, follow this procedure:</p>
+    <p id="p_vg2_dgk_54b">
+      <ol id="ol_wg2_dgk_54b">
+        <li id="li_xg2_dgk_54b">Locate the <filepath>plugin.xml</filepath> descriptor file for your plugin (should be
+          located inside the <b>plugins</b> folder, for example, <filepath><term
+              conkeyref="reusables-user-guide/oxy-install-dir"/>/plugins/myPlugin</filepath>).
+          Define the ID of the view you want to add and specify the location where it will be
+          placed:<codeblock outputclass="language-xml" id="codeblock_yg2_dgk_54b">&lt;view id="SampleWorkspaceAccessID" initialSide="WEST" initialRow="0"/></codeblock></li>
+        <li id="li_zg2_dgk_54b">In your <xref href="workspace-access-plugin.dita"/> implementation, where the
+            <codeph>applicationStarted</codeph> callback is received, add a view component
+          customizer like
+          this:<codeblock outputclass="language-java" id="codeblock_ah2_dgk_54b">pluginWorkspaceAccess.addViewComponentCustomizer(new ViewComponentCustomizer() {
+ public void customizeView(ViewInfo viewInfo) {
+   if(
+     //The view ID defined in the "plugin.xml"
+     "SampleWorkspaceAccessID".equals(viewInfo.getViewID())) {
+     cmsMessagesArea = new JTextArea("CMS Session History:");
+     viewInfo.setComponent(new JScrollPane(cmsMessagesArea));
+     viewInfo.setTitle("CMS Messages");
+     viewInfo.setIcon(Icons.getIcon(Icons.CMS_MESSAGES_CUSTOM_VIEW_STRING));
+   }
+ }
+});</codeblock></li>
+        <li id="li_bh2_dgk_54b">Define the <codeph>cmsMessagesArea</codeph> as a <i>static</i> field (if you can access
+          the messages area from anywhere in your code).</li>
+      </ol>
+    </p>
+  </body>
+  <related-links>
+    <linklist><title>Related Information:</title><link href="https://www.oxygenxml.com/oxygen_sdk/oxygen_standalone_plugins.html" format="html"
+      scope="external"/></linklist>
+  </related-links>
+</topic>

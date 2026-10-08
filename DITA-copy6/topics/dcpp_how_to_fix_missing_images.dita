@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_how_to_fix_missing_images">
+    <title>How to Fix Missing Images</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Image not found</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+    <body>
+    <p id="p_us5_cgk_54b">If your images are not accessible, you may receive an error message in the transformation
+      console like this: </p>
+    <codeblock outputclass="language-xml" id="codeblock_vs5_cgk_54b">Image not found. URI:file:/path/to/my/image</codeblock>
+    <p id="p_ws5_cgk_54b">This is usually because they are in a folder that is not in the folder subtree of the
+      transformed map or topic.</p>
+    <p id="p_xs5_cgk_54b">To solve this, you can set the following transformation parameter:
+        <codeph>fix.external.refs.com.oxygenxml=true</codeph>.</p>
+    </body>
+</topic>

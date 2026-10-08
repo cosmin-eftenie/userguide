@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ofb-site-installation">
+  <title>Installation Page</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Site installation page</indexterm>
+        <indexterm>Add site wizard<indexterm>Installation</indexterm></indexterm>
+        <indexterm>Site creation wizard<indexterm>Installation</indexterm></indexterm>
+      </keywords>
+      <keywords>
+        <keyword outputclass="label">WebHelp Output</keyword>
+        <keyword outputclass="label">Site Configuration</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_pvw_dgk_54b">The third page of the site creation wizard is the <uicontrol>Installation</uicontrol> page.
+      This page is where you choose how to install the configured Feedback system. You can choose
+      between three options:</p>
+    <p id="p_qvw_dgk_54b">
+      <dl id="dl_rvw_dgk_54b">
+        <dlentry id="dlentry_svw_dgk_54b">
+          <dt>Install <b>Oxygen Feedback</b> in WebHelp output generated from <b>Oxygen XML
+              Editor/Author</b></dt>
+          <dd>Choose this option if you are adding the Feedback system to WebHelp Responsive
+            documentation AND you will generate the documentation using a transformation scenario in
+              <b>Oxygen XML Editor/Author</b>.</dd>
+        </dlentry>
+        <dlentry id="dlentry_tvw_dgk_54b">
+          <dt>Install <b>Oxygen Feedback</b> in WebHelp output generated from a command line</dt>
+          <dd>Choose this option if you are adding the Feedback system to WebHelp Responsive
+            documentation AND you will generate the documentation using a command-line script.</dd>
+        </dlentry>
+        <dlentry id="dlentry_uvw_dgk_54b">
+          <dt>Install <b>Oxygen Feedback</b> on any HTML-based website</dt>
+          <dd>Choose this option if you are adding the Feedback system to a website. When you select
+            this option, an HTML fragment will be displayed. You need to copy this fragment and
+            paste it into your HTML code for each webpage that you want to have the Feedback system
+            embedded.</dd>
+        </dlentry>
+      </dl>
+    </p>
+    <p id="p_vvw_dgk_54b">
+      <fig id="fig_jvq_gzf_gjb">
+        <title>Installation Page</title>
+        <image href="../img/ofb-Add-Site-Installation.png" id="image_vn2_3zf_gjb"/>
+      </fig>
+    </p>
+  </body>
+</topic>

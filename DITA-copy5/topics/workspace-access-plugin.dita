@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept
+  PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="workspace-access-plugin">
+  <title>Workspace Access Plugin Extension</title>
+  <shortdesc>This type of <xref keyref="glossentry_plugin"><term>plugin</term></xref> allows you to
+    contribute actions to the main menu and toolbars, create custom views, interact with the
+    application workspace, make modifications to opened documents, and add listeners for various
+    events.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Plugin extensions<indexterm>Workspace Access</indexterm></indexterm>
+        <indexterm>Workspace Access plugin extension</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p id="p_lf2_dgk_54b">Many complex integrations (such as integrations with Content Management Systems) usually
+      requires access to some workspace resources such as toolbars, menus, views, and editors. This
+      type of <term>plugin</term> is also useful because it allows you to make modifications to the
+      XML content of an open editor.</p>
+    <p id="p_mf2_dgk_54b">The <term>plugin</term> must implement the <xref
+        href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/exml/plugin/workspace/WorkspaceAccessPluginExtension.html"
+        format="html" scope="external"><term>WorkspaceAccessPluginExtension</term></xref> interface.
+      The callback method <term>applicationStarted</term> of this interface allows access to a
+      parameter of the <xref
+        href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/exml/workspace/api/standalone/StandalonePluginWorkspace.html"
+        format="html" scope="external"><term>StandalonePluginWorkspace</term></xref> type (allows
+      for API access to the application workspace). <note id="note_ar4_sbz_3dc" type="important">For
+        security reasons, if a plugin's <term>applicationStarted</term> callback delays the startup
+        of the entire application by more than 15 seconds, it will continue to be loaded on a
+        separate thread and may no longer properly contribute UI customizations.</note></p>
+    <p id="p_nf2_dgk_54b">The <term>StandalonePluginWorkspace</term> interface has three methods
+      that can be called to customize toolbars, menus, and views:</p>
+    <p id="p_of2_dgk_54b">
+      <dl id="dl_pf2_dgk_54b">
+        <dlentry id="dlentry_qf2_dgk_54b">
+          <dt><b><term>addToolbarComponentsCustomizer</term></b></dt>
+          <dd>
+            <p id="p_rf2_dgk_54b">Contributes to or modifies existing toolbars. You can specify additional toolbar IDs
+              in the associated <filepath>plugin.xml</filepath> descriptor file using the following
+              construct:<codeblock outputclass="language-xml" id="codeblock_sf2_dgk_54b">&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;!DOCTYPE plugin SYSTEM "../plugin.dtd">
+&lt;plugin name="CustomWorkspaceAccess" ..............>
+ &lt;runtime>
+  ........
+ &lt;/runtime>
+ 
+ &lt;extension type="WorkspaceAccess" .............../>
+ ...............
+  &lt;toolbar id="SampleID" initialSide="NORTH" initialRow="1"/>
+&lt;/plugin></codeblock></p>
+            <p id="p_tf2_dgk_54b">The <xmlelement>toolbar</xmlelement> element adds a toolbar in the <ph
+                keyref="product"/> interface and allows you to contribute your own
+                <term>plugin</term>-specific actions. The following attributes are supported:<ul id="ul_uf2_dgk_54b">
+                <li id="li_vf2_dgk_54b"><b>id</b> - Unique identifier for the toolbar.</li>
+                <li id="li_wf2_dgk_54b"><b>initialSide</b> - Specifies the place where the toolbar is initially
+                  displayed. The allowed values are <codeph>NORTH</codeph> and
+                    <codeph>SOUTH</codeph>.</li>
+                <li id="li_xf2_dgk_54b"><b>initialRow</b> - Specifies the initial row on the specified side where the
+                  toolbar is displayed. For example, the first toolbar has an initial row of
+                    <codeph>0</codeph> and the next toolbar has an initial row of
+                  <codeph>1</codeph>.</li>
+              </ul></p>
+            <p id="p_yf2_dgk_54b">The <xref
+                href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/exml/workspace/api/standalone/ToolbarInfo.html"
+                format="html" scope="external"
+                  ><term>ro.sync.exml.workspace.api.standalone.ToolbarInfo</term></xref> toolbar
+              component information with the specified ID will be provided to you by the customizer
+              interface. Therefore, you will be able to provide Swing components that will appear on
+              the toolbar when the application starts.</p>
+          </dd>
+        </dlentry>
+        <dlentry id="dlentry_zf2_dgk_54b">
+          <dt><b><term>addViewComponentCustomizer</term></b></dt>
+          <dd>
+            <p id="p_ag2_dgk_54b">Contributes to or modifies existing views, or contributes to the reserved custom
+              view. You can specify additional view IDs in the associated
+                <filepath>plugin.xml</filepath> descriptor using the following construct:
+              <codeblock outputclass="language-xml" id="codeblock_bg2_dgk_54b">&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;!DOCTYPE plugin SYSTEM "../plugin.dtd">
+&lt;plugin name="CustomWorkspaceAccess" ..............>
+ &lt;runtime>
+  ........
+ &lt;/runtime>
+ 
+ &lt;extension type="WorkspaceAccess" .............../>
+ ...............
+ &lt;view id="SampleID" initialSide="WEST" initialRow="0"/>
+&lt;/plugin></codeblock></p>
+            <p id="p_cg2_dgk_54b">The <xmlelement>view</xmlelement> element adds a view in the <ph keyref="product"/>
+              interface and allows you to contribute your own <term>plugin</term>-specific UI
+              components. The following attributes are supported:<ul id="ul_dg2_dgk_54b">
+                <li id="li_eg2_dgk_54b"><b>id</b> - Unique identifier of the view component.</li>
+                <li id="li_fg2_dgk_54b"><b>initialSide</b> - Specifies the place where the view is initially displayed.
+                  The allowed values are: <codeph>NORTH</codeph>, <codeph>SOUTH</codeph>,
+                    <codeph>EAST</codeph>, and <codeph>WEST</codeph>.</li>
+                <li id="li_gg2_dgk_54b"><b>initialRow</b> - Specifies the initial row on the specified side where the
+                  view is displayed. For example, in <ph keyref="product"/>, the <xref
+                    href="using-the-project-view.dita#using-the-project-view"
+                      ><uicontrol>Project</uicontrol> view</xref> has an initial row of
+                    <codeph>0</codeph> and the <xref href="outliner-view.dita#outliner-view"
+                      ><uicontrol>Outline</uicontrol> view</xref> has an initial row of
+                    <codeph>1</codeph>. Both views are in the <option>WEST</option> part of the
+                  workbench.</li>
+                <li id="li_hg2_dgk_54b"><b>initialState</b> - Specifies the initial state of the view. The allows values
+                  are: <codeph>hidden</codeph>, <codeph>docked</codeph>, <codeph>autohide</codeph>,
+                  and <codeph>floating</codeph>. By default, the view is visible and docked.</li>
+              </ul></p>
+            <p id="p_ig2_dgk_54b">The <xmlelement>view</xmlelement> element also supports an optional
+                <xmlelement>perspective</xmlelement> child element so that you can show or hide a
+              certain view for a specified perspective. The <xmlelement>perspective</xmlelement>
+              element supports the following attributes:<ul id="ul_j1m_kmy_jkb">
+                <li id="li_jg2_dgk_54b"><b>id</b> (required) - Unique identifier for the perspective. The possible
+                  values are: <codeph>editor</codeph>, <codeph>dita</codeph>, <ph
+                    product="developer editor"><codeph>xslt_debugger</codeph>,
+                      <codeph>xquery_debugger</codeph>,</ph> and <codeph>database</codeph>.</li>
+                <li id="li_kg2_dgk_54b"><b>initState</b> (optional) - Specifies the initial state of the perspective.
+                  The allows values are: <codeph>hidden</codeph>, <codeph>docked</codeph>,
+                    <codeph>autohide</codeph>, and <codeph>floating</codeph>. By default, the view
+                  is visible and docked.</li>
+              </ul></p>
+            <p id="p_lg2_dgk_54b">The <term>ro.sync.exml.workspace.api.standalone.ViewInfo</term>
+              view component information with the specified ID will be provided to you by the
+              customizer interface. Therefore, you will be able to provide Swing components that
+              will appear on the view when the application starts.</p>
+          </dd>
+        </dlentry>
+        <dlentry id="dlentry_mg2_dgk_54b">
+          <dt><b><term>addMenuBarCustomizer</term></b></dt>
+          <dd>Contributes to or modifies existing menu components.</dd>
+        </dlentry>
+      </dl>
+    </p>
+    <p id="p_ng2_dgk_54b">Access to the open editors can be done by first getting access to all URLs
+      opened in the workspace using the <term>StandalonePluginWorkspace.getAllEditorLocations(int
+        editingArea)</term> API method. <ph product="author editor">There are two available editing
+        areas: the <uicontrol>DITA Maps Manager</uicontrol> editing area and the main editing area.
+      </ph>Using the URL of an open resource, you can gain access to it using the
+        <term>StandalonePluginWorkspace.getEditorAccess(URL location, int editingArea)</term> API
+      method. A <xref
+        href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/exml/workspace/api/editor/WSEditor.html"
+        format="html" scope="external"
+        ><term>ro.sync.exml.workspace.api.editor.WSEditor</term></xref> then allows access to the
+      current editing page.</p>
+    <p id="p_og2_dgk_54b">A special editing API is supported for the <b>Text</b> mode (<xref
+        href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/exml/workspace/api/editor/page/text/WSTextEditorPage.html"
+        format="html" scope="external"
+          ><term>ro.sync.exml.workspace.api.editor.page.text.WSTextEditorPage</term></xref>)<ph
+        product="author  editor"> and the <uicontrol>Author</uicontrol> mode (<xref
+          href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/exml/workspace/api/editor/page/author/WSAuthorEditorPage.html"
+          format="html" scope="external"
+            ><term>ro.sync.exml.workspace.api.editor.page.author.WSAuthorEditorPage</term></xref>)</ph>.</p>
+    <p id="p_pg2_dgk_54b">To be notified when editors are opened, selected, and closed, you can use
+      the <term>StandalonePluginWorkspace.addEditorChangeListener</term> API method to add a
+      listener.</p>
+    <p id="p_qg2_dgk_54b"><b><u>Examples:</u></b>
+      <ul id="ul_rg2_dgk_54b">
+        <li id="li_sg2_dgk_54b">A simple Maven-based sample of a workspace access plugin is available here: <xref
+            href="https://github.com/oxygenxml/sample-plugin-workspace-access" format="html"
+            scope="external"/>.</li>
+        <li id="li_tg2_dgk_54b">A more complex sample of a workspace access plugin mimicking a CMS integration is
+          available in the Author SDK: <xref href="https://www.oxygenxml.com/oxygen_sdk.html"
+            format="html" scope="external"/>.</li>
+      </ul></p>
+  </conbody>
+</concept>

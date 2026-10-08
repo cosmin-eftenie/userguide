@@ -1,0 +1,72 @@
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="api_faq_control_component_indentation">
+  <title>Control XML Serialization in the <ph keyref="authorComponent"/></title>
+  <body>
+    <section id="question">
+      <title>Use Case</title>
+      <p id="p_qgg_dgk_54b">You want to force the <ph keyref="authorComponent"/> to save the XML
+        with zero indent size and not to break the line inside <xref
+          keyref="glossentry_block-element"><term>block elements</term></xref>.</p>
+    </section>
+    <section id="answer">
+      <title>Solution</title>
+      <p id="p_rgg_dgk_54b">Usually, in a standalone version of <ph keyref="product"/>, the <menucascade>
+          <uicontrol>Editor </uicontrol>
+          <uicontrol>Format</uicontrol>
+        </menucascade> and <menucascade>
+          <uicontrol>Editor</uicontrol>
+          <uicontrol>Format</uicontrol>
+          <uicontrol>XML</uicontrol>
+        </menucascade> preferences pages allow you to control the way the XML is saved on the disk
+        after you edit it in the <uicontrol>Author</uicontrol> mode.</p>
+      <p id="p_sgg_dgk_54b">Also, the <xref
+          href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/exml/options/APIAccessibleOptionTags.html"
+          format="html" scope="external"><i>APIAccessibleOptionTags</i> interface</xref> contains a
+        list of all accessible keys that can be read or set from the options.</p>
+      <p id="p_tgg_dgk_54b">In the <ph keyref="product"/> application, you can either bundle a <xref
+          href="default-options.dita">default set of options</xref> or use the
+          <codeph>PluginWorkspace.setGlobalObjectProperty(String, Object)</codeph>
+        API:<codeblock outputclass="language-java" id="codeblock_ugg_dgk_54b">//For not breaking the line
+//Long line
+pluginWorkspace.setObjectProperty
+  (APIAccessibleOptionTags.EDITOR_LINE_WIDTH, new Integer(100000));
+//Do not break before inline elements
+pluginWorkspace.setObjectProperty
+  (APIAccessibleOptionTags.EDITOR_FORMAT_INDENT_INLINE_ELEMENTS, false);
+//For forcing zero indent
+//Force indent settings to be controlled by us
+pluginWorkspace.setObjectProperty
+  (APIAccessibleOptionTags.EDITOR_DETECT_INDENT_ON_OPEN, false);
+//Zero indent size
+pluginWorkspace.setObjectProperty
+  (APIAccessibleOptionTags.EDITOR_INDENT_SIZE, 0);</codeblock></p>
+      <p id="p_vgg_dgk_54b">In the <ph keyref="authorComponent"/>, you can either bundle a <xref
+          href="api_faq_enable_change_tracking_at_startup.dita">fixed set of options</xref>, or use
+        the <i>Java API</i> to set properties that overwrite the default
+        options.<codeblock outputclass="language-java" id="codeblock_wgg_dgk_54b">    //For not breaking the line
+    //Long line
+    AuthorComponentFactory.getInstance().setObjectProperty
+(APIAccessibleOptionTags.EDITOR_LINE_WIDTH, new Integer(100000));
+    //Do not break before inline elements
+    AuthorComponentFactory.getInstance().setObjectProperty
+(APIAccessibleOptionTags.EDITOR_FORMAT_INDENT_INLINE_ELEMENTS, false);
+    //For forcing zero indent
+    //Force indent settings to be controlled by us
+    AuthorComponentFactory.getInstance().setObjectProperty
+(APIAccessibleOptionTags.EDITOR_DETECT_INDENT_ON_OPEN, false);
+    //Zero indent size
+    AuthorComponentFactory.getInstance().setObjectProperty
+(APIAccessibleOptionTags.EDITOR_INDENT_SIZE, 0);</codeblock></p>
+    </section>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link format="html"
+        href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/exml/options/APIAccessibleOptionTags.html"
+        scope="external">
+        <linktext>API Interface Documentation: <i>APIAccessibleOptionTags</i></linktext>
+      </link>
+    </linklist>
+  </related-links>
+</topic>

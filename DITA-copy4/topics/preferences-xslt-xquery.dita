@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="preferences-xslt-xquery">
+  <title>XSLT/XQuery Preferences</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Preferences<indexterm>XSLT/XQuery</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_b1q_bgk_54b">To configure options regarding XSLT and XQuery processors, <ph
+        conkeyref="reusables-preferences-pages/open-the-preferences-page"/> and go to <menucascade>
+        <uicontrol>XML</uicontrol>
+        <uicontrol>XSLT-XQuery</uicontrol>
+      </menucascade>. This panel contains only the most generic options for working with XSLT or
+      XQuery processors. The more specific options are grouped in other panels linked as child nodes
+      of this panel in the tree of this <uicontrol>Preferences</uicontrol> page.</p>
+    <p id="p_c1q_bgk_54b">There is only one generic option available:<dl id="dl_d1q_bgk_54b">
+        <dlentry id="dlentry_e1q_bgk_54b">
+          <dt><uicontrol>Create transformation temporary files in system temporary
+              directory</uicontrol></dt>
+          <dd>It should be selected only when the temporary files necessary for performing
+            transformations are created in the same folder as the source of the transformation (the
+            default behavior when this option is not selected) and this breaks the transformation.
+            An example of breaking the transformation is when the transformation processes all the
+            files located in the same folder as the source of the transformation (including the
+            temporary files) and the result is incorrect or the transformation fails because of
+            this.</dd>
+        </dlentry>
+      </dl></p>
+  </body>
+</topic>

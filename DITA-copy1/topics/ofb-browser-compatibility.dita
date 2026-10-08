@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ofb-browser-compatibility">
+  <title>Browser Compatibility</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Browsers</indexterm>
+      </keywords>
+      <keywords>
+        <keyword outputclass="label">Site Configuration</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <section id="section_kqz_2rp_4jb">
+      <title>Compatible Web Browsers</title>
+      <p id="p_fjx_dgk_54b"><ph keyref="product"/> supports the latest stable version of the
+        following web browsers:</p>
+      <p id="p_gjx_dgk_54b">
+        <dl id="dl_hjx_dgk_54b">
+          <dlentry id="dlentry_ijx_dgk_54b">
+            <dt>Desktop Devices</dt>
+            <dd>
+              <ul id="ul_dl3_1qp_4jb">
+                <li id="li_jjx_dgk_54b">Google Chrome [recommended for optimal performance and user
+                  experience]</li>
+                <li id="li_kjx_dgk_54b">Mozilla Firefox</li>
+                <li id="li_ljx_dgk_54b">Microsoft Edge</li>
+                <li id="li_mjx_dgk_54b">macOS Safari</li>
+              </ul>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_njx_dgk_54b">
+            <dt>Mobile Devices</dt>
+            <dd>
+              <ul id="ul_tlp_gqp_4jb">
+                <li id="li_ojx_dgk_54b">Chrome for Android</li>
+                <li id="li_pjx_dgk_54b">Safari Mobile iOS</li>
+              </ul>
+            </dd>
+          </dlentry>
+        </dl>
+        <note type="attention" id="note_qjx_dgk_54b">Your browser version must be a stable release (not an <i>alpha</i>,
+            <i>beta</i>, <i>nightly</i>, or <i>development</i> build).</note>
+      </p>
+    </section>
+    <section id="section_jn2_lqp_4jb">
+      <title>Browser Configuration Requirements</title>
+      <p id="p_rjx_dgk_54b"><ph keyref="product"/> requires the following conditions in each type of browser:<ul
+          id="ul_fj5_pqp_4jb">
+          <li id="li_sjx_dgk_54b">JavaScript must be enabled.</li>
+          <li id="li_tjx_dgk_54b">Cookies must be enabled.</li>
+          <li id="li_ujx_dgk_54b">Local storage must be enabled.</li>
+          <li id="li_vjx_dgk_54b">TLS v1.2 or above is required.</li>
+        </ul></p>
+    </section>
+    <note type="other" othertype="Limitation of Liability" id="note_wjx_dgk_54b">
+      <p id="p_xjx_dgk_54b">Supported browsers have undergone compatibility testing by Syncro Soft. Syncro Soft
+        recommends that customers always use browsers listed in the above list. Any variance has
+        some level of risk because the combination has not been tested. If you choose to use a
+        browser not listed and encounter an issue requiring support from Syncro Soft, the support
+        team may require you to test and reproduce the issue using recommended system requirements
+        in order to receive further support. If a supported browser that is listed above has a new
+        version released, the Syncro Soft support team may provide support. The Syncro Soft support
+        team will accept support issues relating to using these newer and untested browser releases
+        and will validate (on a case-by-case basis) whether or not Syncro Soft can provide technical
+        support.</p>
+    </note>
+  </body>
+</topic>

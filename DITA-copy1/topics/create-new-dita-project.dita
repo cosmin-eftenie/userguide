@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="create-new-dita-project">
+  <title>Working with Projects in DITA</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>New DITA project</indexterm>
+        <indexterm>DITA<indexterm>Projects</indexterm></indexterm>
+        <indexterm>DITA<indexterm>Creating new projects</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_bdl_dgk_54b"><ph keyref="product"/> provides the ability to organize your DITA
+      resources in projects, the same as with other files. Projects help you manage and organize
+      your files and allow you to perform batch operations (such as validations and transformations)
+      over multiple files or to use <xref href="dita-main-files.dita">Main Files support to rename
+        or move DITA resources</xref> while updating the references to them. <ph
+        product="author editor"> You can also <xref href="sharing-projects.dita#sharing-projects"
+          >share your project settings and transformation/validation scenarios</xref> with other
+        users.</ph></p>
+    <p id="p_cdl_dgk_54b">To learn how to create a new project<ph product="author editor"> from a template</ph> and how
+      add resources and manage it, see <xref href="create-new-project.dita"/>.</p>
+    <p id="p_ddl_dgk_54b">To help you get more familiar with how to use projects in DITA, there are two DITA-specific
+      sample project templates available when using the <uicontrol><image
+          href="../img/NewProject16.png" id="image_qlh_123_ymb"/>New Project</uicontrol> action
+      (available, for example, from the <uicontrol>Project</uicontrol> menu):<ul id="ul_nqj_p23_ymb">
+        <li id="li_edl_dgk_54b"><b>DITA Project With Editing Customizations</b> - This sample DITA project imposes
+          custom general settings and an editing behavior using a DITA framework extension. More
+          details can be found in the project's <filepath>Readme.html</filepath> file.</li>
+        <li id="li_fdl_dgk_54b"><b>Sample DITA Project</b> - This sample DITA project is a best practice example that
+          shows how DITA content can be organized to provide a scalable and flexible project
+          structure. More details can be found in the project's <filepath>Readme.html</filepath>
+          file.</li>
+      </ul></p>
+    <section id="section_x2n_vhh_vrb">
+      <title>Resources</title>
+      <p id="p_orm_dgk_54b">For more information about working with DITA projects, see our webinar:
+          <xref
+          href="https://www.oxygenxml.com/events/2021/webinar_working_with_dita_in_oxygen_startup_project.html"
+          format="html" scope="external">Working with DITA in Oxygen - Quick Start with the DITA
+          Startup Project</xref>.</p>
+    </section>
+  </body>
+  <related-links>
+      <link href="grouping-documents-xml-projects.dita#grouping-documents-xml-projects"/>
+  </related-links>
+</topic>

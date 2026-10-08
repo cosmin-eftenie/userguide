@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="api_faq_auto_generate_ID">
+  <title>Auto-Generate an ID When a Document is Opened or Created</title>
+  <body>
+    <section id="question">
+      <title>Use Case</title>
+      <p id="p_z2g_dgk_54b">You want to configure how the application generates IDs (you need IDs
+        that have a certain format for each created topic). </p>
+    </section>
+    <section id="answer">
+      <title>Solution</title>
+      <p id="p_afg_dgk_54b">This could be done implementing a <xref keyref="glossentry_plugin"
+          ><term>plugin</term></xref> for <ph keyref="product"/> using the <xref
+          href="https://www.oxygenxml.com/oxygen_sdk.html#Developer_Plugins" format="html"
+          scope="external">Plugins SDK</xref>:</p>
+      <p id="p_bfg_dgk_54b">There is a type of <term>plugin</term> called "Workspace Access" that can be used to add a
+        listener to be notified when an editor is opened.</p>
+      <p id="p_cfg_dgk_54b">The implemented <term>plugin</term> would intercept the open editor and editor page
+        change events (which occur when a new editor is created) and generate a new ID attribute
+        value on the root element.</p>
+      <p id="p_dfg_dgk_54b">The Java code would look like
+        this:<codeblock outputclass="language-java" id="codeblock_efg_dgk_54b">pluginWorkspaceAccess.addEditorChangeListener(new WSEditorChangeListener() {
+/**
+* @see WSEditorChangeListener#editorOpened(java.net.URL)
+*/
+@Override
+public void editorOpened(URL editorLocation) {
+    WSEditor ed = pluginWorkspaceAccess.getEditorAccess
+(editorLocation, PluginWorkspace.MAIN_EDITING_AREA);
+        generateID(ed);
+}
+/**
+* @see WSEditorChangeListener#editorPageChanged(java.net.URL)
+*/
+@Override
+public void editorPageChanged(URL editorLocation) {
+    WSEditor ed = pluginWorkspaceAccess.getEditorAccess
+(editorLocation, PluginWorkspace.MAIN_EDITING_AREA);
+        generateID(ed);
+}
+      
+private void generateID(WSEditor ed) {
+ if(ed.getCurrentPage() instanceof WSAuthorEditorPage) {
+  WSAuthorEditorPage authorEditPage = (WSAuthorEditorPage) ed.getCurrentPage();
+  AuthorDocumentController ctrl = authorEditPage.getDocumentController();
+  AuthorElement root = ctrl.getAuthorDocumentNode().getRootElement();
+   if(root.getAttribute("id") == null || 
+!root.getAttribute("id").getValue().startsWith("generated_")) {
+    ctrl.setAttribute("id", new AttrValue("generated_" + Math.random()), root);
+          }
+        }
+      }
+      
+    }, PluginWorkspace.MAIN_EDITING_AREA);
+</codeblock></p>
+    </section>
+  </body>
+</topic>

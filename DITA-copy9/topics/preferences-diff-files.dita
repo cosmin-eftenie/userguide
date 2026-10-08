@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="preferences-diff-files">
+    <title>Files Comparison Preferences</title>
+    <prolog>
+    <metadata>
+      <keywords><indexterm>Preferences<indexterm>Files Comparison</indexterm></indexterm>
+        <indexterm>File comparison preferences</indexterm></keywords>
+    </metadata>
+  </prolog>
+    <body>
+        <p id="p_izq_bgk_54b">To configure the <uicontrol>Files Comparison</uicontrol> options, <ph
+        conkeyref="reusables-preferences-pages/open-the-preferences-page"/> and go to <menucascade>
+        <uicontrol>Diff</uicontrol>
+        <uicontrol>Files Comparison</uicontrol>
+      </menucascade>.</p>
+    <p id="p_jzq_bgk_54b">This preferences page allows you to configure the following options:<dl id="dl_kzq_bgk_54b">
+        <dlentry id="enable-author-mode">
+          <dt><uicontrol>Enable file comparison in Author mode</uicontrol></dt>
+          <dd>If selected, a visual <uicontrol>Author</uicontrol> mode is available in the file
+            comparison tool. It displays the files in a visual mode similar to the
+              <uicontrol>Author</uicontrol> editing mode in <term>Oxygen XML Editor/Author</term>.
+            This visual mode is available when both compared files are detected as being XML and
+            from a recognized document type.</dd>
+        </dlentry>
+        <dlentry id="dlentry_lzq_bgk_54b">
+          <dt><uicontrol>Ignore Whitespaces</uicontrol><ph product="author editor json"> (Not
+              applicable for the visual Author comparison mode)</ph></dt>
+          <dd>If selected, before performing the comparison, the application normalizes the content
+            (collapses any sequence of whitespace characters into a single space) and trims its
+            leading and trailing whitespaces.<note id="note_mzq_bgk_54b">If the <uicontrol>Ignore Whitespaces</uicontrol>
+              checkbox is selected, comparing the <codeph>a b</codeph> sequence with <codeph>a
+                b</codeph>, <ph keyref="product"/> finds no differences, because after
+              normalization, all whitespaces from the first sequence are collapsed into a single
+              space character. However, when comparing <codeph>a b</codeph> with <codeph>ab</codeph>
+              (no whitespace between <codeph>a</codeph> and <codeph>b</codeph>), <ph
+                keyref="product"/> signals a difference.</note></dd>
+        </dlentry>
+        <dlentry id="dlentry_nzq_bgk_54b">
+          <dt><uicontrol>Two-Way Diff</uicontrol> section</dt>
+          <dd>
+            <p id="p_ozq_bgk_54b">
+              <dl id="dl_pzq_bgk_54b">
+                <dlentry id="diff-algorithm">
+                  <dt><uicontrol>Default algorithm</uicontrol></dt>
+                  <dd>The default algorithm used for comparing two files. The following options are
+                      available:<ul conkeyref="reusables-tools/algorithm-ul" id="ul_qzq_bgk_54b">
+                      <li id="li_rzq_bgk_54b"/>
+                    </ul></dd>
+                </dlentry>
+                <dlentry conkeyref="reusables-configuring-oxygen/algorithm-strength" id="dlentry_szq_bgk_54b">
+                  <dt/>
+                  <dd/>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+        <dlentry id="dlentry_tzq_bgk_54b">
+          <dt><uicontrol>Three-Way Diff</uicontrol> section</dt>
+          <dd>
+            <p id="p_uzq_bgk_54b">
+              <dl id="dl_vzq_bgk_54b">
+                <dlentry id="dlentry_wzq_bgk_54b">
+                  <dt><uicontrol>Default algorithm</uicontrol></dt>
+                  <dd>The default algorithm used for performing a three-way comparison. The
+                    following options are available:<ul id="ul_xzq_bgk_54b">
+                      <li conkeyref="reusables-tools/auto" id="li_yzq_bgk_54b"/>
+                      <li conkeyref="reusables-tools/lines" id="li_zzq_bgk_54b"/>
+                      <li conkeyref="reusables-tools/xml-fast" id="li_a1r_bgk_54b"/>
+                      <li conkeyref="reusables-tools/xml-accurate" id="li_b1r_bgk_54b"/>
+                    </ul></dd>
+                </dlentry>
+                <dlentry conkeyref="reusables-configuring-oxygen/algorithm-strength" id="dlentry_c1r_bgk_54b">
+                  <dt/>
+                  <dd/>
+                </dlentry>
+                <dlentry conkeyref="reusables-configuring-oxygen/show-pseudo-conflicts" id="dlentry_d1r_bgk_54b">
+                  <dt/>
+                  <dd/>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+        <dlentry id="xml-diff-section">
+          <dt><uicontrol>XML Diff</uicontrol> section</dt>
+          <dd>
+            <p id="p_e1r_bgk_54b">
+              <dl id="dl_f1r_bgk_54b">
+                <dlentry id="ignore">
+                  <dt><uicontrol>Ignore</uicontrol><ph product="author editor json"> (Not applicable
+                      for the visual Author comparison mode)</ph></dt>
+                  <dd>Allows you to specify the types of XML nodes that will be ignored in the file
+                    comparison for the <uicontrol>XML Fast</uicontrol> and <uicontrol>XML
+                      Accurate</uicontrol> algorithms. You can choose to ignore <i>Processing
+                      Instructions</i>, <i>Comments</i>, <i>CDATA</i>, <i>DOCTYPE</i>, <i>Text</i>,
+                      <i>Namespaces</i>, <i>Prefixes</i>, <i>Namespace declarations</i>, and
+                      <i>Attribute order</i>. </dd>
+                </dlentry>
+                <dlentry id="ignore-nodes-by-xpath">
+                  <dt><uicontrol>Ignore nodes by XPath</uicontrol><ph product="author editor json">
+                      (Not applicable for the visual Author comparison mode)</ph></dt>
+                  <dd>If selected, you can enter an <xref
+                      href="../topics/running-xpath-expressions.dita#running-xpath-expressions"
+                      product="author developer editor json">XPath expression</xref><ph
+                      product="svnClient">XPath expression</ph> to ignore certain nodes from the
+                    comparison. It will be processed as XPath version 2.0. The XPath expression
+                    specified in this option is used as the default ignore instructions <b>only</b>
+                    when the application is started. If you enter an XPath expression in the similar
+                    option on the <uicontrol>Diff Files</uicontrol> toolbar, that expression will be
+                    used instead.</dd>
+                </dlentry>
+                <dlentry id="merge-adjacent">
+                  <dt><uicontrol>Merge adjacent differences</uicontrol><ph
+                      product="author editor json"> (Not applicable for the visual Author comparison
+                      mode)</ph></dt>
+                  <dd>If selected, the application considers two adjacent differences as one when
+                    the differences are painted in the side-by-side editors. If not selected, every
+                    difference is represented separately.</dd>
+                </dlentry>
+                <dlentry id="merge-end-tags">
+                  <dt><uicontrol>Mark end tags as different for modified elements</uicontrol><ph
+                      product="author editor json"> (Not applicable for the visual Author comparison
+                      mode)</ph></dt>
+                  <dd>If selected, end tags of modified elements are also presented as differences.
+                    Otherwise, only the start tags are presented as differences.</dd>
+                </dlentry>
+                <dlentry id="ignore-expansion">
+                  <dt><uicontrol>Ignore expansion state for empty elements</uicontrol><ph
+                      product="author editor json"> (Not applicable for the visual Author comparison
+                      mode)</ph></dt>
+                  <dd>If selected, empty elements in both expansion states are considered matched
+                    (that is <codeph>&lt;element/&gt;</codeph> and
+                      <codeph>&lt;element&gt;&lt;/element&gt;</codeph> are considered equal).</dd>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+      </dl></p>
+    <p id="p_w1b_3fx_vcc">
+      <note id="note_gkf_3fx_vcc">The File Comparison preferences are also accessible through the
+          <xref href="directories-comparison.dita"><b>Directory Compare Tool</b></xref> and are
+        taken into account when directory comparisons are invoked.</note>
+    </p>
+    </body>
+</topic>

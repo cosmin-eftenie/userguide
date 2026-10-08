@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="css-outline-view">
+  <title>CSS Outline View</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>CSS stylesheets<indexterm>Outline view</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p status="new" id="p_th2_cgk_54b">The <uicontrol>Outline</uicontrol> view for CSS stylesheets presents the import
+      declarations for other CSS stylesheet files and all the selectors defined in the current CSS
+      document. The selector entries can be presented as follows:</p>
+    <ul id="ul_uh2_cgk_54b">
+      <li id="li_vh2_cgk_54b">In the order they appear in the document.</li>
+      <li id="li_wh2_cgk_54b">Sorted by the element name used in the selector.</li>
+      <li id="li_xh2_cgk_54b">Sorted by the entire selector string representation.</li>
+    </ul>
+    <p id="p_yh2_cgk_54b">You can synchronize the selection in the <uicontrol>Outline</uicontrol> view with the cursor
+      moves or changes you make in the stylesheet document. When you select an entry from the
+        <uicontrol>Outline</uicontrol> view, <ph keyref="product"/> highlights the corresponding
+      import or selector in the CSS editor.</p>
+    <p id="p_zh2_cgk_54b">By default, it is displayed on the left side of the editor. <ph
+        conkeyref="reusables-user-guide/reopen-view"/></p>
+    <p id="p_a32_cgk_54b">
+      <fig product="developer editor json" id="fig_b32_cgk_54b">
+        <title>CSS Outline View</title>
+        <image href="../img/sa_css_outline_view.png"/>
+      </fig>
+    </p>
+    <p id="p_c32_cgk_54b">
+      <fig product="editorEclipse developerEclipse" id="fig_d32_cgk_54b">
+        <title>CSS Outline View</title>
+        <image href="../img/ec_css_outline_view.png"/>
+      </fig>
+    </p>
+    <p id="p_e32_cgk_54b">The selectors presented in this view can be found quickly using the key search field. When
+      you press a sequence of character keys while the focus is in the view, the first selector that
+      starts with that sequence is selected automatically.</p>
+  </body>
+</topic>

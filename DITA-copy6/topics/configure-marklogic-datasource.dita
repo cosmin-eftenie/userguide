@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task
+  PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="configure-marklogic-datasource">
+  <title>How to Configure MarkLogic Data Source Drivers</title>
+  <taskbody>
+    <prereq>
+      <p id="p_qnx_cgk_54b">
+        <note type="other" othertype="Notes" id="note_rnx_cgk_54b">
+          <ul id="ul_vvv_4tq_skb">
+            <li id="li_snx_cgk_54b">Available in the Enterprise edition only.</li>
+            <li id="li_tnx_cgk_54b"><ph keyref="product"/> supports MarkLogic version 4.0 or later.</li>
+          </ul>
+        </note>
+      </p>
+    </prereq>
+    <context>
+      <p id="p_unx_cgk_54b">To configure a data source for MarkLogic, follow this procedure:</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Download the <uicontrol>XCC Java distribution</uicontrol> zip file from: <xref
+            href="http://developer.marklogic.com/products/xcc" format="html" scope="external"
+          />.</cmd>
+      </step>
+      <step>
+        <cmd>Unzip the downloaded archive.</cmd>
+      </step>
+      <step>
+        <cmd><ph conkeyref="reusables-working-with-databases/open-ds"/></cmd>
+      </step>
+      <step>
+        <cmd><ph conkeyref="reusables-working-with-databases/click-new"/></cmd>
+      </step>
+      <step>
+        <cmd><ph conkeyref="reusables-working-with-databases/unique-name"/></cmd>
+      </step>
+      <step>
+        <cmd>Select <i>MarkLogic</i> from the driver <uicontrol>Type</uicontrol> drop-down
+          list.</cmd>
+      </step>
+      <step>
+        <cmd>Click the <uicontrol>Add Files</uicontrol> button and select the MarkLogic driver file
+          from the <filepath>lib</filepath> folder of the archive that you downloaded and unzipped.
+          The driver file name is <filepath>marklogic-xcc-{server_version}.jar</filepath>, where
+            <i>{server_version}</i> is the MarkLogic server version.</cmd>
+      </step>
+      <step>
+        <cmd><ph conkeyref="reusables-working-with-databases/step6"/></cmd>
+      </step>
+      <step>
+        <cmd>Continue on to <xref
+            href="configure-marklogic-connection.dita#configure-marklogic-connection">configure your
+            MarkLogic Connection</xref>.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

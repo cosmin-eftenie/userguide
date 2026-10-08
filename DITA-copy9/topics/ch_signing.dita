@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="ch_signing">
+    <title>Signing</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Signing</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+    <taskbody>
+    <prereq id="prereq_pwf_pwh_hdc">
+      <p>The following Bouncy Castle libraries must be downloaded (in their last available
+          version):<ul id="ul_f5m_5wh_hdc">
+          <li>bcpkix-jdk18on</li>
+          <li>bcprov-jdk18on</li>
+          <li>bcutil-jdk18on</li>
+        </ul></p>
+    </prereq>
+    <context id="context_pky_q4s_3dc">
+      <p>Follow these steps to generate signed PDFs for XML or HTML content. For DITA content, check
+          <xref href="https://www.oxygenxml.com/doc/ug-ope/topics/dcpp_how_to_sign_a_pdf.html"
+          format="html" scope="external">How to Sign a PDF</xref>.</p>
+    </context>
+    <steps id="steps_orp_lwh_hdc">
+      <step>
+        <cmd>Install an external <b>Oxygen PDF Chemistry</b> processor.</cmd>
+        <info>
+          <note id="note_qrs_kxq_3dc" type="restriction">A separate installation is required to
+            include the additional libraries.</note>
+        </info>
+      </step>
+      <step>
+        <cmd>Copy Bouncy Castle libraries into
+          <filepath>[CHEMISTRY_INSTALL_DIR]/lib</filepath>.</cmd>
+      </step>
+      <step>
+        <cmd>Create a keystore file (if you do not already have one issued):</cmd>
+        <info>
+          <codeblock outputclass="language-bourne" id="codeblock_y2k_mwh_hdc">openssl req -new -newkey rsa:4096 -nodes -keyout my.key -out my.csr
+openssl x509 -req -sha256 -days 365 -in my.csr -signkey my.key -out my.pem
+cat my.key my.pem > my2.pem
+openssl pkcs12 -export -in my2.pem -out mykeystore.pkcs12 -name myAlias</codeblock>
+        </info>
+      </step>
+      <step>
+        <cmd>Set the keystore from the command line using the <codeph>-keystore-file</codeph>
+          parameter. This file alone is enough to sign a PDF.</cmd>
+      </step>
+      <step>
+        <cmd>If you need to add more information (e.g. your company name, location, or reason) or to
+          set a password, you can use the following parameters:</cmd>
+        <info>
+          <ul id="ul_kzm_4wh_hdc">
+            <li><codeph>-sign-name</codeph></li>
+            <li><codeph>-sign-location</codeph></li>
+            <li><codeph>-sign-reason</codeph></li>
+            <li><codeph>-sign-password</codeph></li>
+          </ul>
+        </info>
+      </step>
+    </steps></taskbody>
+</task>

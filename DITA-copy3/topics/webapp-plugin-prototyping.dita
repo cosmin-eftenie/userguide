@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="webapp-plugin-prototyping">
+  <title>Setting Up a Development Environment for Plugins</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Setting up a development environment for plugins</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p id="p_bxs_dgk_54b">
+        <note type="other" othertype="Prerequisite" id="note_cxs_dgk_54b">You will need a recent version of Eclipse
+          EE.</note>
+      </p>
+    </prereq>
+    <context>
+      <p id="p_dxs_dgk_54b">This procedure describes a development environment that can be used to increase your
+        productivity in writing <term>plugins</term> for <ph keyref="webappProduct"/>.</p>
+      <p id="p_exs_dgk_54b">Developing a <term>plugin</term> for <ph keyref="webappProduct"/> might require repetitive
+        code-testing cycles. Since the <xref
+          href="https://www.oxygenxml.com/oxygen_webapp_running_and_testing.html" format="html"
+          scope="external">process of building a WAR file</xref> requires a full Maven build, the
+        whole process might prove to be time consuming. The following procedure provides a faster
+        alternative for testing the <term>plugin</term>:</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Open a command-line interface (Terminal on macOS/Linux, Command Prompt on
+          Windows).</cmd>
+        <substeps>
+          <substep>
+            <cmd>Navigate to the directory where you want to create your project and type this
+              command: <codeph>mvn "org.apache.maven.plugins:maven-archetype-plugin:2.4:generate"
+                "-DarchetypeGroupId=com.oxygenxml"
+                "-DarchetypeArtifactId=web-author-plugin-archetype" "-DarchetypeVersion=26.1"
+                "-DarchetypeRepository=https://raw.githubusercontent.com/oxygenxml/web-author-plugin-archetype/mvn-repo/"</codeph></cmd>
+          </substep>
+          <substep>
+            <cmd>To create the plugin archive, run the following command in the plugin's folder:
+              <codeph>mvn package</codeph></cmd>
+            <info>
+              <p>The archive will be found in the <filepath>target/</filepath> folder with a name
+                ending in <filepath>-plugin.jar</filepath>.</p>
+            </info>
+          </substep>
+          <substep>
+            <cmd>To deploy your plugin, you need to <xref
+                href="https://www.oxygenxml.com/doc/ug-webauthor/topics/webapp-configure-plugins.html"
+                format="html" scope="external">upload it in the Web Author's Administration
+                Page</xref>.</cmd>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>Run <ph keyref="webappProduct"/> in a Tomcat server. You can either use one of the
+          <xref href="https://oxygenxml.com/xml_web_author/download_oxygenxml_web_author.html"
+            format="html" scope="external">installation kits</xref>, the WAR distribution, or build
+          it using the <xref href="https://github.com/oxygenxml/web-author-component-integration"
+            format="html" scope="external">Web Author Component Integration sample
+            project</xref>.</cmd>
+        <info>
+          <note type="other" othertype="Notes" id="note_fxs_dgk_54b">
+            <ul id="ul_gxs_dgk_54b">
+              <li id="li_hxs_dgk_54b">If you are using one of the installation kits, you should <xref
+                  href="how_to_security_manager.dita">disable file security</xref> to work with
+                plugins in development mode.</li>
+              <li id="li_ixs_dgk_54b">If you are using the WAR distribution or the Web Author
+                Component, you can start <ph keyref="webappProduct"/> in Eclipse in debugging mode.
+                This allows you to place breakpoints in your plugin's Java code and make live code
+                changes. The procedure is as follows:<ol id="ol_hts_qy1_qgb">
+                  <li id="li_jxs_dgk_54b">Import the <filepath>.war</filepath> application as a
+                    project in Eclipse:<ol id="ol_its_qy1_qgb">
+                      <li id="li_kxs_dgk_54b"><menucascade>
+                          <uicontrol>File</uicontrol>
+                          <uicontrol>Import</uicontrol>
+                      </menucascade>.</li>
+                      <li id="li_lxs_dgk_54b">Choose <menucascade>
+                          <uicontrol>Web</uicontrol>
+                          <uicontrol>WAR file</uicontrol>
+                      </menucascade>.</li>
+                      <li id="li_mxs_dgk_54b">Choose your <filepath>.war</filepath> file.</li>
+                      <li id="li_nxs_dgk_54b">Click <uicontrol>Finish</uicontrol>.</li>
+                    </ol></li>
+                  <li id="li_oxs_dgk_54b">On the new project, choose <uicontrol>Debug On
+                      Server</uicontrol> in the contextual menu. Then create a new server by
+                    choosing a server container supported by your version of Web Author (see the
+                    <xref href="webapp_deployment.dita#webapp_deployment/software_requirements"
+                      >Software Requirements</xref> topic). Before starting the server, check that
+                    the Java version is also supported by doing the following:<ol
+                      id="ol_crw_n1g_pwb">
+                      <li id="li_drw_n1g_pwb">Open the Server view.</li>
+                      <li id="li_mcf_p1g_pwb">Double-click on the newly created server.</li>
+                      <li id="li_bj2_q1g_pwb">See the Runtime Environment configuration in the
+                        Overview tab.</li>
+                    </ol></li>
+                </ol></li>
+            </ul>
+          </note>
+          <note id="note_k5n_1n1_pwb">If you choose to start <ph keyref="webappProduct"/> using the
+            WAR (using Eclipse or directly putting the WAR in a Tomcat), make sure that you check
+            that the <xref href="webapp_deployment.dita#webapp_deployment/software_requirements"
+              >Software Requirements</xref> are met. </note>
+        </info>
+      </step>
+      <step>
+        <cmd>Look in the Tomcat logs (or in the console) for a line like "<codeph>Loading plugins
+            from: ${path}</codeph>" and note the path of the <filepath>plugins</filepath>
+          folder.</cmd>
+      </step>
+      <step>
+        <cmd>In the <filepath>plugins</filepath> folder, create a sub-folder with a name of your
+          choice (for example, <filepath>myplugin</filepath>).</cmd>
+      </step>
+      <step>
+        <cmd>In that folder (<filepath>myplugin</filepath>), create a
+          <filepath>plugin.redirect</filepath> file that contains the path to your
+          <term>plugin</term> project (created in steps 1 and 2) on a single line.</cmd>
+      </step>
+      <step>
+        <cmd>Import your <term>plugin</term> project in Eclipse.</cmd>
+        <substeps id="substeps_vy1_gpb_2s">
+          <substep>
+            <cmd>Click <menucascade>
+                <uicontrol>File</uicontrol>
+                <uicontrol>Import</uicontrol>
+            </menucascade>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Choose <uicontrol>Existing Maven Project</uicontrol>.</cmd>
+          </substep>
+          <substep>
+            <cmd>Browse for the location of your <term>plugin</term>.</cmd>
+          </substep>
+        </substeps>
+      </step>
+      <step>
+        <cmd>Modify the <filepath>plugin.xml</filepath> file to add a library reference to the
+          directory where Eclipse places the compiled output.</cmd>
+        <info>With the default setup of a Maven project, this step requires that you add the
+          following element inside a <xmlelement>runtime</xmlelement>
+          element:<codeblock outputclass="language-xml" id="codeblock_pxs_dgk_54b">&lt;library name="target/classes/"/></codeblock></info>
+      </step>
+      <step>
+        <cmd>Connect Web Author to an <xref href="https://www.oxygenxml.com/license_server.html"
+            format="html" scope="external">Oxygen License Server</xref> by either connecting to an
+          already existing one in your company or start one locally by following the steps from
+          <xref href="webapp-configure-license-server.dita">this topic</xref>.</cmd>
+      </step>
+      <step>
+        <cmd>You can now open a document in the <ph keyref="webappProduct"/> and it will
+          automatically load your <term>plugin</term>.</cmd>
+        <info>Every time you make changes to the <term>plugin</term> sources, you will need to <xref
+            href="webauthor-restart.dita">restart <ph keyref="webappProduct"/></xref>.</info>
+      </step>
+    </steps>
+    <postreq>
+      <p id="p_qxs_dgk_54b">If you are happy with the result, you can proceed with integrating the <term>plugin</term>
+        into your SDK project and follow <xref
+          href="https://www.oxygenxml.com/oxygen_webapp_running_and_testing.html" format="html"
+          scope="external">these instructions</xref> to perform a final testing of the project.</p>
+    </postreq>
+  </taskbody>
+  <related-links>
+    <link href="webapp-configure-plugins.dita#webapp-configure-plugins"/>
+  </related-links>
+</task>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="api_faq_extend_bundle">
+  <title>Extend the Java Functionality of an Existing Framework (Document Type)</title>
+  <body>
+    <section id="question">
+      <title>Use Case</title>
+      <p id="p_rkg_dgk_54b">You want to change the way a DocBook 4 <xmlelement>xref</xmlelement>
+        displays in <uicontrol>Author</uicontrol> mode based on what element is at the
+          <xmlatt>linkend</xmlatt>.</p>
+    </section>
+    <section id="solution">
+      <title>Solution</title>
+      <p id="p_skg_dgk_54b">Follow these steps:<ol id="ol_6114a4af-a0ed-46f8-bb76-aaccadecc310">
+          <li id="li_tkg_dgk_54b">
+            <p id="p_ukg_dgk_54b">Create a Maven Java project and add a dependency on the <ph keyref="product"/>
+              classes:<codeblock outputclass="language-xml" id="codeblock_vkg_dgk_54b">&lt;dependency>
+    &lt;groupId>com.oxygenxml&lt;/groupId>
+    &lt;artifactId>oxygen-sdk&lt;/artifactId>
+    &lt;version>${oxygen.version}&lt;/version>
+&lt;/dependency></codeblock></p>
+            <p id="p_wkg_dgk_54b">where <codeph>${oxygen.version}</codeph> is the version of <ph keyref="product"
+              />.</p>
+            <p id="p_xkg_dgk_54b">Alternatively, if the project does not use Maven, all the transitive dependencies of
+              the above Maven artifact need to be added to the classpath of the project.</p>
+          </li>
+          <li id="li_ykg_dgk_54b">Also add the <filepath><term conkeyref="reusables-user-guide/oxy-install-dir"
+              />\frameworks\docbook\docbook.jar</filepath> to the class path of the project.</li>
+          <li id="li_zkg_dgk_54b">Create a class that extends <xref
+              href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/extensions/docbook/DocBook4ExtensionsBundle.html"
+              format="html" scope="external"
+                ><i>ro.sync.ecss.extensions.docbook.DocBook4ExtensionsBundle</i></xref> and
+            overwrites the method: <xref
+              href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/extensions/api/ExtensionsBundle.html#createLinkTextResolver()"
+              format="html" scope="external"
+                ><i>ro.sync.ecss.extensions.api.ExtensionsBundle#createLinkTextResolver()</i></xref>.</li>
+          <li id="li_alg_dgk_54b">For your custom resolver implementation you can start from the Java sources of the
+              <xref
+              href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/extensions/docbook/link/DocbookLinkTextResolver.html"
+              format="html" scope="external"
+                ><i>ro.sync.ecss.extensions.docbook.link.DocbookLinkTextResolver</i></xref> (the
+            Java code for the entire DocBook customization is present in a subfolder in the <xref
+              href="https://www.oxygenxml.com/oxygen_sdk.html#XML_Editor_Authoring_SDK"
+              format="html" scope="external">Oxygen SDK</xref>).</li>
+          <li id="li_blg_dgk_54b">Pack your extension classes in a <xref keyref="glossentry_jar"><term>JAR</term></xref>
+            file. Copy the <term>JAR</term> to: <filepath><term
+                conkeyref="reusables-user-guide/oxy-install-dir"
+              />\frameworks\docbook\custom.jar</filepath>.</li>
+          <li id="li_clg_dgk_54b">Start <ph keyref="product"/>.</li>
+          <li id="li_dlg_dgk_54b"><ph conkeyref="reusables-preferences-pages/Open-the-preferences-page"/> and go to
+              <uicontrol>Document Type Association</uicontrol>. Edit the DocBook 4 document type. In
+            the <b>Classpath</b> list add the path to the new <term>JAR</term>. In the extensions
+            list select your custom extension instead of the regular DocBook one.</li>
+          <li id="li_elg_dgk_54b">You can rename the document type and the <filepath>docbook</filepath>
+            <term>framework</term> folder to something else (such as
+              <filepath>custom_docbook</filepath>) and share it with others. <ph
+              product="author editor">A document type can also be installed using the <xref
+                href="packing-and-deploying-addons.dita#packing-and-deploying-addons">add-on
+                support</xref>.</ph></li>
+        </ol></p>
+    </section>
+  </body>
+  <related-links>
+    <link
+      href="https://github.com/oxygenxml/web-author-sample-plugins/tree/master/oxygen-dita-extensions-bundle-extension"
+      format="html" scope="external">
+      <linktext>Sample DITA (framework) extension that sets a custom
+          <codeph>ExtensionsBundle</codeph> implementation for customizing links</linktext>
+    </link>
+  </related-links>
+</topic>

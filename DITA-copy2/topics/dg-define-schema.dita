@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dg-define-schema">
+  <title>Step 3: Create a Custom XML Schema</title>
+  <body>
+    <p id="p_jwb_dgk_54b">To illustrate an example of creating an XML Schema for a custom DocBook <xref
+        keyref="glossentry_framework"><term>framework</term></xref>, suppose the documents are
+      either <i>articles</i> or <i>books</i>, and composed of <i>sections</i>. The <i>sections</i>
+      may contain <xmlelement>title</xmlelement>, <xmlelement>para</xmlelement>,
+        <xmlelement>figure</xmlelement>, <xmlelement>table</xmlelement>, and other
+        <xmlelement>section</xmlelement> elements. To complete the picture, each section includes a
+        <xmlelement>def</xmlelement> element from another namespace.</p>
+    <p id="p_kwb_dgk_54b">The first schema file:</p>
+    <p id="p_lwb_dgk_54b">
+      <codeblock outputclass="language-xml" id="codeblock_mwb_dgk_54b">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    targetNamespace="http://www.oxygenxml.com/sample/documentation"
+    xmlns:doc="http://www.oxygenxml.com/sample/documentation"
+    xmlns:abs="http://www.oxygenxml.com/sample/documentation/abstracts"
+    elementFormDefault="qualified"&gt;
+
+    &lt;xs:import namespace=
+    "http://www.oxygenxml.com/sample/documentation/abstracts" 
+     schemaLocation=
+    "abs.xsd"/&gt;
+                    </codeblock>
+    </p>
+    <p id="p_nwb_dgk_54b">The namespace of the documents will be
+        <codeph>http://www.oxygenxml.com/sample/documentation</codeph>. The namespace of the
+        <xmlelement>def</xmlelement> element is
+        <codeph>http://www.oxygenxml.com/sample/documentation/abstracts</codeph>.</p>
+    <p id="p_owb_dgk_54b">Next, the structure of the sections is defined. They all start with a
+        <xmlelement>title</xmlelement>, then have the optional <xmlelement>def</xmlelement> element
+      then either a sequence of other sections, or a mixture of paragraphs, images, and tables.</p>
+    <codeblock outputclass="language-xml" id="codeblock_pwb_dgk_54b">&lt;xs:element name="book" type="doc:sectionType"/&gt;
+&lt;xs:element name="article" type="doc:sectionType"/&gt;
+&lt;xs:element name="section" type="doc:sectionType"/&gt;
+    
+&lt;xs:complexType name="sectionType"&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element name="title" type="xs:string"/&gt;
+        &lt;xs:element ref="abs:def" minOccurs="0"/&gt;
+        &lt;xs:choice&gt;
+            &lt;xs:sequence&gt;
+                &lt;xs:element ref="doc:section" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;    
+            &lt;xs:choice maxOccurs="unbounded"&gt;
+                &lt;xs:element ref="doc:para"/&gt;
+                &lt;xs:element ref="doc:image"/&gt;
+                &lt;xs:element ref="doc:table"/&gt;                
+            &lt;/xs:choice&gt;
+        &lt;/xs:choice&gt;
+    &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+</codeblock>
+    <p id="p_qwb_dgk_54b">The paragraph contains text and other custom styling markup, such as bold
+        (<xmlelement>b</xmlelement>) and italic (<xmlelement>i</xmlelement>) elements.</p>
+    <codeblock outputclass="language-xml" id="codeblock_rwb_dgk_54b">&lt;xs:element name="para" type="doc:paragraphType"/&gt;
+    
+&lt;xs:complexType name="paragraphType" mixed="true"&gt;
+    &lt;xs:choice minOccurs="0" maxOccurs="unbounded"&gt;
+        &lt;xs:element name="emphasis"/&gt;
+        &lt;xs:element name="i"/&gt;
+    &lt;/xs:choice&gt;
+&lt;/xs:complexType&gt;
+</codeblock>
+    <p id="p_swb_dgk_54b">The <xmlelement>image</xmlelement> element has an attribute with a reference to the file
+      containing image data.</p>
+    <codeblock outputclass="language-xml" id="codeblock_twb_dgk_54b">&lt;xs:element name="image"&gt;
+    &lt;xs:complexType&gt;
+        &lt;xs:attribute name="href" type="xs:anyURI" use="required"/&gt;
+    &lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+</codeblock>
+    <p id="p_uwb_dgk_54b">The <xmlelement>table</xmlelement> element contains a header row and then a sequence of rows
+        (<xmlelement>tr</xmlelement> elements) each of them containing the cells. Each cell has the
+      same content as the paragraphs.</p>
+    <codeblock outputclass="language-xml" id="codeblock_vwb_dgk_54b"> &lt;xs:element name="table"&gt;
+    &lt;xs:complexType&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element name="header"&gt;
+            &lt;xs:complexType&gt;
+               &lt;xs:sequence&gt;
+                   &lt;xs:element name="td" maxOccurs="unbounded" 
+                        type="doc:paragraphType"/&gt;
+               &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+        &lt;/xs:element&gt;
+        &lt;xs:element name="tr" maxOccurs="unbounded"&gt;
+            &lt;xs:complexType&gt;
+               &lt;xs:sequence&gt;
+                   &lt;xs:element name="td" type="doc:tdType" 
+                         maxOccurs="unbounded"/&gt;                                
+                &lt;/xs:sequence&gt;
+           &lt;/xs:complexType&gt;
+        &lt;/xs:element&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+
+&lt;xs:complexType name="tdType"&gt;
+    &lt;xs:complexContent&gt;
+        &lt;xs:extension base="doc:paragraphType"&gt;
+            &lt;xs:attribute name="row_span" type="xs:integer"/&gt;
+            &lt;xs:attribute name="column_span" type="xs:integer"/&gt;
+        &lt;/xs:extension&gt;            
+    &lt;/xs:complexContent&gt;
+&lt;/xs:complexType&gt;    
+</codeblock>
+    <p id="p_wwb_dgk_54b">The <xmlelement>def</xmlelement> element is defined as a text only element in the imported
+      schema <filepath>abs.xsd</filepath>:</p>
+    <codeblock outputclass="language-xml" id="codeblock_xwb_dgk_54b">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    targetNamespace=
+     "http://www.oxygenxml.com/sample/documentation/abstracts"&gt;
+    &lt;xs:element name="def" type="xs:string"/&gt;
+&lt;/xs:schema&gt;</codeblock>
+    <p id="p_ywb_dgk_54b">Now the XML data structure will be styled.</p>
+  </body>
+</topic>

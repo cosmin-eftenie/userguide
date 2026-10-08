@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept
+  PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="dg-name-function">
+  <title>Name: oxy_name() Function</title>
+  <shortdesc>This function evaluates the qualified name of the current node.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>CSS extensions<indexterm>Custom
+            functions<indexterm>oxy_name</indexterm></indexterm>
+        </indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p id="p_jdd_dgk_54b">It does not have any arguments.</p>
+    <p id="p_kdd_dgk_54b"><b><u>Example: <term>oxy_name</term> Function</u></b></p>
+    <p id="p_ldd_dgk_54b">To insert a qualified name as static text content before the element, use this CSS
+      selector:<codeblock outputclass="language-css" id="codeblock_mdd_dgk_54b">*:before{
+  content: oxy_name() ": ";
+}</codeblock></p>
+  </conbody>
+</concept>

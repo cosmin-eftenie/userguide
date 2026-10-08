@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="publishing_with_a_dita_ot_project_file">
+    <title>Publishing with a DITA-OT Project File</title>
+    <body>
+    <p conkeyref="reusables-author-for-dita/p-DITAOT-project-1" id="p_w2n_dgk_54b"/>
+    <p conkeyref="reusables-author-for-dita/p-DITAOT-project-2" id="p_x2n_dgk_54b"/>
+    <p conkeyref="reusables-author-for-dita/p-DITAOT-project-3" id="p_y2n_dgk_54b"/>
+    <note id="note_zxh_gr3_45b" type="tip">When a DITA-OT project file is open in
+        <uicontrol>Author</uicontrol> mode, there is a play button (<image
+        href="../img/ApplyStyleSheet16.png" id="image_qqb_dyv_sr"/>) next to the project file name.
+      You can use this button to publish all deliverables specified in the file. While the
+      transformation is running, the button turns into a stop button in case you need to terminate
+      the process.</note>
+    <p>During the publishing processing, whenever <b>WebHelp</b> and <b>PDF</b> final outputs are
+      generated, the generated documents are opened in the corresponding application (e.g. web
+      browser, PDF reader). This feature can be inhibited by editing the transformation scenario and
+      deselecting the <uicontrol>In System Application</uicontrol> checkbox in the
+        <uicontrol>Output</uicontrol> tab.</p>
+    </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link href="dita_open_toolkit_project.dita#dita_open_toolkit_project"/>
+    </linklist>
+  </related-links>
+</topic>

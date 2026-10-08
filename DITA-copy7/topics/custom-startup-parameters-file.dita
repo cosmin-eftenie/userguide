@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="custom-startup-parameters-file">
+  <title>Creating Custom Startup Parameters File</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Startup parameter<indexterm>Custom startup parameters
+          file</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_sls_bgk_54b">You can create your own custom <filepath>.vmoptions</filepath> file and the application and
+      the executable tools will automatically include your custom parameters at startup. The
+      following custom files are recognized by the application and the executable tools:<ul
+        id="ul_cqw_5xr_1s">
+        <li id="li_tls_bgk_54b"><filepath>custom_commons.vmoptions</filepath> - The parameters and their values of this
+          file will be included in all the startup launchers.</li>
+        <li id="li_uls_bgk_54b"><filepath>custom_&lt;app name>.vmoptions</filepath> - The <i>&lt;app name></i> is the
+          name of the executable application or tool (for example,
+            <filepath>custom_diffFiles.vmoptions</filepath> for the <uicontrol>Compare
+            Files</uicontrol> tool). The parameters and their values of this file will be included
+          in the startup launcher for this particular executable.</li>
+      </ul></p>
+    <p id="p_vls_bgk_54b"><b>For example:</b> To specify a different language for all launchers you can use the custom
+        <filepath>vmoptions</filepath> file called <filepath>custom_commons.vmoptions</filepath> and
+      the content would look like this:</p>
+    <p id="p_wls_bgk_54b">
+      <codeblock outputclass="language-ini" id="codeblock_xls_bgk_54b">-Dcom.oxygenxml.language=French</codeblock>
+    </p>
+    <p id="p_yls_bgk_54b"><b>For example:</b> To increase the memory available for a specific tool,
+      such as the <uicontrol>Compare Files</uicontrol> tool (<filepath>diffFiles.exe</filepath>),
+      you can use a custom <filepath>vmoptions</filepath> file called
+        <filepath>custom_diffFiles.vmoptions</filepath> and the content would look like
+      this:<codeblock outputclass="language-ini" id="codeblock_zls_bgk_54b">-Xmx2g</codeblock></p>
+    <p id="p_ams_bgk_54b">To be recognized and included, these custom startup parameter files must be saved in the
+      installation directory of <ph keyref="product"/>.</p>
+  </body>
+</topic>

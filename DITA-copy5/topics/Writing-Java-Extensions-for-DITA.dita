@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="Writing-Java-Extensions-for-DITA">
+  <title>Writing Java Extensions for DITA</title>
+  <body>
+    <p id="p_zdt_dgk_54b">Although most of the editor configuration for a specific document type can be done using
+      configuration files, for some of the most advanced customization requirements, you need to
+      write <xref href="https://www.oxygenxml.com/doc/ug-editor/topics/dg-extensions-bundle.html"
+        format="html" scope="external">Java extensions</xref>.</p>
+    <p id="p_a2t_dgk_54b">Such Java extensions can be registered using the <xref
+        href="https://www.oxygenxml.com/doc/ug-editor/topics/the-document-type-dialog.html"
+        format="html" scope="external">Document Type Configuration dialog box</xref>. When extending
+      a framework that already has Java extensions registered (such as DITA), you want to inherit
+      the behavior of the extensions from the base framework.</p>
+    <p id="p_b2t_dgk_54b">Suppose you want to register an <codeph>AuthorReferenceResolver</codeph> subclass called
+        <codeph>MyConrefResolver</codeph>. Here are the required steps:</p>
+    <p id="p_c2t_dgk_54b">
+      <ol id="ol_jv5_vqj_mmb">
+        <li id="li_d2t_dgk_54b">Create a Maven project that have access to the <i>Oxygenxml</i>
+          Maven Repository by following the procedure from the <xref scope="external" format="html"
+            href="https://www.oxygenxml.com/oxygen_sdk/download.html">Oxygen SDK</xref> page.</li>
+        <li>Add dependencies to <codeph>oxygen-sdk</codeph> and
+          <codeph>framework-dita</codeph>:<codeblock outputclass="language-xml" id="codeblock_e2t_dgk_54b">&lt;dependency>
+      &lt;groupId>com.oxygenxml&lt;/groupId>
+      &lt;artifactId>oxygen-sdk&lt;/artifactId>
+      &lt;version>${oxygen.sdk.version}&lt;/version>
+&lt;/dependency>
+&lt;dependency>
+      &lt;groupId>com.oxygenxml&lt;/groupId>
+      &lt;artifactId>oxygen-jars&lt;/artifactId>
+      &lt;classifier>framework-dita&lt;/classifier>
+      &lt;version>${oxygen.sdk.version}&lt;/version>
+      &lt;exclusions>
+        &lt;exclusion>
+          &lt;groupId>*&lt;/groupId>
+          &lt;artifactId>*&lt;/artifactId>
+        &lt;/exclusion>
+      &lt;/exclusions>
+&lt;/dependency></codeblock></li>
+        <li id="li_f2t_dgk_54b">Create a <codeph>MyConrefResolver.java</codeph> Java source file that contains your
+          reference resolver implementation. To inherit the default behavior for resolving
+          references, this class should extend the default reference resolver implementation for
+          DITA: <codeph>ro.sync.ecss.extensions.dita.conref.DITAConRefResolver</codeph>. You can
+          then override some of the methods according to your
+              needs.<note id="note_g2t_dgk_54b"><codeph>DITAConRefResolver</codeph> has only one non-deprecated
+            constructor, which receives a
+              <codeph>ro.sync.ecss.dita.ContextKeyManagerProvider</codeph> parameter.</note></li>
+        <li id="li_h2t_dgk_54b">Create a <codeph>MyDITAExtensionsBundle</codeph> Java source file that extends
+            <codeph>ro.sync.ecss.extensions.dita.DITAExtensionsBundle</codeph>. Override the
+            <codeph>createAuthorReferenceResolver</codeph> method to return an instance of
+            <codeph>MyConrefResolver</codeph> passing the <codeph>keyManagerProvider</codeph> field
+          of the base class to the constructor.<note id="note_i2t_dgk_54b">The <codeph>MyConrefResolver</codeph> can also
+            be specified as an extension directly in the Document Type Configuration dialog box.
+            However, if specified directly, the default constructor will be used. In the case of the
+              <codeph>DITAConRefResolver</codeph>, this causes keys to not be resolved in Web
+            Author.</note></li>
+        <li id="li_j2t_dgk_54b">Create a JAR file with your compiled Java classes and add it to your
+          framework's classpath using the Document Type Configuration dialog box. You can create the
+          JAR from your IDE or with Maven by running <codeph>mvn clean package</codeph> and the JAR
+          will be created in the <codeph>target</codeph> directory.</li>
+      </ol>
+    </p>
+  </body>
+</topic>

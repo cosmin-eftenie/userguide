@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE troubleshooting PUBLIC "-//OASIS//DTD DITA Troubleshooting//EN" "troubleshooting.dtd">
+<troubleshooting id="dita-map-increase-Ant-memory">
+  <title>Increasing the Memory for the Ant Process</title>
+  <troublebody><condition id="problem">
+      <title>Problem</title>
+      <p id="p_mpk_dgk_54b">The Ant build process runs out of memory.</p>
+    </condition><troubleSolution><remedy id="solution">
+      <title>Solution</title>
+        <steps-informal>
+          <p id="p_npk_dgk_54b">For details about setting custom JVM arguments to the Ant build process, see <xref
+              href="dita-map-edit-advanced.dita#dita-map-edit-advanced/jvm-arguments">JVM
+              Arguments</xref>.</p>
+        </steps-informal>
+    </remedy></troubleSolution></troublebody>
+</troubleshooting>

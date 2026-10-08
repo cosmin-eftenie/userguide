@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="preferences-css-validator">
+  <title>CSS Validator Preferences</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Preferences<indexterm>CSS Validator</indexterm></indexterm>
+        <indexterm>CSS validation preferences</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_gtp_bgk_54b">To configure the <uicontrol>CSS Validator</uicontrol> preferences, <ph
+        conkeyref="reusables-preferences-pages/open-the-preferences-page"/> and go to <uicontrol>CSS
+        Validator</uicontrol>.</p>
+    <p id="p_htp_bgk_54b">You can configure the following options for the built-in <uicontrol>CSS Validator</uicontrol>
+      of <ph keyref="product"/>:</p>
+    <ul id="ul_itp_bgk_54b">
+      <li id="li_jtp_bgk_54b"><uicontrol>Profile</uicontrol> - Selects one of the available validation profiles:
+          <uicontrol>CSS 1</uicontrol>, <uicontrol>CSS 2</uicontrol>, <uicontrol>CSS
+        2.1</uicontrol>, <uicontrol>CSS 3</uicontrol>, <uicontrol>CSS 3 + SVG</uicontrol>,
+          <uicontrol>CSS 3 with Oxygen extensions</uicontrol>, <uicontrol>SVG</uicontrol>,
+          <uicontrol>SVG Basic</uicontrol>, <uicontrol>SVG Tiny</uicontrol>,
+          <uicontrol>Mobile</uicontrol>, <uicontrol>TV Profile</uicontrol>, <uicontrol>ATSC TV
+          Profile</uicontrol>. <ph
+          conkeyref="reusables-configuring-oxygen/CSS3-with-oxygen-extensions-profile"/></li>
+      <li id="li_ktp_bgk_54b"><uicontrol>Media type</uicontrol> - Selects one of the available mediums:
+          <uicontrol>all</uicontrol>, <uicontrol>aural</uicontrol>, <uicontrol>braille</uicontrol>,
+          <uicontrol>embossed</uicontrol>, <uicontrol>handheld</uicontrol>,
+          <uicontrol>print</uicontrol>, <uicontrol>projection</uicontrol>,
+          <uicontrol>screen</uicontrol>, <uicontrol>tty</uicontrol>, <uicontrol>tv</uicontrol>,
+          <uicontrol>presentation</uicontrol>, <uicontrol>oxygen</uicontrol>.</li>
+      <li id="li_ltp_bgk_54b"><uicontrol>Warning level</uicontrol> - Sets the minimum severity level for reported
+        validation warnings. Can be one of: <uicontrol>All</uicontrol>,
+          <uicontrol>Normal</uicontrol>, <uicontrol>Most Important</uicontrol>, <uicontrol>No
+          Warnings</uicontrol>.</li>
+      <li id="li_mtp_bgk_54b"><uicontrol>Ignore properties</uicontrol> - You can type comma
+        separated patterns that match the names of CSS properties that will be ignored at
+        validation. The following vendor extensions are specified as ignored by default:
+          <uicontrol>-ro-*</uicontrol> (<term>PDFreactor</term>), <uicontrol>-ah-*</uicontrol>
+          (<term>Antenna House</term>), <uicontrol>prince-*</uicontrol> (<term>Prince</term>). As
+        wildcards you can use:<ul id="ul_ntp_bgk_54b">
+          <li id="li_otp_bgk_54b"><uicontrol>*</uicontrol> to match any string.</li>
+          <li id="li_ptp_bgk_54b"><uicontrol>?</uicontrol> to match any character.</li>
+        </ul></li>
+      <li id="li_qtp_bgk_54b"><uicontrol>Recognize browser CSS extensions (also applies to content
+          completion)</uicontrol> - If selected, <ph keyref="product"/> recognizes browser-specific
+        CSS properties (no validation is performed). The <xref
+          keyref="glossentry_content-completion-assistant"><term>Content Completion
+          Assistant</term></xref> lists these properties at the end of its list, prefixed with the
+        following particles:<ul id="ul_rtp_bgk_54b">
+          <li id="li_stp_bgk_54b"><uicontrol>-moz-</uicontrol> for <term>Mozilla</term>.</li>
+          <li id="li_ttp_bgk_54b"><uicontrol>-ms-</uicontrol> for <term>Edge</term>.</li>
+          <li id="li_utp_bgk_54b"><uicontrol>-o-</uicontrol> for <term>Opera</term>.</li>
+          <li id="li_vtp_bgk_54b"><uicontrol>-webkit-</uicontrol> for
+            <term>Safari/Webkit</term>.</li>
+        </ul></li>
+    </ul>
+  </body>
+</topic>

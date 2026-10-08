@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ch_how_to_alter_a_hyphenation_dictionary">
+  <title>How to Alter a Hyphenation Dictionary</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            ><ph keyref="pdf-html5-transformation"/><indexterm>Hyphenation<indexterm>Alter a
+              dictionary</indexterm></indexterm></indexterm>
+        <indexterm product="pdf-css ope">Hyphenation<indexterm>Alter a
+          dictionary</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_bjt_cgk_54b" product="chemistry pdf-css ope">The hyphenation dictionaries are located
+      in: <filepath product="chemistry">[CHEMISTRY_INSTALL_DIR]/config/hyph</filepath><filepath
+        product="ope"
+        >[OPE_INSTALL_DIR]/plugins/com.oxygenxml.pdf.css/lib/oxygen-pdf-chemistry/config/hyph</filepath><filepath
+        product="pdf-css"
+        >[DITA_OT_DIR]/plugins/com.oxygenxml.pdf.css/lib/oxygen-pdf-chemistry/config/hyph</filepath>.</p>
+    <p id="p_djt_cgk_54b">You can copy the dictionaries you need to change in another directory,
+      then use the <codeph product="chemistry">-hyph-dir</codeph><codeph
+        product="author developer editor authorEclipse developerEclipse editorEclipse ope pdf-css"
+        >args.hyph.dir</codeph> parameter to reference it inside your transformation.</p>
+    <p id="p_ejt_cgk_54b">Each file is named with the language code and has the following structure:</p>
+    <codeblock outputclass="language-xml" id="codeblock_fjt_cgk_54b">&lt;hyphenation-info>
+
+&lt;hyphen-min before="2" after="3"/>
+
+&lt;exceptions>
+o-mni-bus
+...
+&lt;/exceptions>
+
+&lt;patterns>
+préémi3nent.
+proémi3nent.
+surémi3nent.
+....
+&lt;/patterns>
+
+&lt;/hyphenation-info></codeblock>
+    <p id="p_gjt_cgk_54b">To change the behavior of the hyphenation, you can modify either the patterns or the
+      exceptions sections:<dl id="dl_hjt_cgk_54b">
+        <dlentry id="dlentry_ijt_cgk_54b">
+          <dt>exceptions</dt>
+          <dd>Contains the list of words that are not processed using the patterns, each on a single
+            line. Each of the words should indicate the hyphenation points using the hyphen ("-")
+            character. If a word does not contain this character, it will not be hyphenated.<p
+              id="p_jjt_cgk_54b">For example, <codeph>o-mni-bus</codeph> will match the
+                <codeph>omnibus</codeph> word and will indicate two possible hyphenation points.
+              </p><note id="note_kjt_cgk_54b">Compound words (i.e. e-mail) cannot be controlled by
+              exception words.</note></dd>
+        </dlentry>
+        <dlentry id="dlentry_ljt_cgk_54b">
+          <dt>patterns</dt>
+          <dd>Contains the list of patterns, each on a single line. A pattern is a word fragment,
+            not a word. The numbers from the patterns indicate how desirable a hyphen is at that
+            position. <p id="p_mjt_cgk_54b">For example, <codeph>tran3s2act</codeph> indicates that
+              the possible hyphenation points are "<i>tran-s-act</i>" and the preferable point is
+              the first one, having the higher score of "3".</p></dd>
+        </dlentry>
+      </dl></p>
+  </body>
+</topic>

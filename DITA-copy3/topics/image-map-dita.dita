@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="image-map-dita">
+  <title>Working with Image Maps in DITA</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>DITA<indexterm>Topics<indexterm>Image maps</indexterm></indexterm></indexterm>
+        <indexterm>DITA<indexterm>Image Map Editor</indexterm></indexterm>
+        <indexterm>Author editing mode<indexterm>Image Map
+            Editor<indexterm>DITA</indexterm></indexterm></indexterm>
+        <indexterm>XML documents<indexterm>Author Mode editing<indexterm>Image Map
+                Editor<indexterm>DITA</indexterm></indexterm></indexterm></indexterm>
+        <indexterm>Image Map Editor in DITA</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_fly_bgk_54b"><ph keyref="product"/> includes support for <b>image maps</b> in DITA documents through
+      the use of the <xmlelement>imagemap</xmlelement> element. This feature provides an easy way to create
+      hyperlinks in various areas within an image without having to divide the image into separate
+      image files. The visual <uicontrol>Author</uicontrol> editing mode includes an
+        <uicontrol>Image Map Editor</uicontrol> that helps you to easily create and configure image
+      maps.</p>
+    <p id="p_gly_bgk_54b">
+      <fig id="fig_hly_bgk_54b">
+        <title>Image Map Editor in DITA</title>
+        <image href="../img/image_map_dita.png"/>
+      </fig>
+    </p>
+    <section id="image_map_editor_interface_in_dita">
+      <title>Image Map Editor Interface in DITA</title>
+      <p id="p_ily_bgk_54b">The interface of the <uicontrol>Image Map Editor</uicontrol> consists of the following
+        sections and actions:<dl id="dl_jly_bgk_54b">
+          <dlentry conkeyref="reusables-editing-documents/image-map-toolbar" id="toolbar">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry id="image-map-image-pane">
+            <dt>Image Pane</dt>
+            <dd>
+              <p conkeyref="reusables-editing-documents/image-pane-p" id="p_kly_bgk_54b"/>
+              <p id="p_lly_bgk_54b">
+                <dl id="dl_mly_bgk_54b">
+                  <dlentry conkeyref="reusables-editing-documents/mouse-controls-dlentry" id="dlentry_nly_bgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-editing-documents/contextual-actions-dlentry"
+                    id="contextual-menu-dlentry">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                </dl>
+              </p>
+            </dd>
+          </dlentry>
+          <dlentry id="shape-table">
+            <dt>Shape Table</dt>
+            <dd>The table at the right of the <i>Image Pane</i> is a sequential list of all the
+              areas (shapes) that have been added in the image. It shows their number, type, and
+              description (if one has been added). If you select one of the entries in the table,
+              the corresponding shape will be selected in the <i>Image Pane</i>.</dd>
+          </dlentry>
+          <dlentry id="dlentry_oly_bgk_54b">
+            <dt>Properties</dt>
+            <dd>
+              <p id="p_ply_bgk_54b">
+                <dl id="dl_qly_bgk_54b">
+                  <dlentry id="dlentry_rly_bgk_54b">
+                    <dt><uicontrol>Type</uicontrol></dt>
+                    <dd>Displays information about the selected coordinate.</dd>
+                  </dlentry>
+                  <dlentry id="target">
+                    <dt><uicontrol>Target</uicontrol></dt>
+                    <dd>
+                      <p id="p_sly_bgk_54b">Allows you to choose the target resource that you want the selected area
+                        (shape) to be linked to. Select a target by using the <uicontrol><image
+                            href="../img/LinkDrop.png" id="image_nbp_mkx_sr"/>Link</uicontrol>
+                        drop-down menu to the right of the text field. You can choose between the
+                        following types of links: <uicontrol>Cross Reference</uicontrol>,
+                          <uicontrol>File Reference</uicontrol>, or <uicontrol>Web Link</uicontrol>.
+                        All three types will open a dialog box that allows you to define the target
+                        resource. This linking process is similar to the normal process of <xref
+                          href="eppo-inline-linking.dita#eppo-inline-linking/inserting_a_link_in"
+                          >inserting links in DITA</xref> by using the identical <uicontrol><image
+                            href="../img/LinkDrop.png" id="image_arv_kn1_1jb"/>Link</uicontrol>
+                        drop-down menu from the main toolbar.</p>
+                      <p id="p_tly_bgk_54b">When you click <uicontrol>OK</uicontrol> to finalize your changes in the
+                          <uicontrol>Image Map Editor</uicontrol>, an <xmlelement>xref</xmlelement>
+                        element will be inserted with either an <xmlatt>href</xmlatt> attribute or a
+                          <xmlatt>keyref</xmlatt> attribute. Additional attributes may also be
+                        inserted and their values depend on the target and the type of link. For
+                        details about the three types of links and their dialog boxes, see <xref
+                          href="eppo-inline-linking.dita#eppo-inline-linking/inserting_a_link_in"
+                        />.</p>
+                    </dd>
+                  </dlentry>
+                  <dlentry id="description">
+                    <dt><uicontrol>Description</uicontrol></dt>
+                    <dd>You can enter an optional description for the selected area (shape) that
+                      will be displayed in the <xref href="#image-map-dita/image-map-details"
+                        format="dita"><uicontrol>Image Map Details</uicontrol> section</xref> in
+                        <uicontrol>Author</uicontrol> mode and as a tooltip message when the end-user hovers over the hyperlink in the output.</dd>
+                  </dlentry>
+                </dl>
+              </p>
+            </dd>
+          </dlentry>
+        </dl></p>
+    </section>
+    <section id="how_to_create_an_image_map_in_dita">
+      <title>How to Create an Image Map in DITA</title>
+      <p id="p_uly_bgk_54b">To create an image map on an existing image in a DITA document, follow these steps:<ol id="ol_vly_bgk_54b">
+          <li id="li_wly_bgk_54b">
+            <p id="p_xly_bgk_54b">Right-click the image and select <uicontrol>Image Map Editor</uicontrol>.</p>
+            <p id="p_yly_bgk_54b"><b>Step Result:</b> This action will apply an <i>image map</i> to the current image
+              and open the <uicontrol>Image Map Editor</uicontrol> dialog box.</p>
+          </li>
+          <li id="li_zly_bgk_54b">Add hyperlinks to the image by selecting one of the shape buttons (<uicontrol><image
+                href="../img/NewRectangle20.png"/>New Rectangle</uicontrol>, <uicontrol><image
+                href="../img/NewCircle20.png"/>New Circle</uicontrol>, or <uicontrol><image
+                href="../img/NewPolygon20.png"/>New Polygon</uicontrol>).</li>
+          <li id="li_amy_bgk_54b">Move the shape to the desired area in the image and drag any of the points on the
+            shape to adjust its size or form. You can use the <xref href="#image-map-dita/toolbar"
+              format="dita">other buttons on the toolbar</xref> to adjust its layer and color, or to
+            perform other editing actions.<note type="tip" id="note_bmy_bgk_54b">You can right-click any of the points,
+              shapes, or anywhere in the Image Pane to access various helpful <xref
+                href="#image-map-dita/contextual-menu-dlentry" format="dita">contextual menu
+                actions</xref>. For example, the easiest way to remove a point is to right-click the
+              point and select <uicontrol><image href="../img/Remove16.png"/>Remove
+                Point</uicontrol>.</note></li>
+          <li id="li_cmy_bgk_54b">With the shape selected, use one of the <xref href="#image-map-dita/target"
+              format="dita">linking options</xref> in the <uicontrol><image
+                href="../img/LinkDrop.png"/>Link</uicontrol> drop-down menu to select a target
+            resource (or enter its path in the <xref href="#image-map-dita/target" format="dita"
+                ><uicontrol>Target</uicontrol></xref> text field).</li>
+          <li id="li_dmy_bgk_54b">(Optional) Enter a <xref href="#image-map-dita/description" format="dita"
+                ><uicontrol>Description</uicontrol></xref> for the selected area (shape).</li>
+          <li id="li_emy_bgk_54b">If you want to add more hyperlinks to the image, select a shape button again and
+            repeat the appropriate steps.</li>
+          <li id="li_fmy_bgk_54b">When you are finished creating hyperlinks, click <uicontrol>OK</uicontrol> to process
+            your changes.</li>
+        </ol></p>
+      <p id="p_gmy_bgk_54b"><b>Result:</b> The <i>image map</i> is applied on the image and the appropriate
+        elements and attributes are automatically added. In <uicontrol>Author</uicontrol> mode, the
+        image map is now rendered over the image. If the image includes an <xmlelement>alt</xmlelement>
+        element, its value will be displayed under the image. The following two buttons will also
+        now be available under the image in <uicontrol>Author</uicontrol> mode:<ul id="ul_hmy_bgk_54b">
+          <li id="li_imy_bgk_54b"><uicontrol>Image Map Editor</uicontrol> - Click this button to open the
+              <uicontrol>Image Map Editor</uicontrol>.</li>
+          <li id="image-map-details"><uicontrol>Image Map Details</uicontrol> - Click this button to
+            expand a section that displays the details of the image map and allows you to change the
+            shape and coordinates of the hyperlinked areas. Keep in mind that if you change the
+            shape in this section, you also need to add or remove coordinates to match the
+            requirements of the new shape.</li>
+        </ul></p>
+      <p id="p_jmy_bgk_54b">
+        <fig id="fig_kmy_bgk_54b">
+          <title>Image Map Details</title>
+          <image href="../img/image-map-details.png" placement="inline"/>
+        </fig>
+      </p>
+    </section>
+    <section id="how_to_edit_an_existing_image_map_in_dita">
+      <title>How to Edit an Existing Image Map in DITA</title>
+      <p id="p_lmy_bgk_54b">To edit an existing image map, use any of the following methods:<ul id="ul_mmy_bgk_54b">
+          <li id="li_nmy_bgk_54b">Simply double-click the image.</li>
+          <li id="li_omy_bgk_54b">Right-click the image and select <uicontrol>Image Map Editor</uicontrol>.</li>
+          <li id="li_pmy_bgk_54b">Click the <uicontrol>Image Map Editor</uicontrol> button below the image.</li>
+        </ul>All three methods open the <uicontrol>Image Map Editor</uicontrol> where you can make
+        changes to the image map using the various features described above. You can also make
+        changes to the XML structure of the image map in the <uicontrol>Text</uicontrol> editing
+        mode.</p>
+      <p id="p_qmy_bgk_54b">You can also click the <uicontrol>Image Map Details</uicontrol> button below the image to
+        expand a section that displays the details of the image map and allows you to change the
+        shape and coordinates of the hyperlinked areas. Keep in mind that if you change the shape in
+        this section, you also need to add or remove coordinates to match the requirements of the
+        new shape.</p>
+    </section>
+    <section id="overlapping_areas">
+      <title>Overlapping Areas</title>
+      <p id="p_rmy_bgk_54b">If shapes overlap one another in the <uicontrol>Image Map Editor</uicontrol>, the one on
+        the top layer takes precedence. The number shown inside each shape represents its layer (if
+        the numbers are not displayed, click the <uicontrol><image href="../img/ShowLayers20.png"
+          />Show/Hide Numbers</uicontrol> button on the <xref href="#image-map-dita/toolbar"
+          format="dita"><uicontrol>Image Map Editor</uicontrol> toolbar</xref>). To change the layer
+        order for a shape, use the layer buttons on the <xref href="#image-map-dita/toolbar"
+          format="dita"><uicontrol>Image Map Editor</uicontrol> toolbar</xref> (<image
+          href="../img/BringShapeToFront20.png"/>, <image href="../img/BringShapeForward20.png"/>,
+          <image href="../img/SendShapeBackward20.png"/>, <image href="../img/SendShapeToBack20.png"
+        />).</p>
+      <p id="p_smy_bgk_54b">If you insert a shape and all of its coordinates are completely inside another shape, the
+          <uicontrol>Image Map Editor</uicontrol> will display a warning to let you know that the
+        shape is entirely covered by a bigger shape. Keep in mind that if a shape is completely
+        inside another shape, its hyperlink will only be accessible if its layer is on top of the
+        bigger shape.</p>
+    </section>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link format="html" href="https://www.oxygenxml.com/dita/1.3/specs/langRef/base/imagemap.html"
+        scope="external">
+        <linktext>DITA '<i>imagemap</i>' Element Specifications</linktext>
+      </link>
+      <link href="eppo-adding-images.dita#eppo-adding-images"/>
+    </linklist>
+  </related-links>
+</topic>

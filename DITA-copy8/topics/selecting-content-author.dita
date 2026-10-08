@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="selecting-content-author">
+  <title>Selecting Content in Author Mode</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Author editing mode<indexterm>Selecting content</indexterm></indexterm>
+        <indexterm>XML documents<indexterm>Author Mode editing<indexterm>Selecting
+              content</indexterm></indexterm></indexterm>
+        <indexterm>Selecting content in Author Mode</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_mcx_bgk_54b"><ph keyref="product"/> includes a variety of features and keyboard
+      shortcuts to help you select content in <uicontrol>Author</uicontrol> mode.</p>
+    <section id="selection_shortcuts">
+      <title>Selection Shortcuts in Author Mode</title>
+      <p id="p_ncx_bgk_54b">
+        <dl id="dl_ocx_bgk_54b">
+          <dlentry
+            conkeyref="reusables-editing-documents/ctrl_a" id="dlentry_pcx_bgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry
+            conkeyref="reusables-editing-documents/shift_left_right" id="dlentry_qcx_bgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry
+            conkeyref="reusables-editing-documents/shift_up_down" id="dlentry_rcx_bgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry
+            conkeyref="reusables-editing-documents/ctrl_shift_left_right" id="dlentry_scx_bgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry
+            conkeyref="reusables-editing-documents/shift_home" id="dlentry_tcx_bgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry
+            conkeyref="reusables-editing-documents/shift_end" id="dlentry_ucx_bgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry
+            conkeyref="reusables-editing-documents/ctrl_shift_home" id="dlentry_vcx_bgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry
+            conkeyref="reusables-editing-documents/ctrl_shift_end" id="dlentry_wcx_bgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry
+            conkeyref="reusables-editing-documents/shift_pageup" id="dlentry_xcx_bgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry
+            conkeyref="reusables-editing-documents/shift_pagedown" id="dlentry_ycx_bgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry id="dlentry_zcx_bgk_54b">
+            <dt><uicontrol><shortcut>Double-Click</shortcut></uicontrol></dt>
+            <dd>Selects the word at the cursor position.</dd>
+          </dlentry>
+          <dlentry id="dlentry_adx_bgk_54b">
+            <dt><uicontrol><shortcut>Triple-Click</shortcut></uicontrol></dt>
+            <dd>Selects the node at the cursor position.</dd>
+          </dlentry>
+          <dlentry
+            conkeyref="reusables-editing-documents/select_element" id="dlentry_bdx_bgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry
+            conkeyref="reusables-editing-documents/select_content" id="dlentry_cdx_bgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry
+            conkeyref="reusables-editing-documents/select_parent" id="dlentry_ddx_bgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+        </dl>
+      </p>
+    </section>
+    <section id="section_lsc_hv1_1rb">
+      <title>Intelligent Selection in Author Mode</title>
+      <p id="p_msc_hv1_1rb"><ph keyref="product"/> supports all usual content selection methods
+        using the mouse or keyboard shortcuts (for example <uicontrol><shortcut>Shift + Arrow
+            Keys</shortcut></uicontrol>). When selecting content in <uicontrol>Author</uicontrol>
+        mode, there may be instances where you want to select an element (along with its content)
+        rather than just inline text content. There are several ways to select an element,
+          including:<ul id="ul_tps_cy1_1rb">
+          <li id="li_ups_cy1_1rb">You can select an element by clicking the element name in the
+              <xref
+              href="author-navigate-document-content.dita#author-navigate-document-content/using_the_breadcrumb_to_navigate"
+                ><term>breadcrumb</term></xref>.</li>
+          <li id="li_rk4_hy1_1rb">You can select an element using the <xref
+              href="outliner-view.dita"><uicontrol>Outline</uicontrol> view</xref>.</li>
+          <li id="li_fzg_my1_1rb">If you have the <xref
+              href="author-display-markup.dita#author-display-markup/section_r1x_nv1_1rb"
+                  ><uicontrol><image href="../img/TagsDrop.png" id="image_pmr_mhm_1s"/>Tags Display
+                Mode</uicontrol></xref> set to any of the modes other than <uicontrol><image
+                href="../img/PartialTags16.png"/>Partial Tags</uicontrol> or <uicontrol><image
+                href="../img/NoTags16.png"/>No Tags</uicontrol>, you can select an element directly
+            in the main editing pane by clicking on the element's tag.</li>
+          <li id="li_qkd_ry1_1rb">If you have the <xref
+              href="author-display-markup.dita#author-display-markup/section_r1x_nv1_1rb"
+                  ><uicontrol><image href="../img/TagsDrop.png"/>Tags Display
+              Mode</uicontrol></xref> set to <uicontrol><image href="../img/PartialTags16.png"
+              />Partial Tags</uicontrol> (and the <xref
+              href="preferences-author.dita#preferences-author/dlentry_hr4_bgk_54b"
+                ><uicontrol>Compact tag layout</uicontrol> option is enabled in the
+                <uicontrol>Author</uicontrol> preferences page</xref>), you can still select certain
+            block elements directly in the main editing pane by spanning the selection to the right
+            of the end of the content that is inside a block element so that the selection includes
+            the element's <i>invisible</i> end tag. In this mode, the end tag is normally not
+            visible, but when your selection includes the invisible end tag, a tooltip displays the
+            selected element name and the selection includes the whole element (along with its
+            content). </li>
+        </ul></p>
+    </section>
+  </body>
+</topic>

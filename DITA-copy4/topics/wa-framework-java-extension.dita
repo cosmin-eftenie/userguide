@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="wa-framework-java-extension">
+  <title>Implementing Framework Extensions using Java</title>
+  <body>
+    <p id="p_pts_dgk_54b">Some of the most advanced framework customizations can be implemented using <xref
+        href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/extensions/api/ExtensionsBundle.html"
+        format="html" scope="external">Java extensions</xref>.</p>
+    <p id="p_qts_dgk_54b">To create such a Java extension, follow these steps:</p>
+    <p id="p_rts_dgk_54b">
+      <ol id="ul_ifj_cqs_dlb">
+        <li id="li_sts_dgk_54b">Create a Maven project that have access to the <i>Oxygenxml</i>
+          Maven Repository by following the procedure from the <xref scope="external" format="html"
+            href="https://www.oxygenxml.com/oxygen_sdk/download.html">Oxygen SDK</xref> page.</li>
+        <li id="li_vts_dgk_54b">Add a dependency on the <codeph>oxygen-sdk</codeph> in the <filepath>pom.xml</filepath>
+          file:<codeblock outputclass="language-xml" id="codeblock_wts_dgk_54b">&lt;dependency>
+  &lt;groupId>com.oxygenxml&lt;/groupId>
+  &lt;artifactId>oxygen-sdk&lt;/artifactId>
+  &lt;version>OXYGEN_VERSION&lt;/version>
+&lt;/dependency></codeblock>
+          where you replace <codeph>OXYGEN_VERSION</codeph> with the SDK version that corresponds to
+          the version of <ph keyref="product"/> you are using.</li>
+        <li id="li_xts_dgk_54b">Implement a Java class that extends <xref
+            href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/extensions/api/ExtensionsBundle.html"
+            format="html" scope="external"
+              ><codeph>ro.sync.ecss.extensions.api.ExtensionsBundle</codeph></xref>. <note
+            type="important" id="note_yts_dgk_54b">The <xref
+              href="webauthor-predefined-frameworks.dita">built-in frameworks</xref> already have
+            such an implementation. It is recommended to extend this class for your particular
+            framework so that you get the benefits of all the built-in features. For example, the
+            name of this class for the DITA framework is
+              <codeph>ro.sync.ecss.extensions.dita.DITAExtensionsBundle</codeph>.<p
+              id="p_zts_dgk_54b">To be able to compile your code, you should add the JAR files of
+              the base framework to the Maven's classpath. For
+              example:<codeblock id="codeblock_jjd_3sc_pdc" outputclass="language-xml">&lt;dependency>
+      &lt;groupId>com.oxygenxml&lt;/groupId>
+      &lt;artifactId>oxygen-jars&lt;/artifactId>
+      &lt;classifier>framework-dita&lt;/classifier>
+      &lt;version>${oxygen.sdk.version}&lt;/version>
+      &lt;exclusions>
+        &lt;exclusion>
+          &lt;groupId>*&lt;/groupId>
+          &lt;artifactId>*&lt;/artifactId>
+        &lt;/exclusion>
+      &lt;/exclusions>
+&lt;/dependency></codeblock></p><p>If you depend on a custom
+                <filepath>dita.jar</filepath> file, you can declare a dependency with the scope of
+              "system" like
+              this:</p><p><codeblock outputclass="language-xml" id="codeblock_a5s_dgk_54b">&lt;dependency>
+  &lt;groupId>fake.group&lt;/groupId>
+  &lt;artifactId>dita-jar&lt;/artifactId>
+  &lt;version>1.0&lt;/version>
+  &lt;scope>system&lt;/scope>
+  &lt;systemPath>[PATH_TO_FRAMEWORKS_FOLDER]/dita/dita.jar&lt;/systemPath>
+&lt;/dependency></codeblock>where you replace
+                <codeph>PATH_TO_FRAMEWORKS_FOLDER</codeph> with the path to your
+                <filepath>frameworks/</filepath> folder.</p></note></li>
+        <li id="li_b5s_dgk_54b">Build your Maven project
+          using:<codeblock outputclass="language-bourne" id="codeblock_c5s_dgk_54b">mvn package</codeblock></li>
+        <li id="li_d5s_dgk_54b">Copy the resulting JAR found in the <filepath>target/</filepath> folder to a location in
+          your framework folder.</li>
+        <li id="li_e5s_dgk_54b">Add a reference to that JAR file in the <uicontrol>Classpath</uicontrol> tab of the
+            <xref
+            href="https://www.oxygenxml.com/doc/ug-editor/topics/the-document-type-dialog.html"
+            format="html" scope="external">Document Type Configuration dialog box</xref> for your
+          particular framework.</li>
+      </ol>
+    </p>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link format="html"
+        href="https://www.oxygenxml.com/doc/ug-editor/topics/dg-extensions-bundle.html"
+        scope="external">
+        <linktext><b>Configuring an Extensions Bundle</b></linktext>
+      </link>
+      <link format="html"
+        href="https://www.oxygenxml.com/doc/ug-editor/topics/api_faq_extend_bundle.html"
+        scope="external">
+        <linktext><b>Extend the Java Functionality of an Existing Framework (Document
+          Type)</b></linktext>
+      </link>
+    </linklist>
+  </related-links>
+</topic>

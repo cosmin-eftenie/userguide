@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="preferences-xml">
+  <title>XML Preferences</title>
+  <prolog>
+    <metadata>
+      <keywords><indexterm>Preferences<indexterm>XML</indexterm></indexterm></keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_wtp_bgk_54b">This section describes the panels that contain the user preferences related with XML.</p>
+  </body>
+</topic>

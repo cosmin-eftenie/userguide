@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ch_styling">
+  <title>Styling for Print</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Styling for print</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_ts5_dgk_54b">This section contains information about styling various components in the printed output.</p>
+  </body>
+</topic>

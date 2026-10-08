@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task
+  PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="configure-sql-server-datasource">
+  <title>How to Configure Microsoft SQL Server Data Source Drivers</title>
+  <taskbody>
+    <prereq>
+      <p id="p_yrw_cgk_54b">
+        <note id="note_zrw_cgk_54b">Available in the Enterprise edition only.</note>
+      </p>
+    </prereq>
+    <context>
+      <p id="p_asw_cgk_54b">To configure a data source for connecting to a Microsoft SQL server, follow these
+        steps:</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Download the appropriate MS SQL JDBC driver from the Microsoft website: <xref
+            keyref="url_MSSQLServerALL"/>.</cmd>
+      </step>
+      <step>
+        <cmd><ph conkeyref="reusables-working-with-databases/open-ds"/></cmd>
+      </step>
+      <step>
+        <cmd><ph conkeyref="reusables-working-with-databases/click-new"/></cmd>
+        <stepresult>
+          <p id="p_bsw_cgk_54b">The dialog box for configuring a data source is opened.</p>
+          <p id="p_csw_cgk_54b">
+            <fig product="editor author developer" id="fig_dsw_cgk_54b">
+              <title>Data Source Drivers Configuration Dialog Box</title>
+              <image href="../img/sa_datasource_sqlserver.png"/>
+            </fig>
+          </p>
+          <p id="p_esw_cgk_54b">
+            <fig product="editorEclipse authorEclipse developerEclipse" id="fig_fsw_cgk_54b">
+              <title>Data Source Drivers Configuration Dialog Box</title>
+              <image href="../img/ec_datasource_sqlserver.png"/>
+            </fig>
+          </p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd><ph conkeyref="reusables-working-with-databases/unique-name"/></cmd>
+      </step>
+      <step>
+        <cmd>Select <i>SQLServer</i> in the driver <uicontrol>Type</uicontrol> drop-down menu.</cmd>
+      </step>
+      <step>
+        <cmd>Click the <uicontrol>Add Files</uicontrol> button and select the Microsoft SQL Server
+          driver file that you downloaded.</cmd>
+        <info>The SQL Server driver file is called <filepath>sqljdbc.jar</filepath>.</info>
+      </step>
+      <step>
+        <cmd><ph conkeyref="reusables-working-with-databases/select-driver-class"/></cmd>
+      </step>
+      <step>
+        <cmd><ph conkeyref="reusables-working-with-databases/step6"/></cmd>
+      </step>
+      <step>
+        <cmd>Continue on to <xref
+            href="configure-sql-server-connection.dita#configure-sql-server-connection">configure
+            your Microsoft SQL Server connection</xref>.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

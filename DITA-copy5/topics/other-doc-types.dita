@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="other-doc-types">
+  <title>Other Supported Document Types</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Supported document types</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_brk_cgk_54b">Along with the <xref href="doc-type.dita#doc-type">fully supported built-in
+          <term>frameworks</term> (document types)</xref>, <ph keyref="product"/> also provides
+      limited support (including document templates) for editing a variety of other document types.
+      All the specialized views, editors, actions, and options are dynamic according to the type of
+      file that is opened or created. Other document types that are supported in <ph
+        keyref="product"/> include:<ul id="ul_xjb_r53_cr">
+        <li id="li_crk_cgk_54b"
+          product="author developer editor authorEclipse developerEclipse editorEclipse"><xref
+            href="epub-document-type.dita">EPUB (NCX, OCF, OPF 2.0, 3.0, &amp; 3.1)</xref> - A
+          standard for e-book files.</li>
+        <li id="li_drk_cgk_54b"><xref href="working-with-epub.dita#working-with-epub">OOXML</xref> - An XML-based file
+          format for representing spreadsheets, charts, presentations, and word processing
+          documents.</li>
+        <li id="li_erk_cgk_54b"><xref href="working-with-epub.dita#working-with-epub">ODF</xref> - An free and
+          open-source XML-based file format for electronic office documents, such as spreadsheets,
+          charts, presentations, and word processing documents.</li>
+        <li id="li_frk_cgk_54b"
+          product="author developer editor authorEclipse developerEclipse editorEclipse"><xref
+            href="author-docbook-targetset-doc-type.dita">DocBook Targetset</xref> - For resolving
+          cross-references when using <i>olinks</i>.</li>
+        <li product="author editor authorEclipse editorEclipse" id="li_prk_cgk_54b"><xref
+            href="author-editing-mathml.dita">MathML</xref> - Mathematical Markup Language (2.0 and
+          3.0) is an application of XML for describing mathematical notations.</li>
+        <li id="li_zrk_cgk_54b">XMLSpec - A markup language for W3C specifications and other technical reports.</li>
+        <li id="li_ask_cgk_54b">DITAVAL - DITA conditional processing profile to identify the values you want to
+          conditionally process for a particular output, build, or other purpose. </li>
+        <li id="li_bsk_cgk_54b"><xref href="https://daisy.org/activities/standards/daisy/" format="html" scope="external">Daisy XML</xref> - A technical standard for digital audio books, periodicals, and computerized text. It is designed to be an audio substitute for print material.</li>
+        <li id="li_esk_cgk_54b">Maven Project &amp; Settings - Project or settings file for Maven build automation tool
+          that is primarily used for Java projects.</li>
+        <li id="li_fsk_cgk_54b">Oasis <term>XML Catalog</term> - An <xref keyref="glossentry_xml-catalog"><term>XML
+              Catalog</term></xref> document that describes a mapping between external entity
+          references and locally-cached equivalents.</li>
+        <li id="li_gsk_cgk_54b"><xref href="editing-other-doc-types.dita#editing-other-doc-types">Other Non-XML
+            Files</xref>- <ph keyref="product"/> also includes a simple text editor and a variety of
+          helpful features for creating and editing non-XML files.</li>
+      </ul></p>
+    <section id="external_document_types">
+      <title>External Document Types</title>
+      <p>Some document types are available to be manually installed from GitHub:</p>
+      <p>
+        <ul>
+          <li id="li_lrk_cgk_54b">StratML (Part 1 &amp; 2) - Part 1 and 2 of the Strategy Markup
+            Language specification. Available to be installed from <xref
+              href="https://github.com/oxygenxml/stratml" format="html" scope="external"
+              >GitHub</xref>.</li>
+          <li id="li_csk_cgk_54b">EAD - Encoded Archival Description is an XML standard for encoding
+            archival finding aids. Available to be installed from <xref
+              href="https://github.com/oxygenxml/ead" format="html" scope="external"
+            >GitHub</xref>.</li>
+          <li id="li_dsk_cgk_54b">KML - Keyhole Markup Language is an XML notation for expressing
+            geographic visualization in maps and browsers. Available to be installed from <xref
+              href="https://github.com/oxygenxml/kml" format="html" scope="external"
+            >GitHub</xref>.</li>
+        </ul>
+      </p>
+    </section>
+  </body>
+</topic>

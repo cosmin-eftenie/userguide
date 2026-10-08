@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_how_to_create_fully_accessible_documents">
+    <title>How to Create Fully Accessible Documents</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+          ><ph keyref="pdf-html5-transformation"/><indexterm>Accessibility</indexterm></indexterm>
+        <indexterm product="pdf-css ope">Accessibility</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+    <body>
+        <p id="p_cnt_cgk_54b">To make your documents fully accessible (<b>PDF/UA1</b> compliant), do
+      the following:<ol id="ol_nhd_nl4_vcb">
+        <li id="li_dnt_cgk_54b">The accessibility standard requires that all the fonts be embedded
+          in the PDF. To force font embedding, you have to specify fonts for all elements and for
+          all page margin boxes in your <xref href="dcpp_the_customization_css.dita">customization
+            CSS</xref>. For instance, you can
+          use:<codeblock outputclass="language-css" id="codeblock_ent_cgk_54b">body { font-family: Arial }
+
+code { font-family: "Courier New" }
+
+*[class ~= "pr-d/codeph"], 
+*[class ~= "pr-d/codeblock"],
+*[class ~= "sw-d/filepath"] {
+  font-family: "Courier New";
+}
+
+@page {
+  @top-left {font-family: Arial }
+  @top-right {font-family: Arial }
+  @top-center {font-family: Arial }
+  @top-left-corner {font-family: Arial }
+  @top-right-corner {font-family: Arial }
+
+  @bottom-left {font-family: Arial }
+  @bottom-right {font-family: Arial }
+  @bottom-center {font-family: Arial }
+  @bottom-left-corner {font-family: Arial }
+  @bottom-right-corner {font-family: Arial }
+}</codeblock></li>
+        <li id="li_fnt_cgk_54b">Create a new transformation scenario (based on the <uicontrol
+            keyref="pdf-html5-transformation"/> or the <uicontrol
+            keyref="single-topic-pdf-html5-transformation"/> built-in scenario).</li>
+        <li id="li_gnt_cgk_54b">In the <uicontrol>Parameters</uicontrol> tab, change the value of
+          the <codeph>pdf.accessibility</codeph> parameter to <b>yes</b>.</li>
+        <li>Run the transformation scenario.</li>
+      </ol></p>
+    </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link format="html"
+        href="https://www.oxygenxml.com/doc/ug-chemistry/topics/ch_pdf_output.html#ch_accessibility__section_gsx_2ld_xz"
+        scope="external">
+        <linktext>Oxygen PDF Chemistry: Fully Accessible PDF (PDF/UA1)</linktext>
+      </link>
+    </linklist>
+  </related-links>
+</topic>

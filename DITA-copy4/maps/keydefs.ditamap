@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd" [
+<!ENTITY OXYGEN_MAJOR "28">
+<!ENTITY OXYGEN_MINOR "28.0">
+<!ENTITY WEBAUTHOR_MINOR "28.0.0">
+<!ENTITY WA_JSDOC_MINOR "28.0.0.0">
+<!ENTITY FUSION_MINOR "9.0">
+<!ENTITY FEEDBACK_MINOR "5.3">
+<!ENTITY MANUAL_ADDON_INSTALL "https://www.oxygenxml.com/php/download-addon.php?updateSite=https://www.oxygenxml.com/InstData/Addons/default/updateSite.xml">
+]>
+
+<?xml-model href="keydefRules.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<map id="keydefs">
+  <!-- product name -->
+  <title>Key Definitions</title>
+  <keydef keys="product" product="editor">
+    <topicmeta>
+      <keywords>
+        <keyword>Oxygen XML Editor</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="product" product="editorEclipse">
+    <topicmeta>
+      <keywords>
+        <keyword>Oxygen XML Editor Eclipse plugin</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="product" product="author">
+    <topicmeta>
+      <keywords>
+        <keyword>Oxygen XML Author</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="product" product="authorEclipse">
+    <topicmeta>
+      <keywords>
+        <keyword>Oxygen XML Author Eclipse plugin</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="product" product="developer">
+    <topicmeta>
+      <keywords>
+        <keyword>Oxygen XML Developer</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="product" product="developerEclipse">
+    <topicmeta>
+      <keywords>
+        <keyword>Oxygen XML Developer Eclipse plugin</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="product" product="webauthor waCustom">
+    <topicmeta>
+      <keywords>
+        <keyword>Oxygen XML Web Author</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="product" product="fusion">
+    <topicmeta>
+      <keywords>
+        <keyword>Oxygen Content Fusion</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="product" product="fusion-cloud">
+    <topicmeta>
+      <keywords>
+        <keyword>Oxygen Content Fusion</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="product" product="chemistry">
+    <topicmeta>
+      <keywords>
+        <keyword>Oxygen PDF Chemistry</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="product" product="pdf-css">
+    <topicmeta>
+      <keywords>
+        <keyword>Oxygen DITA-OT CSS-based PDF Publishing plugin</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="product" product="webhelp-responsive">
+    <topicmeta>
+      <keywords>
+        <keyword>Oxygen XML WebHelp Responsive plugin</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="product" product="feedback">
+    <topicmeta>
+      <keywords>
+        <keyword>Oxygen Feedback Cloud</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="product" product="feedback-enterprise">
+    <topicmeta>
+      <keywords>
+        <keyword>Oxygen Feedback Enterprise</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="product" product="ope">
+    <topicmeta>
+      <keywords>
+        <keyword>Oxygen Publishing Engine</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="product" product="license-server">
+    <topicmeta>
+      <keywords>
+        <keyword>Oxygen License Server</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="webappProduct"
+    product="author developer editor authorEclipse developerEclipse editorEclipse webauthor waCustom fusion fusion-cloud webhelp-responsive ope">
+    <topicmeta>
+      <keywords>
+        <keyword>Oxygen XML Web Author</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="authorComponent" product="author editor authorEclipse editorEclipse">
+    <topicmeta>
+      <keywords>
+        <keyword>Oxygen XML Author Component</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="product" product="svnClient">
+    <topicmeta>
+      <keywords>
+        <keyword>Syncro SVN Client</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="product" product="json">
+    <topicmeta>
+      <keywords>
+        <keyword>Oxygen JSON Editor</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="aiPositronWebProduct" product="webauthor waCustom">
+    <topicmeta>
+      <keywords>
+        <keyword>Oxygen AI Positron Enterprise for Web Author</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <!-- SVN Client product name -->
+  <keydef keys="svnProduct" product="author developer editor svnClient">
+    <topicmeta>
+      <keywords>
+        <keyword>Syncro SVN Client</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <!-- CF Enterprise server solution name -->
+  <keydef keys="cfEnterprise" product="fusion">
+    <topicmeta>
+      <keywords>
+        <keyword>Oxygen Content Fusion Enterprise Server</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <!-- CF Public server name -->
+  <keydef keys="cfPublic" product="fusion">
+    <topicmeta>
+      <keywords>
+        <keyword>Oxygen Content Fusion (Cloud)</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+
+  <!-- email address for support -->
+  <keydef keys="supportEmail"
+    product="author developer editor authorEclipse developerEclipse editorEclipse json">
+    <topicmeta>
+      <keywords>
+        <keyword>support@oxygenxml.com</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="supportEmail" product="svnClient">
+    <topicmeta>
+      <keywords>
+        <keyword>support@syncrosvnclient.com</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <!-- product minor version -->
+  <keydef keys="minorVersion"
+    product="author developer editor authorEclipse developerEclipse editorEclipse chemistry pdf-css webhelp-responsive ope license-server json">
+    <topicmeta>
+      <keywords>
+        <keyword>&OXYGEN_MINOR;</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="minorVersion" product="svnClient">
+    <topicmeta>
+      <keywords>
+        <keyword>10.1</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="minorVersion" product="webauthor waCustom">
+    <topicmeta>
+      <keywords>
+        <keyword>&WEBAUTHOR_MINOR;</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="minorVersion" product="fusion fusion-cloud">
+    <topicmeta>
+      <keywords>
+        <keyword>&FUSION_MINOR;</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="minorVersion" product="feedback">
+    <topicmeta>
+      <keywords>
+        <keyword>&FEEDBACK_MINOR;</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="minorVersion" product="feedback-enterprise">
+    <topicmeta>
+      <keywords>
+        <keyword>&FEEDBACK_MINOR;</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <!-- Section with JSdoc links that depend on the version -->
+  <keydef keys="jscript_api"
+    href="https://www.oxygenxml.com/maven/com/oxygenxml/oxygen-webapp/&WA_JSDOC_MINOR;/jsdoc/"
+    format="html" scope="external" product="author editor authorEclipse editorEclipse waCustom"/>
+  <keydef keys="jscript_api_customaction"
+    href="https://www.oxygenxml.com/maven/com/oxygenxml/oxygen-webapp/&WA_JSDOC_MINOR;/jsdoc/tutorial-customaction.html"
+    format="html" scope="external" product="waCustom"/>
+  <keydef keys="jscript_api_removeaction"
+    href="https://www.oxygenxml.com/maven/com/oxygenxml/oxygen-webapp/&WA_JSDOC_MINOR;/jsdoc/tutorial-removeaction.html"
+    format="html" scope="external" product="waCustom"/>
+  <keydef keys="jscript_api_formcontrol"
+    href="https://www.oxygenxml.com/maven/com/oxygenxml/oxygen-webapp/&WA_JSDOC_MINOR;/jsdoc/tutorial-formcontrol.html"
+    format="html" scope="external" product="waCustom"/>
+  <keydef keys="jscript_api_workspace"
+    href="https://www.oxygenxml.com/maven/com/oxygenxml/oxygen-webapp/&WA_JSDOC_MINOR;/jsdoc/sync.api.Workspace.html"
+    format="html" scope="external" product="waCustom"/>
+  <keydef keys="jscript_api_workspace_LoadingOptions"
+    href="https://www.oxygenxml.com/maven/com/oxygenxml/oxygen-webapp/&WA_JSDOC_MINOR;/jsdoc/sync.api.Workspace.html#.LoadingOptions"
+    format="html" scope="external" product="waCustom"/>
+  <keydef keys="jscript_api_hideAppBar"
+    href="https://www.oxygenxml.com/maven/com/oxygenxml/oxygen-webapp/&WA_JSDOC_MINOR;/jsdoc/sync.view.ViewManager.html#hideAppBar"
+    format="html" scope="external" product="waCustom"/>
+  <keydef keys="jscript_api_customview"
+    href="https://www.oxygenxml.com/maven/com/oxygenxml/oxygen-webapp/&WA_JSDOC_MINOR;/jsdoc/tutorial-customview.html"
+    format="html" scope="external" product="waCustom"/>
+  <keydef keys="jscript_api_Editor"
+    href="https://www.oxygenxml.com/maven/com/oxygenxml/oxygen-webapp/&WA_JSDOC_MINOR;/jsdoc/sync.api.Editor.html"
+    format="html" scope="external" product="waCustom"/>
+  <keydef keys="jscript_api_WebappMessage"
+    href="https://www.oxygenxml.com/maven/com/oxygenxml/oxygen-webapp/&WA_JSDOC_MINOR;/jsdoc/sync.api.WebappMessage.html"
+    format="html" scope="external" product="waCustom"/>
+  <keydef keys="url_FileBrowserDialog"
+    href="https://www.oxygenxml.com/maven/com/oxygenxml/oxygen-webapp/&WA_JSDOC_MINOR;/jsdoc/sync.api.FileBrowsingDialog.html"
+    format="html" scope="external" product="waCustom"/>
+  <keydef keys="url_UrlChooser"
+    href="https://www.oxygenxml.com/maven/com/oxygenxml/oxygen-webapp/&WA_JSDOC_MINOR;/jsdoc/sync.api.UrlChooser.html"
+    format="html" scope="external" product="waCustom"/>
+  <keydef keys="jscript_AttributeEditingActions"
+    href="https://www.oxygenxml.com/maven/com/oxygenxml/oxygen-webapp/&WA_JSDOC_MINOR;/jsdoc/sync.actions.AttributeEditingActionsProvider.html"
+    format="html" scope="external" product="waCustom"/>
+  <keydef keys="url_UrlChooser_tutorial"
+    href="https://www.oxygenxml.com/maven/com/oxygenxml/oxygen-webapp/&WA_JSDOC_MINOR;/jsdoc/tutorial-urlchooser.html"
+    format="html" scope="external" product="waCustom"/>
+  <keydef keys="jscript_api_dialog"
+    href="https://www.oxygenxml.com/maven/com/oxygenxml/oxygen-webapp/&WA_JSDOC_MINOR;/jsdoc/tutorial-dialog.html"
+    format="html" scope="external" product="waCustom"/>
+  <keydef keys="jscript_api_AbstractAction"
+    href="https://www.oxygenxml.com/maven/com/oxygenxml/oxygen-webapp/&WA_JSDOC_MINOR;/jsdoc/sync.actions.AbstractAction.html#isEnabled__anchor"
+    format="html" scope="external" product="waCustom"/>
+  <keydef keys="jscript_api_change-tracking_ChangeTrackingInitialState"
+    href="https://www.oxygenxml.com/maven/com/oxygenxml/oxygen-webapp/&WA_JSDOC_MINOR;/jsdoc/sync.api.change_tracking.html#.ChangeTrackingInitialState"
+    format="html" scope="external" product="waCustom"/>
+  <!-- versions for different 3rd party components or products -->
+  <keydef keys="currentSupportedEclipseVersions"
+    product="authorEclipse developerEclipse editorEclipse">
+    <topicmeta>
+      <keywords>
+        <keyword>4.5-4.39</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="currentJavaVersion"
+    product="author developer editor authorEclipse developerEclipse editorEclipse svnClient chemistry license-server json">
+    <topicmeta>
+      <keywords>
+        <keyword>21</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="JavaProductVersion"
+    product="author developer editor authorEclipse developerEclipse editorEclipse json">
+    <topicmeta>
+      <keywords>
+        <keyword>11</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="saxon6FullVersion"
+    product="author developer editor authorEclipse developerEclipse editorEclipse">
+    <topicmeta>
+      <keywords>
+        <keyword>6.5.5</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="xalanFullVersion"
+    product="author developer editor authorEclipse developerEclipse editorEclipse">
+    <topicmeta>
+      <keywords>
+        <keyword>2.7.2</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="nxsltVersion"
+    product="author developer editor authorEclipse developerEclipse editorEclipse">
+    <topicmeta>
+      <keywords>
+        <keyword>1.6</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="antVersion"
+    product="author developer editor authorEclipse developerEclipse editorEclipse">
+    <topicmeta>
+      <keywords>
+        <keyword>1.10.9</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="saxon9FullVersion"
+    product="author developer editor authorEclipse developerEclipse editorEclipse json">
+    <topicmeta>
+      <keywords>
+        <keyword>12.9</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="currentYear">
+    <topicmeta>
+      <keywords>
+        <keyword>2026</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="DITAOTVersion"
+    product="author developer editor authorEclipse developerEclipse editorEclipse webhelp-responsive">
+    <topicmeta>
+      <keywords>
+        <keyword>4.4.0</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <!-- macosx install archive  -->
+  <keydef keys="archiveInstallMac" product="editor">
+    <topicmeta>
+      <keywords>
+        <keyword>oxygen-openjdk.dmg</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="archiveInstallMac" product="author">
+    <topicmeta>
+      <keywords>
+        <keyword>oxygenAuthor-openjdk.dmg</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="archiveInstallMac" product="developer">
+    <topicmeta>
+      <keywords>
+        <keyword>oxygenDeveloper-openjdk.dmg</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="archiveInstallMac" product="json">
+    <topicmeta>
+      <keywords>
+        <keyword>oxygenJSON-openjdk.dmg</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="archiveInstallMac" product="svnClient">
+    <topicmeta>
+      <keywords>
+        <keyword>syncroSVNClient-openjdk.dmg</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <!-- linux installer  -->
+  <keydef keys="executableInstallLinux" product="editor">
+    <topicmeta>
+      <keywords>
+        <keyword>oxygen.sh</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="executableInstallLinux" product="author">
+    <topicmeta>
+      <keywords>
+        <keyword>oxygenAuthor.sh</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="executableInstallLinux" product="developer">
+    <topicmeta>
+      <keywords>
+        <keyword>oxygenDeveloper.sh</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="executableInstallLinux" product="json">
+    <topicmeta>
+      <keywords>
+        <keyword>oxygenJSONEditor.sh</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="executableInstallLinux" product="svnClient">
+    <topicmeta>
+      <keywords>
+        <keyword>syncroSVNClient.sh</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="url_eula" href="https://www.oxygenxml.com/eula.html" format="html" scope="external"
+    product="editor editorEclipse"/>
+  <keydef keys="url_eula" href="https://www.oxygenxml.com/eula_json.html" format="html" scope="external"
+    product="json"/>
+  <keydef keys="url_eula" href="https://www.oxygenxml.com/eula_author.html" format="html"
+    scope="external" product="author authorEclipse"/>
+  <keydef keys="url_eula" href="https://www.oxygenxml.com/eula_developer.html" format="html"
+    scope="external" product="developer developerEclipse"/>
+  <keydef keys="url_eula" href="http://www.syncrosvnclient.com/eula.html" format="html"
+    scope="external" product="svnClient"/>
+  <keydef keys="url_eula" href="https://www.oxygenxml.com/eula_webauthor.html" format="html"
+    scope="external" product="webauthor waCustom"/>
+  <keydef keys="url_eula" href="https://www.oxygenxml.com/eula_webhelp.html" format="html"
+    scope="external" product="webhelp-responsive"/>
+  <keydef keys="url_eula" href="https://www.oxygenxml.com/eula_chemistry.html" format="html"
+    scope="external" product="chemistry"/>
+  <keydef keys="url_eula" href="https://www.oxygenxml.com/eula_content_fusion_enterprise.html" format="html"
+    scope="external" product="fusion"/>
+  <keydef keys="url_thirdparty" href="https://www.oxygenxml.com/thirdparty/" format="html"
+    scope="external" product="editor editorEclipse author authorEclipse developer developerEclipse json"/>
+  <keydef keys="url_thirdparty" href="http://www.syncrosvnclient.com/thirdparty/" format="html"
+    scope="external" product="svnClient"/>
+  <keydef keys="url_thirdparty" href="https://www.oxygenxml.com/thirdparty-webauthor/" format="html"
+    scope="external" product="webauthor"/>
+  <keydef keys="url_documentation" href="https://www.oxygenxml.com/documentation.html" format="html"
+    scope="external" product="editor editorEclipse author authorEclipse developer developerEclipse"/>
+  <keydef keys="url_documentation" href="http://www.syncrosvnclient.com/documentation.html"
+    format="html" scope="external" product="svnClient"/>
+  <keydef keys="url_documentation" href="https://www.oxygenxml.com/doc/ug-webauthor/" format="html"
+    scope="external" product="webauthor waCustom"/>
+  <keydef keys="url_documentation" href="https://www.oxygenxml.com/doc/ug-content-fusion/"
+    format="html" scope="external" product="fusion"/>
+  <keydef keys="url_documentation" href="https://www.oxygenxml.com/doc/ug-content-fusion-cloud/"
+    format="html" scope="external" product="fusion-cloud"/>
+  <keydef keys="url_documentation" href="https://www.oxygenxml.com/doc/ug-chemistry/" format="html"
+    scope="external" product="chemistry"/>
+  <keydef keys="url_documentation" href="https://www.oxygenxml.com/doc/ug-webhelp-responsive/"
+    format="html" scope="external" product="webhelp-responsive"/>
+  <keydef keys="url_documentation" href="https://www.oxygenxml.com/doc/ug-pdf-css/" format="html"
+    scope="external" product="pdf-css"/>
+  <keydef keys="url_documentation" href="https://www.oxygenxml.com/doc/ug-feedback/" format="html"
+    scope="external" product="feedback"/>
+  <keydef keys="url_documentation" href="https://www.oxygenxml.com/doc/ug-feedback-enterprise/" format="html"
+    scope="external" product="feedback-enterprise"/>
+  <keydef keys="url_documentation" href="https://www.oxygenxml.com/doc/ug-json/" format="html"
+    scope="external" product="json"/>
+  <keydef keys="url_support" href="https://www.oxygenxml.com/support.html" format="html"
+    scope="external"
+    product="editor editorEclipse author authorEclipse developer developerEclipse chemistry webhelp-responsive pdf-css feedback feedback-enterprise license-server json"/>
+  <keydef keys="url_support" href="http://www.syncrosvnclient.com/contact.html" format="html"
+    scope="external" product="svnClient"/>
+  <keydef keys="url_support" href="https://www.oxygenxml.com/webapp/#contact" format="html"
+    scope="external" product="webauthor waCustom"/>
+  <keydef keys="url_support" href="https://www.oxygenxml.com/support.html" format="html"
+    scope="external" product="fusion"/>
+  <mapref href="dita-ot-keydef.ditamap"/>
+  <keydef keys="pdf-html5-transformation"
+    product="author developer editor authorEclipse developerEclipse editorEclipse pdf-css webhelp-responsive ope">
+    <topicmeta>
+      <keywords>
+        <keyword>DITA Map PDF - based on HTML5 &amp; CSS</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="single-topic-pdf-html5-transformation"
+    product="author developer editor authorEclipse developerEclipse editorEclipse pdf-css ope">
+    <topicmeta>
+      <keywords>
+        <keyword>DITA PDF - based on HTML5 &amp; CSS</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="pdf-fo-transformation"
+    product="author developer editor authorEclipse developerEclipse editorEclipse">
+    <topicmeta>
+      <keywords>
+        <keyword>DITA Map PDF - based on XSL-FO</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  
+  <keydef keys="whr-output">    
+    <topicmeta>      
+      <keywords>
+        <keyword>WebHelp Responsive for DITA</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+  
+  <keydef keys="product-ofb">    
+    <topicmeta>      
+      <keywords>
+        <keyword>Oxygen Feedback</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+ 
+</map>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dg-editable-css-extension">
+  <title>Editable: -oxy-editable Property</title>
+  <shortdesc>Used to inhibit editing the content of a particular element.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>CSS extensions<indexterm>Additional CSS properties<indexterm>-oxy-editable
+              property</indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_tlc_dgk_54b">If you want to inhibit the editing of the content of a certain element, you can set the
+        <codeph>-oxy-editable</codeph> CSS property to <codeph>false</codeph> (the deprecated
+        <codeph>editable</codeph> property is also supported).</p>
+  </body>
+</topic>

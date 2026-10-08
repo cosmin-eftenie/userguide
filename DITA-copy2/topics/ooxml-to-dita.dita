@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ooxml-to-dita">
+  <title>Migrating MS Office Documents to DITA</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Transformation Scenarios<indexterm>DOCX DITA</indexterm></indexterm>
+        <indexterm>DITA<indexterm>Migrate Office documents to DITA</indexterm></indexterm>
+        <indexterm>DITA<indexterm>Migrate Excel to DITA</indexterm></indexterm>
+        <indexterm>DITA<indexterm>Migrate Word to DITA</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_byn_dgk_54b"><ph keyref="product"/> integrates the entire <xref href="http://www.dita4publishers.org/" format="html" scope="external">DITA for Publishers plugins suite</xref> and provides some
+      possibilities for migrating content from Microsoft Office® (and other Office-type formats) to
+      DITA. There are also possibilities for migrating various other types of formats. For more
+      information, see <xref href="dita-migrating-various-formats.dita"/>.</p>
+    <p id="p_cyn_dgk_54b">Migration from Office-type formats to XML is rarely perfect and manual changes may need to be
+      made to the converted content, but the methods described below should help you find the best
+      approach for your particular case.</p>
+    <section product="author editor" id="section_kpq_xn4_vjb">
+      <title>Oxygen's Batch Documents Converter Add-on (Multiple Documents)</title>
+      <p id="p_dyn_dgk_54b">The <xref href="https://www.oxygenxml.com/doc/ug-addons/topics/batch-converter-addon.html" scope="external" format="html">Oxygen Batch Documents
+          Converter add-on</xref> can be installed in <ph keyref="product"/> to provide the ability
+        to convert one or more documents to various formats. </p>
+      <p>For more details about the main stages of the Word to DITA migration using the Batch
+        Documents Converter add-on, see the following blog post: <xref
+          href="https://blog.oxygenxml.com/topics/migrating_word_to_dita_bdc/migrating_word_to_dita_using_batch_documents_converter.html"
+          format="html" scope="external">Migrating MS Word to DITA using Batch Documents
+          Converter</xref>.</p>
+      <p>
+        <note id="note_ns1_3k3_rvb">The Batch Documents Converter add-on is the recommended way to
+          convert one or more Word documents to DITA content.</note>
+      </p>
+    </section>
+    <section id="method_1">
+      <title>Smart Paste (Single Document)</title>
+      <ol id="ol_eyn_dgk_54b">
+        <li id="li_fyn_dgk_54b">Open the document in MS Office (or other similar application), select all the content,
+          and copy it.</li>
+        <li id="li_gyn_dgk_54b">Open <ph keyref="product"/> and create a new DITA topic. </li>
+        <li id="li_hyn_dgk_54b">Paste the selected content in <uicontrol>Author</uicontrol> mode. The <xref
+            href="smart-paste-support.dita#smart-paste-support"><term>Smart Paste</term>
+            functionality</xref> will attempt to convert the content to DITA structure.</li>
+      </ol>
+    </section>
+    <section id="method_2">
+      <title>HTML to DITA (Single Document)</title>
+      <ol id="ol_iyn_dgk_54b">
+        <li id="li_jyn_dgk_54b">Save your document as HTML.</li>
+        <li id="li_kyn_dgk_54b">Once you have converted it to HTML, you have several possibilities:<ul id="ul_zdw_xp1_x3b">
+            <li id="li_lyn_dgk_54b">In <ph keyref="product"/>, select <menucascade>
+                <uicontrol>File</uicontrol>
+                <uicontrol>Import/Convert</uicontrol>
+                <uicontrol>HTML File to XHTML</uicontrol>
+              </menucascade> to import it as XHTML. Then, open the XHTML in <ph keyref="product"/>
+              and use one of the <xref
+                href="author-xhtml-doc-type.dita#author-xhtml-doc-type/transformation_scenarios"
+                  ><uicontrol>XHTML to DITA</uicontrol> transformation scenarios</xref> to convert
+              the content to DITA structure.</li>
+            <li id="li_myn_dgk_54b">Open the HTML file in any web browser, select all of its content, and copy it. Then,
+              open <ph keyref="product"/>, create a new <b>DITA</b> topic, and paste the selected
+              content in <uicontrol>Author</uicontrol> mode. The <xref
+                href="smart-paste-support.dita#smart-paste-support"><term>Smart Paste</term>
+                functionality</xref> will attempt to convert the HTML content to DITA
+              structure.</li>
+          </ul></li>
+      </ol>
+    </section>
+    <section id="method_3">
+      <title>Word to <i>LibreOffice</i> to DITA (Single Document)</title>
+      <p id="p_nyn_dgk_54b">
+        <ol id="ol_oyn_dgk_54b">
+          <li id="li_pyn_dgk_54b">Open the document in the <i>LibreOffice</i> application and save it as <b>DocBook</b>. </li>
+          <li id="li_qyn_dgk_54b">Open the <b>DocBook</b> document in <ph keyref="product"/>.</li>
+          <li id="li_ryn_dgk_54b">Run the built-in <xref href="docbook-2-dita-transform.dita#docbook-2-dita-transform"
+                ><uicontrol>DocBook to DITA</uicontrol> transformation scenario</xref>.</li>
+          <li id="li_syn_dgk_54b">You may need to make some manual adjustments for elements that could not be
+            mapped.</li>
+        </ol>
+      </p>
+    </section>
+    <section id="method_4">
+      <title>Word to DITA using DITA For Publishers (Single Document)</title>
+      <p id="p_tyn_dgk_54b">
+        <ol id="ol_uyn_dgk_54b">
+          <li id="li_vyn_dgk_54b">Save the document in the MS Word DOCX format.</li>
+          <li id="li_wyn_dgk_54b">Open it in the <xref href="archive-browser-view.dita#archive-browser-view"><uicontrol>Archive Browser</uicontrol> view</xref> in <ph keyref="product"/> and
+            then open the <b>document.xml</b> file contained in the archive.</li>
+          <li id="li_xyn_dgk_54b">Run the built-in <uicontrol>DOCX DITA</uicontrol> transformation scenario. This
+            scenario runs a build file over the DOCX archive and should produce a DITA project that
+            contains a <term>DITA map</term> and multiple topics. </li>
+          <li id="li_yyn_dgk_54b">You may need to do some manual reconfiguration to map DOCX styles to DITA content. The
+            XSLT conversion is part of the <b>DITA For Publishers</b> plugin and there is
+            documentation for it available here: <xref
+              href="http://www.dita4publishers.org/d4p-users-guide/user_docs/d4p-users-guide/word2dita/word2dita-intro.html"
+              format="html" scope="external"/>.</li>
+        </ol>
+      </p>
+    </section>
+    <section id="method_5_multiple_documents">
+      <title>Word to DocBook to DITA (Multiple Documents)</title>
+      <p id="p_zyn_dgk_54b">
+        <ol id="ol_azn_dgk_54b">
+          <li id="li_bzn_dgk_54b">Use a tool to convert the documents to <b>DocBook</b>. For example, <xref href="https://pandoc.org" format="html" scope="external"><i>Pandoc</i> is a free
+              document converter engine</xref> that can convert <b>DOCX</b> documents to
+              <b>DocBook</b> and according to <xref href="https://pandoc.org/MANUAL.html" format="html" scope="external"><i>Pandoc's</i> manual</xref>, you can specify multiple
+            input files and use wildcards in the commands.</li>
+          <li id="li_czn_dgk_54b">Save the newly converted <b>DocBook</b> documents somewhere in your project.</li>
+          <li id="li_dzn_dgk_54b">Perform a <xref href="apply-batch-transformation.dita">batch transformation</xref> on
+            all the newly converted <b>DocBook</b> documents:<ol id="ol_ezn_dgk_54b">
+              <li id="li_fzn_dgk_54b">Select all the <b>DocBook</b> documents in the <xref href="using-the-project-view.dita"><uicontrol product="author editor">Project</uicontrol><uicontrol product="authorEclipse editorEclipse">Project Explorer</uicontrol> view</xref>.</li>
+              <li id="li_gzn_dgk_54b">Right-click the selected files and choose <menucascade>
+                  <uicontrol>Transform</uicontrol>
+                  <uicontrol><image href="../img/TransformConfig16.png" id="image_o3z_p5v_sr"/>Configure Transformation Scenario(s)</uicontrol>
+                </menucascade>.</li>
+              <li id="li_hzn_dgk_54b">Apply the built-in <xref
+                  href="docbook-2-dita-transform.dita#docbook-2-dita-transform"><uicontrol>DocBook
+                    to DITA</uicontrol> transformation scenario</xref>.</li>
+            </ol></li>
+          <li id="li_izn_dgk_54b">You may need to make some manual adjustments in the resulting documents for elements
+            that could not be mapped.</li>
+        </ol>
+      </p>
+    </section>
+    <section id="method_6_multiple_documents" product="author editor">
+      <title>Word to HTML/Markdown to DITA (Multiple Documents)</title>
+      <p id="p_jzn_dgk_54b">
+        <ol id="ol_kzn_dgk_54b">
+          <li id="li_lzn_dgk_54b">Use a tool to convert the documents to <b>HTML</b> or <b>Markdown</b>. For example,
+              <xref href="https://pandoc.org/MANUAL.html" format="html" scope="external">Pandoc is a
+              free document converter engine</xref> that can convert DOCX documents to those
+            formats.</li>
+          <li id="li_mzn_dgk_54b">Use <xref href="https://www.oxygenxml.com/doc/ug-addons/topics/batch-converter-addon.html" scope="external" format="html"><uicontrol>Oxygen's Batch Converter
+                add-on</uicontrol></xref> to convert the documents to <b>DITA</b>.</li>
+          <li id="li_nzn_dgk_54b">You may need to make some manual adjustments in the resulting documents for elements
+            that could not be mapped.</li>
+        </ol>
+      </p>
+    </section>
+    <section id="section_yx1_hv4_4gb" product="author editor">
+      <title>Migrating Excel and Other Types of Spreadsheets to DITA</title>
+      <p id="p_ozn_dgk_54b">There are two possibilities for converting Microsoft Excel (or other similar types of
+        documents) to DITA:<ul id="ul_pzn_dgk_54b">
+          <li id="li_qzn_dgk_54b">Copy the spreadsheet content and paste it in a DITA topic in
+              <uicontrol>Author</uicontrol> mode. The <xref
+              href="smart-paste-support.dita#smart-paste-support"><term>Smart Paste</term>
+              functionality</xref> will attempt to convert the content to DITA.</li>
+          <li id="li_rzn_dgk_54b">Use <xref href="https://www.oxygenxml.com/doc/ug-addons/topics/batch-converter-addon.html" scope="external" format="html"><uicontrol>Oxygen's Batch Converter
+                add-on</uicontrol></xref> to convert one or more spreadsheet documents to
+              <b>DITA</b>.</li>
+        </ul></p>
+    </section>
+    <section product="authorEclipse editorEclipse" id="migrating_excel_eclipse">
+      <title>Migrating Excel and Other Types of Spreadsheets to DITA</title>
+      <p id="p_szn_dgk_54b">It is possible to convert Microsoft Excel (or other similar types of documents) to DITA. To
+        do this, copy the spreadsheet content and paste it in an open DITA topic in
+          <uicontrol>Author</uicontrol> mode. The <xref
+          href="smart-paste-support.dita#smart-paste-support"><term>Smart Paste</term>
+          functionality</xref> will attempt to convert the content to DITA structure.</p>
+    </section>
+    <section id="section_x2n_vhh_vrb">
+      <title>Resources</title>
+      <p id="p_orm_dgk_54b">For more information about migrating to DITA, see the following
+          resources:<ul id="ul_fv5_flp_dvb">
+          <li id="li_w3b_jxc_rvb"><xref
+              href="https://www.oxygenxml.com/events/2022/webinar_integrating_various_document_formats.html"
+              format="html" scope="external">Webinar: Integrating Various Document Formats (OpenAPI,
+              Word, Markdown, HTML, Excel) into DITA Documentation</xref></li>
+          <li id="li_gv5_flp_dvb"><xref
+              href="https://www.oxygenxml.com/events/2021/webinar_working_with_dita_in_oxygen_migrating_to_dita_and_refactoring.html"
+              format="html" scope="external">Webinar: Working with DITA in Oxygen - Migrating to
+              DITA and Refactoring</xref></li>
+        </ul></p>
+    </section>
+  </body>
+  <related-links>
+      <link href="dita-migrating-various-formats.dita"/>
+      <link href="smart-paste-support.dita#smart-paste-support"/>
+      <link href="import-introduction.dita#import-introduction"/>
+      <link href="working-with-archives.dita#working-with-archives"/>
+  </related-links>
+</topic>

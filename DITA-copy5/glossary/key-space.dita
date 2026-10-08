@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary//EN" "glossary.dtd">
+<glossentry id="key-space">
+  <glossterm>Key Space</glossterm>
+  <glossdef>
+    <p id="p_sqx_dgk_54b">The concept of a <b><term>Key Space</term></b> in DITA refers to a set of all possible keys
+      that can be used in a <term>DITA map</term> structure. A <b><term>Key Space</term></b> is
+      established when a <xref keyref="glossentry_root-map"><term>root map</term></xref> defines a
+      set of effective key bindings.<ph product="author editor authorEclipse editorEclipse"> When
+          <ph keyref="product"></ph> processes key references, it determines the effective binding
+        of a given key to a resource in the context of the <xref keyref="dita_root-map">specified
+            <term>root map</term></xref>.</ph></p>
+  </glossdef>
+</glossentry>

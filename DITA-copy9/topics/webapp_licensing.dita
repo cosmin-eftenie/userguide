@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="webapp_licensing">
+  <title>Licensing</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Licensing</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_mkq_dgk_54b">The <ph keyref="webappProduct"/> uses a floating license model, where the license key is
+      stored on a server and individual users consume license seats from a common pool. </p>
+    <section id="how_it_works">
+      <title>How it works</title>
+      <p id="p_nkq_dgk_54b">The license key contains the maximum number of users that can simultaneously access the <ph
+          keyref="webappProduct"/> at any given moment. After a period of inactivity, the license
+        allocated to that user becomes available. </p>
+      <p id="p_okq_dgk_54b">While no personal information is sent to the server, a cookie that identifies the user is
+        auto-generated. Note that the use of two different browsers (for example, Firefox and
+        Chrome) by a single user, will consume two floating licenses. However, using two or more
+        windows or tabs of the same browser, consumes a single floating license.</p>
+    </section>
+    <section id="licensing">
+      <title>Licensing</title>
+      <p id="p_pkq_dgk_54b">Follow these steps to license a deployment of the <ph keyref="webappProduct"/>:</p>
+      <ol id="ol_ctz_bzr_1r">
+        <li id="li_qkq_dgk_54b"><xref href="floating-license-servlet-setup.dita#floating-license-servlet-setup">Install
+            a floating license server</xref>. You can deploy the HTTP license server in the same
+          Tomcat server, alongside with <ph keyref="webappProduct"/>.</li>
+        <li id="li_rkq_dgk_54b">Configure the license server connection.<note id="note_skq_dgk_54b">Information about your license will be
+            displayed in the <uicontrol>About</uicontrol> section of the <ph keyref="webappProduct"/>
+            <xref href="webapp-create-open-docs.dita#webapp-create-open-docs" product="webauthor"
+              ><uicontrol>Dashboard</uicontrol></xref><xref
+                href="https://www.oxygenxml.com/doc/ug-webauthor/topics/webapp-create-open-docs.html"
+                format="html" scope="external" product="waCustom"
+                ><uicontrol>Dashboard</uicontrol></xref>.</note></li>
+      </ol>
+    </section>
+    <section id="configuring_the_license_server_connection">
+      <title>Configuring the License Server Connection</title>
+      <p id="p_tkq_dgk_54b">For information on configuring the license server connection with a simple GUI, see <xref
+          href="webapp-configure-license-server.dita#webapp-configure-license-server"/>.</p>
+    </section>
+    <section id="bundling_license_server">
+      <title>Bundling a default License Server Configuration in the <ph keyref="webappProduct"
+      /></title>
+      <p id="p_ukq_dgk_54b">If you need to build the <ph keyref="webappProduct"/> with a default license configuration
+        bundled inside, use this method.</p>
+      <p id="p_vkq_dgk_54b">The connection to the server should be configured in a properties file located in
+        <filepath>WEB-INF/license.properties</filepath>. This file might look like this:</p>
+      <codeblock outputclass="language-ini" id="codeblock_wkq_dgk_54b">licensing.server.type=http
+licensing.server.url=http://example.com:8080/oxygenLicenseServlet/license-servlet
+licensing.server.user=&lt;USER>
+licensing.server.password=&lt;CHANGE-ME></codeblock>
+      <p id="p_xkq_dgk_54b">The following keys are supported: <dl>
+          <dlentry>
+            <dt><uicontrol>licensing.server.type</uicontrol></dt>
+            <dd>Type of licensing server. Set it to <codeph>http</codeph>.</dd>
+          </dlentry>
+          <dlentry>
+            <dt><uicontrol>licensing.server.url</uicontrol></dt>
+            <dd>The URL of the license server.</dd>
+          </dlentry>
+          <dlentry>
+            <dt><uicontrol>licensing.server.user</uicontrol></dt>
+            <dd>The user name for connecting to the license server.</dd>
+          </dlentry>
+          <dlentry>
+            <dt><uicontrol>licensing.server.password</uicontrol></dt>
+            <dd>The password for connecting to the license server.</dd>
+          </dlentry>
+          <dlentry id="licensing-server-encryptedPassword">
+            <dt><uicontrol>licensing.server.encryptedPassword (recommended on Linux)</uicontrol></dt>
+            <dd>This is an alternative to <codeph>licensing.server.password</codeph>. The value
+              should be the encrypted password. </dd>
+            <dd>To encrypt the password, run the following command in your server's Web Author
+              deployment directory (where the <filepath>WEB-INF</filepath> folder is
+              located):<codeblock outputclass="language-bourne" id="codeblock_ykq_dgk_54b">java -cp "WEB-INF/lib/*;WEB-INF/classes/" com.oxygenxml.webapp.EncryptionTool [encriptionKey] [password]</codeblock></dd>
+            <dd>
+              <p>The encryption key is stored in <filepath>.java/.com.oxygenxml.rk</filepath> inside
+                the <xref
+                  href="https://www.oxygenxml.com/doc/ug-webauthor/topics/wa-oxygen-data-dir.html"
+                  format="html" scope="external">Oxygen Data Directory</xref>. The key is a
+                Universally Unique Identifier (UUID).</p>
+            </dd>
+            <dd>
+              <note id="note_zkq_dgk_54b">The deployment directory in a Tomcat distribution (for
+                example, installers) is found at:
+                <filepath>tomcat\webapps\web-author-component-integration</filepath>.</note>
+            </dd>
+          </dlentry>
+          <dlentry>
+            <dt><uicontrol>backup.licensing.server.url</uicontrol></dt>
+            <dd>(Optional) For some of the licensing packages, a backup license key is offered that
+              can be deployed on a second license server to provide higher availability in presence
+              of machine and network failures. This key contains the URL of this backup license
+              server.</dd>
+          </dlentry>
+          <dlentry>
+            <dt><uicontrol>backup.licensing.server.user</uicontrol></dt>
+            <dd>(Optional) The user name for connecting to the backup license server.</dd>
+          </dlentry>
+          <dlentry>
+            <dt><uicontrol>backup.licensing.server.password</uicontrol></dt>
+            <dd>(Optional) The password for connecting to the backup license server.</dd>
+          </dlentry>
+          <dlentry>
+            <dt><uicontrol>backup.licensing.server.encryptedPassword</uicontrol></dt>
+            <dd>(Optional) This is an alternative to
+              <codeph>backup.licensing.server.password</codeph>. To generate its value, see the
+              instructions for <xref href="#webapp_licensing/licensing-server-encryptedPassword"
+                format="dita"><codeph>licensing.server.encryptedPassword</codeph></xref>.</dd>
+          </dlentry>
+      </dl></p>
+    </section>
+  </body>
+</topic>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="json-tools">
+  <title>JSON Tools</title>
+  <body>
+    <p id="p_ugh_dgk_54b"><ph keyref="product"/> includes some useful tools for converting between
+      JSON, XML and YAML, converting XSD to JSON Schema, generating JSON instances or a JSON Schema,
+      and OpenAPI (JSON and YAML) testing.</p>
+  </body>
+</topic>

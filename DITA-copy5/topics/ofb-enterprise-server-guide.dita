@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ofb-enterprise-server-guide">
+  <title>Enterprise Server Installation and Configuration</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Enterprise Server</indexterm>
+        <indexterm>Server Administrator Guide</indexterm>
+        <indexterm>Server Admin Guide</indexterm>
+      </keywords>
+      <keywords>
+        <keyword outputclass="label">Enterprise Server</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_odw_dgk_54b">This section is meant for the <term keyref="glossentry_fb_platform_admin">Feedback Platform
+        Admin</term> or the person in your organization who is responsible for setting up and
+      managing the <ph keyref="product"/> server.</p>
+  </body>
+</topic>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ch_the_page_rule">
+  <title>The @Page Rule</title>
+  <body>
+    <section id="section_ut5_vs3_5z">
+      <title>Setting the Page Size</title>
+      <p id="p_dt5_dgk_54b">If you do not set the size, <ph keyref="product"/> uses portrait <b>US-LETTER</b> with
+        margins of <b>1in</b>. </p>
+      <p id="p_et5_dgk_54b">This is a basic choice you will have to make for your output. You can
+        use the <codeph>@page</codeph> rule like this:
+        <codeblock outputclass="language-css" id="codeblock_ft5_dgk_54b">@page { 
+  size: letter;
+}</codeblock>The page sizes can be selected by name, for example, <b>A4</b>, <b>A3</b>,
+          <b>US-LEGAL</b> (these are case insensitive), or if you are planning to print on a
+        non-standard sheet, you can specify the width and height:
+        <codeblock outputclass="language-css" id="codeblock_gt5_dgk_54b">@page { 
+  size: 5in 7in;
+}</codeblock></p>
+      <p id="p_ht5_dgk_54b">You can also specify the page orientation using the <codeph>portrait</codeph> or
+          <codeph>landscape</codeph> keywords.</p>
+      <codeblock outputclass="language-css" id="codeblock_it5_dgk_54b">@page { 
+  size: A3 landscape;
+}</codeblock>
+      <p id="p_jt5_dgk_54b">You can use the <codeph>@page</codeph> rule multiple times and the properties will merge as
+        in ordinary CSS element styling rules. </p>
+    </section>
+    <section id="section_wms_rq3_5z">
+      <title>Using Page Selectors to Style the Blank, Left, Right, First, and Last Pages</title>
+      <p id="p_kt5_dgk_54b">There are cases where you need to have different page settings depending on the position of
+        the page in the printed material. </p>
+      <codeblock outputclass="language-css" id="codeblock_lt5_dgk_54b">@page :left {
+  border-right: 0.5in solid yellow;
+}
+
+@page :right {
+  border-left: 0.5in solid yellow;
+}</codeblock>
+      <p id="p_mt5_dgk_54b">The <codeph>:first</codeph> and <codeph>:last</codeph> selectors are used to style the
+        first and last page from a sequence of pages.</p>
+      <codeblock outputclass="language-css" id="codeblock_nt5_dgk_54b">@page :first,:last {
+  border-top: 5pt solid yellow;
+}</codeblock>
+      <p id="p_ot5_dgk_54b">The <codeph>:blank</codeph> selector is used to style the blank pages that appear as a
+        result of <xref href="http://www.w3.org/TR/css3-page/#page-breaks" format="html"
+          scope="external">forced page breaks</xref>. </p>
+    </section>
+    <section id="section_w32_l43_5z">
+      <title>Using Named Pages</title>
+      <p id="p_pt5_dgk_54b">In the examples above, the default page settings were changed. </p>
+      <p id="p_qt5_dgk_54b">Suppose that you need to put a particular <xmlelement>table</xmlelement> element on a landscape
+        page. The example below defines a named page <codeph>table-landscape-page</codeph> that
+        switches the orientation to landscape. Then, to maximize the space available to the table,
+        the margin is reduced for this page. Also, the A4 size defined by the default
+          <codeph>@page</codeph> rule is inherited by the named page.</p>
+      <codeblock outputclass="language-css" id="codeblock_rt5_dgk_54b">@page {
+  size: A4;
+  margin: 1in;
+}
+
+@page table-landscape-page {
+  size: landscape;
+  margin: 0.5in;
+}
+
+table {
+  page: table-landscape-page;
+}</codeblock>
+      <p id="p_st5_dgk_54b">Also, <ph keyref="product"/> allows you to break a sequence of elements that have the same
+        page in different page groups. A simple example is a set of chapter elements where you need
+        to apply specific formatting for the first page from each chapter.</p>
+      <codeblock outputclass="language-css" id="codeblock_tt5_dgk_54b">&lt;chapter/>...&lt;/chapter>&lt;chapter/>...&lt;/chapter>&lt;chapter/>...&lt;/chapter></codeblock>
+      <p id="p_ut5_dgk_54b">The CSS would be:</p>
+      <codeblock outputclass="language-css" id="codeblock_vt5_dgk_54b">    @chapter {
+      ...
+    } 
+    
+    @chapter:first {
+        background-color:yellow;
+    } 
+ 
+    chapter {
+      page: chapter;
+    } </codeblock>
+      <p id="p_wt5_dgk_54b">But this is not enough. According to the W3C specification, all chapters that have the same
+        page will be merged in a single page group (sequence), and the first selector will apply
+        only on the first page from the first chapter. Therefore, you need to use the
+          <codeph>-oxy-page-group</codeph> property on each of the chapter elements.</p>
+      <codeblock outputclass="language-css" id="codeblock_xt5_dgk_54b">    @chapter {
+      ...
+    } 
+    
+    @chapter:first {
+        background-color:yellow;
+    } 
+ 
+    chapter {
+      -oxy-page-group:start;
+      page: chapter;
+    }</codeblock>
+      <p id="p_yt5_dgk_54b">The accepted values for the <codeph>-oxy-page-group</codeph> property are:</p>
+      <ul id="ul_zt5_dgk_54b">
+        <li id="li_a55_dgk_54b"><b>start</b> - Forces the creation of a new page group (sequence) even if the page
+          before the element has the same name. The W3C specification algorithm (<xref
+            href="https://www.w3.org/TR/css3-page/#using-named-pages" format="html" scope="external"
+          />) would merge the current element with the open page sequence.</li>
+        <li id="li_b55_dgk_54b"><b>auto</b> - Uses the W3C algorithm normally.</li>
+      </ul>
+    </section>
+  </body>
+</topic>

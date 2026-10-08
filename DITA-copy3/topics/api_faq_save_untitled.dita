@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="api_faq_save_untitled">
+  <title>Save a New Document with a Predefined File Name Pattern</title>
+  <body>
+    <section id="question">
+      <title>Use Case</title>
+      <p id="p_fqg_dgk_54b">You want <ph keyref="product"/> to automatically generate a file name
+        comprising a UUID plus file extension using the SDK.</p>
+    </section>
+    <section id="answer">
+      <title>Solution</title>
+      <p id="p_gqg_dgk_54b">This could be done implementing a <xref keyref="glossentry_plugin"
+          ><term>plugin</term></xref> for <ph keyref="product"/> using the <xref
+          href="https://www.oxygenxml.com/oxygen_sdk.html#Developer_Plugins" format="html"
+          scope="external">Plugins SDK</xref>.</p>
+      <p id="p_hqg_dgk_54b">There is a type of <term>plugin</term> called <term>Workspace Access</term> that can be
+        used to add a listener to be notified before an opened editor is saved. The implemented
+          <term>plugin</term> would intercept the save events when a newly created document is
+        untitled and display an alternative chooser dialog box, then save the topic with the proper
+        name.</p>
+      <p id="p_iqg_dgk_54b">The Java code would look like
+        this:<codeblock outputclass="language-java" id="codeblock_jqg_dgk_54b">  private static class CustomEdListener extends WSEditorListener{
+    private final WSEditor editor;
+    private final StandalonePluginWorkspace
+        pluginWorkspaceAccess;
+    private boolean saving = false;
+    public CustomEdListener
+(StandalonePluginWorkspace pluginWorkspaceAccess, WSEditor editor) {
+            this.pluginWorkspaceAccess = pluginWorkspaceAccess;
+            this.editor = editor;
+    }
+    @Override
+    public boolean editorAboutToBeSavedVeto(int operationType) {
+      if(! saving &amp;&amp;
+        editor.getEditorLocation().toString().contains("Untitled")) {
+        File chosenDir = pluginWorkspaceAccess.chooseDirectory();
+        if(chosenDir != null) {
+          final File chosenFile = 
+new File(chosenDir, UUID.randomUUID().toString() + ".dita");         
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override     
+              public void run() {
+              try {               
+                saving = true;
+                editor.saveAs(new URL(chosenFile.toURI().toASCIIString()));
+              } catch (MalformedURLException e) {
+                e.printStackTrace();
+              } finally {
+                saving = false;           
+              }
+            }
+          });
+        }
+       
+        //Reject the original save request.
+        return false;
+      }
+      return true;
+    }
+  }
+  
+    @Override
+    public void applicationStarted
+(final StandalonePluginWorkspace pluginWorkspaceAccess) {   
+    pluginWorkspaceAccess.addEditorChangeListener(new WSEditorChangeListener() {
+      @Override
+      public void editorOpened(URL editorLocation) {
+        final WSEditor editor = pluginWorkspaceAccess.getEditorAccess
+(editorLocation, PluginWorkspace.MAIN_EDITING_AREA);
+      if(editor != 
+null &amp;&amp; editor.getEditorLocation().toString().contains("Untitled")) {
+         
+        //Untitled editor
+ editor.addEditorListener(new CustomEdListener(pluginWorkspaceAccess, editor));
+        }
+      }
+     },
+  PluginWorkspace.MAIN_EDITING_AREA);
+................................................
+</codeblock></p>
+    </section>
+  </body>
+</topic>

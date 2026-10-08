@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_how_to_deal_with_unwanted_returns_in_code_blocks">
+    <title>How to Deal with Unwanted Returns in Code Blocks</title>
+    <body>
+        <p id="p_fcv_cgk_54b">There are cases where the source file contains long lines of code that need to continue
+      onto the next line in the rendered PDF (to wrap visually). </p>
+		<p id="p_gcv_cgk_54b">When the user copies the block from the PDF reader, they get two separated lines. This means
+      that the command fails when users copy it from the PDF to the command-line terminal (because
+      it comes in as two commands). </p>
+		<p id="p_hcv_cgk_54b">For example, the
+      command:<codeblock outputclass="language-bourne" id="codeblock_jcv_cgk_54b">$gist = ls -l * | count -n | some more</codeblock>May
+      be rendered in the PDF on two
+      lines:<codeblock outputclass="language-bourne" id="codeblock_lcv_cgk_54b">$gist = ls -l * | count -n
+| some more</codeblock>And this is invalid when used in the terminal.</p>
+		<p id="p_ncv_cgk_54b">There is no CSS workaround for this, but you can manually format the command
+      using a continuation character:<ul id="ul_t5q_4tn_ldc" outputclass="wh-tabbed">
+        <li><ph>Windows</ph><codeblock outputclass="language-bourne" id="codeblock_pcv_cgk_54b">$gist = ls -l * | count -n ^
+| some more</codeblock></li>
+        <li><ph>Linux/macOS</ph><codeblock id="codeblock_alw_qtn_ldc" outputclass="language-bourne">$gist = ls -l * | count -n \
+| some more</codeblock></li>
+      </ul>The command-line processor will automatically know that the command continues on the
+      second line.</p>
+    </body>
+</topic>

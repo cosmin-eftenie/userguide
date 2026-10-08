@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="content-completion-ant">
+  <title>Content Completion in Ant Build Files</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Ant build files<indexterm>Content completion</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_kjb_cgk_54b">The list of proposals offered by the <xref keyref="glossentry_content-completion-assistant"
+          ><term>Content Completion Assistant</term></xref> in Ant build files are context-sensitive
+      and includes proposals that are valid at the current cursor position. It can be manually
+      activated with the <uicontrol conkeyref="reusable-oxygen-shortcuts-list/ctrl_space"/>
+      shortcut.</p>
+    <p id="p_ljb_cgk_54b">The <term>Content Completion Assistant</term> proposes various item types that are defined in
+      the current Ant build and in the imported and included builds. The proposals include:</p>
+    <ul id="ul_hj1_l45_5n">
+      <li id="li_mjb_cgk_54b">Element names</li>
+      <li id="li_njb_cgk_54b">Attribute names</li>
+      <li id="li_ojb_cgk_54b">Property names<note id="note_pjb_cgk_54b">In addition to the user-defined properties, the <term>Content
+            Completion Assistant</term> offers the following values:<ul id="ul_kcn_wyt_wn">
+            <li id="li_qjb_cgk_54b">The system properties set in the Java Virtual Machine.</li>
+            <li id="li_rjb_cgk_54b">The built-in properties that Ant provides.</li>
+          </ul></note></li>
+      <li id="li_sjb_cgk_54b">Target names</li>
+      <li id="li_tjb_cgk_54b">Task and type reference IDs<note type="tip" id="note_ujb_cgk_54b">To make a custom task available in the
+            <term>Content Completion Assistant</term>, add a <xref keyref="glossentry_jar"
+              ><term>JAR</term></xref> file that contains the task implementation to the library
+          directory of the built-in Ant distribution that comes bundled with <ph keyref="product"/>
+          (for example, <filepath><term conkeyref="reusables-user-guide/oxy-install-dir"
+            />/tools/ant/lib</filepath> folder).</note></li>
+    </ul>
+    <note id="note_vjb_cgk_54b">For Ant resources, the proposals are collected starting from the <xref
+        keyref="glossentry_main-file"><term>main files</term></xref>. The <term>main
+        files</term> can be defined in the project or in the associated validation scenario. For
+      further details about the <term>Main Files</term> support go to <xref
+        href="defining_main_files.dita#defining_main_files">Defining Main Files at Project
+        Level</xref>. </note>
+  </body>
+  <related-links>
+    <linklist><title>Related Information:</title><link format="html" href="http://ant.apache.org/manual/properties.html" scope="external"/></linklist>
+  </related-links>
+</topic>

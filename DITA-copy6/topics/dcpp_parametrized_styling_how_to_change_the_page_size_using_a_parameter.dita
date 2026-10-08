@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_parametrized_styling_how_to_change_the_page_size_using_a_parameter">
+  <title>How to Change the Page Size Using a Parameter</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            ><ph keyref="pdf-html5-transformation"/><indexterm>Changing the page
+          size</indexterm></indexterm>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            ><ph keyref="single-topic-pdf-html5-transformation"/><indexterm>Changing the page
+            size</indexterm></indexterm>
+        <indexterm product="pdf-css ope">Changing the page size</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_nhv_cgk_54b">In the following example, a custom parameter is used to modify the page size. The parameter
+      is defined in the transformation scenario
+      as:<codeblock outputclass="language-ini" id="codeblock_ohv_cgk_54b">args.css.param.page-size="A4"</codeblock></p>
+    <p id="p_phv_cgk_54b">Then in the CSS, the attribute value is extracted and used as
+      follows:<codeblock outputclass="language-css" id="codeblock_qhv_cgk_54b">@page {
+    size: oxy_xpath('/*/@*[local-name()="page-size"][1]');
+}</codeblock></p>
+  </body>
+</topic>

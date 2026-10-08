@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="move-rename-schematron-resources">
+  <title>Moving/Renaming Schematron Resources</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Schematron Schemas<indexterm>Moving resources</indexterm></indexterm>
+        <indexterm>Schematron Schemas<indexterm>Renaming resources</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_sbh_cgk_54b"><ph conkeyref="reusables-editing-documents/short-desc-move-rename"/></p>
+    <p conkeyref="reusables-editing-documents/rename-action" id="p_tbh_cgk_54b"/>
+    <p conkeyref="reusables-editing-documents/move-action" id="p_ubh_cgk_54b"/>
+  </body>
+</topic>

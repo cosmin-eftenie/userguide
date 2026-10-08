@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="preferences-diff-appearance">
+  <title>Appearance Preferences</title>
+  <prolog>
+    <metadata>
+      <keywords><indexterm>Preferences<indexterm>Files Comparison Appearance</indexterm></indexterm>
+        <indexterm>File comparison appearance preferences</indexterm></keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_g1r_bgk_54b">To configure the appearance options for the Files Comparison tool, <ph
+        conkeyref="reusables-preferences-pages/open-the-preferences-page"/> and go to <menucascade>
+        <uicontrol>Diff</uicontrol>
+        <uicontrol>Files Comparison</uicontrol>
+        <uicontrol>Appearance</uicontrol>
+      </menucascade>. This preferences page offers the following options:</p>
+    <p id="p_h1r_bgk_54b">
+      <dl id="dl_i1r_bgk_54b">
+        <dlentry id="dlentry_j1r_bgk_54b">
+          <dt><uicontrol>Line wrap</uicontrol></dt>
+          <dd>Wraps the lines presented in the two diff panels at the right margin of each panel, so
+            no horizontal scrollbar is necessary.</dd>
+        </dlentry>
+        <dlentry id="dlentry_bwd_q15_141">
+          <dt><uicontrol>Show comment callouts</uicontrol></dt>
+          <dd>Displays any existing comment callouts for both compared files.</dd>
+        </dlentry>
+        <dlentry id="dlentry_bwd_28932">
+          <dt><uicontrol>Comment callout width</uicontrol></dt>
+          <dd>Specifies the width used for rendering the comment callouts. The default value is 200
+            pixels.</dd>
+        </dlentry>
+        <dlentry id="dlentry_k1r_bgk_54b">
+          <dt><uicontrol>Incoming color</uicontrol></dt>
+          <dd>Specifies the color used on the vertical bar for incoming changes.</dd>
+        </dlentry>
+        <dlentry id="dlentry_l1r_bgk_54b">
+          <dt><uicontrol>Outgoing color</uicontrol></dt>
+          <dd>Specifies the color used on the vertical bar for outgoing changes.</dd>
+        </dlentry>
+        <dlentry id="dlentry_m1r_bgk_54b">
+          <dt><uicontrol>Conflict color</uicontrol></dt>
+          <dd>Specifies the color used on the vertical bar for conflicts between the compared
+            files.</dd>
+        </dlentry>
+      </dl>
+    </p>
+  </body>
+</topic>

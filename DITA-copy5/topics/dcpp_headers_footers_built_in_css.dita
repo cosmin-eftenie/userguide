@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_headers_footers_built_in_css">
+  <title>Page Headers and Footers - Built-in CSS</title>
+  <body>
+    <p id="p_krq_cgk_54b">The headers and footers are part of the page definitions. To see how the default page layouts
+      are defined, see: <xref href="dcpp_default_page_definitions_css.dita"/>.</p>
+  </body>
+</topic>

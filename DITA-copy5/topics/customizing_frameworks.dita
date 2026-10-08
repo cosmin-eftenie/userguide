@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="customizing_frameworks">
+  <title>Integrating Web Author with Your Content by Creating Custom Frameworks</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Customizing your content for Web Author</indexterm>
+        <indexterm>Customizing frameworks for Web Author</indexterm>
+        <indexterm>Customizing document types for Web Author</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_mds_dgk_54b">You can customize <term>Web Author</term> to make it simple for everyone to write structured
+      content and still adhere to your project conventions. This topic provides details about
+      reusing frameworks between the standalone versions of <term>Oxygen</term> and <term>Web
+        Author</term>, how to create customized frameworks, how to test and upload your
+      customization, and other framework customization tips.</p>
+    <section id="section_jqs_3sf_11b">
+      <title>Examples of Framework Customization Use-Cases</title>
+      <p id="p_nds_dgk_54b">
+        <dl id="dl_ods_dgk_54b">
+          <dlentry id="dlentry_pds_dgk_54b">
+            <dt>Document Schema</dt>
+            <dd>Web Author supports any XML-based schema in any schema language. It also offers
+                <xref href="webauthor-predefined-frameworks.dita#webauthor-predefined-frameworks"
+                >built-in support for DITA, DocBook, TEI and XHTML</xref>.</dd>
+          </dlentry>
+          <dlentry id="dlentry_qds_dgk_54b">
+            <dt>Add Support for a New XML Vocabulary</dt>
+            <dd>You can customize <term>Web Author</term> to work with any XML-based document type.
+              For example, you can customize <term>Web Author</term> to work with a <xref
+                href="https://www.oxygenxml.com/doc/ug-editor/topics/dita-specialization-support.html"
+                format="html" scope="external">DITA specialization</xref>.</dd>
+          </dlentry>
+          <dlentry id="dlentry_rds_dgk_54b">
+            <dt>Authoring Experience</dt>
+            <dd>You can configure how documents are rendered in <term>Web Author</term> or display
+                <xref
+                href="dg-form-controls-properties-matrix.dita#dg-form-controls-properties-matrix"
+                >inline form-controls</xref> to allow users to edit attribute values.</dd>
+          </dlentry>
+          <dlentry id="dlentry_sds_dgk_54b">
+            <dt>Business Rules</dt>
+            <dd>
+              <p id="p_tds_dgk_54b">You can configure the automatic validation to use Schematron to enforce various
+                business rules and propose solutions for them. For more information, see the <xref
+                  href="https://www.oxygenxml.com/doc/ug-editor/topics/schematron-quick-fixes.html"
+                  format="html" scope="external">Schematron Quick Fixes (SQF) section in the Oxygen
+                  XML Editor User Manual</xref>. There is an interesting Blog post written on this
+                subject available at: <xref
+                  href="https://blog.oxygenxml.com/topics/SchematronBCs.html" format="html"
+                  scope="external"/>.</p>
+              <p id="p_uds_dgk_54b">There is also a public project in the <b>Oxygen</b> GitHub account pages that
+                offers guidance and instructions for integrating an <i>Intelligent Style Guide</i>
+                for imposing business rules and assisting the content authors. You can download the
+                project and try it for yourself at: <xref
+                  href="https://github.com/oxygenxml/integrated-styleguide" format="html"
+                  scope="external"/>.</p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_vds_dgk_54b">
+            <dt>Document Templates</dt>
+            <dd>You can <xref href="#customizing_frameworks/new-templates-li" format="dita">specify
+                document templates</xref> that users can choose from when creating a new
+              document.</dd>
+          </dlentry>
+          <dlentry id="dlentry_wds_dgk_54b">
+            <dt>Embedded Formats</dt>
+            <dd>Web Author supports embedded formats such as MathML, SVG, videos, and others using
+                <xref href="customizing_plugins.dita#customizing_plugins">plugins</xref> or <xref
+                href="dg-form-controls-properties-matrix.dita#dg-form-controls-properties-matrix"
+                >flexible form-controls</xref>. Also, support for embedded formats can be
+              implemented by third parties. For example, <xref
+                href="http://www.wiris.com/en/" format="html" scope="external"
+                >WIRIS provides a plugin</xref> that can be used to edit MathML equations in a
+              visual way.</dd>
+          </dlentry>
+        </dl>
+      </p>
+    </section>
+    <section id="reusing_frameworks_between_and_web_author">
+      <title>Reusing Frameworks Between Oxygen XML Editor/Author and Web Author</title>
+      <p id="p_xds_dgk_54b">Custom <xref keyref="glossentry_framework"><term>frameworks</term></xref> that are designed
+        for documentation purposes can be reused interchangeably between <term>Oxygen</term>
+        standalone distributions and the <ph keyref="webappProduct"/>. However, <xref
+          href="wa-migrate-frameworks.dita">some fine-tuning might be necessary</xref> to maximize
+        the editing experience for your content authors. The advantages of using a common
+          <term>framework</term> include:<ul id="ul_rlf_yvy_1r">
+          <li id="li_yds_dgk_54b">Uniform experience across multiple <term>Oxygen XML Editor/Author</term>
+            distributions.</li>
+          <li id="li_zds_dgk_54b">Ability to reuse previously developed <term>frameworks</term>.</li>
+          <li id="li_a2s_dgk_54b">Many of the customized items that are added to your <term>framework</term> in the
+              <term>Oxygen XML Editor/Author</term> standalone distribution also carry over to <ph
+              keyref="webappProduct"/>. For example, items that are added to the list of proposals
+            for the <xref keyref="glossentry_content-completion-assistant"><term>Content Completion
+                Assistant</term></xref> will appear in both distributions.</li>
+        </ul></p>
+    </section>
+    <section id="section_zzf_pns_vz">
+      <title>How to Create a Custom Framework (Document Type)</title>
+      <p id="p_b2s_dgk_54b">You can create a custom <term>framework</term> by extending an existing one: <ol id="ol_c2s_dgk_54b">
+          <li id="li_d2s_dgk_54b">In a location where you have full write access, create a folder structure similar to
+            this: <filepath>custom_frameworks/dita-extension</filepath>. </li>
+          <li id="li_e2s_dgk_54b">Open a standalone version of <term>Oxygen XML Editor/Author</term>.</li>
+          <li id="li_f2s_dgk_54b">Open the <uicontrol>Preferences</uicontrol> dialog box <menucascade>
+              <uicontrol>(Options</uicontrol>
+              <uicontrol>Preferences)</uicontrol>
+            </menucascade> and go to <menucascade>
+              <uicontrol>Document Type Association</uicontrol>
+              <uicontrol>Locations</uicontrol>
+            </menucascade>. In this preferences page, add the path to your
+              <filepath>custom_frameworks</filepath> folder in the <uicontrol>Additional frameworks
+              directories</uicontrol> list.</li>
+          <li id="li_g2s_dgk_54b">Go to the <uicontrol>Document Type Association</uicontrol> preferences page and select
+            an existing <term>framework</term> configuration and use the
+              <uicontrol>Extend</uicontrol> button to create an extension for it.</li>
+          <li id="li_h2s_dgk_54b">Give the extension an appropriate name (for example, <b><i>DITA - Custom</i></b>),
+            select <uicontrol>External</uicontrol> for the <uicontrol>Storage</uicontrol> option,
+            and specify an appropriate path (for example,
+              <filepath>path/to/.../custom_frameworks/dita-extension/dita-custom.framework</filepath>).</li>
+          <li id="make-changes-li">Make your changes to the extension. There is a large variety of
+            ways to customize your extended <term>framework</term>. These are just some of the ways:<ul id="ul_i2s_dgk_54b">
+              <li id="li_j2s_dgk_54b">The <xref
+                  href="https://www.oxygenxml.com/doc/ug-editor/topics/the-document-type-dialog.html"
+                  format="html" scope="external"><uicontrol>Document Type</uicontrol> configuration
+                  dialog box</xref> contains various tabs and subtabs that allow you to configure
+                the extended <term>framework</term>.</li>
+              <li id="new-templates-li">You can <xref href="wa-file-templates.dita">create your own
+                  custom document templates</xref> and once the framework is uploaded to <term>Web
+                  Author</term>, users will have access to the templates when creating a new
+                document.</li>
+              <li id="li_k2s_dgk_54b">See the <xref
+                  href="https://www.oxygenxml.com/doc/ug-editor/topics/authoring_customization.html"
+                  format="html" scope="external">Oxygen Advanced Framework Customization
+                  section</xref> for numerous procedures and examples of how to configure various
+                aspects of the extended <term>framework</term>.</li>
+              <li id="li_l2s_dgk_54b">For information about using CSS files to configure the extended
+                  <term>framework</term>, see <xref
+                  href="https://www.oxygenxml.com/doc/ug-editor/topics/selecting-combining-multiple-css-styles.html"
+                  format="html" scope="external">Configuring and Managing Multiple CSS Styles for a
+                  Framework</xref>.</li>
+              <li id="li_m2s_dgk_54b">For information about configuring the Content Completion proposals for the
+                extended <term>framework</term>, see <xref
+                  href="wa-cc-configuration.dita#wa-cc-configuration"/>.</li>
+            </ul></li>
+          <li id="li_n2s_dgk_54b">Click <uicontrol>OK</uicontrol> to close the dialog box and then
+              <uicontrol>OK</uicontrol> or <uicontrol>Apply</uicontrol> to save the changes.</li>
+          <li id="li_o2s_dgk_54b">Create an archive that contains your custom framework folder that you created in the
+            first step of this procedure. The archive should contain exactly one folder on the first
+            level. You will need this archive structure to <xref
+              href="#customizing_frameworks/deploying_a_framework" format="dita">upload the
+                <term>framework</term> to Web Author</xref>.</li>
+        </ol></p>
+    </section>
+    <section id="developing_and_testing_a_framework_using_the_weba">
+      <title>Testing a Custom Framework Using the Oxygen XML Web Author Test Server Add-on</title>
+      <p id="p_p2s_dgk_54b">An add-on (for <b>Oxygen XML Editor/Author</b>) is available to help you
+        test custom frameworks for Web Author. The <xref href="wa-test-server-addon.dita"
+            ><uicontrol>Oxygen XML Web Author Test Server</uicontrol> add-on</xref> allows you to
+        quickly preview and edit your opened XML documents in a local Web Author Test Server that
+        uses the same framework that is associated with the document. The server is installed and
+        configured automatically so you do not need to package, deploy, or do any extra setup. This
+        simplifies and speeds-up the process of creating, updating, and testing customizations
+        (frameworks).</p>
+      <p id="p_svs_cyj_qfc">For details and instructions for using the test server add-on, see <xref
+          href="wa-test-server-addon.dita"><uicontrol>Oxygen XML Web Author Test Server
+            Add-on</uicontrol></xref>.</p>
+    </section>
+    <section id="deploying_a_framework">
+      <title>Uploading a Custom Framework to Web Author</title>
+      <p id="p_ofs_dgk_54b">To upload a custom <term>framework</term> to your <term>Web Author</term> deployment,
+        follow this procedure:<ol conkeyref="reusables-sdk-webauthor/upload-framework-ol" id="ol_pfs_dgk_54b">
+          <li id="li_qfs_dgk_54b"/>
+        </ol></p>
+    </section>
+    <section id="adding_javascript_code_to_a_framework">
+      <title>Adding JavaScript Code to a Framework</title>
+      <p id="p_rfs_dgk_54b">Frameworks can be configured to load custom JavaScript code in the web
+        browser. The JavaScript files are loaded according to the following rules:<ul>
+          <li>If your framework is defined as a <filepath>.framework</filepath> file (for example,
+            the framework was created using the <uicontrol>Document Type Configuration</uicontrol>
+            dialog box):<ul id="ul_wd5_rnt_ktb">
+              <li>All the files in the <filepath>web/</filepath> folder of the framework will be
+                loaded in the browser in lexicographical order. </li>
+              <li>JavaScript files located in subfolders of the <filepath>web</filepath> folder will
+                not be loaded.</li>
+              <li>If your framework is a framework extension, both the JavaScript files from the
+                base framework and those from the extension will be loaded. To make it possible to
+                override JavaScript files inherited from a base framework, if a file in the
+                  <i>web</i> folder of the extension framework has the same name as a file in the
+                  <i>web</i> folder of the base framework, only the file in the extension framework
+                will be loaded.</li>
+            </ul></li>
+          <li>If a framework is generated using a <xref
+              href="wa-framework-customization-script.dita"><i>Framework Extension
+            Script</i></xref>, multiple <codeph>webResources</codeph> can be specified:<ul
+              id="ul_b3b_lnt_ktb">
+              <li>The <codeph>webResources</codeph> will be loaded in the order they are specified
+                in the <filepath>.exf</filepath> file.</li>
+              <li>If a folder is specified, all the JavaScript files in that folder will be loaded
+                in lexicographical order.</li>
+              <li>If a file is specified (directly or indirectly) multiple times, it will be loaded
+                only once (the last instance that was specified).</li>
+            </ul></li>
+        </ul></p>
+      <p id="p_wfs_dgk_54b">The framework's script needs to create an instance of
+          <codeph>sync.ext.Extension</codeph> and register it in the
+          <codeph>sync.ext.Registry.extension</codeph> field. For
+        example:<codeblock outputclass="language-javascript" id="codeblock_xfs_dgk_54b">class MyExtension extends sync.ext.Extension {
+  /** @param {sync.api.Editor} editor */
+  editorCreated(editor) {
+    // ... 
+  }
+}
+// Register the extension so that it will be notified when the editor is created.
+sync.ext.Registry.extension = new MyExtension();</codeblock></p>
+      <p id="p_zfs_dgk_54b">These files can contain code that calls the <xref keyref="jscript_api">Web Author
+          JavaScript API</xref> to implement custom editing actions. Some possible use cases
+          include:<ul id="ul_x5q_s4y_hnb">
+          <li id="li_ags_dgk_54b">Create custom actions and add them to the toolbar or contextual menu. For more
+            details, see the <xref keyref="jscript_api_customaction">JS Tutorial: Implementing a
+              Custom Action</xref>.</li>
+          <li id="li_bgs_dgk_54b">Create custom form controls. For more details, see the <xref
+              keyref="jscript_api_formcontrol">JS Tutorial: Implementing a Custom Form
+              Control</xref>.</li>
+          <li id="li_cgs_dgk_54b">Add more views. For more details, see the <xref keyref="jscript_api_customview">JS
+              Tutorial: Customizing the Side Views</xref>.</li>
+        </ul></p>
+      <p id="p_dgs_dgk_54b">
+        <note type="tip" id="note_fgs_dgk_54b">Some tutorials are available for other use cases in
+          the <xref keyref="jscript_api">Oxygen XML Web Author Component API Documentation</xref>
+          (in the <uicontrol>Tutorials</uicontrol> section).</note>
+      </p>
+    </section>
+    <section id="section_bw2_bh2_crb">
+      <title>Adding JavaScript Code to a Framework Extension</title>
+      <p>When adding JavaScript code to a framework extension, you may want to also inherit the
+        customizations made by the base framework using JavaScript code. </p>
+      <p>For example, to create a DITA extension that removes the action to underline the selected
+        text, follow these steps:</p>
+      <p>
+        <ol id="ol_twc_c32_crb">
+          <li>Create an EXF file (for example <filepath>my-framework.exf</filepath>) with the
+            following
+            content:<codeblock id="codeblock_dpf_232_crb" outputclass="language-xml">&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;script 
+    base="DITA" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.oxygenxml.com/ns/framework/extend"
+    xsi:schemaLocation="http://www.oxygenxml.com/ns/framework/extend 
+        http://www.oxygenxml.com/ns/framework/extend/frameworkExtensionScript.xsd">
+
+  &lt;name>My DITA extension&lt;/name>
+  &lt;description>My DITA extension&lt;/description>
+  &lt;priority>Normal&lt;/priority>
+
+  &lt;webResources inherit="all">
+    &lt;addEntry path="${frameworkDir}/my-framework.js"/>
+  &lt;/webResources>
+&lt;/script></codeblock></li>
+          <li>Create the <filepath>my-framework.js</filepath> file in the same folder with the
+            following
+            content:<codeblock id="codeblock_plz_g32_crb" outputclass="language-javascript">// Use the `sync.ext.WrapperExtension` class to wrap the original extension.
+class MyFrameworkExtension extends sync.ext.WrapperExtension {
+  constructor(base) {
+    super(base);
+  }
+  
+  filterActions(actionsMap, editingSupport) {
+    super.filterActions(actionsMap, editingSupport);
+    // Remove the "underline" action.
+    actionsMap.delete('underline');
+  }
+}
+
+var originalExtension = sync.ext.Registry.extension;
+sync.ext.Registry.extension = new MyFrameworkExtension(originalExtension);</codeblock></li>
+          <li>Create a zip archive with the folder that contains the two files created above to
+            obtain the framework.</li>
+        </ol>
+      </p>
+    </section>
+    <section id="section_zfq_dfx_xkb">
+      <title>Loading Static Resources from the Framework Directory</title>
+      <p id="p_ggs_dgk_54b">All the resources (such as images, HTML, or CSS files) found in the
+          <filepath>web</filepath> sub-folder of the framework folder can be accessed from the web
+        browser using a URL obtained by evaluating <codeph>sync.ext.Registry.extensionURL</codeph>
+        in JavaScript. For example, a file located at
+          <filepath>&lt;framework-folder>/web/resources/image.png</filepath> can be accessed by the
+        following
+        URL:<codeblock outputclass="language-javascript" id="codeblock_hgs_dgk_54b">sync.ext.Registry.extensionURL + 'resources/image.png'</codeblock></p>
+      <p id="p_gmz_npw_kxb">When using a framework generated from a <xref
+          href="wa-framework-customization-script.dita"><i>Framework Extension Script</i></xref>,
+        the path appended to <codeph>sync.ext.Registry.extensionURL</codeph>
+          (<filepath>resources/image.png</filepath> in the example above) is resolved against all
+        the directories configured as <codeph>webResource</codeph> in the <filepath>.exf</filepath>
+        file. If the file is present in multiple such folders, the last one is used.</p>
+    </section>
+    <section id="customization_tips">
+      <title>Other Customization Tips</title>
+      <p id="p_igs_dgk_54b">
+        <ul id="ol_css_3h1_br">
+          <li id="li_jgs_dgk_54b">If you want to use CSS rules that only apply when the <term>framework</term> is used
+            in the <ph keyref="webappProduct"/>, use the following <codeph>media</codeph>
+            query:<codeblock outputclass="language-css" id="codeblock_kgs_dgk_54b">@media oxygen AND (platform:webapp) {
+ ... 
+}</codeblock></li>
+          <li id="author-mode-operation-li">
+            <p id="p_lgs_dgk_54b">If the <term>framework</term> contains custom <uicontrol>Author</uicontrol> mode
+              operations (Java implementations of the
+                <codeph>ro.sync.ecss.extensions.api.AuthorOperation</codeph> interface), they can be
+              enabled to be used by the <ph keyref="webappProduct"/> using the
+                <codeph>ro.sync.ecss.extensions.api.WebappCompatible</codeph> annotation.</p>
+            <p id="p_mgs_dgk_54b">If you plan to invoke a custom <uicontrol>Author</uicontrol> mode operation from the
+              JavaScript code (as in <xref keyref="jscript_api_customaction">this tutorial</xref>),
+              the operation has to be annotated with
+                <codeph>ro.sync.ecss.extensions.api.webapp.WebappRestSafe</codeph>. <note
+                type="warning" id="note_ngs_dgk_54b">Operations annotated with
+                  <codeph>ro.sync.ecss.extensions.api.webapp.WebappRestSafe</codeph> can be invoked
+                with user-supplied parameters. Use this annotation only for operations that are safe
+                to execute with any parameter combination. For example, an action that would execute
+                a process on the server based on a command-line script specified by the user is
+                  <b>not</b> safe.</note></p>
+            <p id="p_ogs_dgk_54b">
+              <note id="note_pgs_dgk_54b"><uicontrol>Author</uicontrol> mode operations that use <term>Java Swing</term>
+                components to display a graphical interface are not compatible with the <ph
+                  keyref="webappProduct"/> and they should not be annotated.</note>
+            </p>
+          </li>
+          <li id="li_qgs_dgk_54b">The <ph keyref="webappProduct"/> continuously validates the XML documents using the
+            default validation scenarios defined at <term>framework</term> level. Only the
+            validation units that have the <xref
+              href="https://www.oxygenxml.com/doc/ug-editor/topics/edit-validation-scenario.html#edit-validation-scenario__validation-config-dialog"
+              format="html" scope="external"><uicontrol>Automatic Validation</uicontrol> option
+              selected in the <uicontrol>Edit Scenario</uicontrol> dialog box</xref> that is
+            accessed by editing a scenario in the <xref
+              href="https://www.oxygenxml.com/doc/ug-editor/topics/document-type-validation-tab.html"
+              format="html" scope="external"><uicontrol>Validation</uicontrol> subtab when editing a
+              document type</xref>.</li>
+        </ul>
+      </p>
+    </section>
+    <section id="section_x2n_vhh_vrb">
+      <title>Resources</title>
+      <p id="p_orm_dgk_54b">For more information about customizing Web Author and frameworks, see
+        the following resources:<ul id="ul_kdg_v5v_tvb">
+          <li id="li_fj4_nd5_mbc">Webinar: <xref
+              href="https://www.oxygenxml.com/events/2024/webinar_web_author_customizations_getting_started.html"
+              format="html" scope="external"><b>Web Author Customizations - Getting
+              Started</b></xref></li>
+          <li id="li_oxd_f25_mbc">Webinar: <xref
+              href="https://www.oxygenxml.com/events/2018/webinar_creating_oxygen_frameworks.html"
+              format="html" scope="external"><b>Creating Oxygen Frameworks (Oxygen XML
+              Editor)</b></xref></li>
+        </ul></p>
+    </section>
+  </body>
+</topic>

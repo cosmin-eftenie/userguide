@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_how_to_enable_hyphenation_for_entire_document">
+  <title>How to Enable Hyphenation for Entire Map</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            ><ph keyref="pdf-html5-transformation"/><indexterm>Hyphenation<indexterm>Entire
+              map</indexterm></indexterm></indexterm>
+        <indexterm product="pdf-css ope">Hyphenation<indexterm>Entire map</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_tjt_cgk_54b">To enable hyphenation for your entire map:</p>
+    <ol id="ol_akz_1j4_vcb">
+      <li id="li_ujt_cgk_54b">Make sure you set an <xmlatt>xml:lang</xmlatt> attribute on the root of your map, or set
+        the <codeph>default.language</codeph> parameter in the transformation.</li>
+      <li id="li_vjt_cgk_54b">In your <xref href="dcpp_the_customization_css.dita">customization CSS</xref>,
+        add:<codeblock outputclass="language-css" id="codeblock_wjt_cgk_54b">:root {
+    hyphens: auto;
+}</codeblock></li>
+      <li id="li_xjt_cgk_54b">To except certain elements from being hyphenated, use <codeph>hyphens:none</codeph>. The
+        following example excludes the <xmlelement>keyword</xmlelement> elements from being
+        hyphenated:<codeblock outputclass="language-css" id="codeblock_yjt_cgk_54b">*[class ~= "topic/keyword"] {
+    hyphens: none;
+}</codeblock></li>
+    </ol>
+  </body>
+</topic>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="defining-new-transformation-scenario">
+  <title>Creating New Transformation Scenarios</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Transformation Scenarios<indexterm>New</indexterm></indexterm>
+        <indexterm>Create new transformation scenario</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_kgl_cgk_54b">Defining a transformation scenario is the first step in the process of transforming a
+      document. This section includes information on the types of new scenarios that are available
+      in <ph keyref="product"/> and how to create each type of transformation.</p>
+  </body>
+</topic>

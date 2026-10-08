@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ofb-troubleshooting">
+  <title>Troubleshooting and Compatibility</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Troubleshooting</indexterm>
+        <indexterm>Known issues</indexterm>
+        <indexterm>Common problems</indexterm>
+      </keywords>
+      <keywords>
+        <keyword outputclass="label">WebHelp Output</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_q3x_dgk_54b">This section contains information about error messages, possible known
+      issues, browser compatibility, and other things that you might want to be aware of regarding
+        <b>Oxygen Feedback</b>.</p>
+  </body>
+</topic>

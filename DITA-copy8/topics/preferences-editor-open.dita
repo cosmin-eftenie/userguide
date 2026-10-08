@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="preferences-editor-open">
+  <title>Open Preferences</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Preferences<indexterm>Open</indexterm></indexterm>
+        <indexterm>Open preferences</indexterm>
+        <indexterm>Performance preferences</indexterm>
+        <indexterm>Special character preferences</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_n1p_bgk_54b"><ph keyref="product"/> lets you control how files are opened. To configure
+      the options for opening documents, <ph
+        conkeyref="reusables-preferences-pages/open-the-preferences-page"/> and go to <menucascade>
+        <uicontrol>Editor</uicontrol>
+        <uicontrol>Open</uicontrol>
+      </menucascade>.</p>
+    <p id="p_o1p_bgk_54b">The following options are available:<dl id="dl_p1p_bgk_54b">
+        <dlentry id="dlentry_q1p_bgk_54b">
+          <dt><uicontrol>Open each document in a tab next to the current one</uicontrol></dt>
+          <dd>When selected (default), each new document is opened in a tab next to the currently
+            open tab. If not selected, each new document is opened in a tab at the end of the
+            current tab stack.</dd>
+        </dlentry>
+        <dlentry id="dlentry_r1p_bgk_54b">
+          <dt><uicontrol>Restore cursor position</uicontrol></dt>
+          <dd>Selected by default, it ensures that the last position of the cursor will be
+            remembered when a document is re-opened. If this option is not selected, the cursor will
+            always be positioned at the beginning of the document.</dd>
+        </dlentry>
+        <dlentry id="dlentry_s1p_bgk_54b">
+          <dt><uicontrol>Lock local resources</uicontrol></dt>
+          <dd>When this option is selected and you open a file from the local file system or a
+            shared network drive, <ph keyref="product"/> locks the file for the current user and the
+            file becomes read-only for other users while the lock exists. Locked and read-only files
+            have a lock icon (<image href="../img/SVNLockInternal10.png"/>) displayed on their
+            editor tabs. Newly created files are <i>locked</i> when you first save them. If you
+            select this option with files already opened in <ph keyref="product"/>, it will
+              <i>lock</i> all the currently open files. If you deselect this option with files
+            already opened, it will unlock them by deleting the corresponding
+              <filepath>.lock</filepath> files. When you try to save locked (read-only) files, a
+              <uicontrol>Save As</uicontrol> dialog box will be displayed to avoid overwriting the
+            initial resource.</dd>
+        </dlentry>
+        <dlentry id="support-for-special-characters">
+          <dt><uicontrol>Support for Special Characters</uicontrol> section</dt>
+          <dd>
+            <p id="p_t1p_bgk_54b">
+              <note id="note_u1p_bgk_54b">The options in this section only affect the <uicontrol>Text</uicontrol> editing
+                mode.</note>
+            </p>
+            <p id="p_v1p_bgk_54b">
+              <dl id="dl_w1p_bgk_54b">
+                <dlentry id="dlentry_x1p_bgk_54b">
+                  <dt><uicontrol>When bidirectional text, Asian languages, or other special
+                      characters are detected</uicontrol></dt>
+                  <dd>You can choose how you want <ph keyref="product"/> to handle bidirectional
+                    text, Asian languages, or other special characters when they are detected in
+                      <uicontrol>Text</uicontrol> mode. You can choose one of the following:<ul
+                      id="ul_fgm_2w4_sq">
+                      <li id="enable-support-special-chars"><uicontrol>Enable support for special
+                          characters</uicontrol> - The support for special characters will always be
+                          enabled.<ph product="author developer editor"> For details about what this
+                          means, see <xref
+                            href="bidirectional-support.dita#bidirectional-support/enabled"
+                            >Bidirectional Text Support in Text Mode - Enabled</xref>.</ph></li>
+                      <li id="li_y1p_bgk_54b"><uicontrol>Disable support for special
+                          characters</uicontrol> - The support for special characters will always be
+                          disabled.<ph product="author developer editor"> For details about what
+                          this means, see <xref
+                            href="bidirectional-support.dita#bidirectional-support/disabled"
+                            >Bidirectional Text Support in Text Mode - Disabled</xref>.</ph></li>
+                      <li id="li_z1p_bgk_54b"><uicontrol>Prompt for each document</uicontrol>
+                        (default setting) - You will be prompted to choose whether or not to enable
+                        the support for special characters whenever they are detected in a newly
+                        opened document.<ph product="author developer editor"> For details about
+                          which setting to choose, see <xref
+                            href="bidirectional-support.dita#bidirectional-support"/>.</ph></li>
+                    </ul></dd>
+                </dlentry>
+                <dlentry id="dlentry_abp_bgk_54b">
+                  <dt><uicontrol>Disable special characters support for documents larger than
+                      (characters)</uicontrol></dt>
+                  <dd>Enabling bidirectional text editing support can affect performance on large
+                    files. When this option is selected, bidirectional editing is disabled for files
+                    exceeding the specified size (even if the <xref
+                      href="#preferences-editor-open/enable-support-special-chars" format="dita"
+                        ><uicontrol>Enable support for special characters</uicontrol> option</xref>
+                    is selected). The default limit is 300 MB. You can change it to 500 MB or 800
+                    MB, but it is recommended that you always leave this option selected regardless
+                    of the limit that is set.</dd>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+        <dlentry id="performance-section">
+          <dt><uicontrol>Performance</uicontrol> section</dt>
+          <dd>
+            <p id="p_bbp_bgk_54b">
+              <dl id="dl_cbp_bgk_54b">
+                <dlentry id="optimize-loading-text-mode">
+                  <dt><uicontrol>Optimize loading in the Text edit mode for files over
+                      (MB)</uicontrol></dt>
+                  <dd>
+                    <p id="p_dbp_bgk_54b">File loading is optimized for reduced memory usage for any file whose size is
+                      larger than the value specified in this drop-down list. This is useful for
+                      editing large files, but there are <xref
+                        href="editing-large-documents.dita#editing-large-documents">several
+                        restrictions</xref> for memory-intensive operations.</p>
+                    <p id="p_ebp_bgk_54b">
+                      <dl id="dl_fbp_bgk_54b">
+                        <dlentry id="dlentry_gbp_bgk_54b">
+                          <dt><uicontrol>Show warning when loading large documents</uicontrol></dt>
+                          <dd><ph keyref="product"/> will warn you if you open a file that is bigger
+                            than the specified size.</dd>
+                        </dlentry>
+                      </dl>
+                    </p>
+                  </dd>
+                </dlentry>
+                <dlentry id="optimize-loading-long-lines">
+                  <dt><uicontrol>Optimize loading for documents with lines longer than
+                      (Characters)</uicontrol></dt>
+                  <dd>
+                    <p id="p_hbp_bgk_54b"><i>Line wrap</i> is automatically performed for documents that contain lines
+                      that exceed the length specified in this text field. For a list of the
+                      restrictions applied to a document with long lines, see <xref
+                        href="long-lines-document.dita#long-lines-document" format="dita">Editing
+                        Documents with Long Lines</xref>.</p>
+                    <p id="p_ibp_bgk_54b">
+                      <dl id="dl_jbp_bgk_54b">
+                        <dlentry id="dlentry_kbp_bgk_54b">
+                          <dt><uicontrol>Show warning when loading documents with long
+                              lines</uicontrol></dt>
+                          <dd>When selected, <ph keyref="product"/>will warn you when you open a
+                            file with lines longer than the specified length. To reduce the length
+                            of lines in a file, format and indent the document after it is opened in
+                            the editor panel. For a list of the restrictions applied to a document
+                            with long lines, see <xref
+                              href="long-lines-document.dita#long-lines-document" format="dita"
+                            />.</dd>
+                        </dlentry>
+                      </dl>
+                    </p>
+                  </dd>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+      </dl></p>
+  </body>
+</topic>

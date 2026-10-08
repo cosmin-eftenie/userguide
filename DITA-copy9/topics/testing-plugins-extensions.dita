@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="testing-plugins-extensions">
+  <title>Testing Plugins and Java Extensions</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Oxygen SDK<indexterm>Testing plugins and Java extensions</indexterm></indexterm>
+        <indexterm>Plugins<indexterm>Testing</indexterm></indexterm>
+        <indexterm>Testing plugins and Java extensions</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_hy2_dgk_54b">In the various procedures for creating a <xref keyref="glossentry_plugin"
+        ><term>plugin</term></xref>, you are usually instructed to copy your plugin folder to the
+          <filepath><term conkeyref="reusables-user-guide/oxy-install-dir"/>/plugins/</filepath>
+      directory. If you want to test the code in your plugin without copying it to that folder,
+      follow this procedure:<ol id="ol_iy2_dgk_54b">
+        <li>Close the <ph keyref="product"/> application if it is running.</li>
+        <li id="li_jy2_dgk_54b">Create in the folder <filepath><term
+              conkeyref="reusables-user-guide/oxy-install-dir"/>/plugins/</filepath> a subfolder
+          named for example <filepath>myPlugin</filepath> (but it can have any other name).</li>
+        <li id="li_ky2_dgk_54b">
+          <p id="p_ly2_dgk_54b">In the <filepath>myPlugin</filepath> subfolder create a new text
+            file named <filepath>plugin.redirect</filepath> that contains the full file path
+            references to your project (for example,
+              <filepath>C:\Users\john_doe\Documents\sample-plugin-folder</filepath>).</p>
+          <p id="p_my2_dgk_54b"><b>Step Result:</b>
+            <ph keyref="product"/> will automatically load the plugin from your project location
+            when it starts.</p>
+        </li>
+        <li id="li_ny2_dgk_54b">Now you can modify the Java code, the IDE will automatically compile it, and if the
+            <b>plugin.xml</b> file has a classpath reference to the compiled classes folder, you can
+          restart <ph keyref="product"/> and test your changes.</li>
+      </ol></p>
+  </body>
+</topic>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="rendering-xml-author-mode">
+  <title>Changing the Look of Documents in Author Mode Using the Styles Menu</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Author editing mode<indexterm>Rendering documents</indexterm></indexterm>
+        <indexterm>XML documents<indexterm>Author Mode editing<indexterm>Rendering
+              documents</indexterm></indexterm></indexterm>
+        <indexterm>Rendering documents in Author Mode</indexterm>
+        <indexterm>Styles menu</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_etw_bgk_54b">The <uicontrol>Author</uicontrol> mode renders the content of the XML documents visually,
+      based on CSS stylesheets associated with the document.</p>
+    <p conkeyref="reusables-author-mode-customization/css.styles.intro" id="p_ftw_bgk_54b"/>
+    <p id="p_xhv_k3y_pqb">The list of CSS styles that are available in the
+        <uicontrol>Styles</uicontrol> menu depend on the <xref keyref="glossentry_framework"
+          ><term>framework</term></xref> (document type). </p>
+    <p id="p_ac1_dgk_54b">
+      <fig id="css.styles.image">
+        <title>Styles Drop-down Menu in a DITA Document</title>
+        <image href="../img/css_styles_dropdown.png" id="image_mwt_mkm_mq"/>
+      </fig>
+    </p>
+    <p id="p_tb1_dgk_54b">You can use the <uicontrol>Styles</uicontrol> drop-down menu to select a
+        <xref keyref="glossentry_main-css-style"><term>main css style</term></xref> that applies to
+      the whole document and then select one or more <xref keyref="glossentry_alternate-css-style"
+          ><term>alternate css styles</term></xref> that behave like layers and are merged
+      sequentially with the <term>main style</term>. Each of the styles that are listed in this
+      drop-down menu have a corresponding CSS file that defines how your documents are rendered in
+        <uicontrol>Author</uicontrol> mode and in the output. Also, the selections from this
+      drop-down menu are persistent, meaning that <ph keyref="product"/> remembers them when
+      subsequent documents are opened.</p>
+    <section id="section_vhd_bfy_pqb">
+      <title>Main CSS Styles</title>
+      <p id="p_ub1_dgk_54b">The <term>main styles</term> are listed in the top section and each of
+        their corresponding CSS files contain all the styles associated with the XML elements for
+        the particular type of document. You can only select one main style at a time.</p>
+    </section>
+    <section id="using_the_styles_dropdown_menu">
+      <title>Alternate CSS Styles</title>
+      <p id="p_vb1_dgk_54b">The <term>alternate styles</term> are listed in the bottom section and
+        their corresponding CSS files contain additional styling for certain XML elements and are
+        merged with the selected <term>main styles</term>. You can select as many alternate styles
+        as you wish (they are applied sequentially as layers). If you are unsure about how each of
+        the styles with change the look of your documents based solely upon their name, there is no
+        harm in selecting them to see the difference. You can simply deselect them to revert to the
+        previous look.<note id="note_wb1_dgk_54b">If you deselect the <xref
+            href="the-css-sub-tab.dita#the-css-sub-tab/enable-multiple-css"><uicontrol>Enable
+              multiple selection of alternate CSSs</uicontrol> option</xref> in the
+            <uicontrol>CSS</uicontrol> subtab of the <xref
+            href="the-document-type-dialog.dita#the-document-type-dialog"><uicontrol>Document
+              Type</uicontrol> configuration dialog box</xref>, the <term>alternate styles</term>
+          are treated like <term>main CSS styles</term> and you can only select one at a
+          time.</note></p>
+    </section>
+    <note type="tip" id="note_ocx_zhy_pqb">For information about configuring the
+        <uicontrol>Styles</uicontrol> drop-down menu, see <xref
+        href="selecting-combining-multiple-css-styles.dita#selecting-combining-multiple-css-styles"
+      />.</note>
+  </body>
+  <related-links>
+      <link href="associate-schema-to-document.dita#associate-schema-to-document"/>
+      <link
+        href="selecting-combining-multiple-css-styles.dita#selecting-combining-multiple-css-styles"/>
+  </related-links>
+</topic>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_page_size">
+    <title>Page Size</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+          ><ph keyref="pdf-html5-transformation"/>
+          <indexterm>Debugging</indexterm></indexterm>        
+        <indexterm product="pdf-css ope">Page size</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+    <body>
+        <p id="p_knq_cgk_54b">This is where you can find information on how the page sizes are defined.</p>
+    </body>
+</topic>

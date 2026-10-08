@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="eppo-pathfinder-reuse">
+  <title>Reusing DITA Content</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>DITA<indexterm>Reusing content</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_ojm_dgk_54b">Reusing content is one of the key features of DITA and DITA provides several methods for
+      reusing content. <ph keyref="product"/> provides support for each of these methods.</p>
+    <section id="reusing_topics_in_dita_maps">
+      <title>Reusing Topics in DITA Maps</title>
+      <p id="p_pjm_dgk_54b">A DITA topic does not belong to any one publication. You add a DITA topic to a publication
+        by referencing it in a map. You can <xref href="eppo-reuse-topics.dita">reference the same
+          topic in multiple maps</xref>. </p>
+    </section>
+    <section id="reusing_content_with_references_and_keys">
+      <title>Reusing Content with References and Keys</title>
+      <p id="p_qjm_dgk_54b">DITA allows you to reuse content by referencing it in another topic.
+        DITA provides <xref href="working-with-content-references.dita">several mechanisms for
+          including content by reference</xref> (<term>conref</term>, <term>conkeyref</term>,
+          <term>coderef</term>). A <xref href="eppo-create-conref.dita"><codeph>conref</codeph>
+          (content reference)</xref> creates a direct reference to a specific element of another
+        topic. A <xref href="eppo-create-conkeyref.dita"><codeph>conkeyref</codeph> (content key
+          reference)</xref> creates a reference to a key, which then points to a specific element in
+        another topic. The advantage of using a <term>conkeyref</term> is that you can change the
+        element that is included by changing the key reference. For example, since keys are defined
+        in maps, if you include a topic in multiple maps, you can use a different key reference in
+        each map. A <term>coderef</term> references an external file that contains literal code.</p>
+      <p id="p_rjm_dgk_54b"><ph keyref="product"/> provides support for all of these mechanisms. </p>
+      <p id="p_sjm_dgk_54b">While the <term>conref</term> and <term>conkeyref</term> mechanisms can
+        be used to reference any content element, it is considered best practice to only
+          <term>conref</term> or <term>conkeyref</term> content that is specifically set and managed
+        as reusable content. This practice helps reduce expensive errors, such as an author
+        accidentally deleting the source element that other topics are including by the reference.
+          <ph keyref="product"/> can help you create a reusable component from your current content. </p>
+    </section>
+    <section id="reusing_content_with_reusable_components">
+      <title>Reusing Content with Reusable Components</title>
+      <p id="p_tjm_dgk_54b">DITA allows you to select content in a topic, create a <xref
+          href="dita-reusable-components.dita">reusable component</xref> from it and reference that
+        component in other locations. Each reusable component is created as a separate file. Anytime
+        the content needs to be edited, you only need to update it in the component file and all the
+        locations in your topics that reference it will also be updated. This can help you to
+        maintain continuity and accuracy throughout your documents.</p>
+    </section>
+    <section id="reusing_content_with_variables">
+      <title>Reusing Content with Variables</title>
+      <p id="p_ujm_dgk_54b">DITA allows you to replace the content of certain elements with a value that is pointed to
+        by a key. This mechanism effectively means that you can <xref href="eppo-variables.dita"
+          >create variables in your content</xref>, which you can then create multiple outputs by
+        changing the value that the key points to. This is done by profiling the definition of the
+        key value, or by substituting another map with a different key value.</p>
+    </section>
+    <section id="reusing_content_with_dita_13_concepts">
+      <title>Reusing Content with DITA 1.3 Concepts</title>
+      <p id="p_vjm_dgk_54b">DITA 1.3 allows you to use some advanced concepts to expand content
+        reuse possibilities even further. <xref href="dita-keyscopes.dita"><term>Key Scopes</term>
+          (or scoped keys)</xref> allow you to reuse topics with variable content depending on the
+        particular context and it maximizes reuse possibilities for keys. <xref
+          href="dita-branch-filtering.dita"><term>Branch Filtering</term></xref> allows you to reuse
+        the same content that is profiled in multiple ways within the same publication, each time
+        using a different filter.</p>
+    </section>
+    <section id="dita_reusable_components_view">
+      <title>DITA Reusable Components View</title>
+      <p id="p_wjm_dgk_54b">If you use a large amount of keys or reusable components in your DITA project, the <xref
+          href="dita-reusable-components-view.dita"><uicontrol>DITA Reusable Components</uicontrol>
+          view</xref> can be quite helpful. It collects all of the keys and reusable components that
+        are defined in the <xref keyref="glossentry_root-map"><term>root map</term></xref> and
+        presents them in a dynamic table where you can easily locate and insert references to
+        them.</p>
+    </section>
+    <section id="reuse_actions_in">
+      <title>Reuse Actions in <ph keyref="product"/></title>
+      <p id="p_xjm_dgk_54b"><ph keyref="product"/> includes some actions that are specifically designed for DITA
+        reusable content. These actions are available in the contextual menu, the
+          <uicontrol>DITA</uicontrol> menu, and some are available on the toolbar.</p>
+      <p id="p_yjm_dgk_54b">
+        <dl id="dl_zjm_dgk_54b">
+          <dlentry conkeyref="reusables-author-actions/dita-insert-content-reference" id="dlentry_akm_dgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+        </dl>
+        <dl id="dl_bkm_dgk_54b">
+          <dlentry conkeyref="reusables-author-actions/push-element-dlentry"
+            conrefend="../reusables/topics/author-actions.dita#author-actions/insert-reusable-dlentry" id="dlentry_ckm_dgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+        </dl>
+      </p>
+    </section>
+    <section id="section_v54_rr5_ypb">
+      <title>Resources</title>
+      <p id="p_w54_rr5_ypb">For more information about reusing strategies in DITA, see the following
+          resources:<ul id="ul_abq_dt5_ypb">
+          <li id="li_ug3_4t5_ypb"><xref
+              href="https://www.oxygenxml.com/events/2020/webinar_working_with_dita_in_oxygen.html"
+              format="html" scope="external"><b><b>Webinar: Working with DITA in Oxygen - Basic
+                  Profiling and Reuse Strategies</b></b></xref></li>
+          <li id="li_bbq_dt5_ypb"><xref
+              href="https://www.oxygenxml.com/events/2021/webinar_working_with_dita_in_oxygen_advanced_profiling_and_reuse_strategies.html"
+              format="html" scope="external"><b><b>Webinar: Working with DITA in Oxygen - Advanced
+                  Profiling and Reuse Strategies</b></b></xref></li>
+        </ul></p>
+    </section>
+  </body>
+  <related-links>
+      <link href="eppo-background-keys.dita#eppo-background-keys"/>
+  </related-links>
+</topic>

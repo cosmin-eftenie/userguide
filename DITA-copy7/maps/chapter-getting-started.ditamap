@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map id="chapter.getting-started" title="Getting Started">
+  <topicref href="../topics/getting-started-intro.dita" collection-type="sequence">
+    <topicmeta>
+      <shortdesc>Information and resources to help you get started using <ph keyref="product"/> as
+        quickly as possible</shortdesc>
+    </topicmeta>
+    <topicref href="../topics/what-is-oxygen.dita"/>
+    <topicref href="../topics/getting-familiar.dita" copy-to="../topics/getting-familiar-2.dita"/>
+    <topicref href="../topics/videos-other-resources.dita"/>
+    <topicref href="../topics/getting-started-task.dita" collection-type="sequence"
+      product="author developer editor authorEclipse developerEclipse editorEclipse">
+      <topicref href="../topics/getting-started-first-XML-document.dita"
+        keys="get-started_xml-document" product="author editor authorEclipse editorEclipse"/>
+      <topicref href="../topics/eppo-first-dita-topic.dita"
+        product="author editor authorEclipse editorEclipse"
+        copy-to="../topics/eppo-first-dita-topic-2.dita"/>
+      <topicref href="../topics/create-new-project.dita"
+        copy-to="../topics/create-new-project-2.dita"/>
+    </topicref>
+  </topicref>
+</map>

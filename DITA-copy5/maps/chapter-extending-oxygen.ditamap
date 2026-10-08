@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map product="author developer editor">
+  <title>Extending Oxygen With the SDK</title>
+  <topicref href="../topics/extending-oxygen.dita" collection-type="sequence" keys="extending-oxygen">
+    <topicmeta>
+      <shortdesc>Information about extending <ph keyref="product"/> using the SDK</shortdesc>
+      <data name="wh-menu">
+        <data name="hide" value="yes"/>
+      </data>
+    </topicmeta>
+    <topicref href="../topics/extend-oxygen-with-plugins.dita" keys="plugins"
+      product="author developer editor" collection-type="sequence">
+      <topicref href="../topics/oxygen-plugin.dita"/>
+      <topicref href="../topics/howto-install-plugins.dita"/>
+      <topicref href="../topics/pluginTypes.dita" collection-type="sequence">
+        <topicref href="../topics/workspace-access-plugin.dita" collection-type="sequence">
+          <topicref href="../topics/adding-oxygen-custom-view.dita"/>
+        </topicref>
+        <topicref href="../topics/workspace-access-plugin-js.dita"/>
+        <topicref href="../topics/trusted-hosts-plugin-extension.dita"/>
+        <topicref href="../topics/author-stylesheet-extension.dita" product="author editor"/>
+        <topicref href="../topics/additional-framework-extension.dita"/>
+        <topicref href="../topics/additional-xproc-engine.dita"/>
+        <topicref href="../topics/components-validation-plugin.dita"/>
+        <topicref href="../topics/contribute-new-languages-extension.dita"/>
+        <topicref href="../topics/contribute-external-dita-ot-extension.dita"/>
+        <topicref href="../topics/custom-protocol-plugin.dita"/>
+        <topicref href="../topics/lock-handler-factory.dita"/>
+        <topicref href="../topics/open-redirect-plugin.dita"/>
+        <topicref href="../topics/optionpage-plugin.dita"/>
+        <topicref href="../topics/optionpagegroup-plugin.dita"/>
+        <topicref href="../topics/resource-locking-custom-protocol-plugin.dita"/>
+        <topicref href="../topics/stylesfilter-plugin.dita" product="author editor"/>
+        <topicref href="../topics/targeted-url-handler-plugin.dita"/>
+        <topicref href="../topics/refactoring-plugin-extension.dita"/>
+        <topicref href="../topics/xslt-transformer-plugin-extension.dita"/>
+        <topicref href="../topics/validator-plugin-extension.dita"/>
+        <topicref href="../topics/saxon-xslt-transformer-plugin-extension.dita"/>
+        <topicref href="../topics/xquery-transformer-plugin-extension.dita"/>
+        <topicref href="../topics/saxon-xquery-transformer-plugin-extension.dita"/>
+        <topicref href="../topics/text-editing-mode-plugins.dita" collection-type="sequence">
+          <topicref href="../topics/general-plugin.dita"/>
+          <topicref href="../topics/selection-plugin.dita" chunk="to-content">
+            <topicref href="../topics/example-uppercase-plugin.dita" toc="no"/>
+          </topicref>
+          <topicref href="../topics/document-plugin.dita"/>
+        </topicref>
+      </topicref>
+      <topicref href="../topics/howto-cms-plugin.dita" collection-type="sequence">
+        <topicref href="../topics/class-loading-issues.dita"/>
+      </topicref>
+      <topicref href="../topics/howto-custom-protocol-plugin.dita"/>
+      <topicref href="../topics/share-classloader-between-framework-and-plugin.dita"/>
+      <topicref href="../topics/packing-and-deploying-plugins-as-addons.dita"
+        navtitle="Packing and Deploying Plugins as Add-ons" locktitle="yes"/>
+      <topicref href="../topics/testing-plugins-extensions.dita" collection-type="sequence">
+        <topicref href="../topics/automated-tests.dita"
+          copy-to="../topics/automated-tests-x-sdk2.dita"/>
+        <topicref href="../topics/debug-plugin-intelliJ.dita"/>
+        <topicref href="../topics/debug-plugin.dita"/>
+        <topicref href="../topics/debug-sdk.dita"/>
+      </topicref>
+      <topicref href="../topics/disable-plugin.dita"/>
+    </topicref>
+    <topicref href="../topics/author-component.dita" collection-type="sequence"
+      product="author editor">
+      <topicref href="../topics/component_licensing.dita"/>
+      <topicref href="../topics/component_installation_requirements.dita"/>
+      <topicref href="../topics/author_component_customization.dita" collection-type="sequence">
+        <topicref href="../topics/component_customization_example.dita"/>
+        <topicref href="../topics/author_component_pack_options.dita"/>
+      </topicref>
+      <topicref href="../topics/mathml_support.dita" collection-type="sequence">
+        <topicref href="../topics/mathml_support_jeuclid.dita"/>
+        <topicref href="../topics/mathml_support_mathflow.dita"/>
+      </topicref>
+      <topicref href="../topics/insert-reference-from-webdav-repository.dita"/>
+      <topicref href="../topics/author-component-plugins.dita"/>
+      <topicref href="../topics/component_faq.dita" collection-type="sequence">
+        <topicref href="../topics/api_faq_print_document_in_applet.dita"/>
+      </topicref>
+    </topicref>
+    <topicref href="../topics/customizing_webapp.dita" product="author editor"
+      collection-type="sequence">
+      <topicref href="../topics/wa-product-vs-sdk.dita"/>
+    </topicref>
+    <topicref href="../dev_guide/oxygen_customization_developers_guide.ditamap" format="ditamap"
+      collection-type="sequence"/>
+    <mapref href="APIFaq.ditamap" format="ditamap"/>
+  </topicref>
+</map>

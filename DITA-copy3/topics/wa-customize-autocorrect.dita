@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="wa-customize-autocorrect">
+  <title>Customizing AutoCorrect Dictionary</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Customize autocorrect</indexterm>
+        <indexterm>AutoCorrect terms</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_utq_dgk_54b"><ph keyref="webappProduct"/> includes an <term>AutoCorrect</term> feature to automatically
+      correct misspelled words as you type. There is a default list of commonly misspelled words and
+      symbols for each supported language, but you can modify the list to suit your needs.</p>
+    <section id="create_and_add_personalized_term_lists">
+      <title>Customizing the AutoCorrect Terms List Using Oxygen XML Editor/Author</title>
+      <p id="p_vtq_dgk_54b">To customize the term list used by the <term>AutoCorrect</term> feature, follow these steps:<ol id="ol_wtq_dgk_54b">
+          <li conkeyref="reusables-cf-wa-waCustom/options-autocorrect-li1" id="li_xtq_dgk_54b"/>
+          <li conkeyref="reusables-cf-wa-waCustom/options-autocorrect-li2" id="li_ytq_dgk_54b"/>
+          <li conkeyref="reusables-cf-wa-waCustom/options-autocorrect-li3" id="li_ztq_dgk_54b"/>
+          <li conkeyref="reusables-cf-wa-waCustom/options-autocorrect-li4" id="li_a5q_dgk_54b"/>
+          <li id="li_b5q_dgk_54b">Copy or move that patch file to the <filepath>options/autocorrect</filepath> folder
+            that is located inside your <xref href="wa-oxygen-data-dir.dita"><term>Oxygen Data
+                Directory</term></xref> (<codeph>oxygen.data.dir/options/autocorrect</codeph>).</li>
+          <li conkeyref="reusables-cf-wa-waCustom/options-autocorrect-li6" id="li_c5q_dgk_54b"/>
+        </ol></p>
+    </section>
+    <section id="section_bt4_s1p_thb">
+      <title>Alternate Method (Without Using Oxygen XML Editor/Author)</title>
+      <p id="p_d5q_dgk_54b">
+        <ol id="ol_e5q_dgk_54b">
+          <li id="li_f5q_dgk_54b">Create a patch file called <filepath>en_patch.xml</filepath> with
+            content like
+            this:<codeblock outputclass="language-xml" id="codeblock_g5q_dgk_54b">&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;replacements>
+    &lt;deletion match="i" substitution="I"/>
+    &lt;addition match="OXWA" substitution="Oxygen XML Web Author"/>
+&lt;/replacements></codeblock></li>
+          <li id="li_h5q_dgk_54b">Save it in the <filepath>options/autocorrect</filepath> folder that is located inside
+            your <xref href="wa-oxygen-data-dir.dita"><term>Oxygen Data Directory</term></xref>
+              (<codeph>oxygen.data.dir/options/autocorrect</codeph>).</li>
+          <li conkeyref="reusables-cf-wa-waCustom/options-autocorrect-li6" id="li_i5q_dgk_54b"/>
+        </ol>
+      </p>
+    </section>
+    <section id="section_itb_t1k_mkb">
+      <title>Text-to-Markup AutoCorrrect Conversions</title>
+      <p id="p_j5q_dgk_54b">Some built-in frameworks include a configuration file that defines shortcut patterns that
+        can be used to automatically insert a certain XML structure. More specifically, the XML
+        structure (fragment) automatically replaces a specific prefix pattern. For example, if you
+        are editing a DITA document using the built-in DITA framework, entering a hyphen (<b>-</b>)
+        followed by a space at the beginning of a paragraph would automatically replace them with an
+        unordered list element (<xmlelement>ul</xmlelement>) with a child list item element
+          (<xmlelement>li</xmlelement>). This is made possible by the <term>AutoCorrect</term>
+        mechanism.</p>
+      <p id="p_k5q_dgk_54b">It is possible to customize the particular configuration file
+          (<filepath>structureAutocorrect.xml</filepath>) to define your own markup insertion
+        shortcut patterns for your <xref href="customizing_frameworks.dita" product="waCustom"
+          >custom framework</xref><ph product="webauthor">custom <xref keyref="glossentry_framework"
+              ><term>framework</term></xref></ph> (document type). For more information, see <xref
+          href="https://www.oxygenxml.com/doc/ug-editor/topics/customizing-structure-insertion.html"
+          format="html" scope="external">Customizing Text-to-Markup Automatic
+        Conversions</xref>.</p>
+    </section>
+  </body>
+</topic>

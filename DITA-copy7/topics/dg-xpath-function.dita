@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept
+  PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="dg-xpath-function">
+  <title>XPath: oxy_xpath() Function</title>
+  <shortdesc>This function is used to evaluate XPath expressions.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>CSS extensions<indexterm>Custom
+            functions<indexterm>oxy_xpath</indexterm></indexterm>
+        </indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p id="p_vjd_dgk_54b">
+      <dl id="dl_wjd_dgk_54b">
+        <dlentry id="dlentry_xjd_dgk_54b">
+          <dt>Syntax:</dt>
+          <dd>
+            <p id="p_yjd_dgk_54b">
+              <syntaxdiagram>
+                <groupseq>
+                  <kwd>oxy_xpath</kwd>
+                  <sep>(</sep>
+                  <kwd>XPathExpression</kwd>
+                  <sep>[,</sep>
+                  <kwd>processChangeMarkers</kwd>
+                  <sep>,</sep>
+                  <kwd>value</kwd>
+                  <sep>]</sep>
+                  <sep>[,</sep>
+                  <kwd>evaluate</kwd>
+                  <sep>,</sep>
+                  <kwd>value</kwd>
+                  <sep>])</sep>
+                </groupseq>
+              </syntaxdiagram>
+            </p>
+            <p id="p_zjd_dgk_54b">It evaluates the given XPath 3.1 expression using the latest Saxon
+              XSLT processor bundled with the application and returns the result. XPath expressions
+              that depend on the cursor location can be successfully evaluated only when the cursor
+              is located in the actual XML content. </p>
+            <p id="p_akd_dgk_54b">The parameters of the function are as follows: <ul id="ul_g4l_r5j_4r">
+                <li id="li_bkd_dgk_54b">A required <codeph>expression</codeph> parameter, which is the XPath expression
+                  to be evaluated. </li>
+                <li id="li_ckd_dgk_54b">An optional <codeph>processChangeMarkers</codeph> parameter, followed by its
+                  value, which can be either <codeph>true</codeph> or <codeph>false</codeph>
+                  (default value). When you set the parameter to <codeph>true</codeph>, the function
+                  returns the resulting text with all the change markers accepted (<i>delete</i>
+                  changes are removed and <i>insert</i> changes are preserved). </li>
+                <li id="li_dkd_dgk_54b">An optional <codeph>evaluate</codeph> parameter, followed by its value, which
+                  can be one of the following:<ul id="ul_m32_lv3_qr">
+                    <li id="li_ekd_dgk_54b"><uicontrol>dynamic</uicontrol> - Evaluates the XPath
+                      each time there is a change in the document. This is the default evaluation
+                        value.<note id="note_s4n_2gd_ttb" type="important">If the edited XML
+                        document is large, using dynamic XPath evaluation may induce performance
+                        issues while editing the content.</note></li>
+                    <li id="li_fkd_dgk_54b"><uicontrol>dynamic-once</uicontrol> - Separately
+                      evaluates the XPath for each node that matches the CSS selector. It will not
+                      re-evaluate the expression when changes are made to other nodes in the
+                      document. This will lead to improved performance, but the displayed content
+                      may not be updated to reflect the actual document content.</li>
+                    <li id="li_gkd_dgk_54b"><uicontrol>static</uicontrol> - If the same XPath is
+                      evaluated on several nodes, the result for the first evaluation will be used
+                      for all other matches. Use this only if the XPath does not contain a
+                      relationship with the node on which the CSS property is evaluated. This will
+                      lead to improved performance, but the static displayed content may not be
+                      updated to reflect the actual document content.</li>
+                  </ul></li>
+              </ul></p>
+          </dd>
+        </dlentry>
+      </dl>
+    </p>
+    <p id="note_hkd_dgk_54b">When XPath expressions are evaluated, the entities and
+        <xmlelement>xi:include</xmlelement> elements are replaced with the actual content that is
+      referenced. For example, consider the following code
+      snippet:<codeblock outputclass="language-xml" id="codeblock_ikd_dgk_54b">&lt;article>
+  &lt;xi:include href="section1.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+&lt;/article></codeblock>where <filepath>section1.xml</filepath> contains the following
+      content:<codeblock outputclass="language-xml" id="codeblock_jkd_dgk_54b">&lt;section>
+  &lt;p>Referenced content&lt;/p>
+&lt;/section></codeblock>The XPath expression will be executed over the actual content in the
+        <filepath>section1.xml</filepath> file.</p>
+    <p id="p_kkd_dgk_54b"><b><u>Example: <term>oxy_xpath</term> Function</u></b></p>
+    <p id="p_lkd_dgk_54b">The following example counts the number of words from a paragraph (including <xref
+        keyref="glossentry_track-changes"><term>tracked changes</term></xref>) and displays the
+      result in front of
+      it:<codeblock outputclass="language-css" id="codeblock_mkd_dgk_54b">para:before{ 
+  content: 
+   concat("|Number of words:", 
+    oxy_xpath(
+        "count(tokenize(normalize-space(string-join(text(), '')), ' '))",
+        processChangeMarkers,
+       true),
+    "| "); 
+}</codeblock></p>
+      <p id="note_okd_dgk_54b">The <codeph>oxy_xpath()</codeph> function supports <xref
+          href="editor-variables.dita#editor-variables"><term>editor variables</term></xref>, as in
+        the following
+        example:<codeblock outputclass="language-css" id="codeblock_pkd_dgk_54b">* {
+    content: 
+    oxy_concat("Result: ", 
+        oxy_xpath('count(collection("${cfdu}/?select=*.xml"))')
+    );
+}</codeblock></p>
+      <p id="note_mxt_34g_fsb">You can split the XPath expression on multiple lines by adding a
+        backslash before each new
+        line:<codeblock outputclass="language-css" id="codeblock_mxm_j4g_fsb">* {
+    content: oxy_xpath('count(\
+                     collection(\
+                        "${cfdu}/?select=*.xml"))')
+}</codeblock></p>
+  </conbody>
+</concept>

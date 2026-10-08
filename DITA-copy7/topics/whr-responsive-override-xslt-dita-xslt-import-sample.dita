@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="whr-responsive-override-xslt-dita-xslt-import-sample">
+  <title>How to Use XSLT Extension Points from a DITA-OT Plugin</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <keyword outputclass="label" product="webhelp-responsive">DITA-OT</keyword>
+        <keyword outputclass="label" product="webhelp-responsive">XSLT Extensions</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_kn4_cgk_54b">In this example, the main page footer is modified by adding copyright
+      information extracted from the DITA bookmap or by adding the output generation time. The first
+      use-case uses an <term>XSLT-Import</term> extension point while the second uses an
+        <term>XSLT-Parameter</term> extension point.</p>
+    <note id="note_ln4_cgk_54b">This customization is available as a GitHub project at: <xref
+        href="https://github.com/oxygenxml/com.oxygenxml.webhelp.responsive.custom.footer"
+        format="html" scope="external"/>. </note>
+    <section id="section_edl_ycb_3z">
+      <title>Use Case 1: WebHelp <term>XSLT-Import</term> extension point to add copyright
+        information extracted from a DITA Bookmap</title>
+      <p id="p_mn4_cgk_54b">Suppose you want to customize the WebHelp Responsive main page by adding information about
+        the legal rights associated with the book in the footer (for example, copyright dates and
+        owner). This information is specified in the bookmap:</p>
+      <codeblock outputclass="language-xml" id="codeblock_nn4_cgk_54b">&lt;bookrights>            
+  &lt;copyrfirst>
+    &lt;year>2002&lt;/year>
+  &lt;/copyrfirst>
+  &lt;copyrlast>
+    &lt;year>2017&lt;/year>
+  &lt;/copyrlast>
+  &lt;bookowner>
+    &lt;organization>SyncRO Soft SRL&lt;/organization>                
+  &lt;/bookowner>
+&lt;/bookrights></codeblock>
+      <p id="p_on4_cgk_54b">
+        <fig id="fig_f5m_bdb_3z">
+          <title>Example: Copyright Information Added in the WebHelp Footer</title>
+          <image href="../img/WH-XSLT-customization.png" id="image_h4x_prg_dx"/>
+        </fig>
+      </p>
+      <p id="p_pn4_cgk_54b">The XSLT stylesheet that generates the main page is located in:
+            <filepath><term keyref="glossentry_dita_ot_dir"
+          />\plugins\com.oxygenxml.webhelp.responsive\xsl\mainFiles\createMainPage.xsl</filepath>.
+        This XSLT stylesheet declares the <codeph>copy_template</codeph> mode that processes the
+        main page template to expand its components. The <xref
+          href="html_page_templates.dita#html_page_templates/main-page">main page template</xref>
+        declares a component for the footer section that looks like this:</p>
+      <codeblock outputclass="language-xml" id="codeblock_qn4_cgk_54b">&lt;div class=" footer-container text-center ">
+  &lt;whc:include_html href="${webhelp.fragment.footer}"/>
+&lt;/div></codeblock>
+      <p id="p_rn4_cgk_54b">In the following example, the extension stylesheet will add a template that matches this
+        component. It applies the default processing and adds the copyright information at the
+        end.</p>
+      <codeblock outputclass="language-xml" id="codeblock_sn4_cgk_54b">&lt;xsl:template match="*:div[contains(@class, 'footer-container')]" mode="copy_template">
+  &lt;!-- Apply the default processing -->
+  &lt;xsl:next-match/>
+    
+  &lt;!-- Add a div containing the copyright information -->
+  &lt;div class="copyright_info">        
+      &lt;xsl:choose>
+          &lt;!-- Adds the start-end years if they are defined -->
+          &lt;xsl:when test="exists($toc/*:topicmeta/*:bookrights/*:copyrfirst) and 
+                              exists($toc/*:topicmeta/*:bookrights/*:copyrlast)">
+              &lt;span class="copyright_years">
+                 &amp;#xa9;&lt;xsl:value-of select="$toc/*:topicmeta/*:bookrights/*:copyrfirst"/>
+                       -&lt;xsl:value-of select="$toc/*:topicmeta/*:bookrights/*:copyrlast"/>
+              &lt;/span>
+          &lt;/xsl:when>
+            
+          &lt;!-- Adds only the first year if last is not defined. -->
+          &lt;xsl:when test="exists($toc/*:topicmeta/*:bookrights/*:copyrfirst)">
+              &lt;span class="copyright_years">
+                 &amp;#xa9;&lt;xsl:value-of select="$toc/*:topicmeta/*:bookrights/*:copyrfirst"/>
+              &lt;/span>
+          &lt;/xsl:when>
+      &lt;/xsl:choose>
+                    
+        
+      &lt;xsl:if test="exists($toc/*:topicmeta/*:bookrights/*:bookowner/*:organization)">
+          &lt;span class="organization">
+              &lt;xsl:text> &lt;/xsl:text>&lt;xsl:value-of 
+                   select="$toc/*:topicmeta/*:bookrights/*:bookowner/*:organization"/>
+              &lt;xsl:text>. All rights reserved.&lt;/xsl:text>
+          &lt;/span>
+      &lt;/xsl:if>
+  &lt;/div>
+&lt;/xsl:template></codeblock>
+      <p id="p_tn4_cgk_54b">You can implement this functionality with a WebHelp extension plugin that uses the <xref
+          href="whr-responsive-override-xslt-dita-xslt-import.dita#whr-responsive-override-xslt-dita-xslt-import/xsl-creatMainPage"
+            ><b>com.oxygenxml.webhelp.xsl.createMainPage</b> extension point</xref>. This extension
+        point allows you to specify a customization stylesheet that will override the template
+        described above.</p>
+      <p id="first-procedure">To add this functionality as a DITA-OT plugin, follow these steps:<ol
+          id="ol_at4_wk1_dx">
+          <li id="li_un4_cgk_54b">In the <filepath><term keyref="glossentry_dita_ot_dir"/>\plugins\</filepath> folder,
+            create a folder for this plugin (for example,
+              <filepath>com.oxygenxml.webhelp.responsive.custom.footer</filepath>).</li>
+          <li id="li_vn4_cgk_54b">Create a <b>plugin.xml</b> file (in the folder you created in step 1) that specifies
+            the extension point and your customization stylesheet. For
+            example:<codeblock outputclass="language-xml" id="codeblock_wn4_cgk_54b">&lt;plugin id="com.oxygenxml.webhelp.responsive.custom.footer">
+  &lt;feature extension="com.oxygenxml.webhelp.xsl.createMainPage"
+              file="custom_mainpage.xsl"/>    
+&lt;/plugin></codeblock></li>
+          <li id="li_xn4_cgk_54b">Create your customization stylesheet (for example, <b>custom_mainpage.xsl</b>), and
+            edit it to override the template that produces the footer
+            section:<codeblock outputclass="language-xml" id="codeblock_yn4_cgk_54b">&lt;xsl:template match="*:div[contains(@class, 'footer-container')]" mode="copy_template">
+  &lt;!-- Apply the default processing -->
+  &lt;xsl:next-match/>
+
+  &lt;!-- Add a div containing the copyright information -->
+  &lt;div class="copyright_info">        
+      &lt;xsl:choose>
+          &lt;!-- Adds the start-end years if they are defined -->
+          &lt;xsl:when test="exists($toc/*:topicmeta/*:bookrights/*:copyrfirst) and 
+                        exists($toc/*:topicmeta/*:bookrights/*:copyrlast)">
+              &lt;span class="copyright_years">
+                 &amp;#xa9;&lt;xsl:value-of select="$toc/*:topicmeta/*:bookrights/*:copyrfirst"/>
+                       -&lt;xsl:value-of select="$toc/*:topicmeta/*:bookrights/*:copyrlast"/>
+              &lt;/span>
+          &lt;/xsl:when>
+            
+          &lt;!-- Adds only the first year if last is not defined. -->
+          &lt;xsl:when test="exists($toc/*:topicmeta/*:bookrights/*:copyrfirst)">
+              &lt;span class="copyright_years">
+                 &amp;#xa9;&lt;xsl:value-of select="$toc/*:topicmeta/*:bookrights/*:copyrfirst"/>
+              &lt;/span>
+          &lt;/xsl:when>
+      &lt;/xsl:choose>
+                    
+        
+      &lt;xsl:if test="exists($toc/*:topicmeta/*:bookrights/*:bookowner/*:organization)">
+          &lt;span class="organization">
+              &lt;xsl:text> &lt;/xsl:text>&lt;xsl:value-of 
+                   select="$toc/*:topicmeta/*:bookrights/*:bookowner/*:organization"/>
+              &lt;xsl:text>. All rights reserved.&lt;/xsl:text>
+          &lt;/span>
+      &lt;/xsl:if>
+  &lt;/div>
+&lt;/xsl:template></codeblock></li>
+          <li product="author developer editor authorEclipse developerEclipse editorEclipse"
+            id="li_zn4_cgk_54b">Use the <xref keyref="ditamap-run-dita-ot-integrator"
+                ><uicontrol>Integrate/Install DITA-OT Plugins</uicontrol> transformation
+              scenario</xref> found in the <uicontrol>DITA Map</uicontrol> section in the <xref
+              href="configure-transformation-dialog.dita#configure-transformation-dialog"
+                ><uicontrol>Configure Transformation Scenario(s)</uicontrol> dialog box</xref>.</li>
+          <li product="webhelp-responsive ope" id="li_a44_cgk_54b"><ph
+              conkeyref="reusables-webhelp-chapter/step_run_integrator"/><ul
+              conkeyref="reusables-webhelp-chapter/script-ul" id="ul_b44_cgk_54b">
+              <li id="li_c44_cgk_54b"/>
+            </ul></li>
+          <li product="author developer editor authorEclipse developerEclipse editorEclipse" id="li_d44_cgk_54b">Run a
+              <uicontrol>DITA Map WebHelp Responsive</uicontrol> transformation scenario to obtain
+            the customized side TOC.</li>
+          <li product="webhelp-responsive ope" id="li_e44_cgk_54b">Execute a DITA Map to WebHelp Responsive
+            transformation script.</li>
+        </ol></p>
+    </section>
+    <section id="section_hp1_phg_dx">
+      <title>Use-Case 2: WebHelp <term>XSLT-Parameter</term> Extension Point to Control if
+        Generation Time is Displayed in the Output</title>
+      <p id="p_f44_cgk_54b">Another possible customization for the main page is to add the
+        generation time in its footer. You can use an <term>XSLT-Parameter</term> extension point to
+        control whether or note this customization is active. In this case, you can use the <xref
+          href="whr-responsive-override-xslt-dita-xslt-import.dita#whr-responsive-override-xslt-dita-xslt-import/param-ext-point-xsl-creatMainPage"
+            ><codeph>com.oxygenxml.webhelp.xsl.createMainPage.param</codeph> extension
+        point</xref>.</p>
+      <p id="p_g44_cgk_54b">
+        <fig id="fig_wjy_ldz_2bb">
+          <title>Generation Time Added in the WebHelp Footer</title>
+          <image href="../img/WH-XSLT-customization-gen-date.png" id="image_jlh_hdz_2bb"
+            placement="inline"/>
+        </fig>
+      </p>
+      <p id="p_h44_cgk_54b">To add this functionality, follow these steps:<ol id="ol_i44_cgk_54b">
+          <li id="li_j44_cgk_54b">Create a DITA-OT plugin structure by following the first 3 steps in the <xref
+              href="#whr-responsive-override-xslt-dita-xslt-import-sample" format="dita">procedure
+              above</xref>. </li>
+          <li id="li_k44_cgk_54b">In the customization stylesheet that you just created (for example,
+              <b>custom_mainpage.xsl</b>), declare
+              <codeph>webhelp.footer.add.generation.time</codeph> as a global parameter and modify
+            the template by adding the following XSLT code at the
+            end.<codeblock outputclass="language-xml" id="codeblock_l44_cgk_54b">&lt;xsl:if test="$webhelp.footer.add.generation.time = 'yes'">
+    &lt;div class="generation_time">
+        Generation date: &lt;xsl:value-of select="format-dateTime(
+              current-dateTime(), '[h1]:[m01] [P] on [M01]/[D01]/[Y0001].')"/>
+    &lt;/div>    
+&lt;/xsl:if></codeblock></li>
+          <li id="li_m44_cgk_54b">Edit the <b>plugin.xml</b> file to specify the
+              <b>com.oxygenxml.webhelp.xsl.createMainPage.param</b> extension point and a custom
+            parameter file by adding the following
+            line:<codeblock outputclass="language-xml" id="codeblock_n44_cgk_54b">&lt;feature extension="com.oxygenxml.webhelp.xsl.createMainPage.param" file="params.xml"/></codeblock></li>
+          <li id="li_o44_cgk_54b">Create a custom parameter file (for example, <b>params.xml</b>). It should look like
+            this:<codeblock outputclass="language-xml" id="codeblock_p44_cgk_54b">&lt;dummy>
+    &lt;param name="webhelp.footer.add.generation.time" 
+        expression="${webhelp.footer.add.generation.time}"
+        if="webhelp.footer.add.generation.time"/>    
+&lt;/dummy></codeblock></li>
+          <li product="author developer editor authorEclipse developerEclipse editorEclipse"
+            id="li_q44_cgk_54b">Use the <xref keyref="ditamap-run-dita-ot-integrator"
+                ><uicontrol>Integrate/Install DITA-OT Plugins</uicontrol> transformation
+              scenario</xref> found in the <uicontrol>DITA Map</uicontrol> section in the <xref
+              href="configure-transformation-dialog.dita#configure-transformation-dialog"
+                ><uicontrol>Configure Transformation Scenario(s)</uicontrol> dialog box</xref>.</li>
+          <li product="webhelp-responsive ope" id="li_r44_cgk_54b"><ph
+              conkeyref="reusables-webhelp-chapter/step_run_integrator"/><ul
+              conkeyref="reusables-webhelp-chapter/script-ul" id="ul_s44_cgk_54b">
+              <li id="li_t44_cgk_54b"/>
+            </ul></li>
+          <li product="author developer editor authorEclipse developerEclipse editorEclipse" id="li_u44_cgk_54b">Edit a
+              <uicontrol>DITA Map WebHelp Responsive</uicontrol> transformation scenario and in the
+              <xref href="dita-map-edit-parameters.dita#dita-map-edit-parameters"
+                ><uicontrol>Parameters</uicontrol> tab</xref>, specify the desired value (<i>yes</i>
+            or <i>no</i>) for your custom parameter
+              (<codeph>webhelp.footer.add.generation.time</codeph>).</li>
+          <li product="webhelp-responsive ope" id="li_v44_cgk_54b">Use the
+              <codeph>webhelp.footer.add.generation.time</codeph> parameter in your DITA
+            transformation script and specify the desired value (<i>yes</i> or <i>no</i>).</li>
+          <li id="li_w44_cgk_54b">Run the transformation scenario.</li>
+        </ol></p>
+    </section>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link format="html"
+        href="http://www.dita-ot.org/dev/extension-points/plugin-extension-points-xslt-import"
+        scope="external">
+        <linktext>[DITA-OT] <term>XSLT-Import</term> Extension Points</linktext>
+      </link>
+      <link format="html"
+        href="http://www.dita-ot.org/dev/extension-points/plugin-extension-points-xslt-parameters"
+        scope="external">
+        <linktext>[DITA-OT] <term>XSLT-Parameter</term> Extension Points</linktext>
+      </link>
+    </linklist>
+  </related-links>
+</topic>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="preview-result-pane">
+  <title>Integrated SVG Viewer in the Results Panel</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>SVG files<indexterm>SVG viewer in Results panel</indexterm></indexterm>
+        <indexterm>SVG Viewer in Results panel</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_x5h_cgk_54b"><ph keyref="product"/> includes an integrated <b>SVG Viewer</b> that can render the
+      results of an XSLT transformation scenario that generates SVG images in the <xref
+        href="results-view.dita#results-view"><uicontrol>Results</uicontrol> panel</xref> at the
+      bottom of the editor. This is useful for developing XSL stylesheets with the capability of
+      producing SVG graphics.</p>
+    <p id="p_y5h_cgk_54b">To enable this feature, select <menucascade>
+        <uicontrol>Show in results view as</uicontrol>
+        <uicontrol>SVG</uicontrol>
+      </menucascade> in the <xref href="the-output-tab.dita#the-output-tab"
+          ><uicontrol>Output</uicontrol> tab of the XSLT transformation scenario configuration
+        dialog box</xref>. When you run the transformation, the SVG result is then rendered in an
+      integrated SVG viewer in the <xref href="results-view.dita#results-view"
+          ><uicontrol>Results</uicontrol> panel</xref>.</p>
+    <section id="example_of_a_usecase">
+      <title>Example of a Use-Case</title>
+      <p id="p_z5h_cgk_54b">Suppose you have an XML document that describes the evolution of your sales over a time
+        period and you want to create a graphic for it. You could use the following steps to
+        accomplish this task:<ol id="ol_avh_cgk_54b">
+          <li id="li_bvh_cgk_54b">Start with a static SVG image, written directly in <ph keyref="product"/> or exported
+            from a external graphics tool.</li>
+          <li id="li_cvh_cgk_54b">Extract the parts that are dependent upon the data from the XML document and create an
+            XSL template to produce the image.</li>
+          <li id="li_dvh_cgk_54b">Create an <xref href="xml-transformation-with-xslt.dita#xml-transformation-with-xslt"
+                ><uicontrol>XML transformation with XSLT</uicontrol> scenario</xref>.</li>
+          <li id="li_evh_cgk_54b">While configuring the transformation scenario, select <xref
+              href="the-output-tab.dita#the-output-tab"><menucascade>
+                <uicontrol>Show in results view as</uicontrol>
+                <uicontrol>SVG</uicontrol>
+              </menucascade> in the <uicontrol>Output</uicontrol> tab</xref> of the configuration
+            dialog box.</li>
+          <li id="li_fvh_cgk_54b">Run the transformation.</li>
+        </ol></p>
+      <p id="p_gvh_cgk_54b">The SVG image is rendered in an integrated SVG viewer in the <xref
+          href="results-view.dita#results-view"><uicontrol>Results</uicontrol> panel</xref> at the
+        bottom of the editor.</p>
+      <p id="p_hvh_cgk_54b">
+        <fig id="fig_ivh_cgk_54b">
+          <title>Integrated SVG Viewer</title>
+          <image href="../img/sa_integrated_svg_viewer.png" placement="inline"/>
+        </fig>
+      </p>
+    </section>
+  </body>
+</topic>

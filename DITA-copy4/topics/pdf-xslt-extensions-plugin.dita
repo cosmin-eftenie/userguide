@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="pdf-xslt-extensions-plugin">
+  <title>How to Use XSLT Extension Points for PDF Output from a DITA-OT Plugin</title>
+  <shortdesc>The examples in this section demonstrate how to use XSLT extension points from a <xref
+      keyref="dot-custom-plugins" format="html" scope="external">DITA-OT plugin</xref>.</shortdesc>
+  <body>
+    <p>Instead of directly adding plugins inside the embedded DITA-OT, it is highly recommended to
+      use an external <xref href="https://www.oxygenxml.com/publishing_engine/download.html"
+        format="html" scope="external">Oxygen Publishing Engine</xref> so that you will not lose any
+      of your customizations anytime you upgrade the product in the future.</p>
+    <p>You just need to follow these steps before starting your custom DITA-OT plugins:<ol
+        id="ol_y4r_jhy_lrb">
+        <li>Download the <xref href="https://www.oxygenxml.com/publishing_engine/download.html"
+            format="html" scope="external">Oxygen Publishing Engine</xref> and unzip it inside a
+          folder where you have full write access.</li>
+        <li>Create your custom plugin(s) inside the <filepath><term keyref="glossentry_dita_ot_dir"
+            />\plugins\</filepath> folder.</li>
+        <li>Go to <menucascade>
+            <uicontrol>Options</uicontrol>
+            <uicontrol>Preferences</uicontrol>
+            <uicontrol>DITA</uicontrol>
+          </menucascade>, set the <uicontrol>DITA Open Toolkit</uicontrol> option to
+            <uicontrol>Custom</uicontrol>, and specify the path to the unzipped folder.<note
+            id="note_xfm_f3y_lrb" type="warning">The path must end with:
+              <codeph>oxygen-publishing-engine</codeph>.</note></li>
+      </ol></p>
+  </body>
+</topic>

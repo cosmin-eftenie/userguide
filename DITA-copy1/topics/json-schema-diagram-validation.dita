@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="json-schema-diagram-validation">
+  <title>JSON Schema Design Mode Validation</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>JSON Schema diagram editor<indexterm>Validation</indexterm></indexterm>
+        <indexterm>JSON Schema Design mode<indexterm>Validation</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_ilc_cgk_54b">Validation for the <uicontrol>Design</uicontrol> mode is seamlessly
+      integrated in the <ph keyref="product"/>
+      <xref href="json-validating-json-schema.dita">JSON Schema validation support</xref>. You can
+      ensure that the JSON Schemas you develop comply with JSON standards by using the built-in
+      validation engine. You can also configure a validation scenario to use an external JSON Schema
+      validation engine. A validation scenario can also be configured to define a main module of a
+      complex JSON Schema to validate modules in the context of the larger schema structure.</p>
+    <p id="p_jlc_cgk_54b">
+      <fig id="fig_klc_cgk_54b">
+        <title>JSON Schema Design Mode Validation</title>
+        <image href="../img/json-schema-design-validation.png"/>
+      </fig>
+    </p>
+    <section id="section_ojp_knc_2rb">
+      <title>Visual Error Markers</title>
+      <p id="p_nlc_cgk_54b">A schema validation error is presented by highlighting the invalid
+        component in the following locations:<ul id="ul_olc_cgk_54b">
+          <li id="li_qlc_cgk_54b">The component is surrounded with a red or yellow border within the
+            diagram (you can customize these colors in the <xref
+              href="preferences-editor-document-checking.dita">Document Validation preferences
+              page</xref>).</li>
+          <li product="developer editor json" id="li_slc_cgk_54b">A tooltip contains information
+            about the error when hovering over the error within the diagram.</li>
+          <li product="developer editor json" id="li_rlc_cgk_54b">The vertical stripe at the right
+            side of the editor displays error markers.</li>
+          <li product="developer editor json" id="li_slc_cgk_54b2">In the message area at the bottom
+            of the editor (denoted with a red icon <image href="../img/ValidationError12.png"
+              id="image_cbz_pwv_sr"/>).</li>
+        </ul></p>
+      <p id="p_wlc_cgk_54b">If you validate the entire schema using the <uicontrol><image
+            href="../img/Validate16.png" id="image_cjg_4tv_sr"/>Validate</uicontrol> action from the
+            <uicontrol><image href="../img/ValidateDrop.png" id="image_tkw_ntv_sr"
+          />Validation</uicontrol> toolbar drop-down menu, all validation errors will be presented
+        in the <uicontrol>Results</uicontrol> pane at the bottom of the application. To resolve an
+        error, just click it and the corresponding schema component will be displayed as the diagram
+        root so that you can easily correct the error.</p>
+    </section>
+  </body>
+</topic>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="user-entry-sqf-operation">
+  <title>User Entry SQF Operation</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Schematron Quick Fixes<indexterm>User Entry operation</indexterm></indexterm>
+        <indexterm>SQF<indexterm>User Entry operation</indexterm></indexterm>
+        <indexterm>User Entry SQF operation</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_ckh_cgk_54b">The <xmlelement>sqf:user-entry</xmlelement> element defines a value that must be set manually
+      by the user. If multiple <xmlelement>user-entry</xmlelement> elements are defined, <ph
+        keyref="product"/> will display a dialog box for each one where the user can specify
+      values. Also, the <xmlelement>user-entry</xmlelement> element can be used as an XPath variable
+      where the XPath variable is the name of the <xmlelement>user-entry</xmlelement>. Note that the
+        <xmlatt>default</xmlatt> attribute defines a default value for the operation by using an
+      XPath expression (as in the example below) and its value will be presented in the user entry
+      dialog box.</p>
+    <p id="p_dkh_cgk_54b"><b>An Example of the <xmlelement>sqf:user-entry</xmlelement>
+      Element:</b><codeblock outputclass="language-xml" id="codeblock_ekh_cgk_54b">&lt;sqf:fix id="editTitle">
+    &lt;sqf:description>
+        &lt;sqf:title>Edit the journal title&lt;/sqf:title>
+    &lt;/sqf:description>
+    &lt;sqf:user-entry name="newTitle" default="@title">
+        &lt;sqf:description>
+            &lt;sqf:title>Edit the title:&lt;/sqf:title>
+        &lt;/sqf:description>
+    &lt;/sqf:user-entry>
+    &lt;sqf:replace match="@title" target="title" node-type="keep" select="$newTitle"/>
+&lt;/sqf:fix></codeblock></p>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link href="sqf-operations.dita#sqf-operations"/>
+      <link href="examples-schematron-sqf.dita"/>
+    </linklist>
+  </related-links>
+</topic>

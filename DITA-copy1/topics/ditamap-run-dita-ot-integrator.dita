@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ditamap-run-dita-ot-integrator">
+  <title>Integrate/Install DITA-OT Plugins Transformation</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Transformation Scenarios<indexterm>Integrate DITA-OT
+          plugins</indexterm></indexterm>
+        <indexterm>Integrate DITA-OT plugins</indexterm>
+        <indexterm>Install DITA-OT plugins</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_wbl_cgk_54b"><ph keyref="product"/> comes bundled with a transformation scenario
+      designed to integrate DITA-OT <xref keyref="glossentry_plugin">plugins</xref>. These DITA-OT
+        <term>plugins</term> are used for various customizations. It is called <b>Integrate/Install
+        DITA-OT Plugins</b> and is found in the <uicontrol>DITA Map</uicontrol> section of the <xref
+        href="configure-transformation-dialog.dita#configure-transformation-dialog"
+            ><uicontrol><image href="../img/TransformConfig16.png"/>Configure Transformation
+          Scenario(s)</uicontrol> dialog box</xref>.<note type="attention" id="note_xbl_cgk_54b">The
+        integration will be performed on the DITA-OT version specified in the <xref
+          href="preferences-dita.dita#preferences-dita/DITA-OT-section"><uicontrol>DITA Open
+            Toolkit</uicontrol> section of the <uicontrol>DITA</uicontrol> preferences
+        page</xref>.</note><note conkeyref="reusables-user-guide/note-custom-dita-ot-limitations"
+        id="note_njq_b4z_ctb"/></p>
+    <section id="creating_the_transformation_scenario">
+      <title>Running the Transformation Scenario</title>
+      <p id="p_ybl_cgk_54b">To integrate a DITA-OT <term>plugin</term>, follow these steps:<ol id="ol_zbl_cgk_54b">
+          <li id="li_acl_cgk_54b">If <ph keyref="product"/> was installed in the default location, you may need to
+            restart and run it as an administrator.</li>
+          <li id="li_bcl_cgk_54b">Select the <uicontrol><image href="../img/ApplyStyleSheet16.png"/>Apply Transformation
+              Scenario(s)</uicontrol> or <xref
+              href="configure-transformation-dialog.dita#configure-transformation-dialog"
+                  ><uicontrol><image href="../img/TransformConfig16.png"/>Configure Transformation
+                Scenario(s)</uicontrol></xref> action from the <uicontrol>DITA Maps
+              Manager</uicontrol> toolbar (you could also use the same action on the main toolbar or
+            open the <xref href="scenarios-view.dita#scenarios-view"><b>Transformation Scenarios</b>
+              view</xref>).</li>
+          <li id="li_ccl_cgk_54b">Select the <b>Integrate/Install DITA-OT Plugins</b> transformation
+            scenario. If the <i>integrator</i> is not visible, select the <b>Show all scenarios</b>
+            action that is available in the <uicontrol><image href="../img/Settings16.png"
+                id="image_km5_xrs_yq"/>Settings</uicontrol> drop-down menu.</li>
+          <li id="li_dcl_cgk_54b"><xref href="apply-transformation-scenarios.dita#apply-transformation-scenarios">Apply
+              the scenario</xref>.</li>
+          <li id="li_ecl_cgk_54b">Check the <uicontrol>Results</uicontrol> panel at the bottom of the application to
+            make sure the build was successful.</li>
+          <li id="li_fcl_cgk_54b">Restart <ph keyref="product"/> with your normal permissions.</li>
+        </ol></p>
+    </section>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link href="configure-transformation-dialog.dita#configure-transformation-dialog"/>
+      <link href="dita-ot-install-plugin.dita#dita-ot-install-plugin"
+        product="author editor authorEclipse editorEclipse"/>
+      <link href="dita-integrate-specialization.dita#dita-integrate-specialization"
+        product="author editor authorEclipse editorEclipse"/>
+    </linklist>
+  </related-links>
+</topic>

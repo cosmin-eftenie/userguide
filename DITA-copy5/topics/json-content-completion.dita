@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="json-content-completion">
+  <title>Content Completion Assistant in JSON</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>JSON documents<indexterm>Content completion</indexterm></indexterm>
+        <indexterm>Content completion in JSON</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_b5f_cgk_54b"><ph keyref="product"/> includes an intelligent <xref
+        keyref="glossentry_content-completion-assistant"><term>Content Completion
+        Assistant</term></xref> that offers proposals for inserting JSON structures that are valid
+      at the current editing location.</p>
+    <p conkeyref="reusables-editing-documents/cca_enable" id="p_c5f_cgk_54b"/>
+    <p id="p_d5f_cgk_54b">
+      <fig id="figure-content-completion-assistant-oxygen">
+        <title>Content Completion Assistant in JSON</title>
+        <image href="../img/json-cc.png"/>
+      </fig>
+    </p>
+    <section id="content_completion_and_the_associated_schema">
+      <title>Content Completion and the Associated Schema</title>
+      <p id="p_e5f_cgk_54b">The <term>Content Completion Assistant</term> feature is schema-driven and the list of
+        proposals in the <xref keyref="glossentry_content-completion-assistant"><term>Content
+            Completion Assistant</term></xref> depend on the associated JSON Schema. For information
+        about ways to associate a schema to a JSON document, see the <xref
+          href="json-associate-schema-to-document.dita"/> section.</p>
+      <p id="p_qgc_dwf_pzb">If a JSON document does not have a schema associated, <ph
+          keyref="product"/> automatically learns the document structure as editing events occur and
+        will offer content completion proposals accordingly. Note that this feature is disabled for
+        documents that contain more than one million characters.</p>
+    </section>
+    <section id="using_the_content_completion_assistant_in_text_mo">
+      <title>Using the Content Completion Assistant in JSON</title>
+      <p id="p_f5f_cgk_54b">The feature is activated in <uicontrol>Text</uicontrol> mode for JSON documents by: <ul
+          id="ul_ns3_3rl_pnb">
+          <li id="li_g5f_cgk_54b">Typing a quote symbol (<uicontrol><shortcut>"</shortcut></uicontrol>) to insert a
+            property or value.</li>
+          <li id="li_h5f_cgk_54b">Pressing <uicontrol conkeyref="reusable-oxygen-shortcuts-list/ctrl_space"/> or
+              <uicontrol conkeyref="reusable-oxygen-shortcuts-list/alt_slash"/>.</li>
+        </ul></p>
+      <p product="editor editorEclipse" id="p_i5f_cgk_54b">The feature is activated in <uicontrol>Author</uicontrol>
+        mode by using the <uicontrol><shortcut>Enter</shortcut></uicontrol> key.</p>
+      <p id="cc_doc_window">You can navigate through the list of proposals by using the
+            <uicontrol><shortcut>Up</shortcut></uicontrol> and
+          <uicontrol><shortcut>Down</shortcut></uicontrol> keys on your keyboard. In some cases, the
+          <term>Content Completion Assistant</term> displays a <xref href="json-cc-annotations.dita"
+          >documentation window with information about the particular proposal</xref>. You can also
+        change the size of the documentation window by dragging its top, right, and bottom
+        borders.</p>
+      <p id="p_j5f_cgk_54b">To insert the selected proposal, press <uicontrol><shortcut>Enter</shortcut></uicontrol> or
+            <uicontrol><shortcut>Tab</shortcut></uicontrol>.</p>
+    </section>
+    <section id="types_of_proposals_listed_in_the_content_completi">
+      <title>Types of Proposals Listed in the Content Completion Assistant for JSON</title>
+      <p id="p_k5f_cgk_54b">The proposals that populate the <term>Content Completion Assistant</term> for JSON
+        documents depend on the structure defined in the associated JSON Schema. The types of
+        structure proposed in the content completion window include:<ul id="ul_l5f_cgk_54b">
+          <li id="li_m5f_cgk_54b">JSON properties</li>
+          <li id="li_n5f_cgk_54b">JSON values</li>
+          <li id="li_o5f_cgk_54b">JSON arrays</li>
+          <li id="li_p5f_cgk_54b">JSON objects</li>
+        </ul></p>
+      <p id="p_q5f_cgk_54b">The number and type of proposals displayed by the <term>Content Completion Assistant</term>
+        is dependent on the cursor's current position in the JSON document and the child items
+        displayed within a given context are defined by the structure of the specified JSON
+        Schema.</p>
+    </section>
+    <section id="code_templates_in_the_content_completion">
+      <title>Code Templates in the Content Completion</title>
+      <p id="p_r5f_cgk_54b"><ph keyref="product"/> includes a set of built-in code templates for
+        JSON documents that can be selected from the <term>Content Completion Assistant</term>. The
+        code templates are displayed with a <image href="../img/CodeTemplates12.gif"
+          id="image_oxh_ydh_5r"/> symbol in the content completion list. You can also define your
+        own code templates and share them with others.<ph
+          product="developer editor developerEclipse editorEclipse"> For more information, see <xref
+            href="code-templates.dita"/>.</ph></p>
+    </section>
+  </body>
+</topic>

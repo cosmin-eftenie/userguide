@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ch_how_to_add_a_link_in_headers_and_footers">
+    <title>How to Add a Link in Headers and Footers</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            ><ph keyref="pdf-html5-transformation"/>
+          <indexterm>Header<indexterm>Add links</indexterm></indexterm></indexterm>
+        <indexterm product="pdf-css ope">Header<indexterm>Add links</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+    <body>
+    <section id="section_rt4_zqp_4jb">
+      <title>Method 1: Using an SVG Link Attribute</title>
+      <p id="p_rxq_cgk_54b">It is possible to add a link inside the document header (or footer) by
+        using the <xmlelement>a</xmlelement> element inside an SVG document. For example, suppose
+        you have the following SVG document named
+        <i>custom.svg</i>:<codeblock outputclass="language-xml" id="codeblock_sxq_cgk_54b">&lt;svg width="180" height="20" viewBox="0 0 180 20" xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+    &lt;a xlink:href="https://www.oxygenxml.com/chemistry-html-to-pdf-converter.html">
+        &lt;rect x="0" y="0" width="180" height="20" opacity="0"/>
+        &lt;text x="5" y="15" fill="blue">Oxygen PDF Chemistry&lt;/text>
+    &lt;/a>
+&lt;/svg></codeblock></p>
+      <p id="p_txq_cgk_54b">This creates an SVG link with <b>Oxygen PDF Chemistry</b> displayed as
+        its text (the content of the <xmlelement>text</xmlelement> element).<note
+          id="note_uxq_cgk_54b">If you just want to add a link without text, you can define a
+          rectangle that contains the link instead of text.</note></p>
+      <p id="p_vxq_cgk_54b">To display the link, you just need to set your SVG file as the content of one of the page
+				margin
+				boxes:<codeblock outputclass="language-css" id="codeblock_wxq_cgk_54b">@page {
+  @top-left {
+    content: url("custom.svg");
+  }
+}</codeblock></p>
+    </section>
+    <section id="section_hbp_brp_4jb">
+      <title>Method 2: Using the CSS <i>-oxy-link</i> Property</title>
+      <p id="p_xxq_cgk_54b">It is also possible to add a link inside the document header (or footer) by using the
+					<codeph>-oxy-link</codeph> property on the <codeph>@page</codeph> margin box declaration.
+				The entire page margin box will behave as a link and will be
+				clickable.<codeblock outputclass="language-css" id="codeblock_yxq_cgk_54b">@page {
+  @top-left {
+    content: "Link";
+    -oxy-link: "https://www.oxygenxml.com/";
+    color:blue;
+  } 
+}</codeblock></p>
+    </section>
+  </body>
+</topic>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="wa-confidential-data-handling">
+  <title>Handling of Confidential Data</title>
+  <body>
+    <p id="p_eqr_dgk_54b"><ph keyref="webappProduct"/> is a web application that only has an on-premise distribution. </p>
+    <section id="section_ecy_2ht_mpb">
+      <title>Inbound Network Access</title>
+      <p>By default, <ph keyref="webappProduct"/> accepts connections from web browsers using HTTPS
+        and HTTP. The <xref href="wa_https_doc.dita#wa_https_doc/p_ikq_dgk_54b">HTTP support can be
+          disabled</xref> once a valid certificate is configured. </p>
+    </section>
+    <section id="section_pkg_kjp_1jb">
+      <title>Outbound Network Access</title>
+      <p id="p_fqr_dgk_54b"><ph keyref="webappProduct"/> needs to connect to the following
+        servers:</p>
+      <ul id="ul_rr2_z3t_mpb">
+        <li>The <b>license server</b> (for distributions that come with a license server embedded,
+          this connection uses HTTPS by default).</li>
+        <li>The <b>file server</b> using one of the supported connectors (e.g. Git, WebDAV,
+          Perforce). Depending on the file server and how the connector is configured, this
+          communication is done over HTTPS, HTTP, or using a proprietary protocol (for
+          Perforce).</li>
+      </ul>
+      <p id="p_qdh_wkw_mpb">Also, <ph keyref="webappProduct"/> supports being configured with an
+        HTTP(s) proxy server, which helps to better control the traffic it generates.</p>
+    </section>
+    <section id="section_qm1_qjp_1jb">
+      <title>Data Storage</title>
+      <p id="p_gqr_dgk_54b">The files edited in <ph keyref="webappProduct"/> are stored in the server memory while the
+        user edits them.</p>
+      <p id="p_hqr_dgk_54b">Web Author has a mechanism to store some editing sessions as files on the server disk to
+        reduce memory consumption. The risk of having these files on disk is mitigated by several
+          measures:<ul id="ul_zww_s3p_1jb">
+          <li id="li_iqr_dgk_54b">These files are stored on the disk only encrypted with a key that is stored in the
+            server memory. When the server is stopped, the key is discarded.</li>
+          <li id="li_jqr_dgk_54b">The files are deleted when the HTTP session of the user ends, or when a <xref
+              href="customizing-options.dita">configurable timeout</xref> expires.</li>
+          <li id="li_kqr_dgk_54b">The mechanism can be disabled using a <xref href="customizing-options.dita"
+              >configuration option</xref>.</li>
+        </ul></p>
+      <p id="p_mqr_dgk_54b">The Git connector offers enhanced support for <term>GitHub</term>,
+          <term>GitLab</term>, and <term>BitBucket</term>. It also offers authentication support for
+          <term>Azure DevOps</term> (creates clones of the Git repositories on the server's disk).
+        For the rest of the Git servers, it offers generic support (creates clones of the Git
+        repositories on the server's disk). You can disable this generic support in the <xref
+          href="webapp-integrate-github-plugin.dita">administration page</xref>.</p>
+    </section>
+  </body>
+</topic>

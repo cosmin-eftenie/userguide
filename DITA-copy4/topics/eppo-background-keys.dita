@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="eppo-background-keys">
+  <title>Working with Keys in DITA</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>DITA<indexterm>Keys</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_ihm_dgk_54b">DITA uses keys to insert content that may have different values in particular circumstances.
+        <xref
+        href="http://docs.oasis-open.org/dita/dita/v1.3/errata02/os/complete/part3-all-inclusive/archSpec/base/key-based-addressing.html"
+        format="html" scope="external">Keys provide a way to reference something indirectly</xref>.
+      This can make it easier to manage and to reuse content in a various ways.</p>
+    <p id="p_jhm_dgk_54b">You can think of keys as like renting a post office box. Instead of the mail going directly
+      from the sender to your house, it now goes to the post office box. You then go to the post
+      office box and bring the mail back to your house. If you move to a new house, your mail still
+      gets to you because it comes to the same post office box. You do not have to send change of
+      address cards to all the people who send you mail. Your mailbox address is the key that makes
+      sure your mail always reaches you, even if you move.</p>
+    <p id="p_khm_dgk_54b">Similarly, if you use keys in your content to reference other content, you do not have to
+      update the source content to change the value of the key or what it points to. You just change
+      the definition of the key.</p>
+    <section id="defining_keys_in_dita_maps">
+      <title>Defining Keys in DITA Maps</title>
+      <p id="p_lhm_dgk_54b">Keys are defined in maps and can then be reused and referenced throughout the whole
+        structure of the map. It is considered best practice to create a separate submap that
+        contains all of the key definitions and reference that submap in the <xref
+          keyref="glossentry_root-map"><term>main (root) map</term></xref>. This makes it easier to
+        manage since they're all in one location. </p>
+      <p id="p_mhm_dgk_54b">There are two types of key definitions that can be created in a map:<ul id="ul_nhm_dgk_54b">
+          <li id="li_ohm_dgk_54b">Key with a value inside a <xmlelement>keyword</xmlelement>. To define this type of
+            key, follow these instructions: <xref
+              href="insert-define-keys.dita#insert-define-keys/key-def-section"/>.</li>
+          <li id="li_phm_dgk_54b">Key with a target (for example, to target a resource such as an image or external
+            link). To define this type of key, follow these instructions: <xref
+              href="insert-define-keys.dita#insert-define-keys/keydef-target-section"/>.</li>
+        </ul></p>
+    </section>
+    <section id="using_keys_for_values">
+      <title>Using Keys for Values</title>
+      <p id="p_qhm_dgk_54b">You can use keys to represent values that may vary depending on the type of output. For
+        instance, you may have several products that share a common feature. When you want to
+        describe that feature, you need a way to insert the name of the product, even though that
+        name is different depending on which product the feature description is being used for. For
+        more information, see <xref keyref="dita_variables"/>.</p>
+    </section>
+    <section id="assigning_keys_to_topics">
+      <title>Assigning Keys to Topics</title>
+      <p id="p_rhm_dgk_54b">You can assign a key to a topic and use that key to reference that topic for various
+        purposes, such as reuse or linking. As always, keys are defined in maps, so the key
+        definition is done using the keys attribute of the <xmlelement>topicref</xmlelement> element:</p>
+      <codeblock outputclass="language-xml" id="codeblock_shm_dgk_54b">&lt;topicref href="quick-heat.dita" keys="feature.quick-heat"/></codeblock>
+      <p id="p_thm_dgk_54b">The easiest way to assign keys to a topic (and insert the <xmlelement>topicref</xmlelement> element
+        in its <xref keyref="glossentry_ditamap"><term>DITA map</term></xref>) is to use the <xref
+          href="dita-edit-properties.dita#dita-edit-properties/keys_tab"><uicontrol>Keys</uicontrol>
+          tab in the <uicontrol>Edit Properties</uicontrol> dialog box</xref>. In the <xref
+          href="dita-maps-manager.dita#dita-maps-manager"><uicontrol>DITA Maps
+            Manager</uicontrol></xref>, invoke the contextual menu on the topic that will have the key assigned and select <uicontrol><image href="../img/DockableFrameProperties16.png"/>Edit
+          Properties</uicontrol>. Go to the <uicontrol>Keys</uicontrol> tab and enter the name of
+        the key in the <uicontrol>Define keys</uicontrol> field.</p>
+      <p id="p_uhm_dgk_54b">Once a key is assigned to a topic, you can use it to reference that topic for various
+          purposes:<ul id="ul_ubr_vwd_zp">
+          <li id="li_vhm_dgk_54b">You can <xref keyref="dita_linking_inline">create a link</xref> to it using
+              <xmlelement>xref keyref="feature.quick-heat"</xmlelement>. This allows you to change
+            the target of the link by changing the topic that is pointed to by the key (for example,
+            by profiling). </li>
+          <li id="li_whm_dgk_54b">You can use it <xref keyref="dita_add-topic-to-map">in a map to create a reference to
+              a topic</xref> by key: <xmlelement>topicref keyref="feature.quick-heat"</xmlelement>.
+            This allows you to change which topic is inserted in the map by the build, by changing
+            the topic that is pointed to by the key.</li>
+          <li id="li_xhm_dgk_54b">You can use it to <xref keyref="dita_insert-content-key-reference">insert a content
+              reference</xref>. In this case, the content reference uses the key to locate the topic
+            to pull content from. It uses a <xmlatt>conkeyref</xmlatt> attribute:
+              <xmlelement>procedure conkeyref="feature.quick-heat/preheat-procedure"</xmlelement>.
+            In this example, <codeph>feature.quick-heat</codeph> is the key, and
+              <codeph>preheat-procedure</codeph> is the ID of a procedure within the topic for that
+            key. Using this mechanism, you could have multiple versions of the preheat procedure in
+            various topics and control which one is inserted by changing the topic that is pointed
+            to by the key.</li>
+        </ul></p>
+    </section>
+    <section id="assigning_keys_to_graphics">
+      <title>Assigning Keys to Graphics</title>
+      <p id="p_yhm_dgk_54b">You can assign a key to an image (<xref
+          href="insert-define-keys.dita#insert-define-keys/keydef-target-section">using a map to
+          point to the image file</xref>) and then <xref keyref="dita_images">insert the image using
+          the key</xref>.</p>
+      <p id="p_zhm_dgk_54b">Example of a key definition for a targeted image
+        file:<codeblock outputclass="language-xml" id="codeblock_a3m_dgk_54b">&lt;map id="keydefs">
+  &lt;!-- product name -->
+  &lt;title>Key Definitions&lt;/title>
+  &lt;keydef keys="image1" href="../img/image1.png" format="png"/>
+&lt;/map></codeblock></p>
+    </section>
+  </body>
+  <related-links>
+      <link href="insert-define-keys.dita#insert-define-keys"/>
+      <link href="eppo-create-conkeyref.dita#eppo-create-conkeyref"/>
+      <link href="insert-dita-content-reference.dita#insert-dita-content-reference"/>
+      <link href="dita-reusable-components-view.dita#dita-reusable-components-view"/>
+      <link format="html"
+        href="http://docs.oasis-open.org/dita/dita/v1.3/errata02/os/complete/part3-all-inclusive/archSpec/base/key-based-addressing.html"
+        scope="external">
+        <linktext>DITA 1.3 Specification: Indirect Key-based Addressing</linktext>
+      </link>
+      <link
+        href="https://blog.oxygenxml.com/topics/shorts_reuse_content.html#shorts_reuse_content__section_xbt_bcq_pvb"
+        format="html" scope="external">
+        <linktext>Short Video Clip: Learn DITA Editing with Oxygen - Define a Key for a Product Name
+          and Use It</linktext>
+      </link>
+    <link
+      href="https://blog.oxygenxml.com/topics/shorts_reuse_content.html#shorts_reuse_content__section_d55_1dq_pvb"
+      format="html" scope="external">
+      <linktext>Short Video Clip: Learn DITA Editing with Oxygen - Use an Already Defined Key for a
+        Product Name</linktext>
+    </link>
+    <link
+      href="https://blog.oxygenxml.com/topics/shorts_reuse_content.html#shorts_reuse_content__section_d55_1dq_pvb"
+      format="html" scope="external">
+      <linktext>Doctales - Key Reference (keyref)</linktext>
+    </link>
+  </related-links>
+</topic>

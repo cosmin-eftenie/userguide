@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="mathjax-webhelp">
+  <title>How to View MathML Equations in HTML Output</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Author editing mode<indexterm>MathML equations in HTML
+          output</indexterm></indexterm>
+        <indexterm>XML documents<indexterm>Author Mode editing<indexterm>MathML equations in HTML
+              output</indexterm></indexterm></indexterm>
+        <indexterm>MathML equations in HTML output in Author mode</indexterm>
+      </keywords>
+      <keywords>
+        <keyword outputclass="label" product="webhelp-responsive">MathML</keyword>
+        <keyword outputclass="label" product="webhelp-responsive">Transformation
+          Parameters</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_ns4_cgk_54b">By default, only <b>Firefox</b> can render <b>MathML</b> equations embedded in the
+        <b>HTML</b> code. <xref href="http://www.mathjax.org/" format="html" scope="external"
+        >MathJax</xref> is a solution to properly view MathML equations embedded in <b>HTML</b>
+      content in a variety of browsers.</p>
+    <p id="p_os4_cgk_54b">If you have DocBook or DITA content that has embedded <b>MathML</b> equations and you want to
+      properly view the equations in published HTML output types (WebHelp, CHM, EPUB, etc.), you
+      need to add a reference to the MathJax script in the <b>head</b> element of all HTML files
+      that have the equation embedded.</p>
+    <p id="p_ps4_cgk_54b">For example:
+      <codeblock outputclass="language-bourne" id="codeblock_qs4_cgk_54b">&lt;script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+&lt;/script></codeblock></p>
+    <section id="section_dr4_xkq_jnb">
+      <title>Alternate Method for DITA</title>
+      <p id="p_rs4_cgk_54b">For DITA documents, you can also use the following procedure:<ol id="ol_u34_ykq_jnb">
+          <li id="li_ss4_cgk_54b">Create an XML file that contains a script similar to the one shown in the example
+            above.</li>
+          <li id="li_ts4_cgk_54b">Edit the DITA Map transformation scenario and open the
+              <uicontrol>Parameters</uicontrol> tab.</li>
+          <li id="li_us4_cgk_54b">Set the following parameter to point to the XML file created in step 1:<ul
+              id="ul_v34_ykq_jnb">
+              <li id="li_vs4_cgk_54b"><b>WebHelp Responsive Systems</b> - Set the <codeph>webhelp.fragment.head</codeph>
+                parameter to point to your XML file.</li>
+              <li id="li_xs4_cgk_54b"><b>Any other type of HTML-based publishing</b> - Set the <codeph>args.hdf</codeph>
+                parameter to point to your XML file.</li>
+            </ul></li>
+          <li id="li_ys4_cgk_54b">Run the transformation scenario.</li>
+        </ol></p>
+      <p id="p_zs4_cgk_54b"><b>Result:</b> The equation should now be properly rendered in other browsers, such as
+        Edge, IE, or Chrome.</p>
+    </section>
+  </body>
+</topic>

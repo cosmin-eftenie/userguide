@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE troubleshooting PUBLIC "-//OASIS//DTD DITA Troubleshooting//EN" "troubleshooting.dtd">
+<troubleshooting id="dita-map-tocjs-transformation">
+  <title>TocJS Transformation Does not Generate All Files for a Tree-Like TOC</title>
+  <troublebody><condition id="problem">
+      <title>Problem</title>
+      <p id="p_dzk_dgk_54b">The <i>TocJS</i> transformation of a <xref keyref="glossentry_ditamap"><term>DITA
+            map</term></xref> does not generate all the files needed to display the tree-like table
+        of contents.</p>
+    </condition><troubleSolution><remedy id="solution">
+      <title>Solution</title>
+        <steps-informal>
+          <p id="p_ezk_dgk_54b">To get a complete set of output files, follow these steps:<ol id="ol_fzk_dgk_54b">
+              <li id="li_gzk_dgk_54b">Run the <i>XHTML</i> transformation on the same <term>DITA map</term>. Make sure
+                the output gets generated in the same output folder as for the <i>TocJS</i>
+                transformation.</li>
+              <li id="li_hzk_dgk_54b">Copy the content of the <filepath><term keyref="glossentry_dita_ot_dir"
+                  />/plugins/com.sophos.tocjs/basefiles</filepath> folder to the transformation
+                output folder.</li>
+              <li id="li_izk_dgk_54b">Copy the <filepath><term keyref="glossentry_dita_ot_dir"
+                  />/plugins/com.sophos.tocjs/sample/basefiles/frameset.html</filepath> file to the
+                transformation output folder.</li>
+              <li id="li_jzk_dgk_54b">Edit <filepath>frameset.html</filepath> file.</li>
+              <li id="li_kzk_dgk_54b">Locate element <codeph>&lt;frame name="contentwin"
+                  src="concepts/about.html"&gt;</codeph>.</li>
+              <li id="li_lzk_dgk_54b">Replace <codeph>"concepts/about.html"</codeph> with
+                <codeph>"index.html"</codeph>.</li>
+            </ol></p>
+        </steps-informal>
+    </remedy></troubleSolution></troublebody>
+</troubleshooting>

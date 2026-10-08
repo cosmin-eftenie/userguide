@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="customize-profiling-conditions">
+  <title>Customizing Elements that Wrap Profiled Content</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Framework customization<indexterm>Extensions<indexterm>Profiling Conditional Text
+              Provider</indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_cmb_dgk_54b">For each <xref keyref="glossentry_framework"><term>framework</term></xref> (document type),
+      you can configure the phrase-type elements that wrap the profiled content by setting a custom
+        <xref
+        href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/extensions/api/ProfilingConditionalTextProvider.html"
+        format="html" scope="external"
+          ><i>ro.sync.ecss.extensions.api.ProfilingConditionalTextProvider</i></xref>.
+      This configuration is set by default for DITA and DocBook <term>frameworks</term>.</p>
+  </body>
+</topic>

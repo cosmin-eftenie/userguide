@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_how_to_remove_page_breaks_between_frontmatter_and_backmatter_child_topics">
+  <title>How to Remove Page Breaks Between Front Matter Child Topics</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+          ><ph keyref="pdf-html5-transformation"/>
+            <indexterm>Front matter<indexterm>Page breaks</indexterm></indexterm></indexterm>
+        <indexterm product="pdf-css ope">Front matter<indexterm>Page breaks</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_dtr_cgk_54b">If you do not like the fact that all the topics that enter a bookmap
+      frontmatter start on a new page, you can disable this by using the following rules in your
+        <xref href="dcpp_the_customization_css.dita">customization
+      CSS</xref>:<codeblock outputclass="language-css" id="codeblock_etr_cgk_54b">*[class ~= "map/map"] > *[class ~= "topic/topic"][is-frontmatter]{
+  break-before: auto;
+}</codeblock></p>
+  </body>
+</topic>

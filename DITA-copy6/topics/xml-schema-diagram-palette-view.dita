@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="xml-schema-diagram-palette-view">
+  <title>XML Schema Palette View (Available in Design Mode)</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Design editing mode<indexterm>Palette view</indexterm></indexterm>
+        <indexterm>XML Schema Diagram Editor<indexterm>Palette view</indexterm></indexterm>
+        <indexterm>Palette view in Design mode</indexterm>
+        <indexterm>XML Schemas<indexterm>Design mode editing<indexterm>Palette
+            view</indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_w4b_cgk_54b">The <uicontrol>Palette</uicontrol> view is designed to offer quick access to XML Schema
+      components and to improve the usability of the XML Schema diagram builder. You can use the
+        <uicontrol>Palette</uicontrol> to drag and drop components in the
+        <uicontrol>Design</uicontrol> mode. The components offered in the
+        <uicontrol>Palette</uicontrol> view depend on the XML schema version set in the <xref
+        href="xml-schema-preferences-page.dita#xml-schema-preferences-page"><uicontrol>XML
+          Schema</uicontrol> preferences page</xref>. <ph
+        conkeyref="reusables-user-guide/reopen-view"/></p>
+    <p id="p_x4b_cgk_54b">
+      <fig id="fig_y4b_cgk_54b">
+        <title>Palette View</title>
+        <image href="../img/sa_palette_view.png" product="editor developer"/>
+      </fig>
+    </p>
+    <p id="p_z4b_cgk_54b">
+      <fig product="developerEclipse editorEclipse" class="- topic/fig " id="fig_apb_cgk_54b">
+        <title>Palette View</title>
+        <image href="../img/ec_palette_view.png"/>
+      </fig>
+    </p>
+    <p id="p_bpb_cgk_54b">Components are organized functionally into 4 collapsible categories:<ul id="ul_cpb_cgk_54b">
+        <li id="li_dpb_cgk_54b">Basic components: <i>elements</i>, <i>group</i>, <i>attribute</i>, <i>attribute
+            group</i>, <i>complex type</i>, <i>simple type</i>, <i>type alternative</i>.</li>
+        <li id="li_epb_cgk_54b">Compositors and Wildcards: <i>sequence</i>, <i>choice</i>, <i>all</i>, <i>any</i>,
+            <i>any attribute</i>, <i>open content</i>.</li>
+        <li id="li_fpb_cgk_54b">Directives: <i>import</i>, <i>include</i>, <i>redefine</i>, <i>override</i>.</li>
+        <li id="li_gpb_cgk_54b">Identity constraints: <i>key</i>, <i>keyref</i>, <i>unique</i>, <i>selector</i>,
+            <i>field</i>, <i>assert</i>.<note id="note_hpb_cgk_54b">The <i>type alternative</i>, <i>open content</i>,
+              <i>override</i>, and <i>assert</i> components are available for XML Schema
+          1.1.</note></li>
+      </ul> To add a component to the edited schema:<ul id="ul_ipb_cgk_54b">
+        <li id="li_jpb_cgk_54b">Click and hold a graphic symbol from the <uicontrol>Palette</uicontrol> view, then drag
+          the component into the <uicontrol>Design</uicontrol> view.</li>
+        <li id="li_kpb_cgk_54b">A line dynamically connects the component with the XML schema structure.</li>
+        <li id="li_lpb_cgk_54b">Release the component into a valid position. <note id="note_mpb_cgk_54b">You cannot drop a component into an
+            invalid position. When you hover the component into an invalid position, the mouse
+            cursor changes its shape into <image href="../img/cursor_unavailable.png"/>. Also, the
+            connector line changes its color from the usual dark gray to the color defined in the
+              <xref
+              href="preferences-editor-document-checking.dita#preferences-editor-document-checking"
+              format="dita"><uicontrol>Validation error highlight color</uicontrol> option</xref>
+            (default color is red).</note></li>
+      </ul></p>
+    <section id="section_hw2_sv2_w5b">
+      <title>Resources</title>
+      <p id="p_npb_cgk_54b">For more information about the Schema palette, watch our video
+        demonstration:</p>
+      <p id="p_opb_cgk_54b"><object width="450" height="250"
+          data="https://www.youtube.com/embed/KalHUXmpuAA" outputclass="iframe">
+          <param name="allowfullscreen" value="true"/>
+        </object></p>
+    </section>
+  </body>
+</topic>

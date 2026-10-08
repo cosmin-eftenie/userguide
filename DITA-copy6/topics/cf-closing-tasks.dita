@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="cf-closing-tasks">
+    <title>Closing Review Tasks</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Closing tasks</indexterm>
+        <indexterm>Close review</indexterm>
+        <indexterm>Reopen review</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+    <body>
+    <p id="p_fzt_dgk_54b">A <i>task owner</i> can close the review process to reserve some time to
+      address the feedback before integrating the changes. To close a task, click the
+        <uicontrol>Close review</uicontrol> button located in the top stripe (with a task opened).
+      This locks the task and prevents others from making changes to it. If further review is
+      needed, you can click the <uicontrol>Reopen review</uicontrol> button to make the task
+      editable again.</p>
+    <p id="p_xsg_f1j_21c">For tasks created outside a Content Fusion project, once a <i>task
+        owner</i> has integrated the changes into the source documentation project, they can click
+      the <uicontrol>Mark as integrated</uicontrol> button in the top stripe to archive the task,
+      remove it from visibility for all users, and make it uneditable. A <i>task owner</i> can view
+      integrated (archived) tasks by clicking the <uicontrol>Show integrated review
+        tasks</uicontrol> button at the bottom of the <uicontrol>Owned By Me</uicontrol> tab in the
+        <uicontrol>My Review Task</uicontrol> page. Integrated tasks can be reactivated (to regain
+      access to the task) by using the <uicontrol>Mark as not integrated</uicontrol> action that
+      appears for integrated tasks.</p>
+  </body>
+</topic>

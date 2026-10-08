@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="wa-publishing-support">
+  <title>PDF Publishing Support</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Publishing</indexterm>
+        <indexterm>Publish to PDF</indexterm>
+        <indexterm>Export as PDF</indexterm>
+        <indexterm>Print as PDF</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_yft_dgk_54b"><ph keyref="webappProduct"/> supports exporting documents as PDF by using
+      the <xref href="https://www.oxygenxml.com/chemistry-html-to-pdf-converter.html" format="html"
+        scope="external"><b>Oxygen PDF Chemistry</b></xref> engine and the output can be easily
+      customized through CSS. You can print the currently edited document as PDF or export it to PDF
+      using an <b>XML to PDF with CSS</b> transformation scenarios defined in the framework that may
+      contain special publishing styles.</p>
+    <p>Information about updates and new features for each version of <xref
+      href="https://www.oxygenxml.com/chemistry-html-to-pdf-converter.html" format="html"
+      scope="external"><b>Oxygen PDF Chemistry</b></xref> can be found on the <xref
+        href="https://www.oxygenxml.com/pdf_chemistry/whats_new.html" format="html" scope="external"
+        >What's New</xref> page.</p>
+    <section id="section_zgv_z2j_qnb">
+      <title>Enabling PDF Support</title>
+      <p id="p_zft_dgk_54b">The Web Author PDF support can be enabled by doing the following:<ol
+          id="ol_bts_rts_nwb">
+          <li id="li_cts_rts_nwb"><xref href="webapp-configure-plugins.dita">Install the
+                  <i><uicontrol>Web Author Publishing</uicontrol></i> plugin</xref> that can be
+            found in the <xref
+              href="https://www.oxygenxml.com/xml_web_author/web_author_plugins.html" format="html"
+              scope="external"><menucascade>
+                <uicontrol>Download</uicontrol>
+                <uicontrol>Connectors/Plugins</uicontrol>
+              </menucascade> webpage</xref>. The plugin has a version in a format like
+              <codeph>MAJOR.MINOR.X.Y</codeph> and it follows the <b>Oxygen XML Web Author</b> and
+              <b>Oxygen PDF Chemistry</b> versioning scheme. Choose the last version that matches
+            the major and minor version of your instance of Web Author. Make sure that you read and
+            understand the terms and conditions of its end-user license agreement.</li>
+          <li id="li_ay4_sts_nwb">The <i><uicontrol>Web Author Publishing</uicontrol></i> plugin
+            requires the <codeph>fontconfig</codeph> package to be installed. It can be installed by
+            running the following
+            command:<codeblock outputclass="language-ini">sudo apt-get install font-config</codeblock></li>
+        </ol></p>
+      <p id="p_wp1_rts_nwb">Once installed and enabled, two actions are contributed to the Web
+        Author interface (available in the <uicontrol><image href="../img/WebappMore18.png"
+            id="image_ccw_shj_qnb"/>More drop-down menu</uicontrol>):<ul id="ul_zdx_jfj_qnb">
+          <li id="li_agt_dgk_54b"><uicontrol>Print</uicontrol> - Generates a PDF preview of the
+            current document and prints it. The PDF is generated using the same CSS files used by
+            the editor.</li>
+          <li id="li_bgt_dgk_54b"><uicontrol>Export as PDF</uicontrol> - Downloads a PDF version of
+            the document based on the framework configuration:<ul id="ul_hxq_whj_qnb">
+              <li id="li_cgt_dgk_54b">By default, the editor styles are used.</li>
+              <li id="li_dgt_dgk_54b">If one or more <b>XML to PDF with CSS</b> transformation
+                scenarios are configured, they appear in a sub-menu of the <uicontrol>Export as
+                  PDF</uicontrol> menu item. Those scenarios are based on <b>Oxygen PDF
+                  Chemistry</b>. </li>
+            </ul></li>
+        </ul></p>
+    </section>
+    <section id="section_dgj_23j_qnb">
+      <title>Notes About Configuring the Plugin in the Administration Page</title>
+      <p id="p_egt_dgk_54b">The PDF generation invokes an external process on the server and
+        resources for the process can be configured in the <xref href="webapp-admin-page.dita"
+          >Administration Page</xref>, where you can configure:</p>
+      <ul id="ul_csq_g3j_qnb">
+        <li id="li_fgt_dgk_54b">The memory allocated to a publishing process.</li>
+        <li id="li_ggt_dgk_54b">The maximum number of concurrent publishing processes.</li>
+      </ul>
+      <note id="note_hgt_dgk_54b">The content communicated to and from the publishing process is encrypted.</note>
+    </section>
+    <section id="section_xx4_43j_qnb">
+      <title>Configuring the CSS</title>
+      <p>Since the conversion to PDF is done using <b>Oxygen PDF Chemistry</b>, it is based on the
+        CSS files specified in the framework. </p>
+      <p>The <uicontrol>Print</uicontrol> action strictly uses the CSS files that are used to render
+        the document in the editor. The <uicontrol>Export as PDF</uicontrol> action uses the CSS
+        files defined in the <b>XML to PDF with CSS</b> transformation scenarios (an <b>Oxygen PDF
+          Chemistry</b> scenario).<note id="note_r3t_5gq_kpb">Frameworks can be customized using
+            <b>Oxygen XML Editor/Author</b>, from the <xref
+              href="https://www.oxygenxml.com/doc/ug-editor/topics/the-document-type-dialog.html"
+              format="html" scope="external">Document Type Configuration dialog box</xref>.</note></p>
+      <p id="p_jgt_dgk_54b">Useful hints:</p>
+      <ul id="ul_bn3_q3j_qnb">
+        <li id="li_kgt_dgk_54b">You can use <xmlatt>media</xmlatt>
+          <codeph>print {}</codeph> rules to configure CSS rules that apply only for generating
+          PDF.</li>
+        <li id="li_lgt_dgk_54b">For DITA, a file located at <filepath>css/webauthor/p-dita.css</filepath> is also loaded
+          along with the editor styles.</li>
+        <li id="li_mgt_dgk_54b">You can match an element based on its pseudo-classes. For example, to match a
+          <codeph>-oxy-expanded</codeph> pseudo-class, you can use the following syntax:
+          <codeblock outputclass="language-javascript" id="codeblock_ngt_dgk_54b">@namespace oxy-pseudo "https://oxygenxml.com/ns/pseudo-elements/";
+*[oxy-pseudo|p-oxy-expanded]) {
+  ... 
+}</codeblock></li>
+        <li id="li_ogt_dgk_54b">You can use any CSS extension supported by the <xref
+          href="https://www.oxygenxml.com/chemistry-html-to-pdf-converter.html" format="html"
+          scope="external"><b>Oxygen PDF Chemistry</b></xref> engine.</li>
+        <li id="li_pgt_dgk_54b">The PDF generation engine will work on a resolved document. If your content uses DITA
+          <i>conrefs</i>, XInclude, or another content reference mechanism, the references will be
+          expanded before the file is sent to the CMS.</li>
+        <li id="li_qgt_dgk_54b">Links to other XML files will not work in the generated PDF. You may want to customize
+          your CSS to handle this. </li>
+        <li id="li_rgt_dgk_54b">Fonts that cover the characters in the document have to be installed on the server that
+          run Web Author. For example, see: <xref
+            href="https://www.oxygenxml.com/doc/ug-chemistry/topics/ch_internationalization.html"
+            format="html" scope="external">Localization</xref>.</li>
+      </ul>
+    </section>
+    <section id="section_q3b_j2x_1tb">
+      <title>Limitations</title>
+      <p id="p_r3b_j2x_1tb">While the PDF support can be very useful for downloading your content as
+        PDF, it has several limitations that needs to be considered:<ul id="ul_s3b_j2x_1tb">
+          <li id="li_t3b_j2x_1tb">For DITA documents, the PDF is not obtained by using DITA-OT (the
+            most popular DITA publishing tool).</li>
+          <li id="li_u3b_j2x_1tb">You can publish a whole DITA map by switching to <menucascade>
+              <uicontrol>Display Mode</uicontrol>
+              <uicontrol>Show Topic Content</uicontrol>
+            </menucascade> and then using the <uicontrol>Export as PDF</uicontrol> action. In this
+            case, however, the links between topics will not work.</li>
+          <li id="li_v3b_j2x_1tb">The PDF is obtained by applying a CSS and currently there is no
+            support for generating additional content such as Table of Contents, List of Figures,
+            etc.</li>
+        </ul></p>
+    </section>
+    <section id="section_cff_vj5_1tb">
+      <title>Licensing</title>
+      <p id="p_vw3_k2x_1tb">All the generated PDF files contain a watermark that consists of the
+        <term>Oxygen PDF Chemistry</term> icon. To remove this watermark, you can configure the
+        plugin using an <term>Oxygen PDF Chemistry</term> license key.</p>
+      <p>To add the license key, create a file named <filepath>licensekey.txt</filepath> in the
+        <xref href="wa-oxygen-data-dir.dita"><filepath>[DATA-DIR]/options</filepath></xref> folder
+        and paste the license key in this file.</p>
+    </section>
+    <section id="section_tpv_5xy_qpb">
+      <title>Monitor Security Access</title>
+      <p id="p_upv_5xy_qpb">As mentioned above, the PDF publishing support uses the <xref
+        href="https://www.oxygenxml.com/chemistry-html-to-pdf-converter.html" format="html"
+        scope="external"><b>Oxygen PDF Chemistry</b></xref> engine to generate the PDF. If you
+        want to monitor security access by generating verbose output, you can set the level of the
+        <codeph>CHEMISTRY_SECURITY_LOGGER</codeph> to <b>DEBUG</b> level in the <xref
+          href="web-author-logs.dita">log4j configuration
+          file</xref>:<codeblock outputclass="">&lt;Logger name="CHEMISTRY_SECURITY_LOGGER" level="DEBUG"/></codeblock></p>
+      <p id="p_lb5_fzy_qpb"><b>Result:</b> The <codeph>java.security.debug=access,failure</codeph>
+        system property will be set.</p>
+    </section>
+    <section id="section_jzw_ybz_qpb">
+      <title>Configure Security Policy</title>
+      <p id="p_kzw_ybz_qpb">The PDF publishing plugin runs <xref
+        href="https://www.oxygenxml.com/chemistry-html-to-pdf-converter.html" format="html"
+        scope="external"><b>Oxygen PDF Chemistry</b></xref> with a security policy. The
+        configuration file for the policy is found in:
+        <filepath>policy/chemistry-publishing.policy</filepath>. The path is relative to the base
+        directory of the plugin. The policy file can be modified to grant the Chemistry process
+        permissions to access files, directories, and system properties.</p>
+      <p id="p_ax4_pcz_qpb">Access errors are logged in the <filepath>oxygen.log</filepath> file and
+        have the following
+        format:<codeblock outputclass="language-bourne">java.security.AccessControlException: access denied("java.io.FilePermission" "/path/to/directory" "read)</codeblock></p>
+      <p id="p_cb2_xcz_qpb">To fix the permission, the <i>"path/to/directory"</i> must be added to
+        the policy
+        file:<codeblock outputclass="language-bourne">permission java.io.FilePermission "path/to/directory", "read";</codeblock></p>
+      <p id="p_tth_xcz_qpb">A similar approach can be used when the PDF creation process cannot
+        access system properties.</p>
+      <p id="p_c22_ndz_qpb">The logged error looks like
+        this:<codeblock outputclass="language-bourne">access: access denied ("java.util.PropertyPermission" "java.system.property.name" "read")</codeblock></p>
+      <p id="p_ox3_xcz_qpb">To fix the permission to access system properties, you would need to add
+        the following configuration line to the policy
+        file:<codeblock outputclass="language-bourne">permission java.util.PropertyPermission "java.system.property.name" ,"read";</codeblock></p>
+    </section>
+  </body>
+</topic>

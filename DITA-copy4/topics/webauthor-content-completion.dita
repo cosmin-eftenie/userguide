@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="webauthor-content-completion">
+  <title>Content Completion Assistant</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Content Completion Assistant</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="IX-p1"><ph keyref="webappProduct"/> includes a useful feature called the <term>Content
+        Completion Assistant</term> to help you insert valid XML content. It offers a list of
+      elements, attributes, attribute values, and other options that are valid at the current
+      location. It tries to determine the most logical choice in the current editing context and
+      displays that proposal at the beginning of the list.</p>
+    <p id="IX-p2">
+      <fig id="fig_zz4_dgk_54b">
+        <title>Content Completion Assistant in Web Author</title>
+        <image href="../img/wa_content_completion1.png"/>
+      </fig>
+    </p>
+    <p id="IX-p4">It also shows elements that are invalid at the current location, but they are
+      rendered in a lighter shade of gray, italicized, and appear after the valid proposals. You can
+      use the search field at the top of the <term>Content Completion Assistant</term> to quickly
+      navigate to the desired element and it dynamically displays proposals that begin with the
+      characters entered in the search field.</p>
+    <p id="IX-p3">
+      <fig id="fig_a1p_dgk_54b">
+        <title>Content Completion Assistant - Search Field</title>
+        <image href="../img/wa_content_completion2.png"/>
+      </fig>
+    </p>
+    <section id="using_the_content_completion_assistant_in_author_">
+      <title>Using the Content Completion Assistant</title>
+      <p id="p_b1p_dgk_54b">To activate the feature, tap or press
+        <uicontrol><shortcut>Enter</shortcut></uicontrol>.</p>
+      <p id="p_c1p_dgk_54b">On mobile devices, you can swipe up or down to scroll through the list and a proposal can
+        be selected by simply tapping it.</p>
+      <p id="p_d1p_dgk_54b">On desktop devices, you can navigate through the list of proposals by using the
+            <uicontrol><shortcut>Up</shortcut></uicontrol> and
+          <uicontrol><shortcut>Down</shortcut></uicontrol> arrow keys and to insert the selection,
+        simply press <uicontrol><shortcut>Enter</shortcut></uicontrol>.</p>
+    </section>
+    <section id="examples_of_how_the_content_completion_assistant_">
+      <title>Examples of How the Content Completion Assistant Works</title>
+      <p id="p_e1p_dgk_54b">To illustrate how the feature works, consider the following examples for certain contexts:<ul id="ul_f1p_dgk_54b">
+          <li id="li_g1p_dgk_54b">
+            <p id="p_h1p_dgk_54b"><b>New Element</b> - If the cursor is positioned at the beginning
+              or at the end of an element, the first item offered is a <uicontrol>New
+                &lt;Element&gt;</uicontrol> item. Selecting this item will insert an empty
+              element.</p>
+            <p id="p_i1p_dgk_54b">
+              <fig id="fig_j1p_dgk_54b">
+                <title>New Element</title>
+                <image href="../img/wa_cc_new.png"/>
+              </fig>
+            </p>
+          </li>
+          <li id="li_k1p_dgk_54b">
+            <p id="p_l1p_dgk_54b"><b>Split Element</b> - If the cursor is positioned somewhere
+              inside the element, the first entry is a <uicontrol>Split &lt;Element></uicontrol>
+              item. In most cases, you can only split the closest <xref
+                keyref="glossentry_block-element"><term>block element</term></xref> to the cursor
+              position, but if it is inside a list item, the list item will also be proposed for
+              split.</p>
+            <p id="p_m1p_dgk_54b">
+              <fig id="fig_n1p_dgk_54b">
+                <title>Split Element</title>
+                <image href="../img/wa_cc_split.png"/>
+              </fig>
+            </p>
+          </li>
+          <li id="li_o1p_dgk_54b">
+            <p id="p_p1p_dgk_54b"><b>New Line</b> - If the cursor is positioned inside a <xref
+                keyref="glossentry_space-preserved-element"><term>space-preserved
+                element</term></xref> (for example, a <xmlelement>codeblock</xmlelement>), the first
+              choice is <uicontrol><shortcut>Enter</shortcut></uicontrol> and it will insert a new
+              line in the content of the element.</p>
+            <p id="p_q1p_dgk_54b">
+              <fig id="fig_r1p_dgk_54b">
+                <title>ENTER New Line</title>
+                <image href="../img/wa_cc_enter.png"/>
+              </fig>
+            </p>
+          </li>
+          <li id="li_mqd_ksv_nxb">
+            <p id="p_q5h_2vv_nxb"><b>Multi-element Insertions</b> - Some element proposals require
+              additional items to be inserted to make the structure valid. In some cases, the
+              additional items are inserted automatically. In some cases, the element proposal will
+              open a dialog box to prompt the user for additional information to make it easier and
+              faster to insert the whole structure at once.</p>
+            <p id="p_zbv_dvv_nxb">For example, if you are editing a DITA map document, you can
+              insert a reference to an existing topic by selecting the <uicontrol>Topic
+                Reference</uicontrol> proposal and it will open a dialog box where you can choose
+              the target. Similarly, selecting the <uicontrol>Topic Reference (New
+                Topic)</uicontrol> proposal will open a dialog box where you can choose a template
+              for creating a new DITA topic and it will create the new topic and insert a reference
+              to it in the map.</p>
+          </li>
+        </ul></p>
+    </section>
+  </body>
+</topic>

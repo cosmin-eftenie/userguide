@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="reusables-sdk-webauthor">
+  <title>Reusable Components for both Web Author/WA Customization</title>
+  <body>
+    <!--framework customization-->
+    <p product="webauthor waCustom" id="p_clk_bgk_54b">
+      <ol id="upload-framework-ol">
+        <li id="li_dlk_bgk_54b">Go to your <xref href="../../topics/webapp-admin-page.dita#webapp-admin-page"
+            >Administration Page</xref>.</li>
+        <li id="li_elk_bgk_54b">Select <uicontrol>Frameworks</uicontrol>.</li>
+        <li id="li_flk_bgk_54b">
+          <p id="p_glk_bgk_54b">Click <uicontrol>Upload Framework</uicontrol> and choose a
+              <term>framework</term> to upload. You can enable the <uicontrol>Validate
+              frameworks</uicontrol> option to trigger a process that validates the framework during
+            the upload and also when the framework is loaded after a restart.<note type="important"
+              id="note_hlk_bgk_54b">The framework should be a ZIP or JAR archive that contains
+              exactly one folder. This folder should contain the framework descriptor file (with a
+                <filepath>.framework</filepath> or <filepath>.exf</filepath> extension) and other
+              supporting files. If the uploaded archive does not have this format you will receive
+              an error that the upload was rejected. If the folder contains both a
+                <filepath>.framework</filepath> and <filepath>.exf</filepath> file, the
+                <filepath>.framework</filepath> file will be used.</note></p>
+          <p id="p_ilk_bgk_54b"><b>Step Result:</b> The <term>framework</term> should appear in the
+            list on this <uicontrol>Frameworks</uicontrol> page. Uploaded frameworks appear with a
+            light green highlight so that you can easily identify them.</p>
+        </li>
+        <li id="li_jlk_bgk_54b">Once you are finished with all of your changes, restart the server.</li>
+      </ol>
+    </p>
+    <!--Security reusable-->
+    <p id="p_gsc_5nk_vyb">
+      <dl id="security-dl">
+        <dlentry id="dlentry_umn_j4k_vyb">
+          <dt>Security Options</dt>
+          <dd>
+            <p id="p_etb_jnk_vyb">
+              <dl id="dl_vyj_lnk_vyb">
+                <dlentry id="dlentry_j52_fzz_t1c">
+                  <dt>Application authentication provider</dt>
+                  <dd>
+                    <p id="p_kcf_4tk_vfc">Use this option to activate application-level
+                      authentication to only allow authenticated users access to the application.
+                      This will significantly enhance the application's security, protecting against
+                      potential attacks (e.g. denial-of-service attacks). Possible providers include
+                        <uicontrol>GitHub</uicontrol>, <uicontrol>GitLab</uicontrol>, and
+                        <uicontrol>GitLab Enterprise</uicontrol>, but it is important to note that
+                      they are only available if configured (see <xref
+                        href="../../topics/webapp-integrate-github-plugin.dita">Integrating Web
+                        Author with GitHub, GitLab, or Bitbucket</xref>).</p>
+                    <p id="p_oyk_4tk_vfc">You can also utilize the <xref
+                        href="https://github.com/oxygenxml/web-author-rest-plugin" format="html"
+                        scope="external">Oxygen XML Web Author REST plugin</xref> to integrate with
+                      a CMS or file server and it includes <xref
+                        href="https://github.com/oxygenxml/web-author-rest-plugin/blob/HEAD/docs/API-spec.md#authentication"
+                        format="html" scope="external">authentication support</xref>. In this case,
+                      you would choose <uicontrol>CMS</uicontrol> for the provider.</p>
+                    <note id="note_i4x_byf_mfc">Web Author also supports <xref
+                        href="../../topics/wa-oidc-auth.dita">OIDC as an application
+                        authentication</xref>.</note>
+                  </dd>
+                </dlentry>
+                <dlentry id="accept-security-certificate">
+                  <dt>Reject invalid security certificates</dt>
+                  <dd>If selected, HTTPS connections with invalid certificates will be rejected. If
+                    not selected, security certificates are accepted, even if they are invalid.</dd>
+                </dlentry>
+                <dlentry id="dlentry_xjy_3mk_vyb">
+                  <dt>Use the "Secure" attribute for the session cookie</dt>
+                  <dd>If selected, the "Secure" cookie attribute will be added on the session
+                    cookie. This means that the browser will only send the session cookie over HTTPS
+                    (if enabled).<note id="note_rvm_zmk_vyb" type="caution">Do not enable this
+                      option unless Web Author is accessed only over HTTPS.</note></dd>
+                </dlentry>
+                <dlentry id="dlentry_wky_hsk_vyb">
+                  <dt>Use HTTP Strict Transport Security (HSTS)</dt>
+                  <dd>If selected, the Strict-Transport-Security header that makes browsers access
+                    the application's domain will be set using only HTTPS protocol (including
+                      subdomains).<note id="note_kk3_1tk_vyb" type="warning">Do not set this option
+                      unless all the applications hosted on the DNS domain where Web Author is
+                      hosted and the applications on the subdomains of this domain are hosted only
+                      over HTTPS. Applications that use HTTP instead of HTTPS and are hosted on the
+                      DNS domain of Web Author and its subdomain will not work for Web Author users
+                      after you enable this setting.</note></dd>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+      </dl>
+    </p>
+  </body>
+</topic>

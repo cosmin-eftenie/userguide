@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ofb-site-notifications">
+  <title>Automatic User Notifications</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Notifications</indexterm>
+        <indexterm>Site owner notifications</indexterm>
+        <indexterm>Site admin notifications</indexterm>
+        <indexterm>Site management team notifications</indexterm>
+      </keywords>
+      <keywords>
+        <keyword outputclass="label">Email Notifications</keyword>
+        <keyword outputclass="label">Site Configuration</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_uhx_dgk_54b">Any type of user can <xref
+        href="ofb-profile-management.dita#ofb-profile-management/section_f5w_cjs_s4b">configure the
+        types of email notifications</xref> they receive when other users reply to their comment or
+      add a comment in a thread where they have commented. To access the user notification options,
+      click the account drop-down menu at the top-right corner of the interface, select
+        <uicontrol>Profile</uicontrol>, and go to the <uicontrol>Notifications</uicontrol> tab.</p>
+    <p id="p_vhx_dgk_54b">In addition, certain notifications are automatically sent when certain
+      events are triggered.<note id="note_bsv_25d_qrb">Notifications that are sent to users with a
+        role of <b>site</b>
+        <i>Owner</i>, <i>Admin</i>, or <i>Moderator</i> are also sent to users with a role of
+          <b>organization</b>
+        <i>Owner</i>, <i>Admin</i>, or <i>Moderator</i>.</note></p>
+    <p id="p_ezj_wtd_qrb">Events that trigger automatic notifications include:<ul
+        id="ul_v4p_54l_gjb">
+        <li id="li_whx_dgk_54b"><b>User Role is Changed</b> - All users will receive an email
+          notification if their user role is changed by an <i>Owner</i> or <i>Admin</i>.</li>
+        <li id="li_xhx_dgk_54b"><b>User is Added</b> - All users will receive an email notification
+          if they have been added in a site configuration as an <i>Admin</i> or
+          <i>Moderator</i>.</li>
+        <li id="li_int_b1y_qwb"><b>User Registers a Page Rating</b> - Site admins receive a daily
+          statistics email that includes the number of messages that were registered for positive or
+          negative ratings within the past day. The number of messages is shown as a link that can
+          be used to navigate to a page that displays all the ratings information for the particular
+          documentation page. The messages can also be viewed from the statistics table in the <xref
+            href="ofb-page-ratings.dita"><uicontrol>Page Ratings</uicontrol> statistics
+          page</xref>.</li>
+        <li id="li_yhx_dgk_54b" product="feedback"><b>Subscription Will Expire</b> - If the
+          organization's paid subscription is about to expire (within 14 days or 24 hours) and the
+          automatic renewal option is disabled, the user assigned as the organization
+            <i>Owner</i><ph> or <i>Billing Manager</i></ph> will receive a notification reminding
+          them to renew the subscription.</li>
+        <li id="li_zhx_dgk_54b" product="feedback"><b>Subscription Has Expired</b> - If the
+          organization's paid subscription expired 14 days prior, the user assigned as the
+          organization <i>Owner</i><ph> or <i>Billing Manager</i></ph> will receive a notification
+          reminding them to re-subscribe. The <i>Owner</i> is only able to access the <xref
+            href="ofb-organization-profile-page.dita">Organization Profile</xref>, <xref
+            href="ofb-subscription.dita">Subscription</xref>, and <xref
+            href="ofb-technical-support-page.dita">Technical Support</xref> pages. If the
+          subscription is not renewed within 90 day of its expiration date, the organization and all
+          of its data will be deleted.</li>
+        <li product="feedback" id="li_hxd_5nz_tbc"><b>Organization Scheduled for Deletion</b> - If
+          the organization's paid subscription expires, the organization and all of its data will be
+          deleted if the subscription is not renewed within 90 days its expiration date.  The user
+          assigned as the organization <i>Owner</i><ph> or <i>Billing Manager</i></ph> will receive
+          a notification 30 days prior to the deletion date (and another one seven days prior)
+          reminding them that the organization is scheduled for deletion if the subscription is not
+          renewed.</li>
+        <li product="feedback" id="li_ixd_5nz_tbc"><b>Subscription Has Expired</b> - If the
+          organization's paid subscription expired 14 days prior, the user assigned as the
+          organization <i>Owner</i><ph> or <i>Billing Manager</i></ph> will receive a notification
+          reminding them to re-subscribe.</li>
+        <li id="li_a3x_dgk_54b" product="feedback"><b>Trial Will Expire</b> - If the organization's
+          trial subscription is about to expire (within 7 days or 24 hours), the user assigned as
+          the organization <i>Owner</i><ph> or <i>Billing Manager</i></ph> will receive a
+          notification advising them to subscribe to a paid subscription plan.</li>
+        <li id="li_b3x_dgk_54b" product="feedback"><b>Trial Has Expired</b> - If the organization's
+          trial subscription expired 7 days prior, the user assigned as the organization
+            <i>Owner</i><ph> or <i>Billing Manager</i></ph> will receive a notification advising
+          them to subscribe to a paid subscription plan.</li>
+        <li id="li_c3x_dgk_54b" product="feedback"><b>Number of Page Views Allowed by the
+            Subscription Plan Will Be Exceeded</b> - If the number of page views allowed by the
+          organization's subscription plan is about to be exceeded for the current month, the user
+          assigned as the organization <i>Owner</i><ph> or <i>Billing Manager</i></ph> will receive
+          a notification advising them to upgrade their subscription plan. This notification is sent
+          when 80% of the allowed page views has been reached and again when 100% has been
+          reached.</li>
+        <li id="li_d3x_dgk_54b" product="feedback"><b>Number of Page Views Allowed by the
+            Subscription Plan Has Been Exceeded</b> - If the number of page views allowed by the
+          organization's subscription plan has been exceeded for the current month, the user
+          assigned as the organization <i>Owner</i><ph> or <i>Billing Manager</i></ph> will receive
+          a notification that their subscription has been suspended for the remainder of the month
+          and advising them to upgrade their subscription plan. This notification is sent when 5
+          days have passed since exceeding the limit or when 120% of the allowed page views has been
+          reached.</li>
+        <li id="li_e3x_dgk_54b" product="feedback"><b>Organization Has Active Subscription but no
+            Page Views Were Generated</b> - If the user assigned as the organization
+            <i>Owner</i><ph> or <i>Billing Manager</i></ph> activates a subscription, but no page
+          views have yet to be generated, they will receive an automatic notification via
+          email.</li>
+      </ul></p>
+  </body>
+</topic>

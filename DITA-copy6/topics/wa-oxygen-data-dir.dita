@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="wa-oxygen-data-dir">
+  <title>Web Author Oxygen Data Directory</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Oxygen data dir</indexterm>
+        <indexterm>Oxygen data directory</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_aqq_dgk_54b"><ph keyref="webappProduct"/> configuration files are stored in a single folder that can be
+      shared among multiple servers in a <xref
+        href="webapp-loadbalancing.dita#webapp-loadbalancing">distributed deployment</xref>. It can
+      also be reused when you update the server to a new version.</p>
+    <p id="p_bqq_dgk_54b">The default location of this folder depends on the distribution:<dl id="dl_cqq_dgk_54b">
+        <dlentry id="dlentry_dqq_dgk_54b">
+          <dt>Windows, Linux, and All Platforms Distributions</dt>
+          <dd>
+            <filepath><term conkeyref="reusables-user-guide/oxy-webapp-install-dir"
+              />/tomcat/work/Catalina/localhost/oxygen-xml-web-author</filepath>.</dd>
+        </dlentry>
+        <dlentry id="dlentry_eqq_dgk_54b">
+          <dt>Web Archive Distribution</dt>
+          <dd>Depends on the servlet container. For example, in Tomcat, it is located in
+              <filepath>work/Catalina/localhost/oxygen-xml-web-author</filepath>.</dd>
+        </dlentry>
+      </dl></p>
+    <p id="p_fqq_dgk_54b">
+      <note type="attention" id="note_gqq_dgk_54b">If the <ph keyref="webappProduct"/> is started in
+        security mode or if you want to change the location of the <ph keyref="product"/> Data
+        Directory, you must <xref
+          href="webauthor-set-system-property.dita#webauthor-set-system-property">set the
+            <b>oxygen.data.dir</b> system property</xref>.</note>
+      <note type="important" id="note_hqq_dgk_54b">WebSphere will erase the folder with
+        configuration files upon restart. For this server, you must <xref
+          href="webauthor-set-system-property.dita#webauthor-set-system-property">set the
+            <b>oxygen.data.dir</b> system property</xref> to a folder that persists across
+        restarts.</note>
+    </p>
+    <section id="oxygen_data_directory_contents">
+      <title>Oxygen Data Directory Contents</title>
+      <p id="p_iqq_dgk_54b">
+        <dl id="dl_jqq_dgk_54b">
+          <dlentry id="dlentry_kqq_dgk_54b">
+            <dt><filepath>options</filepath> Folder</dt>
+            <dd>
+              <p id="p_lqq_dgk_54b">This folder contains:</p>
+              <p id="p_mqq_dgk_54b">
+                <dl id="dl_nqq_dgk_54b">
+                  <dlentry id="dlentry_oqq_dgk_54b">
+                    <dt><filepath>autocorrect</filepath> Folder</dt>
+                    <dd>Contains <xref href="wa-customize-autocorrect.dita">autocorrect
+                        configuration files</xref> (<filepath>.dat</filepath>).</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_pqq_dgk_54b">
+                    <dt><filepath>spell</filepath> Folder</dt>
+                    <dd>Contains <xref href="wa-add-terms-list.dita">term list configuration files
+                        for the spell checker</xref> (<filepath>.tdi</filepath>).</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_qqq_dgk_54b">
+                    <dt><filepath>dicts</filepath> Folder</dt>
+                    <dd>Contains <xref href="wa-custom-dictionaries.dita">custom dictionary
+                        files</xref> (<filepath>.dic</filepath> and <filepath>.aff</filepath>).</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_rqq_dgk_54b">
+                    <dt><filepath>license.properties</filepath> File</dt>
+                    <dd>This file contains connection details for the license servlet.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_sqq_dgk_54b">
+                    <dt><filepath>options.xml</filepath> File</dt>
+                    <dd>This file contains various options for <ph keyref="product"/>.</dd>
+                  </dlentry>
+                </dl>
+              </p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_tqq_dgk_54b">
+            <dt><filepath>plugins</filepath> Folder</dt>
+            <dd>Contains the installed <ph product="webauthor"><xref
+                  href="https://www.oxygenxml.com/doc/ug-waCustom/topics/customizing_plugins.html"
+                  format="html" scope="external">Web Author plugins</xref></ph><xref
+                href="customizing_plugins.dita" product="waCustom">Web Author plugins</xref> and the
+              auto-generated <filepath>plugin.dtd</filepath> schema file used for validating the
+                <filepath>plugin.xml</filepath> descriptors for each plugin.</dd>
+          </dlentry>
+          <dlentry id="dlentry_uqq_dgk_54b">
+            <dt><filepath>frameworks</filepath> Folder</dt>
+            <dd>Contains the built-in frameworks that are integrated into <ph keyref="product"/>.
+              These cannot be removed.</dd>
+          </dlentry>
+          <dlentry id="dlentry_gxn_2fd_rsb">
+            <dt><filepath>user-frameworks</filepath> Folder</dt>
+            <dd>This folder is where you need to store any custom <ph product="webauthor"><xref
+                  href="https://www.oxygenxml.com/doc/ug-waCustom/topics/customizing_frameworks.html"
+                  format="html" scope="external">Web Author frameworks</xref></ph><xref
+                href="customizing_frameworks.dita" product="waCustom">Web Author frameworks</xref>
+              that you create. If you upgrade <ph keyref="product"/> to a newer version, your custom
+              frameworks will automatically be moved to this directory in the new version's
+              directory structure.</dd>
+          </dlentry>
+          <dlentry id="dlentry_s1s_cqp_5sb">
+            <dt><filepath>user-plugins</filepath> Folder</dt>
+            <dd>This folder is where you need to store any <ph product="webauthor"><xref
+                  href="https://www.oxygenxml.com/doc/ug-waCustom/topics/customizing_plugins.html"
+                  format="html" scope="external">Web Author plugins</xref></ph><xref
+                href="customizing_plugins.dita" product="waCustom">Web Author plugins</xref> that
+              you create. If you upgrade <ph keyref="product"/> to a newer version, your plugins
+              will automatically be moved to this directory in the new version's directory
+              structure.</dd>
+          </dlentry>
+          <dlentry>
+            <dt><filepath>.java</filepath></dt>
+            <dd>This folder contains settings that are automatically created by the application. If
+              you copy the <filepath>license.properties</filepath> or
+                <filepath>options.xml</filepath> from one deployment to another one, you should also
+              copy this folder.<note id="note_o3y_dn2_ndc" type="important">This
+                  <filepath>.java</filepath> folder contains important settings. If you do not copy
+                this folder, you will lose license server connection information.</note></dd>
+          </dlentry>
+          <dlentry id="dlentry_vqq_dgk_54b">
+            <dt><filepath>shiro-users.ini</filepath> File</dt>
+            <dd>Contains the Web Author administrator user credentials.</dd>
+          </dlentry>
+        </dl>
+      </p>
+    </section>
+    <section id="bundling_a_web_author_configuration">
+      <title>Bundling a Web Author Configuration</title>
+      <p id="p_wqq_dgk_54b">You can create a <i>WAR</i> distribution of a web application based on the <b>Web Author
+          Component</b> that bundles the configuration. The configuration files need to be placed in
+        the <filepath>WEB-INF</filepath> folder with the following structure:<ul id="ul_xqq_dgk_54b">
+          <li id="li_yqq_dgk_54b"><b>frameworks.zip</b> - A zip archive with the frameworks that will be included in the
+            application.</li>
+          <li id="li_zqq_dgk_54b"><b>plugins.zip</b> - A zip archive with the plugins that will be included in the
+            application.</li>
+          <li id="li_arq_dgk_54b"><b>options.xml</b> - A file that contains pre-configured options.</li>
+          <li id="li_brq_dgk_54b"><b>license.properties</b> - A file that contains the details about the license server
+            connection.</li>
+        </ul></p>
+      <p id="p_crq_dgk_54b"><b>Result:</b> The bundled configuration will be copied to the <xref
+          href="#wa-oxygen-data-dir/oxygen_data_directory_contents" format="dita">data
+          directory</xref> when the application starts. When redeploying the application with a new
+        configuration, it is recommended to clear the old configuration by deleting the contents of
+        the <xref href="#wa-oxygen-data-dir/oxygen_data_directory_contents" format="dita">data
+          directory</xref>.</p>
+    </section>
+  </body>
+</topic>

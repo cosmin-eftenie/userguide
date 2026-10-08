@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dita-ot-install-plugin">
+  <title>Installing a DITA-OT Plugin</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>DITA<indexterm>DITA-OT Plugins<indexterm>Install additional
+            plugins</indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_z4n_dgk_54b"><ph keyref="product"/> comes bundled with various DITA-OT <xref keyref="glossentry_plugin"
+          ><term>plugins</term></xref>, but the architecture of the <b>DITA Open Toolkit</b> also
+      allows you to install additional <term>plugins</term> that can be found from various sources
+      (for example, <xref href="https://github.com/oxygenxml/" format="html" scope="external"
+          ><i>Oxygen's</i> public GitHub repository includes some DITA-OT plugins</xref>).
+      <note conkeyref="reusables-user-guide/note-custom-dita-ot-limitations"
+        id="note_njq_b4z_ctb"/></p>
+    <section id="installing_a_ditaot_plugin">
+      <title>Installing a DITA-OT Plugin</title>
+      <p id="p_bpn_dgk_54b">To install a DITA-OT plugin, following this procedure:<ol id="ol_uwz_kc4_l3">
+          <li>
+            <p>Locate the DITA Open Toolkit <filepath>plugins</filepath> directory where the plugin
+              will be installed. </p>
+            <p>To avoid making changes inside the <ph keyref="product"/> installation folder, it is
+                <b>strongly recommended</b> to download the <xref
+                href="https://www.oxygenxml.com/publishing_engine.html" format="html"
+                scope="external">Oxygen Publishing Engine</xref> that corresponds to your version of
+                <ph keyref="product"/>, copy it somewhere on your disk where you have full write
+              access, and reference it in the <xref href="preferences-dita.dita"><menucascade>
+                  <uicontrol>Preferences</uicontrol>
+                  <uicontrol>DITA</uicontrol>
+                </menucascade> page</xref>.</p>
+            <p>The default <term keyref="glossentry_dita_ot_dir"/> is bundled inside the <ph
+                keyref="product"/> installation folder. If you want to install it directly there,
+              the folder where the <b>DITA-OT</b> is located needs to have full write access
+              permissions set to it. For example, in <b>Windows</b>, if you are integrating
+                <term>plugins</term> in the <b>DITA-OT</b> folder bundled with <ph keyref="product"
+              /> and your application is installed in the <b>Program Files</b> folder, you can start
+              the <ph keyref="product"/> main executable with administrative rights for the
+              integrator process to be able to modify resources in the <b>DITA-OT</b> folder.</p>
+          </li>
+          <li id="li_cpn_dgk_54b">Copy the additional <term>plugin</term> to the location of the
+            DITA-OT version you are using (by default, <filepath><term
+                keyref="glossentry_dita_ot_dir"/>\plugins</filepath> directory).</li>
+          <li id="li_epn_dgk_54b">Select the <xref
+              href="configure-transformation-dialog.dita#configure-transformation-dialog"
+                  ><uicontrol><image href="../img/TransformConfig16.png"/>Configure Transformation
+                Scenario(s)</uicontrol></xref> action from the <uicontrol>DITA Maps
+              Manager</uicontrol> toolbar (you could also use the same action on the main toolbar or
+            open the <xref href="scenarios-view.dita#scenarios-view"><b>Transformation Scenarios</b>
+              view</xref>).</li>
+          <li id="li_fpn_dgk_54b">Select the <xref
+              href="ditamap-run-dita-ot-integrator.dita#ditamap-run-dita-ot-integrator"
+                ><b>Integrate/Install DITA-OT Plugins</b> transformation scenario</xref>. If the
+              <term>integrator</term> is not visible, select the <b>Show all scenarios</b> option
+            that is available in the <uicontrol><image href="../img/Settings16.png"
+                id="image_km5_xrs_yq"/>Settings</uicontrol> drop-down menu.</li>
+          <li id="li_hpn_dgk_54b"><xref href="apply-transformation-scenarios.dita#apply-transformation-scenarios">Apply
+              the scenario</xref>.</li>
+          <li id="li_ipn_dgk_54b">Check the <uicontrol>Results</uicontrol> panel at the bottom of the application to
+            make sure the build was successful.</li>
+        </ol></p>
+      <p>After the installation, you can open a DITA map and use the <uicontrol>Configure
+          Transformation Scenarios</uicontrol> dialog box to create a new
+          <uicontrol>DITA-OT</uicontrol> transformation scenario. <ph keyref="product"/> detects
+        that transformation type declaration from the <b>DITA-OT</b>
+        <term>plugin</term> and presents descriptions in the <xref
+          href="dita-ot-transformation.dita#dita-ot-transformation"><uicontrol>DITA Transformation
+            Type</uicontrol> dialog box</xref>. <ph keyref="product"/> also shows the contributed
+        parameters from the plugin in the <xref
+          href="dita-map-edit-parameters.dita#dita-map-edit-parameters">transformation scenario's
+            <uicontrol>Parameters</uicontrol> tab</xref>.</p>
+    </section>
+    <note type="tip" id="note_kpn_dgk_54b">You can declare the transformation type and allowed parameters by following the
+      procedure found in: <xref href="dita-ot-define-transtype.dita"/>.</note>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link href="simple-dita-ot-plugin.dita"/>
+      <link format="html" href="http://www.dita-ot.org/" scope="external">
+        <linktext>DITA Open Toolkit Documentation</linktext>
+      </link>
+      <link href="dita-ot-define-transtype.dita"/>
+    </linklist>
+  </related-links>
+</topic>

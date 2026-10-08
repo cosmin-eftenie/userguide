@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dg-DefaultElementLocatorProvider-implem">
+  <title>Default Link Target Reference Finder</title>
+  <body>
+    <p id="p_jmb_dgk_54b">The <i>DefaultElementLocatorProvider</i> implementation is used by default to find link
+      target references. It offers support for the most common types of links:</p>
+    <ul id="ul_kmb_dgk_54b">
+      <li id="li_lmb_dgk_54b"><xref href="dg-IDElementLocator-implem.dita">Links based on ID attribute
+        values</xref>.</li>
+      <li id="li_mmb_dgk_54b"><xref href="dg-XPointerElementLocator-implem.dita">XPointer element() scheme</xref>.</li>
+    </ul>
+    <p id="p_nmb_dgk_54b">The method <i>getElementLocator</i> determines what <i>ElementLocator</i> should be used. In
+      the default implementation, it checks if the link is an XPointer element() scheme. Otherwise,
+      it assumes it is an ID. A non-null <i>IDTypeVerifier</i> will always be provided if a schema
+      is associated with the document type.</p>
+    <p id="p_omb_dgk_54b">The <codeph>link</codeph> string argument is the <xref keyref="glossentry_anchor"
+          ><term>anchor</term></xref> part of the of the URL that is composed from the value of the
+      link property specified for the link element in the CSS.</p>
+    <codeblock outputclass="language-java" id="codeblock_pmb_dgk_54b">public ElementLocator getElementLocator(IDTypeVerifier idVerifier, 
+               String link) {
+  ElementLocator elementLocator = null;
+  try {
+    if(link.startsWith("element(")){
+      // xpointer element() scheme
+      elementLocator = new XPointerElementLocator(idVerifier, link);
+    } else {
+      // Locate link element by ID
+      elementLocator = new IDElementLocator(idVerifier, link);
+    }
+  } catch (ElementLocatorException e) {
+    logger.warn("Exception when create element locator for link: " 
+        + link + ". Cause: " + e, e);
+  }
+  return elementLocator;
+}</codeblock>
+  </body>
+</topic>

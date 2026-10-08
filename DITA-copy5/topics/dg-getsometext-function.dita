@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="dg-getsometext-function">
+  <title>Get Text: oxy_getSomeText(text, length) Function</title>
+  <shortdesc>This function allows you to truncate a long string and to set a maximum number of
+    displayed characters.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>CSS extensions<indexterm>Custom
+            functions<indexterm>oxy_getSomeText</indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p id="p_ayc_dgk_54b">
+      <dl id="dl_byc_dgk_54b">
+        <dlentry id="dlentry_cyc_dgk_54b">
+          <dt>Syntax:</dt>
+          <dd>
+            <p id="p_dyc_dgk_54b">
+              <syntaxdiagram>
+                <groupseq>
+                  <kwd>oxy_getSomeText</kwd>
+                  <sep>(</sep>
+                  <kwd>text</kwd>
+                  <sep>,</sep>
+                  <kwd>length</kwd>
+                  <sep>,</sep>
+                  <kwd>endsWithPoints</kwd>
+                  <sep>)</sep>
+                </groupseq>
+              </syntaxdiagram>
+            </p>
+            <p id="p_eyc_dgk_54b">
+              <dl id="dl_fyc_dgk_54b">
+                <dlentry id="dlentry_gyc_dgk_54b">
+                  <dt><uicontrol>text</uicontrol></dt>
+                  <dd>Displays the actual text.</dd>
+                </dlentry>
+                <dlentry id="dlentry_hyc_dgk_54b">
+                  <dt><uicontrol>length</uicontrol></dt>
+                  <dd>Sets the maximum number of characters that are displayed.</dd>
+                </dlentry>
+                <dlentry id="dlentry_iyc_dgk_54b">
+                  <dt><uicontrol>endsWithPoints</uicontrol></dt>
+                  <dd>Specifies if the truncated text ends with ellipsis.</dd>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+      </dl>
+    </p>
+    <p id="p_jyc_dgk_54b"><b><u>Example: <term>oxy_getSomeText</term> Function</u></b></p>
+    <p id="p_kyc_dgk_54b">If an attribute value is very large, you can trim its content before it is displayed as
+      static
+      content:<codeblock outputclass="language-css" id="codeblock_lyc_dgk_54b">*[longdesc]:before{
+  content: oxy_getSomeText(attr(longdesc), 200);
+}</codeblock></p>
+  </conbody>
+</concept>

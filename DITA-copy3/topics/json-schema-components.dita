@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="json-schema-components">
+  <title>JSON Schema Components</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>JSON Schema diagram editor<indexterm>Components</indexterm></indexterm>
+        <indexterm>JSON Schema Design mode<indexterm>Components</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <section id="section_npq_xzb_prb">
+      <title><uicontrol>Schema</uicontrol></title>
+      <p id="p_opq_xzb_prb">
+        <fig id="fig_gqg_c1c_prb">
+          <title>The <uicontrol>schema</uicontrol> Component</title>
+          <image href="../img/json-schema-components-schema.png"/>
+        </fig>
+      </p>
+      <p id="p_kkj_1cc_prb"><uicontrol>Description:</uicontrol> Defines the root element of a JSON
+        schema. A JSON schema document contains all the steps that are necessary to be performed to
+        validate JSON documents and it contains a collection of JSON schema components.</p>
+    </section>
+    <section id="section_xsg_tdc_prb">
+      <title><uicontrol>Property</uicontrol></title>
+      <p id="p_zsg_tdc_prb">
+        <fig id="fig_atg_tdc_prb">
+          <title>Example of a <uicontrol>property</uicontrol> Component</title>
+          <image href="../img/json-schema-components-property.png"/>
+        </fig>
+      </p>
+      <p id="p_ysg_tdc_prb"><uicontrol>Description:</uicontrol> Each <codeph>key:value</codeph> pair
+        is known as a <uicontrol>property</uicontrol> of the object. The value can be any JSON data
+        type.</p>
+    </section>
+    <section id="section_wyz_zcc_prb">
+      <title><uicontrol>Properties</uicontrol></title>
+      <p id="p_xyz_zcc_prb">
+        <fig id="fig_yyz_zcc_prb">
+          <title>The <uicontrol>properties</uicontrol> Component</title>
+          <image href="../img/json-schema-components-properties.png"/>
+        </fig>
+      </p>
+      <p id="p_zyz_zcc_prb"><uicontrol>Description:</uicontrol> An object is valid against the
+          <uicontrol>properties</uicontrol> keyword if every property that is present in both the
+        object and the value of this keyword validates against the corresponding schema. The value
+        must be an object, where properties must contain valid JSON schemas (object or boolean).
+        Only the property names that are present in both the object and the keyword value are
+          checked.<note id="note_y14_44k_jsb">Properties with a boolean value are presented in
+          diagram as components. You can change the boolean value by modifying the <codeph>any
+            type</codeph> property value. You can also convert a boolean <codeph>any type</codeph>
+          property into a standard <codeph>type</codeph> property using the <uicontrol>Convert
+            property to standard type</uicontrol> contextual menu action.</note></p>
+    </section>
+    <section id="section_y5m_g2c_prb">
+      <title><uicontrol>Pattern Property</uicontrol></title>
+      <p id="p_avm_g2c_prb">
+        <fig id="fig_bvm_g2c_prb">
+          <title>Example of a <uicontrol>patternProperty</uicontrol> Component</title>
+          <image href="../img/json-schema-components-pattern-property.png"/>
+        </fig>
+      </p>
+      <p id="p_z5m_g2c_prb"><uicontrol>Description:</uicontrol> Maps regular expressions to schemas.
+        If a property name matches the given regular expression, the property value must validate
+        against the corresponding schema.</p>
+    </section>
+    <section id="section_ylp_2dc_prb">
+      <title><uicontrol>Pattern Properties</uicontrol></title>
+      <p id="p_zlp_2dc_prb">
+        <fig id="fig_amp_2dc_prb">
+          <title>The <uicontrol>patternProperties</uicontrol> Component</title>
+          <image href="../img/json-schema-components-pattern-properties.png"/>
+        </fig>
+      </p>
+      <p id="p_bmp_2dc_prb"><uicontrol>Description:</uicontrol> An object is valid against the
+          <uicontrol>patternProperties</uicontrol> keyword if every property where a property name
+        (key) matches a regular expression from the value of this keyword is also valid against the
+        corresponding schema. The value must be an object where the keys must be valid regular
+        expressions and the corresponding values must be valid JSON schemas (object or boolean).</p>
+    </section>
+    <section id="section_vxl_krr_r5b">
+      <title><uicontrol>Unevaluated Properties</uicontrol> (for 2019-09 or 2020-12
+        schemas)</title>
+      <p id="p_wxl_krr_r5b">
+        <fig id="fig_xxl_krr_r5b">
+          <title>The <uicontrol>unevaluatedProperties</uicontrol> Component</title>
+          <image href="../img/json-schema-components-unevaluated-properties.png"/>
+        </fig>
+      </p>
+      <p id="p_yxl_krr_r5b"><uicontrol>Description:</uicontrol> An object is valid against the
+          <uicontrol>unevaluatedProperties</uicontrol> keyword if every unevaluated property is
+        valid against the schema defined by the value of this keyword. Unevaluated properties are
+        the properties that were not evaluated anywhere in the current schema. This keyword can see
+        through adjacent keywords, such as <uicontrol>allOf</uicontrol>.</p>
+    </section>
+    <section id="section_zmg_f2c_prb">
+      <title><uicontrol>Definition</uicontrol></title>
+      <p id="p_bng_f2c_prb">
+        <fig id="fig_cng_f2c_prb">
+          <title>Example of a <uicontrol>definition</uicontrol> Component</title>
+          <image href="../img/json-schema-components-definition.png"/>
+        </fig>
+      </p>
+      <p id="p_ang_f2c_prb"><uicontrol>Description:</uicontrol> The definition of a component of a
+        schema. It can be referenced from a property to define its specification.</p>
+    </section>
+    <section id="section_okk_ddc_prb">
+      <title><uicontrol>Definitions</uicontrol></title>
+      <p id="p_pkk_ddc_prb">
+        <fig id="fig_qkk_ddc_prb">
+          <title>The <uicontrol>definitions</uicontrol> Component</title>
+          <image href="../img/json-schema-components-definitions.png"/>
+          <p> or </p>
+          <image href="../img/json-schema-components-definitions2.png"/>
+        </fig>
+      </p>
+      <p id="p_rkk_ddc_prb"><uicontrol>Description:</uicontrol> The optional
+          <uicontrol>definitions</uicontrol> keyword (or <uicontrol>$defs</uicontrol> for <i>draft
+          2019-09</i> or <i>2020-12</i> schemas) does not directly validate data, but it
+        contains a map of validation schemas. The value can be anything.<note id="note_wv1_1pk_jsb"
+          >Definitions with a boolean value are presented in diagram as components. You can change
+          the boolean value by modifying the definition's <codeph>any type</codeph> property value.
+          You can also convert a definition's boolean <codeph>any type</codeph> property into a
+          standard <codeph>type</codeph> property using the <uicontrol>Convert definition to
+            standard type</uicontrol> contextual menu action.</note></p>
+    </section>
+    <section id="section_yxb_l2c_prb">
+      <title><uicontrol>Additional Properties</uicontrol></title>
+      <p id="p_ayb_l2c_prb">
+        <fig id="fig_byb_l2c_prb">
+          <title>The <uicontrol>additionalProperties</uicontrol> Component</title>
+          <image href="../img/json-schema-components-additional-properties.png"/>
+        </fig>
+      </p>
+      <p id="p_zxb_l2c_prb"><uicontrol>Description:</uicontrol>
+      </p>
+      <p dir="ltr" id="p_x4m_t3n_qrb">An object is valid against the
+          <uicontrol>additionalProperties</uicontrol> keyword if all <i>unchecked</i> properties are
+        valid against the schema defined by the value of this keyword. <i>Unchecked</i> properties
+        are the properties not checked by the <uicontrol>properties</uicontrol> and
+          <uicontrol>patternProperties</uicontrol> keywords (if a property name is not present in
+        the <uicontrol>properties</uicontrol> keyword and does not match any regular expression
+        defined by the <uicontrol>patternProperties</uicontrol> keyword, then it is considered
+          <i>unchecked</i>). The value must be a valid JSON schema (object or boolean).</p>
+      <p id="p_ul1_x3n_qrb">To be more concise, if there are <i>unchecked</i> properties:<ul
+          id="ul_y1t_53n_qrb">
+          <li id="li_z1t_53n_qrb">If the value of the <uicontrol>additionalProperties</uicontrol>
+            keyword is <i>true</i>, it is always valid.</li>
+          <li id="li_y2m_v3n_qrb">If the value is <i>false</i>, it is never valid.</li>
+          <li id="li_r21_w3n_qrb">If the value contains an object (schema), every property must be
+            valid against that schema.</li>
+        </ul></p>
+    </section>
+    <section id="section_ilk_rdc_prb">
+      <title><uicontrol>Additional Items</uicontrol></title>
+      <p id="p_klk_rdc_prb">
+        <fig id="fig_llk_rdc_prb">
+          <title>The <uicontrol>additionalItems</uicontrol> Component</title>
+          <image href="../img/json-schema-components-additional-items.png"/>
+        </fig>
+      </p>
+      <p id="p_jlk_rdc_prb"><uicontrol>Description:</uicontrol> An array is valid against the
+          <uicontrol>additionalItems</uicontrol> keyword if all <i>unchecked</i> items are valid
+        against the schema defined by the keyword value. An item is considered <i>unchecked</i> if
+        the <uicontrol>items</uicontrol> keyword or <uicontrol>prefixItems</uicontrol> keyword
+        (starting with 2020-12) contains an array of schemas and does not have a corresponding
+        position (index). The value must be a valid JSON schema (object or boolean).</p>
+    </section>
+    <section id="section_kk1_gdc_prb">
+      <title><uicontrol>Items</uicontrol></title>
+      <p id="p_lk1_gdc_prb">
+        <fig id="fig_mk1_gdc_prb">
+          <title>The <uicontrol>items</uicontrol> Component</title>
+          <image href="../img/json-schema-components-items.png"/>
+        </fig>
+      </p>
+      <p id="p_nk1_gdc_prb"><uicontrol>Description:</uicontrol> An array is valid against the
+          <uicontrol>items</uicontrol> keyword if the items are valid against the corresponding
+        schemas provided by the keyword value. The value can be:<ul id="ul_xk2_h3n_qrb">
+          <li id="li_yk2_h3n_qrb">A valid JSON schema (object or boolean). Every item must be valid
+            against this schema.</li>
+          <li id="li_xmr_33n_qrb">An array of valid JSON schemas. Each item must be valid against
+            the schema defined at the same position (index). Items that do not have a corresponding
+            position (e.g. an array contains 5 items but this keyword only has 3) are considered
+            valid unless the <uicontrol>additionalItems</uicontrol> keyword is present, which will
+            decide the validity.</li>
+        </ul></p>
+    </section>
+    <section id="section_vrm_3qr_r5b">
+      <title><uicontrol>Prefix Items</uicontrol> (for 2020-12 schemas)</title>
+      <p id="p_wrm_3qr_r5b">
+        <fig id="fig_xrm_3qr_r5b">
+          <title>The <uicontrol>prefixItems</uicontrol> Component</title>
+          <image href="../img/json-schema-components-prefix-items.png"/>
+        </fig>
+      </p>
+      <p id="p_yrm_3qr_r5b"><uicontrol>Description:</uicontrol> An array is valid against the
+          <uicontrol>prefixItems</uicontrol> keyword if items are valid against the corresponding
+        schemas provided by the keyword value. The value of this keyword must be an array of valid
+        JSON schemas and each item must be valid against the schema defined at the same position
+        (index). Items that do not have a corresponding position (an array contains 5 items and this
+        keyword only has 3) will be considered valid, unless the <uicontrol>items</uicontrol>
+        keyword is present (which will decide the validity).</p>
+    </section>
+    <section id="section_r4m_dsr_r5b">
+      <title><uicontrol>Unevaluated Items</uicontrol> (for 2019-09 or 2020-12
+        schemas)</title>
+      <p id="p_s4m_dsr_r5b">
+        <fig id="fig_t4m_dsr_r5b">
+          <title>The <uicontrol>unevaluatedItems</uicontrol> Component</title>
+          <image href="../img/json-schema-components-unevaluated-items.png"/>
+        </fig>
+      </p>
+      <p id="p_u4m_dsr_r5b"><uicontrol>Description:</uicontrol> An object is valid against the
+          <uicontrol>unevaluatedItems</uicontrol> keyword if every unevaluated item is valid against
+        the schema defined by the value of this keyword. Unevaluated items are the items that were
+        not evaluated anywhere in the current schema. This keyword can see through adjacent
+        keywords, such as <uicontrol>allOf</uicontrol>.</p>
+    </section>
+    <section id="section_w11_t2c_prb">
+      <title><uicontrol>AllOf</uicontrol></title>
+      <p id="p_y11_t2c_prb">
+        <fig id="fig_z11_t2c_prb">
+          <title>Example of an <uicontrol>allOf</uicontrol> Component</title>
+          <image href="../img/json-schema-components-all-of.png"/>
+        </fig>
+      </p>
+      <p id="p_x11_t2c_prb"><uicontrol>Description:</uicontrol> An instance is valid against the
+          <uicontrol>allOf</uicontrol> keyword if it is valid against all schemas defined by the
+        value of this keyword. The value of this keyword must be an array of valid JSON schemas
+        (objects or boolean).</p>
+    </section>
+    <section id="section_hk5_x2c_prb">
+      <title><uicontrol>AnyOf</uicontrol></title>
+      <p id="p_jk5_x2c_prb">
+        <fig id="fig_kk5_x2c_prb">
+          <title>Example of an <uicontrol>anyOf</uicontrol> Component</title>
+          <image href="../img/json-schema-components-any-of.png"/>
+        </fig>
+      </p>
+      <p id="p_ik5_x2c_prb"><uicontrol>Description:</uicontrol> An instance is valid against the
+          <uicontrol>anyOf</uicontrol> keyword if it is valid against at least one schema defined by
+        the value of this keyword. The value must be an array of valid JSON schemas (objects or
+        boolean).</p>
+    </section>
+    <section id="section_mlx_y2c_prb">
+      <title><uicontrol>OneOf</uicontrol></title>
+      <p id="p_olx_y2c_prb">
+        <fig id="fig_plx_y2c_prb">
+          <title>Example of an <uicontrol>oneOf</uicontrol> Component</title>
+          <image href="../img/json-schema-components-one-of.png"/>
+        </fig>
+      </p>
+      <p id="p_nlx_y2c_prb"><uicontrol>Description:</uicontrol> An instance is valid against the
+          <uicontrol>oneOf</uicontrol> keyword if it is valid against exactly one schema defined by
+        the value of this keyword. The value must be an array of valid JSON schemas (object or
+        boolean).</p>
+    </section>
+    <section id="section_gxy_z2c_prb">
+      <title><uicontrol>Not</uicontrol></title>
+      <p id="p_ixy_z2c_prb">
+        <fig id="fig_jxy_z2c_prb">
+          <title>Example of a <uicontrol>not</uicontrol> Component</title>
+          <image href="../img/json-schema-components-not.png"/>
+        </fig>
+      </p>
+      <p id="p_hxy_z2c_prb"><uicontrol>Description:</uicontrol> An instance is valid against the
+          <uicontrol>not</uicontrol> keyword if it is not valid against the schema defined by the
+        value of this keyword. The value must be a valid JSON schema (object or boolean).</p>
+    </section>
+    <section id="section_ib2_bfc_prb">
+      <title><uicontrol>If/Then/Else</uicontrol></title>
+      <p id="p_kb2_bfc_prb">
+        <fig id="fig_lb2_bfc_prb">
+          <title>Examples of an <uicontrol>if</uicontrol>, <uicontrol>then</uicontrol>, and
+              <uicontrol>else</uicontrol> Components</title>
+          <image href="../img/json-schema-components-if-then-else.png"/>
+        </fig>
+      </p>
+      <p id="p_jb2_bfc_prb"><uicontrol>Description:</uicontrol> A conditional structure that
+        contains three keywords: <uicontrol>if</uicontrol>, <uicontrol>then</uicontrol>, and
+          <uicontrol>else</uicontrol>. Every keyword value must be a valid JSON schema (object or
+        boolean). When the <uicontrol>if</uicontrol> keyword is not present, the
+          <uicontrol>then</uicontrol> and <uicontrol>else</uicontrol> keywords are ignored. When the
+          <uicontrol>if</uicontrol> keyword is present, at least one of the
+          <uicontrol>then</uicontrol> or <uicontrol>else</uicontrol> keywords should also be present
+        (or both). The instance is valid against this keyword in one of the following cases:<ul
+          id="ul_wfg_cjn_qrb">
+          <li id="li_xfg_cjn_qrb">The <uicontrol>if</uicontrol> keyword validates the instance and
+            the <uicontrol>then</uicontrol> keyword also validates it.</li>
+          <li id="li_oyl_2jn_qrb">The <uicontrol>if</uicontrol> keyword does not validate the
+            instance but the <uicontrol>else</uicontrol> keyword validates it.</li>
+        </ul></p>
+    </section>
+    <section id="section_mpf_dw1_q5b">
+      <title><uicontrol>Dependencies</uicontrol></title>
+      <p id="p_npf_dw1_q5b">
+        <fig id="fig_opf_dw1_q5b">
+          <title>The <uicontrol>dependencies</uicontrol> Component</title>
+          <image href="../img/json-schema-components-dependencies.png"/>
+        </fig>
+      </p>
+      <p id="p_ppf_dw1_q5b"><uicontrol>Description:</uicontrol> An object is valid against the
+          <uicontrol>dependencies</uicontrol> keyword if it meets all dependencies specified by this
+        keyword value. Only property names (from this keyword value) that are also present in the
+        object are checked. The value of this keyword must be an object, where property values can
+        be:</p>
+      <ul id="ul_yvd_5tr_r5b">
+        <li id="li_zvd_5tr_r5b">
+          <p id="p_awd_5tr_r5b">Objects representing valid JSON schemas and the whole object must
+            match the entire schema.<note id="note_ct3_ytr_r5b" type="important">For <i>draft
+                2019-09</i> and <i>2020-12</i> schemas, you should use the <xref
+                href="#json-schema-components/section_dependent-schemas"
+                  ><uicontrol>dependentSchemas</uicontrol> keyword</xref> instead.</note></p>
+        </li>
+        <li id="li_cwd_5tr_r5b">
+          <p id="p_dwd_5tr_r5b">Arrays of strings representing property names, then the object must
+            contain all property names.<note type="important" id="note_xll_1vr_r5b">For <i>draft
+                2019-09</i> and <i>2020-12</i> schemas, you should use the <xref
+                href="#json-schema-components/section_dependent-required"
+                  ><uicontrol>dependentRequired</uicontrol> keyword</xref> instead.</note></p>
+        </li>
+      </ul>
+    </section>
+    <section id="section_dependent-required">
+      <title><uicontrol>Dependent Required</uicontrol> (for 2019-09 or 2020-12
+        schemas)</title>
+      <p id="p_vz2_wsr_r5b">
+        <fig id="fig_wz2_wsr_r5b">
+          <title>The <uicontrol>dependentRequired</uicontrol> Component</title>
+          <image href="../img/json-schema-components-dependent-required.png"/>
+        </fig>
+      </p>
+      <p id="p_xz2_wsr_r5b"><uicontrol>Description:</uicontrol>  An object is valid against the
+          <uicontrol>dependentRequired</uicontrol> keyword if it meets all dependencies specified by
+        this keyword value. The value of this keyword must be an object where property values must
+        be arrays of strings representing property names, and the object must contain all property
+        names. Only property names (from this keyword value) that are also present in the object are
+        checked.</p>
+    </section>
+    <section id="section_dependent-schemas">
+      <title><uicontrol>Dependent Schemas</uicontrol> (for 2019-09 or 2020-12
+        schemas)</title>
+      <p id="p_sqk_wsr_r5b">
+        <fig id="fig_tqk_wsr_r5b">
+          <title>The <uicontrol>dependentSchemas</uicontrol> Component</title>
+          <image href="../img/json-schema-components-dependent-schemas.png"/>
+        </fig>
+      </p>
+      <p id="p_uqk_wsr_r5b"><uicontrol>Description:</uicontrol> An object is valid against the
+          <uicontrol>dependentSchemas</uicontrol> keyword if it meets all dependencies specified by
+        this keyword value. The value of this keyword must be an object where property values must
+        be objects representing valid JSON schemas, and the whole object must match the entire
+        schema. Only property names (from this keyword value) that are also present in the object
+        are checked.</p>
+    </section>
+  </body>
+  <related-links>
+    <link href="json-schema-component-properties.dita"/>
+  </related-links>
+</topic>

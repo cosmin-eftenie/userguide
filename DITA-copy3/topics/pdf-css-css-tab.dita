@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="pdf-css-css-tab">
+  <title>CSS Tab (XML to PDF Transformation with CSS)</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>XML to PDF with CSS transformation scenario<indexterm>CSS
+          tab</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_kpl_cgk_54b"><ph conkeyref="reusables-transforming-documents/intro-for-transformation-tabs"/></p>
+    <p id="p_lpl_cgk_54b">The <uicontrol>CSS</uicontrol> tab contains the following options:</p>
+    <p id="p_mpl_cgk_54b">
+      <dl id="dl_npl_cgk_54b">
+        <dlentry conkeyref="reusables-transforming-documents/xml-url" id="xml-url">
+          <dt/>
+          <dd/>
+        </dlentry>
+        <dlentry id="css-url">
+          <dt>CSS URL</dt>
+          <dd>Optionally, you can use this option to specify the location of a custom CSS file to be
+            applied to the transformation. If this option is left blank, only the CSS referenced
+            directly from the document will be applied. <ph
+              conkeyref="reusables-user-guide/specify-path-ph"/><ph
+              product="author developer editor"> You can also use the <uicontrol><image
+                  href="../img/Edit16.gif"/>Open in editor</uicontrol> button to open the specified
+              file in the editor panel.</ph></dd>
+        </dlentry>
+        <dlentry id="dlentry_opl_cgk_54b">
+          <dt>Apply CSS stylesheets set in the current framework</dt>
+          <dd>If selected, CSS stylesheets that are specified in the framework (in the <xref
+              href="the-css-sub-tab.dita">Document Type configuration CSS subtab</xref>) are applied
+            to the transformation in addition to any CSS referenced directly in the document or
+            specified in the <xref href="#pdf-css-css-tab/css-url" format="dita">CSS URL
+              field</xref>.<note id="note_ppl_cgk_54b">If CSS files are specified in multiple ways, the transformation
+              applies the CSS in the following order (from lowest priority to highest):<ul id="ul_qpl_cgk_54b">
+                <li id="li_rpl_cgk_54b">CSS files that are specified in the framework (in the <xref
+                    href="the-css-sub-tab.dita">Document Type configuration CSS subtab</xref>).</li>
+                <li id="li_spl_cgk_54b">CSS files referenced directly in the document.</li>
+                <li id="li_tpl_cgk_54b">CSS files specified in the <xref href="#pdf-css-css-tab/css-url" format="dita"
+                    >CSS URL field</xref>.</li>
+              </ul></note></dd>
+        </dlentry>
+        <dlentry id="dlentry_upl_cgk_54b">
+          <dt>Processor options link</dt>
+          <dd>Opens the <xref href="preferences-css-processors.dita"><uicontrol>CSS-based
+                Processors</uicontrol> preferences page</xref> where you can configure some options
+            for generating PDF output.</dd>
+        </dlentry>
+      </dl>
+    </p>
+  </body>
+</topic>

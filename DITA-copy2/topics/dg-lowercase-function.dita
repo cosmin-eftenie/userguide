@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept
+  PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="dg-lowercase-function">
+  <title>Lowercase: oxy_lowercase() Function</title>
+  <shortdesc>This function transforms the text received as argument to lower case.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>CSS extensions<indexterm>Custom
+            functions<indexterm>oxy_lowercase</indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p id="p_rcd_dgk_54b">
+      <dl id="dl_scd_dgk_54b">
+        <dlentry id="dlentry_tcd_dgk_54b">
+          <dt>Syntax:</dt>
+          <dd>
+            <p id="p_ucd_dgk_54b">
+              <syntaxdiagram>
+                <groupseq>
+                  <kwd>oxy_lowercase</kwd>
+                  <sep>(</sep>
+                  <kwd>text</kwd>
+                  <sep>)</sep>
+                </groupseq>
+              </syntaxdiagram>
+            </p>
+            <p id="p_vcd_dgk_54b">
+              <dl id="dl_wcd_dgk_54b">
+                <dlentry id="dlentry_xcd_dgk_54b">
+                  <dt><uicontrol>text</uicontrol></dt>
+                  <dd>The text to be lower cased.</dd>
+                </dlentry>
+              </dl>
+            </p>
+            <p id="p_ycd_dgk_54b"><b><u>Example: <term>oxy_lowercase</term> Function</u></b></p>
+            <p id="p_zcd_dgk_54b">To insert a lower-cased qualified name as static text content before the element, use
+              this CSS
+              selector:<codeblock outputclass="language-css" id="codeblock_add_dgk_54b">*:before{
+  content: oxy_lowercase(oxy_name()) ": ";
+}</codeblock></p>
+          </dd>
+        </dlentry>
+      </dl>
+    </p>
+  </conbody>
+</concept>

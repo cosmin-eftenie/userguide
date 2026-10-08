@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task
+  PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="configure-external-mathml-editor">
+  <title>Configuring an External MathML Editor</title>
+  <taskbody>
+    <context>
+      <p id="p_o5y_bgk_54b">You can configure <ph keyref="product"/> to use a third-party MathML editor (e.g. the free
+          <xref href="https://www.libreoffice.org/" format="html" scope="external">Libre
+          Office</xref> equation editor) by following these steps:</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Install the third-party application (for example, <xref
+            href="https://www.libreoffice.org/" format="html" scope="external">Libre
+          Office</xref>).</cmd>
+      </step>
+      <step>
+        <cmd>Open <xref href="preferences-author-mathml.dita">the <uicontrol>MathML</uicontrol>
+            preferences page</xref> and in the <menucascade>
+            <uicontrol>External application</uicontrol>
+            <uicontrol>Command line</uicontrol>
+          </menucascade> field, set the command line used to open the external application.</cmd>
+        <info><p conkeyref="reusables-preferences-pages/libre-mathml"/>You can use the
+            <codeph>${cf}</codeph> editor variable in the command line to refer to a temporary file
+          automatically created by <ph keyref="product"/> that will contain the edited MathML
+          content.</info>
+      </step>
+      <step>
+        <cmd>Insert a new equation or double-click an existing equation. The external application
+          starts and it should display the equation inside it. Once you save the equation and close
+          the external application, the equation rendered in the <uicontrol>Author</uicontrol>
+          visual editing mode will refresh its contents based on your changes. When editing and
+          saving the equation in the started external application, do not alter the path to the
+          saved file in any way as the file is specifically saved in a location from where the <ph
+            keyref="product"/> application will load it automatically.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

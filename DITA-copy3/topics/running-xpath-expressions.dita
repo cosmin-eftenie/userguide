@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="running-xpath-expressions">
+  <title>Working with XPath Expressions</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>XPath Expressions</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_ewv_cgk_54b">XPath is a language for addressing specific parts of a document. XPath models an XML document
+      as a tree of nodes. An XPath expression is a mechanism for navigating through and selecting
+      nodes from the document. An XPath expression is, in a way, analogous to an SQL query used to
+      select records from a database.<note id="note_fwv_cgk_54b">If an XPath expression is run over a JSON document, it is
+        converted to XML and the XPath is executed over the converted XML document.</note></p>
+    <p id="p_gwv_cgk_54b">There are various types of nodes, including element nodes, attribute nodes, and text nodes.
+      XPath defines a way to compute a string-value for each type of node.</p>
+    <p id="p_hwv_cgk_54b">XPath defines a library of standard functions for working with strings, numbers and boolean
+      expressions.</p>
+    <p id="p_iwv_cgk_54b"><b><u>Examples:</u></b></p>
+    <p id="p_jwv_cgk_54b">
+      <ul id="ul_kwv_cgk_54b">
+        <li id="li_lwv_cgk_54b"><b>child::*</b> - Selects all children of the root node.</li>
+        <li id="li_mwv_cgk_54b"><b>.//name</b> - Selects all <xmlelement>name</xmlelement> elements
+          and descendants of the current node.</li>
+        <li id="li_nwv_cgk_54b"><b>/catalog/cd[price&gt;10.80]</b> - Selects all the
+            <xmlelement>cd</xmlelement> elements that have a <xmlelement>price</xmlelement> element
+          with a value larger than 10.80.</li>
+        <li id="li_bpv_4lp_4pb"><b>//prolog</b> - Finds all <xmlelement>prolog</xmlelement>
+          elements.</li>
+        <li id="li_ljy_4lp_4pb"><b>//prolog[@platform='mac']</b> - Finds all
+            <xmlelement>prolog</xmlelement> elements that have the <xmlatt>platform</xmlatt>
+          attribute value set to <b>mac</b>.</li>
+        <li id="li_gsz_4lp_4pb"><b>//child::prolog</b> - Selects all <xmlatt>prolog</xmlatt>
+          elements and the child content.</li>
+        <li id="li_sz5_gtk_qpb"><b>/*[count(//accountNumber) > 5]</b> - Searches for instances where
+          more than 5 <xmlelement>accountNumber</xmlelement> elements are found.</li>
+        <li id="li_cyn_wtk_qpb"
+            ><b>collection('file:/C:/path/to/folder/?select=*.xml')/*[not(//prolog)]</b> - Finds a
+          list of all XML files that do not contain any <xmlelement>prolog</xmlelement>
+          elements.</li>
+      </ul>
+    </p>
+    <p id="p_owv_cgk_54b">To find out more about XPath, see <xref href="http://www.w3.org/TR/xpath" scope="external"
+        format="html"/>.</p>
+  </body>
+  <related-links product="author developer editor developerEclipse editorEclipse">
+    <linklist>
+      <title>Related Information:</title>
+      <link href="content-completion-xpath-expressions.dita#content-completion-xpath-expressions"
+        product="developer editor developerEclipse editorEclipse"/>
+      <link href="find-and-replace-text-in-files.dita#find-and-replace-text-in-files"
+        product="author developer editor"/>
+      <link href="find-replace-dialog.dita#find-replace-dialog" product="author developer editor"/>
+    </linklist>
+  </related-links>
+</topic>

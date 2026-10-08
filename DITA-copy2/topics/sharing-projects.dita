@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="sharing-projects">
+  <title>Sharing a Project - Team Collaboration</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Projects<indexterm>Sharing</indexterm></indexterm>
+        <indexterm>Sharing project options file</indexterm>
+        <indexterm>Sharing transformation scenarios</indexterm>
+        <indexterm>Sharing validation scenarios</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_bvt_bgk_54b">You can use XML projects to make team collaboration and synergy efficient
+      and effective. Not only can you share the project files and folders, but <ph keyref="product"
+      /> also allows you to store preferences, transformation scenarios, and validation scenarios at
+        <xref keyref="glossentry_project-options">project level</xref> in a <term>project
+        file</term> (<filepath>.xpr</filepath> file extension). It can be saved on a version control
+      system (such as SVN, CVS, or Source Safe) or in a shared folder, so that your team has access
+      to the same resources stored in the project file.</p>
+    <section id="project-file-section">
+      <title>Sharing Preferences (Creating a Project-Level Options File)</title>
+      <p id="p_cvt_bgk_54b">To share options that are configured in certain preferences pages, you can store them in a
+          <term>project file</term> (<filepath>.xpr</filepath> file extension) that can easily be
+        shared with others. To do so, follow these steps:<ol id="ul_bdf_d5t_zd">
+          <li id="li_dvt_bgk_54b">[Recommended] You may want to use a fresh install for this
+            procedure to ensure that you do not copy personal or local preferences.</li>
+          <li conkeyref="reusables-editing-documents/li_evt_bgk_54b" id="li_emn_kcd_dpb"/>
+          <li conkeyref="reusables-editing-documents/li_fvt_bgk_54b" id="li_tj2_lcd_dpb"/>
+          <li conkeyref="reusables-editing-documents/li_gvt_bgk_54b" id="li_tdx_lcd_dpb"/>
+          <li conkeyref="reusables-editing-documents/li_ivt_bgk_54b" id="li_ox2_ncd_dpb"/>
+        </ol></p>
+    </section>
+    <section id="sharing_transformation_scenarios" product="author developer editor">
+      <title>Sharing Transformation Scenarios </title>
+      <p id="p_nvt_bgk_54b">To share created and edited transformation scenarios, you can store them
+        in a <term>project file</term> (<filepath>.xpr</filepath> file extension) by following these
+          steps:<ol id="ol_lzq_pcq_gs">
+          <li id="li_ovt_bgk_54b">In the <xref
+              href="using-the-project-view.dita#using-the-project-view" format="dita"
+                ><uicontrol>Project</uicontrol> view</xref>, create a project or open an existing
+            one.</li>
+          <li id="li_pvt_bgk_54b">When you <xref
+              href="defining-new-transformation-scenario.dita#defining-new-transformation-scenario"
+              >create a new transformation scenario</xref> or <xref
+              href="edit-scenario-dialog.dita#edit-scenario-dialog">edit an existing one</xref>,
+            there is a <uicontrol>Storage</uicontrol> option. Switch the storage preference to <xref
+              keyref="glossentry_project-options"><uicontrol>Project Options</uicontrol></xref> in
+            each transformation scenario you want to be included in the project file.</li>
+          <li id="li_qvt_bgk_54b">
+            <p id="p_rvt_bgk_54b">Click <uicontrol>OK</uicontrol> to store the scenario in the
+              project file.</p>
+            <p id="p_svt_bgk_54b">You can then share the project file so that your team will have
+              access to the same transformation scenarios that you stored in the project file. When
+              you create a scenario at the project level, the URLs from the scenario become relative
+              to the project URL.<note conkeyref="reusables-editing-documents/xpr-extension-note"
+                id="note_tvt_bgk_54b"/><note conkeyref="reusables-editing-documents/security-note"
+                id="note_uvt_bgk_54b"/></p>
+          </li>
+        </ol></p>
+    </section>
+    <section id="sharing_validation_scenarios">
+      <title>Sharing Validation Scenarios</title>
+      <p id="p_vvt_bgk_54b">To share created and edited validation scenarios, you can store them in a <term>project
+          file</term> (<filepath>.xpr</filepath> file extension) by following these steps:<ol
+          id="ol_wzq_m2q_gs">
+          <li id="li_wvt_bgk_54b">In the <xref href="using-the-project-view.dita#using-the-project-view" format="dita"
+                ><uicontrol>Project</uicontrol> view</xref>, create a project or open an existing
+            one.</li>
+          <li id="li_xvt_bgk_54b">When you create a new validation scenario or edit an existing one,
+            there is a <uicontrol>Storage</uicontrol> option. Switch the storage preference to <xref
+              keyref="glossentry_project-options"><uicontrol>Project Options</uicontrol></xref> in
+            each validation scenario you want to be included in the project file.</li>
+          <li id="li_yvt_bgk_54b">
+            <p id="p_zvt_bgk_54b">Click <uicontrol>OK</uicontrol> to store the scenario in the project file.</p>
+            <p id="p_awt_bgk_54b">You can then share the project file so that your team will have
+              access to the same validation scenarios that you stored in the project file. When you
+              create a scenario at the project level, the URLs from the scenario become relative to
+              the project URL.<note conkeyref="reusables-editing-documents/xpr-extension-note"
+                id="note_bwt_bgk_54b"/><note conkeyref="reusables-editing-documents/security-note"
+                id="note_cwt_bgk_54b"/></p>
+          </li>
+        </ol></p>
+    </section>
+    <section id="section_ons_p4q_kpb">
+      <title>Using Git for Collaboration</title>
+      <p id="p_pns_p4q_kpb">To assist you with team collaboration, sharing projects, and version
+        control, an add-on is available that contributes a built-in Git client directly in <ph
+          keyref="product"/>. The <b>Git Client</b> is developed independent of the normal
+          <b>Oxygen</b> release cycle, so it is updated and improved more frequently than the main
+        application. It is an optional tool so it needs to be installed as an add-on. Once
+        installed, a <uicontrol>Git Staging</uicontrol> view is available that includes various
+        actions that perform common Git commands, such as <i>push</i>, <i>pull</i>, <i>change
+          branch</i>, <i>commit</i>, and more. It also includes a built-in tool for comparing and
+        merging changes.</p>
+      <p id="p_syk_3qq_kpb">For more details, see <xref href="https://www.oxygenxml.com/doc/ug-addons/topics/git-addon.html" scope="external" format="html">Git add-on</xref>.</p>
+    </section>
+    <section id="syncro_svn_client_">
+      <title>Using Subversion (SVN) for Collaboration</title>
+      <p id="p_dwt_bgk_54b"><ph keyref="product"/> also includes an embedded SVN (Subversion)
+        Client. Even if you start developing a new project, or you want to migrate an existing one
+        to Subversion, the Syncro SVN Client allows you to easily share it with the rest of your
+        team. It can be accessed from the <uicontrol>Tools</uicontrol> menu and can be used for
+        synchronizing your working copy with a central repository. It can also be started by
+        selecting the <uicontrol><image href="../img/SyncroSVNClient16.png" id="image_nsj_dhf_yr"
+          />Open in SVN Client</uicontrol> action from the contextual menu of the <xref
+          href="using-the-project-view.dita#using-the-project-view"><uicontrol>Project</uicontrol>
+          view</xref>. This action opens the Syncro SVN Client and shows the selected project file
+        in the <uicontrol>Working Copy</uicontrol> view.</p>
+    </section>
+  </body>
+  <related-links product="author developer editor">
+    <link href="sharing-possibilities.dita#sharing-possibilities"/>
+    <link href="transformation-scenarios-sharing.dita#transformation-scenarios-sharing"/>
+    <link href="validation-scenarios-sharing.dita#validation-scenarios-sharing"/>
+  </related-links>
+</topic>

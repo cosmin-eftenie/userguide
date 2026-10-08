@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="selecting-combining-multiple-css-styles">
+  <title>Configuring and Managing Multiple CSS Styles for a Framework</title>
+  <titlealts>
+    <navtitle>CSS Stylesheets</navtitle>
+  </titlealts>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>CSS Styles</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p conkeyref="reusables-author-mode-customization/css.styles.intro" id="p_y11_dgk_54b"/>
+    <p id="p_z11_dgk_54b">An example of a common use case is when content authors want to use custom styling within a
+      document. You can select a <term>main</term> CSS stylesheet that styles the whole document and
+      then apply <term>alternate</term> styles, as layers, to specific parts of the document.</p>
+    <note id="note_ab1_dgk_54b">When altering a CSS file configured as a stylesheet for the current document framework,
+      you can quickly check its effects in the <uicontrol>Author</uicontrol> mode by using the
+          <uicontrol><image href="../img/Reload16.png" id="image_bbb_bmp_bs"/>Reload</uicontrol>
+      document action that is available on the toolbar.</note>
+    <section id="managing_the_css_styles">
+      <title>Managing the CSS Styles</title>
+      <p id="p_bb1_dgk_54b">The <xref keyref="glossentry_main-css-style"><term>main</term></xref> and <xref
+          keyref="glossentry_alternate-css-style"><term>alternate</term></xref> styles that are
+        listed in the <uicontrol>Styles</uicontrol> drop-down menu can be controlled in the <xref
+          href="the-document-type-dialog.dita#the-document-type-dialog"><uicontrol>Document
+            Type</uicontrol> configuration dialog box</xref>. To access it, follow these steps:<ol
+          id="ol_fk5_32t_mq">
+          <li id="li_cb1_dgk_54b"><ph id="Open-the-preferences-page">
+              <xref keyref="options_preferences">Open the <uicontrol>Preferences</uicontrol> dialog
+                box</xref>
+            </ph>. </li>
+          <li id="li_db1_dgk_54b">Go to <uicontrol>Document Type Association</uicontrol>.</li>
+              <li id="li_eb1_dgk_54b">Select the appropriate document type and click the <uicontrol>Edit</uicontrol>
+              button.<note type="important" id="note_fb1_dgk_54b">If you do not have access rights to the folder where the
+                <xref keyref="glossentry_framework"><term>framework</term></xref> files are stored,
+              you can either elevate read/write permissions on that <term>framework</term> folder or
+              you can extend the <term>framework</term> and customize the CSS stylesheets in the
+              extension. If you want to share the customized extension with the rest of your team,
+              see <xref
+                href="author-document-type-extension-sharing.dita#author-document-type-extension-sharing/sharing_the_extended_framework"
+              />.</note></li>
+        </ol>The CSS styles (CSS files) associated with the particular document type are listed in
+        the <xref href="the-css-sub-tab.dita#the-css-sub-tab"><uicontrol>CSS</uicontrol>
+          subtab</xref> of the <uicontrol>Author</uicontrol> tab. </p>
+      <p id="p_gb1_dgk_54b">
+        <fig id="fig_fkw_x4m_mq">
+          <title>Main and Alternate CSS Styles in the Document Type Configuration Dialog Box</title>
+          <image href="../img/css_styles_doc_type.png" id="image_lbl_hgq_2s"/>
+        </fig>
+      </p>
+      <p id="p_hb1_dgk_54b">You can <uicontrol><image href="../img/Add16.png" id="image_xjs_yfp_bs"/>Add</uicontrol>,
+            <uicontrol><image href="../img/Wrench16.png" id="image_vdb_bgp_bs"/>Edit</uicontrol>, or
+            <uicontrol><image href="../img/Remove16.png" id="image_pfg_cgp_bs"/>Delete</uicontrol>
+        styles from this dialog box to manage the <xref keyref="glossentry_main-css-style"
+            ><term>main</term></xref> and <xref keyref="glossentry_alternate-css-style"
+            ><term>alternate</term></xref> styles associated to the particular document type. You
+        can also change the order of the styles by using the <uicontrol><image
+            href="../img/MoveUpEntry16.gif" id="image_wx1_dgp_bs"/>Move Up</uicontrol> and
+            <uicontrol><image href="../img/MoveDownEntry16.gif" id="image_mvh_dgp_bs"/>Move
+          Down</uicontrol> buttons. This also changes the order that they appear in the
+          <uicontrol>Styles</uicontrol> drop-down menu. The <term>alternate</term> styles are
+        combined with the <term>main</term> CSS sequentially, in the order that they appear in this
+        list. Therefore, if the same style rules are included in multiple CSS files, the
+          <term>alternate</term> style that is listed last in this list takes precedence, since it
+        is the last one to be combined (applied as a layer).</p>
+      <p id="p_ib1_dgk_54b">The <uicontrol>URI</uicontrol> column shows the path of each CSS file. The names listed in
+        the <uicontrol>Styles</uicontrol> drop-down menu match the values in the
+          <uicontrol>Title</uicontrol> column. The value in the <uicontrol>Alternate</uicontrol>
+        column determines whether it is a <term>main</term> or <term>alternate</term> CSS. If the
+        value is <i>no</i>, it is a <term>main</term> CSS. If the value is <i>yes</i>, it is an
+          <term>alternate</term> CSS and the style can be combined with a <term>main</term> CSS or
+        other <term>alternate</term> styles when using the <uicontrol>Styles</uicontrol> drop-down
+          menu.<note id="note_jb1_dgk_54b">To group alternate styles into categories (submenus), use a vertical bar
+          character ( | ) in the <uicontrol>Title</uicontrol> column. You can use multiple vertical
+          bars for multiple submenus. The text before each vertical bar will be rendered as the name
+          of a submenu entry in the <uicontrol>Styles</uicontrol> drop-down menu, while the text
+          after the final vertical bar is rendered as the name of the style inside the submenu.
+              <p id="p_kb1_dgk_54b"><b>Example:</b> Suppose that you want to add two alternate stylesheets in separate
+            submenus, with the <i>Title</i> column set to <uicontrol>My Styles|User
+              Assistance|Hints</uicontrol> and <uicontrol>My Styles|User Actions|Inline
+              Actions</uicontrol>, respectively.</p><p id="p_lb1_dgk_54b">
+            <image href="../img/sa_doc_type_vert_bar.png" id="image_ubh_3hq_2s" placement="break"/>
+          </p><p id="p_mb1_dgk_54b"><ph keyref="product"/> will add a <uicontrol>My Styles</uicontrol> submenu with two
+            submenus (<uicontrol>User Assistance</uicontrol> that contains the
+              <uicontrol>Hints</uicontrol> style, and <uicontrol>User Actions</uicontrol> that
+            contains the <uicontrol>Inline Actions</uicontrol> style) in the
+              <uicontrol>Styles</uicontrol> drop-down menu.</p><p id="p_nb1_dgk_54b">
+            <image href="../img/sa_styles_vert_bar.png" id="image_igh_zlq_2s" placement="break"/>
+          </p></note></p>
+      <p id="p_ob1_dgk_54b">The <xref href="the-css-sub-tab.dita#the-css-sub-tab/enable-multiple-css"><uicontrol>Enable
+            multiple selection of alternate CSSs</uicontrol> checkbox</xref> at the bottom of the
+        pane must be selected for the <xref keyref="glossentry_alternate-css-style"><term>alternate
+            CSS styles</term></xref> to be combined. They are applied like layers and you can
+        activate any number of them. If this option is not selected, the <term>alternate</term>
+        styles are treated like <xref keyref="glossentry_main-css-style"><term>main CSS
+            styles</term></xref> and you can only select one at a time. By default, this option is
+        selected. There are also a few options that allow you to specify how to handle the CSS if
+        there are CSS styles specified in the document. You can choose to <i>ignore</i> or
+          <i>merge</i> them. </p>
+      <p id="p_pb1_dgk_54b">The following rules apply for merging CSS styles: <ul id="ul_f1c_ck5_bs">
+          <li id="li_qb1_dgk_54b">CSS files with the same title will be merged.</li>
+          <li id="li_rb1_dgk_54b">CSS files without a title will contribute to all others.</li>
+          <li id="li_sb1_dgk_54b">They are merged sequentially, in the order that they appear in the list.</li>
+        </ul></p>
+    </section>
+  </body>
+  <related-links>
+    <link href="rendering-xml-author-mode.dita"/>
+    <link href="../topics/the-css-sub-tab.dita#the-css-sub-tab"/>
+    <link href="https://blog.oxygenxml.com/topics/customizeDITACSS.html" format="html"
+      scope="external">
+      <linktext>Adding an extra CSS to customize the DITA visual editor</linktext>
+    </link>
+  </related-links>
+</topic>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="shortcuts-for-finding-next-previous-match">
+  <title>Keyboard Shortcuts for Finding the Next and Previous Match</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Finding/Replacing text<indexterm>Navigating Find/Replace
+          matches</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_s35_bgk_54b">Navigating from one match to the next or previous one is very easy to perform using the
+        <uicontrol conkeyref="reusable-oxygen-shortcuts-list/F3"/> and <uicontrol
+        conkeyref="reusable-oxygen-shortcuts-list/shift_f3"/> keyboard shortcuts. They are useful
+      for quickly repeating the last find action performed in the <xref
+        href="find-replace-dialog.dita"><uicontrol>Find / Replace</uicontrol> dialog box</xref>,
+      taking into account the same find options.<note type="restriction" id="note_t35_bgk_54b">These shortcuts only take
+        XPath expressions into account if the <uicontrol>Find / Replace</uicontrol> dialog box
+        remains opened. Once you close it, the XPath expressions are no longer
+      considered.</note></p>
+  </body>
+</topic>

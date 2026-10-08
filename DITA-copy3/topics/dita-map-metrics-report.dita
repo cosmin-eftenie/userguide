@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dita-map-metrics-report">
+  <title>DITA Map Metrics Report Transformation</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Transformation Scenarios<indexterm>DITA Map Metrics
+          Report</indexterm></indexterm>
+        <indexterm>DITA Map Metrics Report transformation</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_i1f_4lf_ftb">A <uicontrol>DITA Map Metrics Report</uicontrol> action is available on
+      the <uicontrol>DITA Maps Manager</uicontrol> toolbar and in the <uicontrol>DITA
+        Maps</uicontrol> main menu. It generates an overview report that contains useful statistics
+      for a DITA map.</p>
+    <p id="p_j1f_4lf_ftb">As an alternate approach, to create a metrics report from a <xref
+        keyref="glossentry_ditamap"><term>DITA map</term></xref> using a transformation scenario,
+      follow these steps:<ol id="ol_pvk_cgk_54b">
+        <li id="li_qvk_cgk_54b">Select the <uicontrol><image href="../img/TransformConfig16.png"
+              id="image_obc_2wv_sr"/>Configure Transformation Scenario(s)</uicontrol> action from
+          the <ph product="author editor authorEclipse editorEclipse"><xref
+              href="dita-maps-manager.dita#dita-maps-manager"><uicontrol>DITA Maps
+                Manager</uicontrol></xref>
+          </ph>toolbar.</li>
+        <li id="li_rvk_cgk_54b">Select the <uicontrol>DITA Map Metrics Report</uicontrol> scenario
+          from the <uicontrol>DITA Map</uicontrol> section.</li>
+        <li id="li_uzt_rlf_ftb">Run the transformation.</li>
+      </ol></p>
+    <p>The generated HTML report contains information such as: <ul id="ul_fyl_by1_ffb">
+        <li id="li_fvk_cgk_54b">The number of processed maps and topics.</li>
+        <li>The number of <codeph>map/bookmap/topic/task/concept/reference</codeph> types in the
+          DITA map.</li>
+        <li id="li_gvk_cgk_54b">Content reuse percentage.</li>
+        <li id="li_hvk_cgk_54b">Number of elements and attributes of different types used in the
+          entire <term>DITA map</term> structure.</li>
+        <li>Number of words and characters used in the entire <term>DITA map</term> structure.</li>
+        <li id="li_ivk_cgk_54b">DITA conditional processing attributes used in the <term>DITA
+            maps</term>.</li>
+        <li id="li_jvk_cgk_54b">Processing instructions.</li>
+        <li id="li_kvk_cgk_54b">External links.</li>
+        <li id="li_lvk_cgk_54b">All <xmlatt>outputclass</xmlatt> attribute values gathered from the
+          DITA project.</li>
+      </ul><note type="important" id="note_qhj_ztd_ftb"> If you have cross references that point to
+        content outside the scope of the DITA map, that referenced content is not counted. For
+        example, if you have links to topics that are not included in the DITA map hierarchy, the
+        content in those topics is ignored when generating the statistics.</note></p>
+    <p>The metrics report can also be obtained in XML format, making it possible to construct a
+        <xref
+        href="https://github.com/oxygenxml/dita-ot-metrics#visualizing-the-evolution-of-metrics-between-different-versions-of-the-documentation"
+        format="html" scope="external">metrics report evolution</xref> between multiple versions of
+      the same DITA project.</p>
+  </body>
+</topic>

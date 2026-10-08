@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="whr_edit-publishing-template">
+  <title>How to Edit a Packed Publishing Template</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+          >WebHelp Responsive <indexterm>Editing publishing templates</indexterm></indexterm>
+        <indexterm product="pdf-css webhelp-responsive ope">Publishing Template
+            <indexterm>Editing</indexterm></indexterm>
+        <indexterm>Editing publishing templates</indexterm>
+      </keywords>
+      <keywords>
+        <keyword outputclass="label" product="webhelp-responsive">Publishing Template</keyword>
+        <keyword outputclass="label" product="webhelp-responsive">Customization</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <taskbody>
+    <context id="context_hmp_tsh_wcb">
+      <p id="p_v4n_cgk_54b">To edit an existing <xref keyref="glossentry-wh-publishing-template"><term>Oxygen
+            Publishing Template</term></xref> package, follow these steps:</p>
+    </context>
+    <steps id="steps_axz_tz3_wcb">
+      <step>
+        <cmd>Unzip the ZIP archive associated with the <term>Oxygen Publishing Template</term> in a
+          separate folder.</cmd>
+      </step>
+      <step>
+        <cmd>Link the folder associated with the template in the <uicontrol
+            product="author developer editor pdf-css webhelp-responsive ope"
+            >Project</uicontrol><uicontrol product="authorEclipse developerEclipse editorEclipse"
+            >Project Explorer</uicontrol> view.</cmd>
+      </step>
+      <step>
+        <cmd>Using the <uicontrol product="author developer editor pdf-css webhelp-responsive ope"
+            >Project</uicontrol><uicontrol product="authorEclipse developerEclipse editorEclipse"
+            >Project Explorer</uicontrol> view, you can modify the resources (CSS, JS, fonts) within the
+            <term>Oxygen Publishing Template</term> folder to fit your needs.</cmd>
+      </step>
+      <step>
+        <cmd>Open the publishing template descriptor file (<filepath>.opt</filepath> extension) in
+          the editor and modify it to suit your needs.</cmd>
+      </step>
+      <step importance="optional">
+        <cmd>Once you finish your customization, you can archive the folder as a ZIP file.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+  <related-links product="author developer editor authorEclipse developerEclipse editorEclipse">
+    <linklist>
+      <title>Related Information:</title>
+      <link href="pdf_publishing_template_contents.dita"/>
+      <link href="whr_publishing_template_contents.dita"/>
+    </linklist>
+  </related-links>
+</task>

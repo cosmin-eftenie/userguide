@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="wa-integrate-perforce">
+  <title>Integrating Web Author with Perforce Helix</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Perforce Helix integration</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_mjr_dgk_54b">The <ph keyref="webappProduct"/> includes a plugin that provides the ability to integrate Web
+      Author with a Perforce Helix version control system. It provides an interface for browsing the
+      files in Perforce depots, opening the files in the editor, and submitting changes.</p>
+    <section id="installing_the_plugin">
+      <title>Configuring the Perforce Plugin</title>
+      <ol id="ol_njr_dgk_54b">
+        <li id="li_ojr_dgk_54b">Go to your <xref href="webapp-admin-page.dita#webapp-admin-page">Administration
+            Page</xref>.</li>
+        <li id="li_pjr_dgk_54b">Select <uicontrol>Plugins</uicontrol>.</li>
+        <li id="li_qjr_dgk_54b">
+          <p id="p_rjr_dgk_54b">Click the <uicontrol><image href="../img/ConfigureSearchScope16.png"
+                id="image_rbz_csl_3jb"/>Configure</uicontrol> icon next to the Perforce plugin to
+            open the <uicontrol>Plugin configuration</uicontrol> dialog box.</p>
+          <p id="p_sjr_dgk_54b">
+            <fig id="fig_ozy_1sl_3jb">
+              <title>Perforce Plugin Configuration Dialog Box</title>
+              <image href="../img/wa-perforce-config.png" id="image_pzy_1sl_3jb"/>
+            </fig>
+          </p>
+        </li>
+        <li id="step-4">Enter the <uicontrol>Server address</uicontrol> and <uicontrol>Server
+            port</uicontrol>. The <uicontrol>Backup interval (sec)</uicontrol> setting is optional
+          and it can be used to configure the time interval for how often documents will
+          automatically be backed up. Leave this field blank if you do not want documents to be
+          backed up automatically. </li>
+        <li id="li_tjr_dgk_54b">Click <uicontrol>Apply</uicontrol>.</li>
+        <li id="li_ujr_dgk_54b"><xref href="webauthor-restart.dita">Restart <ph keyref="webappProduct"/></xref>.</li>
+      </ol>
+      <note id="note_vjr_dgk_54b">To use the Perforce plugin with an SSL certificate, you need to <xref
+          href="webauthor-set-system-property.dita">set a system property</xref> called
+          <b>p4.ssl</b>:<codeblock outputclass="language-javascript" id="codeblock_wjr_dgk_54b">-Dp4.ssl="true"</codeblock></note>
+    </section>
+  </body>
+  <related-links product="webauthor">
+    <linklist>
+      <title>Related Information:</title>
+      <link href="wa-using-perforce.dita"/>
+    </linklist>
+  </related-links>
+</topic>

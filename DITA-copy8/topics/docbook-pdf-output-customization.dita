@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="docbook-pdf-output-customization">
+  <title>DocBook to PDF Output Customization</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>PDF Output Customization<indexterm>DocBook to PDF output</indexterm></indexterm>
+        <indexterm>DocBook to PDF output customization</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <taskbody>
+    <context>
+      <p id="p_r5v_cgk_54b">When the default layout and output of the DocBook to PDF transformation needs to be
+        customized, follow these steps:</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Create a custom version of the DocBook title spec file.</cmd>
+        <info>
+          <p id="p_s5v_cgk_54b">You could start from a copy of the file <filepath>[DocBook XSL
+              directory]/fo/titlepage.templates.xml</filepath> (for example,
+              <filepath>[OXYGEN-INSTALL-DIR]/frameworks/docbook/xsl/fo/titlepage.templates.xml</filepath>)
+            and customize it. More information about the spec file can be found <xref
+              href="https://docbook.org/docs/"
+              format="html" scope="external">here</xref>. </p>
+        </info>
+      </step>
+      <step>
+        <cmd>Generate a new XSLT stylesheet from the title spec file from the previous step.</cmd>
+        <info>Apply <filepath>[DocBook XSL directory]/template/titlepage.xsl</filepath> to the title
+          spec file. The result is an XSLT stylesheet (for example,
+            <filepath>mytitlepages.xsl</filepath>).</info>
+      </step>
+      <step>
+        <cmd>Import <filepath>mytitlepages.xsl</filepath> in a <xref
+            href="https://www.oxygenxml.com/demo/DocBook_Customization.html" format="html"
+            scope="external">DocBook customization layer</xref>.</cmd>
+        <info>The customization layer is the stylesheet that will be applied to the XML document.
+          The <filepath>mytitlepages.xsl</filepath> should be imported with an element like
+          this:<codeblock outputclass="language-xml" id="codeblock_t5v_cgk_54b">&lt;xsl:import href="dir-name/mytitlepages.xsl"/&gt;</codeblock></info>
+      </step>
+      <step>
+        <cmd>Insert a logo image in the XML document.</cmd>
+        <info>The path to the logo image must be inserted in the
+            <codeph>book/info/mediaobject</codeph> structure of the XML document.</info>
+      </step>
+      <step>
+        <cmd>Apply the customization layer to the XML document.</cmd>
+        <info>A quick way is to duplicate the transformation scenario <b>DocBook PDF</b> that is
+          included with <ph keyref="product"/> and set the customization layer in <xref
+            href="xslt-tab.dita#xslt-tab/xml-xslt-tabs">the <b>XSL URL</b> property of the
+            scenario</xref>.</info>
+      </step>
+    </steps>
+  </taskbody>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link href="https://docbook.org/docs/" format="html"
+        scope="external">
+        <linktext>The book <b>DocBook XSL: The Complete Guide</b> by Bob Stayton contains more
+          details about customizing the PDF output.</linktext>
+      </link>
+      <link href="https://www.oxygenxml.com/demo/DocBook_Customization.html" format="html"
+        scope="external">
+        <linktext>Video demonstration for creating a DocBook customization layer in <ph
+            keyref="product"/>.</linktext>
+      </link>
+    </linklist>
+  </related-links>
+</task>

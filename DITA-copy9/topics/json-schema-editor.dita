@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="json-schema-editor">
+  <title>JSON Schema Editor</title>
+  <body>
+    <p id="p_vjf_cgk_54b"><ph keyref="product"/> includes a specialized JSON Schema editor with
+      various editing features for files that have the <codeph>jschema</codeph> file extension, or
+      for files that have <codeph>json</codeph> file extension and includes a <xref
+        href="json-validating-json-schema.dita#json-validating-json-schema/p_kgg_cgk_54b">
+        meta-schema URL</xref> in the "$schema" key . The purpose of the JSON schema is to define
+      the legal properties and values of a JSON document to keep it valid and well-formed.</p>
+    <section id="section_c2r_nyr_1nb">
+      <title>New Document Templates</title>
+      <p id="p_zfg_cgk_54b"><ph keyref="product"/> includes a new document template to help you get
+        started creating a JSON Schema document. The template is called <uicontrol>JSON
+          Schema</uicontrol> and it can be found in the <uicontrol>New Document</uicontrol> folder
+        in the <xref href="new-dialog-sa.dita#new-dialog-sa" product="developer editor json"
+            ><uicontrol>New</uicontrol> document wizard</xref><xref
+          href="creating-from-templates.dita#creating-from-templates"
+          product="developerEclipse editorEclipse"><uicontrol>New from templates</uicontrol>
+          wizard</xref>. You can also <xref href="customizing-templates.dita">customize your own
+          JSON Schema templates</xref> and specify other versions (Draft 04, 06, 07, 2019-09, or
+          2020-12).<note type="tip" id="note_agg_cgk_54b">You can experiment with a sample of a JSON
+          Schema file available at:
+            <filepath>[OXYGEN-INSTALL-DIR]/samples/json/personal-schema.json</filepath>. </note></p>
+    </section>
+    <section id="section_uw2_cxr_1nb">
+      <title>Text Mode Editor</title>
+      <p id="p_tfg_cgk_54b">When editing JSON Schema documents in <uicontrol>Text</uicontrol>
+        editing mode, the usual text editing actions are available, along with various other
+        actions, including:<ul id="ul_jrz_25t_qmb">
+          <li id="li_cd3_4hc_2rb"><xref href="json-outline-view.dita">JSON Outline View</xref></li>
+          <li id="li_sdz_phc_2rb"><xref href="syntax-highlight-in-JSON-schema.dita">JSON-specific
+              Syntax Highlighting</xref></li>
+          <li id="li_ufg_cgk_54b"><xref href="searching-documents.dita">Search and
+              Find/Replace</xref></li>
+          <li id="li_vfg_cgk_54b">Drag and Drop</li>
+          <li id="li_wfg_cgk_54b"><xref href="validating-JSON.dita">Validation</xref></li>
+          <li id="li_xfg_cgk_54b">Format and Indent (Pretty Print)</li>
+        </ul></p>
+    </section>
+    <section id="section_e5s_r2w_thb">
+      <title>Grid Mode Editor</title>
+      <p id="p_ekf_cgk_54b"><ph keyref="product"/> allows you to view and edit the JSON Schema
+        documents in the <uicontrol>Grid</uicontrol> mode. The JSON Schema is represented in
+          <uicontrol>Grid</uicontrol> mode as a compound layout of nested tables and the JSON data
+        and structure can be easily manipulated with table-specific operations or drag and drop
+        operations on the grid components. For more details, see <xref
+          href="json-editor.dita#json-editor/section_e5s_r2w_thb">JSON Grid Mode Editor</xref>.</p>
+    </section>
+    <section id="section_vbc_lfw_thb" product="editor editorEclipse">
+      <title>Author Visual Editor</title>
+      <p id="p_yfg_cgk_54b">It is also possible to edit JSON Schema files in the visual
+          <uicontrol>Author</uicontrol> editing mode. <ph keyref="product"/> provides a JSON Schema
+        framework that uses a specific CSS for rendering JSON Schema documents in
+          <uicontrol>Author</uicontrol> mode and you have access to the various features and actions
+        that are available when <xref href="editing-xml-documents-author.dita">editing XML documents
+          in <uicontrol>Author</uicontrol> mode</xref>.</p>
+      <p id="p_xdc_myn_2rb">
+        <fig id="fig_zm2_myn_2rb">
+          <title>JSON Schema in Author Mode</title>
+          <image href="../img/json-schema-author-mode.png"/>
+        </fig>
+      </p>
+    </section>
+    <section id="section_t2n_nns_frb">
+      <title>Design Mode Editor</title>
+      <p id="p_u2n_nns_frb"><ph keyref="product"/> provides a powerful, expressive visual schema
+        diagram editor (<uicontrol>Design</uicontrol> mode) for editing JSON Schemas. It is helpful
+        for both content authors who want to visualize or understand a schema and schema designers
+        who develop complex schemas. For all the details, see <xref
+          href="json-schema-design-mode.dita">JSON Schema Design Mode</xref>.</p>
+    </section>
+  </body>
+</topic>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="svn-getting-started">
+    <title>Getting Started</title>
+    <body>
+        <p id="p_xsh_dgk_54b">This section explains the basic operations that can be done in <ph keyref="svnProduct"
+      />.</p>
+    </body>
+</topic>

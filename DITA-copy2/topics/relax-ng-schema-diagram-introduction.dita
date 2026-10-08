@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="relax-ng-schema-diagram-introduction">
+  <title>Introduction to Relax NG Schema Diagram Editor</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Relax NG schemas<indexterm>Diagram
+            Editor<indexterm>Introduction</indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_jp2_cgk_54b"><ph keyref="product"/> provides a simple, expressive, and easy-to-read schema diagram editor
+      for Relax NG schemas.</p>
+    <p id="p_kp2_cgk_54b">With this new feature you can easily develop complex schemas, print them on multiple pages or
+      save them as JPEG, PNG, or BMP images. It helps both schema authors in developing the schema
+      and content authors who are using the schema to understand it.</p>
+    <p id="p_lp2_cgk_54b"><ph keyref="product"/> provides a side-by-side source and diagram presentation with real-time
+      synchronization: <ul id="ul_mp2_cgk_54b">
+        <li id="li_np2_cgk_54b">The changes you make in the editor are immediately visible in the Diagram (no background
+          parsing).</li>
+        <li id="li_op2_cgk_54b">Changing the selected element in the diagram selects the underlying code in the source
+          editor.</li>
+      </ul>
+    </p>
+  </body>
+</topic>

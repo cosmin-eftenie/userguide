@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="manage-working-copy-resources">
+  <title>Manage Working Copy Resources</title>
+  <prolog>
+    <metadata>
+      <keywords><indexterm>SVN Client<indexterm>Working copy resource management</indexterm></indexterm></keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_xvh_dgk_54b">This section explains how to work with the resources that are displayed in the
+        <uicontrol>Working Copy</uicontrol> view.</p>
+  </body>
+</topic>

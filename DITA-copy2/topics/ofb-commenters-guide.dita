@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ofb-commenters-guide">
+  <title>Commenter Guide</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Commenter's Guide</indexterm>
+        <indexterm>Commenting</indexterm>
+        <indexterm>Add comments</indexterm>
+        <indexterm>Edit comments</indexterm>
+        <indexterm>Reply to comments</indexterm>
+        <indexterm>Delete comments</indexterm>
+      </keywords>
+      <keywords>
+        <keyword outputclass="label">User Authentication</keyword>
+        <keyword outputclass="label">Email Notifications</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_f2x_dgk_54b">This section is meant to provide general information for people using <b>Oxygen Feedback</b>
+      to post new comments, reply to existing comments, and manage their own comments.</p>
+    <section id="section_f2t_sqm_2jb">
+      <title>Registering an Account</title>
+      <p id="p_g2x_dgk_54b">To use the <b>Oxygen Feedback</b> comment system, Commenters need to log
+        in. If this is your first time using <b>Oxygen Feedback</b>, you will need to create an
+        account. From a webpage where the <b>Oxygen Feedback</b> commenting component is installed,
+        click the <uicontrol>Log in</uicontrol> button/link to open a log in/sign up window. Simply
+        follow the on-screen instructions to complete the registration process.</p>
+    </section>
+    <section id="section_c2k_dym_2jb">
+      <title>Commenter Profiles</title>
+      <p id="p_h2x_dgk_54b">Once you create and register an account, you will have access to a profile management page
+        where you can manage your account, change your password, or configure the email
+        notifications you receive. To open the profile management page, click the drop-down arrow to
+        the right of your user name in the commenting component at the bottom of the output page and
+        select <uicontrol>Profile</uicontrol>. For more information, see: <xref
+          href="ofb-profile-management.dita"/>.</p>
+    </section>
+    <section id="section_aqg_j1n_2jb">
+      <title>Adding a Comment</title>
+      <p id="p_i2x_dgk_54b">Comments can be added in any page where <b>Oxygen Feedback</b> is
+        installed either contextually throughout the page where block elements appear (for more
+        information, see <xref href="ofb-block-level-comments.dita"/>) or using the commenting
+        component at the bottom of the page.<note id="note_otf_4hr_5rb">The <xref
+            href="ofb-block-level-comments.dita">block-level comments</xref> are also displayed in
+          the comments area at the bottom of the page, aggregated along with all the comments added
+          in that area. The block-level comments in the bottom area are marked with a specific
+          status badge (<image href="../img/ofb-block-level.png"/>). If you click that badge, the
+          page scrolls to the context element associated with the block-level comment.</note></p>
+      <note id="note_ls4_mnr_5rb" type="notice">If you are logged in to a Feedback account for a
+        particular organization and you access a page with the Feedback component configured for a
+        different organization, you will not be able to add comments unless you log out from the
+        previous organization and log in to the current one.</note>
+      <p id="p_j2x_dgk_54b">To add a comment in a page where the <b>Oxygen Feedback</b> comment system is installed:<ol
+          id="ol_lht_ytn_2jb">
+          <li id="li_k2x_dgk_54b">Choose where you want your comment to appear:<ul
+              id="ul_gvy_wwt_q4b">
+              <li id="li_l2x_dgk_54b">To post your comment contextually at a specific location
+                within the page:<ol id="ol_xmv_1m5_q4b">
+                  <li id="li_m2x_dgk_54b">Hover over content within the block (content that would be
+                      <xref href="ofb-block-level-comments.dita">inside a block element in the
+                      source document</xref>) until you see the comment widget (<image
+                      href="../img/ofb-widget1.png" id="image_dwm_ql5_q4b"/>) on the right
+                    side.</li>
+                  <li id="li_n2x_dgk_54b">Click the widget and log in (if you are not already logged
+                    in).</li>
+                  <li id="li_o2x_dgk_54b">Click anywhere in the text box where you see
+                      <uicontrol>Add a comment</uicontrol> to expand the box for editing.</li>
+                </ol></li>
+              <li id="li_p2x_dgk_54b">To post your comment in the commenting component at the bottom
+                of the page:<ol id="ol_gg2_nm5_q4b">
+                  <li id="li_q2x_dgk_54b">Log in (if you are not already logged in).</li>
+                  <li id="li_r2x_dgk_54b">Click anywhere in the text box where you see
+                      <uicontrol>Add a comment</uicontrol> to expand the box for editing.</li>
+                </ol></li>
+            </ul><note id="note_cpm_pqf_btb" type="tip">You can select content within the current
+              document before adding the comment, and then the selected content is inserted as a
+              quote when you add the new comment.</note></li>
+          <li id="li_s2x_dgk_54b">Enter your text in the comment box. You can use the <xref
+              href="#ofb-commenters-guide/section_zkk_ycn_2jb" format="dita">various toolbar
+              actions</xref> to style your text. You can also type <xref
+              href="#ofb-commenters-guide/Markdown-note" format="dita">Markdown syntax</xref> in the
+            comment box to style your text. You can see the results of the styling in the
+              <uicontrol>Preview</uicontrol> section at the bottom of the box.</li>
+          <li id="li_t2x_dgk_54b">Click <uicontrol>Add</uicontrol> (or
+              <uicontrol><shortcut>Ctrl+Enter</shortcut></uicontrol>) to post the comment.</li>
+        </ol></p>
+      <p id="p_u2x_dgk_54b"><b>Result:</b> You can see your newly added comment but if the site configuration has the
+          <xref href="ofb-editing-site.dita#ofb-editing-site/comment-moderation"><uicontrol>Comment
+            Moderation</uicontrol> option enabled</xref>, other users will not see it until it is
+        approved by an Administrator or Moderator. All comments have the relative time it was posted
+        displayed under the Commenter's name (for example, <i>2 minutes ago</i>, <i>2 hours ago</i>,
+          <i>2 days ago</i>). If you hover over the relative time, you can see the real time. After
+        block-level comments are added, a widget is displayed on the right side of the content with
+        the number of comments that exist within that particular block shown in a red circle (
+          <image href="../img/ofb-widget2.png" id="image_v2d_fp5_q4b"/>).</p>
+    </section>
+    <section id="section_md4_n1n_2jb">
+      <title>Editing a Comment</title>
+      <p id="p_v2x_dgk_54b">A Commenter can edit their own comments, but only Administrators/Moderators can edit
+        comments posted by other users. To edit your own comment:<ol id="ol_zr4_r5n_2jb">
+          <li id="li_w2x_dgk_54b">Open the comment box for editing by using one of these methods, depending on its
+              location:<ul id="ul_bv5_5p5_q4b">
+              <li id="li_x2x_dgk_54b">For comments at a specific location within the page:<ol id="ol_nxg_wp5_q4b">
+                  <li id="li_y2x_dgk_54b">Click the particular comment widget ( <image href="../img/ofb-widget2.png"
+                      id="image_axh_yp5_q4b"/>) and log in (if you are not already logged in).</li>
+                  <li id="li_z2x_dgk_54b">Click the <uicontrol><image href="../img/ofb-ellipse.png"
+                        id="image_kbj_bq5_q4b"/>Ellipse</uicontrol> at the bottom-right side of the
+                    comment box and select <uicontrol>Edit</uicontrol>.</li>
+                </ol></li>
+              <li id="li_afx_dgk_54b">For comments at the bottom of the page:<ol id="ol_nvz_fq5_q4b">
+                  <li id="li_bfx_dgk_54b">Log in (if you are not already logged in).</li>
+                  <li id="li_cfx_dgk_54b">Click the <uicontrol><image href="../img/Edit16.png" id="image_zck_3q5_q4b"
+                      />Edit</uicontrol> at the bottom-right side of the comment box and select
+                      <uicontrol>Edit</uicontrol>.</li>
+                </ol></li>
+            </ul></li>
+          <li id="li_dfx_dgk_54b">Edit your text in the comment box. You can use the <xref
+              href="#ofb-commenters-guide/section_zkk_ycn_2jb" format="dita">various toolbar
+              actions</xref> to style your text. You can also type <xref
+              href="#ofb-commenters-guide/Markdown-note" format="dita">Markdown syntax</xref> in the
+            comment box to style your text. You can see the results of the styling in the
+              <uicontrol>Preview</uicontrol> section at the bottom of the box. </li>
+          <li id="li_efx_dgk_54b">Click <uicontrol>Submit</uicontrol> (or
+              <uicontrol><shortcut>Ctrl+Enter</shortcut></uicontrol>) to post the modifications to
+            your comment.</li>
+        </ol></p>
+    </section>
+    <section id="section_pxp_n1n_2jb">
+      <title>Replying to a Comment</title>
+      <p id="p_ffx_dgk_54b">To reply to an existing comment:<ol id="ol_mxb_gg4_2jb">
+          <li id="li_gfx_dgk_54b">Initiate a reply by using one of these methods, depending on the
+              situation:<ul id="ul_z25_lq5_q4b">
+              <li id="li_hfx_dgk_54b">For comments at a specific location within the page:<ol
+                  id="ol_af5_lq5_q4b">
+                  <li id="li_ifx_dgk_54b">Click the particular comment widget ( <image
+                      href="../img/ofb-widget2.png" id="image_bf5_lq5_q4b"/>) and log in (if you are
+                    not already logged in).</li>
+                  <li id="li_jfx_dgk_54b">Click the <uicontrol><image href="../img/ReplyBlue16.png"
+                        placement="inline" id="image_btq_pq5_q4b"/>Reply</uicontrol> link/button at
+                    the bottom-right side of the comment box.</li>
+                </ol></li>
+              <li id="li_kfx_dgk_54b">For comments at the bottom of the page:<ol id="ol_df5_lq5_q4b">
+                  <li id="li_lfx_dgk_54b">Log in (if you are not already logged in).</li>
+                  <li id="li_mfx_dgk_54b">Click the <uicontrol><image href="../img/ReplyBlue16.png"
+                        placement="inline" id="image_ew2_qq5_q4b"/>Reply</uicontrol> link/button at
+                    the bottom-right side of the comment box.</li>
+                </ol></li>
+              <li id="li_dz4_2rc_hxb">For comments that already have at least one reply, you can use
+                the <uicontrol>Reply to this thread</uicontrol> link/button that appears after the
+                last reply. This makes it easier to reply to threads that have multiple replies.
+              </li>
+            </ul></li>
+          <li id="li_nfx_dgk_54b">Enter your text in the comment box. You can use the <xref
+              href="#ofb-commenters-guide/section_zkk_ycn_2jb" format="dita">various toolbar
+              actions</xref> to style your text. You can also type <xref
+              href="#ofb-commenters-guide/Markdown-note" format="dita">Markdown syntax</xref> in the
+            comment box to style your text. You can see the results of the styling in the
+              <uicontrol>Preview</uicontrol> section at the bottom of the box. </li>
+          <li id="li_ofx_dgk_54b">Click <uicontrol>Add</uicontrol> (or
+              <uicontrol><shortcut>Ctrl+Enter</shortcut></uicontrol>) to post the comment.</li>
+        </ol></p>
+      <p id="p_pfx_dgk_54b"><b>Result:</b> The replies are sorted in a chronological (newest to oldest) and
+        hierarchical order. The replies in the first hierarchical level are expanded by default
+        while subsequent levels are collapsed. The number of replies for any given comment is
+        displayed in the bottom-left corner of the comment tile.  </p>
+    </section>
+    <section id="section_nxq_n1n_2jb">
+      <title>Deleting a Comment</title>
+      <p id="p_qfx_dgk_54b">A Commenter can delete their own comments, but only Administrators/Moderators can delete
+        comments posted by other users. To delete your own comment:<ol id="ol_h3v_sg4_2jb">
+          <li id="li_rfx_dgk_54b">Initiate the deletion by using one of these methods, depending on its location:<ul
+              id="ul_szj_5q5_q4b">
+              <li id="li_sfx_dgk_54b">For comments at a specific location within the page:<ol id="ol_tzj_5q5_q4b">
+                  <li id="li_tfx_dgk_54b">Click the particular comment widget ( <image
+                      href="../img/ofb-widget2.png" id="image_uzj_5q5_q4b"/>) and log in (if you are
+                    not already logged in).</li>
+                  <li id="li_ufx_dgk_54b">Click the <uicontrol><image href="../img/ofb-ellipse.png"
+                        id="image_vzj_5q5_q4b"/>Ellipse</uicontrol> at the bottom-right side of the
+                    comment box and select <uicontrol>Delete</uicontrol>.</li>
+                </ol></li>
+              <li id="li_vfx_dgk_54b">For comments at the bottom of the page:<ol id="ol_wzj_5q5_q4b">
+                  <li id="li_wfx_dgk_54b">Log in (if you are not already logged in).</li>
+                  <li id="li_xfx_dgk_54b">Click the <uicontrol><image
+                        href="../img/OFBTrashIcon16.png" placement="inline" id="image_ukh_xq5_q4b"
+                      />Delete</uicontrol> link/button at the bottom-right side of the comment
+                    box.</li>
+                </ol></li>
+            </ul></li>
+          <li id="li_yfx_dgk_54b">Click <uicontrol>OK</uicontrol> to confirm the deletion.</li>
+        </ol></p>
+      <p id="p_zfx_dgk_54b"><b>Result:</b> The content of the comment will only be visible to the original commenter
+        and moderators, and a placeholder will be displayed noting that the comment was deleted.</p>
+    </section>
+    <section id="section_bvt_q4w_mjb">
+      <title>Restoring a Deleted Comment</title>
+      <p id="p_agx_dgk_54b">Your deleted comments will automatically be purged from the system in 30
+        days, but you can restore a deleted comment within that time (any user with an <i>Owner</i>,
+          <i>Admin</i>, or <i>Moderator</i> role can also restore the deleted comment within that
+        time). To restore your own deleted comment, click the <image href="../img/ofb-Restore16.png"
+          id="image_ns5_4m5_gjb"/> link/button in the bottom-right corner of the particular comment
+        box. The comment will be restored to its status before the deletion.</p>
+    </section>
+    <section id="section_cg2_t4l_lkb">
+      <title>Status Badge</title>
+      <p id="p_bgx_dgk_54b">Whenever the status of a comment changes, the new status is displayed on the right side of
+        the comment box (for example, one of these badges will be displayed: <image
+          href="../img/ofb-status-badge.png" id="image_ivy_4pl_lkb"/>). If you hover over a status
+        badge, you can see the user name who changed the status and the time it was changed to its
+        current status.</p>
+      <p id="p_t5v_tqt_5rb">Other badges that might appear on the right side of the comment box:<ul
+          id="ul_l5g_xqt_5rb">
+          <li id="li_m5g_xqt_5rb"><image href="../img/ofb-version-badge.png"/> - The version of the
+            current site configuration.</li>
+          <li id="li_gtv_frt_5rb"><image href="../img/ofb-block-level.png"/> - Displayed on <xref
+              href="ofb-block-level-comments.dita">block-level comments</xref> with an associated
+            element that is found in the page.</li>
+          <li id="li_s4s_lrt_5rb"><image href="../img/ofb-broken-content.png"/> - Displayed when the
+            mapping between a <xref href="ofb-block-level-comments.dita">block-level comment</xref>
+            and its corresponding element is lost (for example, if the element is removed in the
+            source content).</li>
+        </ul></p>
+    </section>
+    <section id="section_cfd_lds_s4b">
+      <title>Filtering Comments</title>
+      <p id="p_dfd_lds_s4b">You can filter the comments in the commenting component at the bottom of
+        the output page. You can access the filtering options by clicking the filter drop-down menu
+          (<image href="../img/ofb-FilterDrop.png"/>) that is located in the header of the
+        commenting component. The following filtering options are available:<ul id="ul_arz_v2s_s4b">
+          <li id="li_brz_v2s_s4b"><b>Not resolved</b> (default) - Displays all comments that are in
+            a state of <i>Open</i> or <i>Waiting for approval</i>.</li>
+          <li id="li_czz_z2s_s4b"><b>Waiting for approval</b> - Displays only comments that are in a
+            state of <i>Waiting for approval</i> (they have not yet been approved by a
+            moderator).</li>
+          <li id="li_nbm_pfs_s4b"><b>All</b> - Displays all the comments that are available based
+            upon your user rights.</li>
+        </ul></p>
+      <p id="p_mxd_5fs_s4b">The selection in the filter drop-down is persistent between sessions. If
+        you happen to go to an output page where a comment is not associated with the current
+        filters, the server determines which filter should be used for the comment to be visible and
+        the filter is automatically changed accordingly.</p>
+      <note id="note_vrn_xfs_s4b">The selected filter also applies to any <xref
+          href="ofb-block-level-comments.dita">block-level comments</xref> that exist throughout the
+        page.</note>
+      <note id="note_nrs_zmy_r4b">If you happen to click a link to a comment's output page but the
+        comment is not associated with the current filters, the server determines which filter
+        should be used for the comment to be visible and the filter is automatically changed
+        accordingly.</note>
+    </section>
+    <section id="section_zkk_ycn_2jb">
+      <title>Commenting Toolbar</title>
+      <p id="p_cgx_dgk_54b">The comment box includes a toolbar with actions for styling your comment text. These
+        actions are based upon Markdown syntax.<note type="tip" id="Markdown-note">You can type
+          Markdown syntax directly in the comment box without using the toolbar buttons. If you
+          hover over each toolbar action, you can see exactly which Markdown rules are supported. To
+          see examples for the supported rules, see: <xref href="https://commonmark.org/help/"
+            format="html" scope="external"/>.</note></p>
+      <p id="p_dgx_dgk_54b">The toolbar actions include:</p>
+      <p id="p_egx_dgk_54b">
+        <dl id="dl_fgx_dgk_54b">
+          <dlentry id="dlentry_ggx_dgk_54b">
+            <dt><uicontrol><image href="../img/ofb-Bold16.png" id="image_ash_ykd_fjb"
+                />Bold</uicontrol> (Strong) &lt;strong>
+                [<uicontrol><shortcut>Crtl+B</shortcut></uicontrol>]</dt>
+            <dd>Wraps the text with two asterisks to produce a bold styling in the resulting
+              comment.</dd>
+          </dlentry>
+          <dlentry id="dlentry_hgx_dgk_54b">
+            <dt><uicontrol><image href="../img/ofb-Italic16.png" id="image_icp_1ld_fjb"
+                />Italic</uicontrol> (Emphasis) &lt;em>
+                [<uicontrol><shortcut>Crtl+I</shortcut></uicontrol>]</dt>
+            <dd>Wraps the text with one asterisk to produce an italic styling in the resulting
+              comment.</dd>
+          </dlentry>
+          <dlentry id="dlentry_igx_dgk_54b">
+            <dt><uicontrol><image href="../img/ofb-Link16.png" id="image_p3s_1ld_fjb"
+                />Hyperlink</uicontrol> &lt;a>
+              [<uicontrol><shortcut>Crtl+L</shortcut></uicontrol>]</dt>
+            <dd>Wraps the text with a set of square brackets, followed by a second set of square
+              brackets that includes a link identifier to reference the target for the hyperlink. A
+              separate line is also added at the bottom of the comment (with the link identifier
+              reference) where you define the target.</dd>
+          </dlentry>
+          <dlentry id="dlentry_jgx_dgk_54b">
+            <dt><uicontrol><image href="../img/ofb-Quote16.png" id="image_xy5_1ld_fjb"
+                />Blockquote</uicontrol> &lt;blockquote>
+                [<uicontrol><shortcut>Crtl+Q</shortcut></uicontrol>]</dt>
+            <dd>Adds a greater than character (<userinput>></userinput>) before the text to produce
+              an indented block of text in the resulting comment.<note type="tip"
+                id="note_qq5_5rf_btb">You can select content within the current document before
+                adding a comment, and then the selected content is inserted within a
+                  <term>blockquote</term> when you add the new comment.</note></dd>
+          </dlentry>
+          <dlentry id="dlentry_kgx_dgk_54b">
+            <dt><uicontrol><image href="../img/ofb-Code16.png" id="image_d2x_1ld_fjb"/>Code
+                Sample</uicontrol> &lt;pre> &lt;code>
+                [<uicontrol><shortcut>Crtl+K</shortcut></uicontrol>]</dt>
+            <dd>
+              <p id="p_lgx_dgk_54b">If you use this action on a selection of inline text within a block of text (rather
+                than the entire block of text), the selected text will be surrounded with single
+                backticks (<userinput>`</userinput>) to produce an inline code block.</p>
+              <p id="p_mgx_dgk_54b">If you use this action on a blank line or on a selection of an entire block of
+                text, four spaces will be added before the selection to produce a code block that
+                spans the entire width of the comment box.</p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_ngx_dgk_54b">
+            <dt><uicontrol><image href="../img/ofb-OL16.png" id="image_r5z_1ld_fjb"/>Ordered
+                List</uicontrol> &lt;ol> [<uicontrol><shortcut>Crtl+O</shortcut></uicontrol>]</dt>
+            <dd>Adds a number before the selected text or on a new line to create an ordered list in
+              the resulting comment.</dd>
+          </dlentry>
+          <dlentry id="dlentry_ogx_dgk_54b">
+            <dt><uicontrol><image href="../img/ofb-UL16.png" id="image_e4d_bld_fjb"/>Unordered
+                List</uicontrol> &lt;ul> [<uicontrol><shortcut>Crtl+U</shortcut></uicontrol>]</dt>
+            <dd>Adds a hyphen (<userinput>-</userinput>) before the selected text or on a new line
+              to create an unordered list in the resulting comment.</dd>
+          </dlentry>
+          <dlentry id="dlentry_pgx_dgk_54b">
+            <dt><uicontrol><image href="../img/ofb-Header16.png" id="image_ahg_bld_fjb"
+                />Heading</uicontrol> &lt;h2>
+              [<uicontrol><shortcut>Crtl+H</shortcut></uicontrol>]</dt>
+            <dd>Adds four consecutive hyphens (<userinput>----</userinput>) under the selected text
+              or adds two hash symbols (<userinput>##</userinput>) before and after new default text
+              to produce a second-level header in the resulting comment.<note type="tip" id="note_qgx_dgk_54b">To change
+                it to a 1st-level header (&lt;h1>), simply click the toolbar button
+              again.</note></dd>
+          </dlentry>
+          <dlentry id="dlentry_rgx_dgk_54b">
+            <dt><uicontrol><image href="../img/ofb-HR16.png" id="image_dcj_bld_fjb"/>Horizontal
+                Rule</uicontrol> &lt;hr> [<uicontrol><shortcut>Crtl+R</shortcut></uicontrol>]</dt>
+            <dd>Adds ten consecutive hyphens (<userinput>----------</userinput>) on a new line to
+              produce a horizontal rule (line) in the resulting comment.</dd>
+          </dlentry>
+          <dlentry id="dlentry_sgx_dgk_54b">
+            <dt><uicontrol><image href="../img/ofb-Undo16.png" id="image_ynm_bld_fjb"
+                />Undo</uicontrol> [<uicontrol><shortcut>Crtl+Z</shortcut></uicontrol>]</dt>
+            <dd>Use this button to undo the last action.</dd>
+          </dlentry>
+          <dlentry id="dlentry_tgx_dgk_54b">
+            <dt><uicontrol><image href="../img/ofb-Redo16.png" id="image_xw4_bld_fjb"
+                />Redo</uicontrol> [<uicontrol><shortcut>Crtl+Y</shortcut></uicontrol>]</dt>
+            <dd>Use this button to redo the last action that was undone.</dd>
+          </dlentry>
+        </dl>
+      </p>
+    </section>
+  </body>
+</topic>

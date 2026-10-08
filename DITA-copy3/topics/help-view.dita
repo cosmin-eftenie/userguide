@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="help-view">
+  <title>Dynamic Help View</title>
+  <prolog>
+    <metadata>
+      <keywords><indexterm>SVN Client<indexterm>Views<indexterm>Dynamic Help
+          view</indexterm></indexterm></indexterm></keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_usj_dgk_54b"><uicontrol>Dynamic Help view</uicontrol> is a help window that changes its content to display
+      the help section that is specific to the currently selected view. As you change the focused
+      view, you can read a short description of it and its functionality. <ph
+        conkeyref="reusables-user-guide/reopen-view"/></p>
+  </body>
+</topic>

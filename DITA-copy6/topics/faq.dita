@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="faq">
+  <title>Technical Issues</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>SVN Client<indexterm>Technical issues</indexterm>
+        </indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_fvj_dgk_54b">This section contains special technical issues found during the use of <ph
+        keyref="svnProduct"/>. </p>
+  </body>
+</topic>

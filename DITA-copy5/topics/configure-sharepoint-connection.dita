@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="configure-sharepoint-connection">
+  <title>How to Configure a SharePoint Connection</title>
+  <body>
+    <p id="p_uqy_cgk_54b">By default, <ph keyref="product"/> contains built-in data source drivers
+      for <uicontrol>SharePoint</uicontrol>. Use this data source to create a connection to a
+      SharePoint server that will be available in the <uicontrol>Data Source Explorer</uicontrol>
+        view<ph product="author developer editor"> or <xref href="sharepoint-view.dita"
+            ><uicontrol>SharePoint Browser</uicontrol> view</xref></ph>.</p>
+    <p id="p_k11_gb5_s4b">The <b>SharePoint Online</b> connection that uses the <xref
+        href="https://docs.microsoft.com/en-us/sharepoint/dev/apis/sharepoint-rest-graph"
+        format="html" scope="external">SharePoint REST API v.2</xref> and it supports OAuth
+      credentials (access tokens). </p>
+    <section id="sharepoint_online_connection">
+      <title>SharePoint Online Connection</title>
+      <p id="p_vqy_cgk_54b">To configure a SharePoint connection, follow these steps:<ol
+          id="ol_wqy_cgk_54b">
+          <li product="author developer editor" id="li_xqy_cgk_54b">Open the
+              <uicontrol>Connection</uicontrol> dialog box using one of these methods:<ul
+              id="ul_nfw_d45_s4b">
+              <li id="li_ofw_d45_s4b">Select <uicontrol>New SharePoint Online Connection</uicontrol>
+                from the <uicontrol><image href="../img/Settings16.png"/>Settings</uicontrol>
+                drop-down menu in the <uicontrol>SharePoint Browser</uicontrol> view (or using the
+                  <xref href="sharepoint-view.dita#sharepoint-view/section_qrr_vf5_s4b">quick
+                  action</xref>).</li>
+              <li id="li_w33_k45_s4b"><ph
+                  conkeyref="reusables-preferences-pages/Open-the-preferences-page"/>, go to
+                  <uicontrol>Data Sources</uicontrol>. Select <uicontrol>SharePoint
+                  Online</uicontrol> in the <uicontrol>Data Sources</uicontrol> pane and in the
+                  <uicontrol>Connections</uicontrol> pane, click the <uicontrol><image
+                    href="../img/Add16.png"/>New</uicontrol> button.</li>
+            </ul></li>
+          <li id="li_erk_b45_s4b" product="authorEclipse developerEclipse editorEclipse"><ph
+              conkeyref="reusables-preferences-pages/Open-the-preferences-page"/>, go to
+              <uicontrol>Data Sources</uicontrol>. Select <uicontrol>SharePoint Online</uicontrol>
+            in the <uicontrol>Data Sources</uicontrol> pane and in the
+              <uicontrol>Connections</uicontrol> pane, click the <uicontrol><image
+                href="../img/Add16.png"/>New</uicontrol> button.</li>
+          <li id="li_yqy_cgk_54b">Enter a unique name for the connection. </li>
+          <li id="li_zqy_cgk_54b">Make sure <uicontrol>SharePoint Online</uicontrol> is selected in
+            the <uicontrol>Data Source</uicontrol> combo box.</li>
+          <li id="li_t34_gp5_s4b">Enter the <uicontrol>Tenant URL</uicontrol> for your SharePoint
+            repository and click <uicontrol>OK</uicontrol>.</li>
+        </ol></p>
+      <p id="p_utj_fq5_s4b" product="author developer editor">In the <xref
+          href="sharepoint-view.dita"><uicontrol>SharePoint Browser</uicontrol> view</xref>, you can
+        select your connection using the <uicontrol>Site</uicontrol> drop-down menu. Then select
+          <uicontrol>Log in with Microsoft account</uicontrol> from the left pane (or user drop-down
+        menu on the right side of the view) to open Microsoft's log in page in your default browser.
+        Once authenticated, your repository content should be displayed in the view. If you have
+        problems with the log-in process, see <xref
+          href="troubleshooting_a_sharepoint_online_connection.dita"/>.</p>
+      <note id="note_okn_gr5_s4b">If you are still logged in when you close <ph keyref="product"/>,
+        the authentication persists the next time the application is started. If, for some reason,
+        the authentication fails to recover the access token, an error is displayed in the
+          <uicontrol>Results</uicontrol> pane at the bottom of the application. If this happens, you
+        need to re-authenticate <ph keyref="product"/><ph product="author developer editor"> by
+          using the <uicontrol>Log in with Microsoft account</uicontrol> action</ph>.</note>
+    </section>
+  </body>
+</topic>

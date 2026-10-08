@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="floating-toolbar-property">
+  <title>Floating Toolbar: -oxy-floating-toolbar Property</title>
+  <shortdesc>Used to display a configured floating toolbar in <uicontrol>Author</uicontrol>
+    mode.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>CSS extensions<indexterm>Additional CSS
+              properties<indexterm>-oxy-floating-toolbar CSS
+          property</indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_ulc_dgk_54b">The <codeph>-oxy-floating-toolbar</codeph> property is used to configure and display a
+      floating toolbar in <uicontrol>Author</uicontrol> mode. It accepts a space-separated list of
+      the following functions:<ul id="ul_fks_ksj_kmb">
+        <li id="li_vlc_dgk_54b"><codeph>oxy_button</codeph></li>
+        <li><codeph>oxy_buttonGroup</codeph></li>
+        <li id="li_cbl_kns_25b"><codeph>oxy_textfield</codeph></li>
+        <li id="li_ylc_dgk_54b"><codeph>oxy_combobox</codeph></li>
+        <li id="li_zlc_dgk_54b"><codeph>oxy_label</codeph></li>
+      </ul></p>
+    <note id="note_amc_dgk_54b">The <codeph>"|"</codeph> text value can be used to add a separator between elements of the
+      toolbar.  </note>
+    <p id="p_bmc_dgk_54b">It must be used in conjunction with the <codeph>-oxy-selected</codeph> and
+        <codeph>-oxy-selection-inside</codeph> pseudo-classes. The <codeph>-oxy-selected</codeph>
+      pseudo-class is automatically set on an element that is fully selected and the
+        <codeph>-oxy-selection-inside</codeph> pseudo-class is automatically set on an element that
+      has a selection inside.</p>
+    <p id="p_cmc_dgk_54b"><b><u>Example 1:</u></b><pre>p:-oxy-selection-inside {
+    -oxy-floating-toolbar: 
+        oxy_button(actionID, 'bold')
+        oxy_button(actionID, 'italic')
+        oxy_button(actionID, 'underline')
+}</pre></p>
+    <p id="p_dmc_dgk_54b">This results in a floating toolbar that contains bold, italic, and underline actions
+      presented in <uicontrol>Author</uicontrol> mode every time text inside a paragraph element is
+      selected.</p>
+    <p id="p_emc_dgk_54b"><b><u>Example 2:</u></b><pre>p:-oxy-selected {
+    -oxy-floating-toolbar: 
+        oxy_label(text, "Platform: ")
+        oxy_combobox(
+            edit, '@platform', 
+            editable, false, 
+            values, 'windows, mac, linux', 
+            labels, 'Windows, MacOS, Linux'
+            )
+}</pre></p>
+    <p id="p_fmc_dgk_54b">This results in a floating toolbar that contains a <term>Platform:</term>
+      label and a drop-down menu used to change the value of the <xmlatt>platform</xmlatt> profiling
+      attribute. This is presented in <uicontrol>Author</uicontrol> mode every time a paragraph
+      element is fully selected.</p>
+    <p id="p_gmc_dgk_54b"><b><u>Example 3:</u></b><pre>[conref]:-oxy-selected, [conkeyref]:-oxy-selected {
+    -oxy-floating-toolbar: 
+        oxy_button(actionID, 'add_edit_content_reference')
+        oxy_button(actionID, 'remove_content_reference')
+        "|"
+        oxy_button(actionID, 'conref.replace')
+}</pre></p>
+    <p id="p_hmc_dgk_54b">This results in a floating toolbar that contains <uicontrol>Edit Content
+        Reference</uicontrol>, <uicontrol>Remove Content Reference</uicontrol>, and
+        <uicontrol>Replace Reference with Content</uicontrol> actions presented in
+        <uicontrol>Author</uicontrol> mode every time an element with a <xmlatt>conref</xmlatt> or
+        <xmlatt>conkeyref</xmlatt> attribute is fully selected.</p>
+  </body>
+</topic>

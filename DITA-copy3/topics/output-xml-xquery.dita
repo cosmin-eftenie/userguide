@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="output-xml-xquery">
+  <title>Output Tab (XQuery Transformations)</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>XQuery transformation scenario<indexterm>Output tab</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_t4l_cgk_54b"><ph conkeyref="reusables-transforming-documents/intro-for-transformation-tabs"/></p>
+    <p id="p_u4l_cgk_54b">The <uicontrol>Output</uicontrol> tab contains the following options:<dl id="dl_v4l_cgk_54b">
+        <dlentry id="present-as-sequence">
+          <dt><uicontrol>Present as a sequence</uicontrol></dt>
+          <dd>Selecting this option will reduce the time necessary to fetch the full results, as it
+            will only fetch the first chunk of the results.</dd>
+        </dlentry>
+        <dlentry conkeyref="reusables-transforming-documents/prompt-for-file" id="dlentry_w4l_cgk_54b">
+          <dt/>
+          <dd/>
+        </dlentry>
+        <dlentry conkeyref="reusables-transforming-documents/output-tab-save-as" id="dlentry_x4l_cgk_54b">
+          <dt/>
+          <dd/>
+        </dlentry>
+        <dlentry conkeyref="reusables-transforming-documents/open-in-browser" id="dlentry_y4l_cgk_54b">
+          <dt/>
+          <dd/>
+        </dlentry>
+        <dlentry conkeyref="reusables-transforming-documents/output-tab-open-in-editor" id="dlentry_z4l_cgk_54b">
+          <dt/>
+          <dd/>
+        </dlentry>
+        <dlentry conkeyref="reusables-transforming-documents/show-in-results-view-li" id="dlentry_apl_cgk_54b">
+          <dt/>
+          <dd/>
+        </dlentry>
+      </dl></p>
+  </body>
+</topic>

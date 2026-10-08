@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="preferences-profiling-conditions">
+  <title>Profiling/Conditional Text Preferences</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Preferences<indexterm>Profiling/Conditional Text</indexterm></indexterm>
+        <indexterm>Profiling attribute preferences</indexterm>
+        <indexterm>Condition set preferences</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_ev4_bgk_54b"><ph keyref="product"/> lets you configure how <xref
+        href="../topics/profiling-conditional-text.dita#profiling-conditional-text">profiling and
+        conditional text</xref> is displayed in <uicontrol>Author</uicontrol> mode. It has built-in
+      support for the standard conditional text features of DITA and DocBook that you can customize
+      for your own projects. You can also add conditional support for other XML vocabularies,
+      including your custom vocabularies. </p>
+    <p id="p_fv4_bgk_54b">To configure <uicontrol>Profiling/Conditional Text</uicontrol> options, <ph
+        conkeyref="reusables-preferences-pages/open-the-preferences-page"/> and go to <menucascade>
+        <uicontrol>Editor</uicontrol>
+        <uicontrol>Edit modes</uicontrol>
+        <uicontrol>Author</uicontrol>
+        <uicontrol>Profiling/Conditional Text</uicontrol>
+      </menucascade>. There are several sub-pages in this section. This first parent page includes
+      options for determining which types of profiled content is displayed:</p>
+    <p id="p_gv4_bgk_54b">
+      <dl id="dl_hv4_bgk_54b">
+        <dlentry id="show-profiling-attributes">
+          <dt><uicontrol>Show profiling attributes</uicontrol></dt>
+          <dd>Toggles whether or not the <xref
+              href="profiling-conditional-text-menu.dita#profiling-conditional-text-menu/show-profiling-attributes"
+                ><uicontrol>Show Profiling Attributes</uicontrol> option</xref> in the
+                <uicontrol><image href="../img/ProfilingDrop.png" id="image_nr5_qn3_ymb"/>Profiling
+              / Conditional Text</uicontrol> drop-down menu is enabled by default.</dd>
+          <dd>
+            <p id="p_iv4_bgk_54b">
+              <dl id="dl_jv4_bgk_54b">
+                <dlentry id="dlentry_kv4_bgk_54b">
+                  <dt><uicontrol>Show profiling attribute name</uicontrol></dt>
+                  <dd>If selected, the names of the profiling attributes are displayed with their
+                    values. If unchecked, only the values are displayed.</dd>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+        <dlentry id="show-profiling-colors-styles">
+          <dt><uicontrol>Show profiling colors and styles</uicontrol></dt>
+          <dd>Toggles whether or not the <xref
+              href="profiling-conditional-text-menu.dita#profiling-conditional-text-menu/show-profiling-colors"
+                ><uicontrol>Show Profiling Colors and Styles</uicontrol> option</xref> in the
+                <uicontrol><image href="../img/ProfilingDrop.png" id="image_upw_tn3_ymb"/>Profiling
+              / Conditional Text</uicontrol> drop-down menu is enabled by default.</dd>
+        </dlentry>
+        <dlentry id="show-excluded-content">
+          <dt><uicontrol>Show excluded content</uicontrol></dt>
+          <dd>Toggles whether or not the <xref
+              href="profiling-conditional-text-menu.dita#profiling-conditional-text-menu/show-excluded-content"
+                ><uicontrol>Show Excluded Content</uicontrol> option</xref> in the <uicontrol><image
+                href="../img/ProfilingDrop.png" id="image_jnv_sn3_ymb"/>Profiling / Conditional
+              Text</uicontrol> drop-down menu is enabled by default.</dd>
+        </dlentry>
+      </dl>
+    </p>
+  </body>
+</topic>

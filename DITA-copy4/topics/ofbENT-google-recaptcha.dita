@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ofbENT-google-recaptcha">
+  <title>How to Enable Google reCAPTCHA</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <keyword outputclass="label">Google reCAPTCHA</keyword>
+        <keyword outputclass="label">Site Configuration</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_ylw_dgk_54b">To add the <term>Google reCAPTCHA</term> widget to the <uicontrol>Sign
+        Up</uicontrol> or <uicontrol>Forgot Password</uicontrol> forms, edit the
+        <filepath>$OXYGEN_FEEDBACK_INSTALL_DIR/oxygen-feedback-home/config/recaptcha.properties</filepath>
+      file and set the following options:<ul id="ul_zmm_wm1_1nb">
+        <li id="li_zlw_dgk_54b"><uicontrol>google.recaptcha.enabled</uicontrol> - Must be set to
+            <i>true</i> to enable the <term>reCAPTCHA</term> support.</li>
+        <li id="li_amw_dgk_54b"><uicontrol>google.recaptcha.key.site</uicontrol> - The
+            <term>reCAPTCHA</term> public (site) key.</li>
+        <li id="li_bmw_dgk_54b"><uicontrol>google.recaptcha.secret</uicontrol> - The
+            <term>reCAPTCHA</term> secret key.</li>
+      </ul><note id="note_cmw_dgk_54b">The site key and secret key values can be obtained at <xref
+          href="https://www.google.com/recaptcha/admin" format="html" scope="external"/>.</note></p>
+  </body>
+</topic>

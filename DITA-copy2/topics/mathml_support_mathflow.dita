@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="mathml_support_mathflow">
+  <title>Adding MathML Support Using MathFlow (Deprecated)</title>
+  <body>
+    <note id="note_tsw_cdf_1vb">The <i>MathFlow</i> editor integration has been marked as deprecated
+      and in future versions, it will be replaced with a new <i>MathType</i> integration developed
+      by <i>Wiris</i>.</note>
+    <p id="p_jgf_dgk_54b">In the <filepath>pom.xml</filepath> file, add dependencies to the following additional
+      libraries used by the MathFlow library to parse MathML equations:</p>
+    <p id="p_kgf_dgk_54b">
+      <ol id="ol_ogj_zdq_c4">
+        <li id="li_lgf_dgk_54b"><filepath>MFComposer.jar</filepath></li>
+        <li id="li_mgf_dgk_54b"><filepath>MFExtraSymFonts.jar</filepath></li>
+        <li id="li_ngf_dgk_54b"><filepath>MFSimpleEditor.jar</filepath></li>
+        <li id="li_ogf_dgk_54b"><filepath>MFStructureEditor.jar</filepath></li>
+        <li id="li_pgf_dgk_54b"><filepath>MFStyleEditor.jar</filepath><note id="note_qgf_dgk_54b">For MathFlow 2.1, all of these <xref
+              keyref="glossentry_jar"><term>JAR</term></xref> files are packaged into one file
+            called <filepath>MathFlow.jar</filepath>.</note></li>
+      </ol>
+    </p>
+    <p id="p_rgf_dgk_54b">You can reference these additional libraries from the MathFlow SDK as in the example
+      below:</p>
+    <p id="p_sgf_dgk_54b">
+      <codeblock outputclass="language-xml" id="codeblock_tgf_dgk_54b">&lt;dependency>
+    &lt;groupId>com.dessci&lt;/groupId>
+    &lt;artifactId>MFComposer&lt;/artifactId>
+    &lt;version>1.0.0&lt;/version>
+    &lt;scope>system&lt;/scope>
+    &lt;systemPath>${MathFlowSDKDir}/lib/MFComposer.jar&lt;/systemPath>
+&lt;/dependency> </codeblock>
+    </p>
+    <p id="p_ugf_dgk_54b">In addition, you must obtain fixed MathFlow license keys for editing and
+      composing <term>MathML</term> equations and register them using these API methods:
+        <codeph>AuthorComponentFactory.setMathFlowFixedLicenseKeyForEditor</codeph> and
+        <codeph>AuthorComponentFactory.setMathFlowFixedLicenseKeyForComposer</codeph>.</p>
+    <p id="p_vgf_dgk_54b">To edit specialized DITA Composite with <term>MathML</term> content,
+      include the entire <filepath><term conkeyref="reusables-user-guide/oxy-install-dir"
+        />/frameworks/mathml2</filepath> Mathml2 <term>framework</term> directory in the <xref
+        keyref="glossentry_framework"><term>frameworks</term></xref> bundled with the component in
+      the <filepath>bundle-frameworks</filepath> module. This directory is used to solve references
+      to <term>MathML</term> DTDs.</p>
+    <p id="p_wgf_dgk_54b">More documentation is available on the <xref
+        href="https://www.wiris.com/en/" scope="external" format="html"><term>Wiris
+          MathFlow</term></xref> website.</p>
+  </body>
+</topic>

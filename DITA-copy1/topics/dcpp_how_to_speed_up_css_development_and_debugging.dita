@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="dcpp_how_to_speed_up_css_development_and_debugging">
+  <title>How to Speed up CSS Development and Debugging</title>
+  <taskbody>
+    <prereq id="prereq_cxv_1vk_2yb">
+      <p>You may have already run the <uicontrol keyref="pdf-html5-transformation"/> transformation
+        scenario before using this procedure.</p>
+    </prereq>
+    <context id="context_vtz_2kn_cfb">
+      <p id="p_pkq_cgk_54b">You can speed up your CSS development considerably by not invoking the
+        entire pipeline of transforming your DITA maps to PDF. Instead, you can directly transform
+        the <xref href="dcpp_debugging_the_css.dita#dcpp_debugging_the_css/merged_map_file">merged
+          map</xref> (<codeph>.merged.html</codeph>) into PDF using <b>Oxygen PDF Chemistry</b>.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Open the <codeph>.merged.html</codeph> located in the output directory in the
+          editor.</cmd>
+      </step>
+      <step>
+        <cmd>Configure a new <uicontrol>XML to PDF transformation with CSS</uicontrol> scenario.
+          There is no need to set the CSS URL in the resulting dialog box. The stylesheets are
+          already declared in the file <xmlelement>head</xmlelement>. This scenario uses the
+          Chemistry CSS processor.</cmd>
+      </step>
+      <step importance="optional">
+        <cmd>Enable the console output of the CSS processor from: <menucascade>
+            <uicontrol>Options</uicontrol>
+            <uicontrol>Preferences</uicontrol>
+            <uicontrol>XML</uicontrol>
+            <uicontrol>PDF Output</uicontrol>
+            <uicontrol>CSS-based Processors</uicontrol>
+          </menucascade>.</cmd>
+      </step>
+    </steps>
+    <result id="result_nrt_1mn_cfb">
+      <p id="p_qkq_cgk_54b">Now you can make incremental changes to the CSS stylesheet and quickly
+        see the results by transforming the merged file directly.<note type="fastpath"
+          id="note_rkq_cgk_54b">If your changes only involve element styling (with no specific paged
+          media CSS rules and properties), you can simply open the merged file in a browser (such as
+          Chrome or Firefox) and refresh at each CSS change, as shown in: <xref
+            href="dcpp_debugging_the_css.dita"/>.</note></p>
+    </result>
+  </taskbody>
+</task>

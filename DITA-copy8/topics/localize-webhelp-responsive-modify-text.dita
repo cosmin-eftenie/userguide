@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="localize-webhelp-responsive-modify-text">
+  <title>Modifying the Existing Strings</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <keyword outputclass="label" product="webhelp-responsive">DITA-OT</keyword>
+        <keyword outputclass="label" product="webhelp-responsive">XSLT Extensions</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_mg4_cgk_54b">To modify the generated text for WebHelp transformations, you need to create a DITA-OT
+      extension plugin that uses the <term>dita.xsl.strings</term> extension point. The following
+      procedure is for changing English labels, but you can adapt it for any language:</p>
+    <ol id="ol_ng4_cgk_54b">
+      <li id="li_og4_cgk_54b">Create a <filepath>com.oxygenxml.webhelp.localization</filepath> plugin directory
+          inside the <filepath><abbreviated-form keyref="glossentry_dita_ot_dir"
+            />/plugins/</filepath> location.
+      </li>
+      <li id="li_pg4_cgk_54b">Create a <filepath>plugin.xml</filepath> file inside that
+          <filepath>com.oxygenxml.webhelp.localization</filepath> directory with the following
+        content: <itemgroup>
+          <codeblock outputclass="language-xml" id="codeblock_qg4_cgk_54b">&lt;plugin id="com.oxygenxml.webhelp.localization">
+    &lt;require plugin="com.oxygenxml.webhelp.responsive"/>
+
+    &lt;feature extension="dita.xsl.strings" file="webhelp-extension-strings.xml"/>
+&lt;/plugin></codeblock>
+        </itemgroup></li>
+      <li id="li_rg4_cgk_54b">Create a <filepath>webhelp-extension-strings.xml</filepath> file with the following
+        content: <itemgroup>
+          <codeblock outputclass="language-xml" id="codeblock_sg4_cgk_54b">&lt;langlist>
+    &lt;lang xml:lang="en"    filename="strings-en-us.xml"/>
+    &lt;lang xml:lang="en-us"    filename="strings-en-us.xml"/>
+&lt;/langlist></codeblock>
+        </itemgroup></li>
+      <li id="li_tg4_cgk_54b">Create an empty <filepath>strings-en-us.xml</filepath> file and copy
+        the strings you want to change from <xref
+          href="localize-webhelp-responsive.dita#localize-webhelp-responsive">the translation
+          files</xref> into it. Make sure you leave the <xmlatt>id</xmlatt> attribute unchanged
+        because this is the key used to look up the string. Then replace their values:<itemgroup>
+          <codeblock outputclass="language-xml" id="codeblock_ug4_cgk_54b">&lt;variables>
+  &lt;variable id="Figure">Fig&lt;/variable>
+  &lt;variable id="Draft comment">ADDRESS THIS DRAFT COMMENT&lt;/variable>
+&lt;/variables></codeblock>
+        </itemgroup></li>
+      <li product="author developer editor authorEclipse developerEclipse editorEclipse"
+        id="li_vg4_cgk_54b">Use the <xref keyref="ditamap-run-dita-ot-integrator"
+            ><uicontrol>Integrate/Install DITA-OT Plugins</uicontrol> transformation scenario</xref>
+        found in the <uicontrol>DITA Map</uicontrol> section in the <xref
+          href="configure-transformation-dialog.dita#configure-transformation-dialog"
+            ><uicontrol>Configure Transformation Scenario(s)</uicontrol> dialog box</xref>. </li>
+      <li product="webhelp-responsive ope" id="li_wg4_cgk_54b"><ph
+          conkeyref="reusables-webhelp-chapter/step_run_integrator"/>
+        <itemgroup>
+          <ul conkeyref="reusables-webhelp-chapter/script-ul" id="ul_xg4_cgk_54b">
+            <li id="li_yg4_cgk_54b"/>
+          </ul>
+        </itemgroup>
+      </li>
+    </ol>
+  </body>
+</topic>

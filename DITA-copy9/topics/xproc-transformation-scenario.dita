@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="xproc-transformation-scenario">
+  <title>XProc Transformation</title>
+  <shortdesc>This type of transformation specifies the parameters and location of an XProc
+    script.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Transformation Scenarios<indexterm>XProc</indexterm></indexterm>
+        <indexterm>XProc transformation scenario</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_uzl_cgk_54b">A sequence of transformations described by an XProc script can be executed with an XProc
+      transformation scenario. To create an <uicontrol>XProc transformation</uicontrol> scenario,
+      use one of the following methods:<ul id="ul_fln_h5g_br">
+        <li id="li_vzl_cgk_54b">Use the <uicontrol><image href="../img/TransformConfig16.png" id="image_imp_tvv_sr"
+            />Configure Transformation Scenario(s) (<shortcut
+              conkeyref="reusable-oxygen-shortcuts-list/ctrl_shift_c_shortcut"
+              product="author developer editor"/><shortcut
+              conkeyref="reusable-oxygen-shortcuts-list/alt_shift_tc_shortcut"
+              product="authorEclipse developerEclipse editorEclipse"/>)</uicontrol> action from the
+          toolbar or the <menucascade product="author developer editor">
+            <uicontrol>Document</uicontrol>
+            <uicontrol>Transformation</uicontrol>
+          </menucascade><uicontrol product="authorEclipse developerEclipse editorEclipse"
+            >XML</uicontrol> menu. Then click the <uicontrol>New</uicontrol> button and select
+            <uicontrol>XProc transformation</uicontrol>.</li>
+        <li id="li_wzl_cgk_54b">Go to <menucascade>
+            <uicontrol>Window</uicontrol>
+            <uicontrol>Show View</uicontrol>
+          </menucascade> and select <uicontrol><image href="../img/TransformConfig16.png"
+              id="image_qvk_tvv_sr"/>Transformation Scenarios</uicontrol> to display <xref
+            href="scenarios-view.dita#scenarios-view">this view</xref>. Click the <uicontrol><image
+              href="../img/NewScenarioDrop.png"/>New Scenario</uicontrol> drop-down menu button and
+          select <uicontrol>XProc transformation</uicontrol>.</li>
+      </ul></p>
+    <p id="p_xzl_cgk_54b">Both methods open the <uicontrol>New Scenario</uicontrol> dialog box.</p>
+    <p conkeyref="reusables-transforming-documents/name-storage-options"
+      product="author developer editor" id="p_yzl_cgk_54b"/>
+    <p product="authorEclipse developerEclipse editorEclipse" id="p_zzl_cgk_54b">The upper part of the dialog box allows
+      you to specify the <uicontrol>Name</uicontrol> of the transformation scenario.</p>
+    <p id="p_a1m_cgk_54b">The lower part of the dialog box contains several tabs that allow you to configure the
+      options that control the transformation.</p>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link href="xproc-API-external-engine.dita#xproc-API-external-engine"/>
+      <link href="editing-xproc-scripts.dita#editing-xproc-scripts"
+        product="developer editor developerEclipse editorEclipse"/>
+    </linklist>
+  </related-links>
+</topic>

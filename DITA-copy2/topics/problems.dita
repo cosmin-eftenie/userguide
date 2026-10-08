@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="problems">
+  <title>Troubleshooting</title>
+  <body>
+    <p id="p_kxj_dgk_54b">This section provides a collection of common performance and other types of problems that
+      might be encountered when using <ph keyref="product"/>, along with their possible
+      solutions.</p>
+  </body>
+</topic>

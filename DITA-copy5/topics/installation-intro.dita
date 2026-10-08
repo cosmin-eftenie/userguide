@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="installation-intro">
+  <title>Installation</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Installing Oxygen</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_crm_bgk_54b"><ph keyref="product"/> is available on Windows, Linux, and macOS and there
+      are a variety of methods and options for installing and running <ph keyref="product"/> on your
+      system or server. This section also includes information about registering, transferring, or
+      releasing licenses, upgrading, <ph product="author developer editor">installing
+          <term>add-ons</term>, </ph>and uninstalling.</p>
+    <section id="choosing_how_runs">
+      <title>Choosing How <ph keyref="product"/> Runs</title>
+      <p id="p_drm_bgk_54b">You can install <ph keyref="product"/> to run in several ways:</p>
+      <ul id="ul_erm_bgk_54b">
+        <li id="li_frm_bgk_54b">As a desktop application (running standalone or as an Eclipse plugin) on Windows, Linux,
+          or macOS.</li>
+        <li id="li_grm_bgk_54b">As a desktop application (running standalone or as an Eclipse plugin) on a Unix or Linux
+          server or on Windows Terminal Server.</li>
+      </ul>
+    </section>
+    <section id="choosing_an_installer">
+      <title>Choosing an Installer</title>
+      <p id="p_hrm_bgk_54b">You also have a choice of several different installers:</p>
+      <p id="p_irm_bgk_54b">
+        <ul id="ul_scm_tfx_54">
+          <li id="li_jrm_bgk_54b">The native installer for your platform (Windows, Linux, or macOS).</li>
+          <li id="li_krm_bgk_54b">On Windows and Linux, the native installer can also run in unattended mode.</li>
+          <li product="authorEclipse developerEclipse editorEclipse" id="li_lrm_bgk_54b">The <xref
+              href="install-eclipse.dita#install-eclipse/update_site_method">Update Site
+              installer</xref>.</li>
+          <li product="authorEclipse developerEclipse editorEclipse" id="li_mrm_bgk_54b">The <xref
+              href="install-eclipse.dita#install-eclipse/zip_archive_method">Zip archive
+              installer</xref>.</li>
+        </ul>
+      </p>
+    </section>
+    <section id="choosing_a_license_option">
+      <title>Choosing a License Option</title>
+      <p id="p_nrm_bgk_54b">You must <xref keyref="install_license-key">obtain and register a
+          license</xref> to run <ph keyref="product"/>. </p>
+      <p product="author developer editor authorEclipse developerEclipse editorEclipse" id="p_orm_bgk_54b">You can
+        choose from two types of licenses:<ul id="ul_fjg_51b_2p">
+          <li id="li_prm_bgk_54b">A named-user license, which can be used by a single person on multiple computers.</li>
+          <li id="li_qrm_bgk_54b">A floating license, which can be used by different people at different times. Only one
+            person can use a floating license at a time.</li>
+        </ul></p>
+    </section>
+    <section id="upgrading_transferring_and_uninstalling">
+      <title>Upgrading, Transferring, and Uninstalling.</title>
+      <p id="p_rrm_bgk_54b">You can also <xref keyref="install_upgrade">upgrade</xref>
+        <ph keyref="product"/><ph
+          product="author developer editor authorEclipse developerEclipse editorEclipse">, <xref
+            keyref="install_transfer-release-license">transfer a license</xref>,</ph> or <xref
+          keyref="install_uninstall">uninstall</xref>
+        <ph keyref="product"/>.</p>
+    </section>
+    <section id="getting_help_with_installation">
+      <title>Getting Help With Installation</title>
+      <p id="p_srm_bgk_54b">If you need help, email support at: <ph keyref="supportEmail"/>.</p>
+    </section>
+  </body>
+</topic>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="author-docbook-targetset-doc-type">
+  <title>DocBook Targetset Document Type (Framework)</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Built-in frameworks<indexterm>DocBook Targetset Map</indexterm></indexterm>
+        <indexterm>DocBook Targetset Map document type</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_sfj_cgk_54b">DocBook <i>Targetset</i> documents are used to resolve cross references with the DocBook
+        <i>Olink</i>.</p>
+    <section id="file_definition">
+      <title>File Definition</title>
+      <p id="p_tfj_cgk_54b">A file is considered to be a <i>Targetset</i> when the root name is
+          <codeph>targetset</codeph>.</p>
+    </section>
+    <section id="document_templates">
+      <title>Default Document Templates</title>
+      <p id="p_ufj_cgk_54b">A default <uicontrol>DocBook Targetset Map</uicontrol> document template is available when
+        creating <xref href="new-dialog-sa.dita#new-dialog-sa" product="author developer editor">new
+          documents from templates</xref><xref
+          href="creating-from-templates.dita#creating-from-templates"
+          product="authorEclipse developerEclipse editorEclipse">new documents from templates</xref>
+        and it can be found in: <menucascade>
+          <uicontrol>Framework Templates</uicontrol>
+          <uicontrol>DocBook Targetset</uicontrol>
+        </menucascade>.</p>
+      <p id="p_vfj_cgk_54b">The default template for DocBook Targetset documents is located in the <filepath><term
+            conkeyref="reusables-user-guide/oxy-install-dir"
+          />/frameworks/docbook/templates/Targetset</filepath> folder. </p>
+    </section>
+    <section id="default_schema">
+      <title>Default Schema for Validation and Content Completion</title>
+      <p id="p_wfj_cgk_54b">The default schema, <filepath>targetdatabase.dtd</filepath>, for this type of document is
+        stored in <filepath><term conkeyref="reusables-user-guide/oxy-install-dir"
+          />/frameworks/docbook/xsl/common/</filepath>.</p>
+    </section>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link format="html" href="https://docbook.org" scope="external">
+        <linktext>DocBook Specifications</linktext>
+      </link>
+    </linklist>
+  </related-links>
+</topic>

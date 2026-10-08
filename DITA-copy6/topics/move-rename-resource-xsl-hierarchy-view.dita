@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="move-rename-resource-xsl-hierarchy-view">
+  <title>Moving/Renaming XSLT Resources</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>XSLT<indexterm>Moving resources</indexterm></indexterm>
+        <indexterm>XSLT<indexterm>Renaming resources</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_ny1_cgk_54b"><ph conkeyref="reusables-editing-documents/short-desc-move-rename"/></p>
+    <p conkeyref="reusables-editing-documents/rename-action" id="p_oy1_cgk_54b"/>
+    <p conkeyref="reusables-editing-documents/move-action" id="p_py1_cgk_54b"/>
+  </body>
+</topic>

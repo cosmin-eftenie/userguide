@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="whr-publishing-template-apply-transformation">
+  <title>How to Add a Publishing Template to the Publishing Templates Gallery</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+          >WebHelp Responsive <indexterm>Adding publishing templates to
+          gallery</indexterm></indexterm>
+        <indexterm product="webhelp-responsive ope">Publishing Template <indexterm>Adding to
+            gallery</indexterm></indexterm>
+      </keywords>
+      <keywords>
+        <keyword outputclass="label" product="webhelp-responsive">Publishing Template</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <taskbody>
+    <steps>
+      <stepsection>To add the publishing template to your templates gallery, follow these
+        steps:</stepsection>
+      <step>
+        <cmd>Open the transformation scenario dialog box by editing a WebHelp Responsive
+          transformation.</cmd>
+      </step>
+      <step>
+        <cmd>In the <uicontrol>Templates</uicontrol> tab, click the <uicontrol>Configure Publishing
+            Templates Gallery</uicontrol> link to.</cmd>
+        <stepresult>This will open the preferences page.</stepresult>
+      </step>
+      <step>
+        <cmd>Click the <uicontrol>Add</uicontrol> button and specify the location of your template
+          directory.</cmd>
+        <stepresult>Your template directory is now added to the <uicontrol>Additional Publishing
+            Templates Galleries</uicontrol> list.</stepresult>
+      </step>
+      <step>
+        <cmd>Click <uicontrol>OK</uicontrol> to return to the transformation scenario dialog
+          box.</cmd>
+        <stepresult>All the templates contained in your template directory will be displayed in the
+          preview pane along with all the built-in templates.</stepresult>
+      </step>
+    </steps>
+  </taskbody>
+</task>

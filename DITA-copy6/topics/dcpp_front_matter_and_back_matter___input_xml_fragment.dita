@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_front_matter_and_back_matter___input_xml_fragment">
+  <title>Front Matter and Back Matter - XML Fragment</title>
+  <body>
+    <p id="p_trr_cgk_54b">In the <xref
+        href="dcpp_debugging_the_css.dita#dcpp_debugging_the_css/merged_map_file">merged map
+        file</xref>, the <term>frontmatter</term> topic references are wrapped in a
+        <xmlelement>frontmatter</xmlelement> element that has the class
+        <codeph>bookmap/frontmatter</codeph>. Then, the referenced content is marked with the
+      attribute <xmlatt>is-frontmatter="true"</xmlatt>:</p>
+    <codeblock outputclass="language-xml" id="codeblock_urr_cgk_54b">&lt;bookmap xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" ...>
+    &lt;oxy:front-page class="- front-page/front-page ">
+       ...
+    &lt;/oxy:front-page>
+    &lt;opentopic:map xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder"
+    class="- toc/toc ">
+        ...
+        &lt;frontmatter xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
+        class="- map/topicref bookmap/frontmatter ">
+          ...
+          &lt;topicref class="- map/topicref " href="#unique_1" type="concept">
+          ...
+        &lt;/frontmatter>
+    &lt;/opentopic:map>
+    &lt;concept 
+           class="- topic/topic concept/concept " 
+           is-frontmatter="true"
+           topicrefclass="- map/topicref bookmap/bookabstract " ...></codeblock>
+    <div>
+      <p conkeyref="reusables-dcpp/mmap_pqy_hdn_vca" id="p_vrr_cgk_54b"/>
+      <codeblock outputclass="language-xml" id="codeblock_wrr_cgk_54b">&lt;div xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" ...>
+    &lt;div class=" front-page/front-page front-page">
+       ...
+    &lt;/div>
+    &lt;div class="- toc/toc toc">
+      &lt;div class="- map/topicref bookmap/frontmatter topicref frontmatter">
+        &lt;div href="#unique_2" type="topic" class="- map/topicref topicref">
+        ...
+        &lt;/div>
+    &lt;/div>
+    &lt;article 
+        class="- topic/topic concept/concept topic concept nested0"
+        is-frontmatter="true"
+        topicrefclass="- map/topicref bookmap/bookabstract "  ...></codeblock>
+    </div>
+    <note id="note_xrr_cgk_54b">The process also applies for the backmatter topic references inside a
+        <xmlelement>backmatter</xmlelement> element with the <codeph>bookmap/backmatter</codeph>
+      class and referenced content with the <xmlatt>is-backmatter="true"</xmlatt> attribute both in
+      the merged map and merged HTML files.</note>
+  </body>
+</topic>

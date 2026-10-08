@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dita-map-edit-feedback">
+  <title>Feedback Tab (DITA-OT Transformations)</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>DITA-OT transformation scenario<indexterm>Feedback tab</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_l5l_cgk_54b"><ph conkeyref="reusables-transforming-documents/intro-for-transformation-tabs"/></p>
+    <p id="p_m5l_cgk_54b">The <uicontrol>Feedback</uicontrol> tab is for those who want to provide a way for users to
+      offer feedback and ask questions in the published output and it is available for the
+        <uicontrol>DITA Map WebHelp Responsive</uicontrol> transformation type. To add a comments
+      component in the output, you need to use <xref
+        href="https://www.oxygenxml.com/oxygen_feedback.html" format="html" scope="external"
+          ><b>Oxygen Feedback</b></xref> to create a site configuration for the website where your
+      WebHelp output is published and use this <uicontrol>Feedback</uicontrol> tab to instruct the
+      transformation to install the comments component at the bottom of each WebHelp page.</p>
+    <p id="p_n5l_cgk_54b">When you create a site configuration in the <xref
+        href="https://www.oxygenxml.com/doc/ug-feedback/topics/ofb-administrator-guide.html"
+        format="html" scope="external"><b>Oxygen Feedback</b> administration interface</xref>, an
+      HTML fragment is generated during the final step of the creation process. You need to click
+      the <uicontrol>Edit</uicontrol> button at the bottom-right of this tab to open a dialog box
+      where you will paste the generated HTML fragment. The HTML fragment can also be set in an
+        <xref href="whr-publishing-template.dita"><b>Oxygen Publishing Template</b></xref>, either
+      as an <xref href="whr_publishing_template_contents.dita#html_fragment_extension_points">HTML
+        fragment extension point</xref> or as a <xref
+        href="whr_publishing_template_contents.dita#transformation_parameters">transformation
+        parameter</xref> (the <codeph>webhelp.fragment.feedback</codeph> parameter). If the fragment
+      is specified in multiple places, the order of precedence (from highest to lowest) is:<ul
+        id="ul_yn4_bpq_pkb">
+        <li id="li_o5l_cgk_54b">The fragment specified directly in the <uicontrol>Feedback</uicontrol> tab.</li>
+        <li id="li_p5l_cgk_54b">The fragment specified in a publishing template as an HTML fragment extension
+          point.</li>
+        <li id="li_q5l_cgk_54b">The fragment specified in a publishing template as a transformation parameter.</li>
+      </ul></p>
+  </body>
+</topic>

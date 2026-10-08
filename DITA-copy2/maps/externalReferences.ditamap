@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+ <title>External References</title>
+  <!-- Links to oXygen site -->
+  <keydef
+    href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/exml/workspace/api/PluginWorkspace.html"
+    keys="url_PluginWorkspace" scope="external" format="html" product="waCustom"/>
+  <keydef
+    href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/extensions/api/webapp/access/WebappPluginWorkspace.html"
+    keys="url_WebappPLuginWorkspace" scope="external" format="html" product="waCustom"/>
+  <keydef
+    href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/extensions/api/webapp/plugin/ServletPluginExtension.html"
+    keys="url_WebappServletPluginExtension" scope="external" format="html" product="waCustom"/>
+  <keydef keys="url_XMLNodeRendererCustomizer"
+    href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/exml/workspace/api/node/customizer/XMLNodeRendererCustomizer.html"
+    format="html" scope="external" product="author editor authorEclipse editorEclipse"/>
+  <keydef keys="url_addEditingSessionLifecycleListener"
+    href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/extensions/api/webapp/access/WebappPluginWorkspace.html#addEditingSessionLifecycleListener(ro.sync.ecss.extensions.api.webapp.access.WebappEditingSessionLifecycleListener)"
+    format="html" scope="external" product="waCustom"/>
+
+  <!-- Links to MS site -->
+  <keydef keys="url_MSSQLServerALL"
+    href="https://docs.microsoft.com/en-us/sql/connect/jdbc/release-notes-for-the-jdbc-driver?view=sql-server-ver16#102"
+    scope="external" format="html"
+    product="author developer editor authorEclipse developerEclipse editorEclipse"/>
+
+  
+  <!-- Other links -->
+  <keydef href="https://developer.marklogic.com/" keys="url_MLCommunity" scope="external"
+    format="html" product="author developer editor authorEclipse developerEclipse editorEclipse"/>
+  <keydef
+    href="http://www.oracle.com/technetwork/database/enterprise-edition/jdbc-112010-090769.html"
+    keys="url_Oracle11gDriver" scope="external" format="html"
+    product="author developer editor authorEclipse developerEclipse editorEclipse"/>
+  <keydef href="https://jdbc.postgresql.org/download/" keys="url_PostgreSQLDriver"
+    scope="external" format="html"
+    product="author developer editor authorEclipse developerEclipse editorEclipse"/>
+  
+</map>

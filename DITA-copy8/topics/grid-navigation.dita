@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="grid-navigation">
+  <title>Grid Mode Navigation</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Grid editing modes<indexterm>Navigation</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_apw_bgk_54b">When you first open a document in <uicontrol>Grid</uicontrol> mode, the content is collapsed.
+      Only the root element and its attributes are displayed. An arrow sign (<image
+        href="../img/ExpandGrid.png"/>) displayed at the left of the node name indicates that this
+      node has child nodes. To display the children, click this arrow sign. To collapse a node,
+      click the reverse arrow sign (<image href="../img/CollapseGrid.png"/>). The expand/collapse
+      actions can also be invoked with the <uicontrol
+        conkeyref="reusable-oxygen-shortcuts-list/numpad_plus"/> and <uicontrol
+        conkeyref="reusable-oxygen-shortcuts-list/numpad_minus"/> keys, or from the
+        <uicontrol>Expand/Collapse</uicontrol> submenu of the contextual menu<ph
+        product="author developer editor"> or from <menucascade>
+          <uicontrol>Document</uicontrol>
+          <uicontrol>Grid Expand/Collapse</uicontrol>
+        </menucascade></ph>.</p>
+    <section id="expandcollapse_submenu">
+      <title>Expand/Collapse Submenu</title>
+      <p id="p_bpw_bgk_54b">The following actions are available on the <uicontrol>Expand/Collapse</uicontrol> submenu:<dl id="dl_cpw_bgk_54b">
+          <dlentry id="dlentry_dpw_bgk_54b">
+            <dt><uicontrol><image href="../img/ExpandAll16.png" id="image_zv1_nf3_5r"/>Expand
+                All</uicontrol></dt>
+            <dd>Expands the selection and all its children.</dd>
+          </dlentry>
+          <dlentry id="dlentry_epw_bgk_54b">
+            <dt><uicontrol><image href="../img/CollapseAll16.png" id="image_dwt_4f3_5r"/>Collapse
+                All</uicontrol></dt>
+            <dd>Collapses the selection and all its children.</dd>
+          </dlentry>
+          <dlentry id="dlentry_fpw_bgk_54b">
+            <dt><uicontrol>Expand Children</uicontrol></dt>
+            <dd>Expands all the children of the selection but not the selection.</dd>
+          </dlentry>
+          <dlentry id="dlentry_gpw_bgk_54b">
+            <dt><uicontrol>Collapse Children</uicontrol></dt>
+            <dd>Collapses all the children of the selection but not the selection.</dd>
+          </dlentry>
+          <dlentry id="dlentry_hpw_bgk_54b">
+            <dt><uicontrol>Collapse Others</uicontrol></dt>
+            <dd>Collapses all the siblings of the current selection but not the selection.</dd>
+          </dlentry>
+        </dl></p>
+    </section>
+    <section id="keyboard_shortcuts">
+      <title>Keyboard Shortcuts</title>
+      <p id="p_ipw_bgk_54b">A variety of other keyboard shortcuts are also available in <uicontrol>Grid</uicontrol>
+          mode:<table frame="all" colsep="1" rowsep="1" id="table_jpw_bgk_54b">
+          <title>Shortcuts in the <uicontrol>Grid</uicontrol> Mode</title>
+          <tgroup cols="2">
+            <colspec colname="c1" colnum="1" colwidth="1*" colsep="1" rowsep="1"/>
+            <colspec colname="c2" colnum="2" colwidth="2.09*" colsep="1" rowsep="1"/>
+            <thead>
+              <row>
+                <entry>Key</entry>
+                <entry>Action</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry><uicontrol conkeyref="reusable-oxygen-shortcuts-list/tab"/></entry>
+                <entry>Moves the cursor to the next editable value in a table row.</entry>
+              </row>
+              <row>
+                <entry><uicontrol conkeyref="reusable-oxygen-shortcuts-list/shift_tab"/></entry>
+                <entry>Moves the cursor to the previous editable value in a table row.</entry>
+              </row>
+              <row>
+                <entry><uicontrol conkeyref="reusable-oxygen-shortcuts-list/enter"/></entry>
+                <entry>Begins editing and lets you insert a new value. Also commits the changes
+                  after you finish editing.</entry>
+              </row>
+              <row>
+                <entry><uicontrol conkeyref="reusable-oxygen-shortcuts-list/up_arrow_page_up"
+                  /></entry>
+                <entry>Navigates toward the beginning of the document.</entry>
+              </row>
+              <row>
+                <entry><uicontrol conkeyref="reusable-oxygen-shortcuts-list/down_arrow_page_down"
+                  /></entry>
+                <entry>Navigates toward the end of the document.</entry>
+              </row>
+              <row>
+                <entry><uicontrol conkeyref="reusable-oxygen-shortcuts-list/shift"/></entry>
+                <entry>Used in conjunction with the navigation keys to create a continuous selection
+                  area. </entry>
+              </row>
+              <row>
+                <entry><uicontrol conkeyref="reusable-oxygen-shortcuts-list/ctrl"/></entry>
+                <entry>Used in conjunction with the mouse cursor to create discontinuous selection
+                  areas.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table></p>
+      <p id="p_kpw_bgk_54b">The following key combinations can be used to scroll the grid:</p>
+      <ul id="ul_lpw_bgk_54b">
+        <li id="li_mpw_bgk_54b"><uicontrol conkeyref="reusable-oxygen-shortcuts-list/ctrl_up_arrow"/> - scrolls the grid
+          upwards.</li>
+        <li id="li_npw_bgk_54b"><uicontrol conkeyref="reusable-oxygen-shortcuts-list/ctrl_down_arrow"/> - scrolls the
+          grid downwards.</li>
+        <li id="li_opw_bgk_54b"><uicontrol conkeyref="reusable-oxygen-shortcuts-list/ctrl_left_arrow"/> scrolls the grid
+          to the left.</li>
+        <li id="li_ppw_bgk_54b"><uicontrol conkeyref="reusable-oxygen-shortcuts-list/ctrl_right_arrow"/> scrolls the
+          grid to the right.</li>
+      </ul>
+    </section>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link href="grid-actions.dita#grid-actions"/>
+    </linklist>
+  </related-links>
+</topic>

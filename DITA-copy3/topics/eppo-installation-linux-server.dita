@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="eppo-installation-linux-server">
+  <title>Installing <ph keyref="product"/> on a Linux / UNIX Server</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Installing Oxygen<indexterm>Linux/Unix Server
+          Installation</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <section id="system_requirements">
+      <title>System Requirements</title>
+      <p id="p_zzm_bgk_54b">
+        <dl id="dl_a1n_bgk_54b">
+          <dlentry id="dlentry_b1n_bgk_54b">
+            <dt>Operating system</dt>
+            <dd conkeyref="reusables-installation/osrequirements.linux"/>
+          </dlentry>
+          <dlentry id="dlentry_c1n_bgk_54b">
+            <dt>CPU</dt>
+            <dd conkeyref="reusables-installation/CPU"/>
+          </dlentry>
+          <dlentry id="dlentry_d1n_bgk_54b">
+            <dt>Memory</dt>
+            <dd conkeyref="reusables-installation/memory.linux"/>
+          </dlentry>
+          <dlentry id="dlentry_e1n_bgk_54b">
+            <dt>Storage</dt>
+            <dd conkeyref="reusables-installation/storage"/>
+          </dlentry>
+          <dlentry id="dlentry_f1n_bgk_54b">
+            <dt>Java</dt>
+            <dd conkeyref="reusables-installation/java.linux"/>
+          </dlentry>
+        </dl>
+      </p>
+    </section>
+    <section id="linux_installer">
+      <title>Linux Installer</title>
+      <p id="p_g1n_bgk_54b">To install <ph keyref="product"/> using the Linux installer, follow these steps:<ol id="ol_h1n_bgk_54b">
+          <li id="li_i1n_bgk_54b">Make sure that your system meets the <xref
+              href="#eppo-installation-linux-server/system_requirements" format="dita">system
+              requirements</xref>.</li>
+          <li id="li_j1n_bgk_54b"><xref href="https://www.oxygenxml.com/download.html" format="html" scope="external"
+              >Download</xref> the Linux installer.</li>
+          <li id="li_k1n_bgk_54b">[Optional] Validate the integrity of the downloaded file by <xref
+              href="http://en.wikipedia.org/wiki/Md5sum" format="html" scope="external">checking it
+              against the MD5 sum</xref> published on the download page.</li>
+          <li id="li_l1n_bgk_54b">Run the installer and follow the instructions in the installation program.<note id="note_m1n_bgk_54b">For
+              example, open a shell, <codeph>cd</codeph> to the installation directory, and at the
+              prompt type <filepath>sh ./oxygen-32bit.sh</filepath> or <filepath>sh
+                ./oxygen-64bit.sh</filepath>, depending on which installer you
+            downloaded.</note></li>
+          <li id="li_n1n_bgk_54b">Start <ph keyref="product"/> using one of the following methods:<ul id="ul_o1n_bgk_54b">
+              <li id="li_p1n_bgk_54b">Use the <ph product="editor"
+                  ><filepath>oxygen</filepath></ph><ph product="author"
+                  ><filepath>author</filepath></ph><ph product="developer"
+                    ><filepath>developer</filepath></ph><ph product="json"
+                    ><filepath>jsoneditor</filepath></ph><ph product="svnClient"
+                    ><filepath>syncroSVNClient</filepath></ph> shortcut created by the
+                installer.</li>
+              <li id="li_q1n_bgk_54b">From a command line, type <codeph product="editor">sh
+                  oxygen.sh</codeph><codeph product="author">sh oxygenAuthor.sh</codeph><ph
+                  product="developer">sh oxygenDeveloper.sh</ph><ph product="json"><filepath>sh
+                    oxygenJSONEditor.sh</filepath></ph><ph product="svnClient"><filepath>sh
+                    syncroSVNClient.sh</filepath></ph>. This file is located in the installation
+                folder.</li>
+            </ul></li>
+          <li id="li_r1n_bgk_54b">To license your copy of <ph keyref="product"/> go to <menucascade>
+              <uicontrol>Help</uicontrol>
+              <uicontrol>Register</uicontrol>
+            </menucascade> and enter your <xref keyref="install_license-key">license
+              information</xref>.</li>
+        </ol></p>
+    </section>
+    <section id="unixlinux_server_configuration">
+      <title>Unix/Linux Server Configuration</title>
+      <p id="p_s1n_bgk_54b">
+        <ol id="ol_t1n_bgk_54b">
+          <li id="li_u1n_bgk_54b">Install <ph keyref="product"/> on the server and make sure the <ph
+              keyref="executableInstallLinux"/> script is executable and the installation directory
+            is in the PATH of the users that need to use the application.</li>
+          <li id="li_v1n_bgk_54b">Make sure you allocate sufficient memory to <ph keyref="product"/>
+            by setting an appropriate value for the <codeph>-Xmx</codeph> parameter in the
+              <filepath>.sh</filepath> startup script.<note id="note_w1n_bgk_54b">The default value
+              of the <codeph>-Xmx</codeph> parameter is about a quarter of the maximum internal
+              memory available on the machine. To avoid <xref
+                href="performance-problems-large-documents.dita#performance-problems-large-documents"
+                >performance issues with large documents</xref>, you may need to adjust
+            it.</note></li>
+          <li id="li_x1n_bgk_54b">Make sure the X server processes located on the workstations allow connections from
+            the server host. For this, use the <codeph>xhost</codeph> command.</li>
+          <li id="li_y1n_bgk_54b">Start telnet (or ssh) on the server host.</li>
+          <li id="li_z1n_bgk_54b">Start an <i>xterm</i> process with the <b>display</b> parameter set on the current
+            workstation. For example: <filepath>xterm -display workstationip:0.0</filepath>.</li>
+          <li id="li_abn_bgk_54b">Start <ph keyref="product"/> by typing <ph product="editor"
+                ><filepath>sh oxygen.sh</filepath></ph>
+            <ph product="author"><filepath>sh oxygenAuthor.sh</filepath></ph><ph product="developer"
+                ><filepath>sh oxygenDeveloper.sh</filepath></ph><ph product="json"><filepath>sh
+                oxygenJSONEditor.sh</filepath></ph><ph product="svnClient"><filepath>sh
+                syncroSVNClient.sh</filepath></ph> from the command line. This file is located in
+            the installation folder.</li>
+        </ol>
+      </p>
+    </section>
+  </body>
+</topic>

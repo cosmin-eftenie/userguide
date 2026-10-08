@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE troubleshooting PUBLIC "-//OASIS//DTD DITA Troubleshooting//EN" "troubleshooting.dtd">
+<troubleshooting id="failed-dita-chm-transformation">
+  <title>DITA to CHM Transformation Fails - Cannot Open File</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>CHM Error HHC5010: Cannot open file</indexterm>
+        <indexterm>CHM Error HHC5003: Compilation failed while compiling file</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <troublebody><condition id="problem_cannot_open_file">
+      <title>Problem</title>
+      <p id="p_pkk_dgk_54b">The DITA to CHM transformation fails with the following error: <codeph>[exec] HHC5010:
+          Error: Cannot open "fileName.chm". Compilation stopped.</codeph></p>
+    </condition><troubleSolution><cause id="cause">
+        <title>Cause</title>
+        <p id="p_qkk_dgk_54b">This error occurs when the CHM output file is opened and the transformation scenario
+          cannot rewrite its content.</p>
+      </cause>
+      <remedy id="solution">
+        <title>Solution</title>
+        <steps-informal>
+          <p id="p_rkk_dgk_54b">To solve this issue, close the CHM help file and run the transformation scenario
+            again.</p>
+          <p product="author editor authorEclipse editorEclipse" id="p_skk_dgk_54b">
+            <note type="tip" id="note_tkk_dgk_54b">It is a good practice to validate the <xref keyref="glossentry_ditamap"
+                  ><term>DITA map</term></xref> before executing the transformation scenario. To do
+              so, run <xref keyref="dita_validate-and-check-for-completeness">the
+                  <uicontrol>Validate and Check for Completeness</uicontrol> action</xref>.
+              Depending on the selected options, it will report detected errors, such as topics
+              referenced in other topics (but not in the <term>DITA map</term>), broken links, and
+              missing external resources.</note>
+          </p>
+        </steps-informal>
+      </remedy></troubleSolution></troublebody>
+  <related-links product="author editor authorEclipse editorEclipse">
+    <linklist>
+      <title>Related Information:</title>
+      <link href="chm-output-format.dita#chm-output-format"/>
+    </linklist>
+  </related-links>
+</troubleshooting>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="configuring_calabash_with_xep">
+  <title>Calabash XProc Processor for Generating PDF Output</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Configure Calabash with XEP</indexterm>
+        <indexterm>PDF output using Calabash XProc processor</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <taskbody>
+    <context>
+      <p id="p_kbm_cgk_54b">To generate PDF output from your XProc pipeline (when using the Calabash XProc processor),
+        follow these steps:</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Open the <filepath><term conkeyref="reusables-user-guide/oxy-install-dir"
+            />/lib/xproc/calabash/engine.xml</filepath> file.</cmd>
+      </step>
+      <step>
+        <cmd>Uncomment the <codeph>&lt;system-property name="com.xmlcalabash.fo-processor"
+            value="com.xmlcalabash.util.FoXEP"/></codeph> system property.</cmd>
+      </step>
+      <step>
+        <cmd>Uncomment the <codeph>&lt;system-property name="com.renderx.xep.CONFIG"
+            file="../../../tools/xep/xep.xml"/></codeph> system property. Edit the
+            <xmlatt>file</xmlatt> attribute to point to the configuration file that is usually
+          located in the XEP installation folder.</cmd>
+      </step>
+      <step>
+        <cmd>Uncomment the references to the XEP libraries. Edit them to point to the matching
+          library names from the XEP installation directory. </cmd>
+      </step>
+      <step>
+        <cmd>Restart <ph keyref="product"/>.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

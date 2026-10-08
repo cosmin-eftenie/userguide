@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="editing-pis-using-form-controls">
+  <title>Editing Processing Instructions Using a Form Control</title>
+  <shortdesc><ph keyref="product"/> allows you to edit <i>processing instructions</i>,
+      <i>comments</i>, and <i>CDATA</i> by using CSS extensions.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>CSS extensions<indexterm>Form Controls<indexterm>Editing processing
+              instructions</indexterm></indexterm></indexterm>
+        <indexterm>Form Control<indexterm>Editing processing instructions</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <note id="note_qzd_dgk_54b">You can edit both the content and the attribute value from a <i>processing
+      instruction</i>.</note>
+    <p id="p_rzd_dgk_54b"><b><u>Example: Editing an Attribute from a Processing Instruction</u></b></p>
+    <p id="p_szd_dgk_54b">PI content:<codeblock outputclass="language-xml" id="codeblock_tzd_dgk_54b">&lt;?pi_target attr="val"?></codeblock></p>
+    <p id="p_uzd_dgk_54b">CSS:<codeblock outputclass="language-css" id="codeblock_vzd_dgk_54b">@namespace oxy "http://www.oxygenxml.com/extensions/author";
+
+oxy|processing-instruction:before {
+    display:inline;
+    content: 
+        "EDIT attribute: " oxy_textfield(edit, '@attr', columns, 15);
+    visibility:visible;
+}
+oxy|processing-instruction{
+    visibility:-oxy-collapse-text;
+}</codeblock></p>
+  </body>
+  <related-links>
+      <link href="text-field-editor.dita"/>
+      <link href="dg-visibility-css-extension.dita"/>
+      <link href="show-external-pis.dita"/>
+  </related-links>
+</topic>

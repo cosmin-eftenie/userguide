@@ -1,0 +1,870 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="reusables-author-actions">
+  <title>Reusable Components for Author Mode Actions in Built-in Document Types</title>
+  <body>
+    <p id="p_gm3_bgk_54b"><!--Framework-independent actions:--></p>
+    <p id="p_hm3_bgk_54b">
+      <dl id="dl_im3_bgk_54b" product="author editor authorEclipse editorEclipse">
+        <dlentry id="insert-image-dlentry">
+          <dt><uicontrol><image href="../../img/Image16.gif"/>Insert Image</uicontrol></dt>
+          <dd><xref href="../../topics/author_adding_images.dita#author_adding_images" format="dita"
+              >Inserts an image reference</xref> at the cursor position. Depending on the current
+            location, an image-type element is inserted.</dd>
+        </dlentry>
+        <dlentry id="insert-image-docbook">
+          <dt><uicontrol><image href="../../img/Image16.gif"/>Insert Image</uicontrol></dt>
+          <dd>Opens a dialog box that allows you to select the path of an <xref
+              href="../../topics/author_adding_images.dita#author_adding_images" format="dita">image
+              to insert at the cursor position</xref>. Depending on the current location, an
+            image-type element is inserted. If the action is invoked between two block elements
+            (such as paragraphs), the dialog box also allows you to provide a title.</dd>
+        </dlentry>
+        <dlentry id="insert-media">
+          <dt><uicontrol><image href="../../img/InsertMedia16.png"/>Insert Media
+              Resource</uicontrol></dt>
+          <dd>Opens a <xref href="../../topics/author-adding-media.dita#author-adding-media"
+                ><uicontrol>Choose Media</uicontrol> dialog box</xref> that allows you to select the
+            URL of a media object to be inserted into a document at the cursor position. The result
+            will be that a reference to the specified video, audio, or embedded HTML frame is
+            inserted and rendered in <uicontrol>Author</uicontrol> mode so that it can be played
+            directly from there.</dd>
+        </dlentry>
+        <dlentry id="insert_xinclude_dlentry">
+          <dt><uicontrol><image href="../../img/XInclude16.png"/>Insert XInclude</uicontrol></dt>
+          <dd>Opens a dialog box that allows you to browse and select content to be included and
+            automatically generates the corresponding XInclude instruction.</dd>
+        </dlentry>
+        <dlentry id="insert-para-dlentry">
+          <dt><uicontrol><image href="../../img/Paragraph16.png"/>Insert Paragraph</uicontrol></dt>
+          <dd>Insert a new paragraph element at current cursor position.</dd>
+        </dlentry>
+        <dlentry id="insert-mathml-dlentry">
+          <dt><uicontrol><image href="../../img/Equation16.gif"/>Insert Equation</uicontrol></dt>
+          <dd>Opens the <uicontrol>XML Fragment Editor</uicontrol> that allows you to insert and
+              <xref href="../../topics/author-editing-mathml.dita">edit MathML
+            notations</xref>.</dd>
+        </dlentry>
+        <dlentry id="sort-dlentry">
+          <dt><uicontrol><image href="../../img/Sort16.png"/>Sort</uicontrol></dt>
+          <dd>Sorts cells or list items in a table.</dd>
+        </dlentry>
+        <dlentry id="edit-image-map">
+          <dt><uicontrol>Image Map Editor</uicontrol></dt>
+          <dd>This action is available in the contextual menu when it is invoked on an image. This
+            action applies an <i>image map</i> to the current image (if one does not already exist)
+            and opens the <uicontrol>Image Map Editor</uicontrol> dialog box. This feature allows
+            you to create hyperlinks in specific areas of an image that will link to various
+            destinations.</dd>
+        </dlentry>
+      </dl>
+    </p>
+    <!--Other reusables-->
+    <p id="p_jm3_bgk_54b">
+      <dl id="dl_km3_bgk_54b">
+        <dlentry id="bold-dlentry">
+          <dt><uicontrol><image href="../../img/Bold16.gif"/>Bold</uicontrol></dt>
+          <dd>Emphasizes the selected text by surrounding it with a <term>bold</term> tag. You can
+            use this action on multiple non-contiguous selections.</dd>
+        </dlentry>
+        <dlentry id="italic-dlentry">
+          <dt><uicontrol><image href="../../img/Italic16.png"/>Italic</uicontrol></dt>
+          <dd>Emphasizes the selected text by surrounding it with an <term>italic</term> tag. You
+            can use this action on multiple non-contiguous selections.</dd>
+        </dlentry>
+        <dlentry id="underline-dlentry">
+          <dt><uicontrol><image href="../../img/Underline16.gif"/>Underline</uicontrol></dt>
+          <dd>Emphasizes the selected text by surrounding it with an <term>underline</term> tag. You
+            can use this action on multiple non-contiguous selections.</dd>
+        </dlentry>
+        <dlentry id="insert-section-dlentry">
+          <dt><uicontrol><image href="../../img/InsertSectionDrop.png"/>Section</uicontrol>
+            Drop-Down Menu</dt>
+          <dd>
+            <p id="p_lm3_bgk_54b">The following actions are available from this menu:</p>
+            <p id="p_mm3_bgk_54b">
+              <dl id="dl_nm3_bgk_54b">
+                <dlentry id="insert-section">
+                  <dt><uicontrol><image href="../../img/Section16.gif"/>Insert
+                    Section</uicontrol></dt>
+                  <dd>Inserts a new section or subsection in the document, depending on the current
+                    context. For example, if the current context is <xmlelement>sect1</xmlelement>,
+                    then a <xmlelement>sect2</xmlelement> is inserted. By default, this action also
+                    inserts a <xmlelement>para</xmlelement> element as a child node. The
+                      <xmlelement>para</xmlelement> element can be deleted if it is not needed.</dd>
+                </dlentry>
+                <dlentry id="promote-section">
+                  <dt><uicontrol><image href="../../img/Promote16.png"/>Promote Section (<shortcut
+                        conkeyref="reusable-oxygen-shortcuts-list/ctrl_alt_left_shortcut"
+                      />)</uicontrol></dt>
+                  <dd>Promotes the current node as a sibling of the parent node.</dd>
+                </dlentry>
+                <dlentry id="demote-section">
+                  <dt><uicontrol><image href="../../img/Demote16.png"/>Demote Section (<shortcut
+                        conkeyref="reusable-oxygen-shortcuts-list/ctrl_alt_right_shortcut"
+                      />)</uicontrol></dt>
+                  <dd>Demotes the current node a child of the previous node.</dd>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+        <dlentry id="link_actions_drop_down" product="author editor authorEclipse editorEclipse">
+          <dt><uicontrol><image href="../../img/LinkDrop.png"/>Link</uicontrol> Actions Drop-Down
+            Menu</dt>
+          <dd>
+            <p id="p_om3_bgk_54b">The following link actions are available from this menu:<dl
+                id="link-dl">
+                <dlentry id="dlentry_pm3_bgk_54b">
+                  <dt><uicontrol>Cross reference (link)</uicontrol></dt>
+                  <dd>Opens a dialog box that allows you to select a target to insert as a hypertext
+                    link.</dd>
+                </dlentry>
+                <dlentry id="dlentry_qm3_bgk_54b">
+                  <dt><uicontrol>Cross reference (xref)</uicontrol></dt>
+                  <dd>Inserts a cross reference to other parts of the document.</dd>
+                </dlentry>
+                <dlentry id="dlentry_rm3_bgk_54b">
+                  <dt><uicontrol>Web Link (ulink)</uicontrol></dt>
+                  <dd>Inserts a link that addresses its target with a URL (Universal Resource
+                    Locator).</dd>
+                </dlentry>
+                <dlentry id="dlentry_sm3_bgk_54b">
+                  <dt id="insert-olink-dt"><uicontrol>Insert OLink</uicontrol></dt>
+                  <dd>
+                    <p id="p_tm3_bgk_54b">Opens an <uicontrol>OLink</uicontrol> dialog box that
+                      allows you to insert a link that addresses its target indirectly, using the
+                      values of the <xmlatt>targetdoc</xmlatt> and <xmlatt>targetptr</xmlatt>
+                      attributes that are present in a <xref
+                        href="../../topics/author-docbook-targetset-doc-type.dita"
+                          ><uicontrol>Targetset</uicontrol></xref> file.</p>
+                    <p id="p_um3_bgk_54b">
+                      <fig product="author editor" id="fig_vm3_bgk_54b">
+                        <title>Insert OLink Dialog Box</title>
+                        <image href="../../img/sa_insert_olink.png" placement="inline"/>
+                      </fig>
+                    </p>
+                    <p id="p_wm3_bgk_54b">
+                      <fig product="authorEclipse editorEclipse" id="fig_xm3_bgk_54b">
+                        <title>Insert OLink Dialog Box</title>
+                        <image href="../../img/ec_insert_olink.png" placement="inline"/>
+                      </fig>
+                    </p>
+                    <p id="p_ym3_bgk_54b">After you choose the <uicontrol>Targetset URL</uicontrol>,
+                      the structure of the target documents is presented. For each target document
+                        (<xmlatt>targetdoc</xmlatt>), its content is displayed allowing you to
+                      easily identify the <xmlatt>targetptr</xmlatt> for the
+                        <xmlelement>olink</xmlelement> element that will be inserted. You can also
+                      use the search fields to quickly identify a target. If you already know the
+                      values for <uicontrol>targetdoc</uicontrol> and
+                        <uicontrol>targetptr</uicontrol>, you can insert them directly in the
+                      corresponding fields. You can also edit an <xmlelement>olink</xmlelement>
+                      using the <uicontrol>Edit OLink</uicontrol> action that is available on the
+                      contextual menu. The last used <uicontrol>Targetset</uicontrol> URL will be
+                      used to identify the edited target.</p>
+                    <p id="p_zm3_bgk_54b">To insert XREF text into the
+                        <xmlelement>olink</xmlelement>, enter the text in the
+                        <uicontrol>xreftext</uicontrol> field and make sure the <uicontrol>Insert
+                        xreftext in the OLink</uicontrol> option is selected.</p>
+                  </dd>
+                </dlentry>
+                <dlentry id="dlentry_an3_bgk_54b">
+                  <dt><uicontrol>Insert URI</uicontrol></dt>
+                  <dd>Inserts a URI element. The URI identifies a Uniform Resource Identifier (URI)
+                    in content.</dd>
+                </dlentry>
+                <dlentry id="dlentry_bn3_bgk_54b">
+                  <dt><uicontrol>Edit OLink</uicontrol></dt>
+                  <dd>Opens a dialog box that allows you edit an existing <i>OLink</i>. See the
+                      <uicontrol>Insert OLink</uicontrol> action for more information.</dd>
+                </dlentry>
+              </dl></p>
+          </dd>
+        </dlentry>
+      </dl>
+    </p>
+    <p id="p_cn3_bgk_54b">
+      <dl id="dl_dn3_bgk_54b">
+        <dlentry id="paste-special-sub-dlentry">
+          <dt><uicontrol><image href="../../img/PasteSpecialDITA16.png" id="image_cf2_csh_ps"/>Paste
+              special</uicontrol> submenu</dt>
+          <dd>
+            <p id="p_en3_bgk_54b">This submenu includes the following special paste actions that are specific to the
+              DocBook 4 <term>framework</term>:</p>
+            <p id="p_fn3_bgk_54b">
+              <dl id="dl_gn3_bgk_54b">
+                <dlentry id="dlentry_hn3_bgk_54b">
+                  <dt><uicontrol>Paste As XInclude</uicontrol></dt>
+                  <dd>Allows you to create an <xmlelement>xi:include</xmlelement> element that
+                    references a DocBook element copied from <uicontrol>Author</uicontrol> mode. The
+                    operation fails if the copied element does not have a declared ID. </dd>
+                </dlentry>
+                <dlentry id="dlentry_in3_bgk_54b">
+                  <dt><uicontrol>Paste as link</uicontrol></dt>
+                  <dd>Allows you to create a <xmlelement>link</xmlelement> element that references a
+                    DocBook element copied from <uicontrol>Author</uicontrol> mode. The operation
+                    fails if the copied element does not have a declared ID.</dd>
+                </dlentry>
+                <dlentry id="dlentry_jn3_bgk_54b">
+                  <dt><uicontrol>Paste as xref</uicontrol></dt>
+                  <dd>Allows you to create an <xmlelement>xref</xmlelement> element that references
+                    a DocBook element copied from <uicontrol>Author</uicontrol> mode. The operation
+                    fails if the copied element does not have a declared ID.</dd>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+        <dlentry id="subscript">
+          <dt><uicontrol><image href="../../img/Subscript16.png"/>Subscript</uicontrol></dt>
+          <dd>Surrounds the selected text with a <term>subscript</term> tag, used for inserting a
+            character (number, letter, or symbol) that will appear slightly below the baseline and
+            slightly smaller than the rest of the text.</dd>
+        </dlentry>
+        <dlentry id="superscript">
+          <dt><uicontrol><image href="../../img/Superscript16.png"/>Superscript</uicontrol></dt>
+          <dd>Surrounds the selected text with a <term>superscript</term> tag, used for inserting a
+            character (number, letter, or symbol) that will appear slightly above the baseline and
+            slightly smaller than the rest of the text.</dd>
+        </dlentry>
+      </dl>
+    </p>
+    <p id="p_kn3_bgk_54b">
+      <!--Table actions-->
+      <dl id="table_editing_actions">
+        <dlentry id="table_editing_actions_insert_table">
+          <dt><uicontrol><image href="../../img/Table16.png"/>Insert Table</uicontrol></dt>
+          <dd>Opens a dialog box that allows you to configure and insert a table. You can generate a
+            header and footer, set the number of rows and columns of the table and decide how the
+            table is framed. You can also use this action to convert selected paragraphs, lists, and
+            inline content (mixed content, text plus markup, that is rendered inside a <xref
+              keyref="glossentry_block-element"><term>block element</term></xref>) into a table,
+            with the selected content inserted in the first column, starting from the first row
+            after the header (if a header is inserted).<note id="note_ln3_bgk_54b">If the selection contains a mixture of
+              elements that cannot be converted, you will receive an error message saying that
+                <b>Only lists, paragraphs, or inline content can be converted to
+            tables</b>.</note></dd>
+        </dlentry>
+        <dlentry id="insert-row-below-dlentry">
+          <dt><uicontrol><image href="../../img/TableRow16.gif"/>Insert Row</uicontrol></dt>
+          <dd>Inserts a new table row with empty cells below the current row. This action is
+            available when the cursor is positioned inside a table.</dd>
+        </dlentry>
+        <dlentry id="insert-column-after-dlentry">
+          <dt><uicontrol><image href="../../img/TableColumn16.gif"/>Insert Column</uicontrol></dt>
+          <dd>Inserts a new table column with empty cells after the current column. This action is
+            available when the cursor is positioned inside a table.</dd>
+        </dlentry>
+        <dlentry id="insert-cell-dlentry">
+          <dt><uicontrol><image href="../../img/TableCell16.gif"/>Insert Cell</uicontrol></dt>
+          <dd>Inserts a new empty cell depending on the current context. If the cursor is positioned
+            between two cells, <ph keyref="product"/> a new cell at the cursor position. If the
+            cursor is inside a cell, the new cell is created after the current cell.</dd>
+        </dlentry>
+        <dlentry id="delete-column-dlentry">
+          <dt><uicontrol><image href="../../img/DeleteColumn16.gif"/>Delete
+            Column(s)</uicontrol></dt>
+          <dd>Deletes the table column located at the cursor position or multiple columns in a
+            selection.</dd>
+        </dlentry>
+        <dlentry id="delete-row-dlentry">
+          <dt><uicontrol><image href="../../img/DeleteRow16.png"/>Delete Row(s)</uicontrol></dt>
+          <dd>Deletes the table row located at the cursor position or multiple rows in a
+            selection.</dd>
+        </dlentry>
+        <dlentry id="table-properties-dlentry">
+          <dt><uicontrol><image href="../../img/TableProperties16.png"/>Table
+            Properties</uicontrol></dt>
+          <dd>Opens the <uicontrol>Table properties</uicontrol> dialog box that allows you to
+            configure properties of a table (such as frame borders).</dd>
+        </dlentry>
+        <dlentry id="join-cells-dlentry">
+          <dt><uicontrol><image href="../../img/TableJoin16.png"/>Join Cells</uicontrol></dt>
+          <dd>Joins the content of the selected cells (both horizontally and vertically).</dd>
+        </dlentry>
+        <dlentry id="split-cell-dlentry">
+          <dt><uicontrol><image href="../../img/TableSplitCell16.png"/>Split Cell</uicontrol></dt>
+          <dd>Splits the cell at the cursor location. If <ph keyref="product"/> detects more than
+            one option to split the cell, a dialog box will be displayed that allows you to select
+            the number of rows or columns to split the cell into.</dd>
+        </dlentry>
+      </dl>
+      <dl id="dl_mn3_bgk_54b">
+        <dlentry id="insert-row-above-dlentry">
+          <dt><uicontrol><image href="../../img/TableRowAbove16.png"/>Insert Row
+            Above</uicontrol></dt>
+          <dd>Inserts a new table row with empty cells above the current row. This action is
+            available when the cursor is positioned inside a table.</dd>
+        </dlentry>
+        <dlentry id="insert-rows-dlentry">
+          <dt><uicontrol>Insert Rows</uicontrol></dt>
+          <dd>Opens a dialog box that allows you to insert any number of rows and specify the
+            position where they will be inserted (<uicontrol>Above</uicontrol> or
+              <uicontrol>Below</uicontrol> the current row).</dd>
+        </dlentry>
+        <dlentry id="insert-column-before-dlentry">
+          <dt><uicontrol><image href="../../img/TableColumnBefore16.gif"/>Insert Column
+              Before</uicontrol></dt>
+          <dd>Inserts a column before the current one.</dd>
+        </dlentry>
+        <dlentry id="insert-columns-dlentry">
+          <dt><uicontrol>Insert Columns</uicontrol></dt>
+          <dd>Opens a dialog box that allows you to insert any number of columns and specify the
+            position where they will be inserted (<uicontrol>Above</uicontrol> or
+              <uicontrol>Below</uicontrol> the current column).</dd>
+        </dlentry>
+      </dl>
+    </p>
+    <p id="p_nn3_bgk_54b">List editing actions:<dl id="list_editing_actions">
+        <dlentry id="insert-list-dlentry">
+          <dt><uicontrol><image href="../../img/ListItem16.gif"/>Insert List Item</uicontrol></dt>
+          <dd>Inserts a list item in the current list type.</dd>
+        </dlentry>
+        <dlentry id="insert-step-dlentry">
+          <dt><uicontrol><image href="../../img/ListItem16.gif"/>Insert step or List
+              Item</uicontrol></dt>
+          <dd>Inserts a new step or list item in the current list type.</dd>
+        </dlentry>
+        <dlentry id="insert-ol-dlentry">
+          <dt><uicontrol><image href="../../img/OrderedList16.png"/>Insert Ordered
+            List</uicontrol></dt>
+          <dd>Inserts an ordered list at the cursor position. A child list item is also
+            automatically inserted by default. You can also use this action to convert selected
+            paragraphs or other types of lists to an ordered list.</dd>
+        </dlentry>
+        <dlentry id="insert-itemized-dlentry">
+          <dt><uicontrol><image href="../../img/UnorderedList16.png"/>Insert Itemized
+              List</uicontrol></dt>
+          <dd>Inserts an itemized list at the cursor position. A child list item is also
+            automatically inserted by default. You can also use this action to convert selected
+            paragraphs or other types of lists to an itemized list.</dd>
+        </dlentry>
+        <dlentry id="insert-ul-dlentry">
+          <dt><uicontrol><image href="../../img/UnorderedList16.png"/>Insert Unordered
+              List</uicontrol></dt>
+          <dd>Inserts an unordered list at the cursor position. A child list item is also
+            automatically inserted by default. You can also use this action to convert selected
+            paragraphs or other types of lists to an unordered list.</dd>
+        </dlentry>
+        <dlentry id="insert-variable-list-dlentry">
+          <dt><uicontrol><image href="../../img/VariableList16.gif"/>Insert Variable
+              List</uicontrol></dt>
+          <dd>Inserts a DocBook variable list. A child list item is also inserted automatically by
+            default. You can also use this action to convert selected paragraphs or other types of
+            lists to a variable list.</dd>
+        </dlentry>
+        <dlentry id="insert-procedure-dlentry">
+          <dt><uicontrol><image href="../../img/ProcedureList16.gif"/>Insert Procedure
+              List</uicontrol></dt>
+          <dd>Inserts a DocBook <xmlelement>procedure</xmlelement> element. A
+              <xmlelement>step</xmlelement> child element is also inserted automatically. You can
+            also use this action to convert selected paragraphs or other types of lists to a
+            procedure list.</dd>
+        </dlentry>
+      </dl> ID related actions (DITA, TEI):<dl id="id-dl">
+        <dlentry id="ID-options-dlentry">
+          <dt><uicontrol>ID Options</uicontrol></dt>
+          <dd>
+            <p id="p_on3_bgk_54b">Opens the <uicontrol>ID Options</uicontrol> dialog box that allows you to configure
+              options for generating IDs in <uicontrol>Author</uicontrol> mode. The dialog box
+              includes the following:</p>
+            <p id="p_pn3_bgk_54b">
+              <dl id="dl_qn3_bgk_54b">
+                <dlentry id="id-pattern-dlentry">
+                  <dt><uicontrol>ID Pattern</uicontrol></dt>
+                  <dd>The pattern for the ID values that will be generated. This text field can be
+                    customized using constant strings or any of the <ph keyref="product"/>
+                    <xref href="../../topics/editor-variables.dita">Editor Variables</xref>.</dd>
+                </dlentry>
+                <dlentry id="element-name-dlentry">
+                  <dt><uicontrol>Element name or class value to generate ID for</uicontrol></dt>
+                  <dd>The elements that will have ID values generated, specified using class
+                    attribute values. To customize the list, use the <uicontrol>Add</uicontrol>,
+                      <uicontrol>Edit</uicontrol>, or <uicontrol>Remove</uicontrol> buttons.</dd>
+                </dlentry>
+                <dlentry id="auto-generate-dlentry">
+                  <dt><uicontrol>Auto generate IDs for elements</uicontrol></dt>
+                  <dd>If selected, <ph keyref="product"/> will automatically generate unique IDs for
+                    the elements listed in this dialog box when they are created in
+                      <uicontrol>Author</uicontrol> mode.</dd>
+                </dlentry>
+                <dlentry id="remove-ids-dlentry">
+                  <dt><uicontrol>Remove IDs when copying content in the same
+                    document</uicontrol></dt>
+                  <dd>When copying and pasting content in the same document, this option allows you
+                    to control whether or not pasted elements that are listed in this dialog box
+                    should retain their existing IDs. To retain the element IDs, deselect this
+                      option.<note id="note_rn3_bgk_54b">This option does not have an effect on content that is <i>cut</i>
+                      and <i>pasted</i>.</note></dd>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+      </dl></p>
+    <p id="p_sn3_bgk_54b">ID related actions (DocBook):</p>
+    <p id="p_tn3_bgk_54b"><dl id="dl_un3_bgk_54b">
+        <dlentry id="docbook-id-options">
+          <dt><uicontrol>ID Options</uicontrol></dt>
+          <dd>
+            <p id="p_vn3_bgk_54b">Opens the <uicontrol>ID Options</uicontrol> dialog box that allows you to configure
+              options for generating IDs in <uicontrol>Author</uicontrol> mode. The dialog box
+              includes the following:</p>
+            <p id="p_wn3_bgk_54b">
+              <dl id="dl_xn3_bgk_54b">
+                <dlentry id="dlentry_yn3_bgk_54b">
+                  <dt><uicontrol>ID Pattern</uicontrol></dt>
+                  <dd>The pattern for the ID values that will be generated. This text field can be
+                    customized using constant strings or any of the <ph keyref="product"/>
+                    <xref href="../../topics/editor-variables.dita">Editor Variables</xref>.</dd>
+                </dlentry>
+                <dlentry id="dlentry_zn3_bgk_54b">
+                  <dt><uicontrol>Element name or class value to generate ID for</uicontrol></dt>
+                  <dd>The elements that will have ID values generated, specified using class
+                    attribute values. To customize the list, use the <uicontrol>Add</uicontrol>,
+                      <uicontrol>Edit</uicontrol>, or <uicontrol>Remove</uicontrol> buttons.</dd>
+                </dlentry>
+                <dlentry id="dlentry_a43_bgk_54b">
+                  <dt><uicontrol>Auto generate IDs for elements</uicontrol></dt>
+                  <dd>If selected, <ph keyref="product"/> will automatically generate unique IDs for
+                    the elements listed in this dialog box when they are created in
+                      <uicontrol>Author</uicontrol> mode.</dd>
+                </dlentry>
+                <dlentry id="dlentry_b43_bgk_54b">
+                  <dt><uicontrol>Remove IDs when copying content</uicontrol></dt>
+                  <dd>This option allows you to control whether or not pasted elements that are
+                    listed in this dialog box should retain their existing IDs. If this option is
+                    not selected, IDs are always retained when you copy or cut content and paste it
+                    in the same document or other documents. If this option is selected, IDs are
+                    never retained for copied content, but if you cut the content, they are
+                    preserved for the first paste action (and not retained for any subsequent paste
+                    actions). </dd>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+        <dlentry id="generate-ids-dlentry">
+          <dt><uicontrol>Generate IDs</uicontrol></dt>
+          <dd>
+            <p id="p_c43_bgk_54b"><ph keyref="product"/> generates unique IDs for the current element (or elements),
+              depending on how the action is invoked:<ul id="ul_d43_bgk_54b">
+                <li id="li_e43_bgk_54b">When invoked on a single selection, an ID is generated for the selected element
+                  at the cursor position.</li>
+                <li id="li_f43_bgk_54b">When invoked on a block of selected content, IDs are generated for all top-level
+                  elements and elements listed in the <uicontrol>ID Options</uicontrol> dialog box
+                  that are found in the current selection.</li>
+              </ul><note id="generate-id-note">The <uicontrol>Generate IDs</uicontrol> action does
+                not overwrite existing ID values. It only affects elements that do not already have
+                an <xmlatt>id</xmlatt> attribute.</note></p>
+          </dd>
+        </dlentry>
+        <dlentry id="dita-style-guide">
+          <dt><uicontrol>Browse DITA Style Guide</uicontrol></dt>
+          <dd>Opens the <b>DITA Style Guide Best Practices for Authors</b> in your browser and
+            displays a topic that is relevant to the element at the cursor position. When editing
+            DITA documents, this action is available in the contextual menu of the editing area
+            (under the <uicontrol>About Element</uicontrol> sub-menu), in the
+              <uicontrol>DITA</uicontrol> menu, and in some of the documentation tips that are
+            displayed by the <xref keyref="glossentry_content-completion-assistant"><term>Content
+                Completion Assistant</term></xref>.</dd>
+        </dlentry>
+      </dl>Other common actions:<dl id="refresh-tags-profiling-dl">
+        <dlentry id="refresh-references-dlentry">
+          <dt><uicontrol><image href="../../img/RefreshReferences16.png"/>Refresh
+              References</uicontrol></dt>
+          <dd>You can use this action to manually trigger a refresh and update of all referenced
+            resources.</dd>
+        </dlentry>
+        <dlentry id="tags-display-mode-dlentry">
+          <dt><uicontrol>Tags display mode</uicontrol> Submenu</dt>
+          <dd>
+            <p id="p_g43_bgk_54b">
+              <dl id="dl_Tags_Display_Mode">
+                <dlentry id="dlentry_i43_bgk_54b">
+                  <dt><uicontrol><image href="../../img/FullTagsWithAttrs16.png"/>Full Tags with
+                      Attributes</uicontrol></dt>
+                  <dd>Displays full tag names with attributes for both <xref
+                      keyref="glossentry_block-element"><term>block</term></xref> and <xref
+                      keyref="glossentry_inline-element"><term>inline elements</term></xref>.</dd>
+                </dlentry>
+                <dlentry id="dlentry_j43_bgk_54b">
+                  <dt><uicontrol><image href="../../img/FullTags16.png"/>Full Tags</uicontrol></dt>
+                  <dd>Displays full tag names without attributes for both <term>block
+                      elements</term> and <term>inline elements</term>.</dd>
+                </dlentry>
+                <dlentry id="dlentry_k43_bgk_54b">
+                  <dt><uicontrol><image href="../../img/BlockTags16.png"/>Block
+                    Tags</uicontrol></dt>
+                  <dd>Displays full tag names for <term>block elements</term> and simple tags
+                    without names for <term>inline elements</term>.</dd>
+                </dlentry>
+                <dlentry id="dlentry_Block_Tags_no_Names">
+                  <dt><uicontrol><image href="../../img/BlockTagsWithoutNames16.png"/>Block Tags
+                      without Element Names</uicontrol></dt>
+                  <dd>Displays tags for <term>block elements</term> but without element names for a
+                    more compact version of <uicontrol>Block Tags</uicontrol> mode. You can still
+                    see the element names by hovering over the tags.</dd>
+                </dlentry>
+                <dlentry id="dlentry_l43_bgk_54b">
+                  <dt><uicontrol><image href="../../img/InlineTags16.png"/>Inline
+                    Tags</uicontrol></dt>
+                  <dd>Displays full tag names for <term>inline elements</term>, while <term>block
+                      elements</term> are not displayed.</dd>
+                </dlentry>
+                <dlentry id="dlentry_m43_bgk_54b">
+                  <dt><uicontrol><image href="../../img/PartialTags16.png"/>Partial
+                    Tags</uicontrol></dt>
+                  <dd>Displays simple tags without names for <term>inline elements</term>, while
+                      <term>block elements</term> are not displayed.</dd>
+                </dlentry>
+                <dlentry id="dlentry_n43_bgk_54b">
+                  <dt><uicontrol><image href="../../img/NoTags16.png"/>No Tags</uicontrol></dt>
+                  <dd>No tags are displayed. This is the most compact mode and is as close as
+                    possible to a word-processor view.</dd>
+                </dlentry>
+                <dlentry id="dlentry_o43_bgk_54b">
+                  <dt><uicontrol>Configure Tags Display Mode</uicontrol></dt>
+                  <dd>Use this option to go to the <uicontrol>Author</uicontrol> preferences page
+                    where you can configure the <uicontrol>Tags Display Mode</uicontrol>
+                    options.</dd>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+        <dlentry id="profiling-text-dlentry" product="author editor authorEclipse editorEclipse">
+          <dt><uicontrol>Profiling/Conditional Text</uicontrol> Submenu</dt>
+          <dd>
+            <p id="p_p43_bgk_54b">
+              <dl id="dl_q43_bgk_54b">
+                <dlentry id="dlentry_r43_bgk_54b">
+                  <dt><uicontrol>Edit Profiling Attributes</uicontrol></dt>
+                  <dd>Allows you to configure the <xref
+                      href="../../topics/profiling-conditional-text.dita#profiling-conditional-text"
+                      >profiling attributes</xref> and their values.</dd>
+                </dlentry>
+                <dlentry id="dlentry_s43_bgk_54b">
+                  <dt><uicontrol>Show Profiling Colors and Styles</uicontrol></dt>
+                  <dd>Select this option to turn on conditional styling.</dd>
+                </dlentry>
+                <dlentry id="dlentry_t43_bgk_54b">
+                  <dt><uicontrol>Show Profiling Attributes</uicontrol></dt>
+                  <dd>Select this option to turn on conditional text markers. They are displayed at
+                    the end of conditional text blocks, as a list of attribute name and their
+                    currently set values.</dd>
+                </dlentry>
+                <dlentry id="dlentry_u43_bgk_54b">
+                  <dt><uicontrol>Show Excluded Content</uicontrol></dt>
+                  <dd>When this option is selected, the content filtered by the currently applied
+                    condition set is grayed-out. To show only the content that matches the currently
+                    applied condition set, deselect this option.</dd>
+                </dlentry>
+                <dlentry id="dlentry_v43_bgk_54b">
+                  <dt><b>List of all profiling condition sets that match the current document
+                      type</b></dt>
+                  <dd>You can click a listed <xref
+                      href="../../topics/condition-sets-management.dita#condition-sets-management"
+                      >condition set</xref> to activate it.</dd>
+                </dlentry>
+                <dlentry id="dlentry_w43_bgk_54b">
+                  <dt><uicontrol><image href="../../img/Options16.png"/>Profiling
+                      Settings</uicontrol></dt>
+                  <dd>Opens the <xref
+                      href="../../topics/preferences-profiling-conditions.dita#preferences-profiling-conditions"
+                      >profiling options preferences page</xref>, where you can manage profiling
+                    attributes and profiling conditions sets. You can also configure the profiling
+                    styles and colors options from the <xref
+                      href="../../topics/colors-and-styles-preferences.dita#colors-and-styles-preferences"
+                      >colors/styles preferences page</xref> and the <xref
+                      href="../../topics/attributes-rendering-page.dita#attributes-rendering-page"
+                      >attributes rendering preferences page</xref>.</dd>
+                </dlentry>
+                <dlentry id="select-submenu">
+                  <dt><uicontrol>Select</uicontrol> submenu</dt>
+                  <dd>
+                    <p id="p_x43_bgk_54b">This submenu allows you to select the following:</p>
+                    <p id="p_y43_bgk_54b">
+                      <dl id="dl_z43_bgk_54b">
+                        <dlentry id="dlentry_ap3_bgk_54b">
+                          <dt><uicontrol>Element</uicontrol></dt>
+                          <dd>Selects the entire element at the current cursor position.</dd>
+                        </dlentry>
+                        <dlentry id="dlentry_bp3_bgk_54b">
+                          <dt><uicontrol>Content</uicontrol></dt>
+                          <dd>Selects the entire content of the element at the current cursor
+                            position, excluding the start and end tag. Performing this action
+                            repeatedly will result in the selection of the content of the ancestor
+                            of the currently selected element content.</dd>
+                        </dlentry>
+                        <dlentry id="dlentry_cp3_bgk_54b">
+                          <dt><uicontrol>Parent</uicontrol></dt>
+                          <dd>Selects the entire parent element at the current cursor position.</dd>
+                        </dlentry>
+                      </dl>
+                    </p>
+                  </dd>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+      </dl>Reusable actions that are specific for DITA:<dl id="dl_dp3_bgk_54b">
+        <dlentry id="dita-insert-content-reference"
+          product="author editor authorEclipse editorEclipse">
+          <dt><uicontrol><image href="../../img/Conref16.png" id="image_h2y_rwx_sr"/>Reuse
+              Content</uicontrol></dt>
+          <dd>
+            <p id="p_ep3_bgk_54b">This action provides a mechanism for reusing content fragments. It
+              opens the <xref
+                href="../../topics/insert-dita-content-reference.dita#insert-dita-content-reference"
+                  ><uicontrol>Reuse Content</uicontrol> dialog box</xref> that allows you to insert
+              several types of references to reusable content at the cursor position. The types of
+              references that you can insert using this dialog box include <xref
+                href="../../topics/insert-dita-content-reference.dita#insert-dita-content-reference/conref-section"
+                >content references (<xmlatt>conref</xmlatt>)</xref>, <xref
+                href="../../topics/insert-dita-content-reference.dita#insert-dita-content-reference/conkeyref-section"
+                >content key references (<xmlatt>conkeyref</xmlatt>)</xref>, or <xref
+                href="../../topics/insert-dita-content-reference.dita#insert-dita-content-reference/key-ref-options-section"
+                >key references to metadata (<xmlatt>keyref</xmlatt>)</xref>.</p>
+          </dd>
+        </dlentry>
+        <dlentry id="push-element-dlentry" product="author editor authorEclipse editorEclipse">
+          <dt><uicontrol>Push Current Element</uicontrol></dt>
+          <dd>Opens the <xref href="../../topics/conref-push-mechanism.dita#conref-push-mechanism"
+                ><uicontrol>Push current element</uicontrol> dialog box</xref> that allows content
+            from a source topic to be inserted into another topic without any special coding in the
+            topic where the content will be re-used.</dd>
+        </dlentry>
+        <dlentry id="add-edit-conref-dlentry">
+          <dt><uicontrol>Edit Content Reference</uicontrol></dt>
+          <dd>This action is available for elements with a <xmlatt>conref</xmlatt> or
+              <xmlatt>conkeyref</xmlatt> attribute. It opens the <uicontrol>Edit Content
+              Reference</uicontrol> dialog box that allows you to edit the source location (or key)
+            and source element of a content reference (or content key reference), and the reference
+            details (<xmlatt>conref</xmlatt>/<xmlatt>conkeyref</xmlatt> and
+              <xmlatt>conrefend</xmlatt> attributes).<ph
+              product="author editor authorEclipse editorEclipse"> For more information, see <xref
+                href="../../topics/insert-dita-content-reference.dita#insert-dita-content-reference"
+              />.</ph></dd>
+        </dlentry>
+        <dlentry id="replace-ref-dlentry">
+          <dt><uicontrol>Replace Reference with Content</uicontrol></dt>
+          <dd>Replaces the referenced fragment (<xmlatt>conref</xmlatt> or
+              <xmlatt>conkeyref</xmlatt>) at the cursor position with its content from it source.
+            This action is useful if you want to make changes to the content in the currently edited
+            document without changing the referenced fragment in its source location. If the source
+            content includes references to other topics/resources (<i>hrefs</i>), the operation also
+            resolves those references relative to the new location. Attributes are preserved
+            according to the following priority:<ol id="ol_fp3_bgk_54b">
+              <li id="li_gp3_bgk_54b">Attributes from the elements in the current document that reference other content
+                are preserved except for attributes with a <codeph>-dita-use-conref-target</codeph>
+                value.</li>
+              <li id="li_hp3_bgk_54b">Attributes from the referenced content are brought into the replaced elements in
+                the current document except for <xmlatt>id</xmlatt> attributes.</li>
+            </ol></dd>
+        </dlentry>
+        <dlentry id="dlentry_ip3_bgk_54b">
+          <dt><uicontrol>Replace All References with Content</uicontrol></dt>
+          <dd>
+            <p id="p_jp3_bgk_54b">Replaces all referenced fragments (<xmlatt>keyref</xmlatt>, <xmlatt>conref</xmlatt>,
+              or <xmlatt>conkeyref</xmlatt>) in the current document with the content. Attributes
+              are preserved according to the following priority:<ol id="ol_vbd_fmq_y3b">
+                <li id="li_kp3_bgk_54b">Attributes from the elements in the current document that reference other
+                  content are preserved except for attributes with a
+                    <codeph>-dita-use-conref-target</codeph> value.</li>
+                <li id="li_lp3_bgk_54b">Attributes from the referenced content are brought into the replaced elements in
+                  the current document except for <xmlatt>id</xmlatt> attributes.</li>
+              </ol></p>
+            <p id="p_mp3_bgk_54b">For <i>keyrefs</i> inside <xmlelement>xref</xmlelement> or
+                <xmlelement>link</xmlelement> elements, the <xmlatt>keyref</xmlatt> attribute is
+              changed to an <xmlatt>href</xmlatt> attribute, while the rest of the content for the
+                <i>keyref</i> is replaced with its source content.</p>
+            <p id="p_np3_bgk_54b">If the source content includes references to other topics/resources (<i>hrefs</i>),
+              the operation also resolves those references relative to the new location.</p>
+          </dd>
+        </dlentry>
+        <dlentry id="remove-conref-dlentry">
+          <dt><uicontrol>Remove Content Reference</uicontrol></dt>
+          <dd>Removes the content reference (<xmlatt>conref</xmlatt> or <xmlatt>conkeyref</xmlatt>)
+            inside the element at the cursor position.</dd>
+        </dlentry>
+        <dlentry id="create-reusable-dlentry">
+          <dt><uicontrol>Create Reusable Component</uicontrol></dt>
+          <dd>Opens a dialog box that helps you to create a reusable component from the current
+            element or selection of elements. If the <uicontrol>Replace selection with content
+              reference</uicontrol> option is selected in the dialog box, the selection will be
+            replaced with a content reference (<xmlatt>conref</xmlatt>). If multiple elements are
+            selected (for example, multiple steps or list items), the selection will be replaced
+            with a content reference range (<xmlatt>conref</xmlatt> and
+              <xmlatt>conrefend</xmlatt>).<ph product="author editor authorEclipse editorEclipse">
+              For more information, see <xref
+                href="../../topics/eppo-creating-reusable-content.dita#eppo-creating-reusable-content"
+              />.</ph></dd>
+        </dlentry>
+        <dlentry id="insert-reusable-dlentry">
+          <dt><uicontrol>Insert Reusable Component</uicontrol></dt>
+          <dd>Inserts a reusable component at cursor location.<ph
+              product="author editor authorEclipse editorEclipse"> For more information, see <xref
+                href="../../topics/eppo-reuse-content.dita#eppo-reuse-content"/>.</ph></dd>
+        </dlentry>
+        <dlentry id="show-key-definition">
+          <dt><uicontrol>Show Key Definition</uicontrol></dt>
+          <dd>Available for elements that have a <xmlatt>conkeyref</xmlatt> or
+              <xmlatt>keyref</xmlatt> attribute set (or elements with an ancestor element that has a
+              <xmlatt>conkeyref</xmlatt> or <xmlatt>keyref</xmlatt> attribute). It computes the key
+            name and opens the <xref keyref="glossentry_ditamap"><term>DITA map</term></xref> that
+            contains the definition of the key with the element that defines that key selected.</dd>
+        </dlentry>
+        <dlentry id="paste-special-dlentry">
+          <dt><uicontrol><image href="../../img/PasteSpecialDITA16.png"/>Paste special</uicontrol>
+            submenu</dt>
+          <dd>
+            <p id="p_op3_bgk_54b">This submenu includes the following special paste actions that are specific to the
+              DITA <term>framework</term>:</p>
+            <p id="p_pp3_bgk_54b">
+              <dl id="dl_qp3_bgk_54b">
+                <dlentry id="dlentry_pxm_n42_ys">
+                  <dt><uicontrol>Paste as content reference</uicontrol></dt>
+                  <dd>Inserts a content reference (a DITA element with a <xmlatt>conref</xmlatt>
+                    attribute) to the DITA XML element from the clipboard. An entire DITA XML
+                    element with an ID attribute must be present in the clipboard when the action is
+                    invoked. The <codeph>conref</codeph> attribute will point to this ID value.</dd>
+                </dlentry>
+                <dlentry id="dlentry_qxm_n42_ys">
+                  <dt><uicontrol>Paste as content key reference</uicontrol></dt>
+                  <dd>Allows you to indirectly reference content using the
+                      <xmlatt>conkeyref</xmlatt> attribute. When the DITA content is processed, the
+                    key references are resolved using key definitions from <xref
+                      keyref="glossentry_ditamap"><term>DITA maps</term></xref>. To use this action,
+                    you must first do the following:<ol id="ol_rby_rhn_ps">
+                      <li id="li_rp3_bgk_54b">Make sure the DITA element that contains the copied content has an ID
+                        attribute assigned to it.</li>
+                      <li id="li_sp3_bgk_54b">In the <uicontrol>DITA Maps Manager</uicontrol> view,
+                        make sure that the <uicontrol>Context</uicontrol> combo box points to the
+                        correct map that stores the keys.</li>
+                      <li id="li_tp3_bgk_54b">Make sure the topic that contains the content you want to reference has a
+                        key assigned to it. To assign a key, right-click the topic with its parent
+                        map opened in the <uicontrol>DITA Maps Manager</uicontrol>, select
+                          <uicontrol>Edit Properties</uicontrol>, and enter a value in the
+                          <uicontrol>Keys</uicontrol> field.</li>
+                    </ol></dd>
+                </dlentry>
+                <dlentry id="dlentry_rxm_n42_ys">
+                  <dt><uicontrol>Paste as link</uicontrol></dt>
+                  <dd>Looks for the first element with an ID value in the clipboard and inserts an
+                      <xmlelement>xref</xmlelement> that points to that element. If no elements with
+                    an ID value are found, a message will appear that informs you that to use this
+                    action, the clipboard contents must include at least one element with a declared
+                    ID.</dd>
+                </dlentry>
+                <dlentry id="dlentry_sxm_n42_ys">
+                  <dt><uicontrol>Paste as link (keyref)</uicontrol></dt>
+                  <dd>Inserts a link to the element that you want to reference. To use this action,
+                    you must first do the following:<ol id="ol_up3_bgk_54b">
+                      <li id="li_vp3_bgk_54b">Make sure the DITA element that contains the copied content has an ID
+                        attribute assigned to it.</li>
+                      <li id="li_wp3_bgk_54b">In the <uicontrol>DITA Maps Manager</uicontrol> view,
+                        make sure that the <uicontrol>Context</uicontrol> combo box points to the
+                        correct map that stores the keys.</li>
+                      <li id="li_xp3_bgk_54b">Make sure the topic that contains the content you want to reference has a
+                        key assigned to it. To assign a key, right-click the topic with its parent
+                        map opened in the <uicontrol>DITA Maps Manager</uicontrol>, select
+                          <uicontrol>Edit Properties</uicontrol>, and enter a value in the
+                          <uicontrol>Keys</uicontrol> field.</li>
+                    </ol></dd>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+      </dl></p>
+    <!--DocBook 5 Paste special-->
+    <p id="p_yp3_bgk_54b">
+      <dl id="dl_zp3_bgk_54b">
+        <dlentry id="paste-special-dlentry-5">
+          <dt><uicontrol><image href="../../img/PasteSpecialDITA16.png"/>Paste special</uicontrol>
+            submenu</dt>
+          <dd>
+            <p id="p_aq3_bgk_54b">This submenu includes the following special paste actions:</p>
+            <p id="p_bq3_bgk_54b">
+              <dl id="dl_cq3_bgk_54b">
+                <dlentry id="dlentry_dq3_bgk_54b">
+                  <dt><uicontrol>Paste As XInclude</uicontrol></dt>
+                  <dd>Allows you to create an <xmlelement>xi:include</xmlelement> element that
+                    references a DocBook element copied from <uicontrol>Author</uicontrol> mode. The
+                    operation fails if the copied element does not have a declared ID. </dd>
+                </dlentry>
+                <dlentry id="dlentry_eq3_bgk_54b">
+                  <dt><uicontrol>Paste as link</uicontrol></dt>
+                  <dd>Allows you to create a <xmlelement>link</xmlelement> element that references a
+                    DocBook element copied from <uicontrol>Author</uicontrol> mode. The operation
+                    fails if the copied element does not have a declared ID.</dd>
+                </dlentry>
+                <dlentry id="dlentry_fq3_bgk_54b">
+                  <dt><uicontrol>Paste as xref</uicontrol></dt>
+                  <dd>Allows you to create an <xmlelement>xref</xmlelement> element that references
+                    a DocBook element copied from <uicontrol>Author</uicontrol> mode. The operation
+                    fails if the copied element does not have a declared ID.</dd>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+      </dl>
+    </p>
+    <!--Note for all frameworks-->
+    <note type="tip" id="tip-custom-actions" product="author editor authorEclipse editorEclipse">For
+      information about customizing <uicontrol>Author</uicontrol> mode actions for a particular
+        <xref keyref="glossentry_framework"><term>framework</term></xref> (document type), see the
+        <xref href="../../topics/dg-configuring-author-from-framework.dita"/> section.</note>
+    <!--Content Fusion actions-->
+    <p id="p_gq3_bgk_54b">
+      <dl product="author editor" id="dl_hq3_bgk_54b">
+        <dlentry id="show-content-fusion">
+          <dt><uicontrol><image href="../../img/ShowFusion18.png"/>Show Content Fusion Tasks
+              Manager</uicontrol></dt>
+          <dd>Clicking this button opens the <uicontrol>Content Fusion Tasks Manager</uicontrol>
+            view where you can create tasks, manage them, attach documents, and upload them to the
+              <b>Content Fusion</b> server. <b>Oxygen Content Fusion</b> is a flexible, intuitive
+            collaboration platform designed to adapt to any type of documentation review workflow.
+            This functionality is available through a <xref
+              href="https://www.oxygenxml.com/doc/ug-addons/topics/content-fusion-addon.html" scope="external" format="html">connector add-on</xref>. To fully take
+            advantage of all of the benefits and features of <b>Content Fusion</b>, your
+            organization will need an <b>Oxygen Content Fusion Enterprise Server</b>. For more
+            information, see the <xref
+              href="https://www.oxygenxml.com/content_fusion/get_started.html" format="html"
+              scope="external"><b>Oxygen Content Fusion</b> website</xref>.</dd>
+        </dlentry>
+        <dlentry id="add-file-to-content-fusion">
+          <dt><uicontrol><image href="../../img/ShowFusion18.png"/>Add File to Review
+              Task</uicontrol></dt>
+          <dd>This action can be used to add the current document to a task in the
+              <uicontrol>Content Fusion Tasks Manager</uicontrol> view. <b>Oxygen Content Fusion</b>
+            is a flexible, intuitive collaboration platform designed to adapt to any type of
+            documentation review workflow. This functionality is available through a
+            <xref href="https://www.oxygenxml.com/doc/ug-addons/topics/content-fusion-addon.html" scope="external" format="html">connector add-on</xref>. To fully
+            take advantage of all of the benefits and features of <b>Content Fusion</b>, your
+            organization will need an <b>Oxygen Content Fusion Enterprise Server</b>. For more
+            information, see the <xref
+              href="https://www.oxygenxml.com/content_fusion/get_started.html" format="html"
+              scope="external"><b>Oxygen Content Fusion</b> website</xref>.</dd>
+        </dlentry>
+        <dlentry id="dmm-add-to-content-fusion">
+          <dt><uicontrol><image href="../../img/ShowFusion18.png"/>Add to Review
+            Task</uicontrol></dt>
+          <dd>This action can be used to add the selected documents to a task in the
+              <uicontrol>Content Fusion Tasks Manager</uicontrol> view. <b>Oxygen Content Fusion</b>
+            is a flexible, intuitive collaboration platform designed to adapt to any type of
+            documentation review workflow. This functionality is available through a pre-installed
+            <xref href="https://www.oxygenxml.com/doc/ug-addons/topics/content-fusion-addon.html" scope="external" format="html">connector add-on</xref>. To fully
+            take advantage of all of the benefits and features of <b>Content Fusion</b>, your
+            organization will need an <b>Oxygen Content Fusion Enterprise Server</b>. For more
+            information, see the <xref
+              href="https://www.oxygenxml.com/content_fusion/get_started.html" format="html"
+              scope="external"><b>Oxygen Content Fusion</b> website</xref>.</dd>
+        </dlentry>
+      </dl>
+    </p>
+  </body>
+</topic>

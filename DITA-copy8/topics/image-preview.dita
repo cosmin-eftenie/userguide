@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="image-preview">
+  <title>Image Preview</title><prolog>
+    <metadata>
+      <keywords><indexterm>Image preview pane</indexterm></keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_qt5_bgk_54b">Images and SVG files can be previewed in a separate pane. The supported image types are GIF,
+      JPEG/JPG, PNG, BMP.</p>
+    <p id="p_rt5_bgk_54b">There are several ways to open an image in the <uicontrol>Image Preview</uicontrol> pane:<ul
+        id="ul_k32_c4r_1kb">
+        <li id="li_st5_bgk_54b">In the <xref href="using-the-project-view.dita#using-the-project-view"
+              ><uicontrol>Project</uicontrol> view</xref>, double-click the image name.</li>
+        <li id="li_tt5_bgk_54b">In the <xref href="using-the-project-view.dita#using-the-project-view"
+              ><uicontrol>Project</uicontrol> view</xref>, right-click an image and select
+            <uicontrol>Preview</uicontrol>.</li>
+        <li product="author editor" id="li_ut5_bgk_54b">In the <xref href="dita-maps-manager.dita"><uicontrol>DITA Maps
+              Manager</uicontrol> view</xref>, double-click the key definition of the image.</li>
+        <li product="author editor" id="li_vt5_bgk_54b">In the <xref href="dita-maps-manager.dita"><uicontrol>DITA Maps
+              Manager</uicontrol> view</xref>, right-click the key definition of the image and
+          select <uicontrol>Open</uicontrol>.</li>
+        <li id="li_wt5_bgk_54b">In <uicontrol>Text</uicontrol> mode, <uicontrol><shortcut>Ctrl + Mouse
+            Click</shortcut></uicontrol> or <uicontrol><shortcut>Ctrl + Enter</shortcut></uicontrol>
+          with the cursor located within the image file path.</li>
+      </ul>Once the image is displayed in the <uicontrol>Image Preview</uicontrol> pane, you have
+      access to some contextual menu actions by right-clicking anywhere in the <uicontrol>Image
+        Preview</uicontrol> pane. You can scale the image to its original size (by selecting the
+        <uicontrol>1:1</uicontrol> action) or scale it down to fit in the pane (by selecting the
+        <uicontrol>Scale to fit</uicontrol> action). Other actions include <uicontrol>Open in System
+        Application</uicontrol>, <uicontrol>Print preview</uicontrol>, and
+        <uicontrol>Print</uicontrol>.</p>
+    <p id="p_xt5_bgk_54b" product="author developer editor">If the image is an <xref
+        href="SVG-documents.dita">SVG file</xref>, the <uicontrol>Image Preview</uicontrol> pane
+      also includes the following other contextual menu actions: <uicontrol>Zoom in</uicontrol>,
+        <uicontrol>Zoom out</uicontrol>, <uicontrol>Rotate</uicontrol>, and
+        <uicontrol>Refresh</uicontrol>.</p>
+    <p id="p_yt5_bgk_54b">While the <uicontrol>Image Preview</uicontrol> view is visible, selecting
+      an image in the <xref href="using-the-project-view.dita#using-the-project-view"
+          ><uicontrol>Project</uicontrol> view</xref><ph product="author editor"> or <xref
+          href="dita-reusable-components-view.dita#dita-reusable-components-view"><uicontrol>DITA
+            Reusable Components</uicontrol> view</xref></ph> will automatically display the resource
+      in the view. Also, as long as the <uicontrol><image href="../img/CaretUpdateOff16.png"
+          id="image_b3j_pft_tr" product="author developer editor"/><image
+          href="../img/LinkEditorEC16.png" product="authorEclipse developerEclipse editorEclipse"
+        />Link with Editor</uicontrol> toggle action (located on the <uicontrol>Project</uicontrol>
+      view's toolbar) is enabled, focusing on the image in the <uicontrol>Image Preview</uicontrol>
+      view will select the image file in the <uicontrol>Project</uicontrol> view.</p>
+    <note type="tip" id="note_zt5_bgk_54b">You can drag an image from the <uicontrol>Image Preview</uicontrol> view and
+      drop it in a DITA, DocBook, or TEI document. </note>
+  </body>
+</topic>

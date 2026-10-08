@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_pdf_bookmarks">
+    <title>Bookmarks</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+          ><ph keyref="pdf-html5-transformation"/>
+            <indexterm>Bookmarks</indexterm></indexterm>
+        <indexterm product="pdf-css ope">Bookmarks</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+    <body>
+        <p id="p_lqs_cgk_54b">The PDF Bookmarks are used to generate a hierarchical structure similar to a table of
+      contents in a specialized view of your PDF Reader.</p>
+    <p id="p_mqs_cgk_54b">By default, the titles defined in the topics are used as bookmark labels. </p>
+    </body>
+</topic>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="xml-resource-hierarchy-view">
+  <title>XML Referenced/Dependent Resources View</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>XML documents<indexterm>Referenced/Dependent Resources
+          view</indexterm></indexterm>
+        <indexterm>Referenced/Dependent Resources view for XML documents</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_w5z_bgk_54b">The <uicontrol>Referenced/Dependent Resources</uicontrol> view displays
+      the hierarchy or dependencies for resources included in an XML document. The tree structure
+      presented in this view is built based on the <i>Xinclude</i> and <i>External Entity</i>
+      mechanisms. <ph conkeyref="reusables-user-guide/reopen-view"/></p>
+    <p id="p_x5z_bgk_54b">If you want to see the hierarchy or dependencies of an XML document,
+      select the document in the <xref href="using-the-project-view.dita#using-the-project-view"
+          ><uicontrol product="author developer editor">Project</uicontrol><uicontrol
+          product="authorEclipse developerEclipse editorEclipse">Project Explorer</uicontrol>
+        view</xref> and choose <uicontrol>Show referenced resources</uicontrol> or <uicontrol>Show
+        dependent resources</uicontrol> from the contextual menu.</p>
+    <p id="p_y5z_bgk_54b">
+      <fig id="fig_z5z_bgk_54b">
+        <title>Referenced/Dependent Resources View</title>
+        <image href="../img/sa_xml_hierarchy.png"/>
+      </fig>
+    </p>
+    <p conkeyref="reusables-editing-documents/hierarchy-dependencies-toolbar-actions" id="p_cvz_bgk_54b"/>
+    <p conkeyref="reusables-editing-documents/contextual-menu" id="p_dvz_bgk_54b"/>
+    <p id="p_evz_bgk_54b">
+      <note id="note_fvz_bgk_54b">The <uicontrol>Move resource</uicontrol> or <uicontrol>Rename resource</uicontrol>
+        actions give you the option to <xref
+          href="move-rename-resource-xml-hierarchy-view.dita#move-rename-resource-xml-hierarchy-view"
+          >update the references to the resource</xref>. Only the references made through the
+          <i>XInclude</i> and <i>External Entity</i> mechanisms are handled.</note>
+    </p>
+  </body>
+  <related-links id="rel-link">
+    <linklist>
+      <title>Related Information:</title>
+      <link href="xml-contextual-editing.dita" product="author developer editor"/>
+      <link href="search-refactor-scope.dita"/>
+    </linklist>
+  </related-links>
+</topic>

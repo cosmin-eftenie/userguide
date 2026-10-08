@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_how_to_fix_image_bleeding">
+    <title>How to Fix Image Bleeding - Control Image Size</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+          ><ph keyref="pdf-html5-transformation"/>
+            <indexterm>Images<indexterm>Size</indexterm></indexterm></indexterm>
+        <indexterm product="pdf-css ope">Images<indexterm>Size</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+    <body>
+        <p id="p_f45_cgk_54b">Sometimes the images may be too big for the page. The built-in CSS rules specify a
+      maximum size for images, limiting to the width of the parent block. But if the parent block is
+      itself too wide and bleeds out of page, you might consider specifying a length.</p>
+        <p id="p_g45_cgk_54b">In your <xref href="dcpp_the_customization_css.dita">customization CSS</xref>, add the
+      following snippet:</p>
+        <codeblock outputclass="language-css" id="codeblock_h45_cgk_54b">  *[class ~= "topic/image"] {
+    ...
+        /* The US-letter page size minus page margins. See p-page-size.css for the current page size. */
+        max-width: 6.5in;         
+    }</codeblock>
+    <p id="p_i45_cgk_54b">Pay attention to images that have an <xref href="dcpp_how_to_use_image_maps.dita">image
+        map</xref> associated. The built-in rules set the <codeph>max-width: auto</codeph> for them
+      to avoid scaling. Otherwise, it would cause a misalignment between the image and its clickable
+      areas. These images are best to have a <xmlatt>width</xmlatt> and <xmlatt>height</xmlatt>
+      attribute.</p>
+    </body>
+</topic>

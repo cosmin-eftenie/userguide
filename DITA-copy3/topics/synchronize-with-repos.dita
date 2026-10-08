@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="synchronize-with-repos">
+  <title>Synchronize with Repository</title>
+  <prolog>
+    <metadata>
+      <keywords><indexterm>SVN Client<indexterm>Synchronize with the SVN repository</indexterm></indexterm></keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_s13_dgk_54b">In the work cycle you will need to incorporate other people's changes (update) and to make
+      your own work available to others (commit). This is what the <uicontrol>Incoming</uicontrol>
+      and <uicontrol>Outgoing</uicontrol> modes of <xref href="working-copy-view.dita#working-copy-view" format="dita">the <uicontrol>Working
+          Copy</uicontrol> view</xref> was designed for, to help you send and receive modifications
+      from the repository.</p>
+    <p id="p_t13_dgk_54b">The <uicontrol>Incoming</uicontrol> and <uicontrol>Outgoing</uicontrol> modes of this view
+      focus on incoming and outgoing changes. The incoming changes are the changes that other users
+      have committed in the repository since you last updated your working copy. The outgoing
+      changes are the modifications you made to your working copy as a result of editing, removing
+      or adding resources.</p>
+    <p id="p_u13_dgk_54b">The view presents the status of the working copy resources against the BASE revision after a
+        <uicontrol>Refresh</uicontrol> operation. You can view the state of the resources versus a
+      repository HEAD revision by using the <uicontrol>Synchronize</uicontrol> action from <xref href="working-copy-view.dita#working-copy-view" format="dita">the <uicontrol>Working
+          Copy</uicontrol> view</xref>.</p>
+  </body>
+</topic>

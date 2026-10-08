@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="how-to-exist">
+  <title>How to Configure an eXist Connection Using the Built-in Wizard</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Databases<indexterm>Connections<indexterm>eXist<indexterm>Connection
+                wizard</indexterm></indexterm></indexterm></indexterm>
+        <indexterm>eXist database<indexterm>Connection wizard</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_gjx_cgk_54b">To configure a connection for an <term>eXist</term> database using the dedicated
+        <uicontrol>Create eXist-db XML connection</uicontrol> wizard, follow these steps:<ol id="ol_hjx_cgk_54b">
+        <li id="li_ijx_cgk_54b"><ph conkeyref="reusables-preferences-pages/Open-the-preferences-page"/>, go to
+            <uicontrol>Data Sources</uicontrol> and click the <uicontrol>Create eXist-db XML
+            connection</uicontrol> link.</li>
+        <li id="li_jjx_cgk_54b">Enter your connection details in the connection wizard and click
+            <uicontrol>OK</uicontrol>.<note type="important" id="note_kjx_cgk_54b">To create an
+              <term>eXist</term> connection using this wizard, <ph keyref="product"/> expects the
+              <filepath>exist/webstart/exist.jnlp</filepath> path to be accessible at the provided
+              <uicontrol>Host</uicontrol> and <uicontrol>Port</uicontrol>.</note><note
+            id="note_ixz_yly_swb" type="attention">The connection details dialog box has a
+              <uicontrol>Libraries</uicontrol> path where it will download JAR libraries from the
+            eXist server. If you are using <ph keyref="product"/> version 25.0 or older with eXist
+            version 6.2.0 or newer and the final connection to the server does not work, you need to
+            remove all libraries with the pattern <filepath>log4j-*.jar</filepath> from the folder
+            of downloaded libraries because they may interfere with the logging in <ph
+              keyref="product"/>. </note></li>
+        <li id="li_ljx_cgk_54b">To view your connection, go to the <xref
+            href="../topics/relational-database-explorer.dita#relational-database-explorer"
+              ><uicontrol>Data Source Explorer</uicontrol> view</xref>
+          <ph conkeyref="reusables-user-guide/reopen-view-parenthesis"/> or switch to the
+            <uicontrol>Database</uicontrol>
+          <xref keyref="glossentry_perspective"><term>perspective</term></xref>.</li>
+      </ol></p>
+    <note id="note_vms_jy4_wpb" type="attention"><ph
+        conkeyref="reusables-working-with-databases/exist-note"/></note>
+  </body>
+</topic>

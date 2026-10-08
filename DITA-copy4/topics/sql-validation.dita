@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="sql-validation">
+  <title>SQL Validation</title>
+  <body>
+    <p id="p_rjy_cgk_54b">SQL validation support is offered for IBM DB2. Note that if you choose a connection that does
+      not support SQL validation, you will receive a warning when trying to validate. The SQL
+      document is validated using the connection from the associated transformation scenario.</p>
+  </body>
+</topic>

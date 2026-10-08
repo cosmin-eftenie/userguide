@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary//EN" "glossary.dtd">
+<glossentry id="quick-fix">
+  <glossterm>Quick Fix</glossterm>
+  <glossdef>The <b><term>Quick Fix</term></b> support in <ph keyref="product"/> helps you resolve
+    errors that appear in an XML document by offering proposals to fix problems such as missing
+    required attributes or invalid elements. <term>Quick Fixes</term> are available in
+      <uicontrol>Text</uicontrol> mode <ph product="author editor authorEclipse editorEclipse">and
+        <uicontrol>Author</uicontrol> mode</ph> and they can be presented and activated in several ways.<p id="p_esx_dgk_54b">
+      <ul id="ul_fsx_dgk_54b">
+        <li id="li_gsx_dgk_54b">When hovering over an area of text where a validation error or warning occurs, the
+            <term>Quick Fix</term> proposals can be presented as links in a tooltip pop-up
+          window.</li>
+        <li product="author editor authorEclipse editorEclipse" id="li_hsx_dgk_54b">When hovering over an error or
+          warning in <uicontrol>Author</uicontrol> mode, the <term>Quick Fix</term> proposals are
+          presented in a small drop-down menu.</li>
+        <li id="li_isx_dgk_54b">If you place the cursor in the highlighted area where a validation error or warning
+          occurs, a <term>Quick Fix</term> icon (<image href="../img/AutomaticErrorQF.gif"
+            id="image_w2j_s2y_xn" product="authorEclipse developerEclipse editorEclipse"/><image
+            href="../img/QuickFix16.png" id="image_zts_v2y_xn" product="author developer editor"/>)
+          is displayed in the stripe on the left side of the editor. Clicking that icon will allow
+          you select from the available proposals.</li>
+        <li id="li_jsx_dgk_54b">If you place the cursor in the highlighted area where a validation error or warning
+          occurs, you can also access the <term>Quick Fix</term> menu by pressing <ph><uicontrol
+              conkeyref="reusable-oxygen-shortcuts-list/alt_1" product="author developer editor"
+            /></ph><ph product="authorEclipse developerEclipse editorEclipse"><uicontrol
+              conkeyref="reusable-oxygen-shortcuts-list/ctrl_1"/></ph> on your keyboard.</li>
+        <li>The <i>Quick Fix</i> menu also contains the option to automatically fix all validation
+          errors in the document where quick fix proposals were generated. By selecting
+            <uicontrol>Apply all default quick fix proposals</uicontrol>, each default quick fix
+          proposal for each validation problem reported in the document will be applied (in bulk).
+          The effect is similar to invoking the <xref
+            href="../topics/text-mode-actions.dita#text-mode-actions/dlentry_e3t_bb1_p1c"
+              ><uicontrol>Apply all default quick fix proposals</uicontrol> action from the
+            contextual menu in Text mode</xref><ph
+            product="author editor authorEclipse editorEclipse">, or the <xref
+              href="../topics/author-contextual-menu.dita#author-contextual-menu/dlentry_e3t_bb1_p1c"
+                ><uicontrol>Apply all default quick fix proposals</uicontrol> action from the
+              context menu in Author mode</xref></ph>.</li>
+      </ul>
+    </p><p product="developer editor developerEclipse editorEclipse" id="p_ksx_dgk_54b"><ph keyref="product"/> also
+      provides support for <xref href="../topics/customizing-sqf.dita#customizing-sqf">defining and
+        customizing a library of <term>Quick Fixes</term> using the Schematron
+    language</xref>.</p></glossdef>
+</glossentry>

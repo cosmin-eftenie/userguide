@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="debug-plugin">
+  <title>Debugging a Plugin Using the Eclipse Workbench</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Oxygen SDK<indexterm>Debugging a plugin</indexterm></indexterm>
+        <indexterm>Plugins<indexterm>Debugging</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_k1f_dgk_54b">To use the Eclipse workbench to debug problems in the code of a <xref
+        keyref="glossentry_plugin"><term>plugin</term></xref> without having to re-bundle the
+      plugin's Java classes in a <xref keyref="glossentry_jar"><term>JAR</term></xref> library,
+      follow these steps:<ol id="ol_ops_m3p_hj">
+        <li id="li_l1f_dgk_54b"><xref href="https://www.oxygenxml.com/xml_editor/download_oxygenxml_editor.html"
+            format="html" scope="external">Download</xref> and install <ph keyref="product"/>.</li>
+        <li id="li_m1f_dgk_54b">Set up the <i>Oxygen SDK</i> following <xref
+            href="https://www.oxygenxml.com/oxygen_sdk/download.html" format="html" scope="external"
+            >this set of instructions</xref>.</li>
+        <li id="li_n1f_dgk_54b">Create an Eclipse Java Project (for example, <filepath>MyPluginProject</filepath>) from
+          one of the sample plugins (for example, the Workspace Access plugin). </li>
+        <li id="li_o1f_dgk_54b">
+          <p id="p_p1f_dgk_54b">In the <filepath>MyPluginProject</filepath> folder, create a folder called
+              <filepath>myPlugin</filepath>. In this new folder, copy the
+              <filepath>plugin.xml</filepath> file from the sample <term>plugin</term>. Modify the
+            added <filepath>plugin.xml</filepath> to add a library reference to the directory where
+            Eclipse copies the compiled output. To find out where this directory is located, invoke
+            the contextual menu of the project (in the <xref
+              href="../topics/using-the-project-view.dita#using-the-project-view"
+                ><uicontrol>Project</uicontrol> view</xref>), and go to <menucascade>
+              <uicontrol>Build Path</uicontrol>
+              <uicontrol>Configure Build Path</uicontrol>
+            </menucascade>. Then inspect the value of the <uicontrol>Default output
+              folder</uicontrol> text box.</p>
+          <p id="p_q1f_dgk_54b"><b>Example:</b> If the compiled output folder is <filepath>classes</filepath>, then in
+            the <filepath>plugin.xml</filepath>, you need to add the following library reference:
+            <codeblock outputclass="language-xml" id="codeblock_r1f_dgk_54b">&lt;library name="../classes"/></codeblock></p>
+        </li>
+        <li id="li_s1f_dgk_54b">Copy the <filepath>plugin.dtd</filepath> from the <filepath><term
+              conkeyref="reusables-user-guide/oxy-install-dir"/>/plugins</filepath> folder in the
+          root <filepath>MyPluginProject</filepath> folder.</li>
+        <li id="li_t1f_dgk_54b">In the <filepath>MyPluginProject</filepath> build path, add external <term>JAR</term>
+          references to all the <term>JAR</term> libraries in the <filepath><term
+              conkeyref="reusables-user-guide/oxy-install-dir"/>/lib</filepath> folder. Now your
+            <filepath>MyPluginProject</filepath> should compile successfully.</li>
+        <li id="li_u1f_dgk_54b">
+          <p>In the Eclipse IDE, create a new <term>Java Application</term> configuration for
+            debugging. Set the <uicontrol>Main class</uicontrol> box to
+              <codeph>ro.sync.exml.Oxygen</codeph>. Click the <uicontrol>Arguments</uicontrol> tab
+            and add the following code snippet in the <uicontrol>VM arguments</uicontrol> input box,
+            making sure that the path to the <filepath>plugins</filepath> directory is the correct
+            one:<codeblock outputclass="language-ini" id="codeblock_v1f_dgk_54b">-Dcom.oxygenxml.app.descriptor=ro.sync.exml.EditorFrameDescriptor 
+-Dcom.oxygenxml.editor.plugins.dir=D:\projects\MyPluginProject</codeblock></p>
+          <note product="author developer" id="note_w1f_dgk_54b">If you need to configure the
+              <term>plugin</term> for <ph keyref="product"/>, set the
+              <codeph>com.oxygenxml.app.descriptor</codeph> to <codeph product="author"
+              >ro.sync.exml.AuthorFrameDescriptor</codeph><codeph product="developer"
+              >ro.sync.exml.DeveloperFrameDescriptor</codeph>.</note>
+          <p>In the <b>Dependencies</b> tab, you should only add dependencies to two JAR libraries:
+                <filepath><term conkeyref="reusables-user-guide/oxy-install-dir"
+              >/lib/</term>/lib/oxygen.jar</filepath> and <filepath><term
+                conkeyref="reusables-user-guide/oxy-install-dir"
+              >/lib/</term>/lib/oxygen-basic-utilities.jar</filepath>.</p>
+        </li>
+        <li product="developer editor" id="li_x1f_dgk_54b"><xref
+            href="using-breakpoints.dita#using-breakpoints/inserting_breakpoints">Add a
+              <term>breakpoint</term></xref> in the source of one of your Java classes.</li>
+        <li product="developer editor" id="li_y1f_dgk_54b">Debug the created configuration. When the code reaches your
+            <xref href="using-breakpoints.dita#using-breakpoints"><term>breakpoint</term></xref>,
+          the Eclipse IDE debugging perspective should take over.</li>
+      </ol></p>
+  </body>
+</topic>

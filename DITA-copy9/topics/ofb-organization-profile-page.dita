@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ofb-organization-profile-page">
+  <title>Organization Profile Page</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Organization Profile page</indexterm>
+      </keywords>
+      <keywords>
+        <keyword outputclass="label">Admin Interface</keyword>
+        <keyword outputclass="label">Privacy Policy</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_phx_dgk_54b">Users with a role of organization <i>Owner</i> or <i>Admin</i> have access
+      to the <uicontrol>Organization Profile</uicontrol> page where you can manage information about
+      your organization.</p>
+    <p id="p_l45_djs_s4b">The <uicontrol>Organization Profile</uicontrol> page includes the
+      following options:</p>
+    <p id="p_ejz_1c1_qrb">
+      <dl id="dl_rqb_bc1_qrb">
+        <dlentry id="dlentry_sqb_bc1_qrb">
+          <dt>General section</dt>
+          <dd>Click the <uicontrol>Edit</uicontrol> button to make changes in this section and do
+            not forget to click <uicontrol>Save</uicontrol> to finalize your changes.<p
+              id="p_wrr_2c1_qrb">
+              <dl>
+                <dlentry id="dlentry_whg_cjs_s4b">
+                  <dt>Organization ID</dt>
+                  <dd>The organization's unique identifier used in the <i>Sign up</i> and <i>Log
+                      In</i> processes.</dd>
+                </dlentry>
+                <dlentry id="dlentry_yhg_cjs_s4b">
+                  <dt>Name</dt>
+                  <dd>The name of the organization. It will be displayed in the header of the pages
+                    that are part of the administration interface.</dd>
+                </dlentry>
+                <dlentry id="dlentry_c3g_cjs_s4b">
+                  <dt>Home URL</dt>
+                  <dd>The home page URL for the organization.</dd>
+                </dlentry>
+                <dlentry id="dlentry_d3g_cjs_s4b">
+                  <dt>Contact Email</dt>
+                  <dd>The main contact email address for the organization.</dd>
+                </dlentry>
+                <dlentry id="dlentry_yhg_cjs-232">
+                  <dt>Change Logo</dt>
+                  <dd>
+                    <p id="p_zhg_cjs_s4b">If set, the logo (avatar) for the organization will be
+                      displayed in the header of the pages that are part of the administration
+                      interface. You can change it by clicking on the current avatar. You can then
+                      browse for a local image to use. The supported extensions are: <i>.jpg</i>,
+                        <i>.jpeg</i>, <i>.png</i>, <i>.gif</i>. The maximum allowed size is 2048
+                      KB.</p>
+                    <p id="p_a3g_cjs_s4b">To remove the current avatar, click the avatar image,
+                      choose <uicontrol>Remove</uicontrol>, and click <uicontrol>Save</uicontrol> to
+                      finalize your change.<note id="note_b3g_cjs_s4b">When loading large avatar
+                        images, they might be resized and lose some image quality. This is done to
+                        reduce network data traffic.</note></p>
+                  </dd>
+                </dlentry>
+              </dl>
+            </p></dd>
+        </dlentry>
+        <dlentry id="dlentry_eqd_nc1_qrb">
+          <dt>Legal section</dt>
+          <dd>Click the <uicontrol>Edit</uicontrol> button to make changes in this section and do
+            not forget to click <uicontrol>Save</uicontrol> to finalize your changes.<p
+              id="p_nwp_4c1_qrb">
+              <dl>
+                <dlentry id="dlentry_kn2_pc1_qrb">
+                  <dt>Terms of Use URL</dt>
+                  <dd>You can optionally use this option to specify a <i>Terms of Use</i> URL for
+                    your organization. This URL will be accessible at the bottom of the login page
+                    for the member of the organization and at the bottom of the commenting component
+                    in web pages where it is installed.</dd>
+                </dlentry>
+                <dlentry id="dlentry_l2q_pc1_qrb">
+                  <dt>Privacy Policy URL</dt>
+                  <dd>You can optionally use this option to specify a <i>Privacy Policy</i> URL for
+                    your organization. This URL will be accessible at the bottom of the login page
+                    for the member of the organization and at the bottom of the commenting component
+                    in web pages where it is installed.</dd>
+                </dlentry>
+              </dl>
+            </p></dd>
+        </dlentry>
+      </dl>
+    </p>
+    <p id="p_htf_3b1_qrb">
+      <dl id="dl_vhg_cjs_s4b">
+        <dlentry>
+          <dt>OpenAI Connection</dt>
+          <dd>
+            <p id="p_h5q_crt_pbc">Some AI functionalities (e.g. semantic search and AI Assistant)
+              require that you configure <ph keyref="product"/> to <xref
+                href="ofb-configuring-openai-connection.dita">connect to <tm tmtype="tm">OpenAI</tm>
+                on your behalf</xref> (the options for enabling the AI functions are found in the
+                <uicontrol>AI Features</uicontrol> section in the <xref
+                href="ofb-version-management.dita#ofb-version-management/content-indexing-search"
+                  ><i>Content Indexing and Search</i></xref> section of the <uicontrol>Version
+                Settings</uicontrol> page). You need to generate a new secret API Key in the <xref
+                href="https://platform.openai.com/account/api-keys" format="html" scope="external"
+                >API keys</xref> page from your <tm tmtype="tm">OpenAI</tm> user account. Then click
+              the <uicontrol>Configure</uicontrol> button to expand the <uicontrol>OpenAI
+                Connection</uicontrol> section, enter the generated key in the <uicontrol>OpenAI API
+                Key</uicontrol> field, and optionally you can specify the name of the organization
+              in the <uicontrol>OpenAI Organization</uicontrol> field (for those who belong to
+              multiple organizations).</p>
+            <p id="p_utg_crt_pbc">The <uicontrol>OpenAI model</uicontrol> currently being used by
+              the AI Assistant is displayed under the connection configuration actions and you can
+              click the <uicontrol>Edit</uicontrol> button to choose a different one from the list
+              of available models:<ul id="ul_spb_cd3_4cc">
+                <li id="li_ys2_vf1_3fc">gpt-4.1</li>
+                <li id="li_kbh_vf1_3fc">gpt-4.1-mini</li>
+                <li id="li_cp3_vf1_3fc">gpt-4.1-nano</li>
+                <li id="li_tpb_cd3_4cc">gpt-4o-mini</li>
+                <li id="li_a5m_cd3_4cc">gpt-4o</li>
+                <li id="li_hrv_cd3_4cc">gpt-4-turbo</li>
+                <li id="li_cnd_dd3_4cc">gpt-4</li>
+                <li id="li_ozp_dd3_4cc">gpt-3.5-turbo</li>
+              </ul></p>
+            <p id="p_oz1_gd3_4cc" product="feedback-enterprise">An admin can configure additional
+              models to appear in the list by adding them in the
+                <filepath>config/feedback-openai.properties</filepath> file.</p>
+          </dd>
+        </dlentry>
+        <dlentry id="dlentry_dgn_crr_5rb">
+          <dt>Change Organization ID</dt>
+          <dd>The organization <i>Owner</i> can use the <uicontrol>Change Organization
+              ID</uicontrol> button to modify the <i>Organization ID</i>. Note that this will change
+            the URLs for the pages within the administration interface and all members will need to
+            log in using the new organization ID.</dd>
+        </dlentry>
+        <dlentry id="dlentry_j3x_sxz_prb">
+          <dt>Delete Organization</dt>
+          <dd>The organization <i>Owner</i> can use the <uicontrol>Delete</uicontrol> button to
+            delete the current organization. All site configurations, comments, and accounts
+            associated with the organization will be scheduled for deletion in 14 days. You can
+            recover the account within those 14 days by selecting <uicontrol>Recover</uicontrol> in
+            this page. After the 14 days expire, the organization is deleted permanently.</dd>
+        </dlentry>
+      </dl>
+    </p>
+    <p id="p_shx_dgk_54b">
+      <fig id="fig_lqv_2tr_glb">
+        <title>Organization Profile Page</title>
+        <image href="../img/ofb-org-profile-page.png" id="image_mqv_2tr_glb"/>
+      </fig>
+    </p>
+  </body>
+</topic>

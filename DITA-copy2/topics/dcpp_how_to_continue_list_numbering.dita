@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_how_to_continue_list_numbering">
+    <title>How to Continue List Numbering</title>
+    <body>
+    <p id="p_hj5_cgk_54b">It is possible to continue the numbering of an ordered list even when the
+      content is split in multiple <xmlelement>ol</xmlelement> elements.</p>
+    <section id="section_dzd_t2p_cfc">
+      <title>Using the 'start-x' outputclass</title>
+      <p>One solution consists of adding the <xmlatt>outputclass="start-x"</xmlatt> attribute (where
+        X is the number you want the list to start with) to the <xmlelement>ol</xmlelement> element.
+        This is especially useful when lists do not have the same
+        parent:<codeblock id="codeblock_pjz_rw3_f1c" outputclass="language-xml">&lt;table frame="all">
+  &lt;title>Table with nested order lists&lt;/title>
+  &lt;tgroup cols="1">
+    &lt;tbody>
+      &lt;row>
+        &lt;entry>
+          &lt;ol>
+            &lt;li>First Item&lt;/li>
+            &lt;li>Second Item&lt;/li>
+          &lt;/ol>
+        &lt;/entry>
+      &lt;/row>
+      &lt;row>
+        &lt;entry>
+          &lt;ol outputclass="start-3">
+            &lt;li>Third Item&lt;/li>
+            &lt;li>Fourth Item&lt;/li>
+          &lt;/ol>
+        &lt;/entry>            
+      &lt;/row>
+    &lt;/tbody>
+  &lt;/tgroup>
+&lt;/table></codeblock></p>
+    </section>
+    <section id="section_uvl_v2p_cfc">
+      <title>Using the 'continue' outputclass and CSS</title>
+      <p id="p_ij5_cgk_54b">Another solution is to add the <xmlatt>outputclass="continue"</xmlatt>
+        attribute to the list where numbering should
+        continue:<codeblock outputclass="language-xml" id="codeblock_jj5_cgk_54b">&lt;ol>
+  &lt;li>First Item&lt;/li>
+  &lt;li>Second Item&lt;/li>
+&lt;/ol>
+&lt;p>A paragraph&lt;/p>
+&lt;ol outputclass="continue">
+  &lt;li>Third Item&lt;/li>
+&lt;/ol></codeblock></p>
+      <p>Then set the following content inside your CSS
+        customization:<codeblock id="codeblock_qq1_kth_k1c" outputclass="language-css">*[class ~= "topic/ol"] {
+    counter-reset: item-count;
+}
+
+*[class ~= "topic/ol"][outputclass ~= "continue"] {
+    counter-reset: none;
+}
+
+/* Add counter marker for each list level */
+*[class ~= "topic/ol"] > *[class ~= "topic/li"]::marker {
+    counter-increment: item-count;
+    content: counter(item-count, decimal) ". ";
+}
+*[class ~= "topic/ol"][type=a] > *[class ~= "topic/li"]::marker{
+    content: counter(item-count, lower-alpha) ". "; 
+}
+*[class ~= "topic/ol"][type=A] > *[class ~= "topic/li"]::marker{
+    content: counter(item-count, upper-alpha) ". "; 
+}
+*[class ~= "topic/ol"][type=i] > *[class ~= "topic/li"]::marker{
+    content: counter(item-count, lower-roman) ". "; 
+}
+*[class ~= "topic/ol"][type=I] > *[class ~= "topic/li"]::marker{
+    content: counter(item-count, upper-roman) ". "; 
+}</codeblock></p>
+    </section>
+  </body>
+</topic>

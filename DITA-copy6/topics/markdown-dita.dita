@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="markdown-dita">
+  <title>Working with Markdown Documents in DITA</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Markdown documents<indexterm>DITA</indexterm></indexterm>
+        <indexterm>DITA and Markdown documents</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_r33_cgk_54b">The <ph keyref="product"/> has special features that make it easy to
+      incorporate Markdown documents into a DITA project. This is particularly useful for teams with
+      members who are familiar with Markdown syntax but want to generate their output from DITA
+      projects. The integration between the Markdown editor and DITA includes options to export or
+      convert Markdown documents into DITA topics, as well as a live preview of the edited Markdown
+      content.</p>
+    <section id="section_n3q_g5f_t1c">
+      <title>Preview</title>
+      <p>The changes made to the Markdown content can be previewed live in three separate tabs:
+          <uicontrol>DITA</uicontrol>, <uicontrol>XDITA</uicontrol>, and
+        <uicontrol>HTML</uicontrol>.</p>
+      <p id="p_r33_cgk_54bc">The <uicontrol>DITA</uicontrol> tab in the <i>Preview</i> pane shows
+        how an equivalent DITA topic will look after conversion. Similarly, the
+          <uicontrol>XDITA</uicontrol> tab shows how a Lightweight DITA topic will look after
+        conversion. The <uicontrol>HTML</uicontrol> tab shows a previous of the HTML equivalent.</p>
+      <p>Keys that are defined in the root map are also resolved in the <i>Preview</i> pane in the
+          <uicontrol>XDITA</uicontrol> and <uicontrol>DITA</uicontrol> tabs. <ph
+          product="author editor"> If the Markdown document contains profiling attributes (e.g.
+            <codeph>## Header 2 {audience=expert}</codeph>), the <i>Preview</i> pane presents the
+          profiling attributes, colors, and filtered elements similar to
+            <uicontrol>Author</uicontrol> mode (if profiling is set to be shown in the <xref
+            href="dita-maps-manager.dita#dita-maps-manager/dlentry_qgl_dgk_54b"><uicontrol><image
+                href="../img/ProfilingDrop.png" id="image_gvd_tn1_5r"/>Profiling/Conditional
+              Text</uicontrol> drop-down</xref> in the DITA Maps Manager).</ph></p>
+      <p>
+        <note id="note_avq_x5f_t1c">
+          <p>To make the content generated for preview in the <uicontrol>DITA</uicontrol> and
+              <uicontrol>XDITA</uicontrol> preview tabs more readable and to improve the conversion
+            of Markdown to DITA in the editor, you can add an XML catalog to the <xref
+              href="using-XML-Catalogs.dita">XML catalogs</xref> list. This XML catalog will help
+            with post-processing before the content is displayed. Here is an example of an XML
+            catalog that you can use:</p>
+          <codeblock outputclass="language-xml">&lt;catalog 
+  xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  &lt;uri 
+  name="http://www.oxygenxml.com/ns/preview/postprocess/dita" uri="postProcessDITA.xsl"/>
+  &lt;uri 
+  name="http://www.oxygenxml.com/ns/preview/postprocess/lwdita" uri="postProcessLWDITA.xsl"/>
+&lt;/catalog></codeblock>
+        </note>
+      </p>
+    </section>
+    <section id="export_markdown_syntax_as_a_dita_topic">
+      <title>Export Markdown as a DITA Topic</title>
+      <p id="p_s33_cgk_54b">The Markdown editor includes an option to quickly convert the current Markdown document
+        into a DITA topic. The <uicontrol>Export as DITA Topic</uicontrol> action is available in
+        the contextual menu.</p>
+      <p id="p_t33_cgk_54b">The conversion creates a new XML file that is defined as a DITA topic and opens it in the
+          <uicontrol>Text</uicontrol> editing mode. You can then work with the document as you would
+        with any other DITA topic, although you may need to manually correct some issues where the
+        parser could not properly map Markdown syntax to DITA markup.</p>
+    </section>
+    <section product="author editor authorEclipse editorEclipse"
+      id="working_with_markdown_documents_in_the_dita_maps_">
+      <title>Working with Markdown Documents in the DITA Maps Manager</title>
+      <p id="p_u33_cgk_54b"><ph keyref="product"/> has some specialized features that allow you to integrate Markdown
+        documents directly into your DITA project using the <xref
+          href="dita-maps-manager.dita#dita-maps-manager"><uicontrol>DITA Maps
+          Manager</uicontrol></xref>. The following features are available for Markdown documents in
+        the <uicontrol>DITA Maps Manager</uicontrol> view:<ul id="ul_v33_cgk_54b">
+          <li id="li_w33_cgk_54b"><b>Insert Reference to Markdown Document</b> - You can use the
+              <uicontrol>New</uicontrol>, <uicontrol>Reference</uicontrol>, and <uicontrol>Reference
+              to the currently edited file</uicontrol> actions from the <uicontrol>Append
+              Child</uicontrol>, <uicontrol>Insert Before</uicontrol>, or <uicontrol>Insert
+              After</uicontrol> submenu when invoking the contextual menu in the <uicontrol>DITA
+              Maps Manager</uicontrol> to insert a reference to a Markdown document at the selected
+            location in the map. Markdown documents will be inserted as a topic reference
+              (<codeph>topicref</codeph> element) with the <codeph>format</codeph> attribute set to
+              <codeph>markdown</codeph>.</li>
+          <li id="li_x33_cgk_54b"><b>Validate Markdown Documents in DITA Maps</b> - When you use the <uicontrol><image
+                href="../img/ValidateAndCheck16.png" id="image_vjz_3vv_sr"/>Validate and Check for
+              Completeness</uicontrol> action from the <uicontrol>DITA Maps Manager</uicontrol>
+            toolbar to check the integrity of the structure of a <term>DITA map</term>, Markdown
+            documents that are referenced in the <term>DITA map</term> will be converted to DITA
+            topics in the background and validated the same as any other DITA topic.</li>
+          <li id="li_y33_cgk_54b"><b>Transforming DITA Maps with Markdown Documents</b> - When transforming <term>DITA
+              maps</term> that have Markdown documents referenced, the transformation will convert
+            the Markdown documents to normal DITA output without you needing to manually convert the
+            Markdown documents to DITA topics.</li>
+          <li id="convert-md-dita">
+            <p id="p_z33_cgk_54b"><b>Manually Convert Markdown Documents to DITA Topics</b> - If you need to use DITA
+              semantics that are not possible in Markdown syntax (such as content references,
+              related links, and other DITA-specific syntax), you can manually convert the Markdown
+              document into a DITA topic. To do so, right-click the Markdown document in the
+                <uicontrol>DITA Maps Manager</uicontrol> and select <menucascade>
+                <uicontrol>Refactoring</uicontrol>
+                <uicontrol>Convert Markdown to DITA Topic</uicontrol>
+              </menucascade>. This will open a dialog box that allows you to configure options for
+              converting the document to an XML file that is defined as a DITA topic.</p>
+            <p id="p_aj3_cgk_54b">
+              <fig id="fig_bj3_cgk_54b">
+                <title>Convert Markdown to DITA Topic Dialog Box</title>
+                <image href="../img/convert_md_dita.png"/>
+              </fig>
+            </p>
+            <p id="p_cj3_cgk_54b">This dialog box includes the following options:</p>
+            <p id="p_dj3_cgk_54b">
+              <dl id="dl_ej3_cgk_54b">
+                <dlentry id="dlentry_fj3_cgk_54b">
+                  <dt><uicontrol>Destination</uicontrol></dt>
+                  <dd>The destination path for the new DITA topic.</dd>
+                </dlentry>
+                <dlentry id="dlentry_gj3_cgk_54b">
+                  <dt><uicontrol>File Name</uicontrol></dt>
+                  <dd>Presents the current name and allows you to change it.</dd>
+                </dlentry>
+                <dlentry id="dlentry_hj3_cgk_54b">
+                  <dt><uicontrol>Update references</uicontrol></dt>
+                  <dd>Select this option to update all references of the file in the <term>DITA
+                      map</term> and in the files referenced from the <term>DITA map</term>.</dd>
+                </dlentry>
+                <dlentry id="dlentry_ij3_cgk_54b">
+                  <dt><uicontrol>Delete Markdown file</uicontrol></dt>
+                  <dd>If selected, the Markdown version of the file is deleted when the document is
+                    converted into a DITA file. If deselected (default value), when the document is
+                    converted into a DITA file, the original Markdown file is also preserved in its
+                    current location.</dd>
+                </dlentry>
+                <dlentry id="dlentry_jj3_cgk_54b">
+                  <dt><uicontrol>Preview</uicontrol></dt>
+                  <dd>Select this button to display a preview of the changes <ph keyref="product"/>
+                    is about to make.</dd>
+                </dlentry>
+                <dlentry id="dlentry_kj3_cgk_54b">
+                  <dt><uicontrol>Convert</uicontrol></dt>
+                  <dd>Select this button to perform the conversion. If the Markdown file has
+                      <codeph>format="markdown"</codeph>, it will be converted to a DITA topic. If
+                    it has <codeph>format="mdita"</codeph>, it will be converted to a <xref
+                      href="http://docs.oasis-open.org/dita/LwDITA/v1.0/cnprd01/LwDITA-v1.0-cnprd01.html"
+                      format="html" scope="external">LightWeight DITA topic</xref>.</dd>
+                </dlentry>
+              </dl>
+            </p>
+          </li>
+        </ul></p>
+    </section>
+    <note type="tip" id="note_lj3_cgk_54b"><ph keyref="product"/> comes with a sample ditamap project for converting
+      Markdown to DITA. Go to the <xref href="using-the-project-view.dita#using-the-project-view"
+          ><uicontrol product="author developer editor">Project</uicontrol><uicontrol
+          product="authorEclipse developerEclipse editorEclipse">Project Explorer</uicontrol> view</xref>,
+      open the <filepath>sample.xpr</filepath> project, and navigate to the
+        <filepath>dita/markdown-dita</filepath> folder.</note>
+    <section id="converting_multiple_markdown_documents_to_dita" product="author developer editor">
+      <title>Converting Multiple Markdown Documents to DITA</title>
+      <p id="p_mj3_cgk_54b"><ph keyref="product"/> offers an add-on that contributes actions in the
+          <uicontrol>Tools</uicontrol> menu and contextual menu to enable batch conversion between
+        various formats, including Markdown to DITA. For more information and instructions for
+        installing the add-on, see <xref href="https://www.oxygenxml.com/doc/ug-addons/topics/batch-converter-addon.html" scope="external" format="html"/>.</p>
+    </section>
+    <section id="section_zff_35q_sqb">
+      <title>DITA-Related Markdown Syntax</title>
+      <p id="p_agf_35q_sqb">For a list of Markdown rules and syntax examples that are specific to
+        DITA, see the <xref
+          href="https://www.dita-ot.org/dev/topics/markdown-dita-syntax-reference.html"
+          format="html" scope="external">Markdown DITA Syntax Reference</xref>.</p>
+    </section>
+  </body>
+  <related-links>
+      <link href="markdown-editor.dita#markdown-editor"/>
+      <link href="markdown-actions.dita#markdown-actions"/>
+      <link href="markdown-rules.dita#markdown-rules"/>
+      <link href="markdown-validation.dita#markdown-validation"/>
+      <link format="html" href="https://www.dita-ot.org/dev/topics/markdown-dita-syntax-reference.html"
+        scope="external">
+        <linktext>Markdown DITA Syntax Reference</linktext>
+      </link>
+  </related-links>
+</topic>

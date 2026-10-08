@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="relational-sql-execution-support">
+  <title>SQL Execution Support</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Databases<indexterm>SQL support</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_o3y_cgk_54b">The database support in <ph keyref="product"/> includes support for writing SQL statements,
+      syntax highlighting, <xref keyref="glossentry_foldable-elements"><term>folding</term></xref>,
+      and dragging and dropping from the <xref
+        href="relational-database-explorer.dita#relational-database-explorer"><uicontrol>Data Source
+          Explorer</uicontrol> view</xref>. It also includes transformation scenarios for executing
+      the statements, and the results are displayed in the <xref
+        href="relational-table-explorer.dita#relational-table-explorer"><uicontrol>Table
+          Explorer</uicontrol> view</xref>.</p>
+  </body>
+</topic>

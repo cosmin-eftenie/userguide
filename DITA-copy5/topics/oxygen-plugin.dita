@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept
+  PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="oxygen-plugin">
+  <title>General Configuration of an <ph keyref="product"/> Plugin</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Oxygen SDK<indexterm>Configuration</indexterm></indexterm>
+        <indexterm>Plugins<indexterm>Configuration</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p id="p_hc2_dgk_54b">The <ph keyref="product"/> functionality can be extended with <xref
+        keyref="glossentry_plugin"><term>plugins</term></xref> that implement a clearly specified
+      API. On the <ph keyref="product"/> website, there is an <xref
+        href="https://www.oxygenxml.com/oxygen_sdk.html" format="html" scope="external">SDK</xref>
+      with sample <term>plugins</term> (source and compiled Java code) and the Javadoc API necessary
+      for developing custom <term>plugins</term>.</p>
+    <p id="p_ic2_dgk_54b">The minimal implementation of a <term>plugin</term> must provide:</p>
+    <ul id="ul_jc2_dgk_54b">
+      <li id="li_kc2_dgk_54b">A Java class that extends the <term>ro.sync.exml.plugin.Plugin</term>
+        class.</li>
+      <li id="li_lc2_dgk_54b">A Java class that implements the
+          <term>ro.sync.exml.plugin.PluginExtension</term> interface.</li>
+      <li id="li_mc2_dgk_54b">A <term>plugin</term> descriptor file called <filepath>plugin.xml</filepath>.</li>
+    </ul>
+    <p id="p_nc2_dgk_54b">A <term>ro.sync.exml.plugin.PluginDescriptor</term> object is passed to
+      the constructor of the subclass of the <term>ro.sync.exml.plugin.Plugin</term> class. It
+      contains the following data items about the <term>plugin</term>:</p>
+    <ul id="ul_oc2_dgk_54b">
+      <li id="li_pc2_dgk_54b"><uicontrol>basedir</uicontrol> (<term>File</term> object) - The base
+        directory of the <term>plugin</term>.</li>
+      <li id="li_qc2_dgk_54b"><uicontrol>description</uicontrol> (<term>String</term> object) - The
+        description of the <term>plugin</term>.</li>
+      <li id="li_rc2_dgk_54b"><uicontrol>name</uicontrol> (<term>String</term> object) - The name of
+        the <term>plugin</term>.</li>
+      <li id="li_sc2_dgk_54b"><uicontrol>vendor</uicontrol> (<term>String</term> object) - The
+        vendor name of the <term>plugin</term>.</li>
+      <li id="li_tc2_dgk_54b"><uicontrol>version</uicontrol> (<term>String</term> object) - The
+          <term>plugin</term> version. The allowed format is: <codeph>MAJOR.MINOR.PATCH</codeph>
+        (for example, <codeph>1.0.2</codeph>).</li>
+      <li id="li_uc2_dgk_54b"><ph id="plugin-id"><uicontrol>id</uicontrol> (<term>String</term>
+          object) - A unique identifier.</ph></li>
+      <li id="li_vc2_dgk_54b"><ph><uicontrol>classLoaderType</uicontrol> - You can choose between
+            <codeph>preferOxygenResources</codeph> (default value) and
+            <codeph>preferReferencedResources</codeph>. When choosing
+            <codeph>preferOxygenResources</codeph>, the libraries that are referenced in the <ph
+            keyref="product"/>
+          <filepath>lib</filepath> directory will have precedence over those referenced in the
+            <filepath>plugin.xml</filepath> configuration file, if they have the same package names.
+          When choosing <codeph>preferReferencedResources</codeph>, the libraries that are
+          referenced in the <filepath>plugin.xml</filepath> configuration file will have precedence
+          over those found in the <ph keyref="product"/>
+          <filepath>lib</filepath> directory, if they have the same package names.</ph></li>
+    </ul>
+    <p id="p_wc2_dgk_54b">The <term>plugin</term> descriptor is an XML file that defines how the
+        <term>plugin</term> is integrated in <ph keyref="product"/> and what libraries are loaded.
+      The structure of the <term>plugin</term> descriptor file is fully described in a DTD grammar
+      located in <filepath><term conkeyref="reusables-user-guide/oxy-install-dir"
+        />/plugins/plugin.dtd</filepath>. Here is a sample <term>plugin</term> descriptor used by
+      the <term>Capitalize Lines</term> sample <term>plugin</term>: </p>
+    <codeblock outputclass="language-xml" id="codeblock_xc2_dgk_54b">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE plugin SYSTEM "../plugin.dtd"&gt;
+&lt;plugin
+    name="Capitalize Lines"
+    description="Capitalize the first character on each line"
+    version="1.0.0"
+    vendor="SyncRO"
+    class="ro.sync.sample.plugin.caplines.CapLinesPlugin"&gt;
+    &lt;runtime&gt;
+        &lt;library name="lib/caplines.jar"/&gt;
+    &lt;/runtime&gt;
+    &lt;extension type="selectionProcessor" 
+    class="ro.sync.sample.plugin.caplines.CapLinesPluginExtension" 
+           keyboardShortcut="ctrl shift EQUALS"/&gt;
+&lt;/plugin&gt;</codeblock>
+    <p id="p_yc2_dgk_54b">If your <term>plugin</term> is of the <uicontrol>Selection</uicontrol>,
+        <uicontrol>Document</uicontrol> or <uicontrol>General</uicontrol> types, and thus
+      contributes an action either to the contextual menu or to the main menu of the
+        <uicontrol>Text</uicontrol> editing mode, then you can assign a keyboard shortcut for it.
+      You can use the <xmlatt>keyboardShortcut</xmlatt> attribute for each
+        <xmlelement>extension</xmlelement> element to specify the desired shortcut.</p>
+    <note type="tip" id="note_zc2_dgk_54b">To compose string representations of the desired shortcut keys you can go to <menucascade>
+        <uicontrol>Options</uicontrol>
+        <uicontrol>Menu Shortcut Keys</uicontrol>
+      </menucascade>, select an action, and click <uicontrol>Edit</uicontrol>. Then choose the
+      desired key sequence and use the representation that appears in the resulting dialog
+      box.</note>
+    <section id="referencing_libraries">
+      <title>Referencing Libraries</title>
+      <p id="p_ad2_dgk_54b">To reference libraries, use either of the following elements:<ul id="ul_bd2_dgk_54b">
+          <li id="li_cd2_dgk_54b"><xmlelement>library name="path/libraryName"</xmlelement> - To
+            point to specific libraries. Notice that the value of <codeph>library name</codeph>
+            includes the path (relative or absolute) to the library.<note id="note_dd2_dgk_54b">You
+              can use the <xref href="editor-variables.dita#editor-variables/edVar-oxygenInstallDir"
+                  ><term>${oxygenInstallDir}</term> editor variable</xref> as part of the value of
+              the <xmlatt>name</xmlatt> attribute. You can also use a system variable
+                (<codeph>${system(var.name)}</codeph>) or environment variable
+                (<codeph>${env(VAR_NAME)}</codeph>).</note></li>
+          <li id="li_ed2_dgk_54b"><xmlelement>librariesFolder
+              name="path/libraryFolderPath"</xmlelement> - To point to multiple libraries located in
+            the specified folder. Notice that the value of <codeph>libraryFolder name</codeph>
+            includes the path (relative or absolute) to the library folder.</li>
+        </ul></p>
+      <p id="p_fd2_dgk_54b">Both elements support the <xmlatt>scope</xmlatt> attribute that defines the loading
+        priority. It can have one of the following two values:<ul id="ul_cw1_gd3_c4">
+          <li id="li_gd2_dgk_54b"><uicontrol>local</uicontrol> - The library is loaded in the
+              <term>plugin's</term> own class loader. This is the default behavior.</li>
+          <li id="li_hd2_dgk_54b"><uicontrol>global</uicontrol> - The library is loaded in the main
+            application class loader as the last library in the list (as if it would be present in
+            the application <filepath>lib</filepath> directory).</li>
+        </ul></p>
+    </section>
+    <section id="section_kg3_dbv_f5b">
+      <title>Dependency Injection for Plugins</title>
+      <p id="p_dys_dgk_54b">If you want to share a single instance of a certain class between plugin
+        extensions and custom operations (to prevent instances from being repeated), you can declare
+        a <xmlelement>context</xmlelement> element in your <filepath>plugin.xml</filepath>
+        file:<codeblock outputclass="language-xml">&lt;context class="my.package.ContextClass"/></codeblock></p>
+      <note id="note_fcj_z3s_4qb" type="important">The <codeph>my.package.ContextClass</codeph>
+        class should have a no-arguments constructor that will be called when the class is
+        instantiated.</note>
+      <p id="p_mzc_f3s_4qb">This will result in an instance being automatically generated. You can
+        access this instance in an extension class by defining a field of that type and annotated
+        with the <codeph>ro.sync.exml.plugin.PluginContext</codeph>
+        annotation:<codeblock outputclass="language-java">@PluginContext
+ContextClass contextInstance;</codeblock></p>
+      <p id="p_gvj_r3s_4qb">The defined field is automatically populated with the single
+        instance.</p>
+      <note id="note_qjk_gkz_4wb" type="tip">By default, an instance of the
+          <codeph>PluginDescriptor</codeph> class is also injectable.</note>
+    </section>
+  </conbody>
+</concept>

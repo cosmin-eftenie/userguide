@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ofbENT-how-to-upgrade-on-linux">
+  <title>How to Upgrade Oxygen Feedback to a New Version</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <keyword outputclass="label">Enterprise Server</keyword>
+        <keyword outputclass="label">Database Setup</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <section id="section_owc_qm3_twb">
+      <title>Prerequisites</title>
+      <p>Docker and Docker Compose are required. See the <xref
+          href="https://docs.docker.com/get-docker/" format="html" scope="external">official
+          installation documentation</xref>.</p>
+      <p>Consider the current Linux user to be <codeph>feedback</codeph>.</p>
+    </section>
+    <section id="section_myz_lm3_twb">
+      <title>Upgrade</title>
+      <p id="p_shy_fpb_jpb">To upgrade <b>Oxygen Feedback Enterprise</b> to a new version on Linux,
+        follow this procedure:<note id="note_yps_f11_b2c"
+          ><codeph>$OLD_OXYGEN_FEEDBACK_INSTALL_DIR</codeph> refers to the path of the directory
+          where the current version of <ph>Oxygen Feedback Enterprise</ph> is installed.</note></p>
+      <ol id="ol_vzd_gvf_lmb">
+        <li id="li_mjw_dgk_54b"><b>Stop the current <ph>Oxygen Feedback</ph> instance</b> - Stop the
+          containers running the <ph>Oxygen Feedback Service</ph> and <ph>Oxygen Text Search
+            Service</ph>:<codeblock outputclass="language-bourne" id="codeblock_fyq_ycc_twb">cd $OLD_OXYGEN_FEEDBACK_INSTALL_DIR
+docker compose down</codeblock></li>
+        <li>
+          <p><b>Backup the Installation Directory</b> - Create a backup of the current installation
+            directory to ensure you can restore it if needed.</p>
+        </li>
+        <li id="li_njw_dgk_54b">
+          <p><b>Backup the Databases</b> - Backup the databases used by the <i>Oxygen Feedback
+              Service</i> and <i>Oxygen Text Search Service</i>.</p>
+          <ul id="ul_lwd_spb_jpb">
+            <li id="li_mwd_spb_jpb">For MySQL, see: <xref
+                href="https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html" format="html"
+                scope="external"/>.</li>
+            <li id="li_pnq_5pb_jpb">For PostgreSQL, see: <xref
+                href="https://www.postgresql.org/docs/14/app-pg-dumpall.html" format="html"
+                scope="external"/>.</li>
+          </ul>
+        </li>
+        <li id="li_ojw_dgk_54b">
+          <p><b>Download the New Version</b> - Create a directory for the new version (e.g.
+              <codeph>/home/feedback/oxygen-feedback-download</codeph>) and navigate to
+            it:<codeblock id="codeblock_ntq_hb1_b2c" outputclass="language-bourne">mkdir -p /home/feedback/oxygen-feedback-download
+cd /home/feedback/oxygen-feedback-download</codeblock></p>
+          <p>Download the latest <xref
+              href="http://oxygenxml.com/oxygen_feedback_enterprise/download.html" format="html"
+              scope="external"><b>Oxygen Feedback Enterprise</b> installation
+              kit</xref>:<codeblock id="codeblock_qy3_kb1_b2c" outputclass="language-bourne">wget https://www.oxygenxml.com/InstData/Feedback/oxygen-feedback-enterprise.zip</codeblock></p>
+        </li>
+        <li id="li_rjw_dgk_54b">
+          <p><b>Extract the Installation Kit</b> - Extract the content of the downloaded archive to
+            the user's home directory:</p>
+          <p id="p_lf3_2qb_jpb">
+            <codeblock outputclass="language-bourne" id="codeblock_sjw_dgk_54b">unzip oxygen-feedback-enterprise.zip -d /home/feedback</codeblock>
+          </p>
+          <p>The extracted folder (e.g. <codeph>oxygen-feedback-5.1</codeph>) becomes the
+            installation directory for the new version:</p>
+          <p id="p_mb5_hqb_jpb">
+            <codeblock outputclass="language-bourne" id="codeblock_gyq_ycc_twb">export NEW_OXYGEN_FEEDBACK_INSTALL_DIR=/home/feedback/oxygen-feedback-5.1
+sudo chown feedback: $NEW_OXYGEN_FEEDBACK_INSTALL_DIR</codeblock>
+          </p>
+        </li>
+        <li>
+          <p><b>Update <filepath>docker-compose.yml</filepath></b> - Compare the
+              <codeph>docker-compose.yml</codeph> files from the old and new installations. Update
+            the new file based on the configuration in the old file, considering any updates or
+            changes in the new version.</p>
+        </li>
+        <li>
+          <p><b>Update Configuration Files</b> - Update the properties files in
+              <codeph>[NEW_OXYGEN_FEEDBACK_INSTALL_DIR]/oxygen-feedback-home/config</codeph> using
+            the data from
+              <codeph>[OLD_OXYGEN_FEEDBACK_INSTALL_DIR]/oxygen-feedback-home/config</codeph>.</p>
+          <p>Perform a directory diff comparison to identify changes and merge necessary properties.
+            Refer to the <xref
+              href="ofbENT-installation-docker.dita#fb-install-steps-docker/section_mdf_gmz_mmb"
+              >Oxygen Feedback Installation - Step 6: Configure Oxygen Feedback</xref> for
+            details.</p>
+        </li>
+        <li>
+          <p><b>Copy Data Folders</b>:</p>
+          <ul id="ul_ozw_hc1_b2c">
+            <li>
+              <p>Copy the <codeph>data</codeph> folder from the old
+                installation:<codeblock id="codeblock_ymz_wc1_b2c" outputclass="language-bourne">cp -r $OLD_OXYGEN_FEEDBACK_INSTALL_DIR/oxygen-feedback-home/data $NEW_OXYGEN_FEEDBACK_INSTALL_DIR/oxygen-feedback-home/data</codeblock></p>
+            </li>
+            <li>
+              <p>Copy the <codeph>workspace</codeph>
+                folder:<codeblock id="codeblock_o2w_yc1_b2c" outputclass="language-bourne">cp -r $OLD_OXYGEN_FEEDBACK_INSTALL_DIR/workspace $NEW_OXYGEN_FEEDBACK_INSTALL_DIR/workspace</codeblock></p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p><b>Copy License Key</b> - Copy the <codeph>licensekey.txt</codeph> file from the old
+            installation:<codeblock id="codeblock_y5m_bd1_b2c" outputclass="language-bourne">cp $OLD_OXYGEN_FEEDBACK_INSTALL_DIR/oxygen-feedback-home/licensekey.txt $NEW_OXYGEN_FEEDBACK_INSTALL_DIR/oxygen-feedback-home/</codeblock></p>
+        </li>
+        <li>
+          <p><b>MySQL JDBC Driver (if applicable)</b> - If using MySQL for the <ph>Oxygen Feedback
+              Service</ph>, copy the MySQL JDBC driver to the new
+            installation:<codeblock id="codeblock_qy2_dd1_b2c" outputclass="language-bourne">cp $OLD_OXYGEN_FEEDBACK_INSTALL_DIR/lib/mysql-connector-java*.jar $NEW_OXYGEN_FEEDBACK_INSTALL_DIR/lib/</codeblock></p>
+        </li>
+        <li>
+          <p><b>Load Docker Images</b> - Load the Docker images for the <ph>Oxygen Feedback
+              Service</ph> and <ph>Oxygen Text Search
+            Service</ph>:<codeblock id="codeblock_xrh_gd1_b2c" outputclass="language-bourne">cd $NEW_OXYGEN_FEEDBACK_INSTALL_DIR/docker-images
+sh load-docker-images.sh</codeblock></p>
+        </li>
+        <li>
+          <p><b>Start the New Version</b> - Start <ph>Oxygen Feedback Enterprise</ph>:</p>
+          <p>
+            <codeblock id="codeblock_w1r_kc1_b2c" outputclass="language-bourne">cd $NEW_OXYGEN_FEEDBACK_INSTALL_DIR
+docker-compose up -d</codeblock>
+          </p>
+        </li>
+      </ol>
+    </section>
+    <section id="section_x1r_kc1_b2c">
+      <title>Verification</title>
+      <p>Once the services are up and running, verify that the new version is functioning correctly
+        by accessing the application and checking logs for any errors.</p>
+    </section>
+  </body>
+</topic>

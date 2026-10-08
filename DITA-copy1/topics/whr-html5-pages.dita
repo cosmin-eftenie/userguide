@@ -1,0 +1,775 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="whr-html5-pages">
+  <title>Layout of the Responsive Page Types</title>
+  <body>
+    <p id="p_pjm_cgk_54b">You can select from several different styles of layouts (for example, by default, you can
+      select either a <i>tiles</i> or <i>tree</i> style of layout). Furthermore, each layout
+      includes a collection of skins that you can choose from, or you can customize your own.</p>
+    <p id="p_qjm_cgk_54b">
+      <fig id="fig_y5z_p2f_dr">
+        <title>WebHelp Responsive Output on a Normal Screen</title>
+        <image href="../img/WebHelpResponsiveFlower.png" id="image_nvz_p2f_dr"/>
+      </fig>
+    </p>
+    <p id="p_rjm_cgk_54b">
+      <fig id="fig_sjm_cgk_54b">
+        <title>WebHelp Responsive Output on a Narrow Screen </title>
+        <image href="../img/WebHelpResponsiveMobileFlower.png"/>
+      </fig>
+    </p>
+  </body>
+  <topic id="whr-main-page-layout">
+    <title>Main Page</title>
+    <prolog>
+      <metadata>
+        <keywords>
+          <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            >WebHelp Responsive <indexterm>Main layout page</indexterm></indexterm>
+          <indexterm product="webhelp-responsive ope">Main layout page</indexterm>
+        </keywords>
+        <keywords>
+          <keyword outputclass="label" product="webhelp-responsive">Responsive Layout</keyword>
+          <keyword outputclass="label" product="webhelp-responsive">Navigation Links</keyword>
+          <keyword outputclass="label" product="webhelp-responsive">Search Engine</keyword>
+        </keywords>
+      </metadata>
+    </prolog>
+    <body>
+      <p id="p_tjm_cgk_54b">The <term>Main Page</term> is the home page generated in the WebHelp Responsive output. The
+        main function of the home page is to display top-level information and provide links that
+        help you easily navigate to any of the top-level topics of the publication. These links can
+        be rendered in either a <i>Tiles</i> or <i>Tree</i> style of layout. The main page also
+        consists of various other components, such as a logo, title, menu, search field, or index
+        link.</p>
+      <section id="tiles-layout">
+        <title>Main Page - Tiles Layout</title>
+        <p id="p_ujm_cgk_54b">In the <i>tiles</i> presentation mode, a tile component is created for each chapter
+          (first-level topic) in the publication. The tile presents a link to the topic and its
+          short description.</p>
+        <p id="p_vjm_cgk_54b">
+          <fig id="fig_wjm_cgk_54b">
+            <title>Main Page - Tiles Layout</title>
+            <p id="p_xjm_cgk_54b">
+              <imagemap id="imagemap_bb2_zml_n4b">
+                <image href="../img/webhelp_main_page.png" id="image_scg_fyy_5cb" placement="inline"/>
+                <area>
+                  <shape>poly</shape>
+                  <coords>16, 45, 17, 109, 70, 108, 70, 41, 148, 41, 148, 4, 70, 4</coords>
+                  <xref href="#whr-main-page-layout/main-page-logo" format="dita">Logo
+                    Component</xref>
+                </area>
+                <area>
+                  <shape>poly</shape>
+                  <coords>85, 85, 85, 105, 210, 106, 210, 53, 289, 53, 289, 16, 186, 16, 122,
+                    85</coords>
+                  <xref href="#whr-main-page-layout/main-page-title" format="dita">Title
+                    Component</xref>
+                </area>
+                <area>
+                  <shape>poly</shape>
+                  <coords>61, 142, 61, 170, 724, 170, 724, 142, 212, 142, 249, 105, 345, 105, 345,
+                    69, 246, 69, 181, 142</coords>
+                  <xref href="#whr-main-page-layout/main-page-search-query-input" format="dita"
+                    >Search Input Component</xref>
+                </area>
+                <area>
+                  <shape>poly</shape>
+                  <coords>352, 85, 352, 106, 700, 106, 700, 85, 538, 85, 507, 16, 446, 16</coords>
+                  <xref href="#whr-main-page-layout/main-page-menu" format="dita">Menu
+                    Component</xref>
+                </area>
+                <area>
+                  <shape>poly</shape>
+                  <coords>704, 84, 704, 105, 729, 105, 729, 84, 653, 18, 554, 18, 554, 54, 653,
+                    54</coords>
+                  <xref href="#whr-main-page-layout/main-page-index-terms-link" format="dita">Index
+                    Terms Link Component</xref>
+                </area>
+                <area>
+                  <shape>poly</shape>
+                  <coords>690, 17, 780, 17, 780, 57, 751, 84, 751, 105, 734, 105, 733, 84, 690,
+                    52</coords>
+                  <xref href="#whr-main-page-layout/main-page-theme-button" format="dita">Theme
+                    Button Component</xref>
+                </area>
+                <area>
+                  <shape>poly</shape>
+                  <coords>37, 213, 37, 322, 277, 322, 277, 420, 374, 420, 374, 382, 426, 322, 752,
+                    322, 752, 213</coords>
+                  <xref href="#whr-main-page-layout/main-page-tile" format="dita">Topic Tiles
+                    Component</xref>
+                </area>
+                <area>
+                  <shape>poly</shape>
+                  <coords>560, 366, 477, 438, 11, 438, 10, 480, 789, 480, 789, 437, 662, 437, 662,
+                    364</coords>
+                  <xref href="#whr-main-page-layout/main-page-footer" format="dita">Footer
+                    Component</xref>
+                </area>
+              </imagemap>
+            </p>
+          </fig>
+        </p>
+      </section>
+      <section id="tree-layout">
+        <title>Main Page - Tree Layout</title>
+        <p id="p_yjm_cgk_54b">In the <i>tree</i> presentation mode, links to the first and second level topics in the
+          publication are displayed using a tree-like component.</p>
+        <p id="p_zjm_cgk_54b">
+          <fig id="fig_akm_cgk_54b">
+            <title>Main Page - Tree Layout</title>
+            <p id="p_bkm_cgk_54b">
+              <imagemap id="imagemap_r3z_dml_n4b">
+                <image href="../img/webhelp_main_page_tree.png" id="image_z21_dd1_vcb"
+                  placement="inline"/>
+                <area>
+                  <shape>poly</shape>
+                  <coords>18, 62, 17, 124, 73, 124, 72, 62, 74, 50, 149, 50, 149, 13, 74,
+                    13</coords>
+                  <xref href="#whr-main-page-layout/main-page-logo" format="dita">Logo
+                    Component</xref>
+                </area>
+                <area>
+                  <shape>poly</shape>
+                  <coords>80, 82, 80, 101, 205, 101, 205, 81, 213, 49, 288, 49, 288, 13, 210, 13,
+                    142, 82</coords>
+                  <xref href="#whr-main-page-layout/main-page-title" format="dita">Title
+                    Component</xref>
+                </area>
+                <area>
+                  <shape>poly</shape>
+                  <coords>144, 158, 144, 188, 651, 188, 651, 157, 208, 158, 242, 109, 312, 109, 312,
+                    72, 213, 74, 213, 109</coords>
+                  <xref href="#whr-main-page-layout/main-page-search-query-input" format="dita"
+                    >Search Input Component</xref>
+                </area>
+                <area>
+                  <shape>poly</shape>
+                  <coords>320, 82, 320, 101, 705, 101, 705, 81, 560, 82, 485, 12, 388, 12</coords>
+                  <xref href="#whr-main-page-layout/main-page-menu" format="dita">Menu
+                    Component</xref>
+                </area>
+                <area>
+                  <shape>poly</shape>
+                  <coords>713, 80, 713, 102, 742, 102, 742, 80, 672, 13, 572, 13, 572, 50, 670,
+                    50</coords>
+                  <xref href="#whr-main-page-layout/main-page-index-terms-link" format="dita">Index
+                    Terms Link Component</xref>
+                </area>
+                <area>
+                  <shape>poly</shape>
+                  <coords>701, 13, 793, 13, 792, 53, 766, 81, 766, 102, 748, 102, 748, 81, 702,
+                    46</coords>
+                  <xref href="#whr-main-page-layout/main-page-theme-button">Theme Button
+                    Component</xref>
+                </area>
+                <area>
+                  <shape>poly</shape>
+                  <coords>74, 245, 74, 418, 545, 417, 581, 484, 698, 484, 697, 448, 546, 368, 545,
+                    244</coords>
+                  <xref href="#whr-main-page-layout/main-page-tree-toc" format="dita">Table of
+                    Contents Component</xref>
+                </area>
+                <area>
+                  <shape>poly</shape>
+                  <coords>149, 426, 72, 493, 10, 493, 10, 534, 789, 533, 789, 493, 298, 493, 246,
+                    426</coords>
+                  <xref href="#whr-main-page-layout/main-page-footer" format="dita">Footer
+                    Component</xref>
+                </area>
+              </imagemap>
+            </p>
+          </fig>
+        </p>
+      </section>
+      <section id="main_page_layout_components">
+        <title>Main Page Components</title>
+        <p id="p_ckm_cgk_54b">The layout components displayed in the main page are:</p>
+        <p id="p_dkm_cgk_54b">
+          <dl id="dl_ekm_cgk_54b">
+            <dlentry id="main-page-title"
+              conkeyref="reusables-webhelp-layout-reusable/publication-title">
+              <dt/>
+              <dd/>
+            </dlentry>
+            <dlentry id="main-page-logo"
+              conkeyref="reusables-webhelp-layout-reusable/main-page-logo">
+              <dt/>
+              <dd/>
+            </dlentry>
+            <dlentry id="main-page-menu"
+              conkeyref="reusables-webhelp-layout-reusable/publication-menu">
+              <dt/>
+              <dd/>
+            </dlentry>
+            <dlentry conkeyref="reusables-webhelp-layout-reusable/index-terms-link"
+              id="main-page-index-terms-link">
+              <dt/>
+              <dd/>
+            </dlentry>
+            <dlentry conkeyref="reusables-webhelp-layout-reusable/theme-button"
+              id="main-page-theme-button">
+              <dt/>
+              <dd/>
+            </dlentry>
+            <dlentry conkeyref="reusables-webhelp-layout-reusable/search-query-input"
+              id="main-page-search-query-input">
+              <dt/>
+              <dd/>
+            </dlentry>
+            <dlentry id="main-page-tile">
+              <dt>Topic Tiles</dt>
+              <dd>
+                <p id="p_fkm_cgk_54b">A tile associated with a main topic. Each topic tile has three sections that
+                  correspond to the topic title, short description, and image.</p>
+                <p id="p_gkm_cgk_54b">
+                  <dl id="dl_hkm_cgk_54b">
+                    <dlentry id="main-page-topic-tile-title">
+                      <dt>Topic Tile Title</dt>
+                      <dd>Presents the navigation title of the associated topic.</dd>
+                    </dlentry>
+                    <dlentry id="main-page-topic-short-description">
+                      <dt>Topic Tile Short Description</dt>
+                      <dd>Presents the <xref
+                          href="https://www.oxygenxml.com/dita/1.3/specs/langRef/base/shortdesc.html"
+                          format="html" scope="external">short description</xref> of the topic. It
+                        may be collected either from the topic or from the DITA map topic meta.</dd>
+                    </dlentry>
+                    <dlentry id="main-page-topic-tile-image">
+                      <dt>Topic Tile Image</dt>
+                      <dd>Presents an image associated with the topic. The <xref
+                          keyref="whr-customize-menu">image association</xref> is done in the DITA
+                        map.</dd>
+                    </dlentry>
+                  </dl>
+                </p>
+              </dd>
+            </dlentry>
+            <dlentry id="main-page-tree-toc">
+              <dt>Tree Table of Contents</dt>
+              <dd>An area that contains first and second-level topic titles from your
+                publication.</dd>
+            </dlentry>
+            <dlentry conkeyref="reusables-webhelp-layout-reusable/main-page-footer"
+              id="main-page-footer">
+              <dt/>
+              <dd/>
+            </dlentry>
+          </dl>
+        </p>
+      </section>
+    </body>
+  </topic>
+  <topic id="whr-topic-page-layout">
+    <title>Topic Page</title>
+    <prolog>
+      <metadata>
+        <keywords>
+          <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            >WebHelp Responsive <indexterm>Topic layout page</indexterm></indexterm>
+          <indexterm product="webhelp-responsive ope">Topic layout page</indexterm>
+        </keywords>
+      </metadata>
+    </prolog>
+    <body>
+      <p id="p_ikm_cgk_54b">The <term>Topic Page</term> is the page generated for each DITA topic in the WebHelp
+        Responsive output. The HTML pages produced for each topic consist of the topic content along
+        with various other additional components, such as a title, menu, navigation breadcrumb,
+        print icon, or side table of contents.</p>
+      <p id="p_jkm_cgk_54b">
+        <fig id="fig_kkm_cgk_54b">
+          <title>Topic Page</title>
+          <p id="p_lkm_cgk_54b">
+            <imagemap id="imagemap_old_z3l_n4b">
+              <image href="../img/whr-topic-page-layout.png" id="image_s5n_ft1_vcb"
+                placement="inline"/>
+              <area>
+                <shape>poly</shape>
+                <coords>78, 14, 18, 57, 18, 126, 73, 126, 74, 60, 149, 48, 149, 13</coords>
+                <xref href="#whr-topic-page-layout/topic-logo" format="dita">Logo Component</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>209, 10, 137, 81, 81, 82, 81, 104, 206, 104, 206, 81, 174, 82, 209, 50, 288,
+                  50, 288, 10</coords>
+                <xref href="#whr-topic-page-layout/topic-title" format="dita">Title Component</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>210, 73, 210, 109, 160, 156, 146, 156, 146, 185, 652, 184, 652, 157, 208,
+                  157, 242, 112, 309, 112, 309, 73</coords>
+                <xref href="#whr-topic-page-layout/topic-search-input" format="dita">Search Input
+                  Component</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>336, 12, 336, 50, 320, 80, 320, 102, 706, 101, 706, 82, 510, 81, 437,
+                  12</coords>
+                <xref href="#whr-topic-page-layout/topic-menu" format="dita">Menu Component</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>554, 10, 554, 49, 653, 49, 712, 80, 713, 102, 740, 102, 739, 82, 654,
+                  10</coords>
+                <xref href="#whr-topic-page-layout/topic-index-terms-link" format="dita">Index Terms
+                  Link Component</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>700, 13, 792, 13, 792, 48, 764, 81, 764, 102, 744, 102, 744, 81, 702,
+                  46</coords>
+                <xref href="#whr-topic-page-layout/topic-theme-button" format="dita">Theme Button
+                  Component</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>488, 215, 488, 240, 685, 240, 685, 216</coords>
+                <xref href="#whr-topic-page-layout/topic-full-width" format="dita">Maximize/Restore
+                  width Component</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>557, 188, 557, 212, 689, 212, 689, 237, 718, 237, 718, 213, 702, 188, 657,
+                  188</coords>
+                <xref href="#whr-topic-page-layout/topic-nav-links" format="dita">Navigation Links
+                  Component</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>722, 246, 552, 246, 552, 288, 656, 288, 656, 266, 736, 266, 737, 238, 737,
+                  220, 722, 220</coords>
+                <xref href="#whr-topic-page-layout/topic-expand-collapse-sections" format="dita"
+                  >Expand/Collapse All Sections Component</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>682, 156, 682, 181, 700, 181, 741, 221, 741, 237, 760, 237, 760, 221, 725,
+                  181, 742, 181, 742, 156</coords>
+                <xref href="#whr-topic-page-layout/topic-print-link" format="dita">Print Link
+                  Component</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>720, 117, 796, 117, 796, 150, 784, 150, 784, 237, 764, 237, 762, 150, 720,
+                  150</coords>
+                <xref href="#whr-topic-page-layout/topic-markdown-menu" format="dita">Markdown
+                  Export Menu</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>380, 249, 352, 236, 478, 236, 478, 219, 15, 219, 15, 236, 318, 235, 374,
+                  287, 481, 287, 481, 249</coords>
+                <xref href="#whr-topic-page-layout/topic-breadcrumb" format="dita">Breadcrumb
+                  Component</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>33, 480, 33, 520, 150, 520, 150, 480, 105, 480, 106, 442, 177, 442, 178,
+                  246, 16, 246, 16, 442, 78, 442, 78, 480</coords>
+                <xref href="#whr-topic-page-layout/topic-toc" format="dita">Publication Table of
+                  Contents Component</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>397, 480, 358, 480, 358, 518, 458, 518, 458, 480, 426, 480, 426, 442, 678,
+                  441, 678, 292, 370, 292, 318, 245, 185, 245, 186, 442, 396, 442</coords>
+                <xref href="#whr-topic-page-layout/topic-content" format="dita">Topic Content
+                  Component</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>742, 246, 742, 270, 685, 269, 684, 442, 722, 442, 722, 478, 685, 478, 686,
+                  520, 784, 520, 784, 478, 749, 478, 749, 444, 782, 444, 782, 246</coords>
+                <xref href="#whr-topic-page-layout/topic-topic-toc" format="dita">Topic Table of
+                  Contents Component</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>12, 526, 158, 526, 229, 460, 330, 460, 330, 526, 789, 526, 789, 566, 12,
+                  566</coords>
+                <xref href="#whr-topic-page-layout/topic-footer" format="dita">Footer
+                  Component</xref>
+              </area>
+            </imagemap>
+          </p>
+        </fig>
+      </p>
+      <section id="topic_page_layout_components">
+        <title>Topic Page Components</title>
+        <p id="p_mkm_cgk_54b">The layout components displayed in this page are:</p>
+        <p id="p_nkm_cgk_54b">
+          <dl id="dl_okm_cgk_54b">
+            <dlentry conkeyref="reusables-webhelp-layout-reusable/publication-title"
+              id="topic-title">
+              <dt/>
+              <dd/>
+            </dlentry>
+            <dlentry conkeyref="reusables-webhelp-layout-reusable/main-page-logo" id="topic-logo">
+              <dt/>
+              <dd/>
+            </dlentry>
+            <dlentry conkeyref="reusables-webhelp-layout-reusable/publication-menu" id="topic-menu">
+              <dt/>
+              <dd/>
+            </dlentry>
+            <dlentry conkeyref="reusables-webhelp-layout-reusable/index-terms-link"
+              id="topic-index-terms-link">
+              <dt/>
+              <dd/>
+            </dlentry>
+            <dlentry conkeyref="reusables-webhelp-layout-reusable/theme-button"
+              id="topic-theme-button">
+              <dt/>
+              <dd/>
+            </dlentry>
+            <dlentry conkeyref="reusables-webhelp-layout-reusable/search-query-input"
+              id="topic-search-input">
+              <dt/>
+              <dd/>
+            </dlentry>
+            <dlentry id="topic-nav-links">
+              <dt>Navigation Links</dt>
+              <dd>The navigation links (<uicontrol><image href="../img/Previous16.png"
+                  />Previous</uicontrol> / <uicontrol><image href="../img/Next16.png"
+                  />Next</uicontrol> arrows) can be used to navigate to the previous or next topic.
+                These navigation links are controlled by the <xref
+                  href="https://www.oxygenxml.com/dita/styleguide/Maps/c_Collection_Types.html"
+                  format="html" scope="external"><codeph>collection-type</codeph> attribute</xref>.
+                For example, if you set <codeph>collection-type="sequence"</codeph> on a parent
+                topic reference, navigation links will be generated in the output for that topic and
+                all of its child topics. You can also use the
+                  <codeph>webhelp.default.collection.type.sequence</codeph> parameter and set its
+                value to <codeph>yes</codeph> to generate navigation links for all topics,
+                regardless of whether or not the <codeph>collection-type</codeph> attribute is
+                  present.<note type="tip" id="note_pkm_cgk_54b">To hide the navigation links, you
+                  can edit the transformation scenario and set the value of the
+                    <codeph>webhelp.show.navigation.links</codeph> parameter to
+                  <codeph>no</codeph>.</note></dd>
+            </dlentry>
+            <dlentry id="topic-full-width">
+              <dt>Maximize to full width/Restore to normal width Button</dt>
+              <dd>Icon that maximizes or restores the topic content to use the entire page space.
+                Only visible when screen width exceeds 1600 pixels.</dd>
+            </dlentry>
+            <dlentry id="topic-expand-collapse-sections">
+              <dt>Expand/Collapse Sections Button</dt>
+              <dd>Icon that expands or collapses sections listed in the side table of contents
+                within a topic.</dd>
+            </dlentry>
+            <dlentry conkeyref="reusables-webhelp-layout-reusable/print-icon" id="topic-print-link">
+              <dt/>
+              <dd/>
+            </dlentry>
+            <dlentry id="topic-markdown-menu">
+              <dt>Markdown Export Menu</dt>
+              <dd>Button that opens a menu with "Copy as Markdown" and "View as Markdown"
+                actions.</dd>
+            </dlentry>
+            <dlentry id="topic-breadcrumb">
+              <dt>Breadcrumb</dt>
+              <dd>Presents the path of the current displayed DITA topic.</dd>
+            </dlentry>
+            <dlentry id="topic-content">
+              <dt>Topic Content</dt>
+              <dd>Presents the content of the associated DITA topic.</dd>
+            </dlentry>
+            <dlentry id="topic-toc">
+              <dt>Publication Table of Contents</dt>
+              <dd>A Table of Content for the publication displayed in the left side of the screen.
+                You can use the <image href="../img/WA_open_arrow.png"/> button to collapse the
+                table of contents ( or the <image href="../img/WA-right-arrow.png"/> button to
+                expand it).</dd>
+            </dlentry>
+            <dlentry id="topic-topic-toc">
+              <dt>Topic Table of Contents (<i>On this page</i> links)</dt>
+              <dd>A table of contents for the topic displayed on the right side with a heading named
+                  <b>On this page</b> and it contains links to each section within the current topic
+                and the section corresponding to the current scroll position is highlighted. This
+                component is generated for any topic that contains at least two
+                  <xmlelement>section</xmlelement> elements and each
+                  <xmlelement>section</xmlelement> must have an <xmlatt>id</xmlatt> attribute. You
+                can use the <image href="../img/WA-right-arrow.png"/> button to collapse the table
+                of contents ( or the <image href="../img/WA_open_arrow.png"/> button to expand
+                it).</dd>
+            </dlentry>
+            <dlentry conkeyref="reusables-webhelp-layout-reusable/main-page-footer"
+              id="topic-footer">
+              <dt/>
+              <dd/>
+            </dlentry>
+          </dl>
+        </p>
+      </section>
+    </body>
+  </topic>
+  <topic id="whr-search-page-layout">
+    <title>Search Results Page</title>
+    <prolog>
+      <metadata>
+        <keywords>
+          <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            >WebHelp Responsive <indexterm>Search layout page</indexterm></indexterm>
+          <indexterm product="webhelp-responsive ope">Search layout page</indexterm>
+        </keywords>
+      </metadata>
+    </prolog>
+    <body>
+      <p id="p_qkm_cgk_54b">The <term>Search Page</term> presents search results in the WebHelp Responsive output. The
+        HTML page consists of a search results component along with various other additional
+        components, such as a title, menu, or index link.</p>
+      <p conkeyref="reusables-transforming-documents/search_tab_webhelp_responsive_intro"
+        id="p_rkm_cgk_54b"/>
+      <p id="p_skm_cgk_54b">
+        <fig id="fig_tkm_cgk_54b">
+          <title>Search Results Page</title>
+          <p id="p_ukm_cgk_54b">
+            <imagemap id="imagemap_zlg_pkl_n4b">
+              <image href="../img/webhelp_search_page.png" id="image_amg_pkl_n4b"/>
+              <area>
+                <shape>poly</shape>
+                <coords>74, 14, 17, 61, 18, 124, 72, 124, 73, 49, 149, 49, 149, 14</coords>
+                <xref href="#whr-search-page-layout/search-logo" format="dita">Logo Component</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>210, 13, 139, 82, 81, 82, 81, 105, 209, 104, 209, 80, 213, 49, 288, 49, 288,
+                  13</coords>
+                <xref href="#whr-search-page-layout/search-title" format="dita">Title
+                  Component</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>216, 73, 216, 109, 145, 157, 144, 185, 653, 184, 653, 156, 209, 156, 244,
+                  110, 314, 110, 314, 73</coords>
+                <xref href="#whr-search-page-layout/search-search-input" format="dita">Search Input
+                  Component</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>386, 13, 369, 81, 320, 81, 320, 102, 708, 102, 708, 81, 562, 82, 488,
+                  13</coords>
+                <xref href="#whr-search-page-layout/search-menu" format="dita">Menu Component</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>564, 14, 564, 50, 668, 50, 714, 82, 714, 102, 733, 102, 733, 84, 666,
+                  14</coords>
+                <xref href="#whr-search-page-layout/search-index-terms-link" format="dita">Index
+                  Terms Link Component</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>700, 12, 701, 12, 788, 12, 788, 53, 757, 82, 757, 101, 736, 101, 737, 82,
+                  701, 45</coords>
+                <xref href="#whr-search-page-layout/search-theme-button" format="dita">Theme Button
+                  Component</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>18, 222, 17, 481, 317, 481, 317, 538, 417, 538, 472, 482, 778, 481, 778,
+                  222, 645, 222, 645, 304, 157, 304, 158, 222</coords>
+                <xref href="#whr-search-page-layout/search-results" format="dita">Search Results
+                  Component</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>474, 510, 421, 558, 10, 558, 10, 600, 789, 600, 789, 558, 573, 558, 573,
+                  510</coords>
+                <xref href="#whr-search-page-layout/search-footer" format="dita">Footer
+                  Component</xref>
+              </area>
+            </imagemap>
+          </p>
+        </fig>
+      </p>
+      <section id="main_page_layout_components">
+        <title>Search Results Page Components</title>
+        <p id="p_vkm_cgk_54b">The layout components displayed in the search page are:</p>
+        <p id="p_wkm_cgk_54b">
+          <dl id="dl_xkm_cgk_54b">
+            <dlentry id="search-title"
+              conkeyref="reusables-webhelp-layout-reusable/publication-title">
+              <dt/>
+              <dd/>
+            </dlentry>
+            <dlentry id="search-logo" conkeyref="reusables-webhelp-layout-reusable/main-page-logo">
+              <dt/>
+              <dd/>
+            </dlentry>
+            <dlentry id="search-menu" conkeyref="reusables-webhelp-layout-reusable/publication-menu">
+              <dt/>
+              <dd/>
+            </dlentry>
+            <dlentry conkeyref="reusables-webhelp-layout-reusable/index-terms-link"
+              id="search-index-terms-link">
+              <dt/>
+              <dd/>
+            </dlentry>
+            <dlentry conkeyref="reusables-webhelp-layout-reusable/theme-button"
+              id="search-theme-button">
+              <dt/>
+              <dd/>
+            </dlentry>
+            <dlentry conkeyref="reusables-webhelp-layout-reusable/search-query-input"
+              id="search-search-input">
+              <dt/>
+              <dd/>
+            </dlentry>
+            <dlentry id="search-results">
+              <dt>Search Results</dt>
+              <dd>
+                <p conkeyref="reusables-transforming-documents/result-p" id="p_ykm_cgk_54b"/>
+              </dd>
+            </dlentry>
+            <dlentry conkeyref="reusables-webhelp-layout-reusable/main-page-footer"
+              id="search-footer">
+              <dt/>
+              <dd/>
+            </dlentry>
+          </dl>
+        </p>
+      </section>
+      <section id="autocomplete_suggestions_in_the_search_text_field">
+        <title>Auto-complete Suggestions in the Search Input Field</title>
+        <p conkeyref="reusables-transforming-documents/autocomplete-suggestions-p"
+          id="p_zkm_cgk_54b"/>
+      </section>
+      <section id="missing_terms">
+        <title>Missing Terms</title>
+        <p conkeyref="reusables-transforming-documents/missing-words-p" id="p_alm_cgk_54b"/>
+      </section>
+    </body>
+    <related-links>
+        <link href="whr-default-search-engine.dita">
+          <linktext>WebHelp Responsive Search Engine</linktext>
+        </link>
+    </related-links>
+  </topic>
+  <topic id="whr-index-terms-page">
+    <title>Index Terms Page</title>
+    <prolog>
+      <metadata>
+        <keywords>
+          <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            >WebHelp Responsive <indexterm>Index terms layout page</indexterm></indexterm>
+          <indexterm product="webhelp-responsive ope">Index terms layout page</indexterm>
+        </keywords>
+      </metadata>
+    </prolog>
+    <body>
+      <p id="p_blm_cgk_54b">The <term>Index Terms Page</term> page consists of an index terms section along with
+        various other additional components, such as a title, menu, or search field.</p>
+      <p id="p_clm_cgk_54b">An alphabet that contains the first letter of the documentation index terms is generated at
+        the top of the index page. Each letter represents a link to a specific indices section. The
+        indexes are presented in multiple columns to make it easier to read this page.</p>
+      <p id="p_dlm_cgk_54b">
+        <fig id="fig_elm_cgk_54b">
+          <title>Index Terms Page</title>
+          <p id="p_flm_cgk_54b">
+            <imagemap id="imagemap_erw_hll_n4b">
+              <image href="../img/webhelp_terms_page.png" id="image_kjb_kz1_vcb"/>
+              <area>
+                <shape>poly</shape>
+                <coords>73, 11, 16, 59, 16, 124, 72, 123, 72, 59, 150, 51, 150, 12</coords>
+                <xref href="#whr-index-terms-page/index-logo" format="dita">Logo Component</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>213, 12, 142, 83, 80, 83, 80, 103, 208, 103, 208, 83, 173, 83, 210, 51, 289,
+                  51, 289, 12</coords>
+                <xref href="#whr-index-terms-page/index-title" format="dita">Title Component</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>340, 12, 340, 52, 306, 83, 306, 101, 694, 103, 694, 83, 512, 83, 440,
+                  13</coords>
+                <xref href="#whr-index-terms-page/index-menu" format="dita">Menu Component</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>556, 13, 556, 51, 662, 51, 703, 82, 702, 103, 732, 103, 732, 83, 660,
+                  13</coords>
+                <xref href="#whr-index-terms-page/index-index-terms-link" format="dita">Index Terms
+                  Link Component</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>699, 13, 789, 13, 789, 51, 757, 83, 757, 103, 738, 103, 738, 83, 700,
+                  49</coords>
+                <xref href="#whr-index-terms-page/index-theme-button" format="dita">Theme Button
+                  Component</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>80, 125, 80, 165, 16, 180, 16, 397, 436, 397, 436, 364, 769, 365, 769, 201,
+                  250, 201, 176, 125</coords>
+                <xref href="#whr-index-terms-page/index-first-letter" format="dita">Index Terms
+                  Component</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>354, 128, 354, 163, 416, 163, 460, 199, 560, 199, 560, 160, 458, 160, 438,
+                  128</coords>
+                <xref href="#whr-index-terms-page/index-alphabet" format="dita">Alphabet Links
+                  Component</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>512, 368, 442, 432, 5, 433, 5, 472, 786, 473, 786, 432, 613, 432, 613,
+                  368</coords>
+                <xref href="#whr-index-terms-page/index-footer" format="dita">Footer
+                  Component</xref>
+              </area>
+            </imagemap>
+          </p>
+        </fig>
+      </p>
+      <section id="topic_page_layout_components">
+        <title>Index Terms Page Components</title>
+        <p id="p_glm_cgk_54b">The layout components displayed in this page are:</p>
+        <p id="p_hlm_cgk_54b">
+          <dl id="dl_ilm_cgk_54b">
+            <dlentry conkeyref="reusables-webhelp-layout-reusable/publication-title"
+              id="index-title">
+              <dt/>
+              <dd/>
+            </dlentry>
+            <dlentry conkeyref="reusables-webhelp-layout-reusable/main-page-logo" id="index-logo">
+              <dt/>
+              <dd/>
+            </dlentry>
+            <dlentry conkeyref="reusables-webhelp-layout-reusable/publication-menu" id="index-menu">
+              <dt/>
+              <dd/>
+            </dlentry>
+            <dlentry conkeyref="reusables-webhelp-layout-reusable/index-terms-link"
+              id="index-index-terms-link">
+              <dt/>
+              <dd/>
+            </dlentry>
+            <dlentry conkeyref="reusables-webhelp-layout-reusable/theme-button"
+              id="index-theme-button">
+              <dt/>
+              <dd/>
+            </dlentry>
+            <dlentry id="index-alphabet">
+              <dt>Index Terms Alphabet</dt>
+              <dd>An alphabet that contains the first letter of index terms. Each letter represents
+                a link to a specific indices section. </dd>
+            </dlentry>
+            <dlentry id="index-first-letter">
+              <dt>Index Terms</dt>
+              <dd>The first letter of the index along with the list of index terms.</dd>
+            </dlentry>
+            <dlentry conkeyref="reusables-webhelp-layout-reusable/main-page-footer"
+              id="index-footer">
+              <dt/>
+              <dd/>
+            </dlentry>
+          </dl>
+        </p>
+      </section>
+    </body>
+  </topic>
+</topic>

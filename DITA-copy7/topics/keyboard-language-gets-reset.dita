@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE troubleshooting PUBLIC "-//OASIS//DTD DITA Troubleshooting//EN" "troubleshooting.dtd">
+<troubleshooting id="keyboard-language-gets-reset">
+  <title>Keyboard Language Resets to Default on Windows</title>
+  <troublebody><condition id="problem">
+      <title>Problem</title>
+      <p id="p_brk_dgk_54b">In Windows, I have set a specific language for my keyboard and while using <ph
+          keyref="product"/>, it keeps getting reset to the default language.</p>
+    </condition><troubleSolution>
+      <cause id="cause">
+        <title>Cause</title>
+        <p id="p_crk_dgk_54b">When multiple languages are enabled in Windows,  the default shortcut key combination for
+          switching the input language is <uicontrol><shortcut>Left Alt +
+            Shift</shortcut></uicontrol>. Trying to use various shortcuts in <ph keyref="product"/>
+          that involves combinations of those two keys is probably resetting your input language to
+          the default setting if you press those two keys without a third combination.</p>
+      </cause><remedy id="solution">
+      <title>Solution</title>
+        <steps-informal>
+          <p id="p_drk_dgk_54b">You can change the Windows shortcut keys that are assigned to the
+            input language by going to the control panel and searching for the <uicontrol>Switch
+              input languages</uicontrol> option. For example, in Windows, go to <menucascade>
+              <uicontrol>Control Panel</uicontrol>
+              <uicontrol>Language</uicontrol>
+              <uicontrol>Advanced Setting</uicontrol>
+            </menucascade>. In the <uicontrol>Switching input methods</uicontrol> section, click on
+              <uicontrol>Change language bar hot keys</uicontrol>. Click the <uicontrol>Change Key
+              Sequence</uicontrol> button. This opens a dialog box that allows you to switch the
+            shortcut keys for the input language or keyboard layout.</p>
+        </steps-informal>
+    </remedy></troubleSolution></troublebody>
+</troubleshooting>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="validating-XML-documents">
+  <title>Validating XML Documents</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>XML documents<indexterm>Validation</indexterm></indexterm>
+        <indexterm>Validating XML Documents</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_rcz_bgk_54b">The W3C XML specification states that a program should not continue to process an XML
+      document if it finds a validation error. The reason is that XML software should be easy to
+      write and all XML documents should be compatible. With HTML, for example, it is possible to
+      create documents with lots of errors (for instance, when you forget an end tag). One of the
+      main reasons that various HTML browsers have performance and compatibility problems is that
+      they have different methods of figuring out how to render a document when an HTML error is
+      encountered. Using XML helps to eliminate such problems.</p>
+    <p id="p_scz_bgk_54b">Even when creating XML documents, errors are easily introduced. When working with large
+      projects or a large number of files, the probability that errors will occur is even greater.
+      Preventing and solving errors in your projects can be time consuming and frustrating.
+      Fortunately, <ph keyref="product"/> provides validation functions that allow you to easily
+      identify errors and their location.</p>
+  </body>
+  <related-links>
+    <linklist><title>Related Information:</title><link href="xml-contextual-editing.dita" product="author developer editor"/></linklist>
+  </related-links>
+</topic>

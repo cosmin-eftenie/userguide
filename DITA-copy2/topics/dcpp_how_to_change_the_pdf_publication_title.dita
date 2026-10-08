@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_how_to_change_the_pdf_publication_title">
+    <title>How to Change the PDF Publication Title Property</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            ><ph keyref="pdf-html5-transformation"/>
+          <indexterm>Metadata<indexterm>Title property</indexterm></indexterm></indexterm>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            ><ph keyref="pdf-html5-transformation"/>
+          <indexterm>Metadata<indexterm>Changing the title
+          property</indexterm></indexterm></indexterm>
+        <indexterm product="pdf-css ope">Metadata<indexterm>Title property</indexterm></indexterm>
+        <indexterm product="pdf-css ope">Metadata<indexterm>Changing the title
+          property</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+    <body>
+        <p id="p_ljr_cgk_54b">The <xmlelement>title</xmlelement> element of a bookmap is quite complex and contains
+      elements for the book library and an alternate title:</p>
+		<codeblock outputclass="language-xml" id="codeblock_mjr_cgk_54b"> &lt;booktitle>
+    &lt;booklibrary>Retro Tools&lt;/booklibrary>
+    &lt;mainbooktitle>Main Book Title&lt;/mainbooktitle>
+    &lt;booktitlealt>Book Title Alternative&lt;/booktitlealt>
+  &lt;/booktitle></codeblock>
+		<p id="p_njr_cgk_54b">For the publication title, the built-in CSS uses only the content of the
+        <xmlelement>mainbooktitle</xmlelement>. If you want to collect all of the text from the
+        <xmlelement>booktitle</xmlelement>, you can add the following rule to your <xref
+        href="dcpp_the_customization_css.dita">customization CSS</xref>:</p>
+		<codeblock outputclass="language-css" id="codeblock_ojr_cgk_54b">:root {
+    -oxy-pdf-meta-title: oxy_xpath('(//*[contains(@class, "bookmap/booktitlealt")])[1]/text()');
+    -oxy-pdf-meta-description: "";
+}</codeblock>
+		<p id="p_pjr_cgk_54b">An XPath expression is used to collect all the <xmlelement>booktitlealt</xmlelement> elements
+      from the merged map, select the first one, then use its text.</p>
+		<p id="p_qjr_cgk_54b">The built-in CSS uses the <xmlelement>booktitlealt</xmlelement> as the PDF description. In the
+      example above, this property is cleared since it was moved as a title.</p>
+    </body>
+</topic>

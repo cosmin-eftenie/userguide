@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="connection-settings">
+  <title>Network Connection Settings Preferences</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Preferences<indexterm>Network Connection Settings</indexterm></indexterm>
+        <indexterm>Network connection preferences</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_sgr_bgk_54b">This section presents the options available in the <uicontrol>Network Connection
+        Settings</uicontrol> preferences pages.</p>
+  </body>
+</topic>

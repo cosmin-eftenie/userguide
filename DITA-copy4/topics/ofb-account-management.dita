@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ofb-account-management">
+  <title>Account and Profile Management</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Account management</indexterm>
+        <indexterm>Profile management</indexterm>
+      </keywords>
+      <keywords>
+        <keyword outputclass="label">User Authentication</keyword>
+        <keyword outputclass="label">Email Notifications</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_ugx_dgk_54b">Site Owners/Administrators must create an <b>Oxygen Feedback</b> account
+      to access the administration and installation features. Commenters also need to create an
+      account.</p>
+    <p id="p_vgx_dgk_54b">Creating an account in <b>Oxygen Feedback</b> is beneficial for personalizing comments,
+      tracking communication, receiving email notifications when someone replies to your comments or
+      adds a comment on a page you are tracking, and other purposes.</p>
+  </body>
+</topic>

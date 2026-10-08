@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="scripting-compare-directories">
+  <title>Compare Directories</title>
+  <body>
+    <note conkeyref="reusables-scripting/note-scripting-license" id="note_zmx_dgk_54b"/>
+    <p id="p_anx_dgk_54b">The <uicontrol>Compare Directories</uicontrol> script
+        (<codeph>compareDirs.sh</codeph>/<codeph>compareDirs.bat</codeph>, found in the
+        <filepath>scripts</filepath> subfolder inside <b>Oxygen's</b> installation directory) can be
+      used to compare two directories and get the comparison results in various formats.</p>
+    <section id="section_gbd_tzb_vmb">
+      <title>Arguments for the Compare Directories Script</title>
+      <p>There are 2 ways that the script's arguments/options can be retrieved (with slightly
+        different command-line syntax), depending on whether or not a configuration file is
+        specified for retrieving the arguments.</p>
+      <p><u><b>Syntax 1 (Using the Command Line to Specify Arguments)</b></u></p>
+      <p id="p_tnx_dgk_54b">
+        <codeblock outputclass="language-bourne" id="codeblock_unx_dgk_54b">sh scripts/compareDirs.sh firstDirPath [-a dirPathAlias] secondDirPath [-a dirPathAlias] [[baseDirPath [-a dirPathAlias]] [-sl suppressLinks] [-if includeFilesFilter] [-id includeSubdirsFilter] [-ia includeArchives] [-ef excludeFilesFilter] [-ed excludeSubdirsFilter] [-cm comparisonMode] [-alg comparisonAlg] [-als algStrength] [-iws ignoreWS] [-ipi ignorePI] [-icm ignoreComments] [-idt ignoreDocType] [-itn ignoreText] [-ins ignoreNS] [-ind ignoreNSDecl] [-inp ignorePrefixes] [-iao ignoreAttrOrder] [-iee ignoreExpStateForEmptyElems] [-enx XPathExprToExcludeNodes] [-out outputFormat] [-outfile outputFile] [-merge mergeOperation] [-mergeout outputDirPathForMerge]] [-help | --help | -h | --h]</codeblock>
+      </p>
+      <p>
+        <dl>
+          <dlentry>
+            <dt>firstDirPath</dt>
+            <dd>Mandatory argument that specifies the first directory path (it can also be provided
+              as a URL using the 'file://' protocol).</dd>
+          </dlentry>
+          <dlentry>
+            <dt>secondDirPath</dt>
+            <dd>Mandatory argument that specifies the second directory path (it can also be provided
+              as a URL using the 'file://' protocol).</dd>
+          </dlentry>
+          <dlentry>
+            <dt>baseDirPath</dt>
+            <dd>Optional argument that specifies the path of the base directory that the other two
+              directories will be compared against in a 3-way comparison (it can also be provided as
+              a URL). If present, it must appear immediately after the first two mandatory
+              arguments.</dd>
+          </dlentry>
+          <dlentry>
+            <dt>-a dirPathAlias</dt>
+            <dd>Optional argument used as the directory path alias to be displayed in the
+              HTML-formatted operation report instead of a long directory path. If present, it must
+              appear immediately after a directory path.</dd>
+          </dlentry>
+        </dl>
+      </p>
+      <p><u><b>Syntax 2 (Using a Configuration File to Provide Arguments)</b></u></p>
+      <p id="p_tnx_dgk_82392">
+        <codeblock outputclass="language-bourne" id="codeblock_unx_dgk_238">sh scripts/compareDirs.sh -argsFile argsFilePath [[-fp firstDirPath] [-fpa dirPathAlias] [-sp secondDirPath] [-spa dirPathAlias] [-bp baseDirPath] [-bpa dirPathAlias] [-sl suppressLinks] [-if includeFilesFilter] [-id includeSubdirsFilter] [-ia includeArchives] [-ef excludeFilesFilter] [-ed excludeSubdirsFilter] [-cm comparisonMode] [-alg comparisonAlg] [-als algStrength] [-iws ignoreWS] [-ipi ignorePI] [-icm ignoreComments] [-idt ignoreDocType] [-itn ignoreText] [-ins ignoreNS] [-ind ignoreNSDecl] [-inp ignorePrefixes] [-iao ignoreAttrOrder] [-iee ignoreExpStateForEmptyElems] [-enx XPathExprToExcludeNodes] [-out outputFormat] [-outfile outputFile] [-merge mergeOperation] [-mergeout outputDirPathForMerge]] [-help | --help | -h | --h]</codeblock>
+      </p>
+      <p>
+        <dl>
+          <dlentry>
+            <dt>-argsFile argsFilePath</dt>
+            <dd>Mandatory argument (it must be the first one provided) that specifies the path of the file to retrieve the script arguments from. The file path can also be provided as a URL.</dd>
+          </dlentry>
+          <dlentry>
+            <dt>-fp firstDirPath</dt>
+            <dd>Optional argument that specifies the first directory path (it can also be provided
+              as a URL using the 'file://' protocol).</dd>
+          </dlentry>
+          <dlentry>
+            <dt>-fpa dirPathAlias</dt>
+            <dd>Optional argument used as first directory path alias. Displayed in the HTML-formatted operation report instead of a long directory path.</dd>
+          </dlentry>
+          <dlentry>
+            <dt>-sp secondDirPath</dt>
+            <dd>Optional argument that specifies the second directory path (it can also be provided
+              as a URL using the 'file://' protocol).</dd>
+          </dlentry>
+          <dlentry>
+            <dt>-spa dirPathAlias</dt>
+            <dd>Optional argument used as second directory path alias. Displayed in the HTML-formatted operation report instead of a long directory path.</dd>
+          </dlentry>
+          <dlentry>
+            <dt>-bp baseDirPath</dt>
+            <dd>Optional argument that specifies the path of the base directory that the other two directories will be compared against in a 3-way comparison (it can also be provided as a URL using the 'file://' protocol).</dd>
+          </dlentry>
+          <dlentry>
+            <dt>-bpa dirPathAlias</dt>
+            <dd>Optional argument used as base directory path alias. Displayed in the HTML formatted operation report instead of a long directory path.</dd>
+          </dlentry>
+        </dl>
+      </p>
+      <p><u><b>Common Arguments for Both Syntaxes</b></u></p>
+      <p id="p_vnx_dgk_54b">
+        <dl id="dl_wnx_dgk_54b">
+          <dlentry id="dlentry_yqc_rxg_zcc">
+            <dt>-sl suppressLinks</dt>
+            <dd>Set this to <b>true</b> to suppress links to the compared directories and files
+              shown in the HTML-formatted operation report. Default value = <b>false</b>.</dd>
+          </dlentry>
+          <dlentry id="dlentry_ynx_dgk_54b">
+            <dt>-if includeFilesFilter</dt>
+            <dd>Use this argument to only include files that match the specified pattern in the
+              comparison (e.g. <filepath>.xml</filepath>, <filepath>.json</filepath>). Default value
+              = <uicontrol>*</uicontrol>.</dd>
+          </dlentry>
+          <dlentry id="dlentry_cwz_g1f_yfc">
+            <dt>-id includeSubdirsFilter</dt>
+            <dd>Use this argument to only include sub-directories that match the specified pattern
+              in the comparison (e.g.
+                <filepath>recent,important/latest,reports*/json-rep*/new*</filepath>). Default value
+              = <uicontrol>*</uicontrol>.</dd>
+          </dlentry>
+          <dlentry id="dlentry_znx_dgk_54b">
+            <dt>-ia includeArchives</dt>
+            <dd>If set to <uicontrol>true</uicontrol>, files from archives are included in the
+              comparison. Default value = <uicontrol>false</uicontrol>.</dd>
+          </dlentry>
+          <dlentry id="dlentry_rz1_5pl_54b">
+            <dt>-ef excludeFilesFilter</dt>
+            <dd>Use this argument to exclude files that match the specified pattern from the
+              comparison (e.g. <filepath>*.jpg</filepath>).</dd>
+          </dlentry>
+          <dlentry id="dlentry_ls4_zpl_54b">
+            <dt>-ed excludeSubdirsFilter</dt>
+            <dd>Use this argument to exclude sub-directories that match the specified pattern from
+              the comparison (e.g. <filepath>.svn</filepath>, <filepath>_svn</filepath>,
+                <filepath>.git</filepath>).</dd>
+          </dlentry>
+          <dlentry id="dlentry_tzg_gql_54b">
+            <dt>-cm comparisonMode</dt>
+            <dd>Specifies the comparison mode. There are three modes available:
+                <uicontrol>content</uicontrol>, <uicontrol>binary</uicontrol>, and
+                <uicontrol>timestamp</uicontrol>. Default value =
+              <uicontrol>content</uicontrol>.</dd>
+          </dlentry>
+          <dlentry id="dlentry_eyc_kql_54b">
+            <dt>-alg comparisonAlg</dt>
+            <dd>Specifies the algorithm to be used for the comparison. Possible values:
+                <uicontrol>auto</uicontrol>, <uicontrol>chars</uicontrol>,
+                <uicontrol>words</uicontrol>, <uicontrol>lines</uicontrol>,
+                <uicontrol>syntax_aware</uicontrol>, <uicontrol>xml_fast</uicontrol>, and
+                <uicontrol>xml_accurate</uicontrol>. Default value =
+              <uicontrol>auto</uicontrol>.</dd>
+          </dlentry>
+          <dlentry id="dlentry_oj4_sql_54b">
+            <dt>-als algStrength</dt>
+            <dd>Specifies the strength of the algorithm to be used for the comparison. Possible
+              values: <uicontrol>low</uicontrol>, <uicontrol>medium</uicontrol>,
+                <uicontrol>high</uicontrol>, and <uicontrol>very_high</uicontrol>. Default value =
+                <uicontrol>medium</uicontrol>.</dd>
+          </dlentry>
+          <dlentry id="dlentry_gpn_zql_54b">
+            <dt>-iws ignoreWS</dt>
+            <dd>If set to <uicontrol>true</uicontrol>, whitespaces are ignored if differences
+              consist only of whitespaces. Default value = <uicontrol>false</uicontrol>.</dd>
+          </dlentry>
+          <dlentry id="dlentry_xjp_2rl_54b">
+            <dt>-ipi ignorePI (only for the XML-aware algorithms)</dt>
+            <dd>If set to <uicontrol>true</uicontrol>, processing instructions are ignored in the
+              comparison. Default value = <uicontrol>false</uicontrol>.</dd>
+          </dlentry>
+          <dlentry id="dlentry_k3v_lrl_54b">
+            <dt>-icm ignoreComments (only for the XML-aware algorithms)</dt>
+            <dd>If set to <uicontrol>true</uicontrol>, comments are ignored in the comparison.
+              Default value = <uicontrol>false</uicontrol>.</dd>
+          </dlentry>
+          <dlentry id="dlentry_rly_4rl_54b">
+            <dt>-idt ignoreDocType (only for the XML-aware algorithms)</dt>
+            <dd>If set to <uicontrol>true</uicontrol>, DOCTYPE sections are ignored in the
+              comparison. Default value = <uicontrol>false</uicontrol>.</dd>
+          </dlentry>
+          <dlentry id="dlentry_tsr_qrl_54b">
+            <dt>-itn ignoreText (only for the XML-aware algorithms)</dt>
+            <dd>If set to <uicontrol>true</uicontrol>, text content is ignored in the comparison.
+              Default value = <uicontrol>false</uicontrol>.</dd>
+          </dlentry>
+          <dlentry id="dlentry_fyv_srl_54b">
+            <dt>-ins ignoreNS (only for the XML-aware algorithms)</dt>
+            <dd>If set to <uicontrol>true</uicontrol>, namespaces are ignored in the comparison.
+              Default value = <uicontrol>false</uicontrol>.</dd>
+          </dlentry>
+          <dlentry id="dlentry_zlq_wrl_54b">
+            <dt>-ind ignoreNSDecl (only for the XML-aware algorithms)</dt>
+            <dd>If set to <uicontrol>true</uicontrol>, namespace declarations are ignored in the
+              comparison. Default value = <uicontrol>false</uicontrol>.</dd>
+          </dlentry>
+          <dlentry id="dlentry_owd_zrl_54b">
+            <dt>-inp ignorePrefixes (only for the XML-aware algorithms)</dt>
+            <dd>If set to <uicontrol>true</uicontrol>, prefixes are ignored in the comparison.
+              Default value = <uicontrol>false</uicontrol>.</dd>
+          </dlentry>
+          <dlentry id="dlentry_i2g_bsl_54b">
+            <dt>-iao ignoreAttrOrder (only for the XML-aware algorithms)</dt>
+            <dd>If set to <uicontrol>true</uicontrol>, the order of attributes is ignored in the
+              comparison. Default value = <uicontrol>false</uicontrol>.</dd>
+          </dlentry>
+          <dlentry id="dlentry_upv_dsl_54b">
+            <dt>-iee ignoreExpStateForEmptyElems (only for the XML-aware algorithms)</dt>
+            <dd>If set to <uicontrol>true</uicontrol>, the expansion state for empty elements is
+              ignored in the comparison. Default value = <uicontrol>false</uicontrol>.</dd>
+          </dlentry>
+          <dlentry id="dlentry_dzj_xlg_5yb">
+            <dt>-enx XPathExprToExcludeNodes</dt>
+            <dd>Specifies an XPath expression to exclude certain nodes from the comparison.</dd>
+          </dlentry>
+          <dlentry id="dlentry_mqp_bdj_tpb">
+            <dt>-merge mergeOperation</dt>
+            <dd>If set to <uicontrol>true</uicontrol>, a merge operation is invoked after the
+              comparison. Default value = <uicontrol>false</uicontrol>.<note id="note_pwx_ldj_tpb"
+                type="other" othertype="Notes">
+                <ul id="ul_nsc_ndj_tpb">
+                  <li id="li_osc_ndj_tpb">This argument is considered only for 3-way comparisons
+                    (i.e. only if the <codeph>baseDirPath</codeph> argument is provided).</li>
+                  <li id="li_jlc_5dj_tpb">The merge operation is similar to the same process in any
+                    versioning system. Following the comparison between the first and second
+                    directories (relative to the base folder), all the differences of the type
+                      <b>incoming</b> are considered and the content of the first directory is
+                    updated accordingly.</li>
+                  <li id="li_mfs_c2j_tpb">Conflicting changes are not addressed.</li>
+                  <li id="li_lqg_p2j_tpb">After the comparison, a report is created that provides
+                    details about the changes that were made.</li>
+                </ul>
+              </note></dd>
+          </dlentry>
+          <dlentry id="dlentry_sdw_sz3_tpb">
+            <dt>-mergeout outputDirPathForMerge</dt>
+            <dd>Invokes a merge operation after the comparison and also allows you to specify the
+              output directory path for the merge operation. For example, it allows you to specify a
+              specific existing or new directory where the results of the merge operation is saved,
+              other than the first directory path for the comparison (which is what happens when
+              using only the <codeph>-merge</codeph> argument). The path of the directory can also
+              be provided as a URL using <codeph>file://</codeph> protocol. This argument and the
+                <codeph>-merge</codeph> argument are not dependent on each other.</dd>
+          </dlentry>
+          <dlentry id="dlentry_a4x_dgk_54b">
+            <dt>-out outputFormat</dt>
+            <dd>Specifies the format of the output. Possible values:
+                <uicontrol>yaml/grouped</uicontrol>, <uicontrol>yaml/raw</uicontrol>,
+                <uicontrol>json/grouped</uicontrol>, <uicontrol>json/raw</uicontrol>,
+                <uicontrol>xml/grouped</uicontrol>, <uicontrol>xml/raw</uicontrol>,
+                <uicontrol>html</uicontrol>, <uicontrol>html/ifcr</uicontrol>,
+                <uicontrol>htm</uicontrol>, or <uicontrol>htm/ifcr</uicontrol>. Default value =
+                <uicontrol>yaml/grouped</uicontrol>.<note id="note_jdt_qsl_54b" type="other"
+                othertype="Notes">
+                <ul id="ul_ps3_plj_lpb">
+                  <li id="li_qs3_plj_lpb">If you choose to save/redirect the console output to a
+                    file, this argument establishes the type of the output file and its content is
+                    formatted accordingly. If you skip specifying the
+                      "<uicontrol>/grouped</uicontrol>" or the "<uicontrol>/raw</uicontrol>"
+                    qualifiers, "<uicontrol>/grouped</uicontrol>" takes precedence.</li>
+                  <li id="li_dr2_qlj_lpb">If you choose the <uicontrol>html</uicontrol> or
+                      <uicontrol>htm</uicontrol> output format, it is recommended that you also
+                    choose to save/redirect the console to the specified HTML file to view the
+                    comparison result in your preferred browser.</li>
+                  <li id="li_nyw_wsr_2qb">The  "<uicontrol>/ifcr</uicontrol>" qualifier for the
+                      <uicontrol>html</uicontrol> or <uicontrol>htm</uicontrol> values is considered
+                    only if the <codeph>-outfile</codeph> argument is also present.
+                      <term>IFCR</term> is an acronym for <term>Include File Comparison
+                      Reports</term> and it means that, along with generating the directory
+                    comparison report, separate file comparison reports will be generated for all
+                    modified file pairs. These reports are available through links from the main
+                    report and are saved to a specific directory based on the value provided by the
+                      <codeph>outfile</codeph> argument. It will have the same parent directory and
+                    the same name as the <uicontrol>outputFile</uicontrol> plus
+                      <term>-OXY-FC-REPORTS</term> added to the end of its name.</li>
+                  <li id="li_pnz_kfj_tpb">The <uicontrol>html</uicontrol> value, as well as the
+                      <uicontrol>grouped</uicontrol>, <uicontrol>raw</uicontrol>, or
+                      <uicontrol>ifcr</uicontrol> qualifiers, are not considered if the
+                      <codeph>-merge</codeph> argument is present.</li>
+                </ul>
+              </note></dd>
+          </dlentry>
+          <dlentry id="dlentry_frs_ty3_tpb">
+            <dt>-outfile outputFile</dt>
+            <dd>Specifies the path for an output file to save the comparison results, instead of
+              presenting them in the console. The content of the output file is formatted according
+              to the <codeph>-out</codeph> argument. The output file path can also be provided as a
+              URL using <codeph>file://</codeph> protocol.</dd>
+          </dlentry>
+          <dlentry id="dlentry_c4x_dgk_54b">
+            <dt>-help | --help | -h | --h</dt>
+            <dd>Displays help text.</dd>
+          </dlentry>
+        </dl>
+      </p>
+      <note id="note_p2r_k4l_54b" type="other" othertype="Notes">
+        <p id="p_o4l_m4l_54b">
+          <ul id="ul_jkd_m4l_54b">
+            <li id="li_kkd_m4l_54b">For boolean arguments, it is not necessary to provide the "true"
+              value. Their presence in the argument list is equivalent to setting their value to
+              "true" (and their absence from the argument list is equivalent to setting their value
+              to "false"). However, constructs of the form <codeph>bool_option true|false</codeph>
+              are accepted and interpreted accordingly.</li>
+            <li>When using a configuration file, the only mandatory argument is <b>-argsFile
+                argsFilePath</b>. All others are optional, but if used on the command line, they
+              will take precedence and will overwrite the corresponding values in the config file.
+              The arguments required to run the script can therefore be specified as a combination
+              of what is provided in the config file and what is provided on the command line. For
+              any missing options (not specified either in the file or on the command line), default
+              values are used. However, at least 2 valid directory paths must always be provided in
+              one way or another, otherwise the script execution will be aborted. For details about
+              the structure of the configuration file (XML, JSON, or YAML), see: <xref
+                href="scripting-arguments-comparison-scripts.dita"/>.</li>
+            <li id="li_rsr_z4l_54b">File markers used in reports are as follows: M = modified, O1 =
+              only found in 1st directory, O2 = only found in 2nd directory.</li>
+          </ul>
+        </p>
+      </note>
+    </section>
+    <section id="section_pnz_pnl_54b">
+      <title>Examples of Compare Directories Script</title>
+      <p id="p_idr_zxn_wqb">
+        <dl id="dl_whv_zxn_wqb">
+          <dlentry id="dlentry_xhv_zxn_wqb">
+            <dt>Example 1: Compare Directories and Include Archives While Excluding JPEGs</dt>
+            <dd>
+              <p id="p_fwp_dyn_wqb">The following command results in archives being included in the
+                comparison, while JPEGs are
+                excluded:<codeblock outputclass="language-bourne">sh scripts/compareDirs.sh dir1 dir2 -ia true -ef *.jpg</codeblock></p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_vtg_3yn_wqb">
+            <dt>Example 2: Compare Directories Only Including XML Files While Excluding Comments and
+              the Attribute Order</dt>
+            <dd>
+              <p id="p_h42_lyn_wqb">The following command only includes XML files (even from
+                archives) in the comparison, while ignoring the comments and attribute
+                order:<codeblock outputclass="language-bourne">sh scripts/compareDirs.sh dir1 dir2 -if *.xml -ia -iao -icm</codeblock></p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_fdb_114_wqb">
+            <dt>Example 3: Compare Directories Only Including XML Files While Excluding Comments and
+              the Attribute Order</dt>
+            <dd>
+              <p id="p_gdb_114_wqb">The following command redirects the comparison results to a JSON
+                file named "<uicontrol>results.json</uicontrol>", with "<uicontrol>raw</uicontrol>"
+                mode
+                formatting:<codeblock outputclass="language-bourne">sh scripts/compareDirs.sh dir1 dir2 -out json/raw > results.json</codeblock></p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_rfg_nyn_wqb">
+            <dt>Example 4: Compare Directories and Generate Comparison Report</dt>
+            <dd>
+              <p id="p_hmz_bzn_wqb">It is possible to generate a report in the form of an HTML file
+                that contains the results of the comparison. The following command compares the
+                directories and redirects the console to the specified HTML file to view the
+                comparison
+                results:<codeblock outputclass="language-bourne">sh scripts/compareDirs.sh dir1 dir2 -out html -outfile results.html</codeblock></p>
+              <p id="p_jnw_hgx_5pb">
+                <fig id="fig_knw_hgx_5pb">
+                  <title>Example of an HTML Report for Directory Comparison</title>
+                  <image href="../img/html-report-results.png"/>
+                </fig>
+              </p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_fdb_114_3uie">
+            <dt>Example 5: Compare Directories by Getting Arguments from a Configuration File</dt>
+            <dd>
+              <p id="p_gdb_114_woie">The arguments are read from the <b>config.xml</b> file,
+                including the mandatory <b>path</b> arguments. However, the values that correspond
+                to the arguments with the IDs <b>-out</b> and <b>-outfile</b> are overwritten by the
+                  <b>yaml</b> and <b>anotherResults.yaml</b> values provided on the command line
+                (even if specified in the <b>config.xml</b>
+                file).<codeblock outputclass="language-bourne">sh scripts/compareDirs.sh -argsFile config.xml -out yaml -outfile anotherResults.yaml</codeblock></p>
+            </dd>
+          </dlentry>
+        </dl>
+      </p>
+    </section>
+    <section id="section_v54_rr5_ypb">
+      <title>Resources</title>
+      <p id="p_w54_rr5_ypb">For more information about the file comparison script and how to
+        generate comparison reports in various formats, see the following resources:<ul
+          id="ul_bzc_455_ypb">
+          <li id="li_czc_455_ypb">Webinar: <xref
+              href="https://www.oxygenxml.com/events/2021/webinar_the_new_oxygen_compare_and_merge_scripts.html"
+              format="html" scope="external"><b>The New Oxygen Compare and Merge
+            Scripts</b></xref>.</li>
+          <li id="li_ljr_r55_ypb">Video: <xref
+              href="https://www.oxygenxml.com/demo/generating_directory_comparison_reports_using_command_line.html"
+              format="html" scope="external"><b>Generating Directory Comparison Reports Using
+                Command-Line Scripts</b></xref>.</li>
+        </ul></p>
+      <p>
+        <note id="note_rkx_nkk_nwb" type="tip">For some GitHub use case samples of this script, see
+            <xref href="https://github.com/oxygenxml/oxygen-script-comparison-template"
+            format="html" scope="external">Oxygen Comparison Template</xref> and <xref
+            href="https://github.com/marketplace/actions/oxygen-xml-json-compare-branches"
+            format="html" scope="external">Oxygen Comparison Action</xref>.</note>
+      </p>
+    </section>
+  </body>
+  <related-links>
+    <link href="directories-comparison.dita" product="author developer editor"/>
+    <link href="scripting-compare-files.dita">
+      <linktext>Compare Files Script</linktext>
+    </link>
+  </related-links>
+</topic>

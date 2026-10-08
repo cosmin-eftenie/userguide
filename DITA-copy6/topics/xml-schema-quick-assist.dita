@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="xml-schema-quick-assist">
+  <title>XML Schema Quick Assist Support</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>XML Schemas<indexterm>Quick Assist feature</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p conkeyref="reusables-editing-documents/quick_assist_intro" id="p_nvc_cgk_54b"/>
+    <p conkeyref="reusables-editing-documents/quick_assist_desc" id="p_ovc_cgk_54b"/>
+    <p id="p_pvc_cgk_54b">
+      <fig id="fig_qvc_cgk_54b">
+        <title>Quick Assist Support</title>
+        <image href="../img/xsd_quick_assist.png"/>
+      </fig>
+    </p>
+    <p id="p_rvc_cgk_54b"><ph conkeyref="reusables-editing-documents/quick_assist_support"/><dl
+        conkeyref="reusables-editing-documents/quick_assist_actions_list" id="dl_svc_cgk_54b">
+        <dlentry id="dlentry_tvc_cgk_54b">
+          <dt/>
+          <dd/>
+        </dlentry>
+      </dl></p>
+    <section id="section_ld3_qv2_w5b">
+      <title>Resources</title>
+      <p id="p_uvc_cgk_54b">For more information about improving schema development using the
+          <uicontrol>Quick Assist</uicontrol> action set, watch our video demonstration:</p>
+      <p id="p_vvc_cgk_54b"><object width="450" height="250"
+          data="https://www.youtube.com/embed/X-2-gkrFSGU" outputclass="iframe">
+          <param name="allowfullscreen" value="true"/>
+        </object></p>
+    </section>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link href="xml-schema-hierarchy.dita#xml-schema-hierarchy">
+        <linktext>Referenced/Dependent Resources View</linktext>
+      </link>
+      <link href="xml-schema-component-dependencies.dita#xml-schema-component-dependencies">
+        <linktext>Component Dependencies View</linktext>
+      </link>
+      <link href="xml-schema-search-references.dita#xml-schema-search-references">
+        <linktext>Searching and Refactoring Actions</linktext>
+      </link>
+    </linklist>
+  </related-links>
+</topic>

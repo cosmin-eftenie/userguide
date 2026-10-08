@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="combo-box-editor">
+  <title>Combo Box Form Control</title>
+  <shortdesc>The <codeph>oxy_combobox</codeph> built-in form control is used for providing a
+    graphical user interface object that is a drop-down menu of proposed values. This form control
+    can also be used for a combination of a drop-down menu and an editable single-line text
+    field.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>CSS extensions<indexterm>Form Controls<indexterm>Combo
+            box</indexterm></indexterm></indexterm>
+        <indexterm>Form Controls<indexterm>Combo box</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_yqd_dgk_54b">The <codeph>oxy_combobox</codeph> form control supports the following properties:<ul id="ul_zqd_dgk_54b">
+        <li id="li_ard_dgk_54b"><ph conkeyref="reusables-author-mode-customization/edit_property"
+            /><ul conkeyref="reusables-author-mode-customization/edit_property_ul"
+            id="ul_brd_dgk_54b">
+            <li id="li_crd_dgk_54b"/>
+          </ul></li>
+        <li id="li_drd_dgk_54b"><ph conkeyref="reusables-author-mode-customization/columns-property"
+          /></li>
+        <li id="li_erd_dgk_54b"><ph conkeyref="reusables-author-mode-customization/width-property"
+          /></li>
+        <li id="li_frd_dgk_54b"><ph conkeyref="reusables-author-mode-customization/visible-property"
+          /></li>
+        <li id="li_grd_dgk_54b"><uicontrol>editable</uicontrol> - This property accepts the
+            <uicontrol>true</uicontrol> and <uicontrol>false</uicontrol> values. In addition to a
+          drop-down menu, the <uicontrol>true</uicontrol> value also generates an editable text
+          field box that allows you to insert other values than the proposed ones. The
+            <uicontrol>false</uicontrol> value generates a drop-down menu that only accepts the
+          proposed values.</li>
+        <li id="li_hrd_dgk_54b"><ph
+            conkeyref="reusables-author-mode-customization/tooltips-property"/></li>
+        <li id="li_ird_dgk_54b"><ph conkeyref="reusables-author-mode-customization/values-property"
+            />.<note conkeyref="reusables-author-mode-customization/values-note"
+            id="note_jrd_dgk_54b"/></li>
+        <li id="li_krd_dgk_54b"><ph
+            conkeyref="reusables-author-mode-customization/fontInherit-property"/></li>
+        <li id="li_lrd_dgk_54b"><ph conkeyref="reusables-author-mode-customization/labels-property"
+            /><note id="note_mrd_dgk_54b">This property is only available for read-only combo boxes
+            (the <codeph>editable</codeph> property is set to <codeph>false</codeph>).</note></li>
+        <li id="li_nrd_dgk_54b"><ph conkeyref="reusables-author-mode-customization/color-property"
+          /></li>
+        <li id="li_ord_dgk_54b"><ph
+            conkeyref="reusables-author-mode-customization/hover-property-li"
+          /><codeblock outputclass="language-css" id="codeblock_prd_dgk_54b">p:before {
+  content: oxy_combobox(hoverPseudoclassName, 'showBorder')
+}
+p:showBorder {
+  border: 1px solid red;
+}</codeblock></li>
+        <li id="li_qrd_dgk_54b"><uicontrol>canRemoveValue</uicontrol> - If the value is set to
+            <codeph>true</codeph> and the combo box is not editable, then a new
+            <codeph>&lt;Empty></codeph> value is added in that combo box. This clears or removes the
+          value being edited, depending on if it edits an element or attribute.</li>
+        <li id="li_rrd_dgk_54b"><uicontrol>onChange</uicontrol> - Can be used to invoke an action
+          when the value of the combo box changes. The action can be created in the CSS using the
+            <xref href="dg-action-function.dita#dg-action-function"><codeph>oxy_action()</codeph>
+            function</xref> or referenced from the <xref keyref="glossentry_framework"
+              ><term>framework</term></xref> by its ID. After the action is executed, the cursor
+          remains in the combo box. Note that this property does not support actions defined by
+          JavaScript code.</li>
+        <li id="spell"><ph conkeyref="reusables-author-mode-customization/spell-check"
+      /></li>
+      </ul></p>
+    <p id="p_srd_dgk_54b"><b><u>Example: <term>oxy_combobox</term> Form Control</u></b></p>
+    <p>This example uses a combo box form control to edit an attribute value. Each time the value
+      changes, it triggers an action that inserts an element into the attribute's parent
+      element.<codeblock outputclass="language-css" id="codeblock_trd_dgk_54b">comboBox:before {
+    content: "A combo box that edits an attribute value. 
+               The possible values are provided from CSS:"
+        oxy_combobox(           
+            edit, "@attribute",
+            editable, false,
+            values, "value1, value2, value3",
+            labels, "Value no1, Value no2, Value no3",
+            onChange, oxy_action(
+                name, 'Insert',
+                operation, 'XQueryUpdateOperation',
+                arg-script, 'insert node &lt;product>{xs:string(@attribute)}&lt;/product>
+                          as last into .'));
+}</codeblock></p>
+    <note type="tip" id="note_urd_dgk_54b">To insert a sample of the <codeph>oxy_combobox</codeph>
+      form control in a CSS file <ph product="author developer editor">(or LESS file)</ph>, invoke
+      the <xref keyref="glossentry_content-completion-assistant"><term>Content Completion
+          Assistant</term></xref> by pressing <uicontrol
+        conkeyref="reusable-oxygen-shortcuts-list/ctrl_space"/> and select the <image
+        href="../img/CodeTemplates12.gif" id="image_hhy_32h_5r"/>
+      <codeph>oxy_combobox</codeph> code template.<p id="p_vrd_dgk_54b"><ph
+          conkeyref="reusables-author-mode-customization/samples-ph"/></p></note>
+    <section id="section_jhq_vr2_w5b">
+      <title>Resources</title>
+      <p id="p_xpd_dgk_54b">For more information about form controls, watch our video
+        demonstration:</p>
+      <p id="p_ypd_dgk_54b"><object width="450" height="250"
+          data="https://www.youtube.com/embed/-WY3wzkMSLM" outputclass="iframe">
+          <param name="allowfullscreen" value="true"/>
+        </object></p>
+    </section>
+  </body>
+  <related-links>
+      <link href="dg-oxygen-css-functions.dita"/>
+      <link href="dg-action-function.dita"/>
+      <link href="dg-visibility-css-extension.dita"/>
+  </related-links>
+</topic>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="configure-exist">
+  <title>Configuring an eXist Database Connection</title>
+  <body>
+    <p id="p_v3x_cgk_54b">There are two ways to configure the support for an <term>eXist</term> database:<ul id="ul_w3x_cgk_54b">
+        <li id="li_x3x_cgk_54b">Use the dedicated <uicontrol>Create eXist-db XML connection</uicontrol> wizard. </li>
+        <li id="li_y3x_cgk_54b">Use the <uicontrol>Data Sources</uicontrol> preferences page to manually configure your
+          connection.</li>
+      </ul></p>
+  </body>
+</topic>

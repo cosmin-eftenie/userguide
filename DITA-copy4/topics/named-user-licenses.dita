@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="named-user-licenses">
+  <title>Named-User Licenses</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Named-User licenses</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_acn_bgk_54b">A <b>Named-User License</b> can be used by a single <term>Named
+        User</term> on one or more computers. Named-user licenses cannot be transferred to another
+        <term>named user</term>. If you purchase multiple named-user licenses, you will receive a
+      single license key that is valid for a specified number of <term>named users</term>. It is
+      your responsibility to keep track of which <term>named users</term> are assigned to each
+      license.</p>
+  </body>
+</topic>

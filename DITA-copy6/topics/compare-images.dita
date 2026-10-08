@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="compare-images">
+  <title>Compare Images</title>
+  <prolog>
+    <metadata>
+      <keywords><indexterm>Compare Directories tool<indexterm>Compare images</indexterm></indexterm></keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_u3v_bgk_54b">You can use the <uicontrol>Compare Directories</uicontrol> tool to compare images. If you
+      double-click a line that contains two different images, the <uicontrol>Compare
+        images</uicontrol> window is displayed. This dialog box presents the images in the left and
+      right sides, scaled to fit the available view area. You can use the contextual menu actions to
+      scale the images to their original size or scale them down to fit in the view area.</p>
+    <p id="p_v3v_bgk_54b">The supported image types are: <i>GIF</i>, <i>JPG</i>, <i>JPEG</i>, <i>PNG</i>, and
+        <i>BMP</i>.</p>
+  </body>
+</topic>

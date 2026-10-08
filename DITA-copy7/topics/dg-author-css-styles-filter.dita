@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dg-author-css-styles-filter">
+  <title>Customizing the CSS Styles Filter</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Framework customization<indexterm>Extensions<indexterm>CSS Styles
+              Filter</indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_ylb_dgk_54b">You can modify the CSS styles for each <xref
+        href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/extensions/api/node/AuthorNode.html"
+        format="html" scope="external"><i>ro.sync.ecss.extensions.api.node.AuthorNode</i></xref>
+      rendered in the <uicontrol>Author</uicontrol> mode using an implementation of <xref
+        href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/extensions/api/StylesFilter.html"
+        format="html" scope="external"><i> ro.sync.ecss.extensions.api.StylesFilter</i></xref>. You
+      can implement the various callbacks of the interface either by returning the default value
+      given by <ph keyref="product"/> or by contributing to the value. The received styles <xref
+        href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/ecss/css/Styles.html"
+        format="html" scope="external"><i>ro.sync.ecss.css.Styles</i></xref> can be processed and
+      values can be overwritten with your own. For example, you can override the
+        <codeph>KEY_BACKGROUND_COLOR</codeph> style to return your own implementation of <xref
+        href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/exml/view/graphics/Color.html"
+        format="html" scope="external"><i>ro.sync.exml.view.graphics.Color</i></xref> or override
+      the <codeph>KEY_FONT</codeph> style to return your own implementation of <xref
+        href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/ro/sync/exml/view/graphics/Font.html"
+        format="html" scope="external"><i>ro.sync.exml.view.graphics.Font</i></xref>.</p>
+    <p id="p_zlb_dgk_54b">For instance, in this simple document example, the filter can change the value of the
+      <codeph>KEY_FONT</codeph> property for the <xmlelement>table</xmlelement> element:</p>
+    <codeblock outputclass="language-java" id="codeblock_amb_dgk_54b">
+package simple.documentation.framework;
+
+import ro.sync.ecss.css.Styles;
+import ro.sync.ecss.extensions.api.StylesFilter;
+import ro.sync.ecss.extensions.api.node.AuthorNode;
+import ro.sync.exml.view.graphics.Font;
+
+public class SDFStylesFilter implements StylesFilter {
+
+    public Styles filter(Styles styles, AuthorNode authorNode) {
+        if (AuthorNode.NODE_TYPE_ELEMENT == authorNode.getType() 
+          &amp;&amp; "table".equals(authorNode.getName())) {
+          styles.setProperty(Styles.KEY_FONT, new Font(null, Font.BOLD, 12));
+        }
+        return styles;
+    }
+}
+</codeblock>
+    <note conkeyref="reusable_notes_java-files/sdf_project" id="note_bmb_dgk_54b"/>
+  </body>
+</topic>

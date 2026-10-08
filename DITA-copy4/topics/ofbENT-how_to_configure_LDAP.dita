@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ofbENT-how_to_configure_LDAP">
+  <title>How to Set up LDAP Authentication</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <keyword outputclass="label">User Authentication</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_jkw_dgk_54b">To configure LDAP authentication for <ph keyref="product"/>:<ol
+        conkeyref="reusables-feedback/ul_nsj_j4s_zmb" id="ol_qbm_c21_hpb">
+        <li id="li_rbm_c21_hpb"/>
+      </ol></p>
+    <p conkeyref="reusables-feedback/p_wkw_dgk_54b" id="p_wtl_221_hpb"/>
+    <section id="section_nhn_qzz_gpb">
+      <title>How to Handle LDAP Servers That do not Support Anonymous Binding</title>
+      <p conkeyref="reusables-feedback/p_ohn_qzz_gpb" id="p_hhj_f21_hpb"/>
+      <p conkeyref="reusables-feedback/p_gln_lc1_hpb" id="p_o31_g21_hpb"/>
+    </section>
+  </body>
+  <related-links>
+      <link href="ofbENT-set_up_oauth.dita"/>
+  </related-links>
+</topic>

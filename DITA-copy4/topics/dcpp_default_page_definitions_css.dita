@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_default_page_definitions_css">
+  <title>Default Page Definitions</title>
+  <body>
+    <p id="p_qmq_cgk_54b">All page definitions are found in:
+        <filepath>[PLUGIN_DIR]css/print/p-pages-and-headers.css</filepath>.</p>
+    <note conkeyref="reusables-dcpp/rc-css-fragment-disclaimer-note" id="note_rmq_cgk_54b"/>
+    <p id="p_smq_cgk_54b">There are page definitions for the default page, chapter page, table of
+      contents page, front matter page, back matter page, index page, large tables page, and blank
+      page.</p>
+    <section id="section_c5y_yrr_5cb">
+      <title>Default Page</title>
+      <p id="p_tmq_cgk_54b">The default page imposes a header that contains the publication title, chapter, and section
+        title. They alternate on the left or right side of the page:</p>
+      <codeblock outputclass="language-css" id="codeblock_umq_cgk_54b">@page :left {
+  @top-left {
+    content: string(maptitle) string(parttitle) string(chaptertitle) string(sectiontitle) " | " counter(page);
+  }
+}
+
+@page :right{
+  @top-right {
+    content: string(maptitle) string(parttitle) string(chaptertitle) string(sectiontitle) " | " counter(page);
+  }
+}</codeblock>
+    </section>
+    <note type="tip" id="note_vmq_cgk_54b">To override the default rules defined for named pages
+      (such as chapter or table of contents), you need to use more specific page rules that contain
+      the page
+      name:<codeblock outputclass="language-css" id="codeblock_wmq_cgk_54b">@page :left, table-of-contents:left, chapter:left {
+  @top-left {
+    content: "...";
+  }
+}
+
+@page :right, table-of-contents:right, chapter:right{
+  @top-right {
+    content: "...";
+  }
+}</codeblock></note>
+    <section id="section_t1f_q2w_rcc">
+      <title>Front Page</title>
+      <p>The cover page.  It clears the headers.</p>
+      <codeblock id="codeblock_hxy_s2w_rcc" outputclass="language-xml">@page front-page {
+    @top-left-corner    {          content:none }
+    @top-left           {          content:none }
+    @top-center         {          content:none }
+    @top-right          {          content:none }
+    @top-right-corner   {          content:none }
+    @bottom-left-corner {          content:none }
+    @bottom-left        {          content:none }
+    @bottom-center      {          content:none }
+    @bottom-right       {          content:none }
+    @bottom-right-corner{          content:none }
+}</codeblock>
+    </section>
+    <section id="section_wzl_pzy_jrb">
+      <title>Table of Contents Page</title>
+      <p>The table of content page. It clears the headers and uses a lower roman page number in the
+        header.</p>
+      <codeblock id="codeblock_xtb_qzy_jrb" outputclass="language-css">@page table-of-contents {
+  @top-left      { content: none; }
+  @top-center    { content: none; }
+  @top-right     { content: none; }
+  @bottom-left   { content: none; }
+  @bottom-center { content: none; }
+  @bottom-right  { content: none; }
+}
+@page table-of-contents:left {
+  @top-left {
+    content: string(toc-header) " | " counter(page, lower-roman);
+  }
+}
+@page table-of-contents:right {
+  @top-right {
+    content: string(toc-header) " | " counter(page, lower-roman);
+  }
+}
+
+/* Do not put a header on the first page of the TOC */
+@page table-of-contents:first:left {
+  @top-left {
+    content: none; 
+  }
+}
+@page table-of-contents:first:right {
+   @top-right {
+     content: none;
+   }
+}</codeblock>
+    </section>
+    <section id="section_dwb_1sr_5cb">
+      <title>Chapter Page</title>
+      <p id="p_xmq_cgk_54b">The chapter page is inherited from the default page. The chapter page is
+        associated with the topics marked as chapters, usually direct children of the map. It clears
+        the header from the first page of each chapter. If you need to add other information to the
+        chapter headers, make sure you override these rules in your CSS:</p>
+      <codeblock outputclass="language-css" id="codeblock_ymq_cgk_54b">@page chapter{
+  /* Currently inherit from the default page. */
+}
+
+/* No headers on the chapter first page. */
+@page chapter:first:left{
+  @top-left {
+    content: none;
+  }
+}
+@page chapter:first:right{
+  @top-right {
+    content: none;
+  }
+}</codeblock>
+    </section>
+    <section id="section_nz1_dsr_5cb">
+      <title>Front Matter and Back Matter Page</title>
+      <p id="p_zmq_cgk_54b">The bookmap front matter and back matter page. It clears the headers.</p>
+      <codeblock outputclass="language-css" id="codeblock_anq_cgk_54b">@page matter-page {
+  @top-left-corner    {          content:none }
+  @top-center         {          content:none }
+  @top-right-corner   {          content:none }
+  @bottom-left-corner {          content:none }
+  @bottom-left        {          content:none }
+  @bottom-center      {          content:none }
+  @bottom-right       {          content:none }
+  @bottom-right-corner{          content:none }
+}
+
+@page matter-page:left {
+  @top-left           {          content: counter(page, lower-roman); }
+}
+
+@page matter-page:right {
+  @top-right          {          content: counter(page, lower-roman); }
+}</codeblock>
+    </section>
+    <section id="section_j2p_sss_5cb">
+      <title>Index Page</title>
+      <p id="p_dnq_cgk_54b">The index page contains the index terms (and appears only if there are
+        such items in your topics). It uses a lower alpha page number in the footer:</p>
+      <codeblock outputclass="language-css" id="codeblock_enq_cgk_54b">@page index {
+  @top-left-corner    {          content:none }
+  @top-left           {          content:none }
+  @top-right          {          content:none }
+  @top-right-corner   {          content:none }
+  @top-center         {          content:none }
+  @bottom-left-corner {          content:none }
+  @bottom-left        {          content:none }
+  @bottom-right       {          content:none }
+  @bottom-right-corner{          content:none }
+  @bottom-center      {
+    content: counter(page, lower-alpha);
+    font-size: 11pt; 
+  }
+}
+
+@media oxygen-chemistry {
+  @page index {
+    column-count: 2;
+    column-fill: auto;
+  }
+}  </codeblock>
+      <p id="p_fnq_cgk_54b">When transformed, the page layout is spread on two columns.</p>
+    </section>
+    <section id="section_j3l_gsr_5cb">
+      <title>Landscape Page</title>
+      <p id="p_gnq_cgk_54b">The landscape page contains large tables (for example). The page is
+        rotated and the header is moved on the right side of the
+        page:<codeblock outputclass="language-css" id="codeblock_hnq_cgk_54b">@page landscape-page:right {
+  size: landscape;
+
+  @top-left {
+    content: none
+  }
+  @top-center {
+    content: none
+  }
+  @top-right {
+    content: none
+  }
+
+  @right-bottom {
+    content: string(maptitle) string(parttitle) string(chaptertitle) string(sectiontitle) " | " counter(page);
+    transform: rotate(90deg);
+    vertical-align: middle;
+    text-align: right;
+  }
+}
+  
+@page landscape-page:left {
+  size: landscape;
+
+  @top-left {
+    content: none
+  }
+  @top-center {
+    content: none
+  }
+  @top-right {
+    content: none
+  }
+
+  @right-top {
+    content: string(maptitle) string(parttitle) string(chaptertitle) string(sectiontitle) " | " counter(page);
+    transform: rotate(90deg);
+    vertical-align: middle;
+    text-align: left;
+  }
+}</codeblock></p>
+    </section>
+    <section id="section_t5x_2sr_5cb">
+      <title>Blank Page</title>
+      <p id="p_bnq_cgk_54b">The following example clears the header for the blank pages that may be
+        created by a <codeph>break-before</codeph>, <codeph>break-after</codeph>, or by using <xref
+          href="dcpp_double_side_pagination.dita">double side pagination</xref>:</p>
+      <codeblock outputclass="language-css" id="codeblock_cnq_cgk_54b">@page :blank{
+  @top-left {
+    content: none;
+  }
+  @top-right {
+    content: none;
+  }
+}</codeblock>
+    </section>
+  </body>
+  <related-links>
+    <link
+      href="https://www.oxygenxml.com/doc/ug-chemistry/topics/ch_headers-and-footers.html#ch_the_page_counter"
+      format="html" scope="external">
+      <linktext>Oxygen PDF Chemistry: The Page Counter</linktext>
+    </link>
+  </related-links>
+</topic>

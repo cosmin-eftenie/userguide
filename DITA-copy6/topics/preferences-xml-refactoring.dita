@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="preferences-xml-refactoring">
+  <title>XML Refactoring Preferences</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Preferences<indexterm>XML Refactoring</indexterm></indexterm>
+        <indexterm>XML refactoring preferences</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_n4q_bgk_54b">To specify a folder for loading the custom XML refactoring operations, <ph
+        conkeyref="reusables-preferences-pages/open-the-preferences-page"/> and go to <menucascade>
+        <uicontrol>XML</uicontrol>
+        <uicontrol>XML Refactoring</uicontrol>
+      </menucascade>. The following option is available in this preferences page:<dl id="dl_o4q_bgk_54b">
+        <dlentry id="load-additional-operations">
+          <dt><uicontrol>Load additional refactoring operations from</uicontrol></dt>
+          <dd>Use this text box to specify a folder for loading custom XML refactoring operations.
+              <ph conkeyref="reusables-user-guide/specify-path-without-drop-down"/>
+            <ph keyref="product"/> looks for XML refactoring operations recursively in the specified
+            folder, so they can be stored in descendant folders.</dd>
+        </dlentry>
+      </dl></p>
+  </body>
+</topic>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="creating_a_questions_and_answers_topic">
+    <title>DITA Questions and Answers Topic Type</title>
+    <body>
+        <p>You can create a new DITA <i>Questions and Answers</i> topic using the <ph
+        keyref="product"/>
+      <menucascade>
+        <uicontrol>File</uicontrol>
+        <uicontrol>New</uicontrol>
+      </menucascade> file wizard. It is found in the <menucascade>
+        <uicontrol>Framework templates</uicontrol>
+        <uicontrol>DITA</uicontrol>
+        <uicontrol>Topics</uicontrol>
+        <uicontrol>RNG</uicontrol>
+      </menucascade> folder (or you can search for it using the search filter at the top of the
+      dialog box).</p>
+    <p>This type of topic groups together multiple question/answer sections and can be used to
+      create a frequently asked questions document (for example).</p>
+    <p>There is an <uicontrol>Insert Question/Answer Group</uicontrol> action that is available on
+      the toolbar and in the <uicontrol>DITA Q/A</uicontrol> main menu that can be used to insert
+      multiple question/answer groups. You can also define multiple questions in the same group, all
+      paired to the same answer.</p>
+    <p>When producing WebHelp output from DITA content, Q/A-specific <xref
+        href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data"
+        format="html" scope="external"><uicontrol>Google Structured Data</uicontrol></xref> in the
+      HTML files is generated from these Questions and Answers DITA topic types.</p>
+    </body>
+  <related-links>
+    <link href="whr-how-to-generate-google-structured-data.dita"/>
+  </related-links>
+</topic>

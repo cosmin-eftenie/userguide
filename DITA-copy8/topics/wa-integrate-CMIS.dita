@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="wa-integrate-CMIS">
+  <title>Integrating Web Author with Alfresco, SharePoint On-Premise, FileNet</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Alfresco integration</indexterm>
+        <indexterm>SharePoint On-Premise integration</indexterm>
+        <indexterm>FileNet integration</indexterm>
+        <indexterm>CMIS Connector</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_xjr_dgk_54b">The <ph keyref="webappProduct"/> includes a generic CMIS connector plugin
+      that provides the ability to use Web Author with various types of content management
+      platforms. The plugin provides an interface for browsing files, opening the files in the
+      editor, and submitting changes. The supported platforms include:<ul id="ul_yjr_dgk_54b">
+        <li id="li_zjr_dgk_54b"><uicontrol>Alfresco</uicontrol><note id="note_xrx_xqf_ybc"
+            type="tip">Authentication to Alfresco is supported via <xref
+              href="https://docs.alfresco.com/content-services/7.2/develop/rest-api-guide/install/#using-the-ticket"
+              format="html" scope="external">Alfresco Ticket</xref>. The application automatically
+            logs the user in if the token is specified in the <codeph>alfrescoTicket</codeph>
+            <xref
+              href="webauthor-integrate-with-another-app.dita#webauthor-integrate-with-another-app/passing_parameters_to_the_editor"
+              product="waCustom">URL parameter</xref><xref
+              href="https://www.oxygenxml.com/doc/ug-waCustom/topics/webauthor-integrate-with-another-app.html#webauthor-integrate-with-another-app__passing_parameters_to_the_editor"
+              format="html" scope="external" product="webauthor">URL parameter</xref>.</note></li>
+        <li id="li_bkr_dgk_54b"><uicontrol>FileNet</uicontrol></li>
+        <li id="li_akr_dgk_54b"><uicontrol>SharePoint On-Premise</uicontrol><note
+            id="note_fxk_2m1_bqb">By default, <term>Sharepoint On-Premise</term> has the CMIS
+            support disabled, so you need to activate it prior to using the CMIS connector to edit
+            files. See: <xref
+              href="https://social.technet.microsoft.com/wiki/contents/articles/45855.sharepoint-2016-configure-content-management-interoperability-services-cmis.aspx#What_s_The_SharePoint_CMIS_Procedure"
+              format="html" scope="external">Microsoft TechNet: How to configure CMIS Procedure in
+              SharePoint</xref>.</note></li>
+      </ul></p>
+    <section id="installing_the_plugin">
+      <title>Configuring the CMIS Connector Plugin</title>
+      <ol id="ol_dkr_dgk_54b">
+        <li id="li_ekr_dgk_54b">Go to your <xref href="webapp-admin-page.dita#webapp-admin-page">Administration
+            Page</xref>.</li>
+        <li id="li_fkr_dgk_54b">Select <uicontrol>Plugins</uicontrol>.</li>
+        <li id="li_gkr_dgk_54b">
+          <p id="p_hkr_dgk_54b">Click the <uicontrol><image href="../img/ConfigureSearchScope16.png"
+                id="image_uxh_nb5_53b"/>Configure</uicontrol> icon next to the CMIS plugin.</p>
+          <p id="p_ikr_dgk_54b"><b>Step Result:</b> This opens the plugin configuration dialog box.</p>
+          <p id="p_jkr_dgk_54b">
+            <fig id="fig_kkr_dgk_54b">
+              <title>CMIS Connector Plugin Configuration Dialog Box</title>
+              <image href="../img/wa-cmis-config.png"/>
+            </fig>
+          </p>
+        </li>
+        <li id="li_lkr_dgk_54b">Enter the options in the <uicontrol>Plugin configuration</uicontrol> dialog box:<ul id="ul_mkr_dgk_54b">
+            <li id="li_nkr_dgk_54b"><b>Server URL</b> - The URL of your server. Examples:<ul id="ul_okr_dgk_54b">
+                <li id="li_pkr_dgk_54b"><i>Alfresco</i> -
+                    <filepath>http://[host]:[port]/alfresco/api/-default-/public/cmis/versions/1.1/atom</filepath></li>
+                <li id="li_qkr_dgk_54b"><i>SharePoint On-Premise</i> -
+                    <filepath>http://[host]/_vti_bin/cmis/rest?getRepositories</filepath></li>
+                <li><i>SharePoint On-Premise (specific repository)</i> -
+                    <filepath>http://[host]/_vti_bin/cmis/rest/REPOSITORY_ID?getRepositoryinfo</filepath></li>
+                <li id="li_rkr_dgk_54b"><i>FileNet</i> -
+                    <filepath>http://[host]:[port]/fncmis/resources/Service</filepath></li>
+              </ul></li>
+            <li id="li_skr_dgk_54b"><b>Server name</b> - This name will appear in the Web Author Dashboard as the name
+              for the tab that users will select to browse files. It will also appear in the Web
+              Author editor interface as the name of a toolbar drop-down menu used for checking out
+              an opened file or checking in modified files.</li>
+            <li id="li_tkr_dgk_54b"><b>Server logo URL</b> (Optional) - You can specify a URL for a logo that will
+              appear in the Web Author Dashboard for the tab that users will select to browse for
+              files.</li>
+            <li id="li_ukr_dgk_54b"><b>Autosave interval (seconds)</b> - Specifies how often modified files are
+              automatically saved.</li>
+            <li id="check-out-required"><b>Check out required</b> - If you select this option, files
+              will be opened in the Web Author editor in read-only mode and users will need to check
+              out the file to edit it.</li>
+          </ul></li>
+        <li id="li_vkr_dgk_54b">Click <uicontrol>Apply</uicontrol>.</li>
+        <li id="li_wkr_dgk_54b"><xref href="webauthor-restart.dita">Restart <ph keyref="webappProduct"/></xref>.</li>
+      </ol>
+    </section>
+    <section id="section_ryn_cgg_3mb">
+      <title>Configuring a Service Account</title>
+      <p id="p_xkr_dgk_54b">In some applications, all users that have access to <ph keyref="webappProduct"/> are
+        trusted. This could happen if the users need to log in before accessing the editor.</p>
+      <p id="p_ykr_dgk_54b">In such situations, it is possible to configure a service account to be used by <ph
+          keyref="webappProduct"/> when connecting to the CMIS server on behalf of the users. The
+        following options can be set in the <xref
+          href="customizing-options.dita#customizing-options"><ph keyref="webappProduct"/>
+          <filepath>options.xml</filepath> file</xref>:<ul id="ul_dd1_hgz_tkb">
+          <li id="li_zkr_dgk_54b"><b>PLUGIN_CUSTOM_OPTIONS.cmis.service.user</b></li>
+          <li id="li_alr_dgk_54b"><b>PLUGIN_CUSTOM_OPTIONS.cmis.service.password</b></li>
+        </ul></p>
+      <p id="p_blr_dgk_54b"><b>Example:</b> The <filepath>options.xml</filepath> snippet would look like
+        this:<codeblock outputclass="language-xml" id="codeblock_clr_dgk_54b">&lt;entry>
+  &lt;String>PLUGIN_CUSTOM_OPTIONS.cmis.service.user&lt;/String>
+  &lt;String>example_username&lt;/String>
+&lt;/entry>
+&lt;entry>
+  &lt;String>PLUGIN_CUSTOM_OPTIONS.cmis.service.password&lt;/String>
+  &lt;String>example_password&lt;/String>
+&lt;/entry></codeblock></p>
+    </section>
+    <section id="section_hhp_pwd_y5b">
+      <title>Always Show Check-in Comments</title>
+      <p id="p_ihp_pwd_y5b"><ph keyref="product"/> automatically detects if the CMIS server supports
+        check-in comment and it shows the comment text field. It does that by determining if the
+        currently checked-out document already has a comment. If the document was modified outside
+          <ph keyref="product"/>, it might not detect a comment and in this case, <ph
+          keyref="product"/> does not show the comment.</p>
+      <p id="p_ams_swd_y5b">You can configure the CMIS plugin to always show the check-in comment by
+        setting the <codeph>cmis.service.supports_checkin_comment</codeph> option to <b>true</b> (as
+        string, not boolean).</p>
+    </section>
+  </body>
+  <related-links product="webauthor">
+      <link href="wa-using-cmis.dita"/>
+  </related-links>
+</topic>

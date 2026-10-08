@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="directories-comparison-user-interface">
+  <title>Compare Directories Tool Menus</title>
+  <prolog>
+    <metadata>
+      <keywords><indexterm>Compare Directories tool<indexterm>Menus</indexterm></indexterm></keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_g3v_bgk_54b">The menus in the <uicontrol>Compare Directories</uicontrol> tool contain some of the same
+      actions that are on the toolbar, as well as some common actions that are identical to the same
+      actions in the <ph keyref="product"/> menus. The menu actions include:</p>
+    <section id="file_menu">
+      <title>File Menu</title>
+      <p id="p_h3v_bgk_54b">
+        <dl id="dl_i3v_bgk_54b">
+          <dlentry id="save_directory_result_html">
+            <dt><uicontrol><image href="../img/Save20.png" id="image_bnp_sfd_crb"/>Save Results as
+                HTML</uicontrol>
+            </dt>
+            <dd>Generates an HTML file that contains detailed information about the comparison
+                result.<ph product="author developer editor"> See an <xref
+                  href="generate-html-report-for-directory-comparison.dita#generate-html-report-for-directory-comparison/p_jnw_hgx_5pb"
+                  >example of what the generated report look like in the Generate HTML Report for
+                  Directory Comparison topic</xref>.</ph></dd>
+          </dlentry>
+          <dlentry id="dlentry_j3v_bgk_54b">
+            <dt><uicontrol>Close (<shortcut
+                  conkeyref="reusable-oxygen-shortcuts-list/ctrl_w_shortcut"/>)</uicontrol></dt>
+            <dd>Closes the application.</dd>
+          </dlentry>
+        </dl>
+      </p>
+    </section>
+    <section id="compare_menu">
+      <title>Compare Menu</title>
+      <p id="p_k3v_bgk_54b">
+        <dl id="dl_l3v_bgk_54b">
+          <dlentry id="dir-perform-dir-diff">
+            <dt><uicontrol><image href="../img/DiffPerform16.png"/>Perform Directories
+                Differencing</uicontrol></dt>
+            <dd><ph
+                conkeyref="reusables-tools/perform-dir-diff-ph"
+              /></dd>
+          </dlentry>
+          <dlentry id="dir-perform-files-diff">
+            <dt><uicontrol><image href="../img/DiffFiles16.png"/>Perform Files
+                Differencing</uicontrol></dt>
+            <dd><ph
+                conkeyref="reusables-tools/compare-files-ph"
+              /></dd>
+          </dlentry>
+          <dlentry id="dlentry_m3v_bgk_54b">
+            <dt><uicontrol><image href="../img/DiffCopyRightToLeft16.png"/>Copy Change from Right to
+                Left</uicontrol></dt>
+            <dd><ph conkeyref="reusables-tools/dir-copy-right-left-ph"/></dd>
+          </dlentry>
+          <dlentry id="dlentry_n3v_bgk_54b">
+            <dt><uicontrol><image href="../img/DiffCopyLeftToRight16.png"/>Copy Change from Left to
+                Right</uicontrol></dt>
+            <dd><ph conkeyref="reusables-tools/dir-copy-left-right-ph"/></dd>
+          </dlentry>
+        </dl>
+      </p>
+    </section>
+    <section id="options_menu">
+      <title>Options Menu</title>
+      <p id="p_o3v_bgk_54b">
+        <dl conkeyref="reusables-tools/options-dl" id="dl_p3v_bgk_54b">
+          <dlentry id="dlentry_q3v_bgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+        </dl>
+      </p>
+    </section>
+    <section id="help_menu">
+      <title>Help Menu</title>
+      <p id="p_r3v_bgk_54b">
+        <dl conkeyref="reusables-tools/help-dl" id="dl_s3v_bgk_54b">
+          <dlentry id="dlentry_t3v_bgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+        </dl>
+      </p>
+    </section>
+  </body>
+</topic>

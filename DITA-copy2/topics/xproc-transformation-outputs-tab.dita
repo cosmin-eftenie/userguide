@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="xproc-transformation-outputs-tab">
+  <title>Outputs Tab (XProc Transformations)</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>XProc transformation scenario<indexterm>Outputs tab</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_r1m_cgk_54b"><ph conkeyref="reusables-transforming-documents/intro-for-transformation-tabs"/></p>
+    <p id="p_s1m_cgk_54b">The <uicontrol>Outputs</uicontrol> tab displays a list of output ports (along with the URL)
+      collected from the XProc script. Use the <uicontrol>Filter</uicontrol> text box to search for
+      a specific term in the entire ports collection. You can also sort the columns by clicking the
+      column headers.</p>
+    <p id="p_t1m_cgk_54b">The following actions are available for managing the output ports:<dl id="dl_u1m_cgk_54b">
+        <dlentry id="new-action-dlentry">
+          <dt><uicontrol>New</uicontrol></dt>
+          <dd>Opens an <uicontrol>Edit</uicontrol> dialog box that allows you to add a new output
+            port and its URL. An <xref href="editor-variables.dita#editor-variables" format="dita"
+              >editor variable</xref> can be inserted for the URL by using the <uicontrol><image
+                href="../img/InsertEditorVariables16.png" id="image_jtw_nxm_wr"/>Insert Editor
+              Variables</uicontrol> button. There is also a <uicontrol>Show in transformation
+              results view</uicontrol> option that allows you to select whether or not the results
+            will be displayed in the output <xref href="results-view.dita#results-view"
+                ><uicontrol>Results</uicontrol> view</xref>. </dd>
+        </dlentry>
+        <dlentry id="edit-action-dlentry">
+          <dt><uicontrol>Edit</uicontrol></dt>
+          <dd>Opens an <uicontrol>Edit</uicontrol> dialog box that allows you to edit an existing
+            output port and its URL. An <xref href="editor-variables.dita#editor-variables"
+              format="dita">editor variable</xref> can be inserted for the URL by using the
+                <uicontrol><image href="../img/InsertEditorVariables16.png" id="image_rd2_4xm_wr"
+              />Insert Editor Variables</uicontrol> button. There is also a <uicontrol>Show in
+              transformation results view</uicontrol> option that allows you to select whether or
+            not the results will be displayed in the output <xref
+              href="results-view.dita#results-view"><uicontrol>Results</uicontrol> view</xref>.</dd>
+        </dlentry>
+        <dlentry id="delete-action-dlentry">
+          <dt><uicontrol>Delete</uicontrol></dt>
+          <dd>Removes the selected output port from the list. It is available only for new ports that
+            have been added to the list.</dd>
+        </dlentry>
+      </dl></p>
+    <p id="p_v1m_cgk_54b">Additional options that are available at the bottom of this tab include: <dl id="dl_w1m_cgk_54b">
+        <dlentry id="dlentry_x1m_cgk_54b">
+          <dt><uicontrol>Open in Editor</uicontrol></dt>
+          <dd>If this option is selected, the XProc transformation result is automatically opened in
+            an editor panel.</dd>
+        </dlentry>
+        <dlentry id="dlentry_y1m_cgk_54b">
+          <dt><uicontrol>Open in Browser/System Application</uicontrol></dt>
+          <dd>If this option is selected, you can specify a file to be opened at the end of the
+            XProc transformation in the browser or system application that is associated with the
+            file type. <ph conkeyref="reusables-user-guide/specify-path-ph"/></dd>
+        </dlentry>
+      </dl></p>
+    <p id="p_z1m_cgk_54b"><b>Results</b>
+    </p>
+    <p id="p_abm_cgk_54b">The result of the XProc transformation can be displayed as a sequence in an output view with
+      two sections: <ul id="ul_2pb_rpm_lf">
+        <li id="li_bbm_cgk_54b">A list with the output ports on the left side.</li>
+        <li id="li_cbm_cgk_54b">The content that correspond to the selected output port on the right side.</li>
+      </ul></p>
+    <p id="p_dbm_cgk_54b">
+      <fig id="figure-xproc-output-view-oxygen" product="editor author developer">
+        <title>XProc Transformation Results View</title>
+        <image href="../img/sa_xproc_results_view.png"/>
+      </fig>
+    </p>
+    <p id="p_ebm_cgk_54b">
+      <fig id="figure-xproc-output-view-oxygenEclipse"
+        product="editorEclipse authorEclipse developerEclipse">
+        <title>XProc Transformation Results View</title>
+        <image href="../img/ec_xproc_results_view.png"/>
+      </fig>
+    </p>
+  </body>
+</topic>

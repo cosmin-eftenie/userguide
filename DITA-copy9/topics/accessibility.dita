@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="accessibility">
+  <title>Accessibility Support in Oxygen</title>
+  <body>
+    <p id="p_rxl_bgk_54b">The <b>Oxygen</b> team is dedicated to developing software products that are usable for
+      everyone, including those with physical challenges and disabilities. <ph keyref="product"/> is
+      designed to adhere to the U.S. Government Section 508 accessibility standards: <xref
+        href="https://www.oxygenxml.com/xml_editor/section508.html" format="html" scope="external"
+      />.</p>
+    <section id="adjusting_fonts_and_colors">
+      <title>Adjusting Fonts and Colors</title>
+      <p id="p_sxl_bgk_54b">If you have low vision, go to <menucascade>
+          <uicontrol>Options</uicontrol>
+          <uicontrol>Preferences</uicontrol>
+          <uicontrol>Appearance</uicontrol>
+          <uicontrol>Fonts</uicontrol>
+        </menucascade> where you can adjust the font styles and sizes used in the entire
+        application, both for the editing areas and UI labels. If you have color blindness, you can
+        also adjust most of the colors used in <ph keyref="product"/> by going to <menucascade>
+          <uicontrol>Options</uicontrol>
+          <uicontrol>Preferences</uicontrol>
+          <uicontrol>Appearance</uicontrol>
+        </menucascade> and changing the current color theme. You can also search for other
+        color-related settings in the <b>Preferences</b> dialog box.</p>
+    </section>
+    <section id="section_rfj_4pf_l3b">
+      <title>Installing <ph keyref="product"/></title>
+      <p id="p_txl_bgk_54b">Installation kits for Windows and Linux are made using the Install4j product. If you have
+        problems navigating the Install4j installation wizard, you can run the installation from a
+          <xref href="eppo-installation-windows.dita#eppo-installation-windows/c-parameter"
+          >command-prompt application using the <b>-c</b> flag</xref> like
+        this:<codeblock outputclass="language-ini" id="codeblock_uxl_bgk_54b">C:\Users\your_user_name\Downloads\oxygenAuthor-64bit.exe -c</codeblock></p>
+    </section>
+    <section id="section_ntq_yxn_j3b">
+      <title>Screen Reader Software (Windows OS)</title>
+      <p id="p_vxl_bgk_54b">If you are using a text-to-speech narrator, <ph keyref="product"/>
+        supports this since it is a Java application and it is periodically tested on Windows using
+        both the NVDA and JAWS screen readers on the Windows operating system. </p>
+    </section>
+    <section id="text_to_speech_narrators_jaws">
+      <title>Using the JAWS Screen Reader (Windows)</title>
+      <p id="p_wxl_bgk_54b">The JAWS (Job Access With Speech) screen reader can be downloaded from:
+          <xref href="http://www.freedomscientific.com/Products/Blindness/JAWS" format="html"
+          scope="external"/>.</p>
+      <p id="p_xxl_bgk_54b">For JAWS to work, you need to enable the Java access bridge in <ph keyref="product"/>:
+          <xref
+          href="http://docs.oracle.com/javase/7/docs/technotes/guides/access/enable_and_test.html"
+          format="html" scope="external"/>.</p>
+      <p id="p_yxl_bgk_54b">To enable the Java access bridge:<ol id="ol_s4m_xh5_g3b">
+          <li id="li_zxl_bgk_54b">Since <ph keyref="product"/> comes bundled with its own Java VM, you need to open a
+            command-prompt application and use the <uicontrol>cd</uicontrol> command to go to the
+              <ph keyref="product"/> installation directory (for example, in Windows, it would be
+            something like
+            this:<codeblock outputclass="language-ini" id="codeblock_ayl_bgk_54b">cd C:\Program Files\Oxygen XML Editor 21.1</codeblock></li>
+          <li id="li_byl_bgk_54b">Then run the following
+            command:<codeblock outputclass="language-ini" id="codeblock_cyl_bgk_54b">jre\bin\jabswitch -enable</codeblock></li>
+          <li id="li_dyl_bgk_54b">Press <uicontrol><shortcut>Enter</shortcut></uicontrol> and you should receive a
+            notification that the access bridge has been enabled.</li>
+        </ol></p>
+      <p id="p_eyl_bgk_54b">Once the Java access bridge is enabled and as long as the JAWS narrator is active, when <ph
+          keyref="product"/> starts, the narrator will start reading content from <ph
+          keyref="product"/> and you can interact with the application and read menus, content from
+        open XML documents, and UI components from dialog boxes and side views.</p>
+    </section>
+    <section id="section_r3c_fzn_j3b">
+      <title>Using the NVDA Screen Reader (Windows)</title>
+      <p id="p_fyl_bgk_54b">The NVDA screen reader can be downloaded for free from: <xref
+          href="https://www.nvaccess.org/" format="html" scope="external"/>.</p>
+      <p id="p_gyl_bgk_54b">For NVDA to work, you need to enable the Java access bridge in <ph keyref="product"/>:
+          <xref
+          href="http://docs.oracle.com/javase/7/docs/technotes/guides/access/enable_and_test.html"
+          format="html" scope="external"/>.</p>
+      <p id="p_hyl_bgk_54b">To enable the Java access bridge:<ol id="ol_s3c_fzn_j3b">
+          <li id="li_iyl_bgk_54b">Since <ph keyref="product"/> comes bundled with its own Java VM, you need to open a
+            command-prompt application and use the <uicontrol>cd</uicontrol> command to go to the
+              <ph keyref="product"/> installation directory (for example, in Windows, it would be
+            something like
+            this:<codeblock outputclass="language-ini" id="codeblock_jyl_bgk_54b">cd C:\Program Files\Oxygen XML Editor 21.1</codeblock></li>
+          <li id="li_kyl_bgk_54b">Then run the following
+            command:<codeblock outputclass="language-ini" id="codeblock_lyl_bgk_54b">jre\bin\jabswitch -enable</codeblock></li>
+          <li id="li_myl_bgk_54b">Press <uicontrol><shortcut>Enter</shortcut></uicontrol> and you should receive a
+            notification that the access bridge has been enabled.</li>
+        </ol></p>
+      <p id="p_nyl_bgk_54b">Once the Java access bridge is enabled and as long as the NVDA narrator is started, when
+          <ph keyref="product"/> starts, the narrator will start reading content from <ph
+          keyref="product"/> and you can interact with the application and read menus, content from
+        open XML documents, and UI components from dialog boxes and side views.<note
+          type="important" id="note_oyl_bgk_54b">If after these steps the narrator still does not read anything from a
+          started <ph keyref="product"/> application, please go to the folder
+            <codeph>C:\Windows\SysWOW64\</codeph> and make sure the library
+            <codeph>WindowsAccessBridge-32.dll</codeph> is present there. If it is not present, try
+          to search online, download the library file and copy it to the folder. Then restart <ph
+            keyref="product"/>.</note></p>
+      <p id="p_pyl_bgk_54b">Besides the main editing area, <ph keyref="product"/> also has side views (for example, the
+          <uicontrol>Attributes</uicontrol>, <uicontrol>Outline</uicontrol>,
+          <uicontrol>Elements</uicontrol> views) that help with editing the XML content. NVDA
+        versions <b>2020.1</b> and older have a <xref
+          href="https://github.com/nvaccess/nvda/issues/5989" format="html" scope="external"
+          >registered bug</xref> that makes the narrator read content from the side views when
+        editing in the main editing area. Because of this problem, when using NVDA versions
+          <b>2020.1</b> or older, the following workflow is suggested:<ol id="ul_qd1_r14_j3b">
+          <li id="li_qyl_bgk_54b">Start <ph keyref="product"/>.</li>
+          <li id="li_ryl_bgk_54b">Go to the <uicontrol>Window</uicontrol> menu and select <uicontrol>Maximize Editing
+              Area</uicontrol> (or <uicontrol><shortcut>hold Alt, then W, then
+              M</shortcut></uicontrol>). This action will hide all side views and allow you to
+            properly edit in the main editing area.</li>
+          <li id="li_syl_bgk_54b">Whenever you want to open a side view, go to <menucascade>
+              <uicontrol>Window</uicontrol>
+              <uicontrol>Show View</uicontrol>
+            </menucascade> (or <uicontrol><shortcut>hold Alt, then W, then S</shortcut></uicontrol>)
+            and choose the view you want to open. For example, to show the
+              <uicontrol>Elements</uicontrol> view, you can <uicontrol><shortcut>hold Alt, then W,
+                then S, then E</shortcut></uicontrol>.</li>
+          <li id="li_tyl_bgk_54b">When you are done using the side view, go to the <uicontrol>Window</uicontrol> menu
+            and select <uicontrol>Hide current view</uicontrol> (or <uicontrol><shortcut>hold Alt,
+                then W, then H</shortcut></uicontrol>) to hide the side view and return the focus to
+            the main editing area.</li>
+        </ol></p>
+    </section>
+    <section id="hints_for_the_visually_impaired">
+      <title>Hints for the Visually Impaired</title>
+      <p id="p_uyl_bgk_54b">Here are a few hints for using <ph keyref="product"/> if you are visually impaired:<ul
+          id="ul_owd_cv5_xcb">
+          <li id="li_vyl_bgk_54b">The top main menu contains actions to open, save, and close documents, switch between
+            open documents, or switch between the various editing modes for XML documents that are
+            already open. All actions in the main menu bar should have mnemonics making it possible
+            to memorize various shortcuts. For example, using the <uicontrol>alt-w-s-e</uicontrol>
+            shortcut should open the <uicontrol>Window</uicontrol> menu, open the <uicontrol>Show
+              view</uicontrol> submenu from it and show the <uicontrol>Elements</uicontrol> view,<ul
+              id="ul_hyq_hv5_xcb">
+              <li id="li_wyl_bgk_54b">The <uicontrol>File</uicontrol> menu contains actions to open, save, or close the
+                currently edited XML document.</li>
+              <li id="li_xyl_bgk_54b">The <uicontrol>Edit</uicontrol> menu contains actions to undo/redo or
+                cut/copy/paste content. They also have the usual shortcuts that can be used instead
+                of directly invoking the actions from the menu.</li>
+              <li id="li_yyl_bgk_54b">The <uicontrol>Find</uicontrol> menu contains an action to show the
+                  <uicontrol>Find/Replace</uicontrol> dialog box. Sometimes the <b>JAWS</b> narrator
+                overloads the <uicontrol><shortcut>CTRL+F</shortcut></uicontrol> shortcut and
+                presents its own find/replace window but the <ph keyref="product"/>
+                <uicontrol>Find/Replace</uicontrol> dialog box provides the ability to perform
+                complex find/replace operations in the open file.</li>
+              <li id="li_zyl_bgk_54b">In the <uicontrol>Options</uicontrol> menu, you have access to the
+                  <uicontrol>Preferences</uicontrol> dialog box that contains global application
+                settings and access to the <b>Menu Shortcut Keys</b> table where you can configure
+                shortcuts for the most commonly used actions.</li>
+              <li id="li_azl_bgk_54b">The <uicontrol>Window</uicontrol> menu includes actions to switch between open XML
+                documents. Also, you can use the <uicontrol>Show view</uicontrol> submenu to open a
+                particular side view and move the focus to that view.</li>
+            </ul></li>
+          <li id="li_bzl_bgk_54b">An open XML document can be edited with accessibility support either in the
+              <uicontrol>Text</uicontrol> editing mode (where the XML tags are accessible in the
+            edited content) or in the visual <uicontrol>Author</uicontrol> editing mode (where the
+            XML tags are hidden and only the text content is shown). You can switch between these
+            editing modes by using the <menucascade>
+              <uicontrol>Document</uicontrol>
+              <uicontrol>Edit Mode</uicontrol>
+            </menucascade> menu.<ul id="ul_jgk_nk1_ycb">
+              <li id="li_czl_bgk_54b">
+                <p id="p_dzl_bgk_54b"><uicontrol>Text</uicontrol> mode provides access to the entire source document
+                  with all of its <b>XML</b> content, just like you have in any text editing
+                  application. </p>
+                <p id="p_ezl_bgk_54b">Pressing the <uicontrol><shortcut>&lt;</shortcut></uicontrol> key will present a
+                  list of <xref keyref="glossentry_content-completion-assistant">available XML
+                    elements</xref>. If you do not want to choose from the list whenever you want to
+                  insert an XML element, you have two choices:<ul id="ul_bdq_sj4_llb">
+                    <li id="li_fzl_bgk_54b">After the list of available XML elements is shown, you can press the
+                          <uicontrol><shortcut>ESC</shortcut></uicontrol> key to close it and
+                      continue to manually insert the XML tag.</li>
+                    <li id="li_gzl_bgk_54b">You can disable the content completion list from the <menucascade>
+                        <uicontrol>Options</uicontrol>
+                        <uicontrol>Preferences</uicontrol>
+                        <uicontrol>Editor / Content Completion</uicontrol>
+                      </menucascade> page by deselecting <uicontrol>Enable Content
+                        Completion</uicontrol>. After the content completion is disabled, you can
+                      force it to be displayed by using the
+                          <uicontrol><shortcut>Ctrl+Space</shortcut></uicontrol> keyboard
+                      shortcut.</li>
+                  </ul></p>
+                <p id="p_hzl_bgk_54b">In addition, using the <menucascade>
+                    <uicontrol>Window</uicontrol>
+                    <uicontrol>Show view</uicontrol>
+                  </menucascade> submenu, you can change focus to the
+                    <uicontrol>Attributes</uicontrol>, <uicontrol>Elements</uicontrol>, or
+                    <uicontrol>Outline</uicontrol> view. The <uicontrol>Attributes</uicontrol> view
+                  presents the existing and possible attributes that can be inserted in an XML tag.
+                  The <uicontrol>Elements</uicontrol> view shows you the list of XML elements that
+                  can be inserted at the cursor position (also, pressing
+                      <uicontrol><shortcut>F2</shortcut></uicontrol> on a selected element presents
+                  its annotation). The <uicontrol>Outline</uicontrol> view shows the current path in
+                  the XML structure.</p>
+              </li>
+              <li id="li_izl_bgk_54b">
+                <p id="p_jzl_bgk_54b"><uicontrol>Author</uicontrol> mode is useful for reviewing written XML content
+                  because it has support for change tracking and for adding comments. Editing in the
+                    <uicontrol>Author</uicontrol> visual editing mode, you have access to only the
+                  text content in the XML document.</p>
+                <p id="p_kzl_bgk_54b">Pressing <uicontrol><shortcut>Shift+F2</shortcut></uicontrol> will read the
+                  current element context where the cursor is located. Pressing
+                      <uicontrol><shortcut>Ctrl+Shift+F3</shortcut></uicontrol> will read the
+                  current element context and the entire path in the XML structure where the cursor
+                  is located. You can also use the <uicontrol>Outline</uicontrol> view to better
+                  understand the XML structure. </p>
+                <p id="p_lzl_bgk_54b">In the <uicontrol>Author</uicontrol> editing mode, you can also use the
+                    <uicontrol>Attributes</uicontrol> and <uicontrol>Elements</uicontrol> views
+                  similar to using them in the <uicontrol>Text</uicontrol> editing mode. Pressing
+                      <uicontrol><shortcut>Enter</shortcut></uicontrol> in the
+                    <uicontrol>Author</uicontrol> visual editing mode can also be used to present a
+                  list of allowed elements at the current position.</p>
+              </li>
+            </ul></li>
+        </ul></p>
+    </section>
+    <section id="section_fjk_sjm_hwb">
+      <title>Screen Reader Software (macOS)</title>
+      <p>On <uicontrol>macOS</uicontrol>, the application can be used with
+          <uicontrol>VoiceOver</uicontrol> but is not rigorously tested with it. Because of
+        processing limitations of the <uicontrol>VoiceOver</uicontrol> application, various
+        limitations may be encountered. To avoid blocking the application, when tree-structure user
+        interface controls are used (e.g. the <uicontrol>Project</uicontrol> or
+          <uicontrol>Outline</uicontrol> view), if a node in the tree contains more than 500 child
+        nodes, only the first 500 child nodes are accessible to the screen reader.</p>
+    </section>
+  </body>
+</topic>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ofb-subscription">
+  <title>Subscription Page</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Subscriptions</indexterm>
+        <indexterm>Subscription plan</indexterm>
+        <indexterm>Page views statistics</indexterm>
+        <indexterm>Page views</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_ucx_dgk_54b">Users assigned as the organization <i>Owner</i> or <i>Billing Manager</i>
+      have access to the <uicontrol>Subscription</uicontrol> page. To <xref
+        href="ofb-creating-site.dita">create a site (a Feedback configuration)</xref>, the
+      organization must have an active subscription plan (managed by the organization <i>Owner</i>
+      or <i>Billing Manager</i>). By default, a 30-day free trial plan is assigned when you sign up
+      for an account, but you will need to subscribe to a different plan to continue using the
+      service after those 30 days.</p>
+    <p id="p_r2y_xkd_qrb">Each plan has a different limit for the number of allowed <term
+        keyref="glossentry_fb_page_views">page views</term>, <term
+        keyref="glossentry_fb_site_configuration">site configurations</term>, and <term
+        keyref="glossentry_fb_moderator">moderators</term>. For example, the
+        <uicontrol>Team</uicontrol> plan allows you have up to 50,000 page views per month, up to 3
+      site configurations, and up to 4 moderators.<note id="note_slc_rw2_vrb">The number of allowed
+        moderators per site configuration = <i>site-level moderators</i>
+        <b>+</b>
+        <i>organization-level moderators</i>
+        <b>+</b>
+        <i>pending moderator invitations</i>.</note><note
+        conkeyref="reusables-feedback/subscription-notice" id="note_vcx_dgk_54b"/></p>
+    <p id="p_wcx_dgk_54b">To see an overview of all the available subscription plans, go to <xref
+        href="https://www.oxygenxml.com/oxygen_feedback/buy_feedback.html" format="html"
+        scope="external"/>.</p>
+    <p id="p_xcx_dgk_54b">If you have already selected a plan, you can change or renew it by
+      selecting <uicontrol>Subscription</uicontrol> from the side panel.</p>
+    <p id="p_zcx_dgk_54b">You will be directed to a <uicontrol>Subscription Plans</uicontrol> page
+      where you can choose from several different plans. If you have already chosen a subscription
+      plan, you will see a box with your current plan and some statistics. The statistics show the
+      number of <term keyref="glossentry_fb_page_views">page views</term> for the current month:<ul
+        id="ul_pf2_ckr_glb">
+        <li id="li_adx_dgk_54b"><b>Used</b> - The percentage of allowed <term
+            keyref="glossentry_fb_page_views">page views</term> already used for the current
+          month.</li>
+        <li id="li_bdx_dgk_54b"><b>Estimated</b> - The estimated percentage of allowed <term
+            keyref="glossentry_fb_page_views">page views</term> that will be used by the end of the
+          current month.</li>
+        <li id="li_cdx_dgk_54b"><b>Average</b> - The average percentage of allowed <term
+            keyref="glossentry_fb_page_views">page views</term> used in previous months (not
+          including the current month).</li>
+      </ul><note id="note_is5_t2q_ncc">If there is a problem with the current subscription (e.g. the
+        current plan has been discontinued), a message will be displayed in an <uicontrol>Important
+          Notice</uicontrol> area within the plan's box.</note></p>
+  </body>
+</topic>

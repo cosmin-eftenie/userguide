@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ch_layout_tables">
+	<title>Tables</title>
+	<prolog>
+		<metadata>
+			<keywords>
+				<indexterm>Tables</indexterm>
+			</keywords>
+		</metadata>
+	</prolog>
+	<body>
+		<p id="p_mgv_dgk_54b">This section is of special interest if you are creating a CSS stylesheet for a custom XML
+			document. For HTML, <ph keyref="product"/> already defines the needed selectors for the
+				<xmlelement>table</xmlelement> element.</p>
+		<p id="p_ngv_dgk_54b">This is an example of a very simple table in an XML document:</p>
+		<codeblock outputclass="language-xml" id="codeblock_ogv_dgk_54b">&lt;tbl&gt;
+    &lt;caption&gt;A table.&lt;/caption&gt;
+    &lt;rw&gt;
+        &lt;c rspan="2"&gt; Spans vertically &lt;/c&gt;
+        &lt;c&gt; Other cell &lt;/c&gt;
+        &lt;c&gt; Other cell &lt;/c&gt;
+    &lt;/rw&gt;
+    &lt;rw&gt;
+        &lt;c cspan="2"&gt; Other cell, spanning to the right &lt;/c&gt;
+    &lt;/rw&gt;
+&lt;/tbl&gt; </codeblock>
+		<section id="section_lqt_v51_yz">
+			<title>Defining Rows and Cells</title>
+			<p id="p_pgv_dgk_54b">First, mark the <xmlelement>tbl</xmlelement> element as being a table:</p>
+			<codeblock outputclass="language-css" id="codeblock_qgv_dgk_54b">tbl {
+    display: table;
+}</codeblock>
+			<p id="p_rgv_dgk_54b">Next, the rows and cells:</p>
+			<codeblock outputclass="language-css" id="codeblock_sgv_dgk_54b">rw {
+    display: table-row;
+}
+c {
+    display: table-cell;
+}</codeblock>
+		</section>
+		<section id="section_hfr_pw1_yz">
+			<title>Defining the Column and Row Span</title>
+			<p id="p_tgv_dgk_54b">The processor needs to know how the cells span multiple rows or columns. For this, there are
+        two properties available: <codeph>table-column-span</codeph> and
+          <codeph>table-row-span</codeph>.</p>
+			<codeblock outputclass="language-css" id="codeblock_ugv_dgk_54b">c[cspan] {
+    table-column-span: attr(cspan, integer);
+}
+c[rspan] {
+    table-row-span: attr(rspan, integer);
+}</codeblock>
+		</section>
+		<section id="section_vjt_b3t_cbb">
+			<title>Defining the Table Caption</title>
+			<p id="p_vgv_dgk_54b">You can define table captions by using the <codeph>display:table-caption</codeph>. To change
+        the position of the caption relative to the table grid, you need to use the
+          <codeph>caption-side</codeph> property:</p>
+			<codeblock outputclass="language-css" id="codeblock_wgv_dgk_54b">caption {
+    display:table-caption;
+    caption-side:bottom;
+}</codeblock>
+		</section>
+		<section id="section_fpf_jx1_yz">
+			<title>Repeating Headers and Footers</title>
+			<p id="p_xgv_dgk_54b">Any element marked with either the <codeph>table-header-group</codeph> or
+          <codeph>table-footer-group</codeph> property is automatically repeated when a table is
+        split over a sequence of pages. It is required that they contain only elements with the
+          <codeph>display</codeph> property set to <codeph>table-row</codeph>.</p>
+			<codeblock outputclass="language-xml" id="codeblock_ygv_dgk_54b">&lt;tbl&gt;
+    &lt;head&gt;
+        &lt;rw&gt;
+            &lt;c&gt; Name&lt;/c&gt;
+            &lt;c&gt; Value &lt;/c&gt;
+        &lt;/rw&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;rw&gt; ... &lt;/rw&gt;
+        &lt;rw&gt; ... &lt;/rw&gt;
+    &lt;/body&gt;
+&lt;/tbl&gt; </codeblock>
+			<p id="p_zgv_dgk_54b">The CSS:</p>
+			<codeblock outputclass="language-css" id="codeblock_ahv_dgk_54b">head {
+    display: table-header-group;
+}
+rw {
+    display: table-row;
+}</codeblock>
+		</section>
+        <section id="section_ggx_thv_2lb">
+      <title>Repeating Captions</title>
+      <p id="p_bhv_dgk_54b">By default, the captions are not repeated on all pages a table spans. To enable this, you
+        should mark the elements with a table <codeph>caption</codeph> display as with the
+          <codeph>-oxy-caption-repeat-on-next-pages</codeph> property:</p>
+      <codeblock outputclass="language-css" id="codeblock_chv_dgk_54b">caption {
+    -oxy-caption-repeat-on-next-pages: yes;
+}</codeblock>
+      <p id="p_dhv_dgk_54b">The allowed values are <b>yes</b> or <b>no</b> and it is inheritable.</p>
+      <p id="p_ehv_dgk_54b">If you want to indicate that the page is a continuation, you can associate a static text to
+        the caption that appears only on subsequent pages. For example, you can use an
+          <codeph>:after</codeph> element as in the following example:</p>
+      <codeblock outputclass="language-css" id="codeblock_fhv_dgk_54b">caption:after(2) {
+    display:inline;
+    content: "(continued)";
+    -oxy-show-only-when-caption-repeated-on-next-pages: yes;
+}</codeblock>
+      <p id="p_ghv_dgk_54b">This example uses an <codeph>:after</codeph> element with the value of <b>2</b> to avoid
+        conflicts with normal <codeph>:after</codeph> static elements that you may already use in
+        your CSS.</p>
+    </section>
+		<section id="section_sk5_1dl_zz">
+			<title>Column Width and Styles</title>
+			<p id="p_hhv_dgk_54b">
+        <ph keyref="product"/> supports an automatic layout for tables. This means the allocation of
+        column width is done automatically based on the content size. In the following example, the
+        HTML table has an automatic layout (this is also the default):</p>
+			<codeblock outputclass="language-css" id="codeblock_ihv_dgk_54b">table {
+    table-layout:auto;
+}</codeblock>
+			<note type="tip" id="note_jhv_dgk_54b">For large tables with long words that bleed out of the page, you can choose to
+        hyphenate the words from the cells. If the table uses an automatic layout, you should
+        specify a width (such as 100%). Otherwise, the table columns will just be wide enough to
+        accommodate the smaller hyphenated
+        words:<codeblock outputclass="language-css" id="codeblock_khv_dgk_54b">table {
+  table-layout:auto;
+  width: 100%;
+  hyphens:auto;
+}</codeblock></note>
+			<p id="p_lhv_dgk_54b">To switch to a fixed layout:</p>
+			<codeblock outputclass="language-css" id="codeblock_mhv_dgk_54b">table {
+    table-layout:fixed;
+}</codeblock>
+			<p id="p_nhv_dgk_54b">If you use the fixed layout and you are not satisfied with equal column widths, for HTML, you
+        should use the <xmlatt>style</xmlatt> attribute on the <xmlelement>col</xmlelement>
+        element:</p>
+			<codeblock outputclass="language-xml" id="codeblock_ohv_dgk_54b"> &lt;table style="width:2in;"&gt;
+        &lt;colgroup&gt;
+              &lt;col style="width: 40%; background-color:cyan"/&gt;
+              &lt;col style="width: 60%"/&gt;
+        &lt;/colgroup&gt;
+...</codeblock>
+			<p id="p_phv_dgk_54b">For arbitrary XML, you should use the <codeph>table-column</codeph> value in a
+          <codeph>display</codeph> property for the element that represents the column. Suppose you
+        have the following XML:</p>
+			<codeblock outputclass="language-xml" id="codeblock_qhv_dgk_54b"> &lt;tbl&gt;
+        &lt;colgr&gt;
+              &lt;column wd="30%"/&gt;
+              &lt;column wd="70%"/&gt;
+        &lt;/colgr&gt;
+...</codeblock>
+			<p id="p_rhv_dgk_54b">The following CSS links the <xmlatt>wd</xmlatt> attribute to the width property and defines
+				a different background for the first column.</p>
+			<codeblock outputclass="language-css" id="codeblock_shv_dgk_54b">tbl { 
+    disply:table; 
+}
+colgr { 
+    display: table-column-group; 
+}
+column { 
+    display: table-column; 
+    width: attr(wd); 
+}
+column:first-of-type {
+    background-color: yellow;
+}</codeblock>
+			<p id="p_thv_dgk_54b">Proportional column widths (such as the ones used in the CALS tables from DITA or DocBook) are
+        supported, but only when they are set in a <xmlatt>width</xmlatt> attribute on the
+          <xmlelement>column</xmlelement> element (the one with the <codeph>display</codeph>
+        property set to <codeph>table-column</codeph>):</p>
+			<codeblock outputclass="language-css" id="codeblock_uhv_dgk_54b">...
+&lt;column width="3*"/&gt;
+&lt;column width="7*"/&gt;
+...</codeblock>
+		</section>
+		<section id="section_vlp_jjt_cbb">
+			<title>Rotating Tables</title>
+			<p id="p_vhv_dgk_54b">There are cases where you have large tables and you need to rotate them to make them fit on
+        your page. For instance, the default page orientation is <i>portrait</i>, but if you have a
+        wide table with lots of columns, it might bleed to the right of the page.</p>
+			<p id="p_whv_dgk_54b">There are two ways of solving this:<ul id="ol_gqs_tjt_cbb">
+          <li id="li_xhv_dgk_54b">Associate a wider page (i.e. landscape) to the table that needs more space. The
+            disadvantage is that the table will force a page break before and after
+            it.<codeblock outputclass="language-css" id="codeblock_yhv_dgk_54b">@page landscape-page-for-large-tables {
+    size: A4 landscape;
+}
+
+tbl {
+  display: table;
+  page: landscape-page-for-large-tables;
+}</codeblock></li>
+          <li id="li_zhv_dgk_54b">Rotate the table using the <codeph>transform</codeph> CSS property. The table will not
+            create page breaks, but is susceptible to bleeding if its height exceeds the page
+              width.<codeblock outputclass="language-css" id="codeblock_a3v_dgk_54b">tbl {
+  display: table;
+  width: 200pt;
+  transform: rotate(90deg);
+}</codeblock><note id="note_b3v_dgk_54b">The
+              table needs to have <codeph>table-layout: fixed</codeph> and a
+              <codeph>width</codeph>.</note></li>
+        </ul></p>
+			<p id="p_c3v_dgk_54b">The page is now landscape and you probably also need to change the headers and footers to
+        match this new orientation. One way of doing this is to move the header content from the
+          <codeph>@top-left</codeph>, <codeph>@top-center</codeph>, and <codeph>@top-right</codeph>
+        rules into page margin boxes from the right, and apply a <codeph>transform</codeph> property
+        on them.</p>
+			<p id="p_d3v_dgk_54b">In the following example, there is static text in the top (header) for the normal pages that
+        is either placed in the left or right side of the page, depending on the page
+        position:<codeblock outputclass="language-css" id="codeblock_e3v_dgk_54b">@page :left {
+  @top-left {
+     content: string(maptitle) string(parttitle) string(chaptertitle) " | " counter(page);
+     font-size:8pt;
+  }
+  @bottom-left {
+      /**/
+  }
+  @bottom-right {
+      /**/
+  }
+}
+
+@page :right{
+  @top-right {
+     content: string(maptitle) string(parttitle) string(chaptertitle) " | " counter(page);
+     font-size:8pt;
+  }
+  @bottom-right {
+      /**/
+  }
+  @bottom-left {
+      /**/
+  }
+}</codeblock></p>
+			<p id="p_f3v_dgk_54b">For the landscape page, you can move content to either the
+          <codeph>right-bottom</codeph> or <codeph>right-top</codeph>, depending on the page
+        position:<codeblock outputclass="language-css" id="codeblock_g3v_dgk_54b"> /*
+  * Table orientation.
+  */
+ @page table-landscape:right {
+  size:landscape;
+
+  @top-left{
+    content:none;
+  }
+  @top-center{
+    content:none;
+  }
+  @top-right{
+    content:none;
+  }
+    
+  @right-bottom{
+    content: string(chaptertitle) " | " counter(page);
+    font-size:8pt;
+    transform:rotate(90);
+    vertical-align: middle;
+    text-align: right;
+  }
+ }
+ @page table-landscape:left {
+  size:landscape;
+
+  @top-left{
+    content:none;
+  }
+  @top-center{
+    content:none;
+  }
+  @top-right{
+    content:none;
+  }
+
+  @right-top{
+    content: string(maptitle) string(parttitle) string(chaptertitle) " | " counter(page);
+    font-size:8pt;
+    transform:rotate(90);
+    vertical-align: middle;
+    text-align: left;
+  }
+}</codeblock></p>
+		</section>
+    <section id="section_ehy_jrr_1rb">
+      <title>Rotating Cell Content</title>
+      <p>To rotate table cell content, you can use the <codeph>transform</codeph> CSS property.
+        Remember that only the content of the cell is rotated, not the cell itself. The rotation
+        angle is clockwise. In the following example, the cells marked with the class
+          <codeph>rotate</codeph> on their side are
+        rotated:<codeblock id="codeblock_ewg_2sr_1rb" outputclass="language-css">.rotate {
+  transform:rotate(270deg);
+  font-style: bold;
+  text-align: left;
+  vertical-align: bottom;
+
+  white-space: pre;
+  
+  background-color: silver;
+}</codeblock>The rotated cells are in the header of the table.</p>
+      <p><codeblock id="codeblock_v3v_s1p_brb" outputclass="language-xml">&lt;html xmlns="http://www.w3.org/1999/xhtml">
+    &lt;table>
+        &lt;tr>
+          &lt;th>
+            Type
+          &lt;/th>
+          &lt;th colspan="3">Features&lt;/th>
+        &lt;/tr>
+        &lt;tr>
+          &lt;th>&lt;/th>
+          &lt;th class="rotate">Sport&lt;/th>
+          &lt;th class="rotate">All Terrain&lt;/th>
+          &lt;th class="rotate">Family&lt;/th>
+        &lt;/tr>
+........</codeblock>The result is:<image href="../img/ch_layout_tables_rotate_cells.jpg"
+          placement="break" id="image_jkt_p1p_brb"/></p>
+    </section>
+	</body>
+</topic>

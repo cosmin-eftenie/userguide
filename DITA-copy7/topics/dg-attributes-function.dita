@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept
+  PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="dg-attributes-function">
+  <title>Attributes Concatenation: oxy_attributes() Function</title>
+  <shortdesc>This function concatenates the attributes for an element and returns the
+    serialization.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>CSS extensions<indexterm>Custom
+            functions<indexterm>oxy_attributes</indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p id="p_d5c_dgk_54b">
+      <dl id="dl_e5c_dgk_54b">
+        <dlentry id="dlentry_f5c_dgk_54b">
+          <dt>Syntax:</dt>
+          <dd>
+            <p id="p_g5c_dgk_54b">
+              <syntaxdiagram>
+                <groupseq>
+                  <kwd>oxy_attributes</kwd>
+                  <sep>(</sep>
+                  <sep>)</sep>
+                </groupseq>
+              </syntaxdiagram>
+            </p>
+            <p id="p_h5c_dgk_54b"><u><b>Example: <term>oxy_attributes</term>
+              Function</b></u><codeblock outputclass="language-css" id="codeblock_i5c_dgk_54b">element{
+  content:oxy_attributes();
+}</codeblock>For instance, if you have the following XML fragment: <codeph>&lt;element
+                att1="x" xmlns:a="2" x="&amp;quot;"/&gt;</codeph>, the CSS function will
+              display:<codeblock outputclass="language-css" id="codeblock_j5c_dgk_54b">att1="x" xmlns:a="2" x="""</codeblock></p>
+          </dd>
+        </dlentry>
+      </dl>
+    </p>
+  </conbody>
+</concept>

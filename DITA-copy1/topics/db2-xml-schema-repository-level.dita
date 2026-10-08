@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="db2-xml-schema-repository-level">
+  <title>IBM DB2 Contextual Menu Actions (Deprecated)</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Databases<indexterm>Connections<indexterm>IBM DB2<indexterm>Contextual menu
+                actions</indexterm></indexterm></indexterm></indexterm>
+        <indexterm>IBM DB2 database contextual menu actions</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <section conkeyref="reusables-working-with-databases/contextual_menu_actions" id="d2e20"/>
+    <section id="databasespecific_contextual_menu_actions">
+      <title>Database-Specific Contextual Menu Actions</title>
+      <p id="p_mpw_cgk_54b">In addition to the general contextual menu actions in the <xref
+          href="../topics/relational-database-explorer.dita#relational-database-explorer"
+            ><uicontrol>Data Source Explorer</uicontrol> view</xref>, the various nodes in IBM DB2
+        connections include the following additional contextual menu actions:<dl id="dl_npw_cgk_54b">
+          <dlentry id="dlentry_opw_cgk_54b">
+            <dt><image href="../img/DBXmlSchemasRepo16.gif" id="image_y2b_dkz_tr"/>XML Schema
+              Repository Level Nodes</dt>
+            <dd>
+              <p id="p_ppw_cgk_54b">
+                <dl id="dl_qpw_cgk_54b">
+                  <dlentry conkeyref="reusables-working-with-databases/register" id="dlentry_rpw_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                </dl>
+              </p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_spw_cgk_54b">
+            <dt><image href="../img/DbSchema16.gif" id="image_dvf_tkz_tr"/>Schema Level Nodes</dt>
+            <dd>
+              <p id="p_tpw_cgk_54b">
+                <dl id="dl_upw_cgk_54b">
+                  <dlentry conkeyref="reusables-working-with-databases/unregister" id="dlentry_vpw_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-working-with-databases/view-schema" id="dlentry_wpw_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                </dl>
+              </p>
+            </dd>
+          </dlentry>
+        </dl></p>
+    </section>
+  </body>
+</topic>

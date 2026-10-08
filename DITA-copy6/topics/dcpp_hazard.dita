@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_hazard">
+    <title>Hazard</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            ><ph keyref="pdf-html5-transformation"/><indexterm>Hazard</indexterm></indexterm>
+        <indexterm product="pdf-css ope">Hazard</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+    <body>
+    <p id="p_tcv_cgk_54b"><term>Hazards</term> (embodied by the
+        <xmlelement>hazardstatement</xmlelement> element) contain warning information. They are
+      based on ANSI Z535 and ISO 3864 standards and may have various values set for the type
+        (<codeph>note</codeph>, <codeph>tip</codeph>, <codeph>fastpath</codeph>,
+        <codeph>restriction</codeph>, <codeph>important</codeph>, <codeph>remember</codeph>,
+        <codeph>attention</codeph>, <codeph>caution</codeph>, <codeph>notice</codeph>,
+        <codeph>danger</codeph>, <codeph>warning</codeph>, <codeph>other</codeph>).</p>
+    </body>
+</topic>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="api_faq_auto_modify_content_save">
+  <title>Modify the XML Content on Save</title>
+  <body>
+    <section id="question">
+      <title>Use Case</title>
+      <p id="p_cng_dgk_54b">You the revised date on a DITA document to be updated when it is
+        saved.</p>
+    </section>
+    <section id="answer">
+      <title>Solution</title>
+      <p id="p_dng_dgk_54b">The <xref href="https://www.oxygenxml.com/oxygen_sdk.html#Developer_Plugins" format="html"
+          scope="external">Plugins SDK</xref> contains a sample plugin type called
+          <b>WorkspaceAccess</b>.Such a plugin is notified when the application starts.</p>
+      <p id="p_eng_dgk_54b">You can add a listener that notifies you before the user saves an XML document. Then if the
+        XML document is opened in the <uicontrol>Author</uicontrol> visual editing mode you can use
+        the <i>Author API</i> to change attributes before the save takes
+        place:<codeblock outputclass="language-java" id="codeblock_fng_dgk_54b">      @Override
+      public void applicationStarted
+(final StandalonePluginWorkspace pluginWorkspaceAccess) {
+       pluginWorkspaceAccess.addEditorChangeListener
+(new WSEditorChangeListener(){
+         //An editor was opened
+        @Override
+        public void editorOpened(URL editorLocation) {
+          final WSEditor editorAccess = pluginWorkspaceAccess.getEditorAccess
+(editorLocation, PluginWorkspace.MAIN_EDITING_AREA);
+          if(editorAccess != null){
+            editorAccess.addEditorListener
+(new ro.sync.exml.workspace.api.listeners.WSEditorListener(){
+              //Editor is about to be saved
+              @Override
+              public boolean editorAboutToBeSavedVeto(int operationType) {
+                if(EditorPageConstants.PAGE_AUTHOR.equals
+(editorAccess.getCurrentPageID())){
+                  WSAuthorEditorPage authorPage = 
+(WSAuthorEditorPage) editorAccess.getCurrentPage();
+                  AuthorDocumentController controller = 
+authorPage.getDocumentController();
+                  try {
+                    //Find the revised element
+                    AuthorNode[] nodes = controller.findNodesByXPath
+("//revised", true, true, true);
+                    if(nodes != null &amp;&amp; nodes.length > 0){
+                      AuthorElement revised = (AuthorElement) nodes[0];
+                      //Set the modified attribute to it...
+                      controller.setAttribute("modified", 
+new AttrValue(new Date().toString()), revised);
+                    }
+                  } catch (AuthorOperationException e) {
+                    e.printStackTrace();
+                  }
+                }
+                //And let the save continue.. 
+                return true;
+              }
+            });
+          }
+        }
+       }, PluginWorkspace.MAIN_EDITING_AREA); 
+      }</codeblock></p>
+    </section>
+  </body>
+</topic>

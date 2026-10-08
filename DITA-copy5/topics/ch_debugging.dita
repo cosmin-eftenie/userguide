@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ch_debugging">
+  <title>Debugging the CSS</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Debugging</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_zr5_dgk_54b">If you notice that some of the CSS properties were not applied as expected, some of the tips
+      offered in this topic might help you with the debugging process.</p>
+    <note type="caution" id="note_ns5_dgk_54b">Do not modify the built-in rules directly in the CSS
+      files from the <b>Oxygen XML Editor/Author</b> installation. Instead, copy the rules to your
+      own customization CSS.</note>
+    <section id="merged_map_file">
+      <title>Comparing the CSS Against the Input File</title>
+      <p id="p_as5_dgk_54b">The first thing that you should try is to check the file structure of the input XML or HTML
+        file and compare it to the CSS selectors to make sure they are written correctly against the
+        document structure. If you still cannot identify the problem, then inspect how the styles
+        are applied (you can try any of the methods listed below).</p>
+    </section>
+    <section id="section_hwl_jwq_5cb">
+      <title>Inspecting the Applied Styles Using a Browser</title>
+      <sectiondiv>The following procedure explains how to inspect the applied CSS styles using
+        Chrome, but any modern browser can be used and the procedure for each of them is
+        similar:</sectiondiv>
+      <ol id="ol_iwl_jwq_5cb">
+        <li id="li_wjq_cgk_54b">Open the XML or HTML file.</li>
+        <li id="li_yjq_cgk_54b">Open the <uicontrol>Chrome Developer Tools</uicontrol> by using <menucascade>
+            <uicontrol><image href="../img/WebAuthorMore16.png" id="image_p5j_xmb_gyb"/></uicontrol>
+            <uicontrol>More Tools</uicontrol>
+            <uicontrol>Developer Tools</uicontrol>
+          </menucascade> (or press <uicontrol><shortcut>CTRL+SHIFT+I</shortcut></uicontrol>).</li>
+        <li id="li_zjq_cgk_54b" importance="optional">Activate the <uicontrol>Rendering</uicontrol>
+          pane by using <menucascade>
+            <uicontrol><image href="../img/WebAuthorMore16.png" id="image_q5j_xmb_gyb"/></uicontrol>
+            <uicontrol>More Tools</uicontrol>
+            <uicontrol>Rendering</uicontrol>
+          </menucascade> then select <uicontrol>print</uicontrol> from the <uicontrol>Emulate CSS
+            media</uicontrol> section. This will activate the CSS selectors enclosed in
+            <codeph>@media print {..}</codeph>:<p id="p_phf_jtn_2yb">
+            <image
+              href="../img/dcpp_debugging_the_css_chrome_activate_rendering_pane_and_emulate_media.png"
+              placement="break" id="image_f3j_fxq_5cb"/>
+          </p><note id="note_bkq_cgk_54b">This allows you to debug the styling of elements, the
+            table of contents, and the index, but not the styles of the page margin boxes (headers,
+            footers) or page breaks.</note></li>
+        <li>Right-click on the element you want to inspect and select the <b>Inspect</b> action. You
+          will see the element (in the <b>Elements</b> pane) and the list of styles that are applied
+          on it (in the <b>Styles</b> pane):<p id="p_fgq_3tn_2yb">
+            <image placement="break"
+              href="../img/dcpp_debugging_the_css_chrome_element_and_styles.png"
+              id="image_rpg_2hk_2yb"/>
+          </p><note type="tip" id="note_ckq_cgk_54b">Clicking any of the stylesheet links from the
+              <b>Styles</b> pane opens the original CSS files in the <uicontrol>Sources</uicontrol>
+            pane. Editing the rules in that pane results in a live preview of how the change will
+            affect the output (these modifications will be lost on reload).</note></li>
+      </ol>
+    </section>
+    <section id="section_jnm_vmq_5cb">
+      <title>Inspecting the Applied Styles Using Oxygen XML Editor/Author</title>
+      <sectiondiv>To inspect the applied CSS styles using <b>Oxygen</b>:</sectiondiv>
+      <ol id="ol_mwv_dnq_5cb">
+        <li id="li_ekq_cgk_54b">In <b>Oxygen XML Editor/Author</b>, open the XML or HTML file.</li>
+        <li id="li_fkq_cgk_54b">From the <uicontrol>Styles</uicontrol> toolbar, choose the
+            <uicontrol>+ Print Ready</uicontrol> entry. This will activate certain CSS selectors
+          enclosed in <codeph>@media print {..}</codeph>.<note id="note_yzf_g3k_2yb">This allows you
+            to debug the styling of elements, the table of contents, and the index, but not the
+            styles of the page margin boxes (headers, footers) or page breaks.</note></li>
+        <li id="li_gkq_cgk_54b">Right-click on the element you want to inspect and select the
+            <uicontrol>Inspect Styles</uicontrol> action. The dedicated <uicontrol>CSS
+            Inspector</uicontrol> view will be opened and it will show the applied CSS rules.<note
+            type="tip" id="note_hkq_cgk_54b">With this file open in <uicontrol>Author</uicontrol>
+            mode, it might be helpful to switch the <uicontrol>Tags Display Mode</uicontrol> to
+                <uicontrol><image href="../img/FullTagsWithAttrs16.png" id="image_gmv_lrm_wr"/>Full
+              Tags with Attributes</uicontrol>. You might be able to identify the selector you need
+            to style without using the <uicontrol>CSS Inspector</uicontrol> view.</note></li>
+      </ol>
+    </section>
+    <section id="section_xp5_vnq_5cb">
+      <title>Other Debugging Techniques</title>
+      <p id="p_kkq_cgk_54b">Here are some other debugging techniques you may find useful:</p>
+      <ul id="ul_yp5_vnq_5cb">
+        <li id="li_lkq_cgk_54b">Add background and border properties to the specific CSS rule. If
+          they do not appear in the output, then there is a problem with the rule selector.</li>
+        <li id="li_mkq_cgk_54b">Add the <codeph>!important</codeph> keyword to a property that is
+          not applied, or make the selector more specific (by adding more parent selectors). </li>
+        <li id="li_nkq_cgk_54b">Add the following fragment in your customization CSS to show how the
+          elements are mapped to
+          PDF:<codeblock outputclass="language-css" id="codeblock_okq_cgk_54b">* {
+   border: 1pt solid blue !important;
+}
+
+*:before(1000) {
+   content:  oxy_name() !important;
+   color: orange;
+}
+
+*:before(900) {
+   content: "[ class= '" attr(class) "'] " !important;
+   color: orange;
+}</codeblock>This will show the element name, its class attribute, and will paint a blue
+          border around each of the elements in the output. It will not show the page margin boxes
+          or some content elements that are hidden.</li>
+      </ul>
+    </section>
+  </body>
+</topic>

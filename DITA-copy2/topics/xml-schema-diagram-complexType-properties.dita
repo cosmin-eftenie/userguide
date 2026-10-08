@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="xml-schema-diagram-complexType-properties">
+  <title>xs:complexType</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Design editing
+            mode<indexterm>Components<indexterm>xs:complexType</indexterm></indexterm></indexterm>
+        <indexterm>XML Schemas<indexterm>Design mode
+                editing<indexterm>Components<indexterm>xs:complexType</indexterm></indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_evb_cgk_54b">
+      <fig id="fig_fvb_cgk_54b">
+        <title>The <i>xs:complexType</i> Component</title>
+        <image href="../img/schema_diagram_complexType.png"/>
+      </fig>
+    </p>
+    <p id="p_gvb_cgk_54b">Defines a top-level complex type. Complex Type Definitions provide for: See more data at
+        <xref href="http://www.w3.org/TR/xmlschema11-1/#element-complexType" scope="external"
+        format="html"/>.</p>
+    <ul id="ul_hvb_cgk_54b">
+      <li id="li_ivb_cgk_54b">Constraining element information items by providing Attribute Declarations governing the
+        appearance and content of attributes.</li>
+      <li id="li_jvb_cgk_54b">Constraining element information item children to be empty, or to conform to a specified
+        element-only or mixed content model, or else constraining the character information item
+        children to conform to a specified simple type definition.</li>
+      <li id="li_kvb_cgk_54b">Using the mechanisms of Type Definition Hierarchy to derive a complex type from another
+        simple or complex type.</li>
+      <li id="li_lvb_cgk_54b">Specifying post-schema-validation infoset contributions for elements.</li>
+      <li id="li_mvb_cgk_54b">Limiting the ability to derive additional types from a given complex type.</li>
+      <li id="li_nvb_cgk_54b">Controlling the permission to substitute, in an instance, elements of a derived type for
+        elements declared in a content model to be of a given complex type.</li>
+    </ul>
+    <note type="tip" id="note_ovb_cgk_54b">A complex type that is a base type to another type will be rendered with yellow
+      background.</note>
+    <table colsep="1" rowsep="1" frame="all" id="table_pvb_cgk_54b">
+      <title><i>xs:complexType</i> Properties</title>
+      <tgroup cols="4">
+        <thead>
+          <row>
+            <entry>Property Name</entry>
+            <entry>Description</entry>
+            <entry>Possible Values</entry>
+            <entry>Mentions</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <b>Name</b>
+            </entry>
+            <entry>The name of the complex type (always required)</entry>
+            <entry>Any NCName</entry>
+            <entry>Only for global complex types. If missing, will be displayed as '[complexType]'
+              in diagram.</entry>
+          </row>
+          <row>
+            <entry>
+              <b>Base Type Definition</b>
+            </entry>
+            <entry>The name of the extended/restricted types</entry>
+            <entry>Any from the declared simple or complex types</entry>
+            <entry>For complex types with simple or complex content</entry>
+          </row>
+          <row>
+            <entry>
+              <b>Derivation Method</b>
+            </entry>
+            <entry>The derivation method</entry>
+            <entry>restriction/ extension</entry>
+            <entry>Only when base type is set. If the base type is a simple type, the derivation
+              method is always extension.</entry>
+          </row>
+          <row>
+            <entry>
+              <b>Content</b>
+            </entry>
+            <entry>The content of the complex type</entry>
+            <entry>simple/ complex</entry>
+            <entry>For complex types that extend/restrict a base type. It is automatically
+              detected.</entry>
+          </row>
+          <row>
+            <entry>
+              <b>Content Mixed</b>
+            </entry>
+            <entry>Specifies if the complex content model will be mixed</entry>
+            <entry>true/false</entry>
+            <entry>For complex contents</entry>
+          </row>
+          <row>
+            <entry>
+              <b>Mixed</b>
+            </entry>
+            <entry>Specifies if the complex type content model will be mixed</entry>
+            <entry>true/false</entry>
+            <entry>For global and anonymous complex types</entry>
+          </row>
+          <row>
+            <entry>
+              <b>Abstract</b>
+            </entry>
+            <entry>When set to <i>true</i>, this complex type cannot be used directly in the
+              instance documents and needs to be substituted using an <i>xsi:type</i>
+              attribute</entry>
+            <entry>true/false</entry>
+            <entry>For global and anonymous complex types</entry>
+          </row>
+          <row>
+            <entry>
+              <b>Block</b>
+            </entry>
+            <entry>Controls if a substitution (either through a <i>xsi:type</i> or substitution
+              groups) can be performed for a complex type, which is an extension or a restriction of
+              the current complex type. This attribute can only block such substitutions (it cannot
+              "unblock" them), which can also be blocked in the element definition. The default
+              value is defined by the <i>blockDefault</i> attribute of <i>xs:schema</i>.</entry>
+            <entry>all, extension, restriction, extension restriction, [Empty]</entry>
+            <entry>For global complex types</entry>
+          </row>
+          <row>
+            <entry>
+              <b>Final</b>
+            </entry>
+            <entry>Controls whether the complex type can be further derived by extension or
+              restriction to create new complex types</entry>
+            <entry>all, extension, restriction, extension restriction, [Empty]</entry>
+            <entry>For global complex types</entry>
+          </row>
+          <row>
+            <entry><uicontrol>Default Attributes Apply</uicontrol></entry>
+            <entry>The <i>schema</i> element can carry a <i>defaultAttributes</i> attribute, which
+              identifies an attribute group. Each <i>complexType</i> defined in the schema document
+              then automatically includes that attribute group, unless this is overridden by the
+                <i>defaultAttributesApply</i> attribute on the <i>complexType</i> element.</entry>
+            <entry>true/false</entry>
+            <entry>This property is available only for XML Schema 1.1</entry>
+          </row>
+          <row>
+            <entry>
+              <b>ID</b>
+            </entry>
+            <entry>The component ID</entry>
+            <entry>Any ID</entry>
+            <entry>For all complex types</entry>
+          </row>
+          <row>
+            <entry>
+              <b>Component</b>
+            </entry>
+            <entry>The edited component name</entry>
+            <entry>Not editable property</entry>
+            <entry>For all complex types</entry>
+          </row>
+          <row>
+            <entry>
+              <b>Namespace</b>
+            </entry>
+            <entry>The component namespace</entry>
+            <entry>Not editable property</entry>
+            <entry>For all complex types</entry>
+          </row>
+          <row>
+            <entry>
+              <b>System ID</b>
+            </entry>
+            <entry>The component system ID</entry>
+            <entry>Not editable property</entry>
+            <entry>For all complex types</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </body>
+</topic>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="generate-html-report-for-directory-comparison">
+  <title>Generate HTML Report for Directory Comparison</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Generate HTML report for directory comparison tool</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_w3v_bgk_54b">The <uicontrol>Generate HTML report for directory comparison</uicontrol>
+      tool can be used to generate a report in the form of an HTML file that contains the results of
+      a directory comparison (for either 2-way or 3-way comparisons). The <uicontrol>Generate HTML
+        report for directory comparison</uicontrol> action for invoking the tool can be found in the <menucascade>
+        <uicontrol>Tools</uicontrol>
+        <uicontrol>Comparison Tools</uicontrol>
+      </menucascade> menu. It opens a dialog box where you can specify the directories to compare as
+      well as some other options.</p>
+    <p id="p_uh1_zfx_5pb">
+      <fig id="fig_uwg_zfx_5pb">
+        <title>Generate HTML Report for Directory Comparison Dialog Box</title>
+        <image href="../img/html-report-dialog-box.png"/>
+      </fig>
+    </p>
+    <p id="p_x5d_hgx_5pb">The <uicontrol>Generate HTML report for directory comparison</uicontrol>
+      dialog box contains the following options:</p>
+    <p id="p_p3d_5vj_vpb">
+      <dl id="dl_q5g_5vj_vpb">
+        <dlentry id="dlentry_r5g_5vj_vpb">
+          <dt>Base directory</dt>
+          <dd>Specifies the path of the base directory that the other two directories will be
+            compared against in a 3-way comparison. This field should be left empty for 2-way
+            comparisons.</dd>
+        </dlentry>
+        <dlentry id="dlentry_jv1_bwj_vpb">
+          <dt>First directory</dt>
+          <dd>Specifies the path of the first directory to be included in the comparison.</dd>
+        </dlentry>
+      </dl>
+      <dl>
+        <dlentry id="dlentry_owv_kwj_vpb">
+          <dt>Second directory</dt>
+          <dd>Specifies the path of the second directory to be included in the comparison.</dd>
+        </dlentry>
+        <dlentry id="dlentry_nkr_lwj_vpb">
+          <dt>Diff options</dt>
+          <dd>Specifies which option set to use for generating the comparison report. If you choose
+              <uicontrol>Use the current settings from Preferences</uicontrol>, the options set in
+            the <xref href="preferences-diff-dirs.dita"><uicontrol>Directories
+                Comparison</uicontrol> preferences page</xref> and the <xref
+              href="dir-compare-toolbar.dita#dir-compare-toolbar/dlentry_yhv_bgk_54b"
+              >include/exclude filter options in the <uicontrol>Compare Directories</uicontrol>
+              tool</xref> are taken into account when generating the comparison result. You can also
+            click the <uicontrol><image href="../img/ecvc-Settings16.png"/>Diff options</uicontrol>
+            button to open the <uicontrol>Directories Comparison</uicontrol> preferences page where
+            you can see or modify the current settings. If you choose <uicontrol>Use the default
+              settings</uicontrol>, the default values for all settings are used.</dd>
+        </dlentry>
+        <dlentry id="dlentry_esx_djc_kqb">
+          <dt>Generate additional file comparison reports</dt>
+          <dd>Generates further comparison reports for all non-binary modified file pairs and
+            provides links to them in the main report (in the middle cells of the results table).
+              <xref href="#generate-html-report-for-directory-comparison/p_additional-file-reports"
+              format="dita">See the example below</xref>. These additional file comparison reports
+            are saved to a directory that will have the same parent directory and the same name as
+            the output file provided, suffixed by <uicontrol>"-OXY-FC-REPORTS"</uicontrol>. The
+            links created in the main report are relative to this directory. If the main HTML report
+            is later copied or moved to another location, to retain full functionality in the
+            browser, the directory with the additional file comparison reports must also be
+            copied/moved to the same location.<note id="note_s14_kjc_kqb">Generating additional file
+              comparison reports could significantly increase the execution time. A progress tracker
+              for the whole operation is available.</note><note id="note_o2l_x2b_4yb" type="tip">An
+              XPath expression specified in the <uicontrol>Ignore nodes by XPath</uicontrol> text
+              field within the <xref href="preferences-diff-files.dita"><uicontrol>Files
+                  Comparison</uicontrol> preferences page</xref> is now taken into account if you
+              enable the <uicontrol>Generate additional file comparison reports</uicontrol>
+              option.</note></dd>
+        </dlentry>
+        <dlentry id="dlentry_zzs_4yj_vpb">
+          <dt>Output file</dt>
+          <dd>Specifies the path for an output file to save the comparison results file.</dd>
+        </dlentry>
+        <dlentry id="dlentry_e3v_bgk_54b">
+          <dt>Open in Browser/System Application</dt>
+          <dd>Opens the comparison results file in the browser or system application that is
+            associated with HTML files.</dd>
+        </dlentry>
+      </dl>
+    </p>
+    <p id="p_mzx_czj_vpb">After clicking the <uicontrol>Generate report</uicontrol> button, a report
+      in the form of an HTML file is generated with details about the comparison results.</p>
+    <p id="p_jnw_hgx_5pb">
+      <fig id="fig_knw_hgx_5pb">
+        <title>HTML Report for Directory Comparison</title>
+        <image href="../img/html-report-results.png"/>
+      </fig>
+    </p>
+    <p id="p_additional-file-reports">
+      <fig id="fig_sw1_jfg_kqb">
+        <title>Example of an Additional File Comparison Report</title>
+        <image href="../img/html-report-results-files.png"/>
+      </fig>
+    </p>
+    <section id="section_vvs_vvd_1rb">
+      <title>Resources</title>
+      <p id="p_nll_dgk_54bc">For more information about how to generate HTML comparison reports,
+        watch our video demonstration:</p>
+      <p id="p_oll_dgk_54bd"><object width="450" height="250"
+        data="https://www.youtube.com/embed/6jPccHKUNNk" outputclass="iframe">
+        <param name="allowfullscreen" value="true"/>
+      </object></p>
+    </section>
+  </body>
+  <related-links>
+      <link href="directories-comparison.dita#directories-comparison"/>
+    <link href="compare-directories-3-way.dita"/>
+      <link href="file-comparison.dita#file-comparison"/>
+  </related-links>
+</topic>

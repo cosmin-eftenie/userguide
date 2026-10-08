@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="xml-schema-diagram-notation-properties">
+  <title>xs:notation</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Design editing
+            mode<indexterm>Components<indexterm>xs:notation</indexterm></indexterm></indexterm>
+        <indexterm>XML Schemas<indexterm>Design mode
+                editing<indexterm>Components<indexterm>xs:notation</indexterm></indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_z1c_cgk_54b">
+      <fig id="fig_abc_cgk_54b">
+        <title>The <i>xs:notation</i> Component</title>
+        <image href="../img/schema_diagram_notation.png"/>
+      </fig>
+    </p>
+    <p id="p_bbc_cgk_54b">Describes the format of non-XML data within an XML document. See more info at <xref
+        href="http://www.w3.org/TR/xmlschema11-1/#element-notation" scope="external" format="html"
+      />.</p>
+    <table colsep="1" rowsep="1" frame="all" id="table_cbc_cgk_54b">
+      <title><i>xs:notation</i> Properties</title>
+      <tgroup cols="4">
+        <thead>
+          <row>
+            <entry>Property Name</entry>
+            <entry>Description</entry>
+            <entry>Possible values</entry>
+            <entry>Mentions</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <b>Name</b>
+            </entry>
+            <entry>The notation name (always required)</entry>
+            <entry>Any NCName</entry>
+            <entry>If missing, will be displayed as '[notation]' in diagram</entry>
+          </row>
+          <row>
+            <entry>
+              <b>System Identifier</b>
+            </entry>
+            <entry>The notation system identifier</entry>
+            <entry>Any URI</entry>
+            <entry>Required if public identifier is absent (otherwise, optional)</entry>
+          </row>
+          <row>
+            <entry>
+              <b>Public Identifier</b>
+            </entry>
+            <entry>The notation public identifier</entry>
+            <entry>A Public ID value</entry>
+            <entry>Required if system identifier is absent (otherwise, optional)</entry>
+          </row>
+          <row>
+            <entry>
+              <b>ID</b>
+            </entry>
+            <entry>The component ID</entry>
+            <entry>Any ID</entry>
+            <entry>For all notations</entry>
+          </row>
+          <row>
+            <entry>
+              <b>Component</b>
+            </entry>
+            <entry>The edited component name</entry>
+            <entry>Not editable property</entry>
+            <entry>For all notations</entry>
+          </row>
+          <row>
+            <entry>
+              <b>Namespace</b>
+            </entry>
+            <entry>The component namespace</entry>
+            <entry>Not editable property</entry>
+            <entry>For all notations</entry>
+          </row>
+          <row>
+            <entry>
+              <b>System ID</b>
+            </entry>
+            <entry>The component system ID</entry>
+            <entry>Not editable property</entry>
+            <entry>For all notations</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </body>
+</topic>

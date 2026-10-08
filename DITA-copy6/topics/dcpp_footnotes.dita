@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_footnotes">
+  <title>Footnotes</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            ><ph keyref="pdf-html5-transformation"
+          /><indexterm>Footnotes</indexterm></indexterm>
+        <indexterm product="pdf-css ope">Footnotes</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_lzs_cgk_54b">Footnotes are pieces of information that have several purposes, including
+      citations, additional information (copyright, background), outside sources, and more. They are
+      divided as follows:<ul id="ul_yzq_s1q_2tb">
+        <li><b>The footnote call</b> - The number that remains in the content, usually
+          superscripted.</li>
+        <li><b>The footnote marker</b> - The number displayed at the bottom of the page (the value
+          matches the footnote call).</li>
+        <li><b>The footnote text</b> - The value of the <xmlelement>fn</xmlelement> element, also
+          displayed at the bottom of the page.</li>
+      </ul></p>
+  </body>
+</topic>

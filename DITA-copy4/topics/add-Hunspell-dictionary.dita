@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="add-Hunspell-dictionary">
+  <title>Adding Custom Spell Check Dictionaries</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Spell checking<indexterm>Add dictionaries</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_sk5_bgk_54b">There are three possible scenarios for adding Hunspell dictionaries to the <ph
+        keyref="product"/> spell checker:<ul id="ul_tk5_bgk_54b">
+        <li id="li_uk5_bgk_54b">You can download a pre-built Hunspell dictionary and add it to the spell checking
+          mechanism.</li>
+        <li id="li_vk5_bgk_54b">You can create a custom Hunspell dictionary file that defines your own list of words and
+          add it to the spell checking mechanism.</li>
+        <li id="li_wk5_bgk_54b">You can build your own full Hunspell dictionary and add it to the spell checking
+          mechanism.</li>
+      </ul></p>
+    <section id="download_and_add_a_prebuilt_hunspell_dictionary">
+      <title>Download and Add a Pre-Built Hunspell Dictionary</title>
+      <p id="p_xk5_bgk_54b">To add a downloaded pre-built dictionary, follow these steps:<ol id="ol_yk5_bgk_54b">
+          <li id="li_zk5_bgk_54b">Download the files needed for your dictionary. You will need a
+              <i>dictionary</i> file (with a <filepath>.dic</filepath> file extension) and an
+              <i>affix</i> file (with the <filepath>.aff</filepath> file extension). If the
+            dictionary does not include an affix file (<filepath>.aff</filepath>), you can create
+            one and leave it empty, but it is needed for the mechanism to work properly. For a
+            website that includes numerous dictionary files, see: <xref
+              href="https://extensions.openoffice.org/" format="html" scope="external"/>.<note
+              conkeyref="reusables-editing-documents/spell-check-note1" id="note_al5_bgk_54b"/></li>
+          <li id="li_bl5_bgk_54b"><ph conkeyref="reusables-preferences-pages/Open-the-preferences-page"/> and go to
+              <xref href="dictionaries-preferences-page.dita#dictionaries-preferences-page"><menucascade>
+                <uicontrol>Editor</uicontrol>
+                <uicontrol>Spell Check</uicontrol>
+                <uicontrol>Dictionaries</uicontrol>
+              </menucascade></xref>.</li>
+          <li id="li_cl5_bgk_54b">Choose one of the following two options for adding the downloaded files.<ol id="ol_dl5_bgk_54b">
+              <li id="li_el5_bgk_54b">Copy both files (<filepath>.dic</filepath> and <filepath>.aff</filepath>) to the
+                default directory displayed in the <xref
+                  href="dictionaries-preferences-page.dita#dictionaries-preferences-page/dictionary-folder"
+                    ><uicontrol>Dictionaries and term lists default folder</uicontrol>
+                option</xref>.</li>
+              <li id="li_fl5_bgk_54b">Copy both files (<filepath>.dic</filepath> and <filepath>.aff</filepath>) to any
+                other directory, select the <xref
+                  href="dictionaries-preferences-page.dita#dictionaries-preferences-page/include-dictionaries-term-lists"
+                    ><uicontrol>Include dictionaries and term list from</uicontrol> option</xref>,
+                and select that directory. If you choose this option, make sure you read <xref
+                  href="dictionaries-preferences-page.dita#dictionaries-preferences-page/dictionary-note"
+                  >this important note</xref>.</li>
+            </ol></li>
+          <li id="li_gl5_bgk_54b">Restart the application for the spell checker to start using the new dictionary.</li>
+        </ol></p>
+    </section>
+    <section id="create_a_custom_hunspell_dictionary_that_defines_">
+      <title>Create a Custom Hunspell Dictionary that Defines a List of Words</title>
+      <p id="p_hl5_bgk_54b">To create a custom Hunspell dictionary that defines your own list of words, follow these steps:<ol id="ol_il5_bgk_54b">
+          <li id="li_jl5_bgk_54b">Create a <i>dictionary</i> file (with a <filepath>.dic</filepath> file extension) and
+            an <i>affix</i> file (with the <filepath>.aff</filepath> file extension). The affix file
+              (<filepath>.aff</filepath>) can be left empty, but it is needed for the mechanism to
+            work properly.<note conkeyref="reusables-editing-documents/spell-check-note1" id="note_kl5_bgk_54b"/></li>
+          <li id="li_ll5_bgk_54b">In the dictionary file (<filepath>.dic</filepath> extension), add the words you want
+            to be included in your custom dictionary. Add one word per row and the first line needs
+            to contain the number of words, as in the following
+              example:<codeblock outputclass="language-ini" id="codeblock_ml5_bgk_54b">     2
+     parabola
+     asimptotic</codeblock><note
+              type="tip" id="note_nl5_bgk_54b">Words stored in dictionaries are not handled as case-sensitive. Therefore,
+              you do not need to include both uppercase and lowercase versions of the
+              words.</note><note id="note_ol5_bgk_54b">If you save the <filepath>.dic</filepath> file using UTF-8
+              encoding, then the corresponding <filepath>.aff</filepath> file should specify the
+              encoding as a property inside it (if you do not specify the encoding, the default
+              platform encoding will be
+              used):<codeblock outputclass="language-javascript" id="codeblock_pl5_bgk_54b">SET UTF-8</codeblock></note></li>
+          <li id="li_ql5_bgk_54b"><ph conkeyref="reusables-preferences-pages/Open-the-preferences-page"/> and go to
+              <xref href="dictionaries-preferences-page.dita#dictionaries-preferences-page"><menucascade>
+                <uicontrol>Editor</uicontrol>
+                <uicontrol>Spell Check</uicontrol>
+                <uicontrol>Dictionaries</uicontrol>
+              </menucascade></xref>.</li>
+          <li id="li_rl5_bgk_54b">Choose one of the following two options for saving the files.<ol id="ol_sl5_bgk_54b">
+              <li id="li_tl5_bgk_54b">Save both files (<filepath>.dic</filepath> and <filepath>.aff</filepath>) to the
+                default directory displayed in the <xref
+                  href="dictionaries-preferences-page.dita#dictionaries-preferences-page/dictionary-folder"
+                    ><uicontrol>Dictionaries and term lists default folder</uicontrol>
+                option</xref>.</li>
+              <li id="li_ul5_bgk_54b">Save both files (<filepath>.dic</filepath> and <filepath>.aff</filepath>) to any
+                other directory, select the <xref
+                  href="dictionaries-preferences-page.dita#dictionaries-preferences-page/include-dictionaries-term-lists"
+                    ><uicontrol>Include dictionaries and term list from</uicontrol> option</xref>,
+                and select that directory. If you choose this option, make sure you read <xref
+                  href="dictionaries-preferences-page.dita#dictionaries-preferences-page/dictionary-note"
+                  >this important note</xref>.</li>
+            </ol></li>
+          <li id="li_vl5_bgk_54b">Restart the application for the spell checker to start using the new dictionary.</li>
+        </ol></p>
+    </section>
+    <section id="build_and_add_a_full_hunspell_dictionary">
+      <title>Build and Add a Full Hunspell Dictionary</title>
+      <p id="p_wl5_bgk_54b">To build and add a full Hunspell dictionary, follow these steps:<ol id="ol_xl5_bgk_54b">
+          <li id="li_yl5_bgk_54b">
+            <p id="p_zl5_bgk_54b">Create your Hunspell dictionary. For more information on how to do this, see: <xref
+                href="https://www.chromium.org/developers/how-tos/editing-the-spell-checking-dictionaries"
+                format="html" scope="external">Editing the Spell Checking Dictionaries</xref>.</p>
+            <p id="p_am5_bgk_54b"><b>Step Result:</b> You should end up with a <i>dictionary</i> file (with a
+                <filepath>.dic</filepath> file extension) and an <i>affix</i> file (with an
+                <filepath>.aff</filepath> file extension). The affix file
+              (<filepath>.aff</filepath>) can be empty, but it is needed for the mechanism to work
+                properly.<note conkeyref="reusables-editing-documents/spell-check-note1" id="note_bm5_bgk_54b"/></p>
+          </li>
+          <li id="li_cm5_bgk_54b"><ph conkeyref="reusables-preferences-pages/Open-the-preferences-page"/> and go to
+              <xref href="dictionaries-preferences-page.dita#dictionaries-preferences-page"><menucascade>
+                <uicontrol>Editor</uicontrol>
+                <uicontrol>Spell Check</uicontrol>
+                <uicontrol>Dictionaries</uicontrol>
+              </menucascade></xref>.</li>
+          <li id="li_dm5_bgk_54b">Choose one of the following two options for saving the files.<ol id="ol_em5_bgk_54b">
+              <li id="li_fm5_bgk_54b">Save both files (<filepath>.dic</filepath> and <filepath>.aff</filepath>) to the
+                default directory displayed in the <xref
+                  href="dictionaries-preferences-page.dita#dictionaries-preferences-page/dictionary-folder"
+                    ><uicontrol>Dictionaries and term lists default folder</uicontrol>
+                option</xref>.</li>
+              <li id="li_gm5_bgk_54b">Save both files (<filepath>.dic</filepath> and <filepath>.aff</filepath>) to any
+                other directory, select the <xref
+                  href="dictionaries-preferences-page.dita#dictionaries-preferences-page/include-dictionaries-term-lists"
+                    ><uicontrol>Include dictionaries and term list from</uicontrol> option</xref>,
+                and select that directory. If you choose this option, make sure you read <xref
+                  href="dictionaries-preferences-page.dita#dictionaries-preferences-page/dictionary-note"
+                  >this important note</xref>.</li>
+            </ol></li>
+          <li id="li_hm5_bgk_54b">Restart the application for the spell checker to start using the new dictionary.</li>
+        </ol></p>
+    </section>
+  </body>
+  <related-links>
+      <link href="add-terms-list.dita#add-terms-list"/>
+      <link format="html"
+        href="https://www.chromium.org/developers/how-tos/editing-the-spell-checking-dictionaries"
+        scope="external">
+        <linktext>Editing the Spell Checking Dictionaries</linktext>
+      </link>
+  </related-links>
+</topic>

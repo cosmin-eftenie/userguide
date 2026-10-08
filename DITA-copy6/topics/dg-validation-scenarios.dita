@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="dg-validation-scenarios">
+  <title>Configuring Validation Scenarios for a Framework</title>
+  <titlealts>
+    <navtitle>Validation Scenarios</navtitle>
+  </titlealts>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Framework customization<indexterm>Configuring validation
+          scenarios</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <taskbody>
+    <context>
+      <p id="p_tcb_dgk_54b">You can distribute a <xref keyref="glossentry_framework"><term>framework</term></xref> with
+        a series of already configured validation scenarios. Also, this provides enhanced validation
+        support that allows you to use multiple grammars to check the document. For example, you can
+        use Schematron rules to impose guidelines that are otherwise impossible to enforce using
+        conventional validation.<note conkeyref="reusables-editing-documents/validation-note" id="note_ucb_dgk_54b"/></p>
+      <p id="p_vcb_dgk_54b">To associate a validation scenario with a specific <term>framework</term>, follow these
+        steps:</p>
+    </context>
+    <steps>
+      <step>
+        <cmd><ph conkeyref="reusables-preferences-pages/Open-the-preferences-page"/> and go to
+            <uicontrol>Document Type Association</uicontrol>.</cmd>
+      </step>
+      <step>
+        <cmd>Select the document type and click the <uicontrol>Edit</uicontrol> button to open the
+            <xref href="the-document-type-dialog.dita#the-document-type-dialog"><uicontrol>Document
+              Type Configuration</uicontrol> dialog box</xref>, then choose the
+            <uicontrol>Validation</uicontrol> tab. This tab displays a list of document types. To
+          set one or more of the validation scenarios listed in this tab to be used as the default
+          validation scenario (when another one is not specified in the validation process) for a
+          specific document type, check the <uicontrol>Default</uicontrol> box for that specific
+          document type.</cmd>
+      </step>
+      <step>
+        <cmd>To edit an existing scenario, select the scenario and click the <uicontrol><image
+              href="../img/Wrench16.png" id="image_v44_qyd_rlb"/>Edit</uicontrol> button. To add a
+          new scenario, click the <uicontrol><image href="../img/Add16.png" id="image_b34_k3r_xr"
+            />New</uicontrol> button.</cmd>
+        <stepresult>In either case, a scenario configuration dialog box is displayed. It lists all
+          the validation units for the scenario.<p id="p_wcb_dgk_54b">
+            <fig id="figure-edit-validation-scenario-oxygen">
+              <title>Validation Scenario Configuration Dialog Box</title>
+              <image href="../img/sa_edit_validation_scenario_dialog.png" id="image_uss_w3r_xr"/>
+            </fig>
+          </p><p id="new-scenario-dialog-box">This scenario configuration dialog box allows you to
+            configure the following information and options:<dl id="dl_xcb_dgk_54b">
+              <dlentry conkeyref="reusables-validation-scenarios/name" id="dlentry_ycb_dgk_54b">
+                <dt/>
+                <dd/>
+              </dlentry>
+              <dlentry conkeyref="reusables-validation-scenarios/URL-of-file" id="dlentry_zcb_dgk_54b">
+                <dt/>
+                <dd/>
+              </dlentry>
+              <dlentry conkeyref="reusables-validation-scenarios/file-type" id="dlentry_adb_dgk_54b">
+                <dt/>
+                <dd/>
+              </dlentry>
+              <dlentry conkeyref="reusables-validation-scenarios/validation-engine" id="dlentry_bdb_dgk_54b">
+                <dt/>
+                <dd/>
+              </dlentry>
+              <dlentry conkeyref="reusables-validation-scenarios/automatic-validation" id="dlentry_cdb_dgk_54b">
+                <dt/>
+                <dd/>
+              </dlentry>
+              <dlentry conkeyref="reusables-validation-scenarios/schema" id="dlentry_ddb_dgk_54b">
+                <dt/>
+                <dd/>
+              </dlentry>
+              <dlentry conkeyref="reusables-validation-scenarios/settings" id="dlentry_xql_lbs_4pb">
+                <dt/>
+                <dd/>
+              </dlentry>
+              <dlentry conkeyref="reusables-validation-scenarios/move-up" id="dlentry_fdb_dgk_54b">
+                <dt/>
+                <dd/>
+              </dlentry>
+              <dlentry conkeyref="reusables-validation-scenarios/move-down" id="dlentry_gdb_dgk_54b">
+                <dt/>
+                <dd/>
+              </dlentry>
+              <dlentry conkeyref="reusables-validation-scenarios/add" id="dlentry_hdb_dgk_54b">
+                <dt/>
+                <dd/>
+              </dlentry>
+              <dlentry conkeyref="reusables-validation-scenarios/remove" id="dlentry_idb_dgk_54b">
+                <dt/>
+                <dd/>
+              </dlentry>
+            </dl></p></stepresult>
+      </step>
+      <step conkeyref="reusables-validation-scenarios/vs_7">
+        <cmd/>
+      </step>
+      <step>
+        <cmd>Click <uicontrol>Ok</uicontrol>.</cmd>
+        <stepresult>The newly created validation scenario is now included in the list of scenarios
+          in the <xref href="document-type-validation-tab.dita#document-type-validation-tab"
+              ><uicontrol>Validation</uicontrol> tab</xref>. You can use the
+            <uicontrol>Default</uicontrol> checkbox to specify that the new scenario be used as the
+          default validation scenario when another specific scenario is not specified in the
+          validation process.</stepresult>
+      </step>
+    </steps>
+  </taskbody>
+</task>

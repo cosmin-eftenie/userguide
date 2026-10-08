@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="component_licensing">
+  <title>Licensing</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Oxygen XML Author Component<indexterm>Licensing</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_qcf_dgk_54b">The licensing terms and conditions for the <ph keyref="authorComponent"/> are defined in the
+        <xref href="https://www.oxygenxml.com/sdk_agreement.html" format="html" scope="external"
+            ><b><i>Oxygen SDK</i> License Agreement</b></xref>. To obtain the licensing terms and
+      conditions and other licensing information as well, you can also contact the support team at
+        <b>support@oxygenxml.com</b>. You may also obtain a free of charge evaluation license key
+      for development purposes, subject to registration. Any deployment of an application developed
+      using the <ph keyref="authorComponent"/> is also subject to the terms of the SDK agreement. </p>
+    <p id="p_rcf_dgk_54b">There are two main categories of <ph keyref="authorComponent"/> integrations:<ul
+        id="ol_k22_sbr_y3">
+        <li id="li_scf_dgk_54b">
+          <p id="p_tcf_dgk_54b"><b><u>Integration for internal use</u>:</b></p>
+          <p id="p_ucf_dgk_54b">You develop an application that embeds the <i>Author Component</i> to be used
+            internally (in your company or by you). You can buy and use previously purchased <ph
+              keyref="product"/> floating licenses to enable the runtime usage of the <ph
+              keyref="authorComponent"/> as it was integrated into the application.</p>
+        </li>
+        <li id="li_vcf_dgk_54b">
+          <p id="p_wcf_dgk_54b"><b><u>Integration for external use</u>:</b></p>
+          <p id="p_xcf_dgk_54b">Using the <ph keyref="authorComponent"/>, you create an application that you distribute
+            to other users outside your company (with a CMS for example). In this case, you should
+            apply for a Value Added Reseller (VAR) partnership by contacting the <b>Oxygen Sales
+              Team</b> (<xref href="https://www.oxygenxml.com/sales_support.html" format="html"
+              scope="external"/>).</p>
+        </li>
+      </ul></p>
+    <p id="p_ycf_dgk_54b">From a technical point of view, the <ph keyref="authorComponent"/> provides the Java API
+      to:</p>
+    <p id="p_zcf_dgk_54b">
+      <ul id="ul_rkh_r4r_y3">
+        <li id="li_adf_dgk_54b">
+          <p id="p_bdf_dgk_54b"><b><u>Inject floating license server details in the Java code</u>:</b></p>
+          <p id="p_cdf_dgk_54b">The following link provides details about how to configure an HTTP floating license
+            server: <xref
+              href="https://www.oxygenxml.com/license_server.html#floating_license_servlet"
+              format="html" scope="external"
+            />.<codeblock outputclass="language-java" id="codeblock_ddf_dgk_54b">AuthorComponentFactory.getInstance().init(frameworkZips, 
+  optionsZipURL, codeBase, appID,
+      //The servlet URL
+      "http://www.host.com/servlet", 
+      //The HTTP credentials user name
+      "userName", 
+      //The HTTP credentials password
+      "password");
+...</codeblock></p>
+        </li>
+      </ul>
+    </p>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link format="html" href="https://www.oxygenxml.com/sdk_agreement.html" scope="external"/>
+    </linklist>
+  </related-links>
+</topic>

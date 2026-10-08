@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="wa-find-replace">
+  <title>Find/Replace Content</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Find/Replace content</indexterm>
+        <indexterm>Find/Replace pane</indexterm>
+        <indexterm>Searching content</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="IX-Find-Intro-p"><ph keyref="webappProduct"/> includes a
+        <uicontrol>Find/Replace</uicontrol> side pane to help you find and replace content in the
+      current document. To open the <uicontrol>Find/Replace</uicontrol> side pane, select the
+          <uicontrol><image href="../img/WA-Search22.png"/>Find/Replace</uicontrol> tab in the
+      vertical stripe on the right side of the screen. <ph
+        conkeyref="reusables-webapp/side-panel-ph"> You </ph> You can also click the
+          <uicontrol><image href="../img/WebappSearch18.png"/>Search</uicontrol> button on the upper
+      toolbar or use the <uicontrol conkeyref="reusable-oxygen-shortcuts-list/ctrl_f"/> keyboard
+      shortcut to open the pane.</p>
+    <p id="IX-Find-Fig">
+      <fig id="fig_ty4_dgk_54b">
+        <title>Find/Replace Side Pane</title>
+        <image href="../img/WA_find_replace_popup.png"/>
+      </fig>
+    </p>
+    <p id="IX-p3">The <uicontrol>Find/Replace</uicontrol> pane includes the following:</p>
+    <p id="IX-Find-dl">
+      <dl id="dl_uy4_dgk_54b">
+        <dlentry id="dlentry_vy4_dgk_54b">
+          <dt><uicontrol>Search for</uicontrol> Field</dt>
+          <dd>This is where you will enter the text that you want to find. The number of results
+            that are found in the current document are shown on the right side in this field and the
+            results are highlighted in the editor. On Desktop devices, you can also use the
+                <uicontrol><shortcut>Enter</shortcut></uicontrol> key on your keyboard to find the
+            next occurrence.</dd>
+        </dlentry>
+        <dlentry id="dlentry_wy4_dgk_54b">
+          <dt><uicontrol>Replace with</uicontrol> Field</dt>
+          <dd>You can enter text that you want to replace the text you entered in the
+              <uicontrol>Search for</uicontrol> field. On Desktop devices, you can also use the
+                <uicontrol><shortcut>Enter</shortcut></uicontrol> key on your keyboard to perform
+            the replace operation.</dd>
+        </dlentry>
+        <dlentry id="dlentry_xy4_dgk_54b">
+          <dt><uicontrol>Match case</uicontrol></dt>
+          <dd>If selected, the search operation will only find results if the exact letter case
+            entered in the <uicontrol>Search for</uicontrol> field is found.</dd>
+        </dlentry>
+        <dlentry id="dlentry_yy4_dgk_54b">
+          <dt><uicontrol>Whole words</uicontrol></dt>
+          <dd>If selected, the search operation will only find results if the entire word or words
+            entered in the <uicontrol>Search for</uicontrol> field are found.</dd>
+        </dlentry>
+        <dlentry id="dlentry_cxn_15k_jhc">
+          <dt><uicontrol><image href="../img/wa-SearchScope16.png"/>Search scope</uicontrol>
+            Drop-down</dt>
+          <dd>This drop-down menu allows you to specify the scope of the search. You can choose from
+            the following:<ul id="ul_gzm_q5k_jhc">
+              <li id="li_hzm_q5k_jhc"><uicontrol>In content and attribute values</uicontrol> -
+                Searches for the results in both content and attribute values.</li>
+              <li id="li_qbv_y5k_jhc"><uicontrol>Only in content</uicontrol> - Searches for the
+                results only in content.</li>
+              <li id="li_rzv_y5k_jhc"><uicontrol>Only attribute values</uicontrol> - Searches for
+                the results only in attribute values.</li>
+            </ul><note id="note_uqw_dvk_jhc" type="tip">Results found in attributes values are
+              displayed with <b>[Attribute]</b> in front of the result for easy
+              identification.</note></dd>
+        </dlentry>
+        <dlentry id="dlentry_zy4_dgk_54b">
+          <dt><uicontrol><image href="../img/WA_find_next.png"/>Find Next</uicontrol></dt>
+          <dd>Goes to the next occurrence of the result (on Desktop devices, you can also use the
+            down arrow on your keyboard).</dd>
+        </dlentry>
+        <dlentry id="dlentry_az4_dgk_54b">
+          <dt><uicontrol><image href="../img/WA_find_prev.png"/>Find Previous</uicontrol></dt>
+          <dd>Goes to the previous occurrence of the result (on Desktop devices, you can also use
+            the up arrow on your keyboard).</dd>
+        </dlentry>
+        <dlentry id="dlentry_bz4_dgk_54b">
+          <dt><uicontrol>Replace</uicontrol></dt>
+          <dd>Use this button to perform the replace operation on the current result with the text
+            specified in the <uicontrol>Replace with</uicontrol> field.</dd>
+        </dlentry>
+        <dlentry id="dlentry_cz4_dgk_54b">
+          <dt><uicontrol>Replace All</uicontrol></dt>
+          <dd>Use this button to perform the replace operation on all occurrences of the text
+            specified in the <uicontrol>Replace with</uicontrol> field.</dd>
+        </dlentry>
+      </dl>
+    </p>
+    <section id="other_notes_about_the_findreplace_popup_window">
+      <title>Other Notes About the Find/Replace Pane</title>
+      <p id="p_dz4_dgk_54b">
+        <ul id="ul_ez4_dgk_54b">
+          <li id="li_vsp_jrp_5sb">A preview of each search result is presented inside the side-pane.
+            This preview includes some text around the search result. If there are more than 200
+            search results, the previews are not presented.</li>
+          <li id="li_jz4_dgk_54b">The results are also highlighted in the editor. While the search
+            session is active, the results are updated after any change is made to the document. For
+            large documents, this may slow down editing. To end the search session, you can clear
+            the <uicontrol>Search for</uicontrol> field.</li>
+          <li id="li_gz4_dgk_54b">If you close the <uicontrol>Find/Replace</uicontrol> pane and then
+            reopen it without editing the document, your search result is preserved.</li>
+          <li id="li_hz4_dgk_54b">If you select content in the editor and then open the
+              <uicontrol>Find/Replace</uicontrol> pane, the <uicontrol>Search for</uicontrol> field
+            will automatically be populated with the selected content.</li>
+          <li id="li_iz4_dgk_54b">The <uicontrol>Match case</uicontrol> and <uicontrol>Whole words</uicontrol> options
+            are persistent in your current editing session so it remembers your selection from the
+            last search.</li>
+        </ul>
+      </p>
+    </section>
+    <section id="findreplace_in_text_mode">
+      <title>Find/Replace in Text Mode</title>
+      <p id="text-mode-p">There is also a Find/Replace mechanism if you are editing in
+          <uicontrol>Text</uicontrol> mode (<uicontrol><image href="../img/XmlIcon16.gif"/>Edit XML
+          Source</uicontrol> from the <uicontrol><image href="../img/WebappMore18.png"/>More
+          drop-down menu</uicontrol>). To access the options, click the <uicontrol><image
+            href="../img/WA_Find_Icon_Text.png"/>Search</uicontrol> in the top-right corner of the
+        editor and it will expand to reveal the options.</p>
+      <p id="p-fig-find-replace-text-mode">
+        <fig id="fig_kz4_dgk_54b">
+          <title>Find/Replace Options in Text Mode</title>
+          <image href="../img/WA_find_text_mode.png"/>
+        </fig>
+      </p>
+    </section>
+  </body>
+</topic>

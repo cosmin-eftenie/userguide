@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dg-display-tags">
+  <title>Display Tag Markers: -oxy-display-tags Property</title>
+  <shortdesc>Used to specify whether or not tag markers are displayed.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>CSS extensions<indexterm>Additional CSS properties<indexterm>-oxy-display-tags
+              property</indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_jlc_dgk_54b"><ph keyref="product"/> allows you to choose whether tag markers of an element should never be
+      presented or the current display mode should be respected. This is especially useful when
+      working with <codeph>:before</codeph> and <codeph>:after</codeph> pseudo-elements, in which
+      case the element range is already visually defined so the tag markers are redundant.</p>
+    <p id="p_klc_dgk_54b">The property is named <codeph>-oxy-display-tags</codeph>, with the following possible values:<ul id="ul_llc_dgk_54b">
+        <li id="li_mlc_dgk_54b">
+          <uicontrol>none</uicontrol> - Tags markers will not be presented regardless of the current
+            <xref href="author-display-markup.dita">display mode</xref>.</li>
+        <li id="li_nlc_dgk_54b">
+          <uicontrol>default</uicontrol> - The tag markers will be created depending on the current
+            <xref href="author-display-markup.dita">display mode</xref>.</li>
+        <li id="li_olc_dgk_54b">
+          <uicontrol>inherit</uicontrol> - The value of the property is inherited from an ancestor
+          element. </li>
+      </ul><codeblock outputclass="language-css" id="codeblock_plc_dgk_54b">-oxy-display-tags
+    Value: none | default | inherit
+    Initial: default
+    Applies to: all nodes(comments, elements, CDATA, etc.)
+    Inherited: false
+    Media: all </codeblock></p>
+    <p id="p_qlc_dgk_54b"><b><u>Example: <term>-oxy-display-tags</term> Property</u></b></p>
+    <p id="p_rlc_dgk_54b">In this example, the <b>para</b> element from DocBook uses a <codeph>:before</codeph> and
+        <codeph>:after</codeph> element and its tag markers will not be
+      visible.<codeblock outputclass="language-css" id="codeblock_slc_dgk_54b">para:before{
+    content: "{";
+}
+
+para:after{
+    content: "}";
+}
+
+para{
+    -oxy-display-tags: none;
+    display:block;
+    margin: 0.5em 0;
+}</codeblock></p>
+  </body>
+</topic>

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="api_faq_simplified_text_outline">
+  <title>Customize the Outline View in Text Mode</title>
+  <body>
+    <section id="question">
+      <title>Use Case</title>
+      <p id="p_vhg_dgk_54b">You want to customize the <xref href="outliner-view.dita#outliner-view"
+            ><uicontrol>Outline</uicontrol> view</xref> in <uicontrol>Text</uicontrol> mode.</p>
+    </section>
+    <section id="answer">
+      <title>Solution</title>
+      <p id="p_whg_dgk_54b">Suppose that you have the following XML document:
+        <codeblock outputclass="language-xml" id="codeblock_xhg_dgk_54b">&lt;doc startnumber="15"&gt;
+    &lt;sec counter="no"&gt;
+        &lt;info/&gt;
+        &lt;title&gt;Introduction&lt;/title&gt;   
+      &lt;/sec&gt;
+    &lt;sec&gt;
+        &lt;title&gt;Section title&lt;/title&gt;       
+      &lt;para&gt;Content&lt;/para&gt;
+        &lt;sec&gt;
+            &lt;title&gt;Section title&lt;/title&gt; 
+                &lt;para&gt;Content&lt;/para&gt;
+        &lt;/sec&gt;
+    &lt;/sec&gt;
+    &lt;sec&gt; 
+            &lt;title&gt;Section title&lt;/title&gt;
+        &lt;para&gt;Content&lt;/para&gt;   
+      &lt;/sec&gt;
+&lt;/doc&gt;</codeblock>and
+        you want to display the XML content in a simplified Outline view like
+        this:<codeblock outputclass="language-ini" id="codeblock_yhg_dgk_54b">doc "15"
+sec Introduction
+sec 15 Section title
+sec 15.1 Section title
+sec 16 Section title</codeblock></p>
+      <p id="p_zhg_dgk_54b">Usually, an Outline view should have the following characteristics:<ol id="ol_w2p_kq4_qk">
+          <li id="li_a3g_dgk_54b">Double-clicking a node in the Outline view would select the corresponding XML content
+            in the editor.</li>
+          <li id="li_b3g_dgk_54b">When the cursor moves in the open XML document, the Outline view would select the
+            proper entry.</li>
+          <li id="li_c3g_dgk_54b">When modifications occur in the document, the Outline view would refresh.</li>
+        </ol></p>
+      <p id="p_d3g_dgk_54b">A simple implementation using a Workspace Access plugin type could be something like
+        this:<codeblock outputclass="language-java" id="codeblock_e3g_dgk_54b">/**
+ * Simple Outline for Text mode based on executing XPaths over the text content.
+ */
+ public class CustomWorkspaceAccessPluginExtension implements 
+WorkspaceAccessPluginExtension {
+  /**
+   * The custom outline list.
+   */
+  private JList customOutlineList;
+  
+  /**
+   * Maps outline nodes to ranges in document
+   */
+  private WSXMLTextNodeRange[] currentOutlineRanges; 
+  
+  /**
+   * The current text page
+   */
+  private WSXMLTextEditorPage currentTextPage;
+  
+  /**
+   * Disable CaretListener when we select from the CaretListener.
+   */
+  private boolean enableCaretListener = true;
+  
+  /**
+   * @see WorkspaceAccessPluginExtension#applicationStarted
+(ro.sync.exml.workspace.api.standalone.StandalonePluginWorkspace)
+   */
+  @Override
+  public void applicationStarted
+(final StandalonePluginWorkspace pluginWorkspaceAccess) {
+    pluginWorkspaceAccess.addViewComponentCustomizer
+(new ViewComponentCustomizer() {
+      /**
+       * @see ViewComponentCustomizer#customizeView
+(ro.sync.exml.workspace.api.standalone.ViewInfo)
+       */
+      @Override
+      public void customizeView(ViewInfo viewInfo) {
+        if(
+            //The view ID defined in the "plugin.xml"
+            "SampleWorkspaceAccessID".equals(viewInfo.getViewID())) {
+          customOutlineList = new JList();
+          //Render the content in the Outline.
+          customOutlineList.setCellRenderer(new DefaultListCellRenderer() {
+       /**
+        * @see javax.swing.DefaultListCellRenderer#getListCellRendererComponent
+(javax.swing.JList, java.lang.Object, int, boolean, boolean)
+        */
+      @Override
+      public Component getListCellRendererComponent
+(JList&lt;?> list, Object value, int index,
+          boolean isSelected, boolean cellHasFocus) {
+        JLabel label = (JLabel) super.getListCellRendererComponent
+(list, value, index, isSelected, cellHasFocus);
+        String val = null;
+        if(value instanceof Element) {
+          Element element = ((Element)value);
+          val = element.getNodeName();
+          if(!"".equals(element.getAttribute("startnumber"))) {
+            val += " " + "'" + element.getAttribute("startnumber") + "'";
+          }
+          NodeList titles = element.getElementsByTagName("title");
+          if(titles.getLength() > 0) {
+            val += " \"" + titles.item(0).getTextContent() + "\"";
+         }
+       }
+        label.setText(val);
+        return label;
+      }
+    });
+    //When we click a node, select it in the text page.
+    customOutlineList.addMouseListener(new MouseAdapter() {
+     @Override
+     public void mouseClicked(MouseEvent e) {
+       if(SwingUtilities.isLeftMouseButton(e) &amp;&amp; e.getClickCount() == 2) {
+          int sel = customOutlineList.getSelectedIndex();
+          enableCaretListener = false;
+         try {
+          currentTextPage.select(currentTextPage.getOffsetOfLineStart
+(currentOutlineRanges[sel].getStartLine()) + 
+currentOutlineRanges[sel].getStartColumn() - 1, 
+            currentTextPage.getOffsetOfLineStart
+(currentOutlineRanges[sel].getEndLine()) + 
+currentOutlineRanges[sel].getEndColumn());
+          } catch (BadLocationException e1) {
+           e1.printStackTrace();
+         }
+          enableCaretListener = true;
+        }
+      }
+    });
+     viewInfo.setComponent(new JScrollPane(customOutlineList));
+     viewInfo.setTitle("Custom Outline");
+  } 
+ }
+}); 
+    
+pluginWorkspaceAccess.addEditorChangeListener(new WSEditorChangeListener() {
+  /**
+  * @see WSEditorChangeListener#editorOpened(java.net.URL)
+  */
+  @Override
+  public void editorOpened(URL editorLocation) {
+   //An editor was opened
+   WSEditor editorAccess = pluginWorkspaceAccess.getEditorAccess
+(editorLocation, StandalonePluginWorkspace.MAIN_EDITING_AREA);
+        if(editorAccess != null) {
+          WSEditorPage currentPage = editorAccess.getCurrentPage();
+          if(currentPage instanceof WSXMLTextEditorPage) {
+            //User editing in Text mode an open XML document.
+            final WSXMLTextEditorPage xmlTP = (WSXMLTextEditorPage) currentPage;
+            //Reconfigure outline on each change.
+            xmlTP.getDocument().addDocumentListener(new DocumentListener() {
+              @Override
+              public void removeUpdate(DocumentEvent e) {
+                reconfigureOutline(xmlTP);
+              }
+              @Override
+              public void insertUpdate(DocumentEvent e) {
+                reconfigureOutline(xmlTP);
+              }
+              @Override
+              public void changedUpdate(DocumentEvent e) {
+                reconfigureOutline(xmlTP);
+              }
+            });
+            JTextArea textComponent = (JTextArea) xmlTP.getTextComponent();
+            textComponent.addCaretListener(new CaretListener() {
+              @Override
+              public void caretUpdate(CaretEvent e) {
+              if(currentOutlineRanges != null &amp;&amp; currentTextPage != null &amp;&amp; 
+enableCaretListener) {
+                  enableCaretListener = false;
+                  //Find the node to select in the outline.
+                  try {
+                    int line = xmlTP.getLineOfOffset(e.getDot());
+                    for (int i = currentOutlineRanges.length - 1; i >= 0; i--) {
+              if(line > currentOutlineRanges[i].getStartLine() &amp;&amp; 
+line &lt; currentOutlineRanges[i].getEndLine()) {
+                        customOutlineList.setSelectedIndex(i);
+                        break;
+                      }
+                    }
+                  } catch (BadLocationException e1) {
+                    e1.printStackTrace();
+                  }
+                  enableCaretListener = true;
+                }
+              }
+            });
+          }
+        }
+      }
+      /**
+       * @see WSEditorChangeListener#editorActivated(java.net.URL)
+       */
+      @Override
+      public void editorActivated(URL editorLocation) {
+        //An editor was selected, reconfigure the common outline
+        WSEditor editorAccess = pluginWorkspaceAccess.getEditorAccess
+(editorLocation, StandalonePluginWorkspace.MAIN_EDITING_AREA);
+        if(editorAccess != null) {
+          WSEditorPage currentPage = editorAccess.getCurrentPage();
+          if(currentPage instanceof WSXMLTextEditorPage) {
+            //User editing in Text mode an open XML document.
+            WSXMLTextEditorPage xmlTP = (WSXMLTextEditorPage) currentPage;
+            reconfigureOutline(xmlTP);
+          }
+        }
+      }
+    }, StandalonePluginWorkspace.MAIN_EDITING_AREA);
+  }
+  
+  /**
+   * Reconfigure the outline
+   * 
+   * @param xmlTP The XML Text page.
+   */
+  protected void reconfigureOutline(final WSXMLTextEditorPage xmlTP) {
+    try {
+      //These are DOM nodes.
+      Object[] evaluateXPath = xmlTP.evaluateXPath("//doc | //sec");
+      //These are the ranges each node takes in the document.
+      currentOutlineRanges = xmlTP.findElementsByXPath("//doc | //sec");
+      currentTextPage = xmlTP;
+      DefaultListModel listModel = new DefaultListModel();
+      if(evaluateXPath != null) {
+        for (int i = 0; i &lt; evaluateXPath.length; i++) { 
+          listModel.addElement(evaluateXPath[i]);
+        }
+      }
+      customOutlineList.setModel(listModel);
+    } catch(XPathException ex) {
+      ex.printStackTrace();
+    }
+  }
+
+  /**
+   * @see WorkspaceAccessPluginExtension#applicationClosing()
+   */
+  @Override
+  public boolean applicationClosing() {
+    return true;
+  }
+}</codeblock></p>
+    </section>
+  </body>
+</topic>

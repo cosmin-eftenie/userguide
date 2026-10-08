@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_how_to_avoid_table_exceeding_page">
+    <title>How to Avoid a Table Exceeding the Page Width</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            ><ph keyref="pdf-html5-transformation"
+            /><indexterm>Tables<indexterm>Layout</indexterm></indexterm></indexterm>
+        <indexterm product="pdf-css ope">Tables<indexterm>Layout</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+    <body>
+    <p id="p_ex5_cgk_54b">The DITA specification indicates that tables should have a fixed layout.
+      This can be done in two different ways:<ol id="ol_jxr_nsf_zkb">
+        <li id="li_fx5_cgk_54b"><b>Using proportional or relative measures</b> - It includes percent
+          values and shares values (i.e. "3*" or "12*").</li>
+        <li id="li_gx5_cgk_54b">
+          <p id="p_hx5_cgk_54b"><b>Using fixed measures</b> - It includes all the values followed by
+            units (i.e. <i>in</i>, <i>pt</i>, <i>px</i>, and others).</p>
+        </li>
+      </ol><note type="important" id="note_ix5_cgk_54b">
+        <ul id="ul_crz_wxr_2yb">
+          <li>Although the specification allows you to combine these values, it is <b>highly
+              recommend</b> that you only use one method at a time. Combining both methods could
+            lead to a table exceeding the page width and will make the content unreadable.</li>
+          <li>If all of the column width values are not declared in the table, the shares values
+            (e.g. "2.5*") will not be used.</li>
+        </ul>
+      </note></p>
+    </body>
+</topic>

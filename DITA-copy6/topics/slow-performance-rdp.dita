@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE troubleshooting PUBLIC "-//OASIS//DTD DITA Troubleshooting//EN" "troubleshooting.dtd">
+<troubleshooting id="slow-performance-rdp">
+  <title>Performance Issues when Using <ph keyref="product"/> with Remote Desktop</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>RDP performance issues</indexterm>
+        <indexterm>Remote Desktop performance issues</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <troublebody><condition id="problem">
+      <title>Problem</title>
+      <p id="p_w1k_dgk_54b">When trying to run <ph keyref="product"/> in a Remote Desktop Protocol (RDP) environment,
+        the performance is slow and choppy.</p>
+    </condition><troubleSolution>
+      <cause id="cause">
+        <title>Cause</title>
+        <p id="p_x1k_dgk_54b">Running a standalone version of <ph keyref="product"/> over a slow RDP connection may
+          result in performance issues.</p>
+      </cause><remedy id="solution">
+      <title>Solution</title>
+        <steps-informal>
+          <p id="p_y1k_dgk_54b">As a workaround, you try to run <ph keyref="product"/> as an Eclipse plugin when
+            working with a slow RDP connection.</p>
+        </steps-informal>
+    </remedy></troubleSolution></troublebody>
+</troubleshooting>

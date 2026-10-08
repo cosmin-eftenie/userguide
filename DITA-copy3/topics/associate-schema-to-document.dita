@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="associate-schema-to-document">
+  <title>Associating a Schema to XML Documents</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>XML documents<indexterm>Associate schema</indexterm></indexterm>
+        <indexterm>Associate schema to an XML document</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_pmz_bgk_54b">To provide as-you-type validation and to compute valid proposals for the <xref
+        keyref="glossentry_content-completion-assistant"><term>Content Completion
+        Assistant</term></xref>, <ph keyref="product"/> requires a schema to be associated with the
+      XML document. The schema specifies how the internal structure of the XML is defined.</p>
+    <section id="supported_types_of_schema">
+      <title>Supported Types of Schema</title>
+      <p id="p_qmz_bgk_54b">The following schema types are supported:<ul id="ul_rmz_bgk_54b">
+          <li id="li_smz_bgk_54b"><b>W3C XML Schema 1.0 and 1.1</b> (with and without embedded Schematron rules) - The
+            association with an XML Schema is added as an attribute of the root element with one of
+            the following:<ul id="ul_tmz_bgk_54b">
+              <li id="li_umz_bgk_54b"><xmlatt>xsi:schemaLocation</xmlatt> attribute, if the root element of the document
+                is in the namespace.</li>
+              <li id="li_vmz_bgk_54b"><xmlatt>xsi:noNamespaceSchemaLocation</xmlatt> attribute, if the root element is
+                not in the namespace.</li>
+            </ul></li>
+          <li id="li_wmz_bgk_54b"><b>DTD</b> - The association with a DTD is added as a <codeph>DOCTYPE</codeph>
+            declaration.</li>
+          <li id="li_xmz_bgk_54b"><b>Relax NG - XML Syntax</b> (with and without embedded Schematron rules) - The
+            association is added as an <xref
+              href="https://www.w3.org/TR/xml-model/#the-xml-model-processing-instruction"
+              format="html" scope="external"><i>xml-model</i> processing instruction</xref>.</li>
+          <li id="li_ymz_bgk_54b"><b>Relax NG - Compact Syntax</b> - The association is added as an <xref
+              href="https://www.w3.org/TR/xml-model/#the-xml-model-processing-instruction"
+              format="html" scope="external"><i>xml-model</i> processing instruction</xref>.</li>
+          <li id="li_zmz_bgk_54b"><b>NVDL</b> - The association is added as an <xref
+              href="https://www.w3.org/TR/xml-model/#the-xml-model-processing-instruction"
+              format="html" scope="external"><i>xml-model</i> processing instruction</xref>.</li>
+          <li id="li_anz_bgk_54b"><b>Schematron</b> (both ISO Schematron and Schematron 1.5) - The association is added
+            as an <xref href="https://www.w3.org/TR/xml-model/#the-xml-model-processing-instruction"
+              format="html" scope="external"><i>xml-model</i> processing instruction</xref>.</li>
+        </ul></p>
+    </section>
+    <section id="detecting_a_default_schema">
+      <title>Detecting the Schema(s) for Validation</title>
+      <p id="p_bnz_bgk_54b">For validation, <ph keyref="product"/> tries to detect one or more schemas by searching
+        multiple locations, in the following order:<ol id="ol_cnz_bgk_54b">
+          <li id="li_dnz_bgk_54b">The schema or multiple schemas <xref
+              href="associate-schema-validation-scenario.dita#associate-schema-validation-scenario"
+              >referenced in validation stages from the validation scenario(s)</xref> associated
+            with the current XML document.</li>
+          <li id="li_enz_bgk_54b">If no validation scenario is selected to be used with the current XML document, then
+            it falls back to the schema or multiple schemas <xref
+              href="associate-schema-framework-validation.dita#associate-schema-framework-validation"
+              >defined in validation stages from the validation scenarios specified as default in
+              the particular document type configuration</xref>.</li>
+          <li id="li_fnz_bgk_54b">If a schema is still not detected, then it falls back to the <xref
+              href="associating-schema-directly.dita#associating-schema-directly">schema or multiple
+              schemas associated directly in the XML document</xref>.<note type="tip" id="note_gnz_bgk_54b"><ph
+                conkeyref="reusables-editing-documents/open-schema-ph"/></note></li>
+          <li id="li_hnz_bgk_54b">If a schema is still not detected, then it falls back to the <xref
+              href="associate-schema-framework.dita#associate-schema-framework">schema defined in
+              the <uicontrol>Schema</uicontrol> tab of a <term>framework</term> (document type)
+              configuration</xref>.</li>
+        </ol></p>
+    </section>
+    <section id="detecting_a_schema_for_content_completion">
+      <title>Detecting a Schema for Content Completion</title>
+      <p id="p_inz_bgk_54b">For content completion, <ph keyref="product"/> uses just one schema and tries to detect
+        that schema by searching multiple locations, in the following order:<ol id="ol_jnz_bgk_54b">
+          <li id="li_knz_bgk_54b">If no schema is detected in the document, then it falls back to the highest ranking
+              <xref
+              href="associate-schema-validation-scenario.dita#associate-schema-validation-scenario"
+              >schema defined in validation stages from the validation scenario(s) associated with
+              the current document</xref>.</li>
+          <li id="li_lnz_bgk_54b">If a schema is still not detecting, then it falls back to the highest ranking <xref
+              href="associate-schema-framework-validation.dita#associate-schema-framework-validation"
+              >schema defined in validation stages from validation scenarios specified as default in
+              the particular document type configuration</xref>.</li>
+          <li id="li_mnz_bgk_54b"><ph keyref="product"/> determines the most appropriate or highest ranking <xref
+            href="associating-schema-directly.dita#associating-schema-directly">schema that is
+              associated directly in the XML document</xref> and uses it for content
+            completion.</li>
+          <li id="li_nnz_bgk_54b">If a schema is still not detecting, then it falls back to the <xref
+              href="associate-schema-framework.dita#associate-schema-framework">schema defined in
+              the <uicontrol>Schema</uicontrol> tab of a <term>framework</term> (document type)
+              configuration</xref>.</li>
+        </ol></p>
+    </section>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link href="xml-contextual-editing.dita" product="author developer editor"/>
+      <link format="html" href="https://www.w3.org/TR/xml-model/" scope="external">
+        <linktext>W3C: Associating Schemas with XML Documents</linktext>
+      </link>
+    </linklist>
+  </related-links>
+</topic>

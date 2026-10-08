@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="zendesk-transformation-output">
+  <title>DITA Map Zendesk Publishing</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Transformation Scenarios<indexterm>DITA Map to Zendesk</indexterm></indexterm>
+        <indexterm>DITA Map to Zendesk transformation </indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_nbl_cgk_54b"><ph keyref="product"/> includes a built-in transformation scenario that
+      provides the ability to publish DITA topics to XHTML output and upload them directly as
+      articles to the <xref href="https://www.zendesk.com/" format="html" scope="external"
+          ><term>Zendesk</term> Help Center</xref>.</p>
+    <note conkeyref="reusables-user-guide/note_enterprise-only" id="note_drf_wjd_qqb"/>
+    <p id="p_tqw_53q_z5b">To run the transformation, follow these steps:<ol id="ol_obl_cgk_54b">
+        <li id="li_rbl_cgk_54b">Start <ph keyref="product"/> and open a <term>DITA map</term><ph
+            product="author editor authorEclipse editorEclipse"> in the <xref
+              href="dita-maps-manager.dita#dita-maps-manager"><uicontrol>DITA Maps
+                Manager</uicontrol> view</xref></ph>.</li>
+        <li id="li_sbl_cgk_54b">Click the <uicontrol><image id="image_d3c_lxq_vr"
+              href="../img/TransformConfig16.png"/>Configure Transformation Scenario(s)</uicontrol>
+          button.</li>
+        <li id="li_tbl_cgk_54b">Create a new <uicontrol>DITA-OT</uicontrol> transformation scenario
+          and choose the <uicontrol>Zendesk Help Center</uicontrol> transformation type. </li>
+        <li id="li_ubl_cgk_54b">Go to <uicontrol>Parameters</uicontrol> tab and set the following
+            parameters:<p id="p_uqw_53q_z5b">
+            <dl id="dl_kzj_yb1_bqb">
+              <dlentry id="dlentry_lzj_yb1_bqb">
+                <dt>Host</dt>
+                <dd>The URL reference to the <term>Zendesk Help Center</term> (for example,
+                    <codeph>https://your-domain.zendesk.com</codeph>).</dd>
+              </dlentry>
+              <dlentry id="dlentry_mzj_yb1_bqb">
+                <dt>Username</dt>
+                <dd>The username (e-mail address) for the account used to upload the content.</dd>
+              </dlentry>
+              <dlentry id="dlentry_nzj_yb1_bqb">
+                <dt>API Token</dt>
+                <dd>An API token, generated in the <term>Zendesk</term> admin pages, necessary for
+                  authentication to the server: <xref
+                    href="https://support.zendesk.com/hc/en-us/articles/226022787-Generating-a-new-API-token-"
+                    format="html" scope="external"/>.</dd>
+              </dlentry>
+              <dlentry id="dlentry_ozj_yb1_bqb">
+                <dt>Article category</dt>
+                <dd>The name of the category where the articles are uploaded. The category needs to
+                  be created in the <term>Zendesk</term> admin pages: <xref
+                    href="https://support.zendesk.com/hc/en-us/articles/218222877-Organizing-knowledge-base-content-in-categories-and-sections#topic_hjs_tl4_kk"
+                    format="html" scope="external"/>.</dd>
+              </dlentry>
+              <dlentry id="dlentry_pzj_yb1_bqb">
+                <dt>Article section</dt>
+                <dd>The name of the section (inside the parent category) where articles are
+                  uploaded. The section needs to be created in the <term>Zendesk</term> admin pages:
+                    <xref
+                    href="https://support.zendesk.com/hc/en-us/articles/218222877-Organizing-knowledge-base-content-in-categories-and-sections#topic_ysj_wtt_zz"
+                    format="html" scope="external"/>.<note id="note_yjh_vyz_41c">When publishing to
+                    a subsection, a path of section names separated by '///' can be passed (for
+                    example: <codeph>Main section///Subsection 1///Subsection
+                  1.1</codeph>).</note></dd>
+              </dlentry>
+              <dlentry id="dlentry_qzj_yb1_bqb">
+                <dt>Create article draft</dt>
+                <dd>This setting controls whether the articles should be published (if the value is
+                    <codeph>false</codeph>) or saved as drafts (if the value is
+                    <codeph>true</codeph>). The default value is <codeph>false</codeph>.</dd>
+              </dlentry>
+              <dlentry>
+                <dt>Visible to</dt>
+                <dd>The name of the user segment that can view the articles.</dd>
+              </dlentry>
+              <dlentry id="dlentry_rzj_yb1_bqb">
+                <dt>Permission group name</dt>
+                <dd>The name of the Zendesk permission group that controls who edits and publishes
+                  articles: <xref
+                    href="https://support.zendesk.com/hc/en-us/articles/203661966-Creating-managing-and-using-groups"
+                    format="html" scope="external"/>.</dd>
+              </dlentry>
+              <dlentry id="dlentry_vcg_qxj_vzb">
+                <dt>Create table of contents</dt>
+                <dd>When the <codeph>zendesk.create.toc</codeph> parameter is set to
+                    <codeph>true</codeph> (default value), a table of contents is published as the
+                  first article in the Zendesk section and this initial article references all other
+                  articles. The title of the TOC article is the title of the DITA map.</dd>
+              </dlentry>
+              <dlentry id="dlentry_rgw_2yj_vzb">
+                <dt>Specify a prefix title for the table of contents</dt>
+                <dd>Set the <codeph>zendesk.toc.title.prefix</codeph> parameter to specify a prefix
+                  to use for the title of the table of contents article.</dd>
+              </dlentry>
+              <dlentry id="dlentry_swg_3yj_vzb">
+                <dt>Specify a suffix title for the table of contents</dt>
+                <dd>Set the <codeph>zendesk.toc.title.suffix</codeph> parameter to specify a suffix
+                  to use for the title of the table of contents article.</dd>
+              </dlentry>
+            </dl>
+          </p></li>
+        <li id="li_vbl_cgk_54b">Save the changes and run the transformation. </li>
+      </ol></p>
+    <note id="note_zvg_gq3_q5b" type="important">
+      <p>There may be cases when the publishing breaks, presenting an error related to <b>HTTPS</b>
+        certificates, similar to this
+        one:<codeblock id="codeblock_gb3_kq3_q5b" outputclass="language-bourne">Error: org.zendesk.client.v2.ZendeskException: java.net.ConnectException: PKIX path building failed: 
+sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path 
+to requested target</codeblock>This usually occurs if an HTTPS proxy server is installed in
+        your company's network. In this case, if running on Windows, you can edit the transformation
+        scenario you are using to publish <b>DITA</b> to <b>Zendesk</b> and in the
+          <uicontrol>Advanced</uicontrol> tab, go to the <uicontrol>JVM Arguments</uicontrol> field
+        and set this value:
+        <codeblock id="codeblock_rh2_qq3_q5b" outputclass="language-bourne">-Djavax.net.ssl.trustStoreType=Windows-ROOT -Djavax.net.ssl.trustStore=C:\\Windows\\win.ini</codeblock></p>
+    </note>
+    <section id="section_vbd_w52_w5b">
+      <title>Resources</title>
+      <p id="p_nll_dgk_54bc">For more information about publishing content to the Zendesk Help
+        Center, watch the following video demonstration:</p>
+      <p id="p_oll_dgk_54bd"><object width="450" height="250"
+          data="https://www.youtube.com/embed/QZ_9Fk_LOk8" outputclass="iframe">
+          <param name="allowfullscreen" value="true"/>
+        </object></p>
+    </section>
+  </body>
+</topic>

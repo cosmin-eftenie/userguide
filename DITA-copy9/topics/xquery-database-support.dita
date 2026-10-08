@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="xquery-database-support">
+  <title>XQuery and Databases</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Databases<indexterm>XQuery</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_lly_cgk_54b">XQuery is a native XML query language that is useful for querying XML views of relational
+      data to create XML results. It also provides the mechanism to efficiently and easily extract
+      information from Native XML Databases (NXD) and relational data. The following database
+      systems supported in <ph keyref="product"/> offer XQuery support:</p>
+    <ul id="ul_mly_cgk_54b">
+      <li id="li_nly_cgk_54b"><i>Native XML Databases:</i>
+        <ul id="ul_oly_cgk_54b">
+          <li id="li_qly_cgk_54b">eXist</li>
+          <li id="li_rly_cgk_54b">MarkLogic (validation support available starting with version 5)</li>
+        </ul></li>
+      <li id="li_sly_cgk_54b"><i>Relational Databases:</i>
+        <ul id="ul_tly_cgk_54b">
+          <li id="li_uly_cgk_54b">IBM DB2</li>
+          <li id="li_vly_cgk_54b">Microsoft SQL Server (validation support not available)</li>
+          <li id="li_wly_cgk_54b">Oracle (validation support not available)</li>
+        </ul></li>
+    </ul>
+  </body>
+  <related-links>
+      <link href="editing-xquery-documents.dita#editing-xquery-documents"/>
+  </related-links>
+</topic>

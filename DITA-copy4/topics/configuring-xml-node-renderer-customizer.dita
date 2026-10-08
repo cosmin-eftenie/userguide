@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="configuring-xml-node-renderer-customizer">
+  <title>Customizing XML Node Rendering</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Framework customization<indexterm>Extensions<indexterm>XML Node Renderer
+              Customizer</indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_b4b_dgk_54b">You can use this API extension to customize the way an XML node is rendered in the <xref
+        href="outliner-view.dita#outliner-view"><uicontrol>Outline</uicontrol>
+        view</xref> in <uicontrol>Author</uicontrol> mode, <xref
+        href="author-editing-markup.dita#author-editing-markup/using_the_breadcrumb_in_author_mode"
+        >breadcrumb navigation bar</xref> in <uicontrol>Author</uicontrol> mode, <xref
+        href="outliner-view.dita#outliner-view"><uicontrol>Outline</uicontrol> view</xref> in
+        <uicontrol>Text</uicontrol> mode, <xref keyref="glossentry_content-completion-assistant"
+          ><term>Content Completion Assistant</term></xref> window, or <xref
+        href="dita-maps-manager.dita#dita-maps-manager"><uicontrol>DITA Maps Manager</uicontrol>
+        view</xref>.<note id="note_c4b_dgk_54b"><ph keyref="product"/> uses <i>XMLNodeRendererCustomizer</i>
+        implementations for the following <xref keyref="glossentry_framework"
+            ><term>frameworks</term></xref>: DITA, DITA Map, DocBook 4, DocBook 5, TEI, XHTML, XSLT,
+        and XML Schema.</note></p>
+    <p id="p_d4b_dgk_54b">There are two methods to provide an implementation of <xref
+        keyref="url_XMLNodeRendererCustomizer"
+          ><i>ro.sync.exml.workspace.api.node.customizer.XMLNodeRendererCustomizer</i></xref>:<ul id="ul_e4b_dgk_54b">
+        <li id="li_f4b_dgk_54b">As a part of a bundle, returning it from the <i>createXMLNodeCustomizer()</i> method of
+          the <xref href="https://www.oxygenxml.com/InstData/Editor/SDK/javadoc/index.html"
+            format="html" scope="external"><i>ExtensionsBundle</i></xref> associated with your
+          document type in the <xref href="the-document-type-dialog.dita#the-document-type-dialog"
+              ><uicontrol>Document type</uicontrol> configuration dialog box</xref>
+            (<uicontrol>Extensions bundle</uicontrol> field in the <uicontrol>Extensions</uicontrol>
+          tab).</li>
+        <li id="li_g4b_dgk_54b">As an individual extension, associated with your document type in the <xref
+            href="the-document-type-dialog.dita#the-document-type-dialog"><uicontrol>Document
+              type</uicontrol> configuration dialog box</xref> (<uicontrol>XML node renderer
+            customizer</uicontrol> field in the <uicontrol>Individual extensions</uicontrol> section
+          of the <uicontrol>Extensions</uicontrol> tab).</li>
+      </ul></p>
+    <section id="support_for_retinahidpi_displays">
+      <title>Support for Retina/HiDPI Displays</title>
+      <p id="p_h4b_dgk_54b">To support Retina or HiDPI displays, the icons provided by the
+          <i>XMLNodeRendererCustomizer</i> should be backed up by a copy of larger size using the
+        proper <xref
+          href="using-retina-hidpi-images.dita#using-retina-hidpi-images/retina-naming-convention-section"
+          >Retina/HiDPI naming convention</xref>.</p>
+      <p id="p_i4b_dgk_54b">For example, for the <xmlelement>title</xmlelement> element, if the
+          <i>XMLNodeRendererCustomizer</i> returns the path
+          <filepath>${framework}/images/myImg.png</filepath>, then to support Retina images with a
+        scaling factor of 2, an extra file (<filepath>myImg@2x.png</filepath>)should be added to the
+        same images directory (<filepath>${framework}/images/myImg@2x.png</filepath>). If the higher
+        resolution icon (the <i>@2x</i> file) does not exist, the <i>normal</i> icon is scaled and
+        used instead.</p>
+      <p id="p_j4b_dgk_54b">For more information about using Retina/HiDPI images, refer to the <xref
+          href="using-retina-hidpi-images.dita#using-retina-hidpi-images">Using Retina/HiDPI Images
+          in Author Mode</xref> section.</p>
+    </section>
+    <note conkeyref="reusable_notes_java-files/sdf_project" id="note_k4b_dgk_54b"/>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link href="rendering-elements-cc-author.dita#rendering-elements-cc-author"/>
+      <link href="adding-retina-hidpi-images-framework.dita"/>
+    </linklist>
+  </related-links>
+</topic>

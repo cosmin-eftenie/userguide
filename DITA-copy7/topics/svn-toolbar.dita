@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="svn-toolbar">
+    <title>Status Bar</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>SVN Client<indexterm>Status bar</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+    <body>
+        <p id="p_jsh_dgk_54b">The status bar of the <ph keyref="svnProduct"/> window displays important details of the
+      current status of the application. This information is available only in the
+        <uicontrol>Working Copy</uicontrol> view.</p>
+    <p id="p_ksh_dgk_54b">
+      <fig id="fig_lsh_dgk_54b">
+        <title>Status bar</title>
+        <image href="../img/sa_svn_toolbar.png"/>
+      </fig>
+    </p>
+        <p id="p_msh_dgk_54b">The status bar is composed of the following areas:</p>
+        <ul id="ul_nsh_dgk_54b">
+            <li id="li_osh_dgk_54b">The path of the currently processed file from the current working copy (during an
+        operation such as <b>Check out</b> or <b>Synchronize</b>) or the result of the last
+        operation.</li>
+            <li id="li_psh_dgk_54b">The current status of the following working copy options:<ul id="ul_qsh_dgk_54b">
+          <li id="li_rsh_dgk_54b">Show ignored files (<uicontrol><image href="../img/SVNStatusBarShowIgnored12.png"
+              /></uicontrol>).</li>
+          <li id="li_ssh_dgk_54b">Show deleted files (<uicontrol><image href="../img/SVNStatusBarShowDeleted12.png"
+              /></uicontrol>).</li>
+          <li id="li_tsh_dgk_54b">Process <codeph>svn:externals</codeph> definitions (<uicontrol><image
+                href="../img/SVNStatusBarShowExternals12.png"/></uicontrol>).</li>
+        </ul>The options for ignored and deleted files are switched on and off from <xref
+          href="working-copy-settings.dita#working-copy-settings/settings-menu" format="dita">the
+            <uicontrol>Settings</uicontrol> menu</xref> of the <uicontrol>Working Copy</uicontrol>
+        panel:</li>
+            <li id="li_ush_dgk_54b">The format of the currently loaded working copy.</li>
+            <li id="li_vsh_dgk_54b">The current numbers of incoming changes (<uicontrol><image
+            href="../img/SVNIncomingMode16.png"/></uicontrol>), outgoing changes (<uicontrol><image
+            href="../img/SVNOutgoingMode16.png"/></uicontrol>) and conflicting changes
+            (<uicontrol><image href="../img/SVNConflictsMode16.png"/></uicontrol>).</li>
+            <li id="li_wsh_dgk_54b">A progress bar for the currently running SVN operation and a button
+            (<uicontrol><image href="../img/StopExternalTool16.png"/></uicontrol>) that allows you
+        to stop it.</li>
+        </ul>
+    </body>
+</topic>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="add-table-xhtml">
+  <title>Adding Tables in XHTML Documents</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Author editing
+          mode<indexterm>Tables<indexterm>XHTML</indexterm></indexterm></indexterm>
+        <indexterm>XML documents<indexterm>Author Mode
+                editing<indexterm>Tables<indexterm>XHTML</indexterm></indexterm></indexterm></indexterm>
+        <indexterm>XHTML tables in Author Mode</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_o2y_bgk_54b">You can use the <uicontrol><image href="../img/Table16.png"/>Insert Table</uicontrol> action
+      on the toolbar or from the contextual menu to add a table in an XHTML document. This action
+      opens the <uicontrol>Insert Table</uicontrol> dialog box.</p>
+    <p id="p_p2y_bgk_54b">
+      <fig id="fig_q2y_bgk_54b">
+        <title>Insert Table Dialog Box in XHTML</title>
+        <image href="../img/xhtml_insert_table_html.png"/>
+      </fig>
+    </p>
+    <p id="p_r2y_bgk_54b">The dialog box allows you to configure the following options:<dl id="dl_s2y_bgk_54b">
+        <dlentry id="table-insert-table">
+          <dt><uicontrol>Caption</uicontrol></dt>
+          <dd>If this checkbox is selected, you can specify a title (caption) for your table in the
+            adjacent text box.</dd>
+        </dlentry>
+        <dlentry
+          conkeyref="reusables-editing-documents/table-insert-table-size" id="dlentry_t2y_bgk_54b">
+          <dt/>
+          <dd/>
+        </dlentry>
+        <dlentry
+          conkeyref="reusables-editing-documents/table-insert-generate-header" id="dlentry_u2y_bgk_54b">
+          <dt/>
+          <dd/>
+        </dlentry>
+        <dlentry
+          conkeyref="reusables-editing-documents/table-insert-generate-footer" id="dlentry_v2y_bgk_54b">
+          <dt/>
+          <dd/>
+        </dlentry>
+        <dlentry
+          conkeyref="reusables-editing-documents/table-col-width-html" id="dlentry_w2y_bgk_54b">
+          <dt/>
+          <dd/>
+        </dlentry>
+        <dlentry id="dlentry_x2y_bgk_54b">
+          <dt><uicontrol>Frame</uicontrol></dt>
+          <dd>Allows you to specify a value for the <xmlatt>frame</xmlatt> attribute. It is used to
+            specify where a border should appear in the table. There are a variety of allowed
+            values, as specified in HTML specifications.</dd>
+        </dlentry>
+        <dlentry id="dlentry_y2y_bgk_54b">
+          <dt><uicontrol>Alignment</uicontrol></dt>
+          <dd>Specifies the alignment of the text within the table (<xmlatt>align</xmlatt>
+            attribute). The allowed values are:<ul
+              conkeyref="reusables-editing-documents/horizontal-align-docbook-ul" id="ul_z2y_bgk_54b">
+              <li id="li_afy_bgk_54b"/>
+            </ul></dd>
+        </dlentry>
+      </dl><note id="note_bfy_bgk_54b">The options in the <uicontrol>Insert Table</uicontrol> dialog box for XHTML
+        documents are persistent, so changes made in one session will carry over to
+      another.</note></p>
+    <p id="p_cfy_bgk_54b">When you click <uicontrol>Insert</uicontrol>, an HTML style of table is inserted into your
+      XHTML document at the current cursor position.</p>
+    <p id="p_dfy_bgk_54b">When you insert an HTML table, you see a link for setting the <xmlelement>colspecs</xmlelement>
+      (column specifications) of your table. Click the link to open the controls that allow you to
+      adjust various column properties. Although they appear as part of the <xref
+        href="author-editor.dita#author-editor"><uicontrol>Author</uicontrol> mode</xref>, the
+        <i>colspecs</i> link and its controls will not appear in your output. They are
+      just there to make it easier to adjust how the columns of your table are formatted.</p>
+    <section id="editing_an_existing_table">
+      <title>Editing an Existing Table</title>
+      <p id="p_efy_bgk_54b">You can edit the structure of an existing table using the table buttons on the toolbar (or
+        in the contextual menu) to add or remove cells, rows, or columns, and to set basic table
+        properties. Additional attributes can be used to fine-tune the formatting of your tables by
+        using the <xref href="author-attributes-view.dita#author-attributes-view"
+            ><uicontrol>Attributes</uicontrol> view</xref> (<menucascade>
+          <uicontrol>Window</uicontrol>
+          <uicontrol>Show View</uicontrol>
+          <uicontrol>Attributes</uicontrol>
+        </menucascade>). Also, remember that underneath the visual representation, the table is
+        really just XML. If necessary, you can edit the XML directly by switching to <xref
+          href="text-mode-editor.dita#text-mode-editor"><b>Text</b> mode</xref>.</p>
+    </section>
+  </body>
+</topic>

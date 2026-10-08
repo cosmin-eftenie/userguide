@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE troubleshooting PUBLIC "-//OASIS//DTD DITA Troubleshooting//EN" "troubleshooting.dtd">
+<troubleshooting id="scaling-issues">
+  <title>High Resolution Scaling Issues</title>
+  <troublebody>
+    <condition id="problem">
+      <title>Problem</title>
+      <p id="p_ynk_dgk_54b">I encounter scaling detection issues in a high resolution display (for example, some GUI
+        components are too small).</p>
+    </condition>
+    <troubleSolution>
+      <cause id="cause">
+        <title>Cause</title>
+        <p id="p_znk_dgk_54b">This sometimes happens when using multiple displays with different resolutions because
+          the application cannot detect the correct scaling setting.</p>
+      </cause>
+      <remedy id="solution">
+        <title>Solution</title>
+        <steps-informal>
+          <p id="p_b4k_dgk_54b">You can use the <codeph>sun.java2d.uiScale</codeph> Java system
+            property to instruct Java to use a particular scaling
+            factor:<codeblock outputclass="language-ini" id="codeblock_c4k_dgk_54b">-Dsun.java2d.uiScale=1.5</codeblock></p>
+        </steps-informal>
+      </remedy>
+    </troubleSolution>
+  </troublebody>
+</troubleshooting>

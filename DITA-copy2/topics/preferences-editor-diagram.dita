@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="preferences-editor-diagram">
+  <title><ph product="developerEclipse editorEclipse">Text </ph>Diagram Preferences</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="developer editor">Preferences<indexterm>Diagram</indexterm></indexterm>
+        <indexterm product="developerEclipse editorEclipse">Preferences<indexterm>Text
+            Diagram</indexterm></indexterm>
+        <indexterm product="developer editor">Diagram preferences</indexterm>
+        <indexterm product="developerEclipse editorEclipse">Text Diagram preferences</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_f44_bgk_54b">For certain XML languages, <ph keyref="product"/> provides a diagram view as part of the
+        <uicontrol>Text</uicontrol> mode editor. To configure the <uicontrol>Diagram</uicontrol>
+      preferences, <ph conkeyref="reusables-preferences-pages/open-the-preferences-page"/> and go to
+        <menucascade product="developer editor">
+        <uicontrol>Editor</uicontrol>
+        <uicontrol>Edit modes</uicontrol>
+        <uicontrol>Text</uicontrol>
+        <uicontrol>Diagram</uicontrol>
+      </menucascade><menucascade product="developerEclipse editorEclipse">
+        <uicontrol>Editor</uicontrol>
+        <uicontrol>Edit modes / Pages</uicontrol>
+        <uicontrol>Text Diagram</uicontrol>
+      </menucascade>.</p>
+    <p id="p_g44_bgk_54b">The following options are available in this preference page:<dl id="dl_h44_bgk_54b">
+        <dlentry id="show-full-model">
+          <dt><uicontrol>Show Full Model XML Schema diagram</uicontrol></dt>
+          <dd>When this option is selected, the <uicontrol>Text</uicontrol> mode editor for XML
+            Schemas includes a split-screen view that shows a diagram of the schema structure. This
+            is useful for seeing the effects of schema changes you make. For editing a schema using
+            a diagram instead of text, use the <xref href="xml-schema-diagram-introduction.dita"
+              >schema <uicontrol>Design</uicontrol> view</xref>.<note id="note_i44_bgk_54b">When handling very large
+              schemas, displaying the schema diagram might affect the performance of your system. In
+              such cases, disabling the schema diagram view improves the speed of navigation through
+              the edited schema.</note></dd>
+        </dlentry>
+        <dlentry id="dlentry_j44_bgk_54b">
+          <dt><uicontrol>Enable Relax NG diagram and related views</uicontrol></dt>
+          <dd>
+            <p id="p_k44_bgk_54b">Enables the Relax NG schema diagram and synchronization with the related views (<xref
+                href="attributes-panel.dita#attributes-panel"
+                ><uicontrol>Attributes</uicontrol></xref>, <xref href="model-panel.dita#model-panel"
+                  ><uicontrol>Model</uicontrol></xref>, <xref
+                href="text-elements-view.dita#text-elements-view"
+                ><uicontrol>Elements</uicontrol></xref>, <xref
+                href="relax-ng-schema-diagram-outline-view.dita#relax-ng-schema-diagram-outline-view"
+                  ><uicontrol>Outline</uicontrol></xref>).</p>
+            <p id="p_l44_bgk_54b">
+              <dl id="dl_m44_bgk_54b">
+                <dlentry id="dlentry_n44_bgk_54b">
+                  <dt><uicontrol>Show Relax NG diagram</uicontrol></dt>
+                  <dd>Displays the Relax NG schema diagram in the split-screen views (<xref
+                      href="relax-ng-schema-diagram-full-model-view.dita#relax-ng-schema-diagram-full-model-view"
+                        ><uicontrol>Full Model View</uicontrol></xref> and <xref
+                      href="relax-ng-schema-diagram-logical-model-view.dita#relax-ng-schema-diagram-logical-model-view"
+                        ><uicontrol>Logical Model View</uicontrol></xref>).</dd>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+        <dlentry id="dlentry_o44_bgk_54b">
+          <dt><uicontrol>Enable NVDL diagram and related views</uicontrol></dt>
+          <dd>
+            <p id="p_p44_bgk_54b">Enables the NVDL schema diagram and synchronization with the related views (<xref
+                href="attributes-panel.dita#attributes-panel"
+                ><uicontrol>Attributes</uicontrol></xref>, <xref href="model-panel.dita#model-panel"
+                  ><uicontrol>Model</uicontrol></xref>, <xref
+                href="text-elements-view.dita#text-elements-view"
+                ><uicontrol>Elements</uicontrol></xref>, <xref
+                href="nvdl-schema-diagram-outline-view.dita#nvdl-schema-diagram-outline-view"
+                  ><uicontrol>Outline</uicontrol></xref>).</p>
+            <p id="p_q44_bgk_54b">
+              <dl id="dl_r44_bgk_54b">
+                <dlentry id="dlentry_s44_bgk_54b">
+                  <dt><uicontrol>Show NVDL diagram</uicontrol></dt>
+                  <dd>Displays the NVDL schema diagram in the split-screen views (<xref
+                      href="nvdl-schema-diagram-full-model-view.dita#nvdl-schema-diagram-full-model-view"
+                        ><uicontrol>Full Model View</uicontrol></xref> and <xref
+                      href="nvdl-logical-model.dita#nvdl-logical-model"><uicontrol>Logical Model
+                        View</uicontrol></xref>).</dd>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+        <dlentry id="dlentry_t44_bgk_54b">
+          <dt><uicontrol>Location relative to editor</uicontrol></dt>
+          <dd>Allows you to specify the location of the schema diagram panel relative to the diagram
+              <uicontrol>Text</uicontrol> editor.</dd>
+        </dlentry>
+        <dlentry id="dlentry_u44_bgk_54b">
+          <dt><uicontrol>Show/Hide Annotations</uicontrol> link</dt>
+          <dd>Use this link to navigate to the <xref
+              href="preferences-editor-schema.dita#preferences-editor-schema/show-annotation"
+                ><uicontrol>Schema Design</uicontrol> preferences page</xref> where you can choose
+            to show or hide annotations in schema diagrams.</dd>
+        </dlentry>
+        <dlentry product="developer editor" id="dlentry_v44_bgk_54b">
+          <dt><uicontrol>Zoom</uicontrol> link</dt>
+          <dd>Use this link to navigate to the <xref
+              href="preferences-editor-schema.dita#preferences-editor-schema/zoom"><uicontrol>Schema
+                Design</uicontrol> preferences page</xref> where you can adjust the default zoom
+            level of schema diagrams.</dd>
+        </dlentry>
+      </dl></p>
+  </body>
+</topic>

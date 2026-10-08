@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dita-integrate-specialization">
+  <title>Integrating a DITA Specialization</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>DITA<indexterm>Specialization<indexterm>Integration</indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_ksn_dgk_54b">A DITA specialization can have its document type defined with any of the following::<ul id="ul_lsn_dgk_54b">
+        <li id="li_msn_dgk_54b"><b>DTD</b> - For configuration and specialization tutorials, see
+            <xref href="http://dita4practitioners.github.io/dita-specialization-tutorials/"
+            format="html" scope="external"/>. A small sample plugin is also available here: <xref
+            href="https://github.com/oxygenxml-incubator/dita-ot-specialization-plugin-sample/"
+            format="html" scope="external"/>.</li>
+        <li id="li_nsn_dgk_54b"><b>XSD</b> - For configuration and specialization tutorials, see <xref
+            href="http://dita4practitioners.github.io/dita-specialization-tutorials/" format="html"
+            scope="external"/>.</li>
+        <li id="li_osn_dgk_54b"><b>Relax NG</b> - For more information, see the following presentation: <xref
+            href="https://www.oxygenxml.com/events/2015/dita-ot_day.html#Creating_DITA_OT_constraint_specialisation_plugins"
+            format="html" scope="external">Creating DITA-OT Constraint/Specialization
+          Plugins</xref>. For Relax NG coding requirements, see <xref
+            href="https://www.oxygenxml.com/dita/1.3/specs/archSpec/base/relax-ng-requirements.html"
+            format="html" scope="external"/>.</li>
+      </ul></p>
+    <p id="p_psn_dgk_54b">A DITA specialization may optionally include specialized processing, that is new XSLT
+      template rules that match the extension part of the <xmlatt>class</xmlatt> attribute values of
+      the new elements, and thus extend the default processing available in the DITA Open
+      Toolkit.</p>
+    <p id="p_qsn_dgk_54b">To integrate a DITA specialization into <ph keyref="product"/>, use one of the following
+      methods:</p>
+    <section id="ditaot_plugin_method">
+      <title>DITA-OT Plugin Method</title>
+      <note conkeyref="reusables-user-guide/note-custom-dita-ot-limitations"
+        id="note_njq_b4z_ctb"/>
+      <p id="p_rsn_dgk_54b">If the DITA specialization is available as a DITA Open Toolkit plugin, follow this procedure:<ol id="ol_ssn_dgk_54b">
+          <li id="li_tsn_dgk_54b">Copy the additional <term>plugin</term> to the location of the DITA-OT version you are
+            using (by default, <filepath><term keyref="glossentry_dita_ot_dir"/>\plugins</filepath>
+              directory).<note type="important" id="note_usn_dgk_54b">The application needs to have full write access
+              permissions to the DITA-OT directory.</note></li>
+          <li id="li_vsn_dgk_54b">If <ph keyref="product"/> was installed in the default location, you may need to
+            restart and run it as an administrator.</li>
+          <li id="li_wsn_dgk_54b">Select the <xref
+              href="configure-transformation-dialog.dita#configure-transformation-dialog"
+                  ><uicontrol><image href="../img/TransformConfig16.png"/>Configure Transformation
+                Scenario(s)</uicontrol></xref> action from the <uicontrol>DITA Maps
+              Manager</uicontrol> toolbar (you could also use the same action on the main toolbar or
+            open the <xref href="scenarios-view.dita#scenarios-view"><b>Transformation Scenarios</b>
+              view</xref>).</li>
+          <li id="li_xsn_dgk_54b">Select the <xref
+              href="ditamap-run-dita-ot-integrator.dita#ditamap-run-dita-ot-integrator"
+                ><b>Integrate/Install DITA-OT Plugins</b> transformation scenario</xref>.<note
+              type="tip" id="note_ysn_dgk_54b">If you don't see that scenario in the <xref
+                href="configure-transformation-dialog.dita#configure-transformation-dialog"
+                    ><uicontrol><image href="../img/TransformConfig16.png"/>Configure Transformation
+                  Scenario(s)</uicontrol></xref> dialog box or <xref
+                href="scenarios-view.dita#scenarios-view"><b>Transformation Scenarios</b>
+                view</xref>, click the <uicontrol><image href="../img/Settings16.png"
+                  id="image_tff_ryk_1r"/>Settings</uicontrol> button and select the <uicontrol>Show
+                all scenarios</uicontrol> option, but don't forget to change it back to
+                <uicontrol>Show only the scenarios available for the editor</uicontrol> after you
+              are finished with this procedure.</note></li>
+          <li id="li_zsn_dgk_54b"><xref href="apply-transformation-scenarios.dita#apply-transformation-scenarios">Apply
+              the scenario</xref>.</li>
+          <li id="li_atn_dgk_54b">Check the <uicontrol>Results</uicontrol> panel at the bottom of the application to
+            make sure the build was successful.</li>
+          <li id="li_btn_dgk_54b">Restart <ph keyref="product"/> with your normal permissions.</li>
+        </ol></p>
+      <note type="tip" id="note_ctn_dgk_54b"><ph keyref="product"/> detects <xref
+          href="create-your-own-templates.dita#create-your-own-templates">new document
+          templates</xref> contributed by the DITA-OT plugin as long as you do the following:<ol id="ol_dtn_dgk_54b">
+          <li id="li_etn_dgk_54b">Create a new folder called <b>template_folders</b> inside your DITA OT plugin's
+            folder. For example: <filepath><term keyref="glossentry_dita_ot_dir"
+              />\plugins\my_custom_plugin\template_folders</filepath>.</li>
+          <li id="li_ftn_dgk_54b">Create one or more subfolders inside the <b>template_folders</b> directory that
+            contain the new document templates. The new document templates found in those subfolders
+            will be available in the <uicontrol>New</uicontrol> document wizard.</li>
+        </ol></note>
+    </section>
+    <section id="alternative_method">
+      <title>Alternative Methods</title>
+      <p id="p_gtn_dgk_54b">If the DITA specialization is not available as a DITA-OT plugin, you have the following
+          options:<ul id="ul_ddb_2g5_zn">
+          <li id="li_htn_dgk_54b">If the DTDs that define the extension elements are located in a folder outside the
+            DITA Open Toolkit folder, add new rules to the DITA-OT catalog file. These rules are
+            meant for resolving the DTD references from the DITA files that use the specialized
+            elements to that folder. This allows for correct resolution of DTD references to your
+            local DTD files and is needed for both validation and transformation of the <term>DITA
+              maps</term> or topics. The DITA-OT catalog file is called
+              <filepath>catalog-dita.xml</filepath> and is located in the root folder of the DITA
+            Open Toolkit.</li>
+          <li id="li_itn_dgk_54b">If there is specialized processing provided by XSLT stylesheets that override the
+            default stylesheets from DITA-OT, these new stylesheets must be called from the DITA-OT
+            Ant build scripts. <note type="important" id="note_jtn_dgk_54b">If you are using DITA specialization elements
+              in your DITA files, it is recommended that you activate the <uicontrol>Enable DTD/XML
+                Schema processing in document type detection</uicontrol> option in the <ph
+                conkeyref="reusables-preferences-pages/preferences-document-type-association"/>.
+            </note></li>
+          <li id="li_ktn_dgk_54b">You could <xref href="create-your-own-templates.dita#create-your-own-templates">create
+              your own document templates</xref>, store them in a custom directory, then add that
+            directory to the list of template directories that <ph keyref="product"/> uses by adding
+            the directory to the list in the <xref
+              href="preferences-editor-document-templates.dita#preferences-editor-document-templates"
+            /> page.</li>
+        </ul></p>
+    </section>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link href="http://dita4practitioners.github.io/dita-specialization-tutorials/" format="html"
+        scope="external">
+        <linktext>DITA Configuration and Specialization Tutorials</linktext>
+      </link>
+    </linklist>
+  </related-links>
+</topic>

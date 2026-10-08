@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="disable-plugin">
+  <title>Disabling a Plugin</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Oxygen SDK<indexterm>Disable a plugin</indexterm></indexterm>
+        <indexterm>Plugins<indexterm>Disable a plugin</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_obf_dgk_54b">To disable a <xref keyref="glossentry_plugin"><term>plugin</term></xref>, use one of the
+      following two methods:<ul id="ul_pbf_dgk_54b">
+        <li id="li_qbf_dgk_54b"><ph conkeyref="reusables-preferences-pages/Open-the-preferences-page"/>, go to
+            <uicontrol>Plugins</uicontrol>, and deselect the <term>plugin</term> that you want to
+          disable.</li>
+        <li id="li_rbf_dgk_54b">Create an empty file called <filepath>plugin.disable</filepath> next to the
+            <term>plugin</term> configuration file (<filepath>plugin.xml</filepath>). The
+            <term>plugin</term> will be disabled and will no longer be loaded by the application on
+            startup.<note id="note_sbf_dgk_54b">This is useful if you want to temporarily stop work on a
+              <term>plugin</term> and use the application without it.</note></li>
+      </ul></p>
+  </body>
+</topic>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="syntax-highlight-depending-on-namespace-prefix">
+  <title>Syntax Highlight Depending on Namespace Prefix</title><prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Text editing mode<indexterm>Syntax highlights</indexterm></indexterm><indexterm>Syntax highlights in Text mode</indexterm></keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_t2w_bgk_54b">The <xref href="preferences-colors-sh.dita">syntax highlight scheme of an XML file
+        type</xref> allows the configuration of a color per each type of token that can appear in an
+      XML file. Distinguishing between the XML tag tokens based on the namespace prefix brings
+      additional visual help in editing some XML file types. For example, in XSLT stylesheets,
+      elements from various namespaces (such as XSLT, XHTML, XSL:FO, or XForms) are inserted in the
+      same document and the editor panel can become cluttered. <xref
+        href="preferences-colors-elements-by-prefix.dita">Marking tags with different colors based
+        on the namespace prefix</xref> allows easier identification of the tags.</p>
+    <p id="p_u2w_bgk_54b">
+      <fig id="figure-elements-by-prefix-xslt-example-oxygen" product="editor author developer">
+        <title>Example of Coloring XML Tags by Prefix</title>
+        <image href="../img/sa_elements_by_prefix_xslt.png"/>
+      </fig>
+    </p>
+    <p id="p_v2w_bgk_54b">
+      <fig id="figure-elements-by-prefix-xslt-example-oxygenEclipse"
+        product="editorEclipse authorEclipse developerEclipse">
+        <title>Example of Coloring XML Tags by Prefix</title>
+        <image href="../img/ec_elements_by_prefix_xslt.png"/>
+      </fig>
+    </p>
+  </body>
+  <related-links>
+    <linklist><title>Related Information:</title><link href="preferences-colors-sh.dita#preferences-colors-sh">
+      <linktext>Changing the colors displayed in the Text Mode Editor</linktext>
+    </link></linklist>
+  </related-links>
+</topic>

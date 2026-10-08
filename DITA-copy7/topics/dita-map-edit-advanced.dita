@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dita-map-edit-advanced">
+  <title>Advanced Tab (DITA-OT Transformations)</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>DITA-OT transformation scenario<indexterm>Advanced tab</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_dvl_cgk_54b"><ph conkeyref="reusables-transforming-documents/intro-for-transformation-tabs"/></p> 
+    <p id="p_evl_cgk_54b">The <uicontrol>Advanced</uicontrol> tab allows you to specify advanced options for the
+      transformation scenario.</p>
+    <p id="p_fvl_cgk_54b">
+      <fig product="author developer editor" id="fig_gvl_cgk_54b">
+        <title>Advanced Settings Tab</title>
+        <image href="../img/sa_advanced_tab_dita_scenario.png"/>
+      </fig>
+    </p>
+    <p id="p_hvl_cgk_54b">
+      <fig product="authorEclipse developerEclipse editorEclipse" id="fig_ivl_cgk_54b">
+        <title>Advanced Settings Tab</title>
+        <image href="../img/ec_advanced_tab_dita_scenario.png"/>
+      </fig>
+    </p>
+    <p id="p_jvl_cgk_54b">You can specify the following options:<dl id="dl_kvl_cgk_54b">
+        <dlentry id="dlentry_xwm_d1h_ppb">
+          <dt><uicontrol>Prefer using the "dita" command</uicontrol></dt>
+          <dd>When selected, <ph keyref="product"/> will attempt to use the
+              <codeph>dita.bat</codeph> executable script (<codeph>dita.sh</codeph> for macOS and
+            Linux) that is bundled with DITA-OT to run the transformation. If not selected, the
+            transformation will run as an ANT process. Also, when this option is selected, other
+            options (<uicontrol>Custom build file</uicontrol>, <uicontrol>Build target</uicontrol>,
+              <uicontrol>Ant Home</uicontrol>) become unavailable. This setting is checked by
+            default in newly created DITA-OT transformation scenario.<note id="note_lvd_cbh_ppb"
+              >Even when this option is selected, the <codeph>dita.bat</codeph>
+                (<codeph>dita</codeph> for macOS and Linux) executable cannot be used in some cases.
+              For example, if the DITA Map is published from a remote location or if the
+                <codeph>fix.external.refs</codeph> parameter is enabled in the
+                <uicontrol>Parameters</uicontrol> tab, the transformation is started as an ANT
+              process instead of using the executable.</note></dd>
+        </dlentry>
+        <dlentry id="dlentry_lvl_cgk_54b">
+          <dt><uicontrol>Custom build file</uicontrol></dt>
+          <dd>If you use a custom DITA-OT build file, you can specify the path to the customized
+            build file. If empty, the <filepath>build.xml</filepath> file from the
+              <codeph>dita.dir</codeph> parameter that is configured in the <xref
+              href="dita-map-edit-parameters.dita#dita-map-edit-parameters"
+                ><uicontrol>Parameters</uicontrol> tab</xref> is used. <ph
+              conkeyref="reusables-user-guide/specify-path-without-drop-down"/></dd>
+        </dlentry>
+        <dlentry id="dlentry_mvl_cgk_54b">
+          <dt><uicontrol>Build target</uicontrol></dt>
+          <dd>Optionally, you can specify a build target for the build file. If no target is
+            specified, the default <codeph>init</codeph> target is used.</dd>
+        </dlentry>
+        <dlentry conkeyref="reusables-transforming-documents/additional-arguments"
+          id="dlentry_nvl_cgk_54b">
+          <dt/>
+          <dd/>
+        </dlentry>
+        <dlentry conkeyref="reusables-transforming-documents/ant-home" id="dlentry_ovl_cgk_54b">
+          <dt/>
+          <dd/>
+        </dlentry>
+        <dlentry id="dlentry_pvl_cgk_54b">
+          <dt><uicontrol>Java Home</uicontrol></dt>
+          <dd>You can choose between the default or custom Java installation to run the
+            transformation. The default path is the Java installation that is used by <ph
+              keyref="product"/>.<note id="note_qvl_cgk_54b">It may be possible that the used Java
+              version is incompatible with the DITA Open Toolkit engine. If you encounter related
+              errors running the transformation, consider installing a Java VM that is supported by
+              the DITA-OT publishing engine and using it in the <uicontrol>Java Home</uicontrol>
+              text field.</note></dd>
+        </dlentry>
+        <dlentry conkeyref="reusables-transforming-documents/dita-jvm-args-dlentry"
+          id="jvm-arguments">
+          <dt/>
+          <dd/>
+        </dlentry>
+        <dlentry conkeyref="reusables-transforming-documents/libraries" id="dlentry_rvl_cgk_54b">
+          <dt/>
+          <dd/>
+        </dlentry>
+      </dl></p>
+  </body>
+</topic>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept
+  PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="validation-scenario">
+  <title>Validation Scenarios</title>
+  <conbody>
+    <p id="p_y3z_bgk_54b">A complex XML document is split in smaller interrelated modules. These modules do not make
+      much sense individually and cannot be validated in isolation due to interdependencies with
+      other modules. <ph keyref="product"/> validates the main module of the document when an
+      imported module is checked for errors.</p>
+    <p id="p_z3z_bgk_54b">A typical example is the chunking of a DocBook XSL stylesheet that has
+        <filepath>chunk.xsl</filepath> as the main module and <filepath>param.xsl</filepath>,
+        <filepath>chunk-common.xsl</filepath>, and <filepath>chunk-code.xsl</filepath> as imported
+      modules. <filepath>param.xsl</filepath> only defines XSLT parameters. The module
+        <filepath>chunk-common.xsl</filepath> defines an XSLT template with the name
+        <codeph>chunk</codeph>. <filepath>Chunk-code.xsl</filepath> calls this template. The
+      parameters defined in <filepath>param.xsl</filepath> are used in the other modules without
+      being redefined.</p>
+    <p id="p_ajz_bgk_54b">Validating <filepath>chunk-code.xsl</filepath> as an individual XSLT stylesheet generates
+      misleading errors regarding parameters and templates that are used but undefined. These errors
+      are only caused by ignoring the context in which this module is used in real XSLT
+      transformations and validations. To validate such a module, define a validation scenario to
+      set the main module of the stylesheet and the validation engine used to find the errors.
+      Usually this engine applies the transformation during the validation process to detect the
+      errors that the transformation generates.</p>
+    <p id="p_bjz_bgk_54b">You can validate a stylesheet with several engines to make sure that you
+      can use it in various environments and have the same results. For example, an XSLT stylesheet
+      may be applied with Saxon 12 or Saxon 6.5 engines in different production systems.</p>
+    <p id="p_cjz_bgk_54b">Other examples of documents that can benefit from a validation scenario include:<ul id="ul_djz_bgk_54b">
+        <li id="li_ejz_bgk_54b">A complex XQuery file with a main module that imports modules
+          developed independently but validated in the context of the main module of the query. In
+          an XQuery validation scenario, the default validator of <ph keyref="product"/> (Saxon 12)
+          or any connection to a database that supports validation (eXist XML Database, MarkLogic
+          version 5 or newer) can be set as a validation engine.</li>
+        <li id="li_fjz_bgk_54b">An XML document where the <xref keyref="glossentry_main-file"
+              ><term>main file</term></xref> includes smaller fragment files using XML entity
+            references.<note conkeyref="reusables-editing-documents/validation-note"
+            id="note_gjz_bgk_54b">
+            <p/>
+          </note></li>
+      </ul></p>
+    <p>All validation scenarios that are defined in the <term>framework</term> associated with the
+      current document are shown in the <image href="../img/ValidateDrop.png"
+        id="edit-validation-scenario__image_dyn_x5v_sr"/><b>Validation</b> toolbar drop-down menu.
+      This makes it easy for the user to turn validation scenarios on or off for a document.</p>
+    
+    <note conkeyref="reusables-editing-documents/information-view-tip" id="note_hjz_bgk_54b"/>
+  </conbody>
+  <related-links>
+      <link
+        href="validating-XML-documents-against-schema.dita#validating-XML-documents-against-schema"/>
+      <link href="author-validation-error-presenting.dita#author-validation-error-presenting"
+        product="author editor authorEclipse editorEclipse"/>
+      <link href="marking-validation-errors.dita#marking-validation-errors"/>
+  </related-links>
+</concept>

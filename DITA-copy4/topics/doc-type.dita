@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Concept//EN" "topic.dtd">
+<topic id="doc-type">
+  <title>Built-in Frameworks (Document Types)</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Document Types</indexterm>
+        <indexterm>Frameworks</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_lr3_cgk_54b"><ph keyref="product"/> includes a variety of specialized editors, views,
+      and features that are dynamic according to the type of document that you open or create. <ph
+        keyref="product"/> includes fully supported built-in <xref keyref="glossentry_framework"
+          ><term>frameworks</term></xref> for popular <ph
+        product="author developer editor authorEclipse developerEclipse editorEclipse">XML document
+        types (e.g. DITA, DocBook, TEI, XHTML, JATS), as well as other </ph>document types (e.g.
+      JSON, YAML, OpenAPI, Markdown, HTML, CSS), each with a specialized set of <xref
+        href="editing-documents.dita">editing features for the particular document type</xref>.</p>
+    <p id="p_mr3_cgk_54b">The built-in <xref keyref="glossentry_framework"><term>frameworks</term></xref> are defined
+      according to a set of rules and a variety of settings that improve editing capabilities for
+      its particular file type. These settings include:<ul id="ul_nr3_cgk_54b">
+        <li id="li_or3_cgk_54b">A default grammar used for validation and content completion in <ph
+            product="author editor authorEclipse editorEclipse">both <uicontrol>Author</uicontrol>
+            mode and </ph><uicontrol>Text</uicontrol> mode.</li>
+        <li product="author editor authorEclipse editorEclipse" id="li_pr3_cgk_54b">CSS stylesheets for rendering XML
+          documents in <uicontrol>Author</uicontrol> mode.</li>
+        <li product="author editor authorEclipse editorEclipse" id="li_qr3_cgk_54b">User actions invoked from toolbars
+          or menus in <uicontrol>Author</uicontrol> mode.</li>
+        <li id="li_rr3_cgk_54b">Built-in transformation scenarios used for publishing XML documents.</li>
+        <li id="li_sr3_cgk_54b"><xref keyref="glossentry_xml-catalog"><term>XML Catalogs</term></xref> used for mapping
+          resources.</li>
+        <li id="li_tr3_cgk_54b">New document templates to make it easy to create XML documents.</li>
+        <li product="author editor authorEclipse editorEclipse" id="li_ur3_cgk_54b">User-defined extensions for
+          customizing the interaction with the content author in <uicontrol>Author</uicontrol>
+          mode.</li>
+      </ul></p>
+    <p product="author editor authorEclipse editorEclipse" id="p_vr3_cgk_54b">It is also possible to create and
+      configure your own custom <term>frameworks</term> (document types). For more information, see
+      the <xref href="../topics/author-devel-guide-intro.dita"/> section.</p>
+    <p product="author editor authorEclipse editorEclipse" id="p_wr3_cgk_54b">For extensive details about the DITA
+      editing features included in <ph keyref="product"/>, see the <xref href="author-dita.dita"
+        >DITA Authoring chapter</xref>.</p>
+  </body>
+</topic>

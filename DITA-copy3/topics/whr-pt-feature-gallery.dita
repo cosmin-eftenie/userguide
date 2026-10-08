@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="whr-pt-feature-gallery">
+  <title>Publishing Templates Gallery</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+          >WebHelp Responsive<indexterm>Built-in templates</indexterm></indexterm>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+          >WebHelp Responsive<indexterm>Custom templates</indexterm></indexterm>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+          >WebHelp Responsive<indexterm>Sharing templates</indexterm></indexterm>
+        <indexterm product="webhelp-responsive ope">Built-in templates</indexterm>
+        <indexterm product="webhelp-responsive ope">Custom templates</indexterm>
+        <indexterm product="webhelp-responsive ope">Sharing templates</indexterm>
+      </keywords>
+      <keywords>
+        <keyword outputclass="label" product="webhelp-responsive">Publishing Template</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_bhn_cgk_54b"><ph keyref="product"/> comes bundled with a variety of built-in templates. You can use one of
+      them to publish your documentation or as a starting point for a new publishing template. </p>
+    <section id="builtin_templates">
+      <title>Built-in Templates</title>
+      <p id="p_chn_cgk_54b">There are two categories of templates, <i>Tiles</i> and <i>Tree</i>. You can see the
+        built-in templates in the <uicontrol>Templates</uicontrol> tab when editing a WebHelp
+        Responsive transformation scenario in <b>Oxygen XML Editor/Author</b>. Each one also
+        includes an <uicontrol><image href="../img/OnlinePreview16.png"/>Online preview</uicontrol>
+        icon in the bottom-right corner that opens a webpage in your default browser that provides a
+        sample of how the main page will look when that particular template is used to generate the
+        output.</p>
+      <p id="p_dhn_cgk_54b">
+        <dl id="dl_ehn_cgk_54b">
+          <dlentry id="dlentry_fhn_cgk_54b">
+            <dt>Tiles Templates</dt>
+            <dd>
+              <p id="p_ghn_cgk_54b">The main page in the WebHelp output presents a tile for each main topic (chapter)
+                of the documentation.</p>
+              <p id="p_hhn_cgk_54b"><image href="../img/whr-tiles-predefined-templates.png" id="image_ecy_x43_vcb"
+                /></p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_ihn_cgk_54b">
+            <dt>Tree Templates</dt>
+            <dd>
+              <p id="p_jhn_cgk_54b">The main page in the WebHelp output presents a tree-like table of contents.</p>
+              <p id="p_khn_cgk_54b"><image href="../img/whr-tree-predefined-templates.png" id="image_rhg_z43_vcb"/></p>
+            </dd>
+          </dlentry>
+        </dl>
+      </p>
+    </section>
+    <section id="section_djq_dn3_vcb">
+      <title>Built-in Templates Location</title>
+      <p id="p_lhn_cgk_54b">All built-in templates are stored in the following directory: <filepath><abbreviated-form
+            keyref="glossentry_dita_ot_dir"
+          />/plugins/com.oxygenxml.webhelp.responsive/templates</filepath>.</p>
+    </section>
+    <section id="custom_templates">
+      <title>Custom Templates</title>
+      <p id="p_mhn_cgk_54b">You can use a built-in template as a starting point for <xref
+          href="ope-create-publishing-template.dita#ope-create-publishing-template">creating your
+          own custom template</xref>. You can store all of your custom templates in a particular
+        directory. Then, go to <menucascade>
+          <uicontrol>Options</uicontrol>
+          <uicontrol>Preferences</uicontrol>
+          <uicontrol>DITA</uicontrol>
+          <uicontrol>Publishing</uicontrol>
+        </menucascade> and add your directory to the list, and all the templates stored in that
+        directory will be displayed in the preview pane in the transformation scenario's
+          <uicontrol>Template</uicontrol> tab along with all the built-in templates.</p>
+    </section>
+    <section id="section_olq_54f_xcb">
+      <title>Sharing Publishing Template</title>
+      <p id="p_nhn_cgk_54b">To share a publishing template with others, following these steps:</p>
+      <ol id="ul_ms3_c5j_wcb">
+        <li id="li_ohn_cgk_54b">Copy your template in a new folder.</li>
+        <li id="li_phn_cgk_54b">Go to <menucascade>
+            <uicontrol>Options</uicontrol>
+            <uicontrol>Preferences</uicontrol>
+            <uicontrol>DITA</uicontrol>
+            <uicontrol>Publishing</uicontrol>
+          </menucascade> and add that new folder to the list. </li>
+        <li id="li_qhn_cgk_54b">Switch the option as the bottom of that preferences page to <uicontrol>Project
+            Options</uicontrol>.</li>
+        <li id="li_rhn_cgk_54b">Share your project file (<filepath>.xpr</filepath>).</li>
+      </ol>
+    </section>
+  </body>
+</topic>

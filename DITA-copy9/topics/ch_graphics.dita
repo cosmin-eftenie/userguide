@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ch_graphics">
+  <title>Graphics</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Graphics</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_xjv_dgk_54b">This section includes topics that describe how to style graphics in your PDF output.</p>
+  </body>
+  
+</topic>

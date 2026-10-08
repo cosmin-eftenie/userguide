@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="import-https-server-certificate">
+  <title>Troubleshooting HTTPS</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>HTTPS troubleshooting</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    
+      <p id="p_gjt_bgk_54b">If <ph keyref="product"/> cannot connect to an HTTPS-capable server and
+      an error message appears stating that it is "unable to find a valid certification path to the
+      requested target", the HTTPS server is most likely either configured to use a self-signed
+      certificate or to use a certificate issued by an unknown authority that the <i>Java Runtime
+        Environment (JRE)</i> used by <ph keyref="product"/> does not trust.</p>
+    <note>For Windows, starting with version 26.0, by default, <ph keyref="product"/> uses the
+      trusted root certificates from the Windows certificate store instead of the JRE cacerts store.
+      To trust a certificate, the root certificate should be imported in the Windows Trusted Root
+      certificates store.</note>
+    <p id="p_i2t_xkp_4sb">
+      <note type="tip" id="note_jjt_bgk_54b">To make <ph keyref="product"/> accept a certificate
+        even if it is invalid, <ph conkeyref="reusables-preferences-pages/open-the-preferences-page"
+        />, go to <menucascade product="author developer editor json">
+          <uicontrol>Connection settings</uicontrol>
+          <uicontrol>HTTP(S)/WebDAV</uicontrol>
+        </menucascade><menucascade product="authorEclipse developerEclipse editorEclipse">
+          <uicontrol>Network Connection settings</uicontrol>
+          <uicontrol>HTTP(S)/WebDAV</uicontrol>
+        </menucascade>, and select the <uicontrol>Automatically accept a security certificate, even
+          if invalid</uicontrol> option.<p id="p_lzx_ykp_4sb">
+          <note type="notice" product="authorEclipse developerEclipse editorEclipse"
+            id="note_kjt_bgk_54b">This <uicontrol>Automatically accept a security certificate, even
+              if invalid</uicontrol> option does not influence the entire Eclipse workspace. It is
+            limited to URLs that are opened directly by <ph keyref="product"/>.</note>
+        </p></note>
+    </p>
+    <p id="p_r5b_2h1_psb">To trust a certificate, follow this procedure:</p>
+      <p id="p_fmd_g3p_4sb">
+      <ol id="ol_es3_g3p_4sb">
+        <li id="li_fs3_g3p_4sb">Export a certificate into a local file using any HTTPS-capable web
+            browser:<p id="p_jdp_n3p_4sb"><u><b>Chrome or Edge</b></u><ol id="ol_i34_q3p_4sb">
+              <li id="li_j34_q3p_4sb">Navigate to the page that uses the certificate.</li>
+              <li id="li_orw_r3p_4sb">Right-click the page and select
+                <uicontrol>Inspect</uicontrol>.</li>
+              <li id="li_v23_t3p_4sb">Select the <uicontrol>Security</uicontrol> tab.</li>
+              <li id="li_j4g_53p_4sb">Click <uicontrol>View
+                    Certificate</uicontrol>.<itemgroup><b>Step Result:</b> A
+                    <uicontrol>Certificate</uicontrol> dialog box is displayed.</itemgroup></li>
+              <li id="li_dnw_w3p_4sb">Select the <uicontrol>Details</uicontrol> tab of the
+                  <uicontrol>Certificate</uicontrol> dialog box.</li>
+              <li id="li_enw_w3p_4sb">Click the <uicontrol>Export</uicontrol> button.</li>
+              <li id="li_fnw_w3p_4sb">In the resulting dialog box, for the <uicontrol>Save as
+                  type</uicontrol> option, select <uicontrol>DER-encoded binary, single certificate
+                  (*.der)</uicontrol>.</li>
+              <li id="li_xry_ck1_sxb">Save the certificate to the local file
+                  <filepath>server.der</filepath>.</li>
+            </ol></p><p id="p_wxb_qjp_4sb"><u><b>Safari</b></u><ol id="ol_xxb_qjp_4sb">
+              <li id="li_yxb_qjp_4sb">Navigate to the page that uses the certificate.</li>
+              <li id="li_zxb_qjp_4sb">If there is a <i>"This connection is not private"</i> message,
+                click <b>Show Details</b> and in the expanded panel, click <b>view the
+                  certificate</b>.</li>
+              <li id="li_ayb_qjp_4sb">Otherwise, in the address bar, click the <i>padlock icon</i>
+                on the left side of the website name and in the displayed pop-up, click <b>Show
+                  Certificate</b>.</li>
+              <li id="li_byb_qjp_4sb">Another pop-up box is displayed showing information about the
+                  <b>certificate</b>. Drag the large <b>certificate</b> icon to a
+                  <term>Finder</term> window. A <filepath>.cer</filepath> file will be created in
+                the indicated folder from <term>Finder</term>.</li>
+            </ol></p></li>
+        <li id="li_kpj_4kp_4sb">Import the local file into the JRE running <ph keyref="product"
+            />:<ol id="ol_cyk_qkp_4sb">
+            <li id="li_dyk_qkp_4sb">Open a text-mode console with administrative
+                rights.<itemgroup>If <ph keyref="product"/> has been installed in a user's home
+                directory and includes a bundled JRE, administrative rights are not required. In all
+                other cases, administrative rights will be required.</itemgroup></li>
+            <li id="li_eyk_qkp_4sb">Go to the <filepath>lib/security</filepath> directory of the JRE
+              running <ph keyref="product"/>. You can find the home directory of the JRE in the
+                <i>java.home</i> property that is displayed in the <uicontrol>About</uicontrol>
+              dialog box (<ph product="author developer editor json"><uicontrol>System
+                  properties</uicontrol> tab</ph><menucascade
+                product="authorEclipse developerEclipse editorEclipse">
+                <uicontrol>Installation Details</uicontrol>
+                <uicontrol>Configuration</uicontrol>
+              </menucascade>).<itemgroup>
+                <note id="note_fyk_qkp_4sb">On macOS, for the distribution of <ph keyref="product"/>
+                  that bundles the JRE from Oracle, the JRE uses the
+                    <filepath>.install4j/jre.bundle/Contents/Home/jre/lib/security/cacerts</filepath>
+                  path within its installation directory.</note>
+              </itemgroup></li>
+            <li id="li_gyk_qkp_4sb">Run the following
+                command:<itemgroup><codeblock outputclass="language-ini">..\..\bin\keytool -import -trustcacerts -file server.cer -keystore cacerts</codeblock>The
+                  <filepath>server.cer</filepath> file contains the server certificate, created
+                during the previous step. The <term>keytool</term> requires a password before adding
+                the certificate to the JRE <xref keyref="glossentry_keystore"
+                  ><term>keystore</term></xref>. The default password is
+                  <userinput>changeit</userinput>. If someone changed the default password, then
+                that person is the only one who can perform the import.<note type="tip"
+                  id="note_hyk_qkp_4sb">If you need to import multiple certificates, you need to
+                  specify a different alias for each additional imported certificate with the
+                    <codeph>-alias</codeph> command-line argument, as in the following example:<p
+                    id="p_iyk_qkp_4sb">
+                    <codeblock outputclass="language-ini">..\..\bin\keytool -import -alias myalias1 -trustcacerts -file 
+server1.cer -keystore cacerts
+ 
+..\..\bin\keytool -import -alias myalias2 -trustcacerts -file 
+server2.cer -keystore cacerts </codeblock>
+                  </p></note></itemgroup></li>
+          </ol></li>
+        <li id="li_aps_vkp_4sb"> Restart <ph keyref="product"/>. </li>
+      </ol>
+    </p>
+  </body>
+  <related-links><link href="https-webdav-preferences.dita#https-webdav-preferences"/>
+  </related-links>
+</topic>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept
+  PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="lock-handler-factory">
+  <title>Lock Handler Plugin Extension</title>
+  <shortdesc>This type of <xref keyref="glossentry_plugin"><term>plugin extension</term></xref> is
+    used for locking resources from a specific protocol.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Plugin extensions<indexterm>Lock Handler</indexterm></indexterm>
+        <indexterm>Lock Handler plugin extension</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p id="p_qm2_dgk_54b">It provides the following API:</p>
+    <p id="p_rm2_dgk_54b">
+      <dl id="dl_sm2_dgk_54b">
+        <dlentry id="dlentry_tm2_dgk_54b">
+          <dt><b><term>LockHandlerFactoryPluginExtension</term> interface</b></dt>
+          <dd>
+            <p id="p_um2_dgk_54b">You need to implement the following two methods:</p>
+            <p id="p_vm2_dgk_54b">
+              <dl id="dl_wm2_dgk_54b">
+                <dlentry id="dlentry_xm2_dgk_54b">
+                  <dt><term>LockHandler getLockHandler()</term></dt>
+                  <dd>Gets the lock handler for the current handled protocol. Might be
+                      <codeph>null</codeph> if not supported.</dd>
+                </dlentry>
+                <dlentry id="dlentry_ym2_dgk_54b">
+                  <dt><term>boolean isLockingSupported(String protocol)</term></dt>
+                  <dd>
+                    <p id="p_zm2_dgk_54b">Checks if a lock handler can be provided for a specific protocol.</p>
+                    <p id="p_an2_dgk_54b">To use this type of extension in your <term>plugin</term>,
+                      create an extension of <term>LockHandlerFactory</term> type in your
+                        <codeph>plugin.xml</codeph> file and specify the class implementing
+                        <term>LockHandlerFactoryPluginExtension</term>:<codeblock outputclass="language-xml" id="codeblock_bn2_dgk_54b">&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;!DOCTYPE plugin SYSTEM "../plugin.dtd">
+&lt;plugin name="CustomLockHandler" ..............>
+ &lt;runtime>
+  ........
+ &lt;/runtime>
+ 
+ &lt;extension type="LockHandlerFactory"
+         class="LockHandlerFactoryPluginExtensionImpl"/>
+ ...............
+  
+&lt;/plugin>
+</codeblock></p>
+                  </dd>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+      </dl>
+    </p>
+  </conbody>
+</concept>

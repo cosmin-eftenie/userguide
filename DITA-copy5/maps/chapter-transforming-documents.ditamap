@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map id="chapter.transforming-documents" title="Publishing">
+  <topicref href="../topics/transforming-documents.dita"
+    product="author authorEclipse editor editorEclipse developer developerEclipse"
+    collection-type="sequence" keys="transform_documents">
+    <topicmeta>
+      <shortdesc>Details about transformation scenarios and customizing various types of
+        output</shortdesc>
+      <data name="wh-menu" product="developer developerEclipse">
+        <data name="hide" value="yes"/>
+      </data>
+    </topicmeta>
+    <topicref href="../topics/transformation-scenario.dita" collection-type="sequence">
+      <topicref href="../topics/builtin-transformation-scenarios.dita" collection-type="sequence">
+        <topicref href="../topics/author-dita-map-transformation-scenarios.dita"
+          collection-type="sequence"
+          copy-to="../topics/author-dita-map-transformation-scenarios-2.dita">
+          <topicref href="../topics/wh-responsive-output.dita"
+            copy-to="../topics/wh-responsive-output-2.dita" keys="wh-responsive-output"/>
+          <topicref href="../topics/ditamap-pdf-css-html5.dita"
+            copy-to="../topics/ditamap-pdf-css-html5-2.dita" keys="ditamap-pdf-css-html5"/>
+          <topicref href="../topics/dita-pdf-transformation.dita"
+            copy-to="../topics/dita-pdf-transformation-2.dita" keys="dita-pdf-transformation"/>
+          <topicref href="../topics/ditamap-ms-word.dita" copy-to="../topics/ditamap-ms-word-2.dita"/>
+          <topicref href="../topics/dita_map_markdown_transformation.dita"/>
+          <topicref href="../topics/chm-output-format.dita"
+            copy-to="../topics/chm-output-format-2.dita"/>
+          <topicref href="../topics/dita-map-metrics-report.dita" copy-to="../topics/dita-map-metrics-report-2.dita"/>
+          <topicref href="../topics/zendesk-transformation-output.dita" copy-to="../topics/zendesk-transformation-output-2.dita"/>
+          <topicref href="../topics/ditamap-run-dita-ot-integrator.dita"
+            copy-to="../topics/ditamap-run-dita-ot-integrator-2.dita"
+            keys="ditamap-run-dita-ot-integrator"/>
+          <topicref href="../topics/fixing-dita-transformation-errors.dita"
+            copy-to="../topics/fixing-dita-transformation-errors-2.dita"/>
+        </topicref>
+        <topicref href="../topics/dita-topic-transformation-scenarios.dita"
+          collection-type="sequence" copy-to="../topics/dita-topic-transformation-scenarios-x2.dita"/>
+        <topicref href="../topics/author-docbook5-transformation-scenarios.dita"
+          collection-type="sequence">
+          <topicref href="../topics/docbook-2-dita-transform.dita"/>
+          <topicref href="../topics/docbook-2-pfd-transform.dita"/>
+          <topicref href="../topics/docbook-to-epub.dita"/>
+          <topicref href="../topics/docbook-pdf-output-show-comments.dita"/>
+        </topicref>
+      </topicref>
+      <topicref href="../topics/defining-new-transformation-scenario.dita"
+        collection-type="sequence">
+        <topicref href="../topics/xml-transformation-with-xslt.dita" collection-type="sequence">
+          <topicref href="../topics/xslt-tab.dita" collection-type="sequence">
+            <topicref href="../topics/xslt-stylesheet-parameters.dita"/>
+            <topicref href="../topics/xslt-xquery-extensions.dita"/>
+            <topicref href="../topics/additional-xslt-stylesheets.dita"/>
+            <topicref href="../topics/advanced-saxon-xslt-options.dita"/>
+            <topicref href="../topics/saxon_extension_functions.dita"
+              copy-to="../topics/saxon_extension_functions-x1.dita"/>
+          </topicref>
+          <topicref href="../topics/fo-processor-tab.dita"/>
+          <topicref href="../topics/the-output-tab.dita" collection-type="sequence">
+            <topicref href="../topics/oxygen-browser-view.dita"
+              product="editorEclipse authorEclipse developerEclipse"/>
+            <topicref href="../topics/oxygen-text-view.dita"
+              product="editorEclipse authorEclipse developerEclipse"/>
+          </topicref>
+          <topicref href="../topics/xslt-processors.dita" collection-type="sequence">
+            <topicref href="../topics/supported-XSLT-processors.dita"/>
+            <topicref href="../topics/configuring-custom-xslt-processors.dita"/>
+            <topicref href="../topics/configuring-XSLT-processor-extensions-paths.dita"/>
+          </topicref>
+        </topicref>
+        <topicref href="../topics/xml-transformation-with-xquery.dita" collection-type="sequence">
+          <topicref href="../topics/the-xquery-tab.dita" collection-type="sequence">
+            <topicref href="../topics/xquery-parameters.dita"/>
+            <topicref href="../topics/xquery-extensions.dita"/>
+            <topicref href="../topics/transform-xquery-advanced-saxon-options.dita"/>
+          </topicref>
+          <topicref href="../topics/fo-processor-tab--xml-xquery.dita"/>
+          <topicref href="../topics/output-xml-xquery.dita"/>
+        </topicref>
+        <topicref href="../topics/chemistry-transformation.dita" collection-type="sequence">
+          <topicref href="../topics/pdf-css-css-tab.dita"/>
+          <topicref href="../topics/pdf-css-output-tab.dita"/>
+        </topicref>
+        <topicref href="../topics/dita-ot-transformation.dita" collection-type="sequence">
+          <topicref href="../topics/templates-tab-whr.dita"
+            copy-to="../topics/templates-tab-whr-x-publishing.dita" collection-type="sequence">
+            <topicref href="../topics/save-template-as.dita"
+              copy-to="../topics/save-template-as-2.dita"/>
+          </topicref>
+          <topicref href="../topics/dita-pdf-select-processor.dita"
+            copy-to="../topics/dita-pdf-select-processor-x-publishing.dita"/>
+          <topicref href="../topics/dita-map-edit-parameters.dita"
+            copy-to="../topics/dita-map-edit-parameters-x-publishing.dita"/>
+          <topicref href="../topics/dita-map-edit-feedback.dita"
+            copy-to="../topics/dita-map-edit-feedback-x-publishing.dita"/>
+          <topicref href="../topics/dita-map-edit-filters.dita"
+            copy-to="../topics/dita-map-edit-filters-x-publishing.dita"/>
+          <topicref href="../topics/dita-map-edit-advanced.dita"
+            copy-to="../topics/dita-map-edit-advanced-x-publishing.dita"/>
+          <topicref href="../topics/dita-map-edit-output.dita"
+            copy-to="../topics/dita-map-edit-output-x-publishing.dita"/>
+        </topicref>
+        <topicref href="../topics/ant-transformation.dita" collection-type="sequence">
+          <topicref href="../topics/ant-transformation-options-tab.dita"/>
+          <topicref href="../topics/ant-transformation-parameters-tab.dita"/>
+          <topicref href="../topics/ant-transformation-output-tab.dita"/>
+        </topicref>
+        <topicref href="../topics/json-transformation-with-xslt.dita" collection-type="sequence">
+          <topicref href="../topics/xslt-tab-json.dita" collection-type="sequence">
+            <topicref href="../topics/xslt-stylesheet-parameters.dita" copy-to="../topics/xslt-stylesheet-parameters-x2.dita"/>
+            <topicref href="../topics/xslt-xquery-extensions.dita" copy-to="../topics/xslt-xquery-extensions-x2.dita"/>
+            <topicref href="../topics/additional-xslt-stylesheets.dita" copy-to="additional-xslt-stylesheets-x2.dita"/>
+          </topicref>
+          <topicref href="../topics/fo-processor-tab-json.dita"/>
+          <topicref href="../topics/the-output-tab-json.dita"/>
+        </topicref>
+        <topicref href="../topics/json-transformation-with-xquery.dita" collection-type="sequence">
+          <topicref href="../topics/the-xquery-tab-json.dita" collection-type="sequence">
+            <topicref href="../topics/xquery-parameters.dita" copy-to="../topics/xquery-parameters-x-publishing3.dita"/>
+            <topicref href="../topics/xquery-extensions.dita" copy-to="../topics/xquery-extensions-x-publishing3.dita"/>
+            <topicref href="../topics/transform-xquery-advanced-saxon-options.dita" copy-to="../topics/transform-xquery-advanced-saxon-options-x-publishing3.dita"/>
+          </topicref>
+          <topicref href="../topics/fo-processor-tab--xml-xquery.dita"
+            copy-to="../topics/fo-processor-tab--xml-xquery-x-publishing3.dita"/>
+          <topicref href="../topics/output-xml-xquery.dita"
+            copy-to="../topics/output-xml-xquery-x-publishing3.dita"/>
+        </topicref>
+        <topicref href="../topics/xslt-transformation.dita" collection-type="sequence">
+          <topicref href="../topics/xslt-tab.dita" copy-to="../topics/xslt-tab-x-publishing2.dita"
+            collection-type="sequence">
+            <topicref href="../topics/xslt-stylesheet-parameters.dita"
+              copy-to="../topics/xslt-stylesheet-parameters-x-publishing2.dita"/>
+            <topicref href="../topics/xslt-xquery-extensions.dita"
+              copy-to="../topics/xslt-xquery-extensions-x-publishing2.dita"/>
+            <topicref href="../topics/additional-xslt-stylesheets.dita"
+              copy-to="../topics/additional-xslt-stylesheets-x-publishing2.dita"/>
+            <topicref href="../topics/advanced-saxon-xslt-options.dita"
+              copy-to="../topics/advanced-saxon-xslt-options-x-publishing2.dita"/>
+            <topicref href="../topics/saxon_extension_functions.dita"
+              copy-to="../topics/saxon_extension_functions-x2.dita"/>
+          </topicref>
+          <topicref href="../topics/fo-processor-tab.dita"
+            copy-to="../topics/fo-processor-tab-x-publishing2.dita"/>
+          <topicref href="../topics/the-output-tab.dita"
+            copy-to="../topics/the-output-tab-x-publishing2.dita"/>
+          <topicref href="../topics/xslt-processors.dita" collection-type="sequence"
+            copy-to="../topics/xslt-processors-x-2.dita">
+            <topicref href="../topics/supported-XSLT-processors.dita"
+              copy-to="../topics/supported-XSLT-processors-x-2.dita"/>
+            <topicref href="../topics/configuring-custom-xslt-processors.dita"
+              copy-to="../topics/configuring-custom-xslt-processors-x-2.dita"/>
+            <topicref href="../topics/configuring-XSLT-processor-extensions-paths.dita"
+              copy-to="../topics/configuring-XSLT-processor-extensions-paths-x-2.dita"/>
+          </topicref>
+          <topicref href="../topics/xsl-fo-processors.dita" collection-type="sequence">
+            <topicref href="../topics/add-font-to-builtin-FOP-simplified.dita"/>
+            <topicref href="../topics/add-font-to-builtin-FOP.dita"/>
+            <topicref href="../topics/built-in-fop-additional-libraries.dita"/>
+            <topicref href="../topics/enable-debugging-fop.dita"/>
+          </topicref>
+        </topicref>
+        <topicref href="../topics/xslt-transformation-on-json.dita" collection-type="sequence">
+          <topicref href="../topics/xslt-tab-json.dita" collection-type="sequence" copy-to="../topics/xslt-tab-json-x3.dita">
+            <topicref href="../topics/xslt-stylesheet-parameters.dita"
+              copy-to="../topics/xslt-stylesheet-parameters-x3.dita"/>
+            <topicref href="../topics/xslt-xquery-extensions.dita"
+              copy-to="../topics/xslt-xquery-extensions-x3.dita"/>
+            <topicref href="../topics/additional-xslt-stylesheets.dita"
+              copy-to="additional-xslt-stylesheets-x3.dita"/>
+          </topicref>
+          <topicref href="../topics/fo-processor-tab-json.dita" copy-to="../topics/fo-processor-tab-json-x3.dita"/>
+          <topicref href="../topics/the-output-tab-json.dita" copy-to="../topics/the-output-tab-json-x3.dita"/>
+        </topicref>
+        <topicref href="../topics/xproc-transformation-scenario.dita" collection-type="sequence">
+          <topicref href="../topics/xproc-transformation-xproc-tab.dita"/>
+          <topicref href="../topics/xproc-transformation-inputs-tab.dita"/>
+          <topicref href="../topics/xproc-transformation-parameters-tab.dita"/>
+          <topicref href="../topics/xproc-transformation-outputs-tab.dita"/>
+          <topicref href="../topics/xproc-transformation-options-tab.dita"/>
+          <topicref href="../topics/configuring_calabash_with_xep.dita"/>
+          <topicref href="../topics/xproc-API-external-engine.dita"/>
+        </topicref>
+        <topicref href="../topics/xquery-transformation.dita" collection-type="sequence">
+          <topicref href="../topics/the-xquery-tab.dita"
+            copy-to="../topics/the-xquery-tab-x-publishing2.dita" collection-type="sequence">
+            <topicref href="../topics/xquery-parameters.dita"
+              copy-to="../topics/xquery-parameters-x-publishing2.dita"/>
+            <topicref href="../topics/xquery-extensions.dita"
+              copy-to="../topics/xquery-extensions-x-publishing2.dita"/>
+            <topicref href="../topics/transform-xquery-advanced-saxon-options.dita"
+              copy-to="../topics/transform-xquery-advanced-saxon-options-x-publishing2.dita"/>
+          </topicref>
+          <topicref href="../topics/fo-processor-tab--xml-xquery.dita"
+            copy-to="../topics/fo-processor-tab--xml-xquery-x-publishing2.dita"/>
+          <topicref href="../topics/output-xml-xquery.dita"
+            copy-to="../topics/output-xml-xquery-x-publishing2.dita"/>
+        </topicref>
+        <topicref href="../topics/xquery-transformation-on-json.dita" collection-type="sequence">
+          <topicref href="../topics/the-xquery-tab-json.dita" collection-type="sequence" copy-to="../topics/the-xquery-tab-json-x-publishing4.dita">
+            <topicref href="../topics/xquery-parameters.dita"
+              copy-to="../topics/xquery-parameters-x-publishing4.dita"/>
+            <topicref href="../topics/xquery-extensions.dita"
+              copy-to="../topics/xquery-extensions-x-publishing4.dita"/>
+            <topicref href="../topics/transform-xquery-advanced-saxon-options.dita"
+              copy-to="../topics/transform-xquery-advanced-saxon-options-x-publishing4.dita"/>
+          </topicref>
+          <topicref href="../topics/fo-processor-tab--xml-xquery.dita"
+            copy-to="../topics/fo-processor-tab--xml-xquery-x-publishing4.dita"/>
+          <topicref href="../topics/output-xml-xquery.dita"
+            copy-to="../topics/output-xml-xquery-x-publishing4.dita"/>
+        </topicref>
+        <topicref href="../topics/sql-transformation.dita"/>
+      </topicref>
+      <topicref href="../topics/edit-scenario-dialog.dita"/>
+      <topicref href="../topics/duplicating-transformations.dita"/>
+      <topicref href="../topics/apply-transformation-scenarios.dita"/>
+      <topicref href="../topics/configure-transformation-dialog.dita"/>
+      <topicref href="../topics/apply-batch-transformation.dita"/>
+      <topicref href="../topics/transformation-scenarios-sharing.dita"/>
+      <topicref href="../topics/scenarios-view.dita"/>
+    </topicref>
+    <topicref href="../topics/wh_webhelp_output.dita" collection-type="sequence">
+      <topicref href="../topics/webhelp-responsive-output.dita" collection-type="sequence">
+        <topicref href="../topics/webhelp-responsive-description.dita" collection-type="sequence">
+          <topicref href="../topics/whr-html5-pages.dita"/>
+          <topicref href="../topics/whr-default-search-engine.dita"/>
+          <topicref href="../topics/whr-context-sensitive.dita"/>
+          <topicref href="../topics/whr-accessibility.dita" collection-type="sequence">
+            <topicref href="../topics/whr-write-dita-content-accessible-whr-output.dita"
+              chunk="to-content">
+              <topicref href="../topics/whr-accessible-images.dita"/>
+              <topicref href="../topics/whr_accessible_image_maps.dita"/>
+              <topicref href="../topics/whr_acceessible_tables.dita" collection-type="sequence">
+                <topicref href="../topics/whr_accessible_tables_header_top_row.dita"/>
+                <topicref href="../topics/whr_accessible_tables_header_first_column.dita"/>
+                <topicref
+                  href="../topics/whr_accessible_tables_header_top_row_first_column.dita.dita"/>
+              </topicref>
+            </topicref>
+            <topicref href="../topics/whr-vpat.dita"/>
+          </topicref>
+        </topicref>
+        <topicref href="../topics/whr-publishing-template.dita" keys="wh-publishing-template"
+          collection-type="sequence" copy-to="../topics/whr-publishing-template-2.dita">
+          <topicref href="../topics/whr-pt-feature-gallery.dita"/>
+          <topicref href="../topics/whr_publishing_template_contents.dita">
+            <topicref href="../topics/html_page_templates.dita"/>
+          </topicref>
+        </topicref>
+        <topicref href="../topics/whr_generate_output.dita" chunk="to-content">
+          <topicref href="../topics/whr-run-from-oxygen.dita"/>
+          <topicref href="../topics/whr-automating-responsive-output.dita"/>
+        </topicref>
+        <topicref href="../topics/whr-feedback-system.dita" collection-type="sequence"/>
+        <topicref href="../topics/wh-responsive-customization-tips.dita" collection-type="sequence">
+          <topicref href="whr-customization-guide.ditamap" format="ditamap"/>
+        </topicref>
+        <topicref href="../topics/webhelp-responsive-plugin-additional-parameters.dita"/>
+        <topicref href="../topics/whr-responsive-override-xslt-dita-xslt-import.dita"
+          keys="whr-xslt-extension-points"/>
+      </topicref>
+    </topicref>
+    <topicref href="../topics/pdf-output-intro.dita" collection-type="sequence">
+      <topicref href="../topics/pdf-css-customization.dita" collection-type="sequence"
+        navtitle="CSS-based PDF Customization" locktitle="yes">
+        <mapref href="dcpp.ditamap" format="ditamap"/>
+      </topicref>
+      <topicref href="../topics/dita-pdf-output.dita" collection-type="sequence"
+        navtitle="XSL-FO to PDF Customization" locktitle="yes">
+        <topicref href="../topics/dita_pdf_output_customization.dita"/>
+        <topicref href="../topics/dita_pdf_embed_logo.dita"/>
+        <topicref href="../topics/dita_pdf_header_footer_customization.dita"/>
+        <topicref href="../topics/add-watermark-pdf-output.dita"/>
+        <topicref href="../topics/pdf-edit-link.dita"/>
+        <topicref href="../topics/page-breaks-between-block-elements.dita"/>
+        <topicref href="../topics/dita_pdf_output_show_comments.dita"/>
+        <topicref href="../topics/DITA-map-set-font-Apache-FOP.dita"/>
+        <topicref href="../topics/adding-libraries-fop-dita-ot.dita"/>
+        <topicref href="../topics/debugging-pdf-transformation.dita"/>
+      </topicref>
+    </topicref>
+    <topicref href="../topics/docbook-pdf-output-customization.dita"/>
+  </topicref>
+</map>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="preferences-extensions">
+  <title>Add-ons Preferences</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Preferences<indexterm>Add-ons</indexterm></indexterm>
+        <indexterm>Add-on preferences</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_rvn_bgk_54b">You can use <xref keyref="glossentry_plugin"><term>add-ons</term></xref> to enhance the
+      functionality of <ph keyref="product"/>. To configure the <uicontrol>Add-ons</uicontrol>
+      options, <ph conkeyref="reusables-preferences-pages/open-the-preferences-page"/> and go to
+        <uicontrol>Add-ons</uicontrol>.</p>
+    <p id="p_svn_bgk_54b">The following options are available in this preferences page:<dl id="dl_tvn_bgk_54b">
+        <dlentry id="dlentry_uvn_bgk_54b">
+          <dt><uicontrol>Enable automatic updates checking</uicontrol></dt>
+          <dd>When this option is selected, <ph keyref="product"/> will automatically search for
+            available updates.</dd>
+        </dlentry>
+        <dlentry id="dlentry_vvn_bgk_54b">
+          <dt><uicontrol>Add-on Sites URLs</uicontrol></dt>
+          <dd>This is a list of the URLs for the add-on sites. You can add, edit, and delete sites
+            in this list by using the buttons below the list.<note
+              conkeyref="reusables-addons/attention_update_site" id="note_nvf_fwt_ldc"/></dd>
+        </dlentry>
+        <dlentry id="dlentry_mc1_kzd_tpb">
+          <dt><uicontrol>Automatically install add-ons</uicontrol></dt>
+          <dd>You can use this section to specify required add-ons for a project. Then, when a user
+            opens the project, the specified add-ons will be automatically installed after prompting
+            the user. You can use <uicontrol><shortcut>Ctrl+Space</shortcut></uicontrol> to open a
+            pop-up window with the list of detected add-ons that you can select to be marked for
+            automatic installation. You can also manually enter the add-on ID and multiple IDs can
+            be entered by separating with either a space or new line.</dd>
+        </dlentry>
+      </dl></p>
+  </body>
+</topic>

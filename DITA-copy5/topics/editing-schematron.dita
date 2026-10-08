@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="editing-schematron">
+  <title>Editing Schematron Schemas</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Schematron<indexterm>Editing features</indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_ksg_cgk_54b">Schematron is a simple and powerful Structural Schema Language for making assertions about
+      patterns found in XML documents. It relies almost entirely on XPath query patterns for
+      defining rules and checks. Schematron validation rules allow you to specify a meaningful error
+      message. This error message is provided to you if an error is encountered during the
+      validation stage.</p>
+    <p id="p_lsg_cgk_54b">There are numerous online resources out there to help you get started with writing Schematron
+      rules. Here are just a few that might help you:<ul id="ul_msg_cgk_54b">
+        <li id="li_nsg_cgk_54b"><xref href="https://upg-dh.newtfire.org/explainSchematron.html"
+            format="html" scope="external">Guide to Schema Writing with Schematron</xref></li>
+        <li id="li_osg_cgk_54b"><xref
+            href="https://www.oxygenxml.com/events/2018/webinar_creating_schematron_rules_and_quick_fixes.html"
+            format="html" scope="external">Presentation: Schematron Development with
+          Oxygen</xref></li>
+      </ul></p>
+    <p id="p_psg_cgk_54b"><ph keyref="product"/> assists you in editing Schematron documents with schema-based content
+      completion, syntax highlight, search and refactor actions, and dedicated icons for the <xref
+        href="schematron-outline-view.dita#schematron-outline-view"><uicontrol>Outline</uicontrol>
+        view</xref>. You can create a new Schematron schema using one of the Schematron templates
+      available in the <xref href="new-dialog-sa.dita#new-dialog-sa" product="developer editor"
+          ><uicontrol>New</uicontrol> document wizard</xref><xref
+        href="creating-from-templates.dita#creating-from-templates"
+        product="developerEclipse editorEclipse"><uicontrol>New from Templates</uicontrol>
+        wizard</xref>.</p>
+    <p id="p_qsg_cgk_54b">For information about applying and detecting Schematron schemas, see <xref
+        href="associate-schema-to-document.dita#associate-schema-to-document"/>.</p>
+    <section id="validating_xml_documents_against_schematron">
+      <title>Validating XML Documents Against Schematron</title>
+      <p id="p_rsg_cgk_54b">The Skeleton XSLT processor is used for validation and conforms with ISO Schematron or
+        Schematron 1.5. It allows you to <xref
+          href="validate-xml-with-sch.dita">validate XML documents against
+          Schematron schemas</xref> or against combined RELAX NG / W3C XML Schema and Schematron.
+      </p>
+    </section>
+    <section id="how_to_specify_the_query_language_binding">
+      <title>How to Specify the Query Language Binding</title>
+      <p id="p_ssg_cgk_54b">You can specify the query language binding to be used in the Schematron schema by doing the
+          following:<ul id="ul_f3c_jz1_gs">
+          <li id="li_tsg_cgk_54b">For embedded ISO Schematron, <ph
+              conkeyref="reusables-preferences-pages/open-the-preferences-page"/>, go to <menucascade>
+              <uicontrol>XML</uicontrol>
+              <uicontrol>XML Parser</uicontrol>
+              <uicontrol>Schematron</uicontrol>
+            </menucascade>, and select it in the <xref
+              href="schematron-preferences-page.dita#schematron-preferences-page/embedded-rules-query-language"
+                ><uicontrol>Embedded rules query language binding</uicontrol> option</xref>.</li>
+          <li id="li_usg_cgk_54b">For standalone ISO Schematron, specify the version by setting the query language to be
+            used in a <xmlatt>queryBinding</xmlatt> attribute on the schema root element. For more
+            information, see the <xref href="https://www.schematron.com/" format="html"
+              scope="external">Query Language Binding section of the Schematron
+              specifications</xref>.</li>
+          <li id="li_vsg_cgk_54b">For Schematron 1.5 (standalone and embedded), <ph
+              conkeyref="reusables-preferences-pages/open-the-preferences-page"/>, go to <menucascade>
+              <uicontrol>XML</uicontrol>
+              <uicontrol>XML Parser</uicontrol>
+              <uicontrol>Schematron</uicontrol>
+            </menucascade>, and select the version in the <xref
+              href="schematron-preferences-page.dita#schematron-preferences-page/xpath-version"
+                ><uicontrol>XPath Version</uicontrol> option</xref>.</li>
+        </ul></p>
+    </section>
+    <section id="multilingual_support_in_schematron_messages">
+      <title>Multi-Lingual Support in Schematron Messages</title>
+      <p id="p_wsg_cgk_54b">You can specify the desired language for the validation messages in the
+          <xref href="schematron-preferences-page.dita#schematron-preferences-page"
+            ><uicontrol>Schematron Preferences</uicontrol> page</xref>. The Schematron validation
+        messages can be presented in multiple languages by defining the language for each message
+        using the Schematron <xmlelement>diagnostics</xmlelement> element.</p>
+      <p id="p_tdm_kts_tsb">For example, you can define a diagnostic for each language and reference
+        the ID of the diagnostics in the <xmlelement>assert</xmlelement> element. You can specify
+        the language of the diagnostic message by adding the <codeph>xml:lang</codeph> attribute on
+        the <codeph>sch:diagnostic</codeph> element or on its
+        parent:<codeblock id="codeblock_hvn_fms_tsb" outputclass="language-xml">&lt;sch:assert test="bone" diagnostics="d_en d_de">
+  A dog should have a bone.
+&lt;/sch:assert>
+….
+&lt;sch:diagnostics>
+  &lt;sch:diagnostic id="d_en" xml:lang="en">
+    A dog should have a bone.
+  &lt;/sch:diagnostic>
+  &lt;sch:diagnostic id="d_de" xml:lang="de">
+    Das Hund muss ein Bein haben.
+  &lt;/sch:diagnostic>
+&lt;/sch:diagnostics></codeblock></p>
+    </section>
+    <section id="how_to_customize_color_schemes_in_schematron">
+      <title>How to Customize Color Schemes in Schematron</title>
+      <p id="p_xsg_cgk_54b">The Schematron editor renders the XPath expressions with dedicated color
+        schemes. To customize the coloring schemes, <ph
+          conkeyref="reusables-preferences-pages/open-the-preferences-page"/> and go to <menucascade>
+          <uicontrol>Editor</uicontrol>
+          <uicontrol>Syntax Highlight</uicontrol>
+        </menucascade>.</p>
+    </section>
+    <section id="schematron_transformation_scenario">
+      <title>Schematron Transformation Scenario</title>
+      <p id="p_ysg_cgk_54b">When you create a Schematron document, <ph keyref="product"/> provides a built-in
+        transformation scenario. You can use this scenario to obtain the XSLT style-sheet
+        corresponding to the Schematron schema. You can apply this XSLT stylesheet to XML documents
+        to obtain the Schematron validation results.</p>
+    </section>
+    <section id="section_lw3_bkr_rxb" product="developer editor">
+      <title>Using Schematron with AI</title>
+      <p id="p_mw3_bkr_rxb">An <xref href="https://www.oxygenxml.com/doc/ug-positron-desktop/ai/ai_positron.html" scope="external" format="html"><b>Oxygen AI Positron</b>
+          add-on</xref> is available that provides support for helping writers generate content by
+        using the <uicontrol>Oxygen AI Positron</uicontrol> service. This add-on also contributes
+        two XPath extension functions that can be used from custom Schematron schemas to rephrase
+        content or to perform validation checks on existing content. The
+          <codeph>ai:transform-content(instruction, content)</codeph> function can be used to
+        automatically transform content using AI and the <codeph>ai:verify-content(instruction,
+          content)</codeph> function can be used to automatically validate content using AI.</p>
+      <p id="p_g5g_pkr_rxb">For more details, see <xref
+          href="https://www.oxygenxml.com/doc/ug-positron-desktop/ai/functionality_features.html#functionality_features__section_a3s_ngn_2ds"
+          format="html" scope="external">Oxygen AI Positron: Custom Validation
+          Rules</xref>.</p>
+    </section>
+    <section id="section_yvz_qcf_w5b">
+      <title>Resources</title>
+      <p id="p_zsg_cgk_54b">For more information about the Schematron support in <ph
+          keyref="product"/>, watch our video demonstrations:</p>
+      <p id="p_atg_cgk_54b"><object width="450" height="250"
+          data="https://www.youtube.com/embed/HdcZA3DJi7E" outputclass="iframe">
+          <param name="allowfullscreen" value="true"/>
+        </object></p>
+      <p id="p_btg_cgk_54b"><object width="450" height="250"
+          data="https://www.youtube.com/embed/y3u3wlO92e4" outputclass="iframe">
+          <param name="allowfullscreen" value="true"/>
+        </object></p>
+      <p id="p_ctg_cgk_54b"><object width="450" height="250"
+          data="https://www.youtube.com/embed/FQNSsg57S4E" outputclass="iframe">
+          <param name="allowfullscreen" value="true"/>
+        </object></p>
+    </section>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link href="xml-editor-specific-actions.dita#xml-editor-specific-actions"/>
+      <link href="associate-schema-to-document.dita#associate-schema-to-document"/>
+    </linklist>
+  </related-links>
+</topic>

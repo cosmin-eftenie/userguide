@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="svn-repository-location">
+    <title>SVN Repository Location</title>
+    <body>
+        <p id="p_ysh_dgk_54b">This section explains how to add and edit the repository locations in <ph
+        keyref="svnProduct"/>.</p>
+    </body>
+</topic>

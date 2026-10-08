@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_trademarks">
+    <title>Trademarks</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+            ><ph keyref="pdf-html5-transformation"/><indexterm>Trademarks</indexterm></indexterm>
+        <indexterm product="pdf-css ope">Trademarks</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+    <body>
+        <p id="p_g2v_cgk_54b">Trademarks are used to specify legally registered words and they are often used in
+      technical documentation. To specify a trademark, your DITA content could use a structure
+      similar to this:</p>
+		<codeblock outputclass="language-xml" id="codeblock_h2v_cgk_54b"> &lt;tm tmtype="tm">My Product Name&lt;/tm></codeblock>
+    	<p id="p_i2v_cgk_54b">Depending on the value of the <xmlatt>tmtype</xmlatt> attribute, a different symbol is
+      appended to the text: (®, ™ , or &#8480;). </p>
+		<p id="p_j2v_cgk_54b">The structure of the merged HTML document the CSS will apply to is:</p>
+		<codeblock outputclass="language-xml" id="codeblock_k2v_cgk_54b">&lt;span class="- topic/tm tm" tmtype="tm">My Product Name&lt;span 
+                          class="- topic/tmmark tmmark ">™&lt;/span>&lt;/span></codeblock>
+    </body>
+</topic>

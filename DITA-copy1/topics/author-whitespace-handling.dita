@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="author-whitespace-handling">
+  <title>Whitespace Handling in Author Mode</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Author editing mode<indexterm>Handling whitespaces</indexterm></indexterm>
+        <indexterm>Whitespace handling in Author mode</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_yww_bgk_54b">When you edit a document in <uicontrol>Author</uicontrol> mode, <ph keyref="product"/> must
+      serialize the resulting document as XML. <ph keyref="product"/> serializes the document when
+      you save it or switch to another editing mode. When the document is serialized, <ph
+        keyref="product"/>
+      <xref href="../topics/format-and-indent-xml.dita#format-and-indent-xml">formats and indents
+        the XML document</xref> according to the current <xref keyref="options_editor_format">format
+        and indent settings</xref>.</p>
+    <section id="minimizing_whitespace_differences_between_version">
+      <title>Minimizing Whitespace Differences Between Versions</title>
+      <p id="p_zww_bgk_54b">When serializing a document to XML, <uicontrol>Author</uicontrol> mode will only format and
+        indent those elements of the document that have been edited. Any element that has not been
+        edited will be serialized exactly as it was loaded from disk. This is useful when your
+        content is managed in a version control systems, as it avoids introducing insignificant
+        whitespace differences between version, which in turn makes diff output easier to read. </p>
+    </section>
+    <section id="entering_whitespace_in_author_mode">
+      <title>Entering Whitespace in Author Mode</title>
+      <p id="p_axw_bgk_54b"><ph keyref="product"/> controls the entry of whitespace characters in
+          <uicontrol>Author</uicontrol> mode according the <xref
+          href="../topics/format-and-indent-xml.dita#format-and-indent-xml">XML whitespace
+          rules</xref>, which means it will not let you insert insignificant whitespace. This means
+        that it will not let you insert extra line-breaks or spaces inside a typical paragraph
+        element, for instance. (Any such whitespace would be normalized away when the document was
+        serialized to XML, so <ph keyref="product"/> is saving you from any surprises when this
+        happens.)</p>
+      <p id="p_bxw_bgk_54b">Of course, you will legitimately want to enter additional spaces and returns in some cases,
+        such as code samples. <ph keyref="product"/> will allow this in elements that are configured
+        as preserve space elements according to the XML whitespace rules. For all of its <xref
+          href="doc-type.dita">built-in document types</xref>, <ph keyref="product"/> is <xref
+          keyref="options_editor_format_xml">correctly configured to recognize preserve space
+          elements</xref> and to allow you to enter additional spaces in them. </p>
+      <p id="p_cxw_bgk_54b">If you are using a built-in document type and you are unable to enter additional
+        whitespace, make sure that you are using an element from that document type that is intended
+        to be a preserve-space element.</p>
+      <p id="p_dxw_bgk_54b">If you are using a custom document type, make sure that it is <xref
+          keyref="chapter_authoring-customization-guide">configured correctly</xref> so that <ph
+          keyref="product"/> recognizes that the current element is a preserve-space element.</p>
+    </section>
+    <section id="serialization_options_author">
+      <title>Serialization Options for Author Mode</title>
+      <p id="p_exw_bgk_54b">The <menucascade>
+          <uicontrol>Options</uicontrol>
+          <uicontrol>Preferences</uicontrol>
+          <uicontrol>Editor</uicontrol>
+          <uicontrol>Edit modes</uicontrol>
+          <uicontrol>Author</uicontrol>
+          <uicontrol>Serialization</uicontrol>
+        </menucascade> page contains some options that control how the formatting and indenting is
+        applied when a document is saved in <uicontrol>Author</uicontrol> mode or when switching
+        from <uicontrol>Author</uicontrol> to <uicontrol>Text</uicontrol> mode. It also includes a
+          <xref
+          href="preferences-author-serialization.dita#preferences-author-serialization/compatibility_with_other_tools"
+            ><uicontrol>Compatibility with other tools</uicontrol> option</xref> that controls how
+        line breaks are handled when a document is serialized to help obtain better compatibility
+        with other applications.</p>
+    </section>
+  </body>
+</topic>

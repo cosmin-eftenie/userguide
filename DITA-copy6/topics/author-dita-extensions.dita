@@ -1,0 +1,1072 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="author-dita-extensions">
+  <title>DITA Topic Author Mode Actions</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>DITA Topic document type<indexterm>Author mode actions</indexterm></indexterm>
+        <indexterm>DITA Topic toolbar actions</indexterm>
+        <indexterm>DITA Topic menu actions</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_ugj_cgk_54b">A variety of actions are available for DITA documents that can be found in
+        <uicontrol>DITA</uicontrol> menu, toolbar, contextual menu, and the <xref
+        keyref="glossentry_content-completion-assistant"><term>Content Completion
+        Assistant</term></xref>.</p>
+    <section id="dita-toolbar-actions-section">
+      <title>DITA Toolbar Actions</title>
+      <p id="p_vgj_cgk_54b">The following default actions are available on the DITA toolbar when editing in
+          <uicontrol>Author</uicontrol> mode (by default, most of them are also available in the
+          <uicontrol>DITA</uicontrol> menu and in various submenus of the contextual menu):</p>
+      <p id="p_wgj_cgk_54b">
+        <dl id="dl_xgj_cgk_54b">
+          <dlentry id="bold-dlentry">
+            <dt><uicontrol><image href="../img/Bold16.gif" id="image_tys_tjx_sr"
+              />Bold</uicontrol></dt>
+            <dd>Surrounds the selected text with a <xmlelement>b</xmlelement> tag. You can use this
+              action on multiple non-contiguous selections.</dd>
+          </dlentry>
+          <dlentry id="italic-dlentry">
+            <dt><uicontrol><image href="../img/Italic16.png" id="image_kbn_3xx_sr"
+                />Italic</uicontrol></dt>
+            <dd>Surrounds the selected text with an <xmlelement>i</xmlelement> tag. You can use this
+              action on multiple non-contiguous selections.</dd>
+          </dlentry>
+          <dlentry id="underline-dlentry">
+            <dt><uicontrol><image href="../img/Underline16.gif" id="image_hr3_vxx_sr"
+                />Underline</uicontrol></dt>
+            <dd>Surrounds the selected text with a <xmlelement>u</xmlelement> tag. You can use this
+              action on multiple non-contiguous selections.</dd>
+          </dlentry>
+          <dlentry id="dlentry_ygj_cgk_54b">
+            <dt><uicontrol><image href="../img/LinkDrop.png" id="image_rng_tkx_sr"/>Link</uicontrol>
+              Actions Drop-Down Menu</dt>
+            <dd>
+              <p id="p_zgj_cgk_54b">The following link actions are available from this menu:<dl id="dl_ahj_cgk_54b">
+                  <dlentry id="dlentry_bhj_cgk_54b">
+                    <dt><uicontrol>Cross Reference</uicontrol></dt>
+                    <dd>Opens the <xref
+                        href="eppo-inline-linking.dita#eppo-inline-linking/cross-reference-dlentry"
+                          ><uicontrol>Cross Reference (xref)</uicontrol> dialog box</xref> that
+                      allows you to insert a link to a target DITA resource at the current location
+                      within a document. The target resource can be the location of a file or a key
+                      that is already defined in your <xref keyref="glossentry_ditamap"><term>DITA
+                          map</term></xref> structure. Once the target resource has been selected,
+                      you can also target specific elements within that resource. For more
+                      information, see <xref href="eppo-inline-linking.dita#eppo-inline-linking"
+                      />.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_chj_cgk_54b">
+                    <dt><uicontrol>File Reference</uicontrol></dt>
+                    <dd>Opens the <xref
+                        href="eppo-inline-linking.dita#eppo-inline-linking/file-reference-dlentry"
+                          ><uicontrol>File Reference</uicontrol> dialog box</xref> that allows you
+                      to insert a link to a target non-DITA file resource at the current location
+                      within a document. The target resource can be the location of a file or a key
+                      that is already defined in your <term>DITA map</term> structure. For more
+                      information, see <xref href="eppo-inline-linking.dita#eppo-inline-linking"
+                      />.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_dhj_cgk_54b">
+                    <dt><uicontrol>Web Link</uicontrol></dt>
+                    <dd>Opens the <xref
+                        href="eppo-inline-linking.dita#eppo-inline-linking/web-link-dlentry"
+                          ><uicontrol>Web Link</uicontrol> dialog box</xref> that allows you to
+                      insert a link to a target web-related resource at the current location within
+                      a document. The target resource can be a URL or a key that is already defined
+                      in your <term>DITA map</term> structure. For more information, see <xref
+                        href="eppo-inline-linking.dita#eppo-inline-linking"/>.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_ehj_cgk_54b">
+                    <dt><uicontrol>Related Link to Topic</uicontrol></dt>
+                    <dd>Opens the <xref
+                        href="eppo-inline-linking.dita#eppo-inline-linking/related-topic-dlentry"
+                          ><uicontrol>Cross Reference (xref)</uicontrol> dialog box</xref> that
+                      allows you to insert a link to a target DITA resource in a related links
+                      section at the bottom of the current document. The target resource can be the
+                      location of a file or a key that is already defined in your <term>DITA
+                        map</term> structure. Once the target resource has been selected, you can
+                      also target specific elements within that resource. If a related links section
+                      does not already exist, this action creates one. For more information, see
+                        <xref href="eppo-inline-linking.dita#eppo-inline-linking"/>.<note
+                        conkeyref="reusables-author-for-dita/find-similar-topics-note" id="note_fhj_cgk_54b"/></dd>
+                  </dlentry>
+                  <dlentry id="dlentry_ghj_cgk_54b">
+                    <dt><uicontrol>Related Link to File</uicontrol></dt>
+                    <dd>Opens the <xref
+                        href="eppo-inline-linking.dita#eppo-inline-linking/related-file-dlentry"
+                          ><uicontrol>File Reference</uicontrol> dialog box</xref> that allows you
+                      to insert a link to a target non-DITA file resource in a related links section
+                      at the bottom of the current document. The target resource can be the location
+                      of a file or a key that is already defined in your <term>DITA map</term>
+                      structure. If a related links section does not already exist, this action
+                      creates one. For more information, see <xref
+                        href="eppo-inline-linking.dita#eppo-inline-linking"/>.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_hhj_cgk_54b">
+                    <dt><uicontrol>Related Link to Web Page</uicontrol></dt>
+                    <dd>Opens the <xref
+                        href="eppo-inline-linking.dita#eppo-inline-linking/related-web-dlentry"
+                          ><uicontrol>Web Link</uicontrol> dialog box</xref> that allows you to
+                      insert a link to a target web-related resource in a related links section at
+                      the bottom of the current document. The target resource can be a URL or a key
+                      that is already defined in your <term>DITA map</term> structure. If a related
+                      links section does not already exist, this action creates one. For more
+                      information, see <xref href="eppo-inline-linking.dita#eppo-inline-linking"
+                      />.</dd>
+                  </dlentry>
+                </dl></p>
+            </dd>
+          </dlentry>
+          <dlentry id="insert-image-dlentry">
+            <dt><uicontrol><image href="../img/Image16.gif" id="image_lqj_f1z_tr"/>Insert
+                Image</uicontrol></dt>
+            <dd>Opens the <xref href="eppo-adding-images.dita#eppo-adding-images"><uicontrol>Insert
+                  Image</uicontrol> dialog box</xref> that allows you to configure the properties of
+              an image to be inserted into a DITA document at the cursor position.</dd>
+          </dlentry>
+          <dlentry id="dlentry_ihj_cgk_54b">
+            <dt><uicontrol><image href="../img/InsertMedia16.png"/>Insert Media
+              Resource</uicontrol></dt>
+            <dd>Opens the <xref href="dita-adding-media.dita#dita-adding-media"><uicontrol>Insert
+                  Media</uicontrol> dialog box</xref> that allows you to select and configure the
+              properties of a media object to be inserted into a DITA document at the cursor
+              position. The result will be that a reference to the specified video, audio, or
+              embedded HTML frame is inserted in an <xmlelement>object</xmlelement> element and it
+              is rendered in <uicontrol>Author</uicontrol> mode so that it can be played directly
+              from there.</dd>
+          </dlentry>
+          <dlentry id="dlentry_jhj_cgk_54b">
+            <dt><uicontrol><image href="../img/InsertSectionDrop.png" id="image_i2d_31z_tr"/>Insert
+                Section</uicontrol> Drop-Down Menu</dt>
+            <dd>
+              <p id="p_khj_cgk_54b">The following insert actions are available from this menu:</p>
+              <p id="p_lhj_cgk_54b">
+                <dl id="dl_mhj_cgk_54b">
+                  <dlentry id="dlentry_nhj_cgk_54b">
+                    <dt><uicontrol><image href="../img/Section16.gif" id="image_btp_v1z_tr"/>Insert
+                        Section</uicontrol></dt>
+                    <dd>Inserts a new <xmlelement>section</xmlelement> element in the document,
+                      depending on the current context.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_ohj_cgk_54b">
+                    <dt><uicontrol><image href="../img/InsertConcept16.gif" id="image_qxk_qcz_tr"
+                        />Insert Concept</uicontrol></dt>
+                    <dd>Inserts a new <xmlelement>concept</xmlelement> element, depending on the
+                      current context. Concepts provide background information that users must know
+                      before they can successfully work with a product or interface.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_phj_cgk_54b">
+                    <dt><uicontrol><image href="../img/InsertTask16.gif" id="image_hg5_qcz_tr"
+                        />Insert Task</uicontrol></dt>
+                    <dd>Inserts a new <xmlelement>task</xmlelement> element, depending on the
+                      current context. Tasks are the main building blocks for task-oriented user
+                      assistance. They generally provide step-by-step instructions that will help a
+                      user to perform a task.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_qhj_cgk_54b">
+                    <dt><uicontrol><image href="../img/InsertTopic16.gif" id="image_d1z_fbz_tr"
+                        />Insert Topic</uicontrol></dt>
+                    <dd>Inserts a new <xmlelement>topic</xmlelement> element, depending on the
+                      current context. Topics are the basic units of DITA content and are usually
+                      organized around a single subject.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_rhj_cgk_54b">
+                    <dt><uicontrol><image href="../img/InsertRef16.gif" id="image_rhf_rcz_tr"
+                        />Insert Reference</uicontrol></dt>
+                    <dd>Inserts a new <xmlelement>reference</xmlelement> element, depending on the
+                      current context. A reference is a top-level container for a reference
+                      topic.</dd>
+                  </dlentry>
+                  <dlentry>
+                    <dt><uicontrol><image href="../img/Note16.png" id="image_rhy_rcz_tr"
+                    />Insert Note</uicontrol></dt>
+                    <dd>Inserts a new <xmlelement>note</xmlelement> element, depending on the
+                      current context.</dd>
+                  </dlentry>
+                  <dlentry>
+                    <dt><uicontrol><image href="../img/CodeBlock16.png" id="image_rhx_rcz_tr"
+                    />Insert Codeblock</uicontrol></dt>
+                    <dd>Inserts a new <xmlelement>codeblock</xmlelement> element, depending on the
+                      current context.</dd>
+                  </dlentry>
+                </dl>
+                <dl>
+                  <dlentry>
+                    <dt><uicontrol>Insert Intent Question</uicontrol></dt>
+                    <dd>Inserts a new special <xmlelement>data</xmlelement> element that contains a
+                      question or intent. The intent can be used to <xref
+                        href="whr-how-to-generate-google-structured-data.dita">generate Google
+                        Structured data</xref> content in WebHelp Responsive output.</dd>
+                  </dlentry>
+                </dl>
+              </p>
+            </dd>
+          </dlentry>
+          <dlentry id="insert-para-dlentry">
+            <dt><uicontrol><image href="../img/Paragraph16.png" id="image_glk_4lw_5r"/>Insert
+                Paragraph</uicontrol></dt>
+            <dd>Inserts a new paragraph at current cursor position.</dd>
+          </dlentry>
+          <dlentry conkeyref="reusables-author-actions/dita-insert-content-reference" id="dlentry_shj_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry id="insert-list-item-dlentry">
+            <dt><uicontrol><image href="../img/ListItem16.gif" id="image_r15_fl1_5r"/>Insert step or
+                list item</uicontrol></dt>
+            <dd>Inserts a new list or step item in the current list type.</dd>
+          </dlentry>
+          <dlentry conkeyref="reusables-author-actions/insert-ul-dlentry" id="dlentry_thj_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-author-actions/insert-ol-dlentry" id="dlentry_uhj_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-author-actions/sort-dlentry" id="dlentry_vhj_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-author-actions/table_editing_actions_insert_table" id="dlentry_whj_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-author-actions/insert-row-below-dlentry" id="dlentry_xhj_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-author-actions/delete-row-dlentry" id="dlentry_yhj_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-author-actions/insert-column-after-dlentry" id="dlentry_zhj_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-author-actions/delete-column-dlentry" id="dlentry_a3j_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-author-actions/table-properties-dlentry" id="dlentry_b3j_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-author-actions/join-cells-dlentry" id="dlentry_c3j_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-author-actions/split-cell-dlentry" id="dlentry_d3j_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+        </dl>
+      </p>
+    </section>
+    <section id="dita_contextual_menu_actions">
+      <title>DITA Contextual Menu Actions</title>
+      <p id="p_e3j_cgk_54b">The following actions are available in the contextual menu when editing in
+          <uicontrol>Author</uicontrol> mode (most of them are also available in the
+          <uicontrol>DITA</uicontrol> menu at the top of the interface):</p>
+      <p id="p_f3j_cgk_54b">
+        <dl id="dl_g3j_cgk_54b">
+          <dlentry conkeyref="reusables-author-actions/add-file-to-content-fusion"
+            product="author editor" id="dlentry_h3j_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry id="dlentry_i3j_cgk_54b">
+            <dt><uicontrol><image href="../img/Attribute16.gif" id="image_gsw_vp1_5r"/>Edit
+                Attributes</uicontrol></dt>
+            <dd>Displays an <xref
+                href="author-attributes-view.dita#author-attributes-view/in-place-attr-editor"
+                >in-place attributes editor</xref> that allows you to manage the attributes of an
+              element.</dd>
+          </dlentry>
+          <dlentry conkeyref="reusables-editing-documents/edit_profiling_attributes" id="dlentry_j3j_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-editing-documents/action-cut" id="dlentry_k3j_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-editing-documents/action-copy" id="dlentry_l3j_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-editing-documents/action-copy-xml">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-editing-documents/action-copy-markdown">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-editing-documents/action-paste" id="dlentry_m3j_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusables-author-actions/paste-special-dlentry" id="dlentry_n3j_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry id="dlentry_o3j_cgk_54b">
+            <dt><uicontrol>Insert</uicontrol> submenu</dt>
+            <dd>
+              <p id="p_p3j_cgk_54b">This submenu includes the following insert actions that are specific to the DITA
+                  <term>framework</term>:</p>
+              <p id="p_q3j_cgk_54b">
+                <dl id="dl_r3j_cgk_54b">
+                  <dlentry conkeyref="reusables-author-actions/table_editing_actions_insert_table" id="dlentry_s3j_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-author-actions/insert-image-dlentry" id="dlentry_t3j_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-author-actions/insert-media" id="dlentry_u3j_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry id="dlentry_v3j_cgk_54b">
+                    <dt><uicontrol><image href="../img/Equation16.gif"/>Insert
+                      Equation</uicontrol></dt>
+                    <dd>Opens the <uicontrol>XML Fragment Editor</uicontrol> that allows you to
+                      insert and <xref href="../topics/author-editing-mathml.dita">edit MathML
+                        notations</xref>.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_w3j_cgk_54b">
+                    <dt><uicontrol><image href="../img/Note16.png" id="image_tzv_3f1_rmb"/>Insert
+                        Note</uicontrol></dt>
+                    <dd>Inserts a new <xmlelement>note</xmlelement> element at the current cursor
+                      position.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_x3j_cgk_54b">
+                    <dt><uicontrol><image href="../img/CodeBlock16.png" id="image_gzg_rcp_nkb"
+                        />Insert Code Block</uicontrol></dt>
+                    <dd>Inserts a new <xmlelement>codeblock</xmlelement> element at current cursor
+                      position.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_y3j_cgk_54b">
+                    <dt><uicontrol><image href="../img/MenuCascade16.png" id="image_ej4_kgr_cnb"
+                        />Insert Menu Cascade</uicontrol></dt>
+                    <dd>Inserts a new <xmlelement>menucascade</xmlelement> element at current cursor
+                      position.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_gwn_kcs_tyb">
+                    <dt><uicontrol>Insert Label</uicontrol></dt>
+                    <dd>Inserts a special label keyword in the prolog. The label is helpful for
+                      searching WebHelp Responsive output for similar topics with the same
+                      label.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_z3j_cgk_54b">
+                    <dt><uicontrol><image href="../img/Paragraph16.png"/>Insert
+                        Paragraph</uicontrol></dt>
+                    <dd>Inserts a new <xmlelement>p</xmlelement> (paragraph) element at current
+                      cursor position.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_ajj_cgk_54b">
+                    <dt><uicontrol><image href="../img/Section16.gif"/>Insert
+                      Section</uicontrol></dt>
+                    <dd>Inserts a new <xmlelement>section</xmlelement> element in the document,
+                      depending on the current context.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_bjj_cgk_54b">
+                    <dt><uicontrol><image href="../img/InsertTopic16.gif"/>Insert
+                      Topic</uicontrol></dt>
+                    <dd>Inserts a new <xmlelement>topic</xmlelement> element, depending on the
+                      current context. Topics are the basic units of DITA content and are usually
+                      organized around a single subject.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_cjj_cgk_54b">
+                    <dt><uicontrol>Insert Entity</uicontrol></dt>
+                    <dd>Allows you to insert a predefined entity or character entity. Surrogate
+                      character entities (range #x10000 to #x10FFFF) are also accepted. Character
+                      entities can be entered in one of the following forms: <ul id="ul_t3w_twm_ps">
+                        <li id="li_djj_cgk_54b">#<i>&lt;decimal value&gt;</i> - e.g. #65</li>
+                        <li id="li_ejj_cgk_54b">&amp;#<i>&lt;decimal value&gt;</i> - e.g. &amp;#65</li>
+                        <li id="li_fjj_cgk_54b">#x<i>&lt;hexadecimal value&gt;</i> - e.g. #x41</li>
+                        <li id="li_gjj_cgk_54b">&amp;#x<i>&lt;hexadecimal value&gt;</i> - e.g. &amp;#x41</li>
+                      </ul></dd>
+                  </dlentry>
+                </dl>
+              </p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_hjj_cgk_54b">
+            <dt>Style submenu</dt>
+            <dd>This submenu includes the following text styling actions:<p id="p_ijj_cgk_54b">
+                <dl id="dl_jjj_cgk_54b">
+                  <dlentry id="dlentry_kjj_cgk_54b">
+                    <dt><uicontrol><image href="../img/Bold16.gif" id="image_zkx_kcy_cnb"
+                        />Bold</uicontrol></dt>
+                    <dd>Emphasizes the selected text by surrounding it with a
+                        <xmlelement>b</xmlelement> (bold) tag. You can use this action on multiple
+                      non-contiguous selections.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_ljj_cgk_54b">
+                    <dt><uicontrol><image href="../img/Italic16.png" id="image_pkd_lcy_cnb"
+                        />Italic</uicontrol></dt>
+                    <dd>Emphasizes the selected text by surrounding it with an
+                        <xmlelement>i</xmlelement> (italic) tag. You can use this action on multiple
+                      non-contiguous selections.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_mjj_cgk_54b">
+                    <dt><uicontrol><image href="../img/Underline16.gif" id="image_yyh_lcy_cnb"
+                        />Underline</uicontrol></dt>
+                    <dd>Emphasizes the selected text by surrounding it with a
+                        <xmlelement>u</xmlelement> (<term>underline</term>) tag. You can use this
+                      action on multiple non-contiguous selections.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_njj_cgk_54b">
+                    <dt><uicontrol><image href="../img/Subscript16.png" id="image_t5m_lcy_cnb"
+                        />Subscript</uicontrol></dt>
+                    <dd>Surrounds the selected text with a <xmlelement>sub</xmlelement> (subscript)
+                      tag, used for inserting a character (number, letter, or symbol) that will
+                      appear slightly below the baseline and slightly smaller than the rest of the
+                      text.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_ojj_cgk_54b">
+                    <dt><uicontrol><image href="../img/Superscript16.png" id="image_pmx_lcy_cnb"
+                        />Superscript</uicontrol></dt>
+                    <dd>Surrounds the selected text with a <xmlelement>sup</xmlelement>
+                      (superscript) tag, used for inserting a character (number, letter, or symbol)
+                      that will appear slightly above the baseline and slightly smaller than the
+                      rest of the text.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_pjj_cgk_54b">
+                    <dt><uicontrol><image href="../img/CodeBlock16.png" id="image_gzg_rcp_nkb2"
+                        />Code</uicontrol></dt>
+                    <dd>Surrounds the selected text with a <xmlelement>codeph</xmlelement> tag.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_qjj_cgk_54b">
+                    <dt><uicontrol><image href="../img/UIControl16.png" id="image_onh_rgr_cnb"/>UI
+                        Control</uicontrol></dt>
+                    <dd>Surrounds the selected text with a <xmlelement>uicontrol</xmlelement> tag,
+                      used to mark up names of buttons, entry fields, menu items, or other interface
+                      objects.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_rjj_cgk_54b">
+                    <dt><uicontrol><image href="../img/Filepath16.png" id="image_fc3_sgr_cnb"
+                        />Filepath</uicontrol></dt>
+                    <dd>Surrounds the selected text with a <xmlelement>filepath</xmlelement> tag,
+                      used to indicate the name, and optionally the location of a referenced file.
+                      You can specify the directory that contains the file and other directories
+                      that may precede it in the system hierarchy.</dd>
+                  </dlentry>
+                </dl>
+              </p></dd>
+          </dlentry>
+          <dlentry conkeyref="reusables-author-actions/edit-image-map" id="dlentry_sjj_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry id="dlentry_tjj_cgk_54b">
+            <dt>Table Actions</dt>
+            <dd>
+              <p id="p_ujj_cgk_54b">A variety of table editing actions are available in the contextual menu when it is
+                invoked on a table (depending on the context, the table-related actions are promoted
+                to the top level of the contextual menu and the <uicontrol>Other Actions</uicontrol>
+                submenu provides access to the other actions):</p>
+              <p id="p_vjj_cgk_54b">
+                <dl id="dl_wjj_cgk_54b">
+                  <dlentry conkeyref="reusables-author-actions/insert-rows-dlentry" id="dlentry_xjj_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-author-actions/delete-row-dlentry" id="dlentry_yjj_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-author-actions/insert-columns-dlentry" id="dlentry_zjj_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-author-actions/delete-column-dlentry" id="dlentry_akj_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-author-actions/join-cells-dlentry" id="dlentry_bkj_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-author-actions/split-cell-dlentry" id="dlentry_ckj_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-author-actions/sort-dlentry" id="dlentry_dkj_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-author-actions/table-properties-dlentry" id="dlentry_ekj_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry id="dlentry_fkj_cgk_54b">
+                    <dt><uicontrol>Other Actions</uicontrol> submenu</dt>
+                    <dd>This submenu give you access to all the usual contextual menu actions.</dd>
+                  </dlentry>
+                </dl>
+              </p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_gkj_cgk_54b">
+            <dt><uicontrol><image href="../img/LinkDrop.png"/>Link</uicontrol> submenu</dt>
+            <dd>
+              <p id="p_hkj_cgk_54b">The following link actions are available from this submenu:<dl id="dl_ikj_cgk_54b">
+                  <dlentry id="dlentry_jkj_cgk_54b">
+                    <dt><uicontrol>Cross Reference</uicontrol></dt>
+                    <dd>Opens the <xref
+                        href="eppo-inline-linking.dita#eppo-inline-linking/cross-reference-dlentry"
+                          ><uicontrol>Cross Reference (xref)</uicontrol> dialog box</xref> that
+                      allows you to insert a link to a target DITA resource at the current location
+                      within a document. The target resource can be the location of a file or a key
+                      that is already defined in your <xref keyref="glossentry_ditamap"><term>DITA
+                          map</term></xref> structure. Once the target resource has been selected,
+                      you can also target specific elements within that resource. For more
+                      information, see <xref href="eppo-inline-linking.dita#eppo-inline-linking"
+                      />.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_kkj_cgk_54b">
+                    <dt><uicontrol>File Reference</uicontrol></dt>
+                    <dd>Opens the <xref
+                        href="eppo-inline-linking.dita#eppo-inline-linking/file-reference-dlentry"
+                          ><uicontrol>File Reference</uicontrol> dialog box</xref> that allows you
+                      to insert a link to a target non-DITA file resource at the current location
+                      within a document. The target resource can be the location of a file or a key
+                      that is already defined in your <term>DITA map</term> structure. For more
+                      information, see <xref href="eppo-inline-linking.dita#eppo-inline-linking"
+                      />.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_lkj_cgk_54b">
+                    <dt><uicontrol>Web Link</uicontrol></dt>
+                    <dd>Opens the <xref
+                        href="eppo-inline-linking.dita#eppo-inline-linking/web-link-dlentry"
+                          ><uicontrol>Web Link</uicontrol> dialog box</xref> that allows you to
+                      insert a link to a target web-related resource at the current location within
+                      a document. The target resource can be a URL or a key that is already defined
+                      in your <term>DITA map</term> structure. For more information, see <xref
+                        href="eppo-inline-linking.dita#eppo-inline-linking"/>.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_mkj_cgk_54b">
+                    <dt><uicontrol>Related Link to Topic</uicontrol></dt>
+                    <dd>Opens the <xref
+                        href="eppo-inline-linking.dita#eppo-inline-linking/related-topic-dlentry"
+                          ><uicontrol>Cross Reference (xref)</uicontrol> dialog box</xref> that
+                      allows you to insert a link to a target DITA resource in a related links
+                      section at the bottom of the current document. The target resource can be the
+                      location of a file or a key that is already defined in your <term>DITA
+                        map</term> structure. Once the target resource has been selected, you can
+                      also target specific elements within that resource. If a related links section
+                      does not already exist, this action creates one. For more information, see
+                        <xref href="eppo-inline-linking.dita#eppo-inline-linking"/>.<note
+                        conkeyref="reusables-author-for-dita/find-similar-topics-note" id="note_nkj_cgk_54b"/></dd>
+                  </dlentry>
+                  <dlentry id="dlentry_okj_cgk_54b">
+                    <dt><uicontrol>Related Link to File</uicontrol></dt>
+                    <dd>Opens the <xref
+                        href="eppo-inline-linking.dita#eppo-inline-linking/related-file-dlentry"
+                          ><uicontrol>File Reference</uicontrol> dialog box</xref> that allows you
+                      to insert a link to a target non-DITA file resource in a related links section
+                      at the bottom of the current document. The target resource can be the location
+                      of a file or a key that is already defined in your <term>DITA map</term>
+                      structure. If a related links section does not already exist, this action
+                      creates one. For more information, see <xref
+                        href="eppo-inline-linking.dita#eppo-inline-linking"/>.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_pkj_cgk_54b">
+                    <dt><uicontrol>Related Link to Web Page</uicontrol></dt>
+                    <dd>Opens the <xref
+                        href="eppo-inline-linking.dita#eppo-inline-linking/related-web-dlentry"
+                          ><uicontrol>Web Link</uicontrol> dialog box</xref> that allows you to
+                      insert a link to a target web-related resource in a related links section at
+                      the bottom of the current document. The target resource can be a URL or a key
+                      that is already defined in your <term>DITA map</term> structure. If a related
+                      links section does not already exist, this action creates one. For more
+                      information, see <xref href="eppo-inline-linking.dita#eppo-inline-linking"
+                      />.</dd>
+                  </dlentry>
+                </dl></p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_qkj_cgk_54b">
+            <dt><uicontrol><image href="../img/Sort16.png"/>Sort</uicontrol></dt>
+            <dd>Available when invoked on a list, it opens a dialog box where you can configure a
+              sorting operation for an entire list or a selection of list items.</dd>
+          </dlentry>
+          <dlentry conkeyref="reusables-author-actions/generate-ids-dlentry" id="dlentry_rkj_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry id="dlentry_skj_cgk_54b">
+            <dt><uicontrol>Reuse</uicontrol> submenu</dt>
+            <dd>
+              <p id="p_tkj_cgk_54b">This submenu includes the following actions regarding reusing content in DITA:</p>
+              <p id="p_ukj_cgk_54b">
+                <dl id="dl_vkj_cgk_54b">
+                  <dlentry conkeyref="reusables-author-actions/dita-insert-content-reference" id="dlentry_wkj_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-author-actions/push-element-dlentry"
+                    conrefend="../reusables/topics/author-actions.dita#author-actions/insert-reusable-dlentry" id="dlentry_xkj_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                </dl>
+              </p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_axy_htg_nyb">
+            <dt><uicontrol>Extract Topic From Selection</uicontrol></dt>
+            <dd>Creates a new DITA topic from a selection of content in the current topic.</dd>
+          </dlentry>
+          <dlentry id="dlentry_ykj_cgk_54b">
+            <dt><uicontrol><image href="../img/SearchReferences16.png" id="image_d3f_2kn_ps"/>Search
+                References</uicontrol> (<uicontrol
+                conkeyref="reusable-oxygen-shortcuts-list/ctrl_shift_g"/>)</dt>
+            <dd>
+              <p id="p_zkj_cgk_54b">Finds the references to the <xmlatt>id</xmlatt> attribute value for the element at
+                the current cursor position, in all the topics contained in the current <xref
+                  keyref="glossentry_ditamap"><term>DITA map</term></xref> (opened in the <xref
+                  href="dita-maps-manager.dita#dita-maps-manager"><uicontrol>DITA Maps
+                    Manager</uicontrol> view</xref>). If no references are found for the current
+                element, a dialog box will be displayed that offers you the option of searching for
+                references to its ancestor elements.</p>
+              <p id="p_alj_cgk_54b">
+                <fig id="fig_blj_cgk_54b">
+                  <title>Search References to Ancestors Dialog Box</title>
+                  <image href="../img/search_refs_ancestors.png"/>
+                </fig>
+              </p>
+              <p id="p_clj_cgk_54b">
+                <note type="tip" id="note_dlj_cgk_54b">If you are invoking the action on an image, see <xref
+                    href="eppo-adding-images.dita#eppo-adding-images/section_jck_yz5_shb"/> for
+                  details about what will be reported.</note>
+              </p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_elj_cgk_54b">
+            <dt>Find Similar Topics</dt>
+            <dd>Opens the <uicontrol>Open/Find Resource</uicontrol> view and performs a search using
+              text content from the <xmlelement>title</xmlelement>,
+                <xmlelement>shortdesc</xmlelement>, <xmlelement>keyword</xmlelement>, and
+                <xmlelement>indexterm</xmlelement> elements. It is helpful for quickly finding
+              related topics that can be added as related links.</dd>
+          </dlentry>
+          <dlentry conkeyref="reusables-author-actions/show-key-definition" id="dlentry_flj_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry id="dlentry_glj_cgk_54b">
+            <dt><uicontrol>About Element</uicontrol> submenu</dt>
+            <dd>
+              <p id="p_hlj_cgk_54b">This submenu includes the following actions:</p>
+              <p id="p_ilj_cgk_54b">
+                <dl id="dl_jlj_cgk_54b">
+                  <dlentry id="dlentry_klj_cgk_54b">
+                    <dt><uicontrol>Style Guide</uicontrol></dt>
+                    <dd>Opens the <b>DITA Style Guide Best Practices for Authors</b> in your browser
+                      and displays a topic that is relevant to the element at the cursor position.
+                      When editing DITA documents, this action is available in the contextual menu
+                      of the editing area (under the <uicontrol>About Element</uicontrol> sub-menu),
+                      in the <uicontrol>DITA</uicontrol> menu, and in some of the documentation tips
+                      that are displayed by the <xref
+                        keyref="glossentry_content-completion-assistant"><term>Content Completion
+                          Assistant</term></xref>.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_llj_cgk_54b">
+                    <dt><uicontrol><image href="../img/BrowseReferenceManual16.png"
+                          id="image_ixj_qkn_ps"/>Browse reference manual</uicontrol></dt>
+                    <dd>Opens a reference to the documentation of the XML element closest to the
+                      cursor position in a web browser.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_mlj_cgk_54b">
+                    <dt><uicontrol><image href="../img/ShowDefinition16.png" id="image_rgn_4wp_zr"
+                        />Go to Definition</uicontrol></dt>
+                    <dd>Moves the cursor to the definition of the current element.</dd>
+                  </dlentry>
+                </dl>
+              </p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_nlj_cgk_54b">
+            <dt><uicontrol>Select</uicontrol> submenu</dt>
+            <dd>
+              <p id="p_olj_cgk_54b">This submenu allows you to select the following:</p>
+              <p id="p_plj_cgk_54b">
+                <dl id="dl_qlj_cgk_54b">
+                  <dlentry id="dlentry_rlj_cgk_54b">
+                    <dt><uicontrol>Element</uicontrol></dt>
+                    <dd>Selects the entire element at the current cursor position.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_slj_cgk_54b">
+                    <dt><uicontrol>Content</uicontrol></dt>
+                    <dd>Selects the entire content of the element at the current cursor position,
+                      excluding the start and end tag. Performing this action repeatedly will result
+                      in the selection of the content of the ancestor of the currently selected
+                      element content.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_tlj_cgk_54b">
+                    <dt><uicontrol>Parent</uicontrol></dt>
+                    <dd>Selects the entire parent element at the current cursor position.</dd>
+                  </dlentry>
+                </dl>
+              </p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_ulj_cgk_54b">
+            <dt><uicontrol>Text</uicontrol> submenu</dt>
+            <dd>
+              <p id="p_vlj_cgk_54b">This submenu contains the following actions:</p>
+              <p id="p_wlj_cgk_54b">
+                <dl id="ul_ckk_ftc_gd">
+                  <dlentry id="dlentry_xlj_cgk_54b">
+                    <dt><uicontrol>To Lower Case</uicontrol></dt>
+                    <dd>Converts the selected content to lower case characters.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_ylj_cgk_54b">
+                    <dt><uicontrol>To Upper Case</uicontrol></dt>
+                    <dd>Converts the selected content to upper case characters.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_zlj_cgk_54b">
+                    <dt><uicontrol>Capitalize Sentences</uicontrol></dt>
+                    <dd>Converts to upper case the first character of every selected sentence.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_amj_cgk_54b">
+                    <dt><uicontrol>Capitalize Words</uicontrol></dt>
+                    <dd>Converts to upper case the first character of every selected word.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_bmj_cgk_54b">
+                    <dt><uicontrol>Count Words</uicontrol></dt>
+                    <dd>Counts the number of words and characters (no spaces) in the entire document
+                      or in the selection for regular content and read-only content. <note id="note_cmj_cgk_54b">The
+                        content marked as deleted with <xref keyref="glossentry_track-changes"
+                            ><term>change tracking</term></xref> is ignored when counting
+                        words.</note></dd>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-editing-documents/convert_hex_to_char" id="dlentry_dmj_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                </dl>
+              </p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_emj_cgk_54b">
+            <dt><uicontrol>Refactoring</uicontrol> submenu</dt>
+            <dd>
+              <p id="p_fmj_cgk_54b">Contains a series of actions designed to alter the XML structure of the
+                document:</p>
+              <p id="p_gmj_cgk_54b">
+                <dl id="dl_hmj_cgk_54b">
+                  <dlentry conkeyref="reusables-editing-documents/toggle-comment-dlentry" id="dlentry_imj_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-editing-documents/move-up-dlentry" id="dlentry_jmj_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-editing-documents/move-down-dlentry" id="dlentry_kmj_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-editing-documents/split-element-dlentry" id="dlentry_lmj_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-editing-documents/join-elements-dlentry" id="dlentry_mmj_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-editing-documents/surround-with-tags-dlentry" id="dlentry_nmj_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-editing-documents/surround-with-dlentry" id="dlentry_omj_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-editing-documents/rename-element-dlentry" id="dlentry_pmj_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-editing-documents/delete-element-dlentry" id="dlentry_qmj_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-editing-documents/remove-markup-dlentry" id="dlentry_rmj_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-editing-documents/remove-text-dlentry" id="dlentry_smj_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-editing-documents/refactoring-DITA-dlentry" id="dlentry_tmj_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-editing-documents/refactoring-attributes-dlentry" id="dlentry_umj_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-editing-documents/refactoring-comments-dlentry" id="dlentry_vmj_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-editing-documents/refactoring-elements-dlentry" id="dlentry_wmj_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-editing-documents/refactoring-fragments-dlentry" id="dlentry_xmj_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                </dl>
+              </p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_ymj_cgk_54b">
+            <dt><uicontrol>Review</uicontrol> submenu</dt>
+            <dd>
+              <p id="p_zmj_cgk_54b">This submenu includes the following actions:</p>
+              <p id="p_anj_cgk_54b">
+                <dl id="dl_bnj_cgk_54b">
+                  <dlentry id="dlentry_cnj_cgk_54b">
+                    <dt><uicontrol><image href="../img/TrackChangesDeactivated16.png"
+                          id="image_c31_qfk_cs"/>Track Changes</uicontrol></dt>
+                    <dd>Enables or disables the <xref keyref="glossentry_track-changes"><term>Track
+                          Changes</term></xref> support for the current document.</dd>
+                  </dlentry>
+                  <dlentry id="accept-changes-dlentry">
+                    <dt><uicontrol><image href="../img/AcceptChangeMove16.png" placement="inline"
+                        />Accept Change(s) and Move to Next</uicontrol></dt>
+                    <dd><ph conkeyref="reusables-editing-documents/ph-accept-and-move-to-next"
+                      /></dd>
+                  </dlentry>
+                  <dlentry id="dlentry_dnj_cgk_54b">
+                    <dt><uicontrol><image href="../img/AcceptAll16.png"/>Accept All
+                        Changes</uicontrol></dt>
+                    <dd><ph conkeyref="reusables-editing-documents/ph-accept-all"/></dd>
+                  </dlentry>
+                  <dlentry id="reject-changes-dlentry">
+                    <dt><uicontrol><image href="../img/RejectChangeMove16.png" placement="inline"
+                        />Reject Change(s) and Move to Next</uicontrol></dt>
+                    <dd><ph conkeyref="reusables-editing-documents/ph-reject-and-move-to-next"
+                      /></dd>
+                  </dlentry>
+                  <dlentry id="dlentry_enj_cgk_54b">
+                    <dt><uicontrol><image href="../img/RejectAll16.png"/>Reject All
+                        Changes</uicontrol></dt>
+                    <dd><ph conkeyref="reusables-editing-documents/ph-reject-all"/></dd>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-editing-documents/comment-changes-dlentry" id="dlentry_fnj_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry id="dlentry_gnj_cgk_54b">
+                    <dt><uicontrol><image href="../img/HighlightAll16.png" id="image_mjd_phk_cs"
+                        />Highlight</uicontrol></dt>
+                    <dd>Enables the highlighting tool that allows you to mark text in your
+                      document.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_hnj_cgk_54b">
+                    <dt><uicontrol>Colors</uicontrol></dt>
+                    <dd>Allows you to select the color for highlighting text.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_inj_cgk_54b">
+                    <dt><uicontrol>Stop highlighting</uicontrol></dt>
+                    <dd>Use this action to deactivate the highlighting tool. </dd>
+                  </dlentry>
+                  <dlentry id="dlentry_jnj_cgk_54b">
+                    <dt><uicontrol>Remove highlight(s)</uicontrol></dt>
+                    <dd>Use this action to remove highlighting from the document.</dd>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-editing-documents/add-comment-dlentry" id="dlentry_knj_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-editing-documents/edit-comment-dlentry" id="dlentry_lnj_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry conkeyref="reusables-editing-documents/remove-comment-dlentry" id="dlentry_mnj_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                  <dlentry id="dlentry_nnj_cgk_54b">
+                    <dt><uicontrol><image href="../img/ManageReviews16.png" id="image_rvf_4hk_cs"
+                        />Manage Reviews</uicontrol></dt>
+                    <dd>Opens the <xref href="review-view.dita#review-view"
+                          ><uicontrol>Review</uicontrol> view</xref>.</dd>
+                  </dlentry>
+                </dl>
+              </p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_onj_cgk_54b">
+            <dt><uicontrol>Manage IDs</uicontrol> submenu</dt>
+            <dd>
+              <p id="p_pnj_cgk_54b">This submenu is available for topics that have an associated DTD or schema. It
+                includes the following actions:</p>
+              <p id="p_qnj_cgk_54b">
+                <dl id="dl_rnj_cgk_54b">
+                  <dlentry id="dlentry_snj_cgk_54b">
+                    <dt><uicontrol><image href="../img/RenameXSLResource16.png"
+                          id="image_frs_xck_cs"/>Rename in</uicontrol></dt>
+                    <dd>Renames the ID and all its occurrences. Selecting this action opens the
+                        <uicontrol>Rename XML ID</uicontrol> dialog box. This dialog box lets you
+                      insert the new ID value and choose the scope of the rename operation.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_tnj_cgk_54b">
+                    <dt><uicontrol><image href="../img/SearchReferences16.png" id="image_ikc_wck_cs"
+                        />Search References</uicontrol></dt>
+                    <dd>Searches for the references of the ID. By default, the scope of this action
+                      is the current project. If you configure a scope using the <xref
+                        href="search-refactor-scope.dita"><uicontrol>Select the scope for the Search
+                          and Refactor operations</uicontrol></xref> dialog box, this scope will be
+                      used instead.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_unj_cgk_54b">
+                    <dt><uicontrol>Search References in</uicontrol></dt>
+                    <dd>Searches for the references of the ID. Selecting this action opens the <xref
+                        href="search-refactor-scope.dita"><uicontrol>Select the scope for the Search
+                          and Refactor operations</uicontrol></xref>.</dd>
+                  </dlentry>
+                  <dlentry id="dlentry_vnj_cgk_54b">
+                    <dt><uicontrol><image href="../img/OccurrencesInFile16.png"
+                          id="image_qtm_5ck_cs"/>Search Occurrences in file</uicontrol></dt>
+                    <dd>Searches for the occurrences of the ID in the current document.</dd>
+                  </dlentry>
+                </dl>
+              </p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_wnj_cgk_54b">
+            <dt><uicontrol>Folding</uicontrol> submenu</dt>
+            <dd>
+              <p id="p_xnj_cgk_54b">This submenu includes the following actions:</p>
+              <p id="p_ynj_cgk_54b">
+                <dl conkeyref="reusables-editing-documents/folding-dl" id="dl_znj_cgk_54b">
+                  <dlentry id="dlentry_a4j_cgk_54b">
+                    <dt/>
+                    <dd/>
+                  </dlentry>
+                </dl>
+              </p>
+            </dd>
+          </dlentry>
+          <dlentry id="dlentry_b4j_cgk_54b">
+            <dt><uicontrol>Inspect Styles</uicontrol></dt>
+            <dd>Opens the <xref href="author-css-inspector-view.dita"><uicontrol>CSS
+                  Inspector</uicontrol> view</xref> that allows you to examine the CSS rules that
+              match the currently selected element. </dd>
+          </dlentry>
+          <dlentry id="dlentry_c4j_cgk_54b">
+            <dt><uicontrol>Options</uicontrol></dt>
+            <dd>Opens the <xref format="dita" keyref="options_author">Author mode preferences
+                page</xref> where you can configure various options with regard to the
+                <uicontrol>Author</uicontrol> editing mode.</dd>
+          </dlentry>
+        </dl>
+      </p>
+    </section>
+    <section id="section_zp1_mvx_smb">
+      <title>Floating Contextual Toolbar for DITA</title>
+      <p id="p_d4j_cgk_54b"><ph keyref="product"/> includes a dynamic feature where certain editing contexts will
+        trigger a floating toolbar with common actions that are available in the current editing
+        context.</p>
+      <p id="p_e4j_cgk_54b">
+        <fig id="fig_tlx_mwx_smb">
+          <title>DITA Floating Contextual Toolbar</title>
+          <image href="../img/DITA-floating-toolbar.png" id="image_s3s_4wx_smb"/>
+        </fig>
+      </p>
+      <p id="p_f4j_cgk_54b">The <term>floating contextual toolbar</term> is automatically displayed when editing DITA
+        documents in various situations, including:<ul id="ul_oq2_twx_smb">
+          <li id="li_g4j_cgk_54b">When a <xmlelement>p</xmlelement>, <xmlelement>li</xmlelement>, or
+              <xmlelement>shortdesc</xmlelement> element has a selection inside, the floating
+            toolbar includes actions such as <uicontrol><image href="../img/Bold16.gif"
+                id="image_ss1_fxx_smb"/>Bold</uicontrol>, <uicontrol><image
+                href="../img/Italic16.png" id="image_zq2_lxx_smb"/>Italic</uicontrol>,
+                <uicontrol><image href="../img/Underline16.gif" id="image_dtv_lxx_smb"
+              />Underline</uicontrol>, a <uicontrol>Link</uicontrol> submenu, and more.</li>
+          <li id="li_h4j_cgk_54b">When an <xmlelement>image</xmlelement> or <xmlelement>xref</xmlelement> element is
+              selected:<ul id="ul_lhm_wxx_smb">
+              <li id="li_i4j_cgk_54b">If the element has an <xmlatt>href</xmlatt> attribute, the floating toolbar
+                includes a URL chooser where you can select the appropriate target.</li>
+              <li id="li_j4j_cgk_54b">If the element has a <xmlatt>keyref</xmlatt> attribute, the floating toolbar
+                includes a drop-down control where you can select the appropriate target key
+                reference.</li>
+            </ul></li>
+          <li id="li_k4j_cgk_54b">When an <xmlelement>object</xmlelement> element is selected:<ul id="ul_vvt_wyx_smb">
+              <li id="li_l4j_cgk_54b">If the element has a <xmlatt>data</xmlatt> attribute, the floating toolbar
+                includes a URL chooser where you can select the appropriate target.</li>
+              <li id="li_m4j_cgk_54b">If the element has a <xmlatt>datakeyref</xmlatt> attribute, the floating toolbar
+                includes a drop-down control where you can select the appropriate target key
+                reference.</li>
+            </ul></li>
+          <li id="li_n4j_cgk_54b">When an element with a <xmlatt>conref</xmlatt> attribute is selected, the floating
+            toolbar includes actions for editing, removing, or replacing content references.</li>
+          <li id="li_o4j_cgk_54b">When a <xmlelement>codeblock</xmlelement> element is selected, the floating toolbar
+            includes a drop-down control where you can select the value of the
+              <xmlatt>outputclass</xmlatt> attribute.</li>
+          <li id="li_p4j_cgk_54b">When a <xmlelement>ul</xmlelement> element is selected, the floating toolbar includes
+            actions for converting it to an ordered list or sorting the list.</li>
+          <li id="li_q4j_cgk_54b">When an <xmlelement>ol</xmlelement> element is selected, the floating toolbar includes
+            actions for converting it to an unordered list or sorting the list.</li>
+          <li id="li_r4j_cgk_54b">When an <xmlelement>li</xmlelement> or <xmlelement>step</xmlelement> element is
+            selected, the floating toolbar includes actions for moving the item up or down in the
+            list/procedure.</li>
+          <li id="li_s4j_cgk_54b">When a <xmlelement>row</xmlelement> or <xmlelement>strow</xmlelement> element is
+            selected in a table, the floating toolbar includes various table-related actions (such
+            as actions for editing table properties, inserting rows, or deleting rows).</li>
+          <li id="li_t4j_cgk_54b">When an <xmlelement>entry</xmlelement> or <xmlelement>stentry</xmlelement> element is
+            selected in a table, the floating toolbar includes various table-related actions (such
+            as actions for editing table properties, inserting/deleting rows, or inserting/deleting
+            columns).</li>
+          <li id="li_u4j_cgk_54b">When a <xmlelement>table</xmlelement> or <xmlelement>simpletable</xmlelement> element
+            is selected, the floating toolbar includes actions for editing table properties or
+            sorting the table.</li>
+          <li>In all cases, the <uicontrol><image href="../img/AddComment16.png" placement="inline"
+              />Add Comment</uicontrol> action is in the floating toolbar, allowing you to easily
+            add comments to selected content.</li>
+        </ul></p>
+    </section>
+    <section id="dita_dragdrop_actions">
+      <title>DITA Drag/Drop (or Copy/Paste) Actions</title>
+      <p id="drag-and-drop-from-project-to-author-docbook4">Dragging a file from the <xref
+          href="using-the-project-view.dita#using-the-project-view" format="dita"><uicontrol
+            product="author editor">Project</uicontrol><uicontrol
+            product="authorEclipse editorEclipse">Project Explorer</uicontrol> view</xref> or <xref
+          format="dita" keyref="dita_edit-maps"><uicontrol>DITA Maps Manager</uicontrol> view</xref>
+        and dropping it into a DITA document that is edited in <uicontrol>Author</uicontrol> mode,
+        creates a link to the dragged file (the <xmlelement>xref</xmlelement> DITA element with the
+          <xmlatt>href</xmlatt> attribute) at the drop location. Copy and paste actions work the
+        same.</p>
+      <p id="p_v4j_cgk_54b">You can also drag images or media files from your system explorer or the <xref
+          href="using-the-project-view.dita#using-the-project-view" format="dita"><uicontrol
+            product="author editor">Project</uicontrol><uicontrol
+            product="authorEclipse editorEclipse">Project Explorer</uicontrol> view</xref> and drop
+        them into a DITA document (or copy and paste). This will insert the appropriate element at
+        the drop or paste location (for example, dropping/pasting an image will insert the DITA
+          <xmlelement>image</xmlelement> element with an <xmlatt>href</xmlatt> attribute).</p>
+    </section>
+    <note conkeyref="reusables-author-actions/tip-custom-actions" id="note_w4j_cgk_54b"/>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link href="dg-configuring-author-from-framework.dita"/>
+    </linklist>
+  </related-links>
+</topic>

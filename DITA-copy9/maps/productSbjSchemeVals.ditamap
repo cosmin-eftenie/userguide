@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE subjectScheme PUBLIC "-//OASIS//DTD DITA Subject Scheme Map//EN" "map.dtd">
+<subjectScheme>
+  <title>Controlled Values list</title>
+  <hasInstance>
+    <subjectdef keys="productSbjKey">
+      <subjectdef keys="author"/>
+      <subjectdef keys="developer"/>
+      <subjectdef keys="editor"/>
+      <subjectdef keys="authorEclipse"/>
+      <subjectdef keys="developerEclipse"/>
+      <subjectdef keys="editorEclipse"/>
+      <subjectdef keys="webauthor"/>
+      <subjectdef keys="waCustom"/>
+      <subjectdef keys="fusion"/>
+      <subjectdef keys="fusion-cloud"/>
+      <subjectdef keys="svnClient"/>
+      <subjectdef keys="chemistry"/>
+      <subjectdef keys="pdf-css"/>
+      <subjectdef keys="webhelp-responsive"/>
+      <subjectdef keys="feedback"/>
+      <subjectdef keys="feedback-enterprise"/>
+      <subjectdef keys="ope"/>
+      <subjectdef keys="license-server"/>
+      <subjectdef keys="json"/>
+    </subjectdef>
+  </hasInstance>
+  <enumerationdef>
+    <attributedef name="product"/>
+    <subjectdef keyref="productSbjKey"/>
+  </enumerationdef>
+  <!--Reject all possible values for other profiling attributes-->
+  <enumerationdef>
+    <attributedef name="platform"/>
+    <subjectdef/>
+  </enumerationdef>
+  <enumerationdef>
+    <attributedef name="props"/>
+    <subjectdef/>
+  </enumerationdef>
+  <enumerationdef>
+    <attributedef name="otherprops"/>
+    <subjectdef/>
+  </enumerationdef>
+</subjectScheme>

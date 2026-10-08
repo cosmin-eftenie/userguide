@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map id="chapter.oxygen-editing-modes" title="Editing Modes">
+  <topicref href="../topics/oxygen-editing-modes.dita" collection-type="sequence"
+    keys="chapter_edit-modes">
+    <topicmeta>
+      <shortdesc>The <uicontrol>Text</uicontrol>, <uicontrol>Grid</uicontrol>, <ph
+          product="author authorEclipse">and </ph><uicontrol
+          product="author editor authorEclipse editorEclipse">Author</uicontrol><ph
+          product="developer editor developerEclipse editorEclipse">, and Schema
+            <uicontrol>Design</uicontrol></ph> editing modes</shortdesc>
+      <data name="wh-menu">
+        <data name="hide" value="yes"/>
+      </data>
+    </topicmeta>
+    <topicref href="../topics/text-mode-editor.dita"/>
+    <topicref href="../topics/grid-mode-editor.dita"/>
+    <topicref href="../topics/author-editor.dita"
+      product="author editor authorEclipse editorEclipse"/>
+    <topicref href="../topics/xml-schema-diagram-introduction.dita"
+      product="developer editor developerEclipse editorEclipse"/>
+  </topicref>
+</map>

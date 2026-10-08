@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="performing-common-actions">
+  <title>How to Perform Common Editing Tasks</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Editing operations</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_nn4_dgk_54b">This section describes how to perform some of the most common editing operations in <ph
+        keyref="webappProduct"/>. For a more complete list of the editing actions available in <ph
+        keyref="webappProduct"/>, see <xref href="editingActions.dita"/>.</p>
+    <section id="editing_on_mobile_devices">
+      <title>Editing on Mobile Devices</title>
+      <p id="p_on4_dgk_54b">When you initially open a document on a mobile device, the document is in a read-only
+          <i>review</i> mode. To switch to <i>edit</i> mode, tap the <uicontrol><image
+            href="../img/WA_Edit_Mode20.png"/>Edit</uicontrol> widget (or double-tap anywhere in the
+        editing pane).</p>
+    </section>
+    <section id="input_text">
+      <title>Input Text</title>
+      <p id="p_pn4_dgk_54b">
+        <ol id="ol_qn4_dgk_54b">
+          <li id="li_rn4_dgk_54b">Tap or click to move the cursor into the selected document area.</li>
+          <li id="li_sn4_dgk_54b">Type the text using the keyboard or screen.</li>
+        </ol>
+      </p>
+    </section>
+    <section id="split_a_paragraph">
+      <title>Split a Paragraph</title>
+      <p id="p_tn4_dgk_54b">
+        <ol id="ol_un4_dgk_54b">
+          <li id="li_vn4_dgk_54b">Tap or click to move the cursor at the split position.</li>
+          <li id="li_wn4_dgk_54b">Tap or press <uicontrol><shortcut>Enter</shortcut></uicontrol> to open the
+              <term>Content Completion Assistant</term>.</li>
+          <li id="li_xn4_dgk_54b">Choose <uicontrol>Split p</uicontrol> from the list of proposals.</li>
+        </ol>
+      </p>
+    </section>
+    <section id="enter_a_new_xml_element_or_to_surround_the_select">
+      <title>Enter a New XML Element</title>
+      <p id="p_yn4_dgk_54b">
+        <ol id="ol_zn4_dgk_54b">
+          <li id="li_a44_dgk_54b">Tap or click to move the cursor into the document area where you want to enter the new
+            element.</li>
+          <li id="li_b44_dgk_54b">Tap or press <uicontrol><shortcut>Enter</shortcut></uicontrol> to open the
+              <term>Content Completion Assistant</term>. </li>
+          <li id="li_c44_dgk_54b">Select the element name.</li>
+        </ol>
+      </p>
+    </section>
+    <section id="surround_a_selection_with_an_xml_element">
+      <title>Surround a Selection with an XML Element</title>
+      <p id="p_d44_dgk_54b">
+        <ol id="ol_e44_dgk_54b">
+          <li id="li_f44_dgk_54b">Tap or click to move the cursor into the selected document area and make a text
+            selection.</li>
+          <li id="li_g44_dgk_54b">Tap or press <uicontrol><shortcut>Enter</shortcut></uicontrol> to open the
+              <term>Content Completion Assistant</term>. </li>
+          <li id="li_h44_dgk_54b">Select the element name that you want the selection to be surrounded with.</li>
+        </ol>
+      </p>
+    </section>
+    <section id="set_an_attribute_value">
+      <title>Set an Attribute Value</title>
+      <ol id="ol_i44_dgk_54b">
+        <li id="li_j44_dgk_54b">
+          <p id="p_k44_dgk_54b">Expand the <uicontrol><image href="../img/WA-Attributes22.png"
+              />Attributes</uicontrol> pane from the area on the right side of the screen. <ph
+              conkeyref="reusables-webapp/side-panel-ph"/></p>
+          <p conkeyref="reusables-webapp/p_l44_dgk_54b" id="p_k4t_ky5_frb"/>
+        </li>
+        <li id="li_n44_dgk_54b">If the attribute is present in the attributes table (it already has a value), you can
+          change its value by tapping or clicking its value. On a desktop system, you can also use
+              <uicontrol><shortcut>Tab</shortcut></uicontrol> or
+              <uicontrol><shortcut>Shift+Tab</shortcut></uicontrol> to cycle through the available
+          attributes and the <uicontrol><shortcut>Enter</shortcut></uicontrol> key to select and
+          modify attribute values.</li>
+        <li id="li_o44_dgk_54b">If the attribute is not present, use the <uicontrol>Add
+            Attribute</uicontrol> button and tap or click the attribute to set its value. On a
+          desktop system, you can also press <uicontrol><shortcut
+              conkeyref="reusable-oxygen-shortcuts-list/alt_enter_shortcut"/></uicontrol> when the
+          cursor is in the document and the focus will change to the
+            <uicontrol>Attributes</uicontrol> tab with the <uicontrol>Add Attribute</uicontrol> form
+          control automatically opened.</li>
+      </ol>
+    </section>
+    <section id="remove_an_attribute">
+      <title>Remove an Attribute</title>
+      <ol id="ol_tvz_ydn_yr">
+        <li id="li_p44_dgk_54b">Expand the <uicontrol>Attributes</uicontrol> pane from the are on
+          the right side of the screen. <ph conkeyref="reusables-webapp/side-panel-ph"/></li>
+        <li id="li_q44_dgk_54b">Find the attribute in the table and tap or click its value.</li>
+        <li id="li_r44_dgk_54b">Use the <uicontrol><image href="../img/WebappDelete20.png" id="image_dpy_zj2_vs"
+            />Delete</uicontrol> button (or use the
+            <uicontrol><shortcut>Delete</shortcut></uicontrol> key) to remove the attribute.</li>
+      </ol>
+    </section>
+    <section id="section_edf_m3x_jkb">
+      <title>Delete an Element</title>
+      <p id="p_s44_dgk_54b">For non-required elements, you can use keyboard shortcuts (such as
+            <uicontrol><shortcut>Delete</shortcut></uicontrol> or
+            <uicontrol><shortcut>Backspace</shortcut></uicontrol>) to delete an element and/or its
+        contents. If an element is required at its specific location within the XML structure and it
+        is not the only child of the parent element, you cannot delete it using normal keyboard
+        shortcuts). Typically, you would not want to remove a required element, so this feature is
+        in place to help prevent accidental deletes. If you do need to delete such an element:<ul
+          id="ul_ow3_ph1_3fc">
+          <li id="li_pw3_ph1_3fc">To delete the element's tags (and preserve its contents),
+            right-click the element in the <xref
+              href="webauthor-editing-docs.dita#webauthor-editing-docs/section_yzx_t5d_23c"
+              >Breadcrumb</xref> (or editor), and select the <uicontrol><image
+                href="../img/DeleteElementTags16.png"/>Delete Element Tags</uicontrol> action.</li>
+          <li id="li_zrg_sh1_3fc">To delete the element and its contents, right-click the element in
+            the <xref href="webauthor-editing-docs.dita#webauthor-editing-docs/section_yzx_t5d_23c"
+              >Breadcrumb</xref> and select the <uicontrol><image href="../img/SVNDelete16.gif"
+              />Delete Element</uicontrol> action.</li>
+        </ul></p>
+    </section>
+    <section id="section_gsj_dh1_3fc">
+      <title>Rename an Element</title>
+      <p id="p_hsj_dh1_3fc">To replace the element with another (rename it), right-click the element
+        in the Breadcrumb or editor, select the <uicontrol><image href="../img/RenameElement16.png"
+          />Rename Element</uicontrol> action, and select the new element from the pop-up window
+        that appears.</p>
+    </section>
+    <section id="save_a_modified_xml_document">
+      <title>Save a Modified XML Document</title>
+      <p id="p_w44_dgk_54b">To save your changes, tap or click the <uicontrol><image href="../img/WebappSave18.png"
+            id="image_q3f_nwg_5r"/>Save</uicontrol> button from the upper toolbar. Note that the
+        save operation depends on the integration of <ph keyref="webappProduct"/> with a CMS or
+        other storage mechanism.</p>
+    </section>
+    <section id="open_image">
+      <title>Open Image</title>
+      <p id="p_x44_dgk_54b">To open an image in a new browser tab, right-click the image and select <uicontrol>Open
+          Image</uicontrol>. The new browser tab will contain a preview of the image and from there,
+        you can perform the usual contextual menu actions that are available on images for the
+        particular browser.</p>
+    </section>
+    <section id="insert_an_image">
+      <title>Insert an Image</title>
+      <p id="p_y44_dgk_54b">
+        <ol id="ol_vyh_bm3_qnb">
+          <li id="li_z44_dgk_54b">Tap or click the <uicontrol><image href="../img/Image16.gif" id="image_gqz_lzy_tr"
+              />Insert Image</uicontrol> action on the toolbar.</li>
+          <li id="li_ap4_dgk_54b">Select the image from the file browsing dialog box that appears. If the image does not
+            already exist in the file structure of your repository, you can use the
+                <uicontrol><image href="../img/WAUpload16.png" id="image_x32_rwd_3jb"/>Upload
+              File</uicontrol> action at the top-right corner of the dialog box to upload it to the
+            repository before selecting it.<note type="tip" id="note_bp4_dgk_54b">You can also drag an image file from
+              another document, web page, or application (such as a system file browser) and drop it
+              into your document (in some browsers, you can also use copy/paste actions). <ph
+                keyref="webappProduct"/> will insert it as a reference to the image
+            file.</note></li>
+        </ol>
+      </p>
+    </section>
+    <section id="editing_mathml_equations">
+      <title>Inserting and Editing MathML Equations</title>
+      <p id="p_cp4_dgk_54b">
+        <ol id="ol_zd4_ckp_2s">
+          <li id="li_dp4_dgk_54b">To insert a MathML equation, right-click at the location where you want to insert it
+            and select <uicontrol><image href="../img/Equation16.gif" id="image_hvv_bn3_qnb"/>Insert
+              Equation</uicontrol> from the <uicontrol>Insert</uicontrol> submenu.</li>
+          <li id="li_ep4_dgk_54b">To edit the equation, tap or click the equation to open an editing dialog box.</li>
+          <li id="li_fp4_dgk_54b">Edit the XML source of the equation.</li>
+          <li id="li_gp4_dgk_54b">Tap or click <uicontrol>OK</uicontrol> to finish the editing process.</li>
+        </ol>
+      </p>
+    </section>
+    <section id="section_fqr_vm3_qnb">
+      <title>Editing SVG Graphics</title>
+      <p id="p_hp4_dgk_54b"><ph keyref="webappProduct"/> renders SVG graphics if they are present in
+        the document. However, the only way to edit them is to switch to the text-based mode (select
+            <uicontrol><image href="../img/XmlIcon16.gif" id="image_amc_ms5_vhb"/>Edit XML
+          Source</uicontrol> from the <uicontrol><image href="../img/WebappMore18.png"
+            id="image_km3_nn3_qnb"/>More drop-down menu</uicontrol>).</p>
+    </section>
+    <section id="section_vxl_srs_nwb">
+      <title>Move Block Element Nodes</title>
+      <p id="p_o3d_wrs_nwb">On a desktop device, you can easily move selected block element nodes up
+        or down by using the following keyboard shortcuts:<dl id="dl_p3d_wrs_nwb">
+          <dlentry id="dlentry_q3d_wrs_nwb">
+            <dt><uicontrol>Move Up (<shortcut
+                  conkeyref="reusable-oxygen-shortcuts-list/alt_up_shortcut"/>)</uicontrol>
+            </dt>
+            <dd>Move a selected block element node up (on the same hierarchical level).</dd>
+          </dlentry>
+          <dlentry id="dlentry_r3d_wrs_nwb">
+            <dt><uicontrol>Move Down (<shortcut
+                  conkeyref="reusable-oxygen-shortcuts-list/alt_down_shortcut"/>)</uicontrol>
+            </dt>
+            <dd>Move a selected block element node down (on the same hierarchical level).</dd>
+          </dlentry>
+        </dl></p>
+    </section>
+    <section id="promote_demote_list_item_nodes">
+      <title>Promote/Demote List Item Nodes</title>
+      <p id="p_ip4_dgk_54b">On a desktop device, you can easily promote or demote selected list item nodes within
+        ordered lists or unordered lists by using the following keyboard shortcuts:<dl id="dl_jp4_dgk_54b">
+          <dlentry id="dlentry_kp4_dgk_54b">
+            <dt><uicontrol>Promote (<shortcut
+                  conkeyref="reusable-oxygen-shortcuts-list/shift_tab_shortcut"/>)</uicontrol>
+            </dt>
+            <dd>Promotes an entirely selected list item node to be a sibling of its parent node (the
+              list item is moved to the left). It also works for selections of multiple list item
+              nodes as long as all the selected nodes are siblings (on the same hierarchical
+              level).</dd>
+          </dlentry>
+          <dlentry id="dlentry_lp4_dgk_54b">
+            <dt><uicontrol>Demote (<shortcut conkeyref="reusable-oxygen-shortcuts-list/tab_shortcut"
+                />)</uicontrol>
+            </dt>
+            <dd>Demotes an entirely selected list item node (the list item is moved to the right).
+              It also works for selections of multiple list item nodes as long as all the selected
+              nodes are siblings (on the same hierarchical level).</dd>
+          </dlentry>
+        </dl></p>
+    </section>
+    <section id="display-xml-tags">
+      <title>Display XML Tags</title>
+      <p id="p_mp4_dgk_54b"><ph keyref="webappProduct"/> includes a <uicontrol>Tags Display
+          Mode</uicontrol> option that you can use to display the XML tags directly in the document.
+        The <uicontrol><image href="../img/WA-TagsDrop.png"/>Tags Display Mode</uicontrol> drop-down
+        is located at the far-left side of the <xref
+          href="webauthor-editing-docs.dita#webauthor-editing-docs/section_yzx_t5d_23c"
+          >Breadcrumb</xref> (before the first element). You can choose from the following tag
+        modes: <uicontrol>Full Tags with Attributes</uicontrol>, <uicontrol>Full Tags</uicontrol>,
+          <uicontrol>Block Tags</uicontrol>, <uicontrol>Inline Tags</uicontrol>, <uicontrol>Partial
+          Tags</uicontrol>, or <uicontrol>No Tags</uicontrol>.<note id="note_dbs_f5t_tsb">This
+          option is also available in <uicontrol><image href="../img/OptionsShortcut16.png"
+              id="image_bmc_ms5_vhb"/>Preferences</uicontrol> from the <uicontrol><image
+              href="../img/WebappMore18.png" id="image_utp_lhd_3jb"/>More drop-down
+          menu</uicontrol>.</note></p>
+    </section>
+    <section id="section_nbk_1gd_3jb">
+      <title>Drag/Drop or Copy/Paste Tags, URLs, Images, and Static Text</title>
+      <p id="p_np4_dgk_54b">If the <xref href="#performing-common-actions/display-xml-tags" format="dita"
+            ><uicontrol>Tags Display Mode</uicontrol> option</xref> is set to <uicontrol>Full Tags
+          with Attributes</uicontrol>, <uicontrol>Full Tags</uicontrol>, <uicontrol>Block
+          Tags</uicontrol>, or <uicontrol>Inline Tags</uicontrol>, you can click on a tag, copy
+            (<uicontrol><shortcut>Ctrl + C</shortcut></uicontrol>) it, and paste
+            (<uicontrol><shortcut>Ctrl + V</shortcut></uicontrol>) it within the current document or
+        another document. You can also use the mouse to drag XML tags and drop them within the
+        current document.</p>
+      <p id="p_op4_dgk_54b">If you copy/paste or drag/drop a valid URL string, <ph keyref="webappProduct"/> will
+        automatically insert it as a linking element for the particular document type you are
+        working with. For example, in DITA it would insert an <xmlelement>xref</xmlelement>
+        element.</p>
+      <p id="p_pp4_dgk_54b">You can drag an image file from another document, web page, or application (such as a
+        system file browser) and drop it into your document (in some browsers, you can also use
+        copy/paste actions). <ph keyref="webappProduct"/> will insert it as a reference to the image
+        file.</p>
+      <p id="p_qp4_dgk_54b">You can also select a block of text from another document or web page and drag/drop it in
+        the current document (or copy/paste) and <ph keyref="webappProduct"/> will insert it as
+        plain text or in some cases, HTML code.</p>
+    </section>
+    <section id="change_dita_map_for_dita_documents">
+      <title>Change Root DITA Map (For DITA Documents)</title>
+      <p id="p_rp4_dgk_54b">To change the root <term>DITA map</term> that is associated with the current document,
+        follow these steps:<ol id="ol_sp4_dgk_54b">
+          <li id="li_tp4_dgk_54b">With the document opened in <ph keyref="webappProduct"/>, select the <uicontrol><image
+                href="../img/DitamapIcon16.png"/>Set the Root Map</uicontrol> button on the DITA
+            toolbar.</li>
+          <li id="li_up4_dgk_54b">Choose the URL of the <term>DITA map</term> that you want to be associated with the
+            current document.</li>
+          <li id="li_vp4_dgk_54b">To see which <term>root map</term> is currently associated with a document, expand the
+              <xref href="checking-for-errors.dita"><uicontrol>Validation</uicontrol> side
+              pane</xref>. The root map is listed at the top of the side pane.</li>
+        </ol></p>
+    </section>
+  </body>
+  <related-links>
+    <linklist>
+      <title>Related Information:</title>
+      <link href="editingActions.dita"/>
+    </linklist>
+  </related-links>
+</topic>

@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="html_page_templates">
+  <title>HTML Page Layout Files</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+          >WebHelp Responsive <indexterm>Publishing template HTML page layout
+          files</indexterm></indexterm>
+        <indexterm product="webhelp-responsive ope">Publishing Template <indexterm>HTML page layout
+            files</indexterm></indexterm>
+      </keywords>
+      <keywords>
+        <keyword outputclass="label" product="webhelp-responsive">Publishing Template</keyword>
+        <keyword outputclass="label" product="webhelp-responsive">Customization</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_akn_cgk_54b">The HTML page layout files define the default layout of the generated
+      pages in the output for the built-in template. There are four types of pages (<i>main</i>,
+        <i>search</i>, <i>topic</i>, <i>index</i>) and each type of page is a simple HTML file. Each
+      page type has various components that appear by default and each component has a corresponding
+      element and when that element is included in the HTML file, the corresponding components will
+      appear in the output.<note type="warning" id="note_bkn_cgk_54b">It is no longer recommended
+        for you to customize these files because if you upgrade to a newer version of <b>Oxygen</b>,
+        those files may no longer produce the desired results and if new components have been added,
+        you won't have access to them. Instead, use any of the other methods described in <xref
+          href="whr_publishing_template_contents.dita"/>.</note></p>
+    <p id="p_ckn_cgk_54b">If you do choose to customize these HTML files, each type of page is
+      defined inside an <xmlelement>html-page-layout-files</xmlelement> element in the descriptor
+      file.<codeblock outputclass="language-xml" id="codeblock_dkn_cgk_54b">&lt;publishing-template>
+      ...
+      &lt;webhelp>
+      ...
+      &lt;!-- HTML page layout files -->
+      &lt;html-page-layout-files>
+        &lt;page-layout-file page="main" file="page-templates/wt_index.html"/>
+        &lt;page-layout-file page="search" file="page-templates/wt_search.html"/>
+        &lt;page-layout-file page="topic" file="page-templates/wt_topic.html"/>
+        &lt;page-layout-file page="index-terms" file="page-templates/wt_terms.html"/>
+      &lt;/html-page-layout-files></codeblock></p>
+    <p id="p_ekn_cgk_54b">If you do use the <b>html-page-layout-files</b> element, you must specify
+      all four types of pages (<i>main</i>, <i>search</i>, <i>topic</i>, <i>index</i>). When not
+      specified, the files from the <filepath><abbreviated-form keyref="glossentry_dita_ot_dir"
+        />/plugins/com.oxygenxml.webhelp.responsive/oxygen-webhelp/page-templates</filepath> folder
+      will be used to define the layout of each type of page.</p>
+    <p id="p_fkn_cgk_54b"><b><u>HTML Page Components</u></b></p>
+    <p id="p_gkn_cgk_54b">Each type of page contains various components that control the layout of
+      that page. The rendering of each component depends on the context where it is placed and its
+      content depends on the transformed <xref keyref="glossentry_ditamap"><term>DITA
+        map</term></xref>.</p>
+    <p id="p_hkn_cgk_54b">Some of the components can be used in all four types of pages, while some
+      are only available for certain pages. For instance, the <i>Publication Title</i> component can
+      be used in all pages, but the <i>Navigation Breadcrumb</i> component can only be used in the
+        <b>Topic Page</b>.</p>
+    <p id="p_ikn_cgk_54b">To include a component in the output of a particular type of page, you
+      have to reference a specific element in that particular HTML file. All the elements associated
+      with a component should belong to the
+        <codeph>http://www.oxygenxml.com/webhelp/components</codeph> namespace.</p>
+    <p id="p_jkn_cgk_54b">Every component can contain custom content or reference another component.
+      To specify where the component content will be located in the output, you can use the
+        <xmlelement>whc:component_content</xmlelement> element as a descendant of the component
+      element. It can specify the location as before, after, or it can wrap the component content.
+      The following snippet contains an example of
+      each:<codeblock outputclass="language-xml" id="codeblock_kkn_cgk_54b">&lt;whc:webhelp_search_input class="navbar-form wh_main_page_search"
+    role="form" >
+    &lt;div class="custom-content-before">Enter search terms here:&lt;/div> 
+    &lt;div class="custom-wrapper">
+        &lt;whc:component_content/>
+    &lt;/div>
+    &lt;div class="custom-content-after">Results will be displayed in a new window.&lt;/div>
+&lt;/whc:webhelp_search_input></codeblock></p>
+    <section id="main-page">
+      <title>Main Page</title>
+      <p id="p_lkn_cgk_54b">The <term>Main Page</term> is the home page generated in the WebHelp
+        Responsive output. The name of the HTML file that defines this page is
+          <filepath>wt_index.html</filepath> and it is located in the following directory:
+            <filepath><abbreviated-form keyref="glossentry_dita_ot_dir"
+          />/plugins/com.oxygenxml.webhelp.responsive/oxygen-webhelp/page-templates</filepath>.</p>
+      <p id="p_mkn_cgk_54b">The main function of the home page is to display top-level information
+        and provide links that help you easily navigate to any of the top-level topics of the
+        publication. These links can be rendered in either a <i>Tiles</i> or <i>Tree</i> style of
+        layout. The HTML page produced for the home page also consists of various other components,
+        such as a logo, title, menu, search field, or index link.</p>
+      <p id="p_nkn_cgk_54b">
+        <fig id="fig_okn_cgk_54b">
+          <title>Example of Main Page Components for a Tiles Style of Layout</title>
+          <p id="p_pkn_cgk_54b">
+            <imagemap id="imagemap_fc1_z2l_n4b">
+              <image href="../img/webhelp_main_page2.png" id="image_scg_fyy_5cb" placement="inline"/>
+              <area>
+                <shape>poly</shape>
+                <coords>15, 46, 15, 110, 73, 110, 72, 41, 149, 41, 149, 4, 73, 4</coords>
+                <xref href="#html_page_templates/main-logo" format="dita">Publication Logo</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>85, 85, 85, 106, 213, 106, 213, 85, 152, 85, 186, 56, 288, 56, 288, 17, 185,
+                  17, 122, 85</coords>
+                <xref href="#html_page_templates/main-title" format="dita">Publication Title</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>61, 143, 61, 172, 725, 170, 725, 142, 217, 142, 249, 105, 344, 105, 344, 68,
+                  249, 68, 180, 142</coords>
+                <xref href="#html_page_templates/main-search-input" format="dita">Search
+                  Input</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>349, 85, 350, 108, 700, 106, 700, 86, 513, 85, 513, 18, 444, 18, 378,
+                  85</coords>
+                <xref href="#html_page_templates/main-menu" format="dita">Main Menu</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>704, 86, 704, 105, 726, 105, 726, 86, 653, 17, 553, 16, 553, 53, 656,
+                  53</coords>
+                <xref href="#html_page_templates/main-index-terms-link" format="dita">Index Terms
+                  Link</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>690, 18, 690, 54, 730, 54, 733, 105, 749, 105, 749, 54, 780, 54, 780,
+                  18</coords>
+                <xref href="#html_page_templates/main-print" format="dita">Print Link</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>754, 86, 772, 86, 774, 172, 797, 172, 797, 200, 705, 200, 704, 173, 753,
+                  172, 753, 131</coords>
+                <xref href="#html_page_templates/main-switch-theme-button">Switch Theme
+                  Button</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>36, 213, 37, 323, 276, 322, 276, 420, 376, 420, 405, 322, 752, 322, 752,
+                  213</coords>
+                <xref href="#html_page_templates/main-tiles" format="dita">Topic Tiles</xref>
+              </area>
+            </imagemap>
+          </p>
+        </fig>
+      </p>
+      <p id="p_qkn_cgk_54b">
+        <fig id="fig_rkn_cgk_54b">
+          <title>Example of Main Page Components for a Tree Style of Layout</title>
+          <p id="p_skn_cgk_54b">
+            <imagemap id="imagemap_ffc_2gl_n4b">
+              <image href="../img/webhelp_main_page_tree2.png" id="image_z21_dd1_vcb"
+                placement="inline"/>
+              <area>
+                <shape>poly</shape>
+                <coords>17, 60, 17, 125, 74, 125, 73, 50, 149, 50, 149, 14, 74, 14</coords>
+                <xref href="#html_page_templates/main-logo" format="dita">Publication Logo</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>80, 82, 80, 101, 206, 102, 206, 81, 213, 49, 288, 49, 288, 12, 210, 12, 144,
+                  82</coords>
+                <xref href="#html_page_templates/main-title" format="dita">Publication Title</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>146, 157, 146, 188, 653, 188, 653, 157, 213, 158, 253, 110, 312, 110, 313,
+                  72, 212, 73, 212, 112</coords>
+                <xref href="#html_page_templates/main-search-input" format="dita">Search
+                  Input</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>320, 81, 320, 102, 706, 101, 706, 81, 565, 81, 488, 12, 385, 12, 385,
+                  48</coords>
+                <xref href="#html_page_templates/main-menu" format="dita">Main Menu</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>713, 84, 712, 101, 742, 101, 742, 81, 674, 13, 570, 12, 570, 50, 672,
+                  50</coords>
+                <xref href="#html_page_templates/main-index-terms-link" format="dita">Index Terms
+                  Link</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>74, 244, 72, 418, 546, 418, 581, 482, 697, 482, 697, 448, 548, 377, 548,
+                  245</coords>
+                <xref href="#html_page_templates/main-main-toc" format="dita">Table of
+                  Contents</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>704, 132, 745, 132, 772, 102, 772, 81, 790, 81, 793, 170, 704, 170</coords>
+                <xref href="#html_page_templates/main-switch-theme-button" format="dita">Switch
+                  Theme Button</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>705, 14, 705, 49, 748, 49, 749, 102, 768, 102, 768, 49, 790, 49, 790,
+                  14</coords>
+                <xref href="#html_page_templates/main-print" format="dita">Print Link</xref>
+              </area>
+            </imagemap>
+          </p>
+        </fig>
+      </p>
+      <p id="p_tkn_cgk_54b">The following components can be referenced in the <term>Main Page</term>
+          (<filepath>wt_index.html</filepath>) file: <dl id="dl_ukn_cgk_54b">
+          <dlentry conkeyref="reusable-webhelp-customizing/publication-title" id="main-title">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/publication-logo" id="main-logo">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/search-input" id="main-search-input">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/print-link" id="main-print">
+            <dt/>
+            <dd/>
+          </dlentry>
+            <dlentry conkeyref="reusable-webhelp-customizing/switch-theme-button" id="main-switch-theme-button">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/main-page-menu" id="main-menu">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/main-page-topic-tiles" id="main-tiles">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/main-page-toc" id="main-main-toc">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/index-terms-link"
+            id="main-index-terms-link">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/link-to-skins" id="main-resources">
+            <dt/>
+            <dd/>
+          </dlentry>
+        </dl>
+      </p>
+    </section>
+    <section id="topic-page">
+      <title>Topic Page</title>
+      <p id="p_vkn_cgk_54b">The <term>Topic Page</term> is the page generated for each DITA topic in
+        the WebHelp Responsive output. The name of the HTML file that defines this page is
+          <filepath>wt_topic.html</filepath> and it is located in the following directory:
+            <filepath><abbreviated-form keyref="glossentry_dita_ot_dir"
+          />/plugins/com.oxygenxml.webhelp.responsive/oxygen-webhelp/page-templates</filepath>.</p>
+      <p id="p_wkn_cgk_54b">The HTML pages produced for each topic consist of the topic content
+        along with various other additional components, such as a title, menu, navigation
+        breadcrumb, print icon, or side table of contents.</p>
+      <p id="p_xkn_cgk_54b">
+        <fig id="fig_ykn_cgk_54b">
+          <title>Example of Topic Page Components</title>
+          <p id="p_zkn_cgk_54b">
+            <imagemap id="imagemap_kyx_vhl_n4b">
+              <image href="../img/whr-topic-page-layout.png" id="image_s5n_ft1_vcb"
+                placement="inline"/>
+              <area>
+                <shape>poly</shape>
+                <coords>74, 14, 16, 60, 17, 125, 72, 125, 72, 60, 148, 52, 148, 14</coords>
+                <xref href="#html_page_templates/topic-logo" format="dita">Publication Logo</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>213, 13, 145, 82, 80, 82, 80, 101, 206, 102, 206, 81, 174, 82, 214, 50, 288,
+                  50, 288, 13</coords>
+                <xref href="#html_page_templates/topic-title" format="dita">Publication Title</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>210, 72, 210, 109, 164, 157, 138, 156, 138, 185, 653, 185, 653, 157, 201,
+                  156, 242, 109, 309, 109, 309, 72</coords>
+                <xref href="#html_page_templates/topic-search-input" format="dita">Search
+                  Input</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>337, 12, 336, 50, 320, 82, 320, 101, 706, 101, 706, 81, 512, 81, 440,
+                  12</coords>
+                <xref href="#html_page_templates/topic-menu" format="dita">Main Menu</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>560, 12, 560, 50, 652, 50, 714, 81, 715, 102, 738, 102, 738, 81, 652,
+                  13</coords>
+                <xref href="#html_page_templates/topic-index-terms-link" format="dita">Index Terms
+                  Link</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>701, 13, 793, 13, 793, 49, 764, 81, 764, 102, 746, 102, 744, 81, 702,
+                  49</coords>
+                <xref href="#html_page_templates/topic-switch-theme-button" format="dita">Switch
+                  Theme Button</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>487, 216, 685, 216, 686, 238, 487, 240</coords>
+                <xref href="#html_page_templates/topic-full-width-link" format="dita"
+                  >Maximize/Restore width Component</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>558, 188, 558, 212, 689, 212, 690, 237, 718, 237, 717, 213, 702,
+                  188</coords>
+                <xref href="#html_page_templates/topic-nav-links" format="dita">Navigation
+                  Links</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>552, 249, 552, 288, 653, 288, 653, 266, 737, 266, 737, 220, 721, 220, 721,
+                  248, 652, 248</coords>
+                <xref href="#html_page_templates/topic-expand-collapse" format="dita"
+                  >Expand/Collapse All Sections</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>681, 156, 681, 182, 704, 182, 741, 218, 742, 237, 761, 237, 760, 217, 721,
+                  182, 743, 182, 743, 156</coords>
+                <xref href="#html_page_templates/topic-print" format="dita">Print Link</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>720, 116, 796, 116, 796, 150, 781, 150, 782, 238, 765, 238, 764, 150, 720,
+                  150</coords>
+                <xref href="#html_page_templates/markdown-menu" format="dita">Markdown Export Menu</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>480, 240, 480, 216, 16, 217, 16, 241, 307, 241, 366, 288, 480, 288</coords>
+                <xref href="#html_page_templates/topic-breadcrumb" format="dita">Breadcrumb</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>34, 481, 34, 520, 154, 520, 154, 482, 106, 481, 106, 444, 178, 444, 178,
+                  246, 16, 246, 16, 444, 74, 444, 74, 481</coords>
+                <xref href="#html_page_templates/topic-publication-toc" format="dita">Publication
+                  Table of Contents</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>361, 518, 461, 518, 462, 444, 678, 444, 678, 294, 361, 294, 301, 246, 186,
+                  246, 186, 444, 362, 444</coords>
+                <xref href="#html_page_templates/topic-content" format="dita">Topic Content</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>742, 245, 742, 269, 688, 269, 688, 444, 722, 444, 724, 480, 684, 480, 684,
+                  517, 786, 518, 786, 481, 752, 480, 752, 444, 782, 444, 781, 245</coords>
+                <xref href="#html_page_templates/topic-topic-toc" format="dita">Topic Table of
+                  Contents</xref>
+              </area>
+            </imagemap>
+          </p>
+        </fig>
+      </p>
+      <p id="p_aln_cgk_54b">The following components can be referenced in the <term>Topic
+          Page</term> (<filepath>wt_topic.html</filepath>) file:</p>
+      <p id="p_bln_cgk_54b">
+        <dl id="dl_cln_cgk_54b">
+          <dlentry conkeyref="reusable-webhelp-customizing/publication-title" id="topic-title">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/publication-logo" id="topic-logo">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/index-terms-link"
+            id="topic-index-terms-link">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/switch-theme-button" id="topic-switch-theme-button">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/search-input" id="topic-search-input">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/main-page-menu" id="topic-menu">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/topic-breadcrumb" id="topic-breadcrumb">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/full-width-link"
+            id="topic-full-width-link">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/navigation-links" id="topic-nav-links">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/print-link" id="topic-print">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/markdown-menu" id="markdown-menu">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/topic-content" id="topic-content">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/topic-side-toc"
+            id="topic-publication-toc">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/topic-toc" id="topic-topic-toc">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/expand-collapse-sections"
+            id="topic-expand-collapse">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/topic-feedback" id="topic-feedback">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/child-links" id="topic-child-links">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/related-links" id="topic-related-links">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/link-to-skins" id="topic-resources">
+            <dt/>
+            <dd/>
+          </dlentry>
+        </dl>
+      </p>
+    </section>
+    <section id="search-results-page">
+      <title>Search Results Page</title>
+      <p id="p_dln_cgk_54b">The <term>Search Results Page</term> is the page generated that presents
+        search results in the WebHelp Responsive output. The name of the HTML file that defines this
+        page is <filepath>wt_search.html</filepath> and it is located in the following directory:
+            <filepath><abbreviated-form keyref="glossentry_dita_ot_dir"
+          />/plugins/com.oxygenxml.webhelp.responsive/oxygen-webhelp/page-templates</filepath>.</p>
+      <p id="p_eln_cgk_54b">The HTML page that is produced consists of a search results component
+        along with various other additional components, such as a title, menu, or index link.</p>
+      <p id="p_fln_cgk_54b">
+        <fig id="fig_gln_cgk_54b">
+          <title>Example of Search Results Page Components</title>
+          <p id="p_hln_cgk_54b">
+            <imagemap id="imagemap_rnm_b4l_n4b">
+              <image href="../img/webhelp_search_page2.png" id="image_snm_b4l_n4b"/>
+              <area>
+                <shape>poly</shape>
+                <coords>74, 13, 17, 62, 17, 126, 73, 126, 73, 60, 148, 49, 148, 13</coords>
+                <xref href="#html_page_templates/search-logo" format="dita">Publication Logo</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>210, 13, 144, 81, 80, 81, 80, 101, 208, 101, 208, 81, 181, 81, 214, 52, 285,
+                  52, 285, 13</coords>
+                <xref href="#html_page_templates/search-title" format="dita">Publication
+                  Title</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>214, 70, 214, 108, 168, 156, 146, 157, 145, 185, 653, 185, 653, 157, 202,
+                  156, 244, 109, 314, 108, 314, 70</coords>
+                <xref href="#html_page_templates/search-search-input" format="dita">Search
+                  Input</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>386, 13, 386, 82, 318, 83, 318, 104, 708, 104, 708, 82, 561, 82, 486,
+                  13</coords>
+                <xref href="#html_page_templates/search-menu" format="dita">Main Menu</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>564, 14, 564, 52, 666, 52, 713, 82, 713, 102, 734, 102, 733, 82, 662,
+                  14</coords>
+                <xref href="#html_page_templates/search-index-terms-link" format="dita">Index Terms
+                  Link</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>14, 224, 14, 481, 320, 482, 320, 538, 417, 538, 474, 482, 778, 482, 778,
+                  224, 649, 225, 649, 308, 157, 308, 157, 224</coords>
+                <xref href="#html_page_templates/search-results" format="dita">Search Results</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>697, 12, 697, 49, 737, 49, 739, 104, 756, 104, 756, 49, 789, 49, 789,
+                  12</coords>
+                <xref href="#html_page_templates/search-print" format="dita">Print Link</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>761, 82, 761, 104, 690, 132, 690, 169, 782, 169, 781, 82</coords>
+                <xref href="#html_page_templates/search-switch-theme-button" format="dita">Switch Theme Button</xref>
+              </area>
+            </imagemap>
+          </p>
+        </fig>
+      </p>
+      <p id="p_iln_cgk_54b">The following components can be referenced in the <term>Search Results
+          Page</term> (<filepath>wt_search.html</filepath>) file:</p>
+      <p id="p_jln_cgk_54b">
+        <dl id="dl_kln_cgk_54b">
+          <dlentry conkeyref="reusable-webhelp-customizing/publication-title" id="search-title">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/publication-logo" id="search-logo">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/search-input" id="search-search-input">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/search-results-2" id="search-results">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/print-link" id="search-print">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/switch-theme-button" id="search-switch-theme-button">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/main-page-menu" id="search-menu">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/index-terms-link"
+            id="search-index-terms-link">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/link-to-skins" id="search-resources">
+            <dt/>
+            <dd/>
+          </dlentry>
+        </dl>
+      </p>
+    </section>
+    <section id="index-terms-page">
+      <title>Index Terms Page</title>
+      <p id="p_lln_cgk_54b">The <term>Index Terms Page</term> is the page generated that presents
+        index terms in the WebHelp Responsive output. The name of the HTML file that defines this
+        page is <filepath>wt_terms.html</filepath> and it is located in the following directory:
+            <filepath><abbreviated-form keyref="glossentry_dita_ot_dir"
+          />/plugins/com.oxygenxml.webhelp.responsive/oxygen-webhelp/page-templates</filepath>.</p>
+      <p id="p_mln_cgk_54b">The HTML page that is produced consists of an index terms section along
+        with various other additional components, such as a title, menu, or search field.</p>
+      <p id="p_nln_cgk_54b">An alphabet that contains the first letter of the documentation index
+        terms is generated at the top of the index page. Each letter represents a link to a specific
+        indices section.</p>
+      <p id="p_oln_cgk_54b">
+        <fig id="fig_pln_cgk_54b">
+          <title>Example of Index Terms Page Components</title>
+          <p id="p_qln_cgk_54b">
+            <imagemap id="imagemap_fwh_44l_n4b">
+              <image href="../img/webhelp_terms_page2.png" id="image_kjb_kz1_vcb"/>
+              <area>
+                <shape>poly</shape>
+                <coords>74, 13, 17, 60, 16, 123, 73, 123, 73, 53, 149, 52, 149, 13</coords>
+                <xref href="#html_page_templates/index-logo" format="dita">Publication Logo</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>212, 13, 138, 83, 80, 83, 80, 103, 208, 103, 208, 84, 174, 84, 212, 51, 288,
+                  51, 288, 13</coords>
+                <xref href="#html_page_templates/index-title" format="dita">Publication Title</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>225, 65, 225, 147, 144, 147, 144, 173, 652, 173, 652, 147, 288, 147, 288,
+                  65</coords>
+                <xref href="#html_page_templates/index-search-input" format="dita">Search
+                  Input</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>338, 12, 338, 83, 309, 83, 309, 103, 698, 103, 698, 83, 518, 83, 437,
+                  12</coords>
+                <xref href="#html_page_templates/index-menu" format="dita">Main Menu</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>560, 12, 560, 51, 660, 51, 704, 83, 704, 101, 732, 101, 732, 83, 658,
+                  13</coords>
+                <xref href="#html_page_templates/index-index-terms-link" format="dita">Index Terms
+                  Link</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>698, 11, 698, 49, 738, 49, 739, 102, 754, 102, 754, 49, 788, 49, 788,
+                  11</coords>
+                <xref href="#html_page_templates/index-print" format="dita">Print Link</xref>
+              </area>
+              <area>
+                <shape>poly</shape>
+                <coords>758, 83, 758, 101, 690, 133, 690, 172, 782, 171, 780, 83</coords>
+                <xref href="#html_page_templates/index-switch-theme-button" format="dita">Switch Theme Button</xref>
+              </area>
+            </imagemap>
+          </p>
+        </fig>
+      </p>
+      <p id="p_rln_cgk_54b">The following components can be referenced in the <term>Index Terms
+          Page</term> (<filepath>wt_terms.html</filepath>) file:</p>
+      <p id="p_sln_cgk_54b">
+        <dl id="dl_tln_cgk_54b">
+          <dlentry conkeyref="reusable-webhelp-customizing/publication-title" id="index-title">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/publication-logo" id="index-logo">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/search-input" id="index-search-input">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/print-link" id="index-print">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/switch-theme-button" id="index-switch-theme-button">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/main-page-menu" id="index-menu">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/index-terms-link"
+            id="index-index-terms-link">
+            <dt/>
+            <dd/>
+          </dlentry>
+          <dlentry conkeyref="reusable-webhelp-customizing/link-to-skins" id="dlentry_uln_cgk_54b">
+            <dt/>
+            <dd/>
+          </dlentry>
+        </dl>
+      </p>
+    </section>
+  </body>
+</topic>

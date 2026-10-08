@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="debug-templates-view">
+  <title>Templates View</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Debugging XSLT<indexterm>Information views<indexterm>Templates
+            view</indexterm></indexterm></indexterm>
+        <indexterm>XSLT Debugger perspective<indexterm>Information views<indexterm>Templates
+              view</indexterm></indexterm></indexterm>
+        <indexterm>Debugging XQuery<indexterm>Information views<indexterm>Templates
+            view</indexterm></indexterm></indexterm>
+        <indexterm>XQuery Debugger perspective<indexterm>Information views<indexterm>Templates
+              view</indexterm></indexterm></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_nkz_cgk_54b">The <b>xsl:template</b> is the basic element for stylesheets transformation. The
+        <uicontrol>Templates</uicontrol> view is only available during XSLT debugging sessions and
+      shows all <i>xsl:template</i> instructions used by the transformation. <ph
+        conkeyref="reusables-user-guide/reopen-view"/></p>
+    <p id="p_okz_cgk_54b">Being able to see the number of <i>hits</i> for each of the templates allows you to get an
+      idea of the stylesheet coverage by template rules with respect to the input source.</p>
+    <p id="p_pkz_cgk_54b">
+      <fig id="the-templates-view-oxygen" product="editor developer">
+        <title>Templates view</title>
+        <image href="../img/sa_templates_view.png"/>
+      </fig>
+    </p>
+    <p id="p_qkz_cgk_54b">
+      <fig id="the-templates-view-oxygenEclipse" product="editorEclipse developerEclipse">
+        <title>Templates view</title>
+        <image href="../img/ec_templates_view.png"/>
+      </fig>
+    </p>
+    <p id="p_rkz_cgk_54b">The contextual menu contains one action: <uicontrol>Go to</uicontrol>, which moves the
+      selection in the editor panel to the line that contains the XSLT template displayed on the
+      selected line from the view.</p>
+    <table id="table-debug-templates-details" colsep="1" rowsep="1" frame="all">
+      <title>Templates columns</title>
+      <tgroup cols="2">
+        <colspec colnum="1" colname="c1" colwidth="1*" colsep="1" rowsep="1"/>
+        <colspec colnum="2" colname="c2" colwidth="11.5*" rowsep="1" colsep="1"/>
+        <thead>
+          <row>
+            <entry>Column</entry>
+            <entry>Description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry><b>Match</b></entry>
+            <entry>The <i>match</i> attribute of the <i>xsl:template</i>.</entry>
+          </row>
+          <row>
+            <entry><b>Hits</b></entry>
+            <entry>The number of hits for the <i>xsl:template</i>. Shows how many times the XSLT
+              processor used this particular template.</entry>
+          </row>
+          <row>
+            <entry><b>Priority</b></entry>
+            <entry>The template priority as established by XSLT processor.</entry>
+          </row>
+          <row>
+            <entry><b>Mode</b></entry>
+            <entry>The <i>mode</i> attribute of the <i>xsl:template</i>.</entry>
+          </row>
+          <row>
+            <entry><b>Name</b></entry>
+            <entry>The <i>name</i> attribute of the <i>xsl:template</i>.</entry>
+          </row>
+          <row>
+            <entry><b>Resource</b></entry>
+            <entry>The resource file where the template is located. <ph product="editor developer"
+                >The complete path of the resource file is available as tooltip.</ph></entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <note type="important" id="note_skz_cgk_54b">Remarks:<ul id="ul_tkz_cgk_54b">
+        <li id="li_ukz_cgk_54b">Clicking a record highlights that template definition inside the resource.</li>
+        <li id="li_vkz_cgk_54b">Saxon only shows the applied templates having at least one hit from the processor. Xalan
+          shows all defined templates, with or without hits.</li>
+        <li id="li_wkz_cgk_54b">Template table values can be sorted by clicking the corresponding column header. When
+          clicking a column header the sorting order switches between: ascending, descending, no
+          sort.</li>
+        <li id="li_xkz_cgk_54b">Xalan shows also the built-in rules.</li>
+      </ul></note>
+  </body>
+</topic>

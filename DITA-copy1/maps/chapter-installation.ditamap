@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map id="chapter.installation" title="Installation">
+  <topicref href="../topics/installation-intro.dita">
+    <topicmeta>
+      <shortdesc>The requirements and installation instructions for each platform</shortdesc>
+      <data name="wh-menu">
+        <data name="hide" value="yes"/>
+      </data>
+    </topicmeta>
+    <topicref href="../topics/install-eclipse.dita"
+      product="authorEclipse developerEclipse editorEclipse"/>
+    <topicref keys="eppo_installation_windows" href="../topics/eppo-installation-windows.dita"
+      product="author developer editor svnClient json"/>
+    <topicref href="../topics/eppo-installation-osx.dita"
+      product="author developer editor svnClient json"/>
+    <topicref href="../topics/eppo-installation-linux.dita" keys="eppo_installation_linux"
+      product="author developer editor json"/>
+    <topicref keys="eppo_installation_windows-server"
+      href="../topics/eppo-installation-windows-server.dita"
+      product="author developer editor svnClient json"/>
+    <topicref href="../topics/eppo-installation-linux-server.dita"
+      product="author developer editor svnClient json"/>
+    <topicref href="../topics/site-deployment.dita"
+      product="author developer editor authorEclipse developerEclipse editorEclipse json"/>
+    <topicref href="../topics/installation-setting-up-license-server.dita">
+      <topicref href="../topics/register-license-key.dita" keys="install_license-key"
+        collection-type="sequence">
+        <topicref href="../topics/named-user-licenses.dita" collection-type="sequence"
+          product="author developer editor authorEclipse developerEclipse editorEclipse svnClient">
+          <topicref href="../topics/named-user-license-registration.dita"/>
+          <topicref href="../topics/unregister-license-key.dita"
+            keys="install_transfer-release-license"/>
+        </topicref>
+        <topicref href="../topics/subscription-licenses.dita" collection-type="sequence">
+          <topicref href="../topics/subscription-license-registration.dita"/>
+          <topicref href="../topics/license-servlet-renew-subscription.dita"/>
+        </topicref>
+        <topicref href="../topics/how-floating-licenses-work.dita"
+          product="author authorEclipse developer developerEclipse editor editorEclipse"
+          collection-type="sequence">
+          <topicref href="../topics/request-floating-license-from-license-servlet.dita"/>
+          <topicref href="../topics/release-floating-license.dita"/>
+          <topicref href="../topics/reserve-floating-license.dita"/>
+          <topicref href="../topics/register-floating-license-multiple-users.dita"/>
+        </topicref>
+      </topicref>
+      <topicref href="../topics/floating-license-servlet-setup.dita" collection-type="sequence"
+        product="author developer editor authorEclipse developerEclipse editorEclipse">
+        <topicref href="../topics/installing-license-server-windows.dita" collection-type="sequence"/>
+        <topicref href="../topics/installing-license-server-all-platforms.dita"
+          collection-type="sequence"/>
+        <topicref href="../topics/installing-license-server-WAR.dita" collection-type="sequence">
+          <topicref href="../topics/installing-license-server-WAR-multiple-instances.dita"
+            collection-type="sequence"/>
+        </topicref>
+      </topicref>
+      <topicref href="../topics/license-server-management.dita" collection-type="sequence"
+        product="author developer editor authorEclipse developerEclipse editorEclipse">
+        <topicref href="../topics/servlet-report-page.dita"/>
+        <topicref href="../topics/replace-floating-license.dita"/>
+        <topicref href="../topics/upgrade-license-servlet.dita"/>
+        <topicref href="../topics/allowed-users.dita"/>
+      </topicref>
+      <topicref href="../topics/floating-license-server-setup-common-problems.dita"
+        collection-type="sequence"
+        product="author developer editor authorEclipse developerEclipse editorEclipse">
+        <topicref href="../topics/machine-signature-mismatch.dita"/>
+      </topicref>
+    </topicref>
+    <topicref href="../topics/upgrading.dita" keys="install_upgrade" collection-type="sequence">
+      <topicref href="../topics/upgrading-standalone-application.dita"/>
+      <topicref href="../topics/upgrading-mac.dita"/>
+    </topicref>
+    <topicref href="../topics/installing-and-updating-add-ons.dita"
+      product="editor author developer" keys="install_add-ons"/>
+    <topicref href="../topics/privacy_options.dita" product="author developer editor json"/>
+    <topicref href="../topics/uninstall-application.dita" keys="install_uninstall"/>
+  </topicref>
+</map>

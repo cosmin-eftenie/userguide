@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="preferences-colors-elements-by-prefix">
+  <title>Elements/Attributes by Prefix Preferences</title>
+  <body>
+    <p id="p_qnp_bgk_54b"><ph keyref="product"/> allows you to specify syntax highlighting colors
+      for elements and attributes with specific namespace prefixes. To configure the
+        <uicontrol>Elements/Attributes by Prefix</uicontrol> preferences, <ph
+        conkeyref="reusables-preferences-pages/open-the-preferences-page"/> and go to <menucascade>
+        <uicontrol>Editor</uicontrol>
+        <uicontrol>Syntax Highlight</uicontrol>
+        <uicontrol>Elements/Attributes by Prefix</uicontrol>
+      </menucascade>.</p>
+    <p id="p_rnp_bgk_54b">To change the syntax coloring for a specific namespace prefix, choose the prefix from the
+      list, or add a new one using the <uicontrol>New</uicontrol> button, and use the color and
+      style selectors to set the syntax highlighting style for that namespace prefix.</p>
+    <note id="note_snp_bgk_54b">Syntax highlighting is based on the literal namespace prefix, not the namespace that the
+      prefix is bound to in the document.</note>
+    <p id="p_tnp_bgk_54b">If you only want the prefix (and not the whole element or attribute name) to be styled with a
+      particular color, select the <uicontrol>Draw only the prefix with a separate color</uicontrol>
+      option.</p>
+  </body>
+</topic>

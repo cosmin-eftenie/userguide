@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="ofb-editing-site">
+  <title>General Settings</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Edit site</indexterm>
+        <indexterm>General Settings page</indexterm>
+        <indexterm>Site logo</indexterm>
+        <indexterm>Logo</indexterm>
+        <indexterm>Options</indexterm>
+      </keywords>
+      <keywords>
+        <keyword outputclass="label">Site Configuration</keyword>
+        <keyword outputclass="label">Admin Interface</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_txw_dgk_54b">The <uicontrol>General Settings</uicontrol> page provides various options
+      for configuring and managing a site. If you are in the <xref href="ofb-sites-page.dita"
+          ><uicontrol>Sites</uicontrol> page</xref>, you can click the <uicontrol><image
+          href="../img/ofb-Settings17.png" id="image_gmj_s5y_fjb"/>Settings</uicontrol> button at
+      the bottom-right corner of a tile to open this <uicontrol>General Settings</uicontrol> page
+      for that particular site configuration. If you are already inside the interface for a
+      particular site configuration, you can click the <uicontrol><image
+          href="../img/ofb-BlueSettings16.png" id="image_txz_51g_gjb"/>General</uicontrol> link in
+      the left menu bar to reach this page.</p>
+    <p id="p_uxw_dgk_54b">
+      <fig id="fig_hm3_s31_hjb">
+        <title>General Settings Page - Part 1</title>
+        <image href="../img/ofb-general-settings.png" id="image_bfr_t31_hjb"/>
+      </fig>
+    </p>
+    <p id="p_bb3_ygx_qwb">
+      <fig id="fig_cb3_ygx_qwb">
+        <title>General Settings Page - Part 2</title>
+        <image href="../img/ofb-general-settings-2.png"/>
+      </fig>
+    </p>
+    <p id="p_glk_ygx_qwb">
+      <fig id="fig_hlk_ygx_qwb">
+        <title>General Settings Page - Part 3</title>
+        <image href="../img/ofb-general-settings-3.png"/>
+      </fig>
+    </p>
+    <p id="p_vxw_dgk_54b">The <uicontrol>General Settings</uicontrol> page includes the following options and
+      features:</p>
+    <p id="p_wxw_dgk_54b">
+      <dl id="dl_xxw_dgk_54b">
+        <dlentry id="dlentry_yxw_dgk_54b">
+          <dt>Edit or Add a Logo</dt>
+          <dd>Click anywhere in the logo circle to select an image to use for the logo for this site
+            configuration. The logo will be displayed in the tile for this site configuration in the
+              <xref href="ofb-sites-page.dita"><uicontrol>Sites</uicontrol> page</xref>. The
+            supported extensions are: <i>.jpg</i>, <i>.jpeg</i>, <i>.png</i>, <i>.gif</i>. The
+            maximum allowed size is 2048 KB.<note id="note_zxw_dgk_54b">When loading large logo images, they might be
+              resized and lose some image quality. This is done to reduce network data
+              traffic.</note></dd>
+        </dlentry>
+        <dlentry id="dlentry_ayw_dgk_54b">
+          <dt>Name</dt>
+          <dd>You can edit the name of the site configuration. This will be displayed as the title
+            in the tile for this site configuration in the <xref href="ofb-sites-page.dita"
+                ><uicontrol>Sites</uicontrol> page</xref>.<note id="note_byw_dgk_54b">The site
+              configuration name is unique per organization. Each organization cannot have more than
+              one site configuration with the same name.</note></dd>
+        </dlentry>
+        <dlentry id="dlentry_cyw_dgk_54b">
+          <dt>Description</dt>
+          <dd>You can edit the description of the site configuration. This will be displayed as the
+            description in the tile for this site configuration in the <xref
+              href="ofb-sites-page.dita"><uicontrol>Sites</uicontrol> page</xref>.</dd>
+        </dlentry>
+        <dlentry id="comment-moderation">
+          <dt>Comments Moderation</dt>
+          <dd>
+            <ul id="ul_sh4_hbg_gjb">
+              <li id="li_dyw_dgk_54b"><b>All</b> - Select this option if you want all comments to require approval by an
+                  <xref href="ofb-team-management.dita"><i>Owner</i>, <i>Admin</i>, or
+                    <i>Moderator</i></xref> before they are posted. Also, each <i>Owner</i>,
+                  <i>Admin</i>, and <i>Moderator</i> for the site configuration will receive an
+                email when a user adds a comment notifying them that there is a comment waiting for
+                approval.</li>
+              <li id="li_eyw_dgk_54b"><b>None</b> - Select this option if you want all comments to be posted without
+                requiring approval.<note id="note_fyw_dgk_54b">If you change this option to <uicontrol>None</uicontrol> on
+                  a site configuration that was previously being moderated and had rejected
+                  comments, all of those rejected comments will be purged.</note></li>
+            </ul>
+            <note type="tip" id="note_gyw_dgk_54b">For more information about comment moderation, see the <xref
+                href="ofb-moderating-comments.dita"/> topic.</note>
+          </dd>
+        </dlentry>
+        <dlentry id="dlentry_kzf_svx_1tb">
+          <dt>Allow block level comments</dt>
+          <dd>
+            <p id="p_fbp_vvx_1tb">This option controls whether or not block-level comments are
+              enabled in the output.</p>
+            <p id="p_sxc_bdy_1tb">
+              <dl id="dl_py2_bdy_1tb">
+                <dlentry id="dlentry_qy2_bdy_1tb">
+                  <dt>Outline current block on hover</dt>
+                  <dd>Available if the <uicontrol>Allow block level comments</uicontrol> option is
+                    enabled. If this option is selected, an outline is rendered on any block
+                    elements that allow block-level comments when hovering over the element (if the
+                    element does not already have a comment associated with it).</dd>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+        <dlentry id="dlentry_wgt_vdn_btb">
+          <dt>Allow page ratings</dt>
+          <dd>
+            <p id="p_gv2_f2n_btb">This option controls whether or not a page ratings component is
+              displayed in the output. If enabled, you can configure the following settings that
+              pertain to page ratings:</p>
+            <p id="p_n13_shx_qwb">
+              <dl id="dl_jwm_shx_qwb">
+                <dlentry id="dlentry_kwm_shx_qwb">
+                  <dt>Question</dt>
+                  <dd>This is the page ratings question that is displayed in the output. The default
+                    value is <term>Was this page helpful?</term>, but you can change it depending on
+                    your needs.</dd>
+                </dlentry>
+                <dlentry id="dlentry_f1b_yhx_qwb">
+                  <dt>Answers</dt>
+                  <dd>For the responses to your page ratings question, you can choose whether your
+                    community uses like/dislike icons or text. If <uicontrol>Text</uicontrol> is
+                    selected (default value), you can also configure the possible responses:<ul
+                      id="ul_lcn_ydn_btb">
+                      <li id="li_d3h_zdn_btb"><b>Option 1 (positive)</b> - The positive response to
+                        the question. The default value is <term>Yes</term>, but you can change it
+                        depending on your needs.</li>
+                      <li id="li_djm_b2n_btb"><b>Option 2 (negative)</b> - The negative response to
+                        the question. The default value is <term>No</term>, but you can change it
+                        depending on your needs.</li>
+                    </ul></dd>
+                </dlentry>
+                <dlentry id="dlentry_dzr_hlx_qwb">
+                  <dt>Display survey for negative ratings</dt>
+                  <dd>This option controls whether or not a survey component for negative ratings is
+                    displayed in the output. If enabled, you can configure the following settings
+                    that pertain to the survey component:<p id="p_cm2_nlx_qwb">
+                      <dl id="dl_fyg_nlx_qwb">
+                        <dlentry id="dlentry_gyg_nlx_qwb">
+                          <dt>Feedback component title</dt>
+                          <dd>This option specifies the title that will be displayed for the
+                            negative ratings survey component in the output. The default value is
+                              <term>Why was this page not helpful?</term>, but you can change it
+                            depending on your needs.</dd>
+                        </dlentry>
+                        <dlentry id="dlentry_p5w_nlx_qwb">
+                          <dt>Feedback component privacy note</dt>
+                          <dd>This option specifies the privacy note that will be displayed in the
+                            negative ratings survey component in the output. The default value is
+                              <term>Your identity always remains anonymous when providing your
+                              feedback</term>, but you can change it depending on your needs.</dd>
+                        </dlentry>
+                        <dlentry id="dlentry_p45_4lx_qwb">
+                          <dt>Survey options (Option 1, Option 2, Option 3, Option 4, Option 5)</dt>
+                          <dd>You can choose to display up to five options for your users to choose
+                            from for their response to the survey. There is a toggle checkbox to the
+                            left of each option. Each option that is selected will be displayed in
+                            the survey. There is a default placeholder value for each one but you
+                            can change the text according to your needs.</dd>
+                        </dlentry>
+                        <dlentry id="dlentry_xdg_lmx_qwb">
+                          <dt>Additional feedback placeholder text</dt>
+                          <dd>This option specifies the placeholder text that will be displayed if
+                            the user chooses to provide additional feedback. The default value is
+                              <term>Tell us what you think would make this page better</term>, but
+                            you can change it depending on your needs.</dd>
+                        </dlentry>
+                        <dlentry id="dlentry_np1_mmx_qwb">
+                          <dt>Send button text</dt>
+                          <dd>This option specifies the text that will be displayed for the button
+                            that will be used by your community to send their feedback. The default
+                            value is <term>Send feedback</term>, but you can change it depending on
+                            your needs.</dd>
+                        </dlentry>
+                        <dlentry id="dlentry_k1f_zk2_hzb">
+                          <dt>Contact by email text</dt>
+                          <dd>Select this option to display a checkbox in the output that users can
+                            select to indicate that they would like to be contacted by email if
+                            additional information is needed to address their feedback. There is a
+                            default placeholder text value that will be displayed next to the
+                            checkbox in the output but you can change the text according to your
+                            needs.</dd>
+                        </dlentry>
+                      </dl>
+                    </p></dd>
+                </dlentry>
+              </dl>
+            </p>
+          </dd>
+        </dlentry>
+        <dlentry id="dlentry_iyw_dgk_54b">
+          <dt>Comments component settings</dt>
+          <dd>The following comments component settings are available:<p id="p_z4d_2hx_qwb">
+              <dl id="dl_svh_2hx_qwb">
+                <dlentry id="dlentry_dnd_fhx_qwb">
+                  <dt>New comment placeholder text</dt>
+                  <dd>By default, <ph keyref="product"/> displays <i>Add a comment</i> for the
+                    placeholder text that appears in empty comment boxes. You can use this option to
+                    specify your own custom placeholder text.</dd>
+                </dlentry>
+                <dlentry id="dlentry_jfh_ghx_qwb">
+                  <dt>Display "Powered by Oxygen Feedback" link (Available for paid
+                    subscriptions)</dt>
+                  <dd>By default, <ph keyref="product"/> displays a <i>Powered by Oxygen
+                      Feedback</i> link at the bottom of the commenting component in the output. You
+                    can deselect this option to hide that link in your output. </dd>
+                </dlentry>
+              </dl>
+            </p></dd>
+        </dlentry>
+        <dlentry id="dlentry_kyw_dgk_54b">
+          <dt>Disable Site</dt>
+          <dd>
+            <p id="p_lyw_dgk_54b">The <uicontrol>General Settings</uicontrol> page includes an option to disable a site
+              configuration. You must be the <xref
+                href="ofb-team-management.dita#ofb-team-management/owner"><i>Owner</i></xref> of the
+              site configuration to access this option.</p>
+            <p id="p_myw_dgk_54b">To disable the site configuration, click the <uicontrol>Disable</uicontrol> button
+              and you will be asked to confirm the <i>Site name</i> to process the request. The
+              result is that the commenting component will no longer be displayed in the websites
+              defined in all versions for this site configuration. You can reverse the action by
+              clicking the <uicontrol>Enable</uicontrol> button but this will only work if enabling
+              the particular site configuration is allowed by the current subscription plan.</p>
+          </dd>
+        </dlentry>
+        <dlentry id="delete-site">
+          <dt>Delete Site</dt>
+          <dd>
+            <p id="p_nyw_dgk_54b">The <uicontrol>General Settings</uicontrol> page includes an option to delete a site
+              configuration. You must be the <xref
+                href="ofb-team-management.dita#ofb-team-management/owner"><i>Owner</i></xref> of the
+              site configuration to access this option.</p>
+            <p id="p_oyw_dgk_54b">To delete the site configuration, click the <uicontrol>Delete</uicontrol> button and
+              you will be asked to confirm the <i>Site name</i> to process the request.<note
+                type="warning" id="note_pyw_dgk_54b">Using this action will delete all versions and comments for the site
+                configuration and this action cannot be reversed. You may want to
+                  <uicontrol>Disable</uicontrol> the site instead, since that action is
+                reversible.</note></p>
+          </dd>
+        </dlentry>
+        <dlentry id="dlentry_qyw_dgk_54b">
+          <dt id="transfer-ownership">Transfer Ownership of a Site</dt>
+          <dd>
+            <p id="p_ryw_dgk_54b">The <uicontrol>General Settings</uicontrol> page includes an
+              option to transfer the ownership of a site configuration to another user. You must be
+              the <xref href="ofb-team-management.dita#ofb-team-management/owner"
+                ><i>Owner</i></xref> of the site configuration (or the organization <i>Owner</i>) to
+              access this option and the user you are transferring ownership to must have an
+              organization or site <xref href="ofb-team-management.dita#ofb-team-management/admin"
+                  ><i>Admin</i> role</xref>.</p>
+            <p id="p_syw_dgk_54b">To transfer ownership of the site configuration, click the
+                <uicontrol>Transfer</uicontrol> button, enter the new owner's email address, enter
+              the name of the site, and click <uicontrol>Transfer</uicontrol>. A confirmation email
+              will be sent to the specified user. They will need to access the email and accept the
+              transfer within 24 hours (the pending owner can also go to the <uicontrol>General
+                Settings</uicontrol> page and accept the transfer from there). You can click the
+                <uicontrol>Cancel</uicontrol> button to reverse the action anytime before the user
+              accepts the transfer.<note type="warning" id="note_tyw_dgk_54b">If the site <xref
+                  href="ofb-team-management.dita#ofb-team-management/owner"><i>Owner</i></xref>
+                deletes their account before the transfer request has been accepted, the site
+                ownership transfer will be canceled.</note></p>
+          </dd>
+        </dlentry>
+      </dl>
+    </p>
+  </body>
+</topic>

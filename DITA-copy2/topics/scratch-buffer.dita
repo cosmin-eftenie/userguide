@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="scratch-buffer">
+  <title>Scratch Buffer</title><prolog>
+    <metadata>
+      <keywords><indexterm>Scratch Buffer</indexterm></keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_tv5_bgk_54b">The <uicontrol>Scratch Buffer</uicontrol> view can be used for storing fragments of arbitrary
+      text during the editing process. It can be used to drop bits of paragraphs (including
+      arbitrary XML markup fragments) while rearranging and editing the document and also to drag
+      and drop fragments of text from the Scratch Buffer to the editor panel. The <uicontrol>Scratch
+        Buffer</uicontrol> is basically a text area offering XML syntax highlight. The view's
+      contextual menu contains basic edit actions such as <uicontrol>Cut</uicontrol>,
+        <uicontrol>Copy</uicontrol>, and <uicontrol>Paste</uicontrol>.</p>
+    <p id="p_uv5_bgk_54b"><ph conkeyref="reusables-user-guide/reopen-view"/></p>
+  </body>
+</topic>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="dcpp_front_matter_and_back_matter">
+  <title>Front Matter and Back Matter</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+          ><ph keyref="pdf-html5-transformation"/>
+            <indexterm>Front matter</indexterm></indexterm>
+        <indexterm product="author developer editor authorEclipse developerEclipse editorEclipse"
+          ><ph keyref="pdf-html5-transformation"/> <indexterm>Back
+            matter</indexterm></indexterm>
+        <indexterm product="pdf-css ope">Front matter</indexterm>
+        <indexterm product="pdf-css ope">Back matter</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_brr_cgk_54b">The <term>front matter</term> is a series of topics that are usually placed after the cover
+      page and before the TOC or the content. </p>
+    <p id="p_crr_cgk_54b">The <term>back matter</term> is a series of topics that are usually placed after the content
+      of the book. </p>
+  </body>
+</topic>
